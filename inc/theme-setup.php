@@ -37,6 +37,7 @@ function education_setup() {
 	register_nav_menus(
 		array(
 			'primary-menu' => esc_html__( 'Primary', 'education' ),
+			'footer-menu' => esc_html__( 'Footer', 'education' ),
 			'mobile-menu' => esc_html__( 'Mobile', 'education' ),
 		)
 	);

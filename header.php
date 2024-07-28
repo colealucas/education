@@ -27,7 +27,7 @@
 				<div class="col-3">
 					<div class="logo">
 						<a href="<?php echo home_url(); ?>">
-							<img src="<?php echo get_template_directory_uri() . '/assets/images/emi-logo.png'; ?>" alt="Logo">
+							<img src="<?php echo get_template_directory_uri() . '/assets/images/the-logo.svg'; ?>" alt="Logo">
 						</a>
 					</div>
 				</div>

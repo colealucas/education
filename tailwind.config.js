@@ -13,6 +13,7 @@ module.exports = {
       'gray': '#808285',
       'light-gray': '#F3F4F7',
       'green': '#00665E',
+      'dark-green': '#0C544F',
     },
     fontFamily: {
       openSans: ['Open Sans', 'sans-serif'],
@@ -67,6 +68,7 @@ module.exports = {
       '21px': '21px',
       '24px': '24px',
       '25px': '25px',
+      '26px': '26px',
       '30px': '30px',
       '32px': '32px',
       '36px': '36px',
@@ -121,6 +123,7 @@ module.exports = {
       '8px': '8px',
       '12px': '12px',
       '16px': '16px',
+      '20px': '20px',
       '24px': '24px',
       '50': '50%',
       'circle': '50%',

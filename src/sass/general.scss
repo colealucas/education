@@ -2,7 +2,8 @@
 $gray-color: #808285;
 $light-gray-color: #F3F4F7;
 $dark-color: #171412;
-$green-color: #00665E;
+$green-color: hsl(175, 100%, 20%);
+$green-color: #0C544F;
 $white-color: #fff;
 $transition: all 0.3s ease;
 
@@ -224,6 +225,10 @@ h1,h2,h3,h4,h5,h6 {
 #wpadminbar {
 	top: unset !important;
 	bottom: 0 !important;
+}
+
+body.logged-in {
+	padding-bottom: 32px;
 }
 
 
