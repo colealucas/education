@@ -21,11 +21,28 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'education' ); ?></a>
+	<div id="site-header" class="h-80px border-b-1px border-solid border-light-gray">
+		<div class="container h-[80px]">
+			<div class="row h-full items-center">
+				<div class="col-3">
+					<div class="logo">
+						<a href="<?php echo home_url(); ?>">
+							<img src="<?php echo get_template_directory_uri() . '/assets/images/emi-logo.png'; ?>" alt="Logo">
+						</a>
+					</div>
+				</div>
+				<div class="col-9">
+					<nav class="flex justify-end">
+						<div id="main-menu-wrap" class="main-menu-wrap h-full">
+							<?php echo get_menu('primary-menu'); ?>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
 
-	<header id="masthead" class="site-header">
+	<header id="masthead" class="site-header hide">
 		<div class="site-branding">
 			<?php
 			the_custom_logo();
@@ -55,5 +72,5 @@
 				)
 			);
 			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+		</nav>
+	</header>
