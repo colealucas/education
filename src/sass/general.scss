@@ -28,6 +28,9 @@ body {
 	font-size: 16px;
 	font-weight: 400;
 	font-family: "Inter", sans-serif;
+	// fix: font rendering issue 
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 main {
