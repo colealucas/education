@@ -7,17 +7,17 @@
  // Register Custom Post Type for Books
 function create_book_cpt() {
     $labels = array(
-        'name' => _x('Cărți', 'Post Type General Name', 'education'),
+        'name' => _x('Manuale', 'Post Type General Name', 'education'),
         'singular_name' => _x('Manual', 'Post Type Singular Name', 'education'),
-        'menu_name' => __('Cărți', 'education'),
+        'menu_name' => __('Manuale', 'education'),
         'name_admin_bar' => __('Manual', 'education'),
     );
     $args = array(
         'label' => __('Manuale', 'education'),
-        'supports' => array('title', 'editor', 'custom-fields'),
+        'supports' => array('title', 'editor', 'custom-fields', 'thumbnail'),
         'public' => true,
         'has_archive' => true,
-        'rewrite' => array('slug' => 'carti'),
+        'rewrite' => array('slug' => 'books'),
     );
     register_post_type('book', $args);
 }
@@ -33,10 +33,10 @@ function create_module_cpt() {
     );
     $args = array(
         'label' => __('Module', 'education'),
-        'supports' => array('title', 'editor', 'custom-fields'),
+        'supports' => array('title', 'editor', 'custom-fields', 'thumbnail'),
         'public' => true,
         'has_archive' => true,
-        'rewrite' => array('slug' => 'module'),
+        'rewrite' => array('slug' => 'modules'),
     );
     register_post_type('module', $args);
 }
@@ -52,10 +52,10 @@ function create_theme_cpt() {
     );
     $args = array(
         'label' => __('Teme', 'education'),
-        'supports' => array('title', 'editor', 'custom-fields'),
+        'supports' => array('title', 'editor', 'custom-fields', 'thumbnail'),
         'public' => true,
         'has_archive' => true,
-        'rewrite' => array('slug' => 'teme'),
+        'rewrite' => array('slug' => 'themes'),
     );
     register_post_type('theme', $args);
 }
