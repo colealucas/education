@@ -1,8 +1,8 @@
 // vars 
 $gray-color: #808285;
 $light-gray-color: #F3F4F7;
+$faded-gray-color: #F5F5F5;
 $dark-color: #171412;
-$green-color: hsl(175, 100%, 20%);
 $green-color: #0C544F;
 $white-color: #fff;
 $transition: all 0.25s ease;
@@ -87,22 +87,17 @@ table {
 }
 
 a {
-	color: #4169e1;
-}
-
-a:visited {
-	color: #800080;
+	text-decoration: none;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: #191970;
+	color: $green-color;
 }
 
 a:focus {
 	outline: none;
-	text-decoration: none;
 }
 
 a:hover,
@@ -217,6 +212,7 @@ h1,h2,h3,h4,h5,h6 {
 	font-optical-sizing: auto;
 	font-weight: 600;
 	font-style: normal;
+	line-height: 1.3;
 }
 
 .hide, .d-none {
@@ -270,16 +266,16 @@ body.logged-in {
 }
 
 .main-menu-wrap {
-	ul {
+	& > ul {
 		display: flex;
 		align-items: center;
 		padding: 0;
 		margin: 0;
 
-		li {
+		& > li {
 			display: block;
 
-			a {
+			& > a {
 				font-size: 16px;
 				font-weight: 400;
 				display: inline-block;
@@ -303,6 +299,52 @@ body.logged-in {
 				}
 			}
 
+			&.pll-parent-menu-item {
+				& >  a {
+					display: flex;
+					align-items: center;
+				}
+			}
+
+			&.menu-item-has-children {
+				position: relative;
+
+				& > .sub-menu {
+					opacity: 0;
+					z-index: -9999;
+					visibility: hidden;
+					position: absolute;
+					top: 100%;
+					left: 50%;
+					margin-left: -100px;
+					width: 100%;
+					min-width: 190px;
+					background-color: $white-color;
+					border-radius: 12px;
+					padding: 20px 12px;
+					border: 1px solid $light-gray-color;
+					transition: all 0.3s ease-out;
+					box-shadow: rgba(0,0,0, 0.1) 0 0 20px;
+
+					& > li {
+						display: block;
+
+						& > a {
+							display: block;
+							padding: 6px 8px;
+							font-size: 16px;
+							line-height: 1.3;
+						}
+					}
+				}
+
+				&:hover > .sub-menu {
+					opacity: 1;
+					z-index: 9;
+					visibility: visible;
+				}
+			}
+
 			&.current-menu-item,
 			&:hover {
 				a:before {
@@ -311,14 +353,28 @@ body.logged-in {
 				}
 			}
 
-			&:hover a {
+			&:hover > a {
 				color: $green-color;
 			}
 
-			&.current-menu-item a {
+			&.current-menu-item > a {
 				color: $green-color;
 				font-weight: 700;
 				border-bottom-color: $green-color;
+			}
+
+			li.lang-item {
+				& >  a {
+					display: flex !important;
+					align-items: center;
+				}
+			}
+	
+			li.current-menu-item {
+				a {
+					color: $green-color;
+					font-weight: 700;
+				}
 			}
 		}
 	}
@@ -410,6 +466,26 @@ body.logged-in {
 				color: $green-color;
 				font-weight: 700;
 			}
+		}
+	}
+}
+
+.book-wrap {
+	position: relative;
+	transition: all 0.3s ease-in-out;
+
+	.home-book-link {
+		display: block;
+		transition: all 0.3s ease-in-out;
+	}
+
+	&:hover {
+		a {
+			color: $green-color;
+		}
+
+		.home-book-link {
+			transform: scale(1.05);
 		}
 	}
 }

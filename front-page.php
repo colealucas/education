@@ -6,44 +6,59 @@
  get_header();
 ?>
 
-<div class="section py-64px">
+<div class="section py-64px pb-35px">
     <div class="container">
-        <h1 class="font-900">Heading</h1>
-        <h2>Heading</h2>
-        <h3>Heading</h3>
-        <h4>Heading</h4>
-        <h5>Heading</h5>
-        <h6>Heading</h6>
+        <div class="text-center mx-auto max-w-[870px]">
+            <h1 class="text-28px md:text-48px font-900 uppercase">Bun venit la Centrul de Educație PENTRU Media</h1>
+        </div>
 
-        <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente perspiciatis aperiam laudantium 
-            libero debitis repellat facilis! Quas necessitatibus consequuntur aliquid itaque suscipit iste nihil
-            animi sunt saepe, nobis consequatur recusandae!
-        </p>
+        <div class="text-16px text-gray text-center leading-150 mt-12px">
+            Selectează un manual pentru a incepe
+        </div>
 
-        <ul>
-            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit</li>
-            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit</li>
-            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit</li>
-            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit</li>
-            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit</li>
-        </ul>
+        <div class="books-grid-wrap mt-48px">
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="book-wrap rounded-56px p-36px pb-0 bg-light-gray mx-auto mb-36px lg:mb-0 max-w-[415px] md:max-w-auto overflow-hidden">
+                        <h2 class="text-28px md:text-40px font-600 min-h-[110px]">
+                            <a href="#" class="text-inherit hover:text-green block">Manual pentru ciclu primar. Clasele a III-a, a-IV-a.</a>
+                        </h2>
 
-        <ol>
-            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit</li>
-            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit</li>
-            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit</li>
-            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit</li>
-            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit</li>
-        </ol>
+                        <div class="mt-20px">
+                            <a href="#" class="home-book-link">
+                                <img src="<?php echo get_template_directory_uri() . '/assets/images/book.png' ?>" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="book-wrap rounded-56px p-36px pb-0 bg-light-gray mx-auto mb-36px lg:mb-0 max-w-[415px] md:max-w-auto overflow-hidden">
+                        <h2 class="text-28px md:text-40px font-600 min-h-[110px]">
+                            <a href="#" class="text-inherit hover:text-green block">Educatie pentru Media</a>
+                        </h2>
 
-        <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente perspiciatis aperiam laudantium 
-            libero debitis repellat facilis! Quas necessitatibus consequuntur aliquid itaque suscipit iste nihil
-            animi sunt saepe, nobis consequatur recusandae!
-        </p>
+                        <div class="mt-20px">
+                            <a href="#" class="home-book-link">
+                                <img src="<?php echo get_template_directory_uri() . '/assets/images/book.png' ?>" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="book-wrap rounded-56px p-36px pb-0 bg-light-gray mx-auto mb-36px lg:mb-0 max-w-[415px] md:max-w-auto overflow-hidden">
+                        <h2 class="text-28px md:text-40px font-600 min-h-[110px]">
+                            <a href="#" class="text-inherit hover:text-green block">Educatie pentru Media</a>
+                        </h2>
 
-        <div class=" bg-blue p-24px rounded-8px text-white">data</div>
+                        <div class="mt-20px">
+                            <a href="#" class="home-book-link">
+                                <img src="<?php echo get_template_directory_uri() . '/assets/images/book.png' ?>" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

@@ -17,3 +17,4 @@ include_once('inc/connect-acf.php');
 include_once('inc/cleaner.php');
 include_once('inc/theme-setup.php');
 include_once('inc/theme-functions.php');
+include_once('inc/cpt.php');

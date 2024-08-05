@@ -14,7 +14,7 @@
 		<h1 class="text-32px font-900"><?php the_title(); ?></h1>
 	</header>
 
-	<div class="page-entry-content">
+	<div class="page-entry-content page-content min-h-[35vh]">
 		<?php the_content(); ?>
 	</div>
 </article>
