@@ -18,6 +18,7 @@ function create_book_cpt() {
         'public' => true,
         'has_archive' => true,
         'rewrite' => array('slug' => 'books'),
+        'menu_icon' => 'dashicons-book'
     );
     register_post_type('book', $args);
 }
@@ -37,6 +38,7 @@ function create_module_cpt() {
         'public' => true,
         'has_archive' => true,
         'rewrite' => array('slug' => 'modules'),
+        'menu_icon' => 'dashicons-editor-justify'
     );
     register_post_type('module', $args);
 }
@@ -56,6 +58,7 @@ function create_theme_cpt() {
         'public' => true,
         'has_archive' => true,
         'rewrite' => array('slug' => 'themes'),
+        'menu_icon' => 'dashicons-welcome-write-blog'
     );
     register_post_type('theme', $args);
 }
