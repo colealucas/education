@@ -9,11 +9,13 @@
 <div class="section py-64px pb-35px">
     <div class="container">
         <div class="text-center mx-auto max-w-[870px]">
-            <h1 class="text-28px md:text-48px font-900 uppercase">Bun venit la Centrul de Educație PENTRU Media</h1>
+            <h1 class="text-28px md:text-48px font-900 uppercase">
+                <?php echo get_field('intro_title'); ?>
+            </h1>
         </div>
 
         <div class="text-16px text-gray text-center leading-150 mt-12px">
-            Selectează un manual pentru a incepe
+            <?php echo get_field('intro_subtitle'); ?>
         </div>
 
         <div class="books-grid-wrap mt-48px">
