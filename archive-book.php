@@ -1,21 +1,22 @@
 <?php
 /**
- * Template Name: Pagina Principala
+ * Book CPT Template
  */
 
  get_header();
-?>
+ ?>
+
 
 <div class="section py-64px pb-35px">
     <div class="container">
         <div class="text-center mx-auto max-w-[870px]">
             <h1 class="text-28px md:text-48px font-900 uppercase">
-                <?php echo get_field('intro_title'); ?>
+                <?php _e('Bun venit la Centrul de Educație pentru Media', 'education'); ?>
             </h1>
         </div>
 
         <div class="text-16px text-gray text-center leading-150 mt-12px">
-            <?php echo get_field('intro_subtitle'); ?>
+            <?php _e('Selectează un manual pentru a incepe', 'education'); ?>
         </div>
 
         <?php

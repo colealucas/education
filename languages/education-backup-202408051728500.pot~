@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-05 17:28+0000\n"
+"POT-Creation-Date: 2024-08-05 15:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: _s\n"
@@ -28,10 +28,6 @@ msgstr ""
 
 #: footer.php:97
 msgid "All Rights Reserved"
-msgstr ""
-
-#: archive-book.php:14
-msgid "Bun venit la Centrul de Educație pentru Media"
 msgstr ""
 
 #. Author of the theme
@@ -55,6 +51,10 @@ msgstr[1] ""
 #: template-parts/content.php:40
 #, php-format
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: inc/cpt.php:12
+msgid "Cărți"
 msgstr ""
 
 #. %s: Name of current post. Only visible to screen readers
@@ -108,7 +108,7 @@ msgstr ""
 msgid "Manual Digital EMI."
 msgstr ""
 
-#: inc/cpt.php:12 inc/cpt.php:16
+#: inc/cpt.php:16
 msgid "Manuale"
 msgstr ""
 
@@ -116,11 +116,11 @@ msgstr ""
 msgid "Mobile"
 msgstr ""
 
-#: inc/cpt.php:33
+#: inc/cpt.php:32
 msgid "Modul"
 msgstr ""
 
-#: inc/cpt.php:32 inc/cpt.php:36
+#: inc/cpt.php:31 inc/cpt.php:35
 msgid "Module"
 msgstr ""
 
@@ -171,15 +171,15 @@ msgstr ""
 
 #: inc/cpt.php:10
 msgctxt "Post Type General Name"
-msgid "Manuale"
+msgid "Cărți"
 msgstr ""
 
-#: inc/cpt.php:30
+#: inc/cpt.php:29
 msgctxt "Post Type General Name"
 msgid "Module"
 msgstr ""
 
-#: inc/cpt.php:50
+#: inc/cpt.php:48
 msgctxt "Post Type General Name"
 msgid "Teme"
 msgstr ""
@@ -189,12 +189,12 @@ msgctxt "Post Type Singular Name"
 msgid "Manual"
 msgstr ""
 
-#: inc/cpt.php:31
+#: inc/cpt.php:30
 msgctxt "Post Type Singular Name"
 msgid "Modul"
 msgstr ""
 
-#: inc/cpt.php:51
+#: inc/cpt.php:49
 msgctxt "Post Type Singular Name"
 msgid "Tema"
 msgstr ""
@@ -226,10 +226,6 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: archive-book.php:19
-msgid "Selectează un manual pentru a incepe"
-msgstr ""
-
 #: inc/theme-setup.php:114
 msgid "Sidebar"
 msgstr ""
@@ -246,11 +242,11 @@ msgstr ""
 msgid "Tagged %1$s"
 msgstr ""
 
-#: inc/cpt.php:53
+#: inc/cpt.php:51
 msgid "Tema"
 msgstr ""
 
-#: inc/cpt.php:52 inc/cpt.php:56
+#: inc/cpt.php:50 inc/cpt.php:54
 msgid "Teme"
 msgstr ""
 
