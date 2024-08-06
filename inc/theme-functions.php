@@ -52,3 +52,24 @@ function trim_to_max_words($string, $maxWords = 24) {
     
     return $trimmedString;
 }
+
+function highlight_books_menu_item($classes, $item, $args) {
+    // Ensure we are working with the primary menu
+    if ($args->theme_location == 'primary-menu') {
+        // Get the books archive URL
+        $books_archive_url = get_post_type_archive_link('book');
+        $books_archive_path = parse_url($books_archive_url, PHP_URL_PATH);
+
+        // Get the URL of the current menu item
+        $menu_item_url = $item->url;
+        $menu_item_path = parse_url($menu_item_url, PHP_URL_PATH);
+
+        // Check if the current path is a single book and matches the books archive path
+        if (is_singular('book') && $books_archive_path === $menu_item_path) {
+            $classes[] = 'current-menu-item';
+        }
+    }
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'highlight_books_menu_item', 10, 3);
+
