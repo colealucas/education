@@ -4,6 +4,9 @@
         <h1><?php the_title(); ?></h1>
         <div><?php the_content(); ?></div>
         <h2>Teme</h2>
+
+        <?php print_r(get_field('parent_book')[0]->ID ); ?>
+
         <ul>
             <?php
             $themes = new WP_Query(array(

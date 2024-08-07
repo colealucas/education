@@ -28,7 +28,7 @@
             ],
             "return_format": "object",
             "min": "",
-            "max": "",
+            "max": 1,
             "elements": [
                 "featured_image"
             ],
@@ -61,7 +61,7 @@
             ],
             "return_format": "object",
             "min": "",
-            "max": "",
+            "max": 1,
             "elements": [
                 "featured_image"
             ],
@@ -87,5 +87,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1722864713
+    "modified": 1722953318
 }

@@ -3,6 +3,7 @@
     <?php while (have_posts()) : the_post(); ?>
         <h1><?php the_title(); ?></h1>
         <div><?php the_content(); ?></div>
+
         <h2>Modul părinte</h2>
         <?php
         $parent_module = get_field('parent_module');
