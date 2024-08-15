@@ -51,6 +51,8 @@ function education_styles() {
 		true
 	);
 
+	wp_enqueue_script('sabina-script', get_template_directory_uri() . '/assets/js/sabina.min.js', array(), '', TRUE);
+
 	// if ( get_page_template_slug( get_the_ID() ) == 'page-templates/calculators.php' ) {
 	// 	wp_enqueue_script(
 	// 		'education-calculators-js',

@@ -29,15 +29,15 @@ gulp.task( 'scripts', async () => {
 });
 
 // build ajax post script
-// gulp.task( 'ajax-posts-scripts', async () => {
-//   return gulp.src( './src/js/ajax-posts.js' )
-//     .pipe( include() )
-//     .pipe( jshint() )
-//     .pipe( jshint.reporter( stylish ) )
-//     .pipe( uglify() )
-//     .pipe( rename( { suffix: '.min' } ) )
-//     .pipe( gulp.dest( './assets/js' ) );
-// });
+gulp.task( 'sabina-scripts', async () => {
+  return gulp.src( './src/js/sabina.js' )
+    .pipe( include() )
+    .pipe( jshint() )
+    .pipe( jshint.reporter( stylish ) )
+    .pipe( uglify() )
+    .pipe( rename( { suffix: '.min' } ) )
+    .pipe( gulp.dest( './assets/js' ) );
+});
 
 
 //sass options
@@ -67,10 +67,10 @@ gulp.task( 'watch', async () => {
 
   // watch app files
   // gulp.watch( [ './src/js/**/*.js', '!./assets/js/*.js' ], gulp.series( 'scripts', 'ajax-posts-scripts', 'calculators-script' ) );
-  gulp.watch( [ './src/js/**/*.js', '!./assets/js/*.js' ], gulp.series( 'scripts') );
+  gulp.watch( [ './src/js/**/*.js', '!./assets/js/*.js' ], gulp.series( 'scripts', 'sabina-scripts') );
   gulp.watch( './src/sass/**/*.scss', gulp.series( 'sass' ) );
 
 });
 
 // gulp.task('default', gulp.series('scripts', 'ajax-posts-scripts', 'calculators-script', 'sass', 'watch'));
-gulp.task('default', gulp.series('scripts', 'sass', 'watch'));
+gulp.task('default', gulp.series('scripts', 'sabina-scripts', 'sass', 'watch'));
