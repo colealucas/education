@@ -19,7 +19,7 @@ get_header();
 			<p><?php esc_html_e( 'It looks like nothing was found at this location.', 'education' ); ?></p>
 
 			<p class="mt-30px">
-				<a href="#" class="btn">Homepage</a>
+				<a href="<?php echo home_url(); ?>" class="btn">Homepage</a>
 			</p>
 		</div>
 	</section>
