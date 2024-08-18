@@ -67,6 +67,28 @@ img {
 	display: inline-block !important;
 }
 
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 12px 20px;
+	line-height: 1.4;
+	color: $white-color;
+	font-size: 16px;
+	font-weight: 600;
+	border-radius: 8px;
+	transition: all 0.2s ease-out;
+	background-color: $green-color;
+	border: 2px solid var(--Green, #00665E);
+	box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+
+	&:hover {
+		background-color: $white-color;
+		color: $green-color;
+		text-decoration: none;
+	}
+}
+
 embed,
 iframe,
 object {
