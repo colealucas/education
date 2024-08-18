@@ -1,0 +1,203 @@
+{
+    "key": "group_66c200bbba1c3",
+    "title": "Echipa",
+    "fields": [
+        {
+            "key": "field_66c2014c402d0",
+            "label": "Page title",
+            "name": "page_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Echipa",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66c202410dc27",
+            "label": "Add team members",
+            "name": "add_team_members",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add New Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_66c2025c0dc28",
+                    "label": "Title",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "Add tile",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_66c202410dc27"
+                },
+                {
+                    "key": "field_66c202940dc29",
+                    "label": "Team Members",
+                    "name": "team_members",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "row",
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "",
+                    "button_label": "Add New Team Memer",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_66c202aa0dc2a",
+                            "label": "Photo",
+                            "name": "photo",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "preview_size": "full",
+                            "parent_repeater": "field_66c202940dc29"
+                        },
+                        {
+                            "key": "field_66c202cd0dc2b",
+                            "label": "Name",
+                            "name": "name",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "Add name",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_66c202940dc29"
+                        },
+                        {
+                            "key": "field_66c202db0dc2c",
+                            "label": "Role",
+                            "name": "role",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "Add role",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_66c202940dc29"
+                        },
+                        {
+                            "key": "field_66c202e50dc2d",
+                            "label": "Bio",
+                            "name": "bio",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "rows": 3,
+                            "placeholder": "Add biography",
+                            "new_lines": "br",
+                            "parent_repeater": "field_66c202940dc29"
+                        }
+                    ],
+                    "parent_repeater": "field_66c202410dc27"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "page-templates\/team.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1723991925
+}
