@@ -16,6 +16,7 @@ module.exports = {
       'faded-gray': '#F5F5F5',
       'green': '#00665E',
       'dark-green': '#0C544F',
+      'light-green': '#E6F2EB',
     },
     fontFamily: {
       openSans: ['Open Sans', 'sans-serif'],
@@ -139,6 +140,7 @@ module.exports = {
       '16px': '16px',
       '20px': '20px',
       '24px': '24px',
+      '32px': '32px',
       '48px': '48px',
       '56px': '56px',
       '50': '50%',
