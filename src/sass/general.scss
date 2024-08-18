@@ -268,6 +268,7 @@ body.logged-in {
 		align-items: center;
 		padding: 0;
 		margin: 0;
+		flex-wrap: wrap;
 
 		li {
 			display: block;
@@ -276,7 +277,7 @@ body.logged-in {
 				font-size: 16px;
 				font-weight: 400;
 				display: inline-block;
-				padding: 4px 16px;
+				padding: 4px 14px;
 				line-height: 1.4;
 				color: $white-color;
 
