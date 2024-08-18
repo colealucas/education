@@ -6,12 +6,19 @@
 
  get_header();
 
- $romanian_alphabet = [
-    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'î', 'j', 'k', 'l', 'm', 
-    'n', 'o', 'p', 'q', 'r', 's', 'ș', 't', 'ț', 'u', 'v', 'w', 'x', 'y', 'z'
+ $letters = [
+    'ro' => [
+        'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'î', 'j', 'k', 'l', 'm', 
+        'n', 'o', 'p', 'q', 'r', 's', 'ș', 't', 'ț', 'u', 'v', 'w', 'x', 'y', 'z'
+    ],
+    'ru' => [
+        'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 
+        'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я'
+    ],
 ];
 
- ?>
+$curr_lang = get_current_language();
+?>
 
 <section class="team-section py-40px md:py-72px">
     <div class="container">
@@ -19,8 +26,8 @@
         
         <div class="mt-24px">
             <div class="voc flex justify-between bg-faded-white rounded-8px w-full">
-                <?php if(is_array($romanian_alphabet)) : $i=0; ?>
-                    <?php foreach($romanian_alphabet as $letter) : $i++; ?>
+                <?php if(is_array($letters[$curr_lang])) : $i=0; ?>
+                    <?php foreach($letters[$curr_lang] as $letter) : $i++; ?>
                         <a class="text-16px text-dark leading-1 uppercase voc-letter block relative py-8px" href="#" data-voc-letter="<?php echo trim($letter); ?>" data-voc-filter-link><?php echo $letter; ?></a>
                     <?php endforeach; ?>
                 <?php endif; ?>

@@ -73,3 +73,9 @@ function highlight_books_menu_item($classes, $item, $args) {
 }
 add_filter('nav_menu_css_class', 'highlight_books_menu_item', 10, 3);
 
+function get_current_language() {
+    $locale = get_locale();
+    $language_code = substr($locale, 0, 2);
+
+    return $language_code;
+}
