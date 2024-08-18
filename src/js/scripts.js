@@ -20,4 +20,31 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     handleToggleActive();
+
+    function handleNotions() {
+        const notionHeaders = document.querySelectorAll('[data-notion-title]');
+    
+        notionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const notionBody = header.nextElementSibling;
+                const parent = header.parentNode;
+
+                parent.classList.toggle('open');
+    
+                if (header.classList.contains('open')) {
+                    // Close the accordion
+                    notionBody.style.display = 'none';
+                    header.classList.remove('open');
+                } else {
+                    // Open the accordion
+                    notionBody.style.display = 'block';
+                    header.classList.add('open');
+                }
+            });
+        });
+    }
+    
+    // Call the function to attach the event listeners
+    handleNotions();
+    
 });
