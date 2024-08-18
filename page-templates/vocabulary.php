@@ -25,10 +25,10 @@ $curr_lang = get_current_language();
         <h1 class="text-36px md:text-48px text-center font-700"><span><?php echo get_field('page_title'); ?></span></h1>
         
         <div class="mt-24px">
-            <div class="voc flex justify-between bg-faded-white rounded-8px w-full">
+            <div class="voc flex flex-wrap lg:flex-nowrap gap-4px lg:gap-0 justify-between bg-faded-white rounded-8px w-full">
                 <?php if(is_array($letters[$curr_lang])) : $i=0; ?>
                     <?php foreach($letters[$curr_lang] as $letter) : $i++; ?>
-                        <a class="text-16px text-dark leading-1 uppercase voc-letter block relative py-8px" href="#" data-voc-letter="<?php echo trim($letter); ?>" data-voc-filter-link><?php echo $letter; ?></a>
+                        <a class="text-16px text-dark bg-light-gray lg:bg-transparent leading-1 uppercase voc-letter block relative py-8px w-[32px] lg:w-auto" href="#" data-voc-letter="<?php echo trim($letter); ?>" data-voc-filter-link><?php echo $letter; ?></a>
                     <?php endforeach; ?>
                 <?php endif; ?>
             </div>
@@ -43,7 +43,7 @@ $curr_lang = get_current_language();
                         $description = get_sub_field('description');
                     ?>
                         
-                        <div class="col-md-4" data-notion-box data-filter-letter="<?php echo $letter; ?>">
+                        <div class="col-md-6 col-lg-4" data-notion-box data-filter-letter="<?php echo $letter; ?>">
                             <div class="notion-box bg-faded-white rounded-16px mb-16px pb-16px">
                                 <div class="notion-title text-16px cursor-pointer select-none flex justify-between p-24px pb-8px" data-notion-title>
                                     <?php echo $notion; ?>

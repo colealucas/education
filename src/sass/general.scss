@@ -539,7 +539,6 @@ body.logged-in {
 }
 
 .notion-box {
-
 	.notion-icon {
 		width: 20px;
 		height: 20px;
@@ -621,6 +620,12 @@ body.logged-in {
 	}
 }
 
+// tailwind lg min width 1024px
+@media (max-width: 1023px) {
+	.voc a:before {
+		display: none;
+	}
+}
 @media (max-width: 991px) {
 	.footer-menu-wrap  ul li{
 		width: 100%;
