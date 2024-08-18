@@ -2,6 +2,7 @@
 $gray-color: #808285;
 $light-gray-color: #F3F4F7;
 $faded-gray-color: #F5F5F5;
+$medium-gray-color: #D9D9D9;
 $dark-color: #171412;
 $green-color: #0C544F;
 $white-color: #fff;
@@ -506,6 +507,97 @@ body.logged-in {
 // 	}
 // }
 
+.voc {
+	a {
+		text-align: center;
+		flex-grow: 1;
+
+		&.active {
+			font-weight: 700;
+			color: $green-color;
+		}
+
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 50%;
+			right: 0;
+			margin-right: -1px;
+			width: 2px;
+			height: 20px;
+			background-color: $medium-gray-color;
+			transform: translateY(-50%);
+		}	
+
+		&:last-child {
+			&:before {
+				display: none;
+			}
+		}
+	}
+}
+
+.notion-box {
+	.notion-icon {
+		width: 20px;
+		height: 20px;
+		position: relative;
+
+		& > span svg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 20px;
+			height: 20px;
+			transition: all 0.2s ease-out;
+		}
+	}
+
+	&.open {
+		.plus {
+			opacity: 0;
+		}
+
+		.minus {
+			opacity: 1;
+		}
+
+		.notion-title {
+			color: $green-color;
+			font-weight: 600;
+		}
+	}
+}
+
+.content-links {
+	a {
+		color: $green-color;
+		font-weight: 600;
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.content-list {
+	ul {
+		list-style: disc;
+		padding-left: 25px;
+	}
+}
+
+.content-spacing {
+	p,h1,h2.h3,h4,h5,h6, ul, ol, table, iframe {
+		margin-bottom: 25px;
+	}
+
+	*:last-child { 
+		margin-bottom: 0!important;
+	}
+}
 
 .zdx{}
 
@@ -528,6 +620,12 @@ body.logged-in {
 	}
 }
 
+// tailwind lg min width 1024px
+@media (max-width: 1023px) {
+	.voc a:before {
+		display: none;
+	}
+}
 @media (max-width: 991px) {
 	.footer-menu-wrap  ul li{
 		width: 100%;
