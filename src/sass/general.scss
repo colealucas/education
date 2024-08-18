@@ -571,6 +571,35 @@ body.logged-in {
 	}
 }
 
+.content-links {
+	a {
+		color: $green-color;
+		font-weight: 600;
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.content-list {
+	ul {
+		list-style: disc;
+		padding-left: 25px;
+	}
+}
+
+.content-spacing {
+	p,h1,h2.h3,h4,h5,h6, ul, ol, table, iframe {
+		margin-bottom: 25px;
+	}
+
+	*:last-child { 
+		margin-bottom: 0!important;
+	}
+}
+
 .zdx{}
 
 
