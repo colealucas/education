@@ -54,43 +54,50 @@ $get_static_text = [
             <div class="book-modules">
                 <div class="row">
                     <?php
-                    $modules = new WP_Query(array(
-                        'post_type' => 'module',
-                        'post_status' => 'publish',
-                        'meta_query' => array(
-                            array(
-                                'key' => 'parent_book',
-                                'value' => '"' . get_the_ID() . '"',
-                                'compare' => 'LIKE'
+                        $modules = new WP_Query(array(
+                            'post_type' => 'module',
+                            'post_status' => 'publish',
+                            'meta_query' => array(
+                                array(
+                                    'key' => 'parent_book',
+                                    'value' => '"' . get_the_ID() . '"',
+                                    'compare' => 'LIKE'
+                                ),
                             ),
-                        ),
-                        'orderby' => 'id',
-                        'order' => 'ASC'
-                    ));
-
-                    while ($modules->have_posts()) : $modules->the_post();
+                            'orderby' => 'id',
+                            'order' => 'ASC'
+                        ));
                     ?>
 
-                        <div class="col-lg-3 col-md-6">
-                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                        </div>
+                    <?php if ( $modules->have_posts() ) : ?>
+                        <?php while ($modules->have_posts()) : $modules->the_post(); ?>
+
+                            <div class="col-lg-3 col-md-6">
+                                <a href="<?php the_permalink(); ?>" class="block p-24px bg-faded-white hover:bg-green hover:text-white mb-20px rounded-24px">
+                                    <h3 class="text-28px font-500 leading-110 mb-24px min-h-[62px]"><?php the_title(); ?></h3>
+
+                                    <?php if ( has_post_thumbnail() ) : $thumbnail_url = get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>
+                                        <div class="post-thumbnail">
+                                            <img src="<?php echo $thumbnail_url; ?>" alt="">
+                                        </div>
+                                    <?php endif; ?>
+                                </a>
+                            </div>
                         
-                    <?php
-                    endwhile;
-                    wp_reset_postdata();
-                    ?>
+                        <?php
+                        endwhile;
+                        wp_reset_postdata();
+                        ?>
+                    <?php else : ?>
+
+                        <div class="col-md-12">
+                            <strong><?php _e('No modules found', 'education'); ?>.</strong>
+                        </div>    
+
+                    <?php endif; ?>    
                 </div>
             </div>
         <?php endwhile; ?>
-        
-        <div class="book-modules">
-            <div class="row">
-                <div class="col-lg-3 col-md-6">ss</div>
-                <div class="col-lg-3 col-md-6">ss</div>
-                <div class="col-lg-3 col-md-6">ss</div>
-                <div class="col-lg-3 col-md-6">ss</div>
-            </div>
-        </div>
     </div>
 </div>
 
