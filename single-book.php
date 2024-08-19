@@ -17,26 +17,26 @@ $get_static_text = [
 ];
 ?>
 
-<div class="section py-48px bg-faded-gray rounded-48px mx-8px mt-16px manual-intro-section">
+<div class="section py-40px md:py-48px bg-faded-gray rounded-48px mx-8px mt-16px manual-intro-section">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-lg-6">
                 <div class="max-w-[590px]">
-                    <h1 class="text-87px font-700 leading-110"><?php echo get_field('book_title'); ?></h1>
+                    <h1 class="text-36px sm:text-50px lg:text-87px font-700 leading-110"><?php echo get_field('book_title'); ?></h1>
 
                     <div class="my-16px text-16px">
                         <?php echo get_field('book_short_description'); ?>
                     </div>
 
-                    <div>
+                    <div class="mb-32px">
                         <a href="#modules" class="btn"><?php echo $get_static_text[get_lang()]['explore_modules']; ?></a>
                     </div>
                 </div> 
             </div>
-            <div class="col-md-6">
-                <div class="manual-cover md:text-right">
+            <div class="col-lg-6">
+                <div class="manual-cover lg:text-right">
                     <?php if ( get_field('book_cover_image') ) : ?>
-                        <img class="max-w-[467px] inline-block" src="<?php echo get_field('book_cover_image'); ?>" alt="">
+                        <img class="max-w-[467px] w-100% inline-block" src="<?php echo get_field('book_cover_image'); ?>" alt="">
                     <?php endif; ?>
                 </div>
             </div>
@@ -44,7 +44,7 @@ $get_static_text = [
     </div>
 </div>
 
-<div id="modules" class="section py-48px md:py-72px bg-white">
+<div id="modules" class="section py-40px md:py-72px bg-white">
     <div class="container">
         <div class="mb-32px">
             <h2 class="text-32px md:text-56px font-700"><?php echo $get_static_text[get_lang()]['modules']; ?></h2>
@@ -73,8 +73,8 @@ $get_static_text = [
                         <?php while ($modules->have_posts()) : $modules->the_post(); ?>
 
                             <div class="col-lg-3 col-md-6">
-                                <a href="<?php the_permalink(); ?>" class="block p-24px bg-faded-white hover:bg-green hover:text-white mb-20px rounded-24px">
-                                    <h3 class="text-28px font-500 leading-110 mb-24px min-h-[62px]"><?php the_title(); ?></h3>
+                                <a href="<?php the_permalink(); ?>" class="block p-24px bg-faded-white hover:bg-green hover:text-white font-500 hover:font-700 mb-20px rounded-24px">
+                                    <h3 class="text-28px leading-110 mb-24px min-h-[62px]"><?php the_title(); ?></h3>
 
                                     <?php if ( has_post_thumbnail() ) : $thumbnail_url = get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>
                                         <div class="post-thumbnail">
