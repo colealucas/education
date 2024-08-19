@@ -623,6 +623,35 @@ body.logged-in {
 	}
 }
 
+.logo-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 100px; /* Adjust height to fit your logos */
+}
+
+.logo-strip {
+    width: 200%; /* Width should be twice the container width */
+    height: 100%;
+    background-image: url('../images/logos.svg'); /* Replace with your logos sprite or repeating logos image */
+    background-repeat: repeat-x;
+    background-size: contain; /* Ensure logos are scaled properly */
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
 .zdx{}
 
 
