@@ -4,8 +4,7 @@
  */
 
  get_header();
- ?>
-
+?>
 
 <div class="section py-64px pb-35px">
     <div class="container">

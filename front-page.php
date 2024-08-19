@@ -18,20 +18,14 @@
             <?php echo get_field('intro_subtitle'); ?>
         </div>
 
-        <?php
-        $args = array(
-            'post_type'      => 'book', // Custom post type slug
-            'posts_per_page' => -1,     // Retrieve all posts
-            'post_status'    => 'publish'
-        );
+        <?php $books = get_field('book'); if ($books) :  ?>
 
-        $query = new WP_Query($args);
-
-        if ($query->have_posts()) : ?>
-        
             <div class="books-grid-wrap mt-48px">
                 <div class="row">
-                    <?php while ($query->have_posts()) : $query->the_post(); ?>
+                    <?php foreach($books as $post) :
+                        setup_postdata($post);
+                    ?>
+
                         <div class="col-md-6 col-lg-4">
                             <div class="book-wrap rounded-56px p-36px pb-0 bg-light-gray mx-auto mb-36px lg:mb-0 max-w-[415px] md:max-w-auto overflow-hidden">
                                 <h2 class="text-28px md:text-40px font-600 min-h-[110px]">
@@ -50,14 +44,13 @@
                                 </div>
                             </div>
                         </div>
-                    <?php endwhile; ?>
+
+                    <?php endforeach; ?>
                 </div>
             </div>
 
-        <?php 
-        wp_reset_postdata();
-        endif;
-        ?>
+        <?php wp_reset_postdata(); ?>
+        <?php endif; ?>
     </div>
 </div>
 
