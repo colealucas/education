@@ -1,6 +1,6 @@
 {
     "key": "group_66b221797b7d8",
-    "title": "Prezentare Manual",
+    "title": "Book Settings",
     "fields": [
         {
             "key": "field_66b2218d132e7",
@@ -86,5 +86,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1722950789
+    "modified": 1724099710
 }

@@ -79,3 +79,10 @@ function get_current_language() {
 
     return $language_code;
 }
+
+function get_lang() {
+    $locale = get_locale();
+    $language_code = substr($locale, 0, 2);
+
+    return $language_code;
+}

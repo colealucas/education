@@ -3,7 +3,18 @@
  * Single book template
  */
 
-get_header(); 
+get_header();
+
+$get_static_text = [
+    'ro' => [
+        'modules' => 'Module',
+        'explore_modules' => 'Explorează Modulele',
+    ],
+    'ru' => [
+        'modules' => 'Модули',
+        'explore_modules' => 'Исследуйте Модули',
+    ]
+];
 ?>
 
 <div class="section py-48px bg-faded-gray rounded-48px mx-8px mt-16px manual-intro-section">
@@ -15,6 +26,10 @@ get_header();
 
                     <div class="my-16px text-16px">
                         <?php echo get_field('book_short_description'); ?>
+                    </div>
+
+                    <div>
+                        <a href="#modules" class="btn"><?php echo $get_static_text[get_lang()]['explore_modules']; ?></a>
                     </div>
                 </div> 
             </div>
@@ -29,10 +44,10 @@ get_header();
     </div>
 </div>
 
-<div class="section py-48px md:py-72px bg-white">
+<div id="modules" class="section py-48px md:py-72px bg-white">
     <div class="container">
         <div class="mb-32px">
-            <h2 class="text-32px md:text-56px font-700">Module</h2>
+            <h2 class="text-32px md:text-56px font-700"><?php echo $get_static_text[get_lang()]['modules']; ?></h2>
         </div>
 
         <?php while (have_posts()) : the_post(); ?>

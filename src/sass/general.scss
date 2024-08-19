@@ -82,7 +82,8 @@ img {
 	border: 2px solid var(--Green, #00665E);
 	box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
 
-	&:hover {
+	&:hover,
+	&:focus {
 		background-color: $white-color;
 		color: $green-color;
 		text-decoration: none;

@@ -1,4 +1,69 @@
 document.addEventListener("DOMContentLoaded", function() {
+
+    function animateScrollToAnchors() {
+		if (window.location.hash) {
+			// Prevent default browser behavior
+			window.scrollTo(0, 0);
+
+			setTimeout(function() {
+				// Get the hash value
+				var hash = window.location.hash.substring(1);
+				// Find the element by ID
+				var targetElement = document.getElementById(hash);
+	
+				if (targetElement) {
+					// Calculate the offset (header height)
+					//var headerOffset = document.querySelector('#site-header').offsetHeight; // Adjust this selector as needed
+					var headerOffset = 80; // Adjust this selector as needed
+	
+					// Get the position of the target element
+					var elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+	
+					// Calculate the position considering the offset
+					var offsetPosition = elementPosition - headerOffset;
+	
+					// Smooth scroll to the target position
+					window.scrollTo({
+						top: offsetPosition,
+						behavior: 'smooth'
+					});
+				}
+			}, 0);
+		}
+	}
+
+	animateScrollToAnchors();
+
+    function handleSmothScroll() {
+        if ( document.querySelectorAll('a[href^="#"]').length ) {
+            // Set the header offset
+            const headerOffset = 80;
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+        
+                    // Get the target element by its ID
+                    const target = document.querySelector(this.getAttribute('href'));
+        
+                    if (target) {
+                        // Get the position of the target element minus the header offset
+                        const elementPosition = target.getBoundingClientRect().top + window.scrollY;
+                        const offsetPosition = elementPosition - headerOffset;
+        
+                        // Smoothly scroll to the calculated position
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+    }
+
+    handleSmothScroll();
+
     function handleToggleActive() {
         const toggles = document.querySelectorAll('[data-toggle-active]');
 
@@ -96,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                     item.classList.toggle('active');
                     trifferNotionsFilter();
-                }
+                };
             });
         }
     }
