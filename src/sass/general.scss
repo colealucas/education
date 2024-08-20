@@ -651,6 +651,21 @@ body.logged-in {
     }
 }
 
+// helpers
+.text-content-spacing {
+	p,h1,h2.h3,h4,h5,h6, ul, ol, table, iframe {
+		margin-bottom: 25px;
+	}
+
+	& > *:first-child {
+		margin-top: 0!important;
+	}
+
+	& > *:last-child { 
+		margin-bottom: 0!important;
+	}
+}
+
 
 .zdx{}
 
