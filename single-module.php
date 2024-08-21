@@ -107,7 +107,7 @@ $themes_count = $all_themes->found_posts;
                             ),
                         ),
                         'orderby' => 'id',
-                        'order' => 'DESC'
+                        'order' => 'ASC'
                     ));
                 ?>
 

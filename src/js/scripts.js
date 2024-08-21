@@ -35,11 +35,13 @@ document.addEventListener("DOMContentLoaded", function() {
 	animateScrollToAnchors();
 
     function handleSmothScroll() {
-        if ( document.querySelectorAll('a[href^="#"]').length ) {
+        const s = document.querySelectorAll('a[href^="#"]:not([href="#"]):not(.ignore)');
+
+        if ( s.length ) {
             // Set the header offset
             const headerOffset = 80;
 
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            s.forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
         
