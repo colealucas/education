@@ -88,6 +88,10 @@ img {
 		color: $green-color;
 		text-decoration: none;
 	}
+
+	& > svg {
+		margin-left: 15px;
+	}
 }
 
 embed,

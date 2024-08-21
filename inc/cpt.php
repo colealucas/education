@@ -54,7 +54,8 @@ function create_theme_cpt() {
     );
     $args = array(
         'label' => __('Teme', 'education'),
-        'supports' => array('title', 'editor', 'custom-fields', 'thumbnail'),
+        // 'supports' => array('title', 'editor', 'custom-fields', 'thumbnail'),
+        'supports' => array('title', 'editor', 'custom-fields'),
         'public' => true,
         'has_archive' => true,
         'rewrite' => array('slug' => 'themes'),

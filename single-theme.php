@@ -1,4 +1,21 @@
-<?php get_header(); ?>
+<?php get_header(); 
+/**
+ * Single Theme Template
+ * 
+ */
+
+$get_static_text = [
+    'ro' => [
+        'subjects' => 'Subiecte',
+        'go_back' => 'Inapoi la Module',
+    ],
+    'ru' => [
+        'subjects' => 'Предметы',
+        'go_back' => 'Назад к модулям',
+    ]
+];
+?>
+
 <div class="theme-content">
     <?php while (have_posts()) : the_post(); ?>
         <h1><?php the_title(); ?></h1>
@@ -21,4 +38,5 @@
         <?php endif; ?>
     <?php endwhile; ?>
 </div>
+
 <?php get_footer(); ?>
