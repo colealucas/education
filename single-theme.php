@@ -10,7 +10,7 @@ $get_static_text = [
         'go_back' => 'Inapoi la Teme',
         'concepts' => 'Concepte Cheie',
         'share_experience' => 'Știu deja și împărtășesc altora experiența mea',
-        'am_curious' => 'Sunt curios/ curioasă să aflu mai mult',
+        'am_curious' => 'Sunt curios/curioasă să aflu mai mult',
         'am_cult' => 'Vorbesc cult',
         'am_responsable' => 'Consum și creez produse media cu responsabilitate',
         'am_begining' => 'Aventura mea media continuă',
@@ -30,42 +30,213 @@ $get_static_text = [
 ];
 ?>
 
-<!-- Fancybox popup content -->
-<div style="display: none;" id="my-popup" class="w-[833px] p-24px rounded-24px">
+<!-- Key concepts -->
+<div style="display: none;" id="key-concepts" class="w-[833px] p-24px rounded-24px">
     <div class="concept-bar mt-30px bg-green p-16px rounded-16px text-white text-24px font-500 leading-120">
         <?php echo $get_static_text[get_lang()]['concepts']; ?>
     </div>
 
     <div class="mt-16px">
-    
+        <?php if( have_rows('key_concepts') ) : ?>
+            <div class="flex gap-12px flex-nowrap">
+                <?php 
+                $counter = 0;
+                while( have_rows('key_concepts') ): the_row(); 
+                    $concept = get_sub_field('concept');
 
-    <?php if( have_rows('key_concepts') ) : ?>
-        <div class="flex gap-12px flex-nowrap">
-            <?php 
-            $counter = 0;
-            while( have_rows('key_concepts') ): the_row(); 
-                $concept = get_sub_field('concept');
-
-                // Start a new <ol> for every two items
-                if ($counter % 2 == 0) {
-                    if ($counter > 0) {
-                        echo '</ol>'; // Close the previous <ol> if it's not the first one
+                    // Start a new <ol> for every two items
+                    if ($counter % 2 == 0) {
+                        if ($counter > 0) {
+                            echo '</ol>'; // Close the previous <ol> if it's not the first one
+                        }
+                        echo '<ol class="key_concepts p-0 pl-25px m-0 w-[calc(33%-12px)] text-16px" start="' . ($counter + 1) . '">';
                     }
-                    echo '<ol class="key_concepts p-0 pl-25px m-0 w-[calc(33%-12px)] text-16px" start="' . ($counter + 1) . '">';
-                }
-            ?>
-                <li class="list-decimal">
-                    <?php echo acf_esc_html($concept); ?>
-                </li>
-            <?php 
-                $counter++;
-            endwhile; 
-            echo '</ol>';
-            ?>
-        </div>
-    <?php endif; ?>
-
+                ?>
+                    <li class="list-decimal">
+                        <?php echo acf_esc_html($concept); ?>
+                    </li>
+                <?php 
+                    $counter++;
+                endwhile; 
+                echo '</ol>';
+                ?>
+            </div>
+        <?php endif; ?>
     </div>
+</div>
+
+<!-- Share experience -->
+<div style="display: none;" id="share-experience" class="w-[833px] p-24px rounded-24px">
+    <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-light-green p-16px py-20px rounded-16px text-green text-24px font-500 leading-120">
+        <div>
+            <?php echo $get_static_text[get_lang()]['share_experience']; ?>
+        </div>
+
+        <div>
+            <span id="print-button" class="inline-block cursor-pointer">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="20" fill="#00665E"/>
+                    <path d="M14 17V10H26V17M14 26H12C11.4696 26 10.9609 25.7893 10.5858 25.4142C10.2107 25.0391 10 24.5304 10 24V19C10 18.4696 10.2107 17.9609 10.5858 17.5858C10.9609 17.2107 11.4696 17 12 17H28C28.5304 17 29.0391 17.2107 29.4142 17.5858C29.7893 17.9609 30 18.4696 30 19V24C30 24.5304 29.7893 25.0391 29.4142 25.4142C29.0391 25.7893 28.5304 26 28 26H26M14 22H26V30H14V22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+        </div>
+    </div>
+
+    <div class="mt-16px text-content leading-150 phase-content">
+        <?php echo get_field('share_experience_content'); ?>
+    </div>
+
+    <div class="mt-24px interactive-task-trigger">
+        <img src="<?php echo get_template_directory_uri() . '/assets/images/sarcina.png'; ?>" alt="">
+    </div>
+
+    <!-- spacer from the bottom of the popup -->
+    <div class="h-30px"></div>
+</div>
+
+<!-- am_curious -->
+<div style="display: none;" id="am-curious" class="w-[833px] p-24px rounded-24px">
+    <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-light-green p-16px py-20px rounded-16px text-green text-24px font-500 leading-120">
+        <div>
+            <?php echo $get_static_text[get_lang()]['am_curious']; ?>
+        </div>
+
+        <div>
+            <span id="print-button" class="inline-block cursor-pointer">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="20" fill="#00665E"/>
+                    <path d="M14 17V10H26V17M14 26H12C11.4696 26 10.9609 25.7893 10.5858 25.4142C10.2107 25.0391 10 24.5304 10 24V19C10 18.4696 10.2107 17.9609 10.5858 17.5858C10.9609 17.2107 11.4696 17 12 17H28C28.5304 17 29.0391 17.2107 29.4142 17.5858C29.7893 17.9609 30 18.4696 30 19V24C30 24.5304 29.7893 25.0391 29.4142 25.4142C29.0391 25.7893 28.5304 26 28 26H26M14 22H26V30H14V22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+        </div>
+    </div>
+
+    <div class="mt-16px text-content leading-150 phase-content">
+        <?php echo get_field('curious_content'); ?>
+    </div>
+
+    <div class="mt-24px interactive-task-trigger">
+        <img src="<?php echo get_template_directory_uri() . '/assets/images/sarcina.png'; ?>" alt="">
+    </div>
+
+    <!-- spacer from the bottom of the popup -->
+    <div class="h-30px"></div>
+</div>
+
+<!-- am_cult -->
+<div style="display: none;" id="am-cult" class="w-[833px] p-24px rounded-24px">
+    <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-light-green p-16px py-20px rounded-16px text-green text-24px font-500 leading-120">
+        <div>
+            <?php echo $get_static_text[get_lang()]['am_cult']; ?>
+        </div>
+
+        <div>
+            <span id="print-button" class="inline-block cursor-pointer">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="20" fill="#00665E"/>
+                    <path d="M14 17V10H26V17M14 26H12C11.4696 26 10.9609 25.7893 10.5858 25.4142C10.2107 25.0391 10 24.5304 10 24V19C10 18.4696 10.2107 17.9609 10.5858 17.5858C10.9609 17.2107 11.4696 17 12 17H28C28.5304 17 29.0391 17.2107 29.4142 17.5858C29.7893 17.9609 30 18.4696 30 19V24C30 24.5304 29.7893 25.0391 29.4142 25.4142C29.0391 25.7893 28.5304 26 28 26H26M14 22H26V30H14V22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+        </div>
+    </div>
+
+    <div class="mt-16px text-content leading-150 phase-content">
+        <?php echo get_field('culture_content'); ?>
+    </div>
+
+    <div class="mt-24px interactive-task-trigger">
+        <img src="<?php echo get_template_directory_uri() . '/assets/images/sarcina.png'; ?>" alt="">
+    </div>
+
+    <!-- spacer from the bottom of the popup -->
+    <div class="h-30px"></div>
+</div>
+
+<!-- am_responsable -->
+<div style="display: none;" id="am-responsable" class="w-[833px] p-24px rounded-24px">
+    <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-light-green p-16px py-20px rounded-16px text-green text-24px font-500 leading-120">
+        <div>
+            <?php echo $get_static_text[get_lang()]['am_responsable']; ?>
+        </div>
+
+        <div>
+            <span id="print-button" class="inline-block cursor-pointer">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="20" fill="#00665E"/>
+                    <path d="M14 17V10H26V17M14 26H12C11.4696 26 10.9609 25.7893 10.5858 25.4142C10.2107 25.0391 10 24.5304 10 24V19C10 18.4696 10.2107 17.9609 10.5858 17.5858C10.9609 17.2107 11.4696 17 12 17H28C28.5304 17 29.0391 17.2107 29.4142 17.5858C29.7893 17.9609 30 18.4696 30 19V24C30 24.5304 29.7893 25.0391 29.4142 25.4142C29.0391 25.7893 28.5304 26 28 26H26M14 22H26V30H14V22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+        </div>
+    </div>
+
+    <div class="mt-16px text-content leading-150 phase-content">
+        <?php echo get_field('responsable_content'); ?>
+    </div>
+
+    <div class="mt-24px interactive-task-trigger">
+        <img src="<?php echo get_template_directory_uri() . '/assets/images/sarcina.png'; ?>" alt="">
+    </div>
+
+    <!-- spacer from the bottom of the popup -->
+    <div class="h-30px"></div>
+</div>
+
+<!-- am_begining -->
+<div style="display: none;" id="am-begining" class="w-[833px] p-24px rounded-24px">
+    <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-light-green p-16px py-20px rounded-16px text-green text-24px font-500 leading-120">
+        <div>
+            <?php echo $get_static_text[get_lang()]['am_begining']; ?>
+        </div>
+
+        <div>
+            <span id="print-button" class="inline-block cursor-pointer">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="20" fill="#00665E"/>
+                    <path d="M14 17V10H26V17M14 26H12C11.4696 26 10.9609 25.7893 10.5858 25.4142C10.2107 25.0391 10 24.5304 10 24V19C10 18.4696 10.2107 17.9609 10.5858 17.5858C10.9609 17.2107 11.4696 17 12 17H28C28.5304 17 29.0391 17.2107 29.4142 17.5858C29.7893 17.9609 30 18.4696 30 19V24C30 24.5304 29.7893 25.0391 29.4142 25.4142C29.0391 25.7893 28.5304 26 28 26H26M14 22H26V30H14V22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+        </div>
+    </div>
+
+    <div class="mt-16px text-content leading-150 phase-content">
+        <?php echo get_field('media_content'); ?>
+    </div>
+
+    <div class="mt-24px interactive-task-trigger">
+        <img src="<?php echo get_template_directory_uri() . '/assets/images/sarcina.png'; ?>" alt="">
+    </div>
+
+    <!-- spacer from the bottom of the popup -->
+    <div class="h-30px"></div>
+</div>
+
+<!-- curiosities -->
+<div style="display: none;" id="curiosities" class="w-[833px] p-24px rounded-24px">
+    <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-light-green p-16px py-20px rounded-16px text-green text-24px font-500 leading-120">
+        <div>
+            <?php echo $get_static_text[get_lang()]['curiosities']; ?>
+        </div>
+
+        <div>
+            <span id="print-button" class="inline-block cursor-pointer">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="20" fill="#00665E"/>
+                    <path d="M14 17V10H26V17M14 26H12C11.4696 26 10.9609 25.7893 10.5858 25.4142C10.2107 25.0391 10 24.5304 10 24V19C10 18.4696 10.2107 17.9609 10.5858 17.5858C10.9609 17.2107 11.4696 17 12 17H28C28.5304 17 29.0391 17.2107 29.4142 17.5858C29.7893 17.9609 30 18.4696 30 19V24C30 24.5304 29.7893 25.0391 29.4142 25.4142C29.0391 25.7893 28.5304 26 28 26H26M14 22H26V30H14V22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+        </div>
+    </div>
+
+    <div class="mt-16px text-content leading-150 phase-content">
+        <?php echo get_field('curiosities_content'); ?>
+    </div>
+
+    <div class="mt-24px interactive-task-trigger">
+        <img src="<?php echo get_template_directory_uri() . '/assets/images/sarcina.png'; ?>" alt="">
+    </div>
+
+    <!-- spacer from the bottom of the popup -->
+    <div class="h-30px"></div>
 </div>
 
 
@@ -99,7 +270,7 @@ $get_static_text = [
                     <div class="col-lg-6">
                         <div class="keey-concepts">
                             <div class="flex justify-end">
-                                <a data-fancybox data-src="#my-popup" href="javascript:;" class="inline-flex items-center gap-8px text-green text-14px rounded-24px bg-light-green hover:bg-white px-10px py-6px leading-1">
+                                <a data-fancybox data-src="#key-concepts" href="javascript:;" class="inline-flex items-center gap-8px text-green text-14px rounded-24px bg-light-green hover:bg-white px-10px py-6px leading-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                         <path d="M10 13.3333V10M10 6.66667H10.0084M18.3334 10C18.3334 14.6024 14.6024 18.3333 10 18.3333C5.39765 18.3333 1.66669 14.6024 1.66669 10C1.66669 5.39763 5.39765 1.66667 10 1.66667C14.6024 1.66667 18.3334 5.39763 18.3334 10Z" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
@@ -120,7 +291,7 @@ $get_static_text = [
     <div class="container">
         <div class="parts flex flex-wrap gap-20px">
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
-                <a href="#" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
+                <a href="javascript:;" data-fancybox data-src="#share-experience" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
                     <span class="step-icon flex items-center justify-center size-[74px] rounded-50 bg-medium-green">
                         <svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="none">
                             <path d="M38.5703 0.352024C38.4816 0.227077 38.358 0.13114 38.215 0.0762815C38.0719 0.021423 37.9158 0.0100936 37.7664 0.0437186C37.6169 0.0773436 37.4807 0.154421 37.375 0.265254C37.2692 0.376088 37.1986 0.515726 37.172 0.666603C37.1454 0.81748 37.164 0.972856 37.2254 1.11318C37.2869 1.25351 37.3885 1.37252 37.5175 1.45525C37.6464 1.53797 37.797 1.58072 37.9501 1.5781C38.1033 1.57548 38.2523 1.52762 38.3784 1.44054C38.463 1.38209 38.5351 1.30743 38.5906 1.22089C38.6461 1.13435 38.6839 1.03765 38.7018 0.936389C38.7196 0.835132 38.7172 0.731337 38.6946 0.631025C38.6721 0.530712 38.6298 0.435879 38.5703 0.352024Z" fill="#496F76"/>
@@ -142,7 +313,7 @@ $get_static_text = [
                 </a>
             </div>
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
-                <a href="#" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
+                <a href="javascript:;" data-fancybox data-src="#am-curious" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
                     <span class="step-icon flex items-center justify-center size-[74px] rounded-50 bg-medium-green">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <path d="M24.1643 14.8106C24.0101 14.8106 23.8594 14.8564 23.7311 14.942C23.6029 15.0277 23.503 15.1495 23.444 15.2919C23.385 15.4344 23.3695 15.5912 23.3996 15.7424C23.4297 15.8937 23.504 16.0326 23.613 16.1416C23.7221 16.2507 23.861 16.3249 24.0122 16.355C24.1635 16.3851 24.3202 16.3696 24.4627 16.3106C24.6051 16.2516 24.7269 16.1517 24.8126 16.0235C24.8983 15.8953 24.944 15.7445 24.944 15.5903C24.944 15.3835 24.8618 15.1852 24.7156 15.039C24.5694 14.8928 24.3711 14.8106 24.1643 14.8106Z" fill="#00665E"/>
@@ -156,7 +327,7 @@ $get_static_text = [
                 </a>
             </div>
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
-                <a href="#" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
+                <a href="javascript:;" data-fancybox data-src="#am-cult" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
                     <span class="step-icon flex items-center justify-center size-[74px] rounded-50 bg-medium-green">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <path d="M14.9293 4.87848H38.5265C39.0651 4.87848 39.5021 5.31549 39.5021 5.85408V21.6295C39.5021 22.1685 39.0651 22.6055 38.5265 22.6055H35.8567V30.1141C35.8567 31.0708 34.6222 31.445 34.0812 30.6735L27.6522 22.6055H26.0464V25.6632C26.0464 26.2018 25.6098 26.6388 25.0708 26.6388H12.3478L5.91882 34.7072C5.37787 35.4787 4.14384 35.1045 4.14384 34.1478V26.6388H1.47358C0.934997 26.6388 0.497986 26.2018 0.497986 25.6632V9.88781C0.497986 9.34875 0.934997 8.91221 1.47358 8.91221H13.9537V5.85408C13.9537 5.31549 14.3907 4.87848 14.9293 4.87848ZM24.0952 22.6055H14.9293C14.3907 22.6055 13.9537 22.1685 13.9537 21.6295V10.8634H2.44965V24.6876H5.11944C5.65803 24.6876 6.09504 25.1246 6.09504 25.6632V31.3609L11.1181 25.0571C11.3104 24.8156 11.5938 24.6895 11.8801 24.6895L24.0952 24.6876V22.6055ZM20.9615 12.6629C19.6778 12.6629 19.6778 10.7113 20.9615 10.7113H32.4948C33.7779 10.7113 33.7779 12.6629 32.4948 12.6629H20.9615ZM20.9615 16.7723C19.6778 16.7723 19.6778 14.8211 20.9615 14.8211H32.4948C33.7779 14.8211 33.7779 16.7723 32.4948 16.7723H20.9615ZM37.5509 6.82968H15.9049V20.6539L28.1199 20.6558C28.4062 20.6562 28.6902 20.7819 28.882 21.0238L33.905 27.3272V21.6295C33.905 21.0909 34.342 20.6539 34.8806 20.6539H37.5509V6.82968Z" fill="#00665E"/>
@@ -167,7 +338,7 @@ $get_static_text = [
                 </a>
             </div>
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
-                <a href="#" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
+                <a href="javascript:;" data-fancybox data-src="#am-responsable" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
                     <span class="step-icon flex items-center justify-center size-[74px] rounded-50 bg-medium-green">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <path d="M6.66602 23.3333V30.6666C6.66602 31.219 7.11373 31.6666 7.66602 31.6666H16.666" stroke="#00665E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -185,7 +356,7 @@ $get_static_text = [
                 </a>
             </div>
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
-                <a href="#" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
+                <a href="javascript:;" data-fancybox data-src="#am-begining" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
                     <span class="step-icon flex items-center justify-center size-[74px] rounded-50 bg-medium-green">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <g clip-path="url(#clip0_92_907)">
@@ -204,7 +375,7 @@ $get_static_text = [
                 </a>
             </div>
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
-                <a href="#" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
+                <a href="javascript:;" data-fancybox data-src="#curiosities" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
                     <span class="step-icon flex items-center justify-center size-[74px] rounded-50 bg-medium-green">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <g clip-path="url(#clip0_92_897)">
@@ -223,29 +394,6 @@ $get_static_text = [
             </div>
         </div>
     </div>
-</div>
-
-<div class="theme-content">
-    <?php while (have_posts()) : the_post(); ?>
-        <h1><?php the_title(); ?></h1>
-        <div><?php the_content(); ?></div>
-
-        <h2>Modul părinte</h2>
-        <?php
-        $parent_module = get_field('parent_module');
-
-        print_r($parent_module);
-
-        if ($parent_module) : ?>
-            <a href="<?php echo get_permalink($parent_module->ID); ?>"><?php echo get_the_title($parent_module->ID); ?></a>
-        <?php endif; ?>
-        <h2>Carte părinte</h2>
-        <?php
-        $parent_book = get_field('parent_book');
-        if ($parent_book) : ?>
-            <a href="<?php echo get_permalink($parent_book->ID); ?>"><?php echo get_the_title($parent_book->ID); ?></a>
-        <?php endif; ?>
-    <?php endwhile; ?>
 </div>
 
 <?php get_footer(); ?>

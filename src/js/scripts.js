@@ -8,6 +8,12 @@ document.addEventListener("DOMContentLoaded", function() {
         dragToClose: false,
     });
 
+    if ( document.querySelector('#print-button') ) {
+        document.querySelector('#print-button').addEventListener("click", function() {
+            window.print();
+        });
+    }
+
     function animateScrollToAnchors() {
 		if (window.location.hash) {
 			// Prevent default browser behavior
