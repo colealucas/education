@@ -15,6 +15,11 @@ function education_styles() {
 	);
 
 	wp_enqueue_style(
+		'fancybox-gallery-styles',
+		get_template_directory_uri() . '/assets/css/fancybox.min.css'
+	);
+	
+	wp_enqueue_style(
 		'education-theme-css',
 		get_stylesheet_directory_uri() . '/assets/css/styles.min.css',
 		[],
@@ -27,11 +32,6 @@ function education_styles() {
 		get_stylesheet_directory_uri() . '/assets/css/tw.css',
 		[],
 		wp_get_theme()->get( 'Version' )
-	);
-
-	wp_enqueue_style(
-		'fancybox-gallery-styles',
-		get_template_directory_uri() . '/assets/css/fancybox.min.css'
 	);
 
 	// add swiper slider in head

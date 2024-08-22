@@ -3,6 +3,23 @@
     "title": "Theme Details",
     "fields": [
         {
+            "key": "field_66c71e5feac62",
+            "label": "Parent Book & Module",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_66b0ca46c3c7a",
             "label": "Parent Book",
             "name": "parent_book",
@@ -67,6 +84,68 @@
             ],
             "bidirectional": 0,
             "bidirectional_target": []
+        },
+        {
+            "key": "field_66c71e80eac63",
+            "label": "Key Concepts",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_66c71ead49c95",
+            "label": "Add key concepts",
+            "name": "key_concepts",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Concept",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_66c71ec549c96",
+                    "label": "Concept",
+                    "name": "concept",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "Add concept",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_66c71ead49c95"
+                }
+            ]
         }
     ],
     "location": [
@@ -87,5 +166,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1724099675
+    "modified": 1724325726
 }

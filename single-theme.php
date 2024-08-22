@@ -9,14 +9,65 @@ $get_static_text = [
         'subjects' => 'Subiecte',
         'go_back' => 'Inapoi la Teme',
         'concepts' => 'Concepte Cheie',
+        'share_experience' => 'Știu deja și împărtășesc altora experiența mea',
+        'am_curious' => 'Sunt curios/ curioasă să aflu mai mult',
+        'am_cult' => 'Vorbesc cult',
+        'am_responsable' => 'Consum și creez produse media cu responsabilitate',
+        'am_begining' => 'Aventura mea media continuă',
+        'curiosities' => 'Curiozități',
     ],
     'ru' => [
         'subjects' => 'Предметы',
         'go_back' => 'Назад к Темам',
-        'concepts' => 'Concepte Cheie',
+        'concepts' => 'Ключевые Понятия',
+        'share_experience' => 'Я уже знаю и делюсь своим опытом с другими',
+        'am_curious' => 'Мне интересно узнать больше',
+        'am_cult' => 'Я говорю на культурном языке',
+        'am_responsable' => 'Я потребляю и создаю медиа-продукты ответственно',
+        'am_begining' => 'Мое медийное приключение продолжается',
+        'curiosities' => 'Удивительные факты',
     ]
 ];
 ?>
+
+<!-- Fancybox popup content -->
+<div style="display: none;" id="my-popup" class="w-[833px] p-24px rounded-24px">
+    <div class="concept-bar mt-30px bg-green p-16px rounded-16px text-white text-24px font-500 leading-120">
+        <?php echo $get_static_text[get_lang()]['concepts']; ?>
+    </div>
+
+    <div class="mt-16px">
+    
+
+    <?php if( have_rows('key_concepts') ) : ?>
+        <div class="flex gap-12px flex-nowrap">
+            <?php 
+            $counter = 0;
+            while( have_rows('key_concepts') ): the_row(); 
+                $concept = get_sub_field('concept');
+
+                // Start a new <ol> for every two items
+                if ($counter % 2 == 0) {
+                    if ($counter > 0) {
+                        echo '</ol>'; // Close the previous <ol> if it's not the first one
+                    }
+                    echo '<ol class="key_concepts p-0 pl-25px m-0 w-[calc(33%-12px)] text-16px" start="' . ($counter + 1) . '">';
+                }
+            ?>
+                <li class="list-decimal">
+                    <?php echo acf_esc_html($concept); ?>
+                </li>
+            <?php 
+                $counter++;
+            endwhile; 
+            echo '</ol>';
+            ?>
+        </div>
+    <?php endif; ?>
+
+    </div>
+</div>
+
 
 <div class="section mt-34px theme-intro-section">
     <div class="container">
@@ -48,7 +99,7 @@ $get_static_text = [
                     <div class="col-lg-6">
                         <div class="keey-concepts">
                             <div class="flex justify-end">
-                                <a href="#" class="inline-flex items-center gap-8px text-green text-14px rounded-24px bg-light-green hover:bg-white px-10px py-6px leading-1">
+                                <a data-fancybox data-src="#my-popup" href="javascript:;" class="inline-flex items-center gap-8px text-green text-14px rounded-24px bg-light-green hover:bg-white px-10px py-6px leading-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                         <path d="M10 13.3333V10M10 6.66667H10.0084M18.3334 10C18.3334 14.6024 14.6024 18.3333 10 18.3333C5.39765 18.3333 1.66669 14.6024 1.66669 10C1.66669 5.39763 5.39765 1.66667 10 1.66667C14.6024 1.66667 18.3334 5.39763 18.3334 10Z" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
@@ -87,7 +138,7 @@ $get_static_text = [
                         </svg>
                     </span>
 
-                    <h3 class="text-28px font-500 text-green leading-120">Știu deja și împărtășesc altora experiența mea</h3>
+                    <h3 class="text-28px font-500 text-green leading-120"><?php echo $get_static_text[get_lang()]['share_experience']; ?></h3>
                 </a>
             </div>
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
@@ -101,7 +152,7 @@ $get_static_text = [
                         </svg>
                     </span>
 
-                    <h3 class="text-28px font-500 text-green leading-120">Sunt curios/ curioasă să aflu mai mult</h3>
+                    <h3 class="text-28px font-500 text-green leading-120"><?php echo $get_static_text[get_lang()]['am_curious']; ?></h3>
                 </a>
             </div>
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
@@ -112,7 +163,7 @@ $get_static_text = [
                         </svg>
                     </span>
 
-                    <h3 class="text-28px font-500 text-green leading-120">Vorbesc cult</h3>
+                    <h3 class="text-28px font-500 text-green leading-120"><?php echo $get_static_text[get_lang()]['am_cult']; ?></h3>
                 </a>
             </div>
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
@@ -130,7 +181,7 @@ $get_static_text = [
                         </svg>
                     </span>
 
-                    <h3 class="text-28px font-500 text-green leading-120">Consum și creez produse media cu responsabilitate</h3>
+                    <h3 class="text-28px font-500 text-green leading-120"><?php echo $get_static_text[get_lang()]['am_responsable']; ?></h3>
                 </a>
             </div>
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
@@ -149,7 +200,7 @@ $get_static_text = [
                         </svg>
                     </span>
 
-                    <h3 class="text-28px font-500 text-green leading-120">Consum și creez produse media cu responsabilitate</h3>
+                    <h3 class="text-28px font-500 text-green leading-120"><?php echo $get_static_text[get_lang()]['am_begining']; ?></h3>
                 </a>
             </div>
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
@@ -167,7 +218,7 @@ $get_static_text = [
                         </svg>
                     </span>
 
-                    <h3 class="text-28px font-500 text-green leading-120">Curiozități</h3>
+                    <h3 class="text-28px font-500 text-green leading-120"><?php echo $get_static_text[get_lang()]['curiosities']; ?></h3>
                 </a>
             </div>
         </div>

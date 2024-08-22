@@ -1,5 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
 
+    Fancybox.bind("[data-fancybox]", {
+        // Your custom options
+        backdropClick: false,
+        closeButton: true,
+        closeExisting: true,
+        dragToClose: false,
+    });
+
     function animateScrollToAnchors() {
 		if (window.location.hash) {
 			// Prevent default browser behavior
