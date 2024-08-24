@@ -2,7 +2,7 @@
 /* eslint-disable indent */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./*.{php,html,js}','./template-parts/*.{php,html,js}','./page-templates/*.{php,html,js}'],
+  content: ['./*.{php,html,js}','./template-parts/*.{php,html,js}','./template-parts/flexible-content/*.{php,html,js}','./page-templates/*.{php,html,js}'],
   theme: {
     colors: {
       transparent: 'transparent',

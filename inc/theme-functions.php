@@ -86,3 +86,7 @@ function get_lang() {
 
     return $language_code;
 }
+
+function is_valid_url($url) {
+    return filter_var($url, FILTER_VALIDATE_URL) !== false;
+}

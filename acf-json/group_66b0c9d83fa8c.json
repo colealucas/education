@@ -236,6 +236,23 @@
                             "display": "block",
                             "sub_fields": [
                                 {
+                                    "key": "field_66ca00e0142b4",
+                                    "label": "Content",
+                                    "name": "",
+                                    "aria-label": "",
+                                    "type": "tab",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "placement": "top",
+                                    "endpoint": 0
+                                },
+                                {
                                     "key": "field_66c9f4851ac7f",
                                     "label": "Title",
                                     "name": "title",
@@ -274,6 +291,43 @@
                                     "toolbar": "full",
                                     "media_upload": 1,
                                     "delay": 0
+                                },
+                                {
+                                    "key": "field_66ca00e9142b5",
+                                    "label": "Settings",
+                                    "name": "",
+                                    "aria-label": "",
+                                    "type": "tab",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "placement": "top",
+                                    "endpoint": 0
+                                },
+                                {
+                                    "key": "field_66ca009f11ab2",
+                                    "label": "Full with images",
+                                    "name": "full_with_images",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Full with images ?",
+                                    "default_value": 1,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
                                 }
                             ],
                             "min": "",
@@ -287,11 +341,11 @@
                             "sub_fields": [
                                 {
                                     "key": "field_66c9f4a31ac83",
-                                    "label": "Video link",
-                                    "name": "video_link",
+                                    "label": "Video code",
+                                    "name": "video_code",
                                     "aria-label": "",
-                                    "type": "text",
-                                    "instructions": "",
+                                    "type": "textarea",
+                                    "instructions": "Add youtube video embed code",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
@@ -301,9 +355,9 @@
                                     },
                                     "default_value": "",
                                     "maxlength": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": ""
+                                    "rows": 4,
+                                    "placeholder": "Youtube embed code",
+                                    "new_lines": ""
                                 }
                             ],
                             "min": "",
@@ -336,5 +390,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1724512505
+    "modified": 1724514551
 }
