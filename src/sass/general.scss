@@ -668,11 +668,11 @@ body.logged-in {
 }
 
 .content-spacing {
-	p,h1,h2.h3,h4,h5,h6, ul, ol, table, iframe {
-		margin-bottom: 25px;
+	p,h1,h2,h3,h4,h5,h6, ul, ol, table, iframe, blockquote, video {
+		margin-bottom: 20px;
 	}
 
-	*:last-child { 
+	*:last-child {
 		margin-bottom: 0!important;
 	}
 }
@@ -690,12 +690,28 @@ body.logged-in {
 	}
 }
 
+.entry-content {
+	h1,h2,h3,h4,h5,h6 {
+		font-weight: 600;
+		line-height: 1.24;
+	}
+
+	h1 { font-size: 30px }
+	h2 { font-size: 28px }
+	h3 { font-size: 24px }
+	h4 { font-size: 20px }
+	h5 { font-size: 18px }
+	h6 { font-size: 17px }
+}
+
 .video-container {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
     height: 0;
     overflow: hidden;
     max-width: 100%;
+	border-radius: 16px;
+	overflow: hidden;
     background: #000; /* Optional: background color */
 }
 

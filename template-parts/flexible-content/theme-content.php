@@ -19,7 +19,7 @@
             </div>
         <?php endif; ?>
 
-        <div class="tcs-content phase-content content-spacing <?php echo ($full_with_images ? 'full-width-images ' : '') ?>">
+        <div class="tcs-content phase-content entry-content content-spacing text-16px <?php echo ($full_with_images ? 'full-width-images ' : '') ?>">
             <?php echo $section_content; ?>
         </div>
     </div>
@@ -28,7 +28,7 @@
     $video_link = get_sub_field('video_code');
 ?>
 
-    <div class="flexible-content-section video-section my-12px">
+    <div class="flexible-content-section video-section my-24px">
         <?php if ( $video_link ) : ?>
             <div class="video-container">
                 <?php echo $video_link; ?>

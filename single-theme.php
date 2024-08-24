@@ -82,7 +82,7 @@ $get_static_text = [
         </div>
     </div>
 
-    <div class="mt-16px text-content leading-150 phase-content">
+    <div class="mt-16px">
         <?php if( have_rows('theme_steps') ): ?>
             <div>
                 <?php while( have_rows('theme_steps') ): the_row(); ?>
