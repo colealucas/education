@@ -1,0 +1,239 @@
+{
+    "key": "group_66ca3995b3c4e",
+    "title": "Contact Page",
+    "fields": [
+        {
+            "key": "field_66ca3995fd2d4",
+            "label": "Contacts",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_66ca39ddbe2ce",
+            "label": "Address",
+            "name": "address",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Strada Șciusev, 53, 2012 Chișinău, Republica Moldova",
+            "maxlength": "",
+            "placeholder": "Add address",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66ca39f8be2cf",
+            "label": "Phone numbers",
+            "name": "phone_numbers",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "(+373 22) 213652, 227539",
+            "maxlength": "",
+            "placeholder": "Add phone numbers",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66ca3ad2be2d0",
+            "label": "Fax",
+            "name": "fax",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "(+373 22) 226681",
+            "maxlength": "",
+            "placeholder": "Add fax",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66ca3ae3be2d1",
+            "label": "Email",
+            "name": "email",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "info@ijc.md",
+            "maxlength": "",
+            "placeholder": "Add email",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66ca3efecdf83",
+            "label": "Social Links",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_66ca3f16bf427",
+            "label": "Facebook link",
+            "name": "facebook_link",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "Add link",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66ca3f4cbf428",
+            "label": "Twitter (X) link",
+            "name": "x_link",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "Add link",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66ca3f68bf429",
+            "label": "Instagram link",
+            "name": "instagram_link",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "Add link",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66ca3f78bf42a",
+            "label": "LinkedIn link",
+            "name": "linkedin_link",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "Add link",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66ca3f89bf42c",
+            "label": "Youtube link",
+            "name": "youtube_link",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "Add link",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "page-templates\/contact.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1724530632
+}

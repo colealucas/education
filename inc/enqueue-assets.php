@@ -51,6 +51,11 @@ function education_styles() {
 		true
 	);
 
+	if (is_page_template('page-templates/contact.php')) {
+		wp_enqueue_style('leaflet-css', 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
+    	wp_enqueue_script('leaflet-js', 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js', array(), null, true);
+	}
+
 	wp_enqueue_script('sabina-script', get_template_directory_uri() . '/assets/js/sabina.min.js', array(), '', TRUE);
 
 	// if ( get_page_template_slug( get_the_ID() ) == 'page-templates/calculators.php' ) {

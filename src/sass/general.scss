@@ -723,6 +723,15 @@ body.logged-in {
     height: 100%;
 }
 
+#contact-map {
+    border-radius: 24px;
+}
+
+.leaflet-popup-content {
+	font-size: 16px !important;
+	font-weight: 500;
+}
+
 .zdx{}
 
 
