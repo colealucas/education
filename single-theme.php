@@ -83,7 +83,23 @@ $get_static_text = [
     </div>
 
     <div class="mt-16px text-content leading-150 phase-content">
-        <?php echo get_field('share_experience_content'); ?>
+        <?php if( have_rows('theme_steps') ): ?>
+            <div>
+                <?php while( have_rows('theme_steps') ): the_row(); ?>
+                    <?php if ( get_sub_field('step') == 'one' ) : ?>
+                        
+                        <?php if( have_rows('theme_content_sections') ): ?>
+                            <?php while ( have_rows('theme_content_sections') ) : the_row(); ?>
+
+                                <?php get_template_part('template-parts/flexible-content/theme' , 'content'); // get flexible content sections ?>
+                            
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+
+                    <?php endif; ?>
+                <?php endwhile; ?>
+            </div>
+        <?php endif; ?>
     </div>
 
     <div class="mt-24px interactive-task-trigger">
@@ -289,8 +305,6 @@ $get_static_text = [
 
 <div class="section py-32px theme-steps">
     <div class="container">
-        <?php get_template_part('template-parts/flexible-content/theme', 'content'); ?>
-
         <div class="parts flex flex-wrap gap-20px">
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
                 <a href="javascript:;" data-fancybox data-src="#share-experience" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">

@@ -201,12 +201,12 @@
                         "id": ""
                     },
                     "choices": {
-                        "Step 1": "Step 1",
-                        "Step 2": "Step 2",
-                        "Step 3": "Step 3",
-                        "Step 4": "Step 4",
-                        "Step 5": "Step 5",
-                        "Step 6": "Step 6"
+                        "one": "Step 1",
+                        "two": "Step 2",
+                        "three": "Step 3",
+                        "four": "Step 4",
+                        "five": "Step 5",
+                        "six": "Step 6"
                     },
                     "default_value": "",
                     "return_format": "value",
@@ -281,7 +281,7 @@
                         },
                         "layout_66c9f49a1ac81": {
                             "key": "layout_66c9f49a1ac81",
-                            "name": "vide_section",
+                            "name": "video_section",
                             "label": "Vide section",
                             "display": "block",
                             "sub_fields": [
@@ -336,5 +336,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1724511750
+    "modified": 1724512505
 }
