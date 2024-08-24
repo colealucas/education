@@ -289,6 +289,8 @@ $get_static_text = [
 
 <div class="section py-32px theme-steps">
     <div class="container">
+        <?php get_template_part('template-parts/flexible-content/theme', 'content'); ?>
+
         <div class="parts flex flex-wrap gap-20px">
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
                 <a href="javascript:;" data-fancybox data-src="#share-experience" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">

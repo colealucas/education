@@ -1,0 +1,145 @@
+{
+    "key": "group_66c9cda30f713",
+    "title": "Global Content Sections",
+    "fields": [
+        {
+            "key": "field_66c9cda3c0760",
+            "label": "Add theme content",
+            "name": "global_content_sections",
+            "aria-label": "",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_66c9cdae2865b": {
+                    "key": "layout_66c9cdae2865b",
+                    "name": "text_content",
+                    "label": "Text content",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_66c9cdd06e67f",
+                            "label": "Title (optional)",
+                            "name": "title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "Optional title",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_66c9cdd66e680",
+                            "label": "Content",
+                            "name": "content",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_66c9d2e1d1281",
+                            "label": "Check the paragraphs",
+                            "name": "check_the_paragraphs",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Check the paragraphs?",
+                            "default_value": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "ui": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_66c9cde36e681": {
+                    "key": "layout_66c9cde36e681",
+                    "name": "youtube_video",
+                    "label": "Youtube video",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_66c9cde36e682",
+                            "label": "Youtube video link",
+                            "name": "youtube_video_link",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "Youtube video link",
+                            "prepend": "",
+                            "append": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "min": "",
+            "max": "",
+            "button_label": "Add Content"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "theme-general-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1724507005
+}

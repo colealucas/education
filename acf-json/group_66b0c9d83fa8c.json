@@ -148,8 +148,8 @@
             ]
         },
         {
-            "key": "field_66c723eeefb4f",
-            "label": "1. I already know and share my experience with others",
+            "key": "field_66c9c9944f2d0",
+            "label": "Add theme content",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -165,12 +165,12 @@
             "endpoint": 0
         },
         {
-            "key": "field_66c72e63114ab",
-            "label": "Add content",
-            "name": "share_experience_content",
+            "key": "field_66c9f360bf5fb",
+            "label": "Add theme steps",
+            "name": "theme_steps",
             "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "",
+            "type": "repeater",
+            "instructions": "Click \"Add New\" to add theme steps.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -178,196 +178,144 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
-        },
-        {
-            "key": "field_66c732bffc5bc",
-            "label": "2. I'm curious to learn more",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_66c73e81fc5c1",
-            "label": "Add content",
-            "name": "curious_content",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
-        },
-        {
-            "key": "field_66c73e1ffc5bd",
-            "label": "3. I speak in a cultured manner",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_66c73e86fc5c2",
-            "label": "Add content",
-            "name": "culture_content",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
-        },
-        {
-            "key": "field_66c73e32fc5be",
-            "label": "4. I consume and create media products responsibly",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_66c73e93fc5c3",
-            "label": "Add content",
-            "name": "responsable_content",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
-        },
-        {
-            "key": "field_66c73e34fc5bf",
-            "label": "5. My media adventure continues",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_66c73e98fc5c4",
-            "label": "Add content",
-            "name": "media_content",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
-        },
-        {
-            "key": "field_66c73e36fc5c0",
-            "label": "6. Curiosities",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_66c73e9bfc5c5",
-            "label": "Add content",
-            "name": "curiosities_content",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add New Step",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_66c9f41c1ac7d",
+                    "label": "Choose step",
+                    "name": "step",
+                    "aria-label": "",
+                    "type": "button_group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "Step 1": "Step 1",
+                        "Step 2": "Step 2",
+                        "Step 3": "Step 3",
+                        "Step 4": "Step 4",
+                        "Step 5": "Step 5",
+                        "Step 6": "Step 6"
+                    },
+                    "default_value": "",
+                    "return_format": "value",
+                    "allow_null": 0,
+                    "layout": "horizontal",
+                    "parent_repeater": "field_66c9f360bf5fb"
+                },
+                {
+                    "key": "field_66c9f4671ac7e",
+                    "label": "Add content sections",
+                    "name": "theme_content_sections",
+                    "aria-label": "",
+                    "type": "flexible_content",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layouts": {
+                        "layout_66c9f46b2811f": {
+                            "key": "layout_66c9f46b2811f",
+                            "name": "text_content",
+                            "label": "Text content",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_66c9f4851ac7f",
+                                    "label": "Title",
+                                    "name": "title",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_66c9f48b1ac80",
+                                    "label": "Content",
+                                    "name": "content",
+                                    "aria-label": "",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "tabs": "all",
+                                    "toolbar": "full",
+                                    "media_upload": 1,
+                                    "delay": 0
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        },
+                        "layout_66c9f49a1ac81": {
+                            "key": "layout_66c9f49a1ac81",
+                            "name": "vide_section",
+                            "label": "Vide section",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_66c9f4a31ac83",
+                                    "label": "Video link",
+                                    "name": "video_link",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": ""
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        }
+                    },
+                    "min": "",
+                    "max": "",
+                    "button_label": "Add Conntent",
+                    "parent_repeater": "field_66c9f360bf5fb"
+                }
+            ]
         }
     ],
     "location": [
@@ -388,5 +336,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1724333873
+    "modified": 1724511750
 }
