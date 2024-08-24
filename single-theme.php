@@ -127,8 +127,24 @@ $get_static_text = [
         </div>
     </div>
 
-    <div class="mt-16px text-content leading-150 phase-content">
-        <?php echo get_field('curious_content'); ?>
+    <div class="mt-16px">
+        <?php if( have_rows('theme_steps') ): ?>
+            <div>
+                <?php while( have_rows('theme_steps') ): the_row(); ?>
+                    <?php if ( get_sub_field('step') == 'two' ) : ?>
+                        
+                        <?php if( have_rows('theme_content_sections') ): ?>
+                            <?php while ( have_rows('theme_content_sections') ) : the_row(); ?>
+
+                                <?php get_template_part('template-parts/flexible-content/theme' , 'content'); // get flexible content sections ?>
+                            
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+
+                    <?php endif; ?>
+                <?php endwhile; ?>
+            </div>
+        <?php endif; ?>
     </div>
 
     <div class="mt-24px interactive-task-trigger">
@@ -156,8 +172,24 @@ $get_static_text = [
         </div>
     </div>
 
-    <div class="mt-16px text-content leading-150 phase-content">
-        <?php echo get_field('culture_content'); ?>
+    <div class="mt-16px">
+        <?php if( have_rows('theme_steps') ): ?>
+            <div>
+                <?php while( have_rows('theme_steps') ): the_row(); ?>
+                    <?php if ( get_sub_field('step') == 'three' ) : ?>
+                        
+                        <?php if( have_rows('theme_content_sections') ): ?>
+                            <?php while ( have_rows('theme_content_sections') ) : the_row(); ?>
+
+                                <?php get_template_part('template-parts/flexible-content/theme' , 'content'); // get flexible content sections ?>
+                            
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+
+                    <?php endif; ?>
+                <?php endwhile; ?>
+            </div>
+        <?php endif; ?>
     </div>
 
     <div class="mt-24px interactive-task-trigger">
@@ -185,8 +217,24 @@ $get_static_text = [
         </div>
     </div>
 
-    <div class="mt-16px text-content leading-150 phase-content">
-        <?php echo get_field('responsable_content'); ?>
+    <div class="mt-16px">
+        <?php if( have_rows('theme_steps') ): ?>
+            <div>
+                <?php while( have_rows('theme_steps') ): the_row(); ?>
+                    <?php if ( get_sub_field('step') == 'four' ) : ?>
+                        
+                        <?php if( have_rows('theme_content_sections') ): ?>
+                            <?php while ( have_rows('theme_content_sections') ) : the_row(); ?>
+
+                                <?php get_template_part('template-parts/flexible-content/theme' , 'content'); // get flexible content sections ?>
+                            
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+
+                    <?php endif; ?>
+                <?php endwhile; ?>
+            </div>
+        <?php endif; ?>
     </div>
 
     <div class="mt-24px interactive-task-trigger">
@@ -214,8 +262,24 @@ $get_static_text = [
         </div>
     </div>
 
-    <div class="mt-16px text-content leading-150 phase-content">
-        <?php echo get_field('media_content'); ?>
+    <div class="mt-16px">
+        <?php if( have_rows('theme_steps') ): ?>
+            <div>
+                <?php while( have_rows('theme_steps') ): the_row(); ?>
+                    <?php if ( get_sub_field('step') == 'five' ) : ?>
+                        
+                        <?php if( have_rows('theme_content_sections') ): ?>
+                            <?php while ( have_rows('theme_content_sections') ) : the_row(); ?>
+
+                                <?php get_template_part('template-parts/flexible-content/theme' , 'content'); // get flexible content sections ?>
+                            
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+
+                    <?php endif; ?>
+                <?php endwhile; ?>
+            </div>
+        <?php endif; ?>
     </div>
 
     <div class="mt-24px interactive-task-trigger">
@@ -243,8 +307,24 @@ $get_static_text = [
         </div>
     </div>
 
-    <div class="mt-16px text-content leading-150 phase-content">
-        <?php echo get_field('curiosities_content'); ?>
+    <div class="mt-16px">
+        <?php if( have_rows('theme_steps') ): ?>
+            <div>
+                <?php while( have_rows('theme_steps') ): the_row(); ?>
+                    <?php if ( get_sub_field('step') == 'six' ) : ?>
+                        
+                        <?php if( have_rows('theme_content_sections') ): ?>
+                            <?php while ( have_rows('theme_content_sections') ) : the_row(); ?>
+
+                                <?php get_template_part('template-parts/flexible-content/theme' , 'content'); // get flexible content sections ?>
+                            
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+
+                    <?php endif; ?>
+                <?php endwhile; ?>
+            </div>
+        <?php endif; ?>
     </div>
 
     <div class="mt-24px interactive-task-trigger">

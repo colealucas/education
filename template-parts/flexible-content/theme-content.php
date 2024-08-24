@@ -15,7 +15,7 @@
     <div class="flexible-content-section text-content-section my-12px">
         <?php if ( $section_title ) : ?>
             <div class="tcs-heading mb-16px">
-                <h2><?php echo $section_title; ?></h2>
+                <h2 class="text-28px font-600"><?php echo $section_title; ?></h2>
             </div>
         <?php endif; ?>
 

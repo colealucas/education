@@ -268,7 +268,7 @@
                                     },
                                     "default_value": "",
                                     "maxlength": "",
-                                    "placeholder": "",
+                                    "placeholder": "Add title",
                                     "prepend": "",
                                     "append": ""
                                 },
@@ -390,5 +390,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1724514551
+    "modified": 1724516559
 }
