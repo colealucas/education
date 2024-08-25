@@ -731,6 +731,19 @@ body.logged-in {
 	font-size: 16px !important;
 	font-weight: 500;
 }
+.leaflet-control-attribution {
+	display: none !important;
+}
+
+.entrance {
+	position: absolute;
+	z-index: 98;
+	left: 0;
+	bottom: 0;
+	background-color: #fff;
+	padding: 16px;
+	border-radius: 0 16px 0 0;
+}
 
 .zdx{}
 

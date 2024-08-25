@@ -162,6 +162,7 @@ module.exports = {
       '3': '3',
       '4': '4',
       '5': '5',
+      '9': '9',
       '99': '99',
       '999': '999',
       '9999': '9999',
@@ -185,7 +186,15 @@ module.exports = {
         '2xl': '1368px',
       },
     },
+    screens: {
+      'sm': '640px',   // Small devices (default)
+      'md': '768px',   // Medium devices (default)
+      'lg': '992px',  // Large devices (default)
+      'xl': '1280px',  // Extra large devices (default)
+      '2xl': '1536px', // Custom large breakpoint
+      // Add more custom breakpoints as needed
+    },
   },
-    extend: {},
+  extend: {},
   plugins: [],
 };

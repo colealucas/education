@@ -12,12 +12,14 @@ $get_static_text = [
         'phone' => 'Telefon',
         'fax' => 'Fax',
         'email' => 'Emaiil',
+        'static_address' => 'Strada Șciusev, 53, 2012 Chișinău, Republica Moldova',
     ],
     'ru' => [
         'our_address' => 'Наш Адрес',
         'phone' => 'Телефон',
         'fax' => 'Факс',
         'email' => 'Эл. почта',
+        'static_address' => 'Улица Щусева, 53, 2012 Кишинев, Республика Молдова',
     ]
 ];
 
@@ -30,7 +32,7 @@ $get_static_text = [
                 <?php while ( have_posts() ) : the_post(); ?>
 
                 <div class="row">
-                    <div class="col-md-5">
+                    <div class="col-lg-5">
                         <div class="contact-body bg-light-green p-24px rounded-24px">
                             <h1 class="text-36px md:text-48px font-700 text-green"><span><?php the_title(); ?></span></h1>
 
@@ -103,7 +105,7 @@ $get_static_text = [
                                 </div>
                             </div>
 
-                            <div class="mt-40px flex gap-20px items-center justify-between">
+                            <div class="mt-40px flex flex-wrap gap-10px items-center lg:justify-between">
                                 <?php if ( get_field('facebook_link') ) : ?>
                                 <div>
                                     <a href="<?php the_field('facebook_link'); ?>" class="size-80px rounded-50 bg-white flex items-center justify-center" target="_blank">
@@ -169,9 +171,13 @@ $get_static_text = [
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-7">
-                        <div class="the-map flex flex-col h-full">
-                            <div id="contact-map" style="width: 100%; height: 100%; z-index: 9"></div>
+                    <div class="col-lg-7">
+                        <div class="the-map flex flex-col h-full relative mt-40px lg:mt-0">
+                            <div id="contact-map" class="w-full h-full z-9 min-h-[600px]"></div>
+
+                            <div class="entrance">
+                                <img src="<?php echo get_template_directory_uri() . '/assets/images/entrance.png';  ?>" alt="">
+                            </div>
                         </div>
 
                         <script>
@@ -197,7 +203,7 @@ $get_static_text = [
                                 });
 
                                 L.marker([47.018429, 28.829750], {icon: customIcon}).addTo(map)
-                                    .bindPopup('Strada Șciusev, 53, 2012 Chișinău, Republica Moldova')
+                                    .bindPopup('<?php echo $get_static_text[get_lang()]['static_address']; ?>')
                                     //.openPopup();
 
                                 // Event listener for map clicks to display coordinates
