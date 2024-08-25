@@ -745,6 +745,40 @@ body.logged-in {
 	border-radius: 0 16px 0 0;
 }
 
+.paragraph-check-options {
+	display: inline-flex;
+	gap: 8px;
+	margin-right: 8px;
+	vertical-align: middle;
+
+	& > span {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 24px;
+		height: 24px;
+		border: 2px solid $medium-gray-color;
+		border-radius: 4px;
+		user-select: none;
+		cursor: pointer;
+		font-size: 20px;
+		font-weight: 500;
+		color: $gray-color;
+		transition: all 0.2s ease-out;
+
+		&:hover,
+		&.active {
+			border-color: $green-color;
+			background-color: $green-color;
+			color: #fff;
+		}
+
+		&:active {
+			transform: scale(1.15);
+		}
+	}
+}
+
 .zdx{}
 
 

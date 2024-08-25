@@ -183,5 +183,65 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     handleNotionsFilters();
+
+    function handleCheckmarks() {
+        const checkmarks = document.querySelectorAll('.paragraph-check-options');
+
+        if (checkmarks.length) {
+            checkmarks.forEach(function(checkmarkOptions) {
+                const knownInfo = checkmarkOptions.querySelector('.known');
+                const newInfo = checkmarkOptions.querySelector('.new');
+
+                if ( knownInfo && newInfo) {
+                    knownInfo.addEventListener('click', function() {
+                        newInfo.classList.remove('active');
+                        knownInfo.classList.add('active');
+                    });
+
+                    newInfo.addEventListener('click', function() {
+                        knownInfo.classList.remove('active');
+                        newInfo.classList.add('active');
+                    });
+
+                } else {
+                    console.warn('Missing checkmark options!');
+                }
+            });
+        }
+    }
+
+    function handleCheckParagraphs() {
+        const sections = document.querySelectorAll('.check-paragraphs');
+
+        if ( sections.length ) {
+            sections.forEach(function(textSection) {
+                if ( textSection ) {
+                    const paragraphs = textSection.querySelectorAll('p');
+
+                    if ( paragraphs.length ) {
+                        paragraphs.forEach(function(p) {
+                            if ( p.textContent.trim().length ) {
+                                const checkboxes = document.createElement('span');
+                                checkboxes.classList.add('paragraph-check-options');
+                                checkboxes.innerHTML = `<span class="known">
+                                    <svg width="18px" height="18px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4 12.6111L8.92308 17.5L20 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
+
+                                <span class="new">+</span>`;
+
+                                // Insert the <span> before the text content of the <p>
+                                p.prepend(checkboxes);
+                            }
+                        });
+
+                        handleCheckmarks();
+                    }
+                }
+            });
+        }
+    }
+    handleCheckParagraphs();
     
 });
