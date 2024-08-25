@@ -37,6 +37,7 @@
         </div>
     </div>
 
+
 <?php elseif( get_row_layout() == 'video_section' ) : // video_section
     $video_link = get_sub_field('video_code');
 ?>
@@ -48,6 +49,73 @@
             </div>
         <?php endif; ?>
     </div>
+
+
+<?php elseif( get_row_layout() == 'match_words_with_definition' ) : // match_words_with_definition
+    $section_title = get_sub_field('title');
+    $section_description = get_sub_field('description');
+?>
+
+    <div class="flexible-content-section match-definitions my-24px">
+        <div class="theme-heading">
+            <h2><?php echo $section_title; ?></h2>
+        </div>
+
+        <div class="tcs-content phase-content entry-content content-spacing text-16px">
+            <?php echo $section_description; // optional ?>
+        </div>
+
+        <div class="match-definitions-wrap my-24px">
+            <?php if( have_rows('definitions') ): ?>
+                <?php while( have_rows('definitions') ): the_row(); 
+                    $word = get_sub_field('word');
+                    $def = get_sub_field('definition');
+                ?>
+                
+                    <div class="flex flex-nowrap gap-24px">
+                        <div class="w-50% definitions-column">
+                            <div class="definition rounded-8px py-16px px-20px mb-16px bg-light-gray font-600 text-16px" data-word="<?php echo $word; ?>">
+                                <?php echo $def; ?>
+                            </div>
+                        </div>
+
+                        <div class="w-50% placeholders-column flex items-center">
+                            <div class="placeholder rounded-8px mb-16px text-16px font-600 flex items-center justify-center w-full min-h-[40px]" data-word="<?php echo $word; ?>"></div>
+                        </div>
+                    </div>
+
+                <?php endwhile; ?>
+
+
+                <div class="words mt-20px bg-light-green p-24px flex gap-10px flex-wrap justify-center rounded-8px">
+                    <?php 
+                        $words_data = [];
+
+                        while( have_rows('definitions') ): the_row();
+                            $word = get_sub_field('word');
+                            $words_data[] = $word;
+                        endwhile; 
+                    ?>
+
+                    <?php 
+                        if( !empty($words_data) ) {
+                            shuffle($words_data);
+                        }
+                    ?>
+                    
+                    <?php if( !empty($words_data) ) : 
+                        foreach( $words_data as $the_word ) : ?>
+                            <div class="word inline-flex items-center justify-center max-w-[50%] p-8px text-center rounded-8px text-16px font-600 leading-120 border-medium-gray border-2px border-solid bg-white" draggable="true" data-word="<?php echo $the_word; ?>">
+                                <?php echo $the_word; ?>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
+
 
 <?php 
 endif;

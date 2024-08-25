@@ -382,6 +382,121 @@
                             ],
                             "min": "",
                             "max": ""
+                        },
+                        "layout_66cb8e4f404a2": {
+                            "key": "layout_66cb8e4f404a2",
+                            "name": "match_words_with_definition",
+                            "label": "Match the words with the definition",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_66cb8e62404a4",
+                                    "label": "Title",
+                                    "name": "title",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "Add title",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_66cb8e72404a5",
+                                    "label": "Description (optional)",
+                                    "name": "description",
+                                    "aria-label": "",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "tabs": "all",
+                                    "toolbar": "full",
+                                    "media_upload": 1,
+                                    "delay": 0
+                                },
+                                {
+                                    "key": "field_66cb8ea2404a6",
+                                    "label": "Definitions",
+                                    "name": "definitions",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "table",
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add Definition",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_66cb8eac404a7",
+                                            "label": "Word",
+                                            "name": "word",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "placeholder": "Add word",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_66cb8ea2404a6"
+                                        },
+                                        {
+                                            "key": "field_66cb8ec9404a8",
+                                            "label": "Definition",
+                                            "name": "definition",
+                                            "aria-label": "",
+                                            "type": "textarea",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "rows": 3,
+                                            "placeholder": "Add definition",
+                                            "new_lines": "br",
+                                            "parent_repeater": "field_66cb8ea2404a6"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
                     },
                     "min": "",
@@ -410,5 +525,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1724611962
+    "modified": 1724616458
 }

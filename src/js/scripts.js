@@ -244,4 +244,69 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     handleCheckParagraphs();
     
+    function handleMatchdefinitions() {
+        const words = document.querySelectorAll('.word');
+        const placeholders = document.querySelectorAll('.placeholder');
+
+        words.forEach(word => {
+            word.addEventListener('dragstart', handleDragStart);
+        });
+
+        placeholders.forEach(placeholder => {
+            placeholder.addEventListener('dragover', handleDragOver);
+            placeholder.addEventListener('drop', handleDrop);
+        });
+
+        function handleDragStart(event) {
+            event.dataTransfer.setData('text/plain', event.target.dataset.word);
+        }
+
+        function handleDragOver(event) {
+            event.preventDefault();
+        }
+
+        function handleDrop(event) {
+            // Check if the placeholder already contains a correct word
+            if (event.target.classList.contains('correct')) {
+                return;
+            }
+
+            const draggedWord = event.dataTransfer.getData('text/plain');
+            const targetWord = event.target.dataset.word;
+
+            if (draggedWord === targetWord) {
+                event.target.classList.add('correct');
+                event.target.classList.remove('incorrect');
+                event.target.innerText = draggedWord;
+                
+                // Remove the dragged word from the list of words
+                const draggedElement = document.querySelector(`.word[data-word="${draggedWord}"]`);
+
+                if (draggedElement) {
+                    draggedElement.remove();
+                }
+            } else {
+                // Only add incorrect class if the placeholder is not already correct
+                if (!event.target.classList.contains('correct')) {
+                    event.target.classList.add('incorrect');
+                    event.target.classList.remove('correct');
+                }
+            }
+
+            const wordsDiv = document.querySelector('.words');
+            if ( wordsDiv ) {
+                const wordsItems = wordsDiv.querySelectorAll('.word');
+
+                if ( wordsItems.length < 1 ) {
+                    wordsDiv.classList.add('hide');
+                } else {
+                    console.log( wordsDiv );
+                }
+            } else {
+                console.log('cant find words')
+            }
+        }
+    }
+
+    handleMatchdefinitions();
 });

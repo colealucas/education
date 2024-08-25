@@ -5,6 +5,7 @@ $faded-gray-color: #F5F5F5;
 $medium-gray-color: #D9D9D9;
 $dark-color: #171412;
 $green-color: #0C544F;
+$light-green-color: #E6F2EB;
 $white-color: #fff;
 $transition: all 0.25s ease;
 
@@ -243,7 +244,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .hide, .d-none {
-	display: none;
+	display: none !important;
 }
 
 
@@ -779,8 +780,37 @@ body.logged-in {
 	}
 }
 
-.zdx{}
+.match-definitions-wrap {
+	.definition {
+		position: relative;
+	}
 
+	.placeholder:empty {
+		border: 2px dashed $medium-gray-color;
+	}
+	
+	.words:empty {
+		display: none;
+	}
+
+	.word {
+		cursor: grab;
+	}
+	
+	.placeholder.correct {
+		border-color: $green-color;
+		color: $green-color;
+		background-color: $light-green-color;
+	}
+	
+	.placeholder.incorrect {
+		border-color: red;
+		background-color: #f7d4d4;
+	}
+}
+
+
+.zdx{}
 
 
 @media (max-width: 1350px) {
