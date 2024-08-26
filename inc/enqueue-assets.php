@@ -68,13 +68,13 @@ function education_styles() {
 	// 	);
 	// }
 
-	// wp_localize_script('education-theme-js', 'education_theme_localized', [
-	// 	'ajax_url' => admin_url('admin-ajax.php'),
-	// 	'post_id' => get_the_ID(),
-	// 	'nonce' => wp_create_nonce('security-nonce'),
-	// 	'site_url' => get_site_url(),
-	// 	'blog_posts_to_show' => (get_field('posts_per_page_on_blog_archive', 'option') ? get_field('posts_per_page_on_blog_archive', 'option') : 12),
-	// ]);
+	wp_localize_script('education-theme-js', 'education_theme_localized', [
+		'ajax_url' => admin_url('admin-ajax.php'),
+		'post_id' => get_the_ID(),
+		'nonce' => wp_create_nonce('security-nonce'),
+		'site_url' => get_site_url(),
+		'lang' => substr(get_locale(), 0, 2),
+	]);
 }
 add_action( 'wp_enqueue_scripts', 'education_styles' );
 
