@@ -497,6 +497,100 @@
                             ],
                             "min": "",
                             "max": ""
+                        },
+                        "layout_66d0bdb21f97b": {
+                            "key": "layout_66d0bdb21f97b",
+                            "name": "square_table_find_words",
+                            "label": "Square table find words",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_66d0be191f97d",
+                                    "label": "Title",
+                                    "name": "title",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "Add title",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_66d0be3c1f97e",
+                                    "label": "Description (optional)",
+                                    "name": "description_optional",
+                                    "aria-label": "",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "tabs": "all",
+                                    "toolbar": "full",
+                                    "media_upload": 1,
+                                    "delay": 0
+                                },
+                                {
+                                    "key": "field_66d0be5e1f97f",
+                                    "label": "Words to discover",
+                                    "name": "words",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "Add words to discover",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "row",
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add Word",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_66d0be661f980",
+                                            "label": "Word",
+                                            "name": "word",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "placeholder": "Add word",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_66d0be5e1f97f"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
                     },
                     "min": "",
@@ -525,5 +619,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1724616458
+    "modified": 1724956339
 }

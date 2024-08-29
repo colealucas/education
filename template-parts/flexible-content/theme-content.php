@@ -28,7 +28,7 @@
     <div class="flexible-content-section text-content-section my-12px">
         <?php if ( $section_title ) : ?>
             <div class="tcs-heading mb-16px bg-green text-white py-20px px-24px rounded-16px">
-                <h2 class="text-22px font-500 flex items-center gap-12px">
+                <h2 class="text-22px font-500 leading-120 flex items-center gap-12px">
                     <span class="w-30px block">
                         <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 17V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -69,7 +69,7 @@
 
     <div class="flexible-content-section match-definitions my-24px">
         <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
-            <h2 class="text-22px font-500 flex items-center gap-12px">
+            <h2 class="text-22px font-500 leading-120 flex items-center gap-12px">
                 <span class="w-30px block">
                     <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 17V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -89,7 +89,7 @@
 
         <div class="match-definitions-wrap my-24px flex flex-col gap-16px">
             <?php if( have_rows('definitions') ): ?>
-                <?php while( have_rows('definitions') ): the_row(); 
+                <?php while( have_rows('definitions') ): the_row();
                     $word = get_sub_field('word');
                     $def = get_sub_field('definition');
                 ?>
@@ -107,7 +107,6 @@
                     </div>
 
                 <?php endwhile; ?>
-
 
                 <div class="words mt-20px bg-light-green p-24px flex gap-10px flex-wrap justify-center rounded-8px">
                     <?php 
@@ -140,6 +139,191 @@
 
                 </div>
             <?php endif; ?>
+        </div>
+    </div>
+
+
+<?php elseif( get_row_layout() == 'square_table_find_words' ) : // video_section
+    $section_title = get_sub_field('title');
+    $section_description = get_sub_field('description');
+?>
+
+    <div class="flexible-content-section match-definitions my-24px">
+        <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
+            <h2 class="text-22px font-500 leading-120 flex items-center gap-12px">
+                <span class="w-30px block">
+                    <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 17V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <circle cx="1" cy="1" r="1" transform="matrix(1 0 0 -1 11 9)" fill="currentColor"/>
+                        <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </span>
+                <span class="w-[calc(100%-42px)] block">
+                    <?php echo $section_title; ?>
+                </span>
+            </h2>
+        </div>
+
+        <div class="tcs-content phase-content entry-content content-spacing text-16px">
+            <?php echo $section_description; // optional ?>
+        </div>
+
+        <div class="square-table-wrap my-24px">
+            <style>
+                .words-row {
+                    display: flex;
+                    width: 100%;
+                }
+
+                .letter {
+                    flex-grow: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 30px;
+                    height: 30px;
+                    border: 1px solid #ccc;
+                    cursor: pointer;
+                    user-select: none;
+                }
+
+                .letter.selected {
+                    background-color: yellow;
+                }
+
+                .letter.found {
+                    background-color: green;
+                    color: white;
+                }
+
+            </style>
+
+            <?php
+               $grid = [
+                    ['G', 'T', 'B', 'T', 'A', 'O', 'X', 'S', 'M', 'U', 'L', 'T', 'I', 'M', 'E', 'D', 'I', 'A'],
+                    ['P', 'R', 'Y', 'O', 'M', 'P', 'R', 'E', 'S', 'A', 'S', 'C', 'R', 'I', 'S', 'Ă', 'U', 'K'],
+                    ['R', 'K', 'N', 'Y', 'W', 'Q', 'U', 'S', 'Ă', 'I', 'Z', 'X', 'S', 'A', 'X', 'Ă', 'V', 'X'],
+                    ['E', 'P', 'R', 'E', 'S', 'A', 'A', 'U', 'D', 'I', 'O', 'V', 'I', 'Z', 'U', 'A', 'L', 'Ă'],
+                    ['S', 'Ă', 'D', 'J', 'V', 'P', 'A', 'H', 'T', 'L', 'O', 'B', 'T', 'T', 'Z', 'J', 'H', 'I'],
+                    ['A', 'N', 'V', 'X', 'F', 'K', 'S', 'G', 'Ă', 'A', 'D', 'R', 'E', 'V', 'I', 'S', 'T', 'E'],
+                    ['O', 'F', 'V', 'T', 'E', 'L', 'E', 'F', 'O', 'N', 'O', 'K', 'N', 'K', 'I', 'P', 'F', 'J'],
+                    ['N', 'C', 'O', 'N', 'S', 'O', 'L', 'Ă', 'R', 'I', 'N', 'G', 'E', 'B', 'J', 'F', 'Z', 'O'],
+                    ['L', 'C', 'O', 'I', 'J', 'W', 'W', 'Ă', 'D', 'T', 'X', 'M', 'N', 'X', 'A', 'B', 'O', 'C'],
+                    ['I', 'Î', 'Z', 'C', 'X', 'V', 'E', 'A', 'T', 'E', 'L', 'E', 'V', 'I', 'Z', 'O', 'R', 'U'],
+                    ['N', 'Â', 'J', 'C', 'Q', 'R', 'R', 'X', 'Ă', 'G', 'Z', 'C', 'W', 'X', 'C', 'Y', 'Î', 'R'],
+                    ['E', 'N', 'O', 'O', 'A', 'H', 'N', 'T', 'X', 'A', 'E', 'G', 'X', 'Y', 'B', 'U', 'V', 'I'],
+                    ['A', 'J', 'P', 'I', 'M', 'Ș', 'P', 'J', 'D', 'L', 'V', 'C', 'X', 'R', 'G', 'Ș', 'T', 'V'],
+                    ['P', 'D', 'Z', 'H', 'T', 'M', 'A', 'E', 'V', 'I', 'E', 'Ă', 'Y', 'R', 'Y', 'Ș', 'Y', 'I'],
+                    ['Y', 'H', 'C', 'V', 'Q', 'Ș', 'V', 'V', 'K', 'Z', 'H', 'C', 'E', 'B', 'Ă', 'T', 'L', 'D'],
+                    ['B', 'S', 'H', 'Â', 'O', 'S', 'D', 'B', 'L', 'Z', 'S', 'K', 'G', 'L', 'I', 'X', 'T', 'E'],
+                    ['T', 'V', 'T', 'Î', 'N', 'I', 'N', 'T', 'E', 'R', 'N', 'E', 'T', 'L', 'T', 'L', 'Y', 'O'],
+                    ['D', 'L', 'B', 'E', 'X', 'X', 'J', 'Q', 'K', 'X', 'O', 'C', 'K', 'T', 'T', 'Y', 'X', 'T']
+                ];            
+
+                echo '<div id="word-grid">';
+                foreach ($grid as $row) {
+                    echo '<div class="words-row">';
+                    foreach ($row as $letter) {
+                        echo "<span class='letter'>$letter</span>";
+                    }
+                    echo '</div>';
+                }
+                echo '</div>';
+            ?>
+
+            <div id="found-words" class="mt-24px"></div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const letters = document.querySelectorAll('.letter');
+                    let selectedLetters = [];
+                    let selectedElements = [];
+
+                    // Words to be found (all lowercase, spaces removed)
+                    const words = [
+                        'presa online',
+                        'presa scrisă',
+                        'presa audiovizuală',
+                        'televizor',
+                        'radio',
+                        'ziare',
+                        'reviste',
+                        'internet',
+                        'multimedia',
+                        'consolă',
+                        'telefon',
+                        'jocuri',
+                        'video'
+                    ];
+
+                    function removeSpaces(str) {
+                        return str.replace(/\s+/g, ''); // Replace all whitespace characters with an empty string
+                    }
+
+                    letters.forEach((letter, index) => {
+                        letter.addEventListener('click', function () {
+                            const letterIndex = selectedElements.indexOf(this);
+
+                            if (letterIndex === -1) {
+                                // If the letter is not already selected, select it
+                                this.classList.add('selected');
+                                selectedLetters.push(this.innerText.toLowerCase()); // Ensure lowercase
+                                selectedElements.push(this);
+                            } else {
+                                // If the letter is already selected, deselect it
+                                this.classList.remove('selected');
+                                selectedLetters.splice(letterIndex, 1);
+                                selectedElements.splice(letterIndex, 1);
+                            }
+
+                            checkWord();
+                        });
+                    });
+
+                    function checkWord() {
+                        const currentWord = selectedLetters.join(''); // No need to convert to lowercase again
+
+                        // Check if the selected letters exactly match any word in the list
+                        words.forEach(word => {
+                            // if (isExactMatch(currentWord, word)) { // old version here
+                            if (isExactMatch(currentWord, removeSpaces(word))) {
+                                selectedElements.forEach(letter => {
+                                    letter.classList.remove('selected');
+                                    letter.classList.add('found');
+                                });
+
+                                // Display found word in a separate div
+                                const foundWordsDiv = document.getElementById('found-words');
+                                foundWordsDiv.innerHTML += `<p>${word}</p>`;
+
+                                // Clear selection
+                                selectedLetters = [];
+                                selectedElements = [];
+                            }
+                        });
+                    }
+
+                    function isExactMatch(selected, word) {
+                        if (selected.length !== word.length) {
+                            return false;
+                        }
+
+                        // Create frequency counts for selected letters and the word
+                        const countLetters = (str) => {
+                            return str.split('').reduce((acc, char) => {
+                                acc[char] = (acc[char] || 0) + 1;
+                                return acc;
+                            }, {});
+                        };
+
+                        const selectedCount = countLetters(selected);
+                        const wordCount = countLetters(word);
+
+                        // Compare the frequency counts
+                        return Object.keys(wordCount).every(char => wordCount[char] === selectedCount[char]);
+                    }
+                });
+            </script>
         </div>
     </div>
 
