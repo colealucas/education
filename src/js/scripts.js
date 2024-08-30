@@ -6,10 +6,14 @@ document.addEventListener("DOMContentLoaded", function() {
         'ro': {
             'bravo': 'Bravo',
             'continue': 'Continuă',
+            'wordsToFind': 'cuvinte de găsit',
+            'wordsFound': 'cuvinte descoperite',
         },
         'ru': {
             'bravo': 'Браво',
             'continue': 'Продолжить',
+            'wordsToFind': 'слов для поиска',
+            'wordsFound': 'найденных слова',
         },
     };
 
@@ -422,7 +426,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
                 function updateFoundWords() {
                     if (foundWordsArray.length >= words.length) { // words.length
-                        showSuccessPopup('Super!');
+                        showSuccessPopup( getText('bravo') );
                     }
     
                     if (foundWordsArray.length) {
@@ -449,7 +453,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         });
     
                         if (gameStatus) {
-                            gameStatus.innerHTML = `<p class="text-center w-full">${foundWordsArray.length} / ${words.length} cuvinte descoperite</p>`;
+                            gameStatus.innerHTML = `<p class="text-center w-full">${foundWordsArray.length} / ${words.length} ${getText('wordsFound')}</p>`;
                         }
                     } else {
                         foundWordsDiv.innerHTML = ''; // Clear content if no words found
@@ -457,7 +461,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
     
                 if (words.length && gameStatus) {
-                    gameStatus.innerHTML = `<p class="text-center w-full">${words.length} cuvinte de gasit</p>`;
+                    gameStatus.innerHTML = `<p class="text-center w-full">${words.length} ${getText('wordsToFind')}</p>`;
                 }
     
                 function removeSpaces(str) {
