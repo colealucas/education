@@ -209,10 +209,15 @@
                 ];          
 
                 echo '<div class="word-grid">';
+                $x=0;
                 foreach ($grid as $row) {
-                    echo '<div class="words-row">';
+                    $x++;
+                    echo '<div class="words-row" data-row="' . $x .'">';
+
+                    $y=0;
                     foreach ($row as $letter) {
-                        echo "<span class='letter'>$letter</span>";
+                        $y++;
+                        echo "<span class='letter' data-column='$y'>$letter</span>";
                     }
                     echo '</div>';
                 }
@@ -220,7 +225,7 @@
             ?>
 
             <div class="mt-24px p-20px bg-light-green text-16px font-500 rounded-16px">
-                <div class="found-status"></div>
+                <div class="game-status mb-10px font-600"></div>
                 <div class="found-words flex gap-20px"></div>
             </div>
         </div>

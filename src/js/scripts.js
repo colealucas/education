@@ -397,39 +397,40 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function handleSquareTableGame() {
         const gamseSelector = document.querySelectorAll('.square-table-game');
-
-        if ( gamseSelector.length ) {
-            gamseSelector.forEach(function(gameWrapper) {
+    
+        if (gamseSelector.length) {
+            gamseSelector.forEach(function (gameWrapper) {
                 const wordsDataAttribute = gameWrapper.getAttribute('data-words');
                 const foundWordsDiv = gameWrapper.querySelector('.found-words');
-
+                const gameStatus = gameWrapper.querySelector('.game-status');
+    
                 const letters = gameWrapper.querySelectorAll('.letter');
                 let selectedLetters = [];
                 let selectedElements = [];
-                
+    
                 let jsWordsObject = JSON.parse(wordsDataAttribute); // Parse the string back into a JSON object
-
-                if ( !jsWordsObject || !jsWordsObject.length ) {
+    
+                if (!jsWordsObject || !jsWordsObject.length) {
                     console.warn('Words table game missing words!');
                     return false;
                 }
-
+    
                 // Words to be found (all lowercase)
                 const words = jsWordsObject;
-
+    
                 let foundWordsArray = [];
-
+    
                 function updateFoundWords() {
-                    if ( foundWordsArray.length >= words.length ) { // words.legth
+                    if (foundWordsArray.length >= words.length) { // words.length
                         showSuccessPopup('Super!');
                     }
-
+    
                     if (foundWordsArray.length) {
                         let i = 0;
                         let startNumber = 1;
                         foundWordsDiv.innerHTML = ''; // Clear previous content
-
-                        foundWordsArray.forEach(function(word, index) {
+    
+                        foundWordsArray.forEach(function (word, index) {
                             if (index % 4 === 0) {
                                 // Create a new <ol> tag every 2 words
                                 var ol = document.createElement('ol');
@@ -437,32 +438,36 @@ document.addEventListener("DOMContentLoaded", function() {
                                 ol.classList.add('found-words-list');
                                 foundWordsDiv.appendChild(ol);
                             }
-
+    
                             // Create <li> and append to the current <ol>
                             var li = document.createElement('li');
                             li.textContent = word;
                             foundWordsDiv.lastChild.appendChild(li);
-
+    
                             i++;
                             startNumber = i + 1; // Update start number for the next <ol>
                         });
+    
+                        if (gameStatus) {
+                            gameStatus.innerHTML = `<p class="text-center w-full">${foundWordsArray.length} / ${words.length} cuvinte descoperite</p>`;
+                        }
                     } else {
                         foundWordsDiv.innerHTML = ''; // Clear content if no words found
                     }
                 }
-
-                if ( words.length ) {
-                    foundWordsDiv.innerHTML += `<p class="text-center w-full">${words.length} cuvinte de gasit</p>`;
+    
+                if (words.length && gameStatus) {
+                    gameStatus.innerHTML = `<p class="text-center w-full">${words.length} cuvinte de gasit</p>`;
                 }
-
+    
                 function removeSpaces(str) {
                     return str.replace(/\s+/g, ''); // Replace all whitespace characters with an empty string
                 }
-
+    
                 letters.forEach((letter, index) => {
                     letter.addEventListener('click', function () {
                         const letterIndex = selectedElements.indexOf(this);
-
+    
                         if (letterIndex === -1) {
                             // If the letter is not already selected, select it
                             this.classList.add('selected');
@@ -474,40 +479,80 @@ document.addEventListener("DOMContentLoaded", function() {
                             selectedLetters.splice(letterIndex, 1);
                             selectedElements.splice(letterIndex, 1);
                         }
-
+    
                         checkWord();
                     });
                 });
 
+                /**
+                 * Gets the index of an element among its siblings.
+                 * @param {HTMLElement} element - The element whose index is to be found.
+                 * @returns {number} - The index of the element among its siblings.
+                 */
+                function getCellParentIndex(element) {
+                    if (!element || !(element instanceof HTMLElement)) {
+                        return false;
+                    }
+                
+                    // Get the parent element
+                    var parentElement = element.parentNode;
+                
+                    if (!parentElement || !(parentElement instanceof HTMLElement)) {
+                        return false;
+                    }
+                
+                    // Get all child elements of the parent
+                    var siblings = Array.from(parentElement.children);
+                
+                    // Find the index of the element among its siblings
+                    var index = siblings.indexOf(element);
+                
+                    return index;
+                }
+    
                 function checkWord() {
                     const currentWord = selectedLetters.join(''); // No need to convert to lowercase again
+                
+                    // Ensure selection is in the same row or same column
+                    const sameRow = selectedElements.every((el, i, arr) => 
+                        el.getAttribute('data-row') === arr[0].getAttribute('data-row')
+                    );
 
+                    const sameColumn = selectedElements.every((el, i, arr) => 
+                        el.getAttribute('data-column') === arr[0].getAttribute('data-column')
+                    );
+
+                    //console.log( sameRow, sameColumn);
+                
+                    if (!sameRow && !sameColumn) {
+                        return;
+                    }
+                
                     // Check if the selected letters exactly match any word in the list
                     words.forEach(word => {
-                        // if (isExactMatch(currentWord, word)) { // old version here
                         if (isExactMatch(currentWord, removeSpaces(word))) {
                             selectedElements.forEach(letter => {
                                 letter.classList.remove('selected');
                                 letter.classList.add('found');
                             });
-                            
-                            if ( foundWordsDiv ) {
+                
+                            if (foundWordsDiv) {
                                 foundWordsArray.push(word);
                                 updateFoundWords();
                             }
-
+                
                             // Clear selection
                             selectedLetters = [];
                             selectedElements = [];
                         }
                     });
-                }
-
+                }                
+    
                 function isExactMatch(selected, word) {
                     if (selected.length !== word.length) {
                         return false;
                     }
-
+    
                     // Create frequency counts for selected letters and the word
                     const countLetters = (str) => {
                         return str.split('').reduce((acc, char) => {
@@ -515,14 +560,14 @@ document.addEventListener("DOMContentLoaded", function() {
                             return acc;
                         }, {});
                     };
-
+    
                     const selectedCount = countLetters(selected);
                     const wordCount = countLetters(word);
-
+    
                     // Compare the frequency counts
                     return Object.keys(wordCount).every(char => wordCount[char] === selectedCount[char]);
                 }
-
+    
                 // end
             });
         }
