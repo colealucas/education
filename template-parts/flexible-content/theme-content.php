@@ -146,6 +146,23 @@
 <?php elseif( get_row_layout() == 'square_table_find_words' ) : // video_section
     $section_title = get_sub_field('title');
     $section_description = get_sub_field('description');
+    $words_repeater = get_sub_field('words');
+    $words_to_discover = [];
+    $words_js_object = '[]'; // empty js array by default
+
+    if( $words_repeater ) : 
+        foreach( $words_repeater as $word_array ) :
+            $words_to_discover[] = $word_array['word'];
+        endforeach;
+    endif;
+
+    if ( count( $words_to_discover ) ) {
+        $jsonString = json_encode($words_to_discover, JSON_UNESCAPED_UNICODE); // Convert the PHP array to a JSON string
+
+        // Escape single quotes, double quotes, and HTML special characters
+        $escaped_json_string = htmlspecialchars($jsonString, ENT_QUOTES, 'UTF-8');
+        $words_js_object = $escaped_json_string;
+    }
 ?>
 
     <div class="flexible-content-section match-definitions my-24px">
@@ -168,36 +185,7 @@
             <?php echo $section_description; // optional ?>
         </div>
 
-        <div class="square-table-wrap my-24px">
-            <style>
-                .words-row {
-                    display: flex;
-                    width: 100%;
-                }
-
-                .letter {
-                    flex-grow: 1;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: 30px;
-                    height: 30px;
-                    border: 1px solid #ccc;
-                    cursor: pointer;
-                    user-select: none;
-                }
-
-                .letter.selected {
-                    background-color: yellow;
-                }
-
-                .letter.found {
-                    background-color: green;
-                    color: white;
-                }
-
-            </style>
-
+        <div class="square-table-game square-table-wrap my-24px" data-words='<?php echo $words_js_object; ?>'>
             <?php
                $grid = [
                     ['G', 'T', 'B', 'T', 'A', 'O', 'X', 'S', 'M', 'U', 'L', 'T', 'I', 'M', 'E', 'D', 'I', 'A'],
@@ -218,9 +206,9 @@
                     ['B', 'S', 'H', 'Â', 'O', 'S', 'D', 'B', 'L', 'Z', 'S', 'K', 'G', 'L', 'I', 'X', 'T', 'E'],
                     ['T', 'V', 'T', 'Î', 'N', 'I', 'N', 'T', 'E', 'R', 'N', 'E', 'T', 'L', 'T', 'L', 'Y', 'O'],
                     ['D', 'L', 'B', 'E', 'X', 'X', 'J', 'Q', 'K', 'X', 'O', 'C', 'K', 'T', 'T', 'Y', 'X', 'T']
-                ];            
+                ];          
 
-                echo '<div id="word-grid">';
+                echo '<div class="word-grid">';
                 foreach ($grid as $row) {
                     echo '<div class="words-row">';
                     foreach ($row as $letter) {
@@ -231,99 +219,10 @@
                 echo '</div>';
             ?>
 
-            <div id="found-words" class="mt-24px"></div>
-
-            <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                    const letters = document.querySelectorAll('.letter');
-                    let selectedLetters = [];
-                    let selectedElements = [];
-
-                    // Words to be found (all lowercase, spaces removed)
-                    const words = [
-                        'presa online',
-                        'presa scrisă',
-                        'presa audiovizuală',
-                        'televizor',
-                        'radio',
-                        'ziare',
-                        'reviste',
-                        'internet',
-                        'multimedia',
-                        'consolă',
-                        'telefon',
-                        'jocuri',
-                        'video'
-                    ];
-
-                    function removeSpaces(str) {
-                        return str.replace(/\s+/g, ''); // Replace all whitespace characters with an empty string
-                    }
-
-                    letters.forEach((letter, index) => {
-                        letter.addEventListener('click', function () {
-                            const letterIndex = selectedElements.indexOf(this);
-
-                            if (letterIndex === -1) {
-                                // If the letter is not already selected, select it
-                                this.classList.add('selected');
-                                selectedLetters.push(this.innerText.toLowerCase()); // Ensure lowercase
-                                selectedElements.push(this);
-                            } else {
-                                // If the letter is already selected, deselect it
-                                this.classList.remove('selected');
-                                selectedLetters.splice(letterIndex, 1);
-                                selectedElements.splice(letterIndex, 1);
-                            }
-
-                            checkWord();
-                        });
-                    });
-
-                    function checkWord() {
-                        const currentWord = selectedLetters.join(''); // No need to convert to lowercase again
-
-                        // Check if the selected letters exactly match any word in the list
-                        words.forEach(word => {
-                            // if (isExactMatch(currentWord, word)) { // old version here
-                            if (isExactMatch(currentWord, removeSpaces(word))) {
-                                selectedElements.forEach(letter => {
-                                    letter.classList.remove('selected');
-                                    letter.classList.add('found');
-                                });
-
-                                // Display found word in a separate div
-                                const foundWordsDiv = document.getElementById('found-words');
-                                foundWordsDiv.innerHTML += `<p>${word}</p>`;
-
-                                // Clear selection
-                                selectedLetters = [];
-                                selectedElements = [];
-                            }
-                        });
-                    }
-
-                    function isExactMatch(selected, word) {
-                        if (selected.length !== word.length) {
-                            return false;
-                        }
-
-                        // Create frequency counts for selected letters and the word
-                        const countLetters = (str) => {
-                            return str.split('').reduce((acc, char) => {
-                                acc[char] = (acc[char] || 0) + 1;
-                                return acc;
-                            }, {});
-                        };
-
-                        const selectedCount = countLetters(selected);
-                        const wordCount = countLetters(word);
-
-                        // Compare the frequency counts
-                        return Object.keys(wordCount).every(char => wordCount[char] === selectedCount[char]);
-                    }
-                });
-            </script>
+            <div class="mt-24px p-20px bg-light-green text-16px font-500 rounded-16px">
+                <div class="found-status"></div>
+                <div class="found-words flex gap-20px"></div>
+            </div>
         </div>
     </div>
 

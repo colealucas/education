@@ -393,4 +393,140 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     handleMatchdefinitions();
+
+
+    function handleSquareTableGame() {
+        const gamseSelector = document.querySelectorAll('.square-table-game');
+
+        if ( gamseSelector.length ) {
+            gamseSelector.forEach(function(gameWrapper) {
+                const wordsDataAttribute = gameWrapper.getAttribute('data-words');
+                const foundWordsDiv = gameWrapper.querySelector('.found-words');
+
+                const letters = gameWrapper.querySelectorAll('.letter');
+                let selectedLetters = [];
+                let selectedElements = [];
+                
+                let jsWordsObject = JSON.parse(wordsDataAttribute); // Parse the string back into a JSON object
+
+                if ( !jsWordsObject || !jsWordsObject.length ) {
+                    console.warn('Words table game missing words!');
+                    return false;
+                }
+
+                // Words to be found (all lowercase)
+                const words = jsWordsObject;
+
+                let foundWordsArray = [];
+
+                function updateFoundWords() {
+                    if ( foundWordsArray.length >= words.length ) { // words.legth
+                        showSuccessPopup('Super!');
+                    }
+
+                    if (foundWordsArray.length) {
+                        let i = 0;
+                        let startNumber = 1;
+                        foundWordsDiv.innerHTML = ''; // Clear previous content
+
+                        foundWordsArray.forEach(function(word, index) {
+                            if (index % 4 === 0) {
+                                // Create a new <ol> tag every 2 words
+                                var ol = document.createElement('ol');
+                                ol.setAttribute('start', startNumber);
+                                ol.classList.add('found-words-list');
+                                foundWordsDiv.appendChild(ol);
+                            }
+
+                            // Create <li> and append to the current <ol>
+                            var li = document.createElement('li');
+                            li.textContent = word;
+                            foundWordsDiv.lastChild.appendChild(li);
+
+                            i++;
+                            startNumber = i + 1; // Update start number for the next <ol>
+                        });
+                    } else {
+                        foundWordsDiv.innerHTML = ''; // Clear content if no words found
+                    }
+                }
+
+                if ( words.length ) {
+                    foundWordsDiv.innerHTML += `<p class="text-center w-full">${words.length} cuvinte de gasit</p>`;
+                }
+
+                function removeSpaces(str) {
+                    return str.replace(/\s+/g, ''); // Replace all whitespace characters with an empty string
+                }
+
+                letters.forEach((letter, index) => {
+                    letter.addEventListener('click', function () {
+                        const letterIndex = selectedElements.indexOf(this);
+
+                        if (letterIndex === -1) {
+                            // If the letter is not already selected, select it
+                            this.classList.add('selected');
+                            selectedLetters.push(this.innerText.toLowerCase()); // Ensure lowercase
+                            selectedElements.push(this);
+                        } else {
+                            // If the letter is already selected, deselect it
+                            this.classList.remove('selected');
+                            selectedLetters.splice(letterIndex, 1);
+                            selectedElements.splice(letterIndex, 1);
+                        }
+
+                        checkWord();
+                    });
+                });
+
+                function checkWord() {
+                    const currentWord = selectedLetters.join(''); // No need to convert to lowercase again
+
+                    // Check if the selected letters exactly match any word in the list
+                    words.forEach(word => {
+                        // if (isExactMatch(currentWord, word)) { // old version here
+                        if (isExactMatch(currentWord, removeSpaces(word))) {
+                            selectedElements.forEach(letter => {
+                                letter.classList.remove('selected');
+                                letter.classList.add('found');
+                            });
+                            
+                            if ( foundWordsDiv ) {
+                                foundWordsArray.push(word);
+                                updateFoundWords();
+                            }
+
+                            // Clear selection
+                            selectedLetters = [];
+                            selectedElements = [];
+                        }
+                    });
+                }
+
+                function isExactMatch(selected, word) {
+                    if (selected.length !== word.length) {
+                        return false;
+                    }
+
+                    // Create frequency counts for selected letters and the word
+                    const countLetters = (str) => {
+                        return str.split('').reduce((acc, char) => {
+                            acc[char] = (acc[char] || 0) + 1;
+                            return acc;
+                        }, {});
+                    };
+
+                    const selectedCount = countLetters(selected);
+                    const wordCount = countLetters(word);
+
+                    // Compare the frequency counts
+                    return Object.keys(wordCount).every(char => wordCount[char] === selectedCount[char]);
+                }
+
+                // end
+            });
+        }
+    }
+
+    handleSquareTableGame();
 });

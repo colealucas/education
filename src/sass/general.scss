@@ -809,6 +809,43 @@ body.logged-in {
 	}
 }
 
+ol.found-words-list {
+	list-style: decimal;
+	padding-left: 20px;
+	width: 33%;
+	list-style-position: inside;
+}
+
+.word-grid {
+	border: 1px solid $medium-gray-color;
+}
+.words-row {
+	display: flex;
+	width: 100%;
+}
+
+.letter {
+	flex-grow: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 30px;
+	height: 30px;
+	font-weight: 500;
+	font-size: 17px;
+	border: 0.5px solid $medium-gray-color;
+	cursor: pointer;
+	user-select: none;
+}
+
+.letter.selected {
+	background-color: $medium-gray-color;
+}
+
+.letter.found {
+	background-color: $green-color;
+	color: $white-color;
+}
 
 .zdx{}
 
