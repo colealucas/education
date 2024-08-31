@@ -100,7 +100,12 @@ function generateGrid($rows = 18, $cols = 18, $words = []) {
     $grid = array_fill(0, $rows, array_fill(0, $cols, ''));
 
     // Romanian letters to use for random filling
-    $romanianLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'Î', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'X', 'Z'];
+    
+    if ( get_lang() == 'ru') {
+        $lettersMix = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я'];
+    } else {
+        $lettersMix = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'Î', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'X', 'Z'];
+    }
 
     // Insert words into the grid
     foreach ($words as $wordInfo) {
@@ -129,7 +134,7 @@ function generateGrid($rows = 18, $cols = 18, $words = []) {
     for ($i = 0; $i < $rows; $i++) {
         for ($j = 0; $j < $cols; $j++) {
             if ($grid[$i][$j] === '') {
-                $grid[$i][$j] = $romanianLetters[array_rand($romanianLetters)];
+                $grid[$i][$j] = $lettersMix[array_rand($lettersMix)];
             }
         }
     }
