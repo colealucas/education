@@ -475,7 +475,9 @@ document.addEventListener("DOMContentLoaded", function() {
                         if (letterIndex === -1) {
                             // If the letter is not already selected, select it
                             this.classList.add('selected');
-                            selectedLetters.push(this.innerText.toLowerCase()); // Ensure lowercase
+                            
+                            // bugfix: please keep using data-letter attribute to get the letter
+                            selectedLetters.push(this.dataset.letter.toLowerCase()); // Ensure lowercase
                             selectedElements.push(this);
                         } else {
                             // If the letter is already selected, deselect it
@@ -487,32 +489,6 @@ document.addEventListener("DOMContentLoaded", function() {
                         checkWord();
                     });
                 });
-
-                /**
-                 * Gets the index of an element among its siblings.
-                 * @param {HTMLElement} element - The element whose index is to be found.
-                 * @returns {number} - The index of the element among its siblings.
-                 */
-                function getCellParentIndex(element) {
-                    if (!element || !(element instanceof HTMLElement)) {
-                        return false;
-                    }
-                
-                    // Get the parent element
-                    var parentElement = element.parentNode;
-                
-                    if (!parentElement || !(parentElement instanceof HTMLElement)) {
-                        return false;
-                    }
-                
-                    // Get all child elements of the parent
-                    var siblings = Array.from(parentElement.children);
-                
-                    // Find the index of the element among its siblings
-                    var index = siblings.indexOf(element);
-                
-                    return index;
-                }
     
                 function checkWord() {
                     const currentWord = selectedLetters.join(''); // No need to convert to lowercase again

@@ -90,3 +90,69 @@ function get_lang() {
 function is_valid_url($url) {
     return filter_var($url, FILTER_VALIDATE_URL) !== false;
 }
+
+/**
+ * Generate letters grid
+ * 
+ */
+function generateGrid($rows = 18, $cols = 18, $words = []) {
+    // Initialize an empty grid
+    $grid = array_fill(0, $rows, array_fill(0, $cols, ''));
+
+    // Romanian letters to use for random filling
+    $romanianLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'Î', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'X', 'Z'];
+
+    // Insert words into the grid
+    foreach ($words as $wordInfo) {
+        $word = str_replace(' ', '', $wordInfo['word']);
+
+        if ($wordInfo['direction'] == 'horizontal') {
+            $row = $wordInfo['row'];
+            $startCol = $wordInfo['start'];
+            $endCol = $wordInfo['end'];
+
+            for ($i = $startCol; $i <= $endCol; $i++) {
+                $grid[$row][$i] = mb_substr($word, $i - $startCol, 1);
+            }
+        } elseif ($wordInfo['direction'] == 'vertical') {
+            $col = $wordInfo['col'];
+            $startRow = $wordInfo['start'];
+            $endRow = $wordInfo['end'];
+
+            for ($i = $startRow; $i <= $endRow; $i++) {
+                $grid[$i][$col] = mb_substr($word, $i - $startRow, 1);
+            }
+        }
+    }
+
+    // Fill remaining empty cells with random Romanian letters
+    for ($i = 0; $i < $rows; $i++) {
+        for ($j = 0; $j < $cols; $j++) {
+            if ($grid[$i][$j] === '') {
+                $grid[$i][$j] = $romanianLetters[array_rand($romanianLetters)];
+            }
+        }
+    }
+
+    // Display the grid
+    echo '<div class="word-grid">';
+
+    $x=0;
+    foreach ($grid as $row) : $x++; ?>
+
+        <div class="words-row" data-row="<?php echo $x; ?>">
+            <?php 
+            $y=0;
+            foreach ($row as $letter) : $y++;
+                $index_left = ($y == 1 ? $x : '');
+                $index_top = ($x == 1 ? $y : '');
+            ?>
+                <span class="letter"  data-column="<?php echo $y; ?>" data-letter="<?php echo htmlspecialchars($letter, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($letter, ENT_QUOTES, 'UTF-8'); ?> <i class="left-index"><?php echo $index_left; ?></i> <i class="top-index"><?php echo $index_top; ?></i></span>
+            <?php endforeach; ?>
+        </div>
+
+    <?php
+    endforeach;
+
+    echo '</div>';
+}

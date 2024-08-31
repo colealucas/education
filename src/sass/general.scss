@@ -836,6 +836,27 @@ ol.found-words-list {
 	border: 0.5px solid $medium-gray-color;
 	cursor: pointer;
 	user-select: none;
+	position: relative;
+	text-transform: uppercase;
+
+	.left-index,
+	.top-index {
+		position: absolute;
+		font-size: 14px;
+		color: #999;
+	}
+
+	.left-index {
+		top: 50%;
+		transform: translateY(-50%);
+		right: calc(100% + 6px);
+	}
+
+	.top-index {
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: calc(100% + 4px);
+	}
 }
 
 .letter.selected {

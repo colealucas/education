@@ -542,7 +542,51 @@
                                     "tabs": "all",
                                     "toolbar": "full",
                                     "media_upload": 1,
-                                    "delay": 0
+                                    "delay": 1
+                                },
+                                {
+                                    "key": "field_66d1d974824b3",
+                                    "label": "Grid total rows",
+                                    "name": "grid_total_rows",
+                                    "aria-label": "",
+                                    "type": "number",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": 18,
+                                    "min": 1,
+                                    "max": "",
+                                    "placeholder": "Total rows",
+                                    "step": 1,
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_66d1d995824b4",
+                                    "label": "Grid total columns",
+                                    "name": "grid_total_cols",
+                                    "aria-label": "",
+                                    "type": "number",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": 18,
+                                    "min": 1,
+                                    "max": "",
+                                    "placeholder": "Total columns",
+                                    "step": 1,
+                                    "prepend": "",
+                                    "append": ""
                                 },
                                 {
                                     "key": "field_66d0be5e1f97f",
@@ -558,7 +602,7 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "layout": "row",
+                                    "layout": "block",
                                     "min": 0,
                                     "max": 0,
                                     "collapsed": "",
@@ -575,13 +619,226 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": "",
+                                                "width": "50",
                                                 "class": "",
                                                 "id": ""
                                             },
                                             "default_value": "",
                                             "maxlength": "",
                                             "placeholder": "Add word",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_66d0be5e1f97f"
+                                        },
+                                        {
+                                            "key": "field_66d1d561c2efa",
+                                            "label": "Direction",
+                                            "name": "direction",
+                                            "aria-label": "",
+                                            "type": "select",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "50",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "choices": {
+                                                "horizontal": "Horizontal",
+                                                "vertical": "Vertical"
+                                            },
+                                            "default_value": "horizontal",
+                                            "return_format": "value",
+                                            "multiple": 0,
+                                            "allow_null": 0,
+                                            "ui": 0,
+                                            "ajax": 0,
+                                            "placeholder": "",
+                                            "parent_repeater": "field_66d0be5e1f97f"
+                                        },
+                                        {
+                                            "key": "field_66d1d597c2efb",
+                                            "label": "Row number",
+                                            "name": "horizontal_row_number",
+                                            "aria-label": "",
+                                            "type": "number",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_66d1d561c2efa",
+                                                        "operator": "==",
+                                                        "value": "horizontal"
+                                                    }
+                                                ]
+                                            ],
+                                            "wrapper": {
+                                                "width": "33",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "min": 1,
+                                            "max": "",
+                                            "placeholder": "Add row number",
+                                            "step": 1,
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_66d0be5e1f97f"
+                                        },
+                                        {
+                                            "key": "field_66d1d696c2efc",
+                                            "label": "Start cell",
+                                            "name": "horizontal_start",
+                                            "aria-label": "",
+                                            "type": "number",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_66d1d561c2efa",
+                                                        "operator": "==",
+                                                        "value": "horizontal"
+                                                    }
+                                                ]
+                                            ],
+                                            "wrapper": {
+                                                "width": "33",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "min": "",
+                                            "max": "",
+                                            "placeholder": "Start cell",
+                                            "step": 1,
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_66d0be5e1f97f"
+                                        },
+                                        {
+                                            "key": "field_66d1d6c1c2efd",
+                                            "label": "End cell",
+                                            "name": "horizontal_end",
+                                            "aria-label": "",
+                                            "type": "number",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_66d1d561c2efa",
+                                                        "operator": "==",
+                                                        "value": "horizontal"
+                                                    }
+                                                ]
+                                            ],
+                                            "wrapper": {
+                                                "width": "33",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "min": "",
+                                            "max": "",
+                                            "placeholder": "End cell",
+                                            "step": 1,
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_66d0be5e1f97f"
+                                        },
+                                        {
+                                            "key": "field_66d1d8ea9ed50",
+                                            "label": "Column number",
+                                            "name": "vertical_column_number",
+                                            "aria-label": "",
+                                            "type": "number",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_66d1d561c2efa",
+                                                        "operator": "==",
+                                                        "value": "vertical"
+                                                    }
+                                                ]
+                                            ],
+                                            "wrapper": {
+                                                "width": "33",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "min": 1,
+                                            "max": "",
+                                            "placeholder": "Add column number",
+                                            "step": 1,
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_66d0be5e1f97f"
+                                        },
+                                        {
+                                            "key": "field_66d1d811bd74f",
+                                            "label": "Start row",
+                                            "name": "vertical_row_start",
+                                            "aria-label": "",
+                                            "type": "number",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_66d1d561c2efa",
+                                                        "operator": "==",
+                                                        "value": "vertical"
+                                                    }
+                                                ]
+                                            ],
+                                            "wrapper": {
+                                                "width": "33",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "min": "",
+                                            "max": "",
+                                            "placeholder": "Start row number",
+                                            "step": 1,
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_66d0be5e1f97f"
+                                        },
+                                        {
+                                            "key": "field_66d1d861bd750",
+                                            "label": "End row",
+                                            "name": "vertical_row_end",
+                                            "aria-label": "",
+                                            "type": "number",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_66d1d561c2efa",
+                                                        "operator": "==",
+                                                        "value": "vertical"
+                                                    }
+                                                ]
+                                            ],
+                                            "wrapper": {
+                                                "width": "33",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "min": "",
+                                            "max": "",
+                                            "placeholder": "End row number",
+                                            "step": 1,
                                             "prepend": "",
                                             "append": "",
                                             "parent_repeater": "field_66d0be5e1f97f"
@@ -619,5 +876,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1724956339
+    "modified": 1725125105
 }
