@@ -868,6 +868,63 @@ ol.found-words-list {
 	color: $white-color;
 }
 
+
+// match using arrows game
+.match-arrows-game {
+	.ma-container {
+		display: flex;
+		justify-content: space-between;
+		position: relative;
+	}
+	
+	.ma-column {
+		width: 35%;
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+	
+	.ma-item {
+		padding: 16px 20px;
+		background-color: $light-gray-color;
+		cursor: pointer;
+		font-size: 16px;
+		font-weight: 600;
+		border-radius: 8px;
+		user-select: none;
+
+		&.selected {
+			background-color: $medium-gray-color;
+		}
+
+		&.connected,
+		&.success {
+			background-color: $green-color;
+			color: $white-color;
+		}
+
+		&.error {
+			background-color: #F00001;
+			color: $white-color;
+		}
+	}
+	
+	.ma-arrows {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+	}
+	
+	line {
+		stroke: black;
+		stroke-width: 2;
+	}
+}
+
+
 .zdx{}
 
 

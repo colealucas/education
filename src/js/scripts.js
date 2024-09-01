@@ -475,7 +475,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         if (letterIndex === -1) {
                             // If the letter is not already selected, select it
                             this.classList.add('selected');
-                            
+
                             // bugfix: please keep using data-letter attribute to get the letter
                             selectedLetters.push(this.dataset.letter.toLowerCase()); // Ensure lowercase
                             selectedElements.push(this);
@@ -554,4 +554,142 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     handleSquareTableGame();
+
+    function handleMatchArrows() {
+        const gameWrappers = document.querySelectorAll('.match-arrows-game');
+    
+        if (gameWrappers.length) {
+            gameWrappers.forEach(function (wrapper) {
+                const leftItems = wrapper.querySelectorAll('.ma-item-left');
+                const rightItems = wrapper.querySelectorAll('.ma-item-right');
+    
+                let startItem = null;
+                let endItem = null;
+                let lastStatus = false;
+    
+                if (leftItems.length) {
+                    leftItems.forEach(function (leftItem) {
+                        leftItem.onclick = function (ev) {
+                            ev.preventDefault();
+    
+                            if (!startItem) {
+                                startItem = this;
+    
+                                if (!startItem.classList.contains('connected')) {
+                                    startItem.classList.add('selected');
+                                } else {
+                                    startItem = null; // Reset if not valid
+                                }
+                            }
+                        };
+                    });
+                }
+    
+                if (rightItems.length) {
+                    rightItems.forEach(function (rightItem) {
+                        rightItem.onclick = function (ev) {
+                            ev.preventDefault();
+                            endItem = this;
+    
+                            if (startItem && !startItem.classList.contains('connected')) {
+                                // Check if the end item matches the expected target (add your logic here)
+                                if (isCorrectMatch(startItem, endItem)) {
+                                    lastStatus = true;
+
+                                    startItem.classList.add('connected');
+                                    startItem.classList.remove('selected');
+                                    
+                                    drawArrow(startItem, endItem, true);
+                                    endItem.classList.add('success');
+                                } else {
+                                    lastStatus = false;
+
+                                    startItem.classList.remove('connected');
+                                    startItem.classList.remove('selected');
+                                    drawArrow(startItem, endItem, false);
+                                    endItem.classList.add('error');
+
+                                     // Remove the error status
+                                     setTimeout(() => {
+                                        endItem.classList.remove('error');
+                                        endItem = null;
+                                    }, 650);
+                                }
+
+                                startItem = null;
+                            } else {
+                                startItem = null;
+                            }
+                        };
+                    });
+                }
+
+                function drawArrowHead(isSuccess) {
+                    // Create an SVG marker for the arrowhead
+                    const svg = wrapper.querySelector('.ma-arrows');
+                    const marker = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
+                    marker.setAttribute('id', 'arrowhead');
+                    marker.setAttribute('markerWidth', '10');
+                    marker.setAttribute('markerHeight', '7');
+                    marker.setAttribute('refX', '10');
+                    marker.setAttribute('refY', '3.5');
+                    marker.setAttribute('orient', 'auto');
+                    marker.setAttribute('markerUnits', 'strokeWidth');
+        
+                    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                    path.setAttribute('d', 'M0,0 L10,3.5 L0,7 Z');
+                    path.setAttribute('style', 'fill: #808285;');
+                    marker.appendChild(path);
+        
+                    svg.appendChild(marker);
+                }
+    
+                function drawArrow(start, end, isSuccess) {
+                    const svg = wrapper.querySelector('.ma-arrows');
+                    const startRect = start.getBoundingClientRect();
+                    const endRect = end.getBoundingClientRect();
+                    const containerRect = wrapper.querySelector('.ma-container').getBoundingClientRect();
+    
+                    const x1 = startRect.right - containerRect.left;
+                    const y1 = startRect.top + startRect.height / 2 - containerRect.top;
+                    const x2 = endRect.left - containerRect.left;
+                    const y2 = endRect.top + endRect.height / 2 - containerRect.top;
+    
+                    // Create a line with an arrowhead
+                    const arrow = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                    arrow.setAttribute('x1', x1);
+                    arrow.setAttribute('y1', y1);
+                    arrow.setAttribute('x2', x2);
+                    arrow.setAttribute('y2', y2);
+                    arrow.setAttribute('marker-end', 'url(#arrowhead)');
+                    arrow.setAttribute('style', `stroke: ${isSuccess ? '#808285' : '#808285'}; stroke-width: 2;`);
+    
+                    // Append the line to the SVG
+                    svg.appendChild(arrow);
+
+                    drawArrowHead(isSuccess);
+    
+                    if (!isSuccess) {
+                        // Remove the line after a short delay for the error case
+                        setTimeout(() => {
+                            svg.removeChild(arrow);
+                        }, 650);
+                    }
+                }
+    
+                function isCorrectMatch(startItem, endItem) {
+                    // Add your logic here to check if the match is correct
+                    // For example, compare data attributes or IDs
+                    if ( startItem && endItem ) {
+                        return startItem.dataset.id === endItem.dataset.id;
+                    } else {
+                        return false;
+                    }
+                }
+
+            });
+        }
+    }
+    
+    handleMatchArrows();
 });
