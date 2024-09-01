@@ -562,6 +562,8 @@ document.addEventListener("DOMContentLoaded", function() {
             gameWrappers.forEach(function (wrapper) {
                 const leftItems = wrapper.querySelectorAll('.ma-item-left');
                 const rightItems = wrapper.querySelectorAll('.ma-item-right');
+                const totalItems = leftItems.length;
+                let correctCounter = 0;
     
                 let startItem = null;
                 let endItem = null;
@@ -601,6 +603,13 @@ document.addEventListener("DOMContentLoaded", function() {
                                     
                                     drawArrow(startItem, endItem, true);
                                     endItem.classList.add('success');
+
+                                    correctCounter++;
+
+                                    if ( correctCounter >= totalItems ) {
+                                        // show success
+                                        showSuccessPopup( getText('bravo') ); 
+                                    }
                                 } else {
                                     lastStatus = false;
 
