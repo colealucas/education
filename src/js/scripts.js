@@ -4,13 +4,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const translatedText = {
         'ro': {
-            'bravo': 'Bravo',
+            'bravo': 'Excelent! Ai realizat corect!',
             'continue': 'Continuă',
             'wordsToFind': 'cuvinte de găsit',
             'wordsFound': 'cuvinte descoperite',
         },
         'ru': {
-            'bravo': 'Браво',
+            'bravo': 'Отлично! Ты сделал правильно!',
             'continue': 'Продолжить',
             'wordsToFind': 'слов для поиска',
             'wordsFound': 'найденных слова',
@@ -324,7 +324,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             </svg>
                         </div>
                         <div class="text-24px font-600 my-8px leading-130">${message}</div>
-                        <div><a href="#" class="btn min-w-[200px]" data-fancybox-close>${continueText}</a></div>
+                        <div class="mt-16px"><a href="#" class="btn min-w-[200px]" data-fancybox-close>${continueText}</a></div>
                     </div>`,
                 type: "html",
                 },
