@@ -28,6 +28,9 @@ $get_static_text = [
         'curiosities' => 'Удивительные факты',
     ]
 ];
+
+$parent_module = get_field('parent_module');
+$parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_permalink($parent_module[0]->ID) : '#');
 ?>
 
 <!-- Key concepts -->
@@ -105,9 +108,6 @@ $get_static_text = [
     <div class="mt-24px interactive-task-trigger bg-green rounded-16px hide">
         <img src="<?php echo get_template_directory_uri() . '/assets/images/interactive-task-bg.svg'; ?>" alt="">
     </div>
-
-    <!-- spacer from the bottom of the popup -->
-    <div class="h-30px"></div>
 </div>
 
 <!-- am_curious -->
@@ -150,9 +150,6 @@ $get_static_text = [
     <div class="mt-24px interactive-task-trigger bg-green rounded-16px hide">
         <img src="<?php echo get_template_directory_uri() . '/assets/images/interactive-task-bg.svg'; ?>" alt="">
     </div>
-
-    <!-- spacer from the bottom of the popup -->
-    <div class="h-30px"></div>
 </div>
 
 <!-- am_cult -->
@@ -195,9 +192,6 @@ $get_static_text = [
     <div class="mt-24px interactive-task-trigger bg-green rounded-16px hide">
         <img src="<?php echo get_template_directory_uri() . '/assets/images/interactive-task-bg.svg'; ?>" alt="">
     </div>
-
-    <!-- spacer from the bottom of the popup -->
-    <div class="h-30px"></div>
 </div>
 
 <!-- am_responsable -->
@@ -240,9 +234,6 @@ $get_static_text = [
     <div class="mt-24px interactive-task-trigger bg-green rounded-16px hide">
         <img src="<?php echo get_template_directory_uri() . '/assets/images/interactive-task-bg.svg'; ?>" alt="">
     </div>
-
-    <!-- spacer from the bottom of the popup -->
-    <div class="h-30px"></div>
 </div>
 
 <!-- am_begining -->
@@ -285,9 +276,6 @@ $get_static_text = [
     <div class="mt-24px interactive-task-trigger bg-green rounded-16px hide">
         <img src="<?php echo get_template_directory_uri() . '/assets/images/interactive-task-bg.svg'; ?>" alt="">
     </div>
-
-    <!-- spacer from the bottom of the popup -->
-    <div class="h-30px"></div>
 </div>
 
 <!-- curiosities -->
@@ -330,9 +318,6 @@ $get_static_text = [
     <div class="mt-24px interactive-task-trigger bg-green rounded-16px hide">
         <img src="<?php echo get_template_directory_uri() . '/assets/images/interactive-task-bg.svg'; ?>" alt="">
     </div>
-
-    <!-- spacer from the bottom of the popup -->
-    <div class="h-30px"></div>
 </div>
 
 
@@ -346,7 +331,7 @@ $get_static_text = [
                     <div class="col-lg-6">
                         <div class="relative">
                             <div class="go-back">
-                                <a href="<?php echo $parent_book_url ; ?>" class="flex items-center gap-8px text-white hover:text-white focus:text-white">
+                                <a href="<?php echo $parent_module_url; ?>" class="flex items-center gap-8px text-white hover:text-white focus:text-white">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
                                         <path d="M12.8334 7.50002H1.16669M1.16669 7.50002L7.00002 13.3334M1.16669 7.50002L7.00002 1.66669" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>

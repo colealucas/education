@@ -36,8 +36,6 @@ document.addEventListener("DOMContentLoaded", function() {
     function handleThemeContentLightbox() {
         const images = document.querySelectorAll('[class*="wp-image-"]');
 
-        console.log( images );
-
         if (images.length) {
             images.forEach(function(img) {
                 const parent = img.parentNode;
