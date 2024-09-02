@@ -28,7 +28,7 @@
     <div class="flexible-content-section text-content-section my-12px">
         <?php if ( $section_title ) : ?>
             <div class="tcs-heading mb-16px bg-green text-white py-20px px-24px rounded-16px">
-                <h2 class="text-22px font-500 leading-120 flex items-center gap-12px">
+                <h2 class="text-20px font-500 leading-130 flex items-center gap-20px">
                     <span class="w-30px block">
                         <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 17V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -69,7 +69,7 @@
 
     <div class="flexible-content-section match-definitions my-24px">
         <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
-            <h2 class="text-22px font-500 leading-120 flex items-center gap-12px">
+            <h2 class="text-20px font-500 leading-130 flex items-center gap-20px">
                 <span class="w-30px block">
                     <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 17V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -203,7 +203,7 @@
 
     <div class="flexible-content-section match-definitions my-24px">
         <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
-            <h2 class="text-22px font-500 leading-120 flex items-center gap-12px">
+            <h2 class="text-20px font-500 leading-130 flex items-center gap-20px">
                 <span class="w-30px block">
                     <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 17V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -305,7 +305,7 @@
 
     <div class="flexible-content-section match-arrows my-24px">
         <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
-            <h2 class="text-22px font-500 leading-120 flex items-center gap-12px">
+            <h2 class="text-20px font-500 leading-130 flex items-center gap-20px">
                 <span class="w-30px block">
                     <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 17V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
