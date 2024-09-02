@@ -43,7 +43,7 @@
             </div>
         <?php endif; ?>
 
-        <div class="tcs-content phase-content entry-content content-spacing text-16px <?php echo $addition_classes; ?>">
+        <div class="tcs-content phase-content entry-content content-spacing text-17px <?php echo $addition_classes; ?>">
             <?php echo $section_content; ?>
         </div>
     </div>
@@ -83,7 +83,7 @@
             </h2>
         </div>
 
-        <div class="tcs-content phase-content entry-content content-spacing text-16px">
+        <div class="tcs-content phase-content entry-content content-spacing text-17px">
             <?php echo $section_description; // optional ?>
         </div>
 
@@ -217,7 +217,7 @@
             </h2>
         </div>
 
-        <div class="tcs-content phase-content entry-content content-spacing text-16px">
+        <div class="tcs-content phase-content entry-content content-spacing text-17px">
             <?php echo $section_description; // optional ?>
         </div>
 
@@ -319,7 +319,7 @@
             </h2>
         </div>
 
-        <div class="tcs-content phase-content entry-content content-spacing text-16px">
+        <div class="tcs-content phase-content entry-content content-spacing text-17px">
             <?php echo $section_description; // optional ?>
         </div>
 
