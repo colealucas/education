@@ -275,7 +275,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if ( sections.length ) {
             sections.forEach(function(textSection) {
                 if ( textSection ) {
-                    const paragraphs = textSection.querySelectorAll('p');
+                    const paragraphs = textSection.querySelectorAll('p:not(:first-child):not(.ignore)');
 
                     if ( paragraphs.length ) {
                         paragraphs.forEach(function(p) {
