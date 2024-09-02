@@ -668,6 +668,12 @@ body.logged-in {
 	background-color: rgba(0,0,0, 0.3);
 }
 
+.image-lightbox {
+	.fancybox__backdrop {
+		background-color: rgba(0,0,0, 0.9);
+	}
+}
+
 .content-spacing {
 	p,h1,h2,h3,h4,h5,h6, ul, ol, table, iframe, blockquote, video {
 		margin-bottom: 20px;
@@ -703,6 +709,18 @@ body.logged-in {
 	h4 { font-size: 20px }
 	h5 { font-size: 18px }
 	h6 { font-size: 17px }
+
+	ol, ul {
+		padding-left: 20px;
+	}
+
+	ul {
+		list-style: disc;
+	}
+
+	ol {
+		list-style: decimal;
+	}
 }
 
 .video-container {

@@ -33,12 +33,38 @@ document.addEventListener("DOMContentLoaded", function() {
         return response;
     }
 
+    function handleThemeContentLightbox() {
+        const images = document.querySelectorAll('[class*="wp-image-"]');
+
+        console.log( images );
+
+        if (images.length) {
+            images.forEach(function(img) {
+                const parent = img.parentNode;
+
+                if (parent.nodeName.toLowerCase() === 'a') {
+                    parent.setAttribute('theme-fancybox', '');
+                }
+            });
+        }
+    }
+    handleThemeContentLightbox();
+
     Fancybox.bind("[data-fancybox]", {
         // Your custom options
         backdropClick: false,
         closeButton: true,
         closeExisting: true,
         dragToClose: false,
+        mainClass: "regular-lightbox",
+    });
+
+    Fancybox.bind("[theme-fancybox]", {
+        backdropClick: true,
+        closeButton: true,
+        closeExisting: false,
+        dragToClose: false,
+        mainClass: "image-lightbox",
     });
 
     if ( document.querySelector('#print-button') ) {
