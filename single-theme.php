@@ -152,11 +152,11 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
     </div>
 </div>
 
-<!-- am_cult -->
-<div style="display: none;" id="am-cult" class="w-[833px] p-24px rounded-24px">
+<!-- am_begining -->
+<div style="display: none;" id="am-begining" class="w-[833px] p-24px rounded-24px">
     <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-light-green p-16px py-20px rounded-16px text-green text-24px font-500 leading-120">
         <div>
-            <?php echo $get_static_text[get_lang()]['am_cult']; ?>
+            <?php echo $get_static_text[get_lang()]['am_begining']; ?>
         </div>
 
         <div>
@@ -236,11 +236,11 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
     </div>
 </div>
 
-<!-- am_begining -->
-<div style="display: none;" id="am-begining" class="w-[833px] p-24px rounded-24px">
+<!-- am_cult -->
+<div style="display: none;" id="am-cult" class="w-[833px] p-24px rounded-24px">
     <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-light-green p-16px py-20px rounded-16px text-green text-24px font-500 leading-120">
         <div>
-            <?php echo $get_static_text[get_lang()]['am_begining']; ?>
+            <?php echo $get_static_text[get_lang()]['am_cult']; ?>
         </div>
 
         <div>
