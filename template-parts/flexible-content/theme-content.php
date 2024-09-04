@@ -367,9 +367,10 @@
             $item_image = get_sub_field('image');
 
             $the_title = ($item_title ? $item_title : '');
-            $the_image = ($item_image ? '<img class="h-[55px]" src="' . $item_image . '" />' : '');
+            $the_image = ($item_image ? '<img style="' . (empty($the_title) ? 'height: auto; max-height: 78px' : 'height: 55px;') . '" src="' . $item_image . '" />' : '');
+            $title_markup = (!empty($the_title) ? '<div class="crono-item-title leading-110 text-15px font-500">' . $the_title . '</div>': '');
 
-            $items_array[] = '<div class="item min-h-[100px]" data-target="placeholder'. $k .'"><div class="crono-item-image">' . $the_image . '</div> <div class="crono-item-title leading-110 text-15px font-500">' . $the_title . '</div> </div>';
+            $items_array[] = '<div class="item min-h-[100px]" data-target="placeholder'. $k .'"><div class="crono-item-image">' . $the_image . '</div>'. $title_markup .'</div>';
         endwhile;
     endif;
 
