@@ -367,9 +367,9 @@
             $item_image = get_sub_field('image');
 
             $the_title = ($item_title ? $item_title : '');
-            $the_image = ($item_image ? '<img class=" h-[50px]" src="' . $item_image . '" />' : '');
+            $the_image = ($item_image ? '<img class="h-[55px]" src="' . $item_image . '" />' : '');
 
-            $items_array[] = '<div class="item min-h-[95px]" data-target="placeholder'. $k .'"><div class="crono-item-image">' . $the_image . '</div> <div class="crono-item-title leading-110 text-15px font-500">' . $the_title . '</div> </div>';
+            $items_array[] = '<div class="item min-h-[100px]" data-target="placeholder'. $k .'"><div class="crono-item-image">' . $the_image . '</div> <div class="crono-item-title leading-110 text-15px font-500">' . $the_title . '</div> </div>';
         endwhile;
     endif;
 
@@ -411,7 +411,7 @@
 
                 </div>
 
-                <div class="crono-mixed-items flex flex-wrap justify-center gap-20px mt-30px bg-light-green p-30px rounded-16px">
+                <div class="crono-mixed-items flex flex-wrap justify-center gap-20px mt-30px bg-light-green p-20px rounded-16px">
                     <?php if ($items_array) : ?>
                         <?php foreach( $items_array as $item ) : ?>
                             <?php echo $item; ?>
