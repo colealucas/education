@@ -695,6 +695,49 @@ body.logged-in {
 		display: table;
 		clear: both;
 	}
+
+	.click-words {
+		span.focus-span {
+			cursor: pointer;
+			position: relative;
+			display: inline-block;
+
+			&:before {
+				content: '';
+				display: inline-block;
+				position: absolute;
+				z-index: -1;
+				top: 2px;
+				left: 0;
+				right: 0;
+				bottom: 2px;
+				background-color: $light-gray-color;
+				padding: 0;
+				border-radius: 2px;
+				opacity: 0;
+				line-height: 0;
+				transition: all 0.2s ease-out;
+			}
+
+			&:hover {
+				color: #10823B;
+
+				&:before {
+					opacity: 1;
+					background-color: $medium-gray-color;
+				}
+			}
+
+			&.clicked {
+				color: #10823B;
+				font-weight: 700;
+
+				&::before {
+					opacity: 1;
+				}
+			}
+		}
+	}
 }
 
 .entry-content {
@@ -1036,7 +1079,14 @@ ol.found-words-list {
 	.error {
 		background-color: #f8d7da;
 	}
-	
+}
+
+.responsive-video iframe {
+	width: 100%;
+    aspect-ratio: 16 / 9; /* or 1.77 for more precision */
+    height: auto;
+    border: 0; /* Optional: removes border */
+	border-radius: 16px;
 }
 
 .zdx{}

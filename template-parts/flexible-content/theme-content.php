@@ -7,11 +7,12 @@
  ?>
 
 <?php if( get_row_layout() == 'text_content' ) :  // text_content section
-    $css_classes = [];
-    $section_title = get_sub_field('title');
-    $section_content = get_sub_field('content');
+    $css_classes      = [];
+    $section_title    = get_sub_field('title');
+    $section_content  = get_sub_field('content');
     $full_with_images = get_sub_field('full_with_images');
     $check_paragraphs = get_sub_field('check_paragraphs');
+    $click_words      = get_sub_field('click_words');
 
     if ($full_with_images) {
         $css_classes[] = 'full-width-images';
@@ -19,6 +20,10 @@
 
     if ($check_paragraphs) {
         $css_classes[] = 'check-paragraphs';
+    }
+
+    if ($click_words) {
+        $css_classes[] = 'click-words';
     }
 
     // convert array of classes to string
@@ -424,6 +429,45 @@
 
         <div class="tcs-content phase-content entry-content content-spacing text-17px">
             <?php echo $section_description; // optional ?>
+        </div>
+    </div>
+
+
+<?php elseif( get_row_layout() == 'select_corect_variant' ) : // match_words_with_definition
+    $section_title = get_sub_field('title');
+    $section_content = get_sub_field('content');
+
+?>
+
+    <div class="flexible-content-section spot-correct-game my-24px">
+        <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
+            <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
+                <span class="w-30px block">
+                    <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 17V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <circle cx="1" cy="1" r="1" transform="matrix(1 0 0 -1 11 9)" fill="currentColor"/>
+                        <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </span>
+                <span class="w-[calc(100%-42px)] block">
+                    <?php echo $section_title; ?>
+                </span>
+            </h2>
+        </div>
+
+        <div class="spot-correct-wrap py-20px mb-24px">
+            <?php if ( have_rows('content') ) : ?>
+                <?php while ( have_rows('content') ) : the_row();
+                    $section_description = get_sub_field('description');
+                ?>
+
+                <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video">
+                    <?php echo $section_description; ?>
+                </div>
+
+                <?php endwhile; ?>
+            <?php endif; ?>
+
         </div>
     </div>
 

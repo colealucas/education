@@ -33,6 +33,28 @@ document.addEventListener("DOMContentLoaded", function() {
         return response;
     }
 
+    function updateYouTubeIframes() {
+        // Get all iframe elements on the page
+        const iframes = document.querySelectorAll('.flexible-content-section iframe');
+    
+        // Loop through each iframe
+        iframes.forEach((iframe) => {
+            // Check if the iframe is a YouTube video
+            const src = iframe.src;
+            if (src.includes('youtube.com/embed/')) {
+                // Check if the ?rel=0 is already present
+                if (!src.includes('?rel=0') && !src.includes('&rel=0')) {
+                    // Append ?rel=0 or &rel=0 based on if there are existing query parameters
+                    const separator = src.includes('?') ? '&' : '?';
+                    iframe.src = src + separator + 'rel=0';
+                }
+            }
+        });
+    }
+    
+    // Call the function to update all YouTube iframes on the page
+    updateYouTubeIframes();
+
     function handleThemeContentLightbox() {
         const images = document.querySelectorAll('[class*="wp-image-"]');
 
@@ -796,4 +818,66 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     handleCronoGame();
 
+    function handleClickWords() {
+        const wrappers = document.querySelectorAll('.click-words');
+
+        if (wrappers) {
+            wrappers.forEach(function(wrapper) {
+
+                function walk(node) {
+                    let child, next;
+            
+                    switch (node.nodeType) {
+                        case 1:  // Element
+                        case 9:  // Document
+                        case 11: // Document fragment
+                            child = node.firstChild;
+                            while (child) {
+                                next = child.nextSibling;
+                                walk(child);
+                                child = next;
+                            }
+                            break;
+            
+                        case 3: // Text node
+                            handleText(node);
+                            break;
+                    }
+                }
+            
+                function handleText(textNode) {
+                    const words = textNode.nodeValue.split(/(\s+)/); // Keep spaces as separate elements
+                    const fragment = document.createDocumentFragment();
+            
+                    words.forEach(function(word) {
+                        if (/\S/.test(word)) { // Only wrap non-whitespace text
+                            const span = document.createElement('span');
+                            span.textContent = word;
+                            span.classList.add('focus-span');
+                            fragment.appendChild(span);
+                        } else {
+                            fragment.appendChild(document.createTextNode(word));
+                        }
+                    });
+            
+                    textNode.parentNode.replaceChild(fragment, textNode);
+                }
+            
+                if (wrapper && wrapper.textContent.length ) {
+                    walk(wrapper);
+                }
+
+                const focusSpans = document.querySelectorAll('.focus-span');
+
+                if ( focusSpans ) {
+                    focusSpans.forEach(function(span){
+                        span.onclick = function() {
+                            span.classList.toggle('clicked');
+                        };
+                    });
+                }
+            });
+        }
+    }
+    handleClickWords();
 });
