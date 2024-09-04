@@ -76,12 +76,12 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
         </div>
 
         <div>
-            <span class="inline-block cursor-pointer print-button">
+            <a href="<?php the_permalink( get_the_ID() ) ?>?print=true&step=1" class="inline-block cursor-pointer print-button" target="_blank">
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="40" height="40" rx="20" fill="#00665E"/>
                     <path d="M14 17V10H26V17M14 26H12C11.4696 26 10.9609 25.7893 10.5858 25.4142C10.2107 25.0391 10 24.5304 10 24V19C10 18.4696 10.2107 17.9609 10.5858 17.5858C10.9609 17.2107 11.4696 17 12 17H28C28.5304 17 29.0391 17.2107 29.4142 17.5858C29.7893 17.9609 30 18.4696 30 19V24C30 24.5304 29.7893 25.0391 29.4142 25.4142C29.0391 25.7893 28.5304 26 28 26H26M14 22H26V30H14V22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-            </span>
+            </a>
         </div>
     </div>
 
@@ -116,12 +116,12 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
         </div>
 
         <div>
-            <span class="inline-block cursor-pointer print-button">
+            <a href="<?php the_permalink( get_the_ID() ) ?>?print=true&step=2" class="inline-block cursor-pointer print-button" target="_blank">
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="40" height="40" rx="20" fill="#00665E"/>
                     <path d="M14 17V10H26V17M14 26H12C11.4696 26 10.9609 25.7893 10.5858 25.4142C10.2107 25.0391 10 24.5304 10 24V19C10 18.4696 10.2107 17.9609 10.5858 17.5858C10.9609 17.2107 11.4696 17 12 17H28C28.5304 17 29.0391 17.2107 29.4142 17.5858C29.7893 17.9609 30 18.4696 30 19V24C30 24.5304 29.7893 25.0391 29.4142 25.4142C29.0391 25.7893 28.5304 26 28 26H26M14 22H26V30H14V22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-            </span>
+            </a>
         </div>
     </div>
 
@@ -156,12 +156,12 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
         </div>
 
         <div>
-            <span class="inline-block cursor-pointer print-button">
+            <a href="<?php the_permalink( get_the_ID() ) ?>?print=true&step=3" class="inline-block cursor-pointer print-button" target="_blank">
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="40" height="40" rx="20" fill="#00665E"/>
                     <path d="M14 17V10H26V17M14 26H12C11.4696 26 10.9609 25.7893 10.5858 25.4142C10.2107 25.0391 10 24.5304 10 24V19C10 18.4696 10.2107 17.9609 10.5858 17.5858C10.9609 17.2107 11.4696 17 12 17H28C28.5304 17 29.0391 17.2107 29.4142 17.5858C29.7893 17.9609 30 18.4696 30 19V24C30 24.5304 29.7893 25.0391 29.4142 25.4142C29.0391 25.7893 28.5304 26 28 26H26M14 22H26V30H14V22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-            </span>
+            </a>
         </div>
     </div>
 
@@ -196,12 +196,12 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
         </div>
 
         <div>
-            <span class="inline-block cursor-pointer print-button">
+            <a href="<?php the_permalink( get_the_ID() ) ?>?print=true&step=4" class="inline-block cursor-pointer print-button" target="_blank">
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="40" height="40" rx="20" fill="#00665E"/>
                     <path d="M14 17V10H26V17M14 26H12C11.4696 26 10.9609 25.7893 10.5858 25.4142C10.2107 25.0391 10 24.5304 10 24V19C10 18.4696 10.2107 17.9609 10.5858 17.5858C10.9609 17.2107 11.4696 17 12 17H28C28.5304 17 29.0391 17.2107 29.4142 17.5858C29.7893 17.9609 30 18.4696 30 19V24C30 24.5304 29.7893 25.0391 29.4142 25.4142C29.0391 25.7893 28.5304 26 28 26H26M14 22H26V30H14V22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-            </span>
+            </a>
         </div>
     </div>
 
@@ -236,12 +236,12 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
         </div>
 
         <div>
-            <span class="inline-block cursor-pointer print-button">
+            <a href="<?php the_permalink( get_the_ID() ) ?>?print=true&step=5" class="inline-block cursor-pointer print-button" target="_blank">
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="40" height="40" rx="20" fill="#00665E"/>
                     <path d="M14 17V10H26V17M14 26H12C11.4696 26 10.9609 25.7893 10.5858 25.4142C10.2107 25.0391 10 24.5304 10 24V19C10 18.4696 10.2107 17.9609 10.5858 17.5858C10.9609 17.2107 11.4696 17 12 17H28C28.5304 17 29.0391 17.2107 29.4142 17.5858C29.7893 17.9609 30 18.4696 30 19V24C30 24.5304 29.7893 25.0391 29.4142 25.4142C29.0391 25.7893 28.5304 26 28 26H26M14 22H26V30H14V22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-            </span>
+            </a>
         </div>
     </div>
 
@@ -276,12 +276,12 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
         </div>
 
         <div>
-            <span class="inline-block cursor-pointer print-button">
+            <a href="<?php the_permalink( get_the_ID() ) ?>?print=true&step=6" class="inline-block cursor-pointer print-button" target="_blank">
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="40" height="40" rx="20" fill="#00665E"/>
                     <path d="M14 17V10H26V17M14 26H12C11.4696 26 10.9609 25.7893 10.5858 25.4142C10.2107 25.0391 10 24.5304 10 24V19C10 18.4696 10.2107 17.9609 10.5858 17.5858C10.9609 17.2107 11.4696 17 12 17H28C28.5304 17 29.0391 17.2107 29.4142 17.5858C29.7893 17.9609 30 18.4696 30 19V24C30 24.5304 29.7893 25.0391 29.4142 25.4142C29.0391 25.7893 28.5304 26 28 26H26M14 22H26V30H14V22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-            </span>
+            </a>
         </div>
     </div>
 

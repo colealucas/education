@@ -95,8 +95,8 @@ document.addEventListener("DOMContentLoaded", function() {
         if (printButtons.length) {
             printButtons.forEach(function(btn){
                 btn.addEventListener("click", function(ev) {
-                    ev.preventDefault();
-                    window.print();
+                    //ev.preventDefault();
+                    //window.print();
                 });
             });
         }
