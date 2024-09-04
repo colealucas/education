@@ -33,6 +33,34 @@ $parent_module = get_field('parent_module');
 $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_permalink($parent_module[0]->ID) : '#');
 ?>
 
+<?php if ( isset($_GET['print']) && intval($_GET['step']) == 1 ) : ?>
+
+    step 1
+
+<?php elseif ( isset($_GET['print']) && intval($_GET['step']) == 2 ) : ?>
+
+    step 2
+
+<?php elseif ( isset($_GET['print']) && intval($_GET['step']) == 3 ) : ?>
+
+step 3
+
+<?php elseif ( isset($_GET['print']) && intval($_GET['step']) == 4 ) : ?>
+
+step 4
+
+<?php elseif ( isset($_GET['print']) && intval($_GET['step']) == 5 ) : ?>
+
+step 5
+
+<?php elseif ( isset($_GET['print']) && intval($_GET['step']) == 6 ) : ?>
+
+step 6
+
+<?php else : ?>
+
+<!-- normal content start -->
+
 <!-- Key concepts -->
 <div style="display: none;" id="key-concepts" class="w-[833px] p-24px rounded-24px">
     <div class="concept-bar mt-30px bg-green p-16px rounded-16px text-white text-24px font-500 leading-120">
@@ -493,5 +521,9 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
         </div>
     </div>
 </div>
+
+<!-- normal content end -->
+
+<?php endif; ?>
 
 <?php get_footer(); ?>
