@@ -917,4 +917,24 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     handleSpotCorrectList();
+
+    function handleCuriosityClick(){
+        const curiosities = document.querySelectorAll('.curiosity-img');
+
+        if (curiosities.length) {
+            curiosities.forEach(function(cur) {
+                cur.onclick = function(ev) {
+                    ev.preventDefault();
+
+                    const parent = this.closest('.curiosity-item');
+                    const content = (parent ? parent.querySelector('.curiosity-content') : null);
+
+                    if (content) {
+                        content.classList.toggle('hide');
+                    }
+                };
+            });
+        }
+    }
+    handleCuriosityClick();
 });

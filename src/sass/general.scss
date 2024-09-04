@@ -764,6 +764,10 @@ body.logged-in {
 	ol {
 		list-style: decimal;
 	}
+
+	li:not(:last-child) {
+		margin-bottom: 5px;
+	}
 }
 
 .video-container {
@@ -1153,6 +1157,15 @@ ol.found-words-list {
 .no-click {
 	pointer-events: none;
 	user-select: none;
+}
+
+.curiosity-img {
+	display: inline-block;
+	transition: all 0.3s ease-out;
+
+	&:hover {
+		transform: scale(1.1);
+	}
 }
 
 .zdx{}
