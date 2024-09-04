@@ -63,7 +63,7 @@ step 6
 
 <!-- Key concepts -->
 <div style="display: none;" id="key-concepts" class="w-[833px] p-24px rounded-24px">
-    <div class="concept-bar mt-30px bg-green p-16px rounded-16px text-white text-24px font-500 leading-120">
+    <div class="concept-bar mt-30px mb-20px bg-green p-16px rounded-16px text-white text-24px font-500 leading-120">
         <?php echo $get_static_text[get_lang()]['concepts']; ?>
     </div>
 
