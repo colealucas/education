@@ -942,6 +942,102 @@ ol.found-words-list {
 	}
 }
 
+.crono-game-wrap {
+
+	.crono-placeholder {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 95px;
+		border-radius: 4px;
+		background-color: $white-color;
+
+		&:before {
+			content: attr(data-id);
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			z-index: 1;
+			font-size: 30px;
+			font-weight: 700;
+			color: $medium-gray-color;
+			transform: translate(-50%, -50%);
+		}
+
+		&:empty {
+			padding: 20px;
+			border: 2px dashed $medium-gray-color;
+			background-color: $light-gray-color;
+		}
+
+		&.ready {
+			pointer-events: none;
+			user-select: none;
+		}
+
+		.item {
+			position: relative;
+			z-index: 3;
+		}
+	}
+
+	.container {
+		display: flex;
+		gap: 20px;
+	}
+	
+	.column {
+		width: 200px;
+		border: 1px solid #ccc;
+		padding: 10px;
+	}
+
+	.item {
+		padding: 10px;
+		background-color: #fff;
+		cursor: grab;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		align-items: center;
+		justify-content: center;
+		border-radius: 4px;
+	}
+	
+	.crono-placeholder .item {
+		margin: 0;
+		padding: 0;
+		background-color: #fff;
+	}
+
+	.crono-mixed-items {
+		&:empty {
+			display: none;
+		}
+
+		.item {
+			width: calc(25% - 20px);
+		}
+	}
+
+	.sortable-ghost {
+		opacity: 1;
+	}
+
+	.sortable-chosen {
+		opacity: 0.3 !important;
+	}
+	
+	.success {
+		background-color: #d4edda;
+	}
+	
+	.error {
+		background-color: #f8d7da;
+	}
+	
+}
 
 .zdx{}
 

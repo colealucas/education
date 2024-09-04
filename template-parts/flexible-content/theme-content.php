@@ -354,5 +354,78 @@
         </div>
     </div>
 
+
+<?php elseif( get_row_layout() == 'chronological_order' ) : // match_words_with_definition
+    $section_title = get_sub_field('title');
+    $section_description = get_sub_field('description');
+
+    $items_array = [];
+
+    if( have_rows('items') ) : $k=0;
+        while( have_rows('items') ): the_row(); $k++;
+            $item_title = get_sub_field('title');
+            $item_image = get_sub_field('image');
+
+            $the_title = ($item_title ? $item_title : '');
+            $the_image = ($item_image ? '<img class=" h-[50px]" src="' . $item_image . '" />' : '');
+
+            $items_array[] = '<div class="item min-h-[95px]" data-target="placeholder'. $k .'"><div class="crono-item-image">' . $the_image . '</div> <div class="crono-item-title leading-110 text-15px font-500">' . $the_title . '</div> </div>';
+        endwhile;
+    endif;
+
+    if ( $items_array ) {
+        // Shuffle the array
+        shuffle($items_array);
+    }
+?>
+
+    <div class="flexible-content-section crono-game mb-24px">
+        <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
+            <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
+                <span class="w-30px block">
+                    <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 17V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <circle cx="1" cy="1" r="1" transform="matrix(1 0 0 -1 11 9)" fill="currentColor"/>
+                        <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </span>
+                <span class="w-[calc(100%-42px)] block">
+                    <?php echo $section_title; ?>
+                </span>
+            </h2>
+        </div>
+
+        <div class="crono-game-wrap pt-20px mb-24px">
+            <div class="crono-container">
+                <div class="flex flex-wrap gap-20px crono-flex justify-center">
+
+                    <?php if ($items_array) : $j=0; ?>
+                        <?php foreach( $items_array as $item ) : $j++; ?>
+
+                        <div class="w-[calc(25%-30px)]">
+                            <div id="placeholder<?php echo $j; ?>" class="crono-placeholder" data-id="<?php echo $j; ?>"></div>
+                        </div>
+
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+
+                </div>
+
+                <div class="crono-mixed-items flex flex-wrap justify-center gap-20px mt-30px bg-light-green p-30px rounded-16px">
+                    <?php if ($items_array) : ?>
+                        <?php foreach( $items_array as $item ) : ?>
+                            <?php echo $item; ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+
+        <div class="tcs-content phase-content entry-content content-spacing text-17px">
+            <?php echo $section_description; // optional ?>
+        </div>
+    </div>
+
+
 <?php 
 endif;

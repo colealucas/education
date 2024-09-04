@@ -43,6 +43,9 @@ function education_styles() {
 	// add fancybox
 	wp_enqueue_script('fancybox-script', get_template_directory_uri() . '/assets/js/fancybox.min.js', array(), '', TRUE);
 	
+	// sortable
+	wp_enqueue_script('sortable-script', get_template_directory_uri() . '/assets/js/sortable.min.js', array(), '', TRUE);
+	
 	wp_enqueue_script(
 		'education-theme-js',
 		get_stylesheet_directory_uri() . '/assets/js/scripts.min.js',
