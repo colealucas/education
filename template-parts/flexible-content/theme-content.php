@@ -25,7 +25,7 @@
     $addition_classes = implode(' ', $css_classes);
 ?>
 
-    <div class="flexible-content-section text-content-section my-12px">
+    <div class="flexible-content-section text-content-section my-24px">
         <?php if ( $section_title ) : ?>
             <div class="tcs-heading mb-16px bg-green text-white py-20px px-24px rounded-16px">
                 <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
@@ -379,7 +379,7 @@
     }
 ?>
 
-    <div class="flexible-content-section crono-game mb-24px">
+    <div class="flexible-content-section crono-game my-24px">
         <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
             <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
                 <span class="w-30px block">

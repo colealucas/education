@@ -39,7 +39,7 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
         <?php echo $get_static_text[get_lang()]['concepts']; ?>
     </div>
 
-    <div class="mt-16px">
+    <div class="relative">
         <?php if( have_rows('key_concepts') ) : ?>
             <div class="flex gap-12px flex-nowrap">
                 <?php 
@@ -85,23 +85,21 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
         </div>
     </div>
 
-    <div class="mt-16px">
+    <div class="relative">
         <?php if( have_rows('theme_steps') ): ?>
-            <div>
-                <?php while( have_rows('theme_steps') ): the_row(); ?>
-                    <?php if ( get_sub_field('step') == 'one' ) : ?>
+            <?php while( have_rows('theme_steps') ): the_row(); ?>
+                <?php if ( get_sub_field('step') == 'one' ) : ?>
+                    
+                    <?php if( have_rows('theme_content_sections') ): ?>
+                        <?php while ( have_rows('theme_content_sections') ) : the_row(); ?>
+
+                            <?php get_template_part('template-parts/flexible-content/theme' , 'content'); // get flexible content sections ?>
                         
-                        <?php if( have_rows('theme_content_sections') ): ?>
-                            <?php while ( have_rows('theme_content_sections') ) : the_row(); ?>
-
-                                <?php get_template_part('template-parts/flexible-content/theme' , 'content'); // get flexible content sections ?>
-                            
-                            <?php endwhile; ?>
-                        <?php endif; ?>
-
+                        <?php endwhile; ?>
                     <?php endif; ?>
-                <?php endwhile; ?>
-            </div>
+
+                <?php endif; ?>
+            <?php endwhile; ?>
         <?php endif; ?>
     </div>
 
@@ -127,23 +125,21 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
         </div>
     </div>
 
-    <div class="mt-16px">
+    <div class="relative">
         <?php if( have_rows('theme_steps') ): ?>
-            <div>
-                <?php while( have_rows('theme_steps') ): the_row(); ?>
-                    <?php if ( get_sub_field('step') == 'two' ) : ?>
+            <?php while( have_rows('theme_steps') ): the_row(); ?>
+                <?php if ( get_sub_field('step') == 'two' ) : ?>
+                    
+                    <?php if( have_rows('theme_content_sections') ): ?>
+                        <?php while ( have_rows('theme_content_sections') ) : the_row(); ?>
+
+                            <?php get_template_part('template-parts/flexible-content/theme' , 'content'); // get flexible content sections ?>
                         
-                        <?php if( have_rows('theme_content_sections') ): ?>
-                            <?php while ( have_rows('theme_content_sections') ) : the_row(); ?>
-
-                                <?php get_template_part('template-parts/flexible-content/theme' , 'content'); // get flexible content sections ?>
-                            
-                            <?php endwhile; ?>
-                        <?php endif; ?>
-
+                        <?php endwhile; ?>
                     <?php endif; ?>
-                <?php endwhile; ?>
-            </div>
+
+                <?php endif; ?>
+            <?php endwhile; ?>
         <?php endif; ?>
     </div>
 
@@ -169,23 +165,21 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
         </div>
     </div>
 
-    <div class="mt-16px">
+    <div class="relative">
         <?php if( have_rows('theme_steps') ): ?>
-            <div>
-                <?php while( have_rows('theme_steps') ): the_row(); ?>
-                    <?php if ( get_sub_field('step') == 'three' ) : ?>
+            <?php while( have_rows('theme_steps') ): the_row(); ?>
+                <?php if ( get_sub_field('step') == 'three' ) : ?>
+                    
+                    <?php if( have_rows('theme_content_sections') ): ?>
+                        <?php while ( have_rows('theme_content_sections') ) : the_row(); ?>
+
+                            <?php get_template_part('template-parts/flexible-content/theme' , 'content'); // get flexible content sections ?>
                         
-                        <?php if( have_rows('theme_content_sections') ): ?>
-                            <?php while ( have_rows('theme_content_sections') ) : the_row(); ?>
-
-                                <?php get_template_part('template-parts/flexible-content/theme' , 'content'); // get flexible content sections ?>
-                            
-                            <?php endwhile; ?>
-                        <?php endif; ?>
-
+                        <?php endwhile; ?>
                     <?php endif; ?>
-                <?php endwhile; ?>
-            </div>
+
+                <?php endif; ?>
+            <?php endwhile; ?>
         <?php endif; ?>
     </div>
 
@@ -211,23 +205,21 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
         </div>
     </div>
 
-    <div class="mt-16px">
+    <div class="relative">
         <?php if( have_rows('theme_steps') ): ?>
-            <div>
-                <?php while( have_rows('theme_steps') ): the_row(); ?>
-                    <?php if ( get_sub_field('step') == 'four' ) : ?>
+            <?php while( have_rows('theme_steps') ): the_row(); ?>
+                <?php if ( get_sub_field('step') == 'four' ) : ?>
+                    
+                    <?php if( have_rows('theme_content_sections') ): ?>
+                        <?php while ( have_rows('theme_content_sections') ) : the_row(); ?>
+
+                            <?php get_template_part('template-parts/flexible-content/theme' , 'content'); // get flexible content sections ?>
                         
-                        <?php if( have_rows('theme_content_sections') ): ?>
-                            <?php while ( have_rows('theme_content_sections') ) : the_row(); ?>
-
-                                <?php get_template_part('template-parts/flexible-content/theme' , 'content'); // get flexible content sections ?>
-                            
-                            <?php endwhile; ?>
-                        <?php endif; ?>
-
+                        <?php endwhile; ?>
                     <?php endif; ?>
-                <?php endwhile; ?>
-            </div>
+
+                <?php endif; ?>
+            <?php endwhile; ?>
         <?php endif; ?>
     </div>
 
@@ -253,23 +245,21 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
         </div>
     </div>
 
-    <div class="mt-16px">
+    <div class="relative">
         <?php if( have_rows('theme_steps') ): ?>
-            <div>
-                <?php while( have_rows('theme_steps') ): the_row(); ?>
-                    <?php if ( get_sub_field('step') == 'five' ) : ?>
+            <?php while( have_rows('theme_steps') ): the_row(); ?>
+                <?php if ( get_sub_field('step') == 'five' ) : ?>
+                    
+                    <?php if( have_rows('theme_content_sections') ): ?>
+                        <?php while ( have_rows('theme_content_sections') ) : the_row(); ?>
+
+                            <?php get_template_part('template-parts/flexible-content/theme' , 'content'); // get flexible content sections ?>
                         
-                        <?php if( have_rows('theme_content_sections') ): ?>
-                            <?php while ( have_rows('theme_content_sections') ) : the_row(); ?>
-
-                                <?php get_template_part('template-parts/flexible-content/theme' , 'content'); // get flexible content sections ?>
-                            
-                            <?php endwhile; ?>
-                        <?php endif; ?>
-
+                        <?php endwhile; ?>
                     <?php endif; ?>
-                <?php endwhile; ?>
-            </div>
+
+                <?php endif; ?>
+            <?php endwhile; ?>
         <?php endif; ?>
     </div>
 
@@ -295,23 +285,21 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
         </div>
     </div>
 
-    <div class="mt-16px">
+    <div class="relative">
         <?php if( have_rows('theme_steps') ): ?>
-            <div>
-                <?php while( have_rows('theme_steps') ): the_row(); ?>
-                    <?php if ( get_sub_field('step') == 'six' ) : ?>
+            <?php while( have_rows('theme_steps') ): the_row(); ?>
+                <?php if ( get_sub_field('step') == 'six' ) : ?>
+                    
+                    <?php if( have_rows('theme_content_sections') ): ?>
+                        <?php while ( have_rows('theme_content_sections') ) : the_row(); ?>
+
+                            <?php get_template_part('template-parts/flexible-content/theme' , 'content'); // get flexible content sections ?>
                         
-                        <?php if( have_rows('theme_content_sections') ): ?>
-                            <?php while ( have_rows('theme_content_sections') ) : the_row(); ?>
-
-                                <?php get_template_part('template-parts/flexible-content/theme' , 'content'); // get flexible content sections ?>
-                            
-                            <?php endwhile; ?>
-                        <?php endif; ?>
-
+                        <?php endwhile; ?>
                     <?php endif; ?>
-                <?php endwhile; ?>
-            </div>
+
+                <?php endif; ?>
+            <?php endwhile; ?>
         <?php endif; ?>
     </div>
 
