@@ -48,7 +48,7 @@
             </div>
         <?php endif; ?>
 
-        <div class="tcs-content phase-content entry-content content-spacing text-17px <?php echo $addition_classes; ?>">
+        <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video <?php echo $addition_classes; ?>">
             <?php echo $section_content; ?>
         </div>
     </div>
@@ -490,6 +490,83 @@
 
         </div>
     </div>
+
+
+
+<?php elseif( get_row_layout() == 'write_in_table' ) : // match_words_with_definition
+    $section_title = get_sub_field('title');
+    $section_content = get_sub_field('description');
+    $text_fields = get_sub_field('text_fields');
+?>
+
+    <div class="flexible-content-section table-game my-24px">
+        <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
+            <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
+                <span class="w-30px block">
+                    <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 17V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <circle cx="1" cy="1" r="1" transform="matrix(1 0 0 -1 11 9)" fill="currentColor"/>
+                        <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </span>
+                <span class="w-[calc(100%-42px)] block">
+                    <?php echo $section_title; ?>
+                </span>
+            </h2>
+        </div>
+
+        <div class="tcs-content phase-content entry-content content-spacing text-17px">
+            <?php echo $section_content; ?>
+        </div>
+
+        <div class="table-game-wrap my-24px">
+            <?php if ( have_rows('items') ) : $counter = 0; ?>
+                <table>
+                    <tr>
+                        <?php while ( have_rows('items') ) : the_row(); $counter++;
+                            $title = get_sub_field('title');
+                            $image = get_sub_field('image');
+                        ?>
+                        
+                            <td>
+                                <div class="text-center">
+                                    <div class="text-15px font-500 mb-8px leading-110 min-h-[36px]"><?php echo $title; ?></div>
+
+                                    <div class="mb-10px">
+                                        <?php if ($image) : ?>
+                                            <img style="height: 50px;" class="inline-block" src="<?php echo $image; ?>" alt="">
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            </td>
+
+                        <?php endwhile; ?>
+                    </tr>
+
+                    <?php if ( $counter > 0 ) : ?>
+                        <tr>
+                            <?php for($i=0; $i < $counter; $i++) : ?>
+                                <td>
+
+                                    <?php if ( intval($text_fields) > 0 ) : ?>
+                                        <?php for($j=0; $j<intval($text_fields); $j++) : ?>
+                                            <div class="py-2px">
+                                                <input type="text" class="w-100% h-30px border-1px border-solid border-medium-gray px-8px text-14px focus:outline-none" name="table_game_text_field[]" placeholder="<?php echo $j+1; ?>.">
+                                            </div>
+                                        <?php endfor; ?>
+                                    <?php endif; ?>
+
+                                </td>
+                            <?php endfor; ?>
+                        </tr>
+                    <?php endif; ?>
+                    
+                </table>
+            <?php endif; ?>
+
+        </div>
+    </div>
+
 
 
 <?php 
