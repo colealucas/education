@@ -458,11 +458,31 @@
         <div class="spot-correct-wrap py-20px mb-24px">
             <?php if ( have_rows('content') ) : ?>
                 <?php while ( have_rows('content') ) : the_row();
+                    $section_text_content = get_sub_field('section_text_content');
                     $section_description = get_sub_field('description');
                 ?>
 
                 <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video">
+                    <?php echo $section_text_content; ?>
+                </div>
+
+                <div class="tcs-content phase-content entry-content content-spacing text-17px mt-24px">
                     <?php echo $section_description; ?>
+                </div>
+
+                <div class="py-20px spot-correct-inner">
+                    <?php if ( have_rows('items') ) : ?>
+                        <ul class="spot-correct-list">
+                            <?php while ( have_rows('items') ) : the_row(); 
+                                $item = get_sub_field('item');
+                                $correct = get_sub_field('correct');
+                            ?>
+
+                            <li data-correct="<?php echo ($correct ? '1' : '0'); ?>"><?php echo $item; ?></li>
+
+                            <?php endwhile; ?>
+                        </ul>
+                    <?php endif; ?>
                 </div>
 
                 <?php endwhile; ?>

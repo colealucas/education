@@ -1089,6 +1089,72 @@ ol.found-words-list {
 	border-radius: 16px;
 }
 
+.spot-correct-list {
+	padding: 0 0 0 15px;
+	margin: 0;
+	list-style: none;
+
+	li {
+		position: relative;
+		cursor: pointer;
+		user-select: none;
+		letter-spacing: 1px;
+		padding: 12px 28px;
+		border-radius: 4px;
+
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 10px;
+			margin-top: -4px;
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background-color: $medium-gray-color;
+			transition: all 0.2s ease-out;
+		}
+
+		&:hover {
+			background-color: $light-gray-color;
+
+			&:before {
+				background-color: $green-color;
+			}
+		}
+
+		&.selected {
+			font-weight: 600;
+			background-color: $light-gray-color;
+
+			&:before {
+				background-color: $green-color;
+			}
+		}
+	}
+}
+
+.spot-correct-wrap {
+	li.correct {
+		background-color: $green-color;
+		color: $white-color;
+
+		&:before {
+			background-color: $white-color;
+		}
+	}
+
+	li.wrong {
+		background-color: rgba(#F00001, 0.12);
+	}
+}
+
+.no-click {
+	pointer-events: none;
+	user-select: none;
+}
+
 .zdx{}
 
 

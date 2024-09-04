@@ -1176,8 +1176,8 @@
                                     "sub_fields": [
                                         {
                                             "key": "field_66d836e1bbedc",
-                                            "label": "Description (optional)",
-                                            "name": "description",
+                                            "label": "Contect (text + video)",
+                                            "name": "section_text_content",
                                             "aria-label": "",
                                             "type": "wysiwyg",
                                             "instructions": "",
@@ -1193,6 +1193,27 @@
                                             "toolbar": "full",
                                             "media_upload": 1,
                                             "delay": 1,
+                                            "parent_repeater": "field_66d836fcbbedd"
+                                        },
+                                        {
+                                            "key": "field_66d84acdb6452",
+                                            "label": "Description",
+                                            "name": "description",
+                                            "aria-label": "",
+                                            "type": "textarea",
+                                            "instructions": "Add text before the items list",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "rows": 3,
+                                            "placeholder": "Description text",
+                                            "new_lines": "",
                                             "parent_repeater": "field_66d836fcbbedd"
                                         },
                                         {
@@ -1295,5 +1316,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1725446605
+    "modified": 1725451261
 }

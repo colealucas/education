@@ -880,4 +880,41 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     handleClickWords();
+
+    function handleSpotCorrectList() {
+        const wrappers = document.querySelectorAll('.spot-correct-wrap');
+
+        if (wrappers.length) {
+            wrappers.forEach(function(wrapper){
+                const list = wrapper.querySelector('.spot-correct-list');
+
+                if (list) {
+                    const lis = list.querySelectorAll('li');
+
+                    if (lis) {
+                        lis.forEach(function(li){
+                            li.onclick = function(ev) {
+                                ev.preventDefault();
+                                const isCorrect = li.getAttribute('data-correct') === '1';
+
+                                if ( isCorrect ) {
+                                    li.classList.add('no-click', 'correct');
+                                    list.classList.add('no-click');
+
+                                    showSuccessPopup( getText('bravo') );
+                                } else {
+                                    li.classList.add('wrong', 'no-click');
+
+                                    setTimeout(function() {
+                                        li.classList.remove('wrong', 'no-click');
+                                    }, 600);
+                                }
+                            };
+                        });
+                    }
+                }
+            });
+        }
+    }
+    handleSpotCorrectList();
 });
