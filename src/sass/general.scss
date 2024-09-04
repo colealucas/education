@@ -660,8 +660,30 @@ body.logged-in {
 	}
 }
 
+.step-box {
+	position: relative;
+	transition: all 0.5s ease-out;
+
+	.decor {
+		display: inline-block;
+		position: absolute;
+		z-index: 3;
+		top: 0;
+		right: -57px;
+	}
+
+	.step-icon {
+		transition: all 0.2s ease-out;
+	}
+}
+
 .step-box:hover {
-	transform: scale(1.03);
+	background-color: darken($light-green-color, 7);
+
+	.step-icon {
+		background-color: $white-color;
+		transform: scale(1.1);
+	}
 }
 
 .fancybox__backdrop {

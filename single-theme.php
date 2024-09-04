@@ -76,7 +76,7 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
         </div>
 
         <div>
-            <span id="print-button" class="inline-block cursor-pointer">
+            <span class="inline-block cursor-pointer print-button">
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="40" height="40" rx="20" fill="#00665E"/>
                     <path d="M14 17V10H26V17M14 26H12C11.4696 26 10.9609 25.7893 10.5858 25.4142C10.2107 25.0391 10 24.5304 10 24V19C10 18.4696 10.2107 17.9609 10.5858 17.5858C10.9609 17.2107 11.4696 17 12 17H28C28.5304 17 29.0391 17.2107 29.4142 17.5858C29.7893 17.9609 30 18.4696 30 19V24C30 24.5304 29.7893 25.0391 29.4142 25.4142C29.0391 25.7893 28.5304 26 28 26H26M14 22H26V30H14V22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -116,7 +116,7 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
         </div>
 
         <div>
-            <span id="print-button" class="inline-block cursor-pointer">
+            <span class="inline-block cursor-pointer print-button">
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="40" height="40" rx="20" fill="#00665E"/>
                     <path d="M14 17V10H26V17M14 26H12C11.4696 26 10.9609 25.7893 10.5858 25.4142C10.2107 25.0391 10 24.5304 10 24V19C10 18.4696 10.2107 17.9609 10.5858 17.5858C10.9609 17.2107 11.4696 17 12 17H28C28.5304 17 29.0391 17.2107 29.4142 17.5858C29.7893 17.9609 30 18.4696 30 19V24C30 24.5304 29.7893 25.0391 29.4142 25.4142C29.0391 25.7893 28.5304 26 28 26H26M14 22H26V30H14V22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -156,7 +156,7 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
         </div>
 
         <div>
-            <span id="print-button" class="inline-block cursor-pointer">
+            <span class="inline-block cursor-pointer print-button">
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="40" height="40" rx="20" fill="#00665E"/>
                     <path d="M14 17V10H26V17M14 26H12C11.4696 26 10.9609 25.7893 10.5858 25.4142C10.2107 25.0391 10 24.5304 10 24V19C10 18.4696 10.2107 17.9609 10.5858 17.5858C10.9609 17.2107 11.4696 17 12 17H28C28.5304 17 29.0391 17.2107 29.4142 17.5858C29.7893 17.9609 30 18.4696 30 19V24C30 24.5304 29.7893 25.0391 29.4142 25.4142C29.0391 25.7893 28.5304 26 28 26H26M14 22H26V30H14V22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -196,7 +196,7 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
         </div>
 
         <div>
-            <span id="print-button" class="inline-block cursor-pointer">
+            <span class="inline-block cursor-pointer print-button">
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="40" height="40" rx="20" fill="#00665E"/>
                     <path d="M14 17V10H26V17M14 26H12C11.4696 26 10.9609 25.7893 10.5858 25.4142C10.2107 25.0391 10 24.5304 10 24V19C10 18.4696 10.2107 17.9609 10.5858 17.5858C10.9609 17.2107 11.4696 17 12 17H28C28.5304 17 29.0391 17.2107 29.4142 17.5858C29.7893 17.9609 30 18.4696 30 19V24C30 24.5304 29.7893 25.0391 29.4142 25.4142C29.0391 25.7893 28.5304 26 28 26H26M14 22H26V30H14V22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -236,7 +236,7 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
         </div>
 
         <div>
-            <span id="print-button" class="inline-block cursor-pointer">
+            <span class="inline-block cursor-pointer print-button">
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="40" height="40" rx="20" fill="#00665E"/>
                     <path d="M14 17V10H26V17M14 26H12C11.4696 26 10.9609 25.7893 10.5858 25.4142C10.2107 25.0391 10 24.5304 10 24V19C10 18.4696 10.2107 17.9609 10.5858 17.5858C10.9609 17.2107 11.4696 17 12 17H28C28.5304 17 29.0391 17.2107 29.4142 17.5858C29.7893 17.9609 30 18.4696 30 19V24C30 24.5304 29.7893 25.0391 29.4142 25.4142C29.0391 25.7893 28.5304 26 28 26H26M14 22H26V30H14V22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -276,7 +276,7 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
         </div>
 
         <div>
-            <span id="print-button" class="inline-block cursor-pointer">
+            <span class="inline-block cursor-pointer print-button">
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="40" height="40" rx="20" fill="#00665E"/>
                     <path d="M14 17V10H26V17M14 26H12C11.4696 26 10.9609 25.7893 10.5858 25.4142C10.2107 25.0391 10 24.5304 10 24V19C10 18.4696 10.2107 17.9609 10.5858 17.5858C10.9609 17.2107 11.4696 17 12 17H28C28.5304 17 29.0391 17.2107 29.4142 17.5858C29.7893 17.9609 30 18.4696 30 19V24C30 24.5304 29.7893 25.0391 29.4142 25.4142C29.0391 25.7893 28.5304 26 28 26H26M14 22H26V30H14V22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -379,6 +379,14 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
                     </span>
 
                     <h3 class="text-28px font-500 text-green leading-120"><?php echo $get_static_text[get_lang()]['share_experience']; ?></h3>
+
+                    <span class="decor">
+                        <svg width="92" height="36" viewBox="0 0 92 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="82" cy="25.922" r="10" fill="#fff"/>
+                            <path d="M20 24.922C6.5 33.922 6.66677 26.7554 7.5001 24.922C18.0001 5.92204 46.1998 -18.678 82.9998 26.922C84.3329 28.422 84.5 35.422 72.9993 28.922M35.5 17.922C39.8333 15.422 45.5 12.422 55.5 18.422" stroke="#00665E" stroke-dasharray="3 3"/>
+                            <circle cx="10" cy="24.4221" r="10" fill="#fff"/>
+                        </svg>
+                    </span>
                 </a>
             </div>
             
@@ -394,6 +402,14 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
                     </span>
 
                     <h3 class="text-28px font-500 text-green leading-120"><?php echo $get_static_text[get_lang()]['am_curious']; ?></h3>
+
+                    <span class="decor">
+                        <svg width="92" height="36" viewBox="0 0 92 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="82" cy="25.922" r="10" fill="#fff"/>
+                            <path d="M20 24.922C6.5 33.922 6.66677 26.7554 7.5001 24.922C18.0001 5.92204 46.1998 -18.678 82.9998 26.922C84.3329 28.422 84.5 35.422 72.9993 28.922M35.5 17.922C39.8333 15.422 45.5 12.422 55.5 18.422" stroke="#00665E" stroke-dasharray="3 3"/>
+                            <circle cx="10" cy="24.4221" r="10" fill="#fff"/>
+                        </svg>
+                    </span>
                 </a>
             </div>
             
@@ -414,6 +430,14 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
                     </span>
 
                     <h3 class="text-28px font-500 text-green leading-120"><?php echo $get_static_text[get_lang()]['am_begining']; ?></h3>
+
+                    <span class="decor">
+                        <svg width="92" height="36" viewBox="0 0 92 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="82" cy="25.922" r="10" fill="#fff"/>
+                            <path d="M20 24.922C6.5 33.922 6.66677 26.7554 7.5001 24.922C18.0001 5.92204 46.1998 -18.678 82.9998 26.922C84.3329 28.422 84.5 35.422 72.9993 28.922M35.5 17.922C39.8333 15.422 45.5 12.422 55.5 18.422" stroke="#00665E" stroke-dasharray="3 3"/>
+                            <circle cx="10" cy="24.4221" r="10" fill="#fff"/>
+                        </svg>
+                    </span>
                 </a>
             </div>
 

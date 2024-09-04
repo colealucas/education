@@ -87,11 +87,21 @@ document.addEventListener("DOMContentLoaded", function() {
         mainClass: "image-lightbox",
     });
 
-    if ( document.querySelector('#print-button') ) {
-        document.querySelector('#print-button').addEventListener("click", function() {
-            window.print();
-        });
+    
+
+    function handlePrintTheme() {
+        const printButtons =  document.querySelectorAll('.print-button');
+
+        if (printButtons.length) {
+            printButtons.forEach(function(btn){
+                btn.addEventListener("click", function(ev) {
+                    ev.preventDefault();
+                    window.print();
+                });
+            });
+        }
     }
+    handlePrintTheme();
 
     function animateScrollToAnchors() {
 		if (window.location.hash) {
