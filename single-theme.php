@@ -33,6 +33,16 @@ $parent_module = get_field('parent_module');
 $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_permalink($parent_module[0]->ID) : '#');
 ?>
 
+<?php if ( isset($_GET['print']) ) : ?>
+
+    <script>
+        setTimeout(function() {
+            window.print();
+        }, 500);
+    </script>
+
+<?php endif; ?>
+
 <?php if ( isset($_GET['print']) && intval($_GET['step']) == 1 ) : ?>
 
     <div class="max-w-[833px] mx-auto">
