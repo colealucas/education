@@ -35,27 +35,213 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
 
 <?php if ( isset($_GET['print']) && intval($_GET['step']) == 1 ) : ?>
 
-    step 1
+    <div class="max-w-[833px] mx-auto">
+        <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-light-green p-16px py-20px rounded-16px text-green text-24px font-500 leading-120">
+            <div>
+                <?php echo $get_static_text[get_lang()]['share_experience']; ?>
+            </div>
+
+            <div>
+                <span class="inline-block cursor-pointer print-button" onclick="window.print()">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="20" fill="#00665E"/>
+                        <path d="M14 17V10H26V17M14 26H12C11.4696 26 10.9609 25.7893 10.5858 25.4142C10.2107 25.0391 10 24.5304 10 24V19C10 18.4696 10.2107 17.9609 10.5858 17.5858C10.9609 17.2107 11.4696 17 12 17H28C28.5304 17 29.0391 17.2107 29.4142 17.5858C29.7893 17.9609 30 18.4696 30 19V24C30 24.5304 29.7893 25.0391 29.4142 25.4142C29.0391 25.7893 28.5304 26 28 26H26M14 22H26V30H14V22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+            </div>
+        </div>
+
+        <?php if( have_rows('theme_steps') ): ?>
+            <?php while( have_rows('theme_steps') ): the_row(); ?>
+                <?php if ( get_sub_field('step') == 'one' ) : ?>
+                    
+                    <?php if( have_rows('theme_content_sections') ): ?>
+                        <?php while ( have_rows('theme_content_sections') ) : the_row(); ?>
+
+                            <?php get_template_part('template-parts/flexible-content/theme' , 'content'); // get flexible content sections ?>
+                        
+                        <?php endwhile; ?>
+                    <?php endif; ?>
+
+                <?php endif; ?>
+            <?php endwhile; ?>
+        <?php endif; ?>
+    </div>
 
 <?php elseif ( isset($_GET['print']) && intval($_GET['step']) == 2 ) : ?>
 
-    step 2
+    <div class="max-w-[833px] mx-auto">
+        <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-light-green p-16px py-20px rounded-16px text-green text-24px font-500 leading-120">
+            <div>
+                <?php echo $get_static_text[get_lang()]['am_curious']; ?>
+            </div>
+
+            <div>
+                <span class="inline-block cursor-pointer print-button" onclick="window.print()">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="20" fill="#00665E"/>
+                        <path d="M14 17V10H26V17M14 26H12C11.4696 26 10.9609 25.7893 10.5858 25.4142C10.2107 25.0391 10 24.5304 10 24V19C10 18.4696 10.2107 17.9609 10.5858 17.5858C10.9609 17.2107 11.4696 17 12 17H28C28.5304 17 29.0391 17.2107 29.4142 17.5858C29.7893 17.9609 30 18.4696 30 19V24C30 24.5304 29.7893 25.0391 29.4142 25.4142C29.0391 25.7893 28.5304 26 28 26H26M14 22H26V30H14V22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+            </div>
+        </div>
+
+        <?php if( have_rows('theme_steps') ): ?>
+            <?php while( have_rows('theme_steps') ): the_row(); ?>
+                <?php if ( get_sub_field('step') == 'two' ) : ?>
+                    
+                    <?php if( have_rows('theme_content_sections') ): ?>
+                        <?php while ( have_rows('theme_content_sections') ) : the_row(); ?>
+
+                            <?php get_template_part('template-parts/flexible-content/theme' , 'content'); // get flexible content sections ?>
+                        
+                        <?php endwhile; ?>
+                    <?php endif; ?>
+
+                <?php endif; ?>
+            <?php endwhile; ?>
+        <?php endif; ?>
+    </div>
 
 <?php elseif ( isset($_GET['print']) && intval($_GET['step']) == 3 ) : ?>
 
-step 3
+    <div class="max-w-[833px] mx-auto">
+        <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-light-green p-16px py-20px rounded-16px text-green text-24px font-500 leading-120">
+            <div>
+                <?php echo $get_static_text[get_lang()]['am_begining']; ?>
+            </div>
+
+            <div>
+                <span class="inline-block cursor-pointer print-button" onclick="window.print()">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="20" fill="#00665E"/>
+                        <path d="M14 17V10H26V17M14 26H12C11.4696 26 10.9609 25.7893 10.5858 25.4142C10.2107 25.0391 10 24.5304 10 24V19C10 18.4696 10.2107 17.9609 10.5858 17.5858C10.9609 17.2107 11.4696 17 12 17H28C28.5304 17 29.0391 17.2107 29.4142 17.5858C29.7893 17.9609 30 18.4696 30 19V24C30 24.5304 29.7893 25.0391 29.4142 25.4142C29.0391 25.7893 28.5304 26 28 26H26M14 22H26V30H14V22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+            </div>
+        </div>
+
+        <?php if( have_rows('theme_steps') ): ?>
+            <?php while( have_rows('theme_steps') ): the_row(); ?>
+                <?php if ( get_sub_field('step') == 'three' ) : ?>
+                    
+                    <?php if( have_rows('theme_content_sections') ): ?>
+                        <?php while ( have_rows('theme_content_sections') ) : the_row(); ?>
+
+                            <?php get_template_part('template-parts/flexible-content/theme' , 'content'); // get flexible content sections ?>
+                        
+                        <?php endwhile; ?>
+                    <?php endif; ?>
+
+                <?php endif; ?>
+            <?php endwhile; ?>
+        <?php endif; ?>
+    </div>
 
 <?php elseif ( isset($_GET['print']) && intval($_GET['step']) == 4 ) : ?>
 
-step 4
+    <div class="max-w-[833px] mx-auto">
+        <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-light-green p-16px py-20px rounded-16px text-green text-24px font-500 leading-120">
+            <div>
+                <?php echo $get_static_text[get_lang()]['am_responsable']; ?>
+            </div>
+
+            <div>
+                <span class="inline-block cursor-pointer print-button" onclick="window.print()">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="20" fill="#00665E"/>
+                        <path d="M14 17V10H26V17M14 26H12C11.4696 26 10.9609 25.7893 10.5858 25.4142C10.2107 25.0391 10 24.5304 10 24V19C10 18.4696 10.2107 17.9609 10.5858 17.5858C10.9609 17.2107 11.4696 17 12 17H28C28.5304 17 29.0391 17.2107 29.4142 17.5858C29.7893 17.9609 30 18.4696 30 19V24C30 24.5304 29.7893 25.0391 29.4142 25.4142C29.0391 25.7893 28.5304 26 28 26H26M14 22H26V30H14V22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+            </div>
+        </div>
+
+        <?php if( have_rows('theme_steps') ): ?>
+            <?php while( have_rows('theme_steps') ): the_row(); ?>
+                <?php if ( get_sub_field('step') == 'four' ) : ?>
+                    
+                    <?php if( have_rows('theme_content_sections') ): ?>
+                        <?php while ( have_rows('theme_content_sections') ) : the_row(); ?>
+
+                            <?php get_template_part('template-parts/flexible-content/theme' , 'content'); // get flexible content sections ?>
+                        
+                        <?php endwhile; ?>
+                    <?php endif; ?>
+
+                <?php endif; ?>
+            <?php endwhile; ?>
+        <?php endif; ?>
+    </div>
 
 <?php elseif ( isset($_GET['print']) && intval($_GET['step']) == 5 ) : ?>
 
-step 5
+    <div class="max-w-[833px] mx-auto">
+        <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-light-green p-16px py-20px rounded-16px text-green text-24px font-500 leading-120">
+            <div>
+                <?php echo $get_static_text[get_lang()]['am_cult']; ?>
+            </div>
+
+            <div>
+                <span class="inline-block cursor-pointer print-button" onclick="window.print()">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="20" fill="#00665E"/>
+                        <path d="M14 17V10H26V17M14 26H12C11.4696 26 10.9609 25.7893 10.5858 25.4142C10.2107 25.0391 10 24.5304 10 24V19C10 18.4696 10.2107 17.9609 10.5858 17.5858C10.9609 17.2107 11.4696 17 12 17H28C28.5304 17 29.0391 17.2107 29.4142 17.5858C29.7893 17.9609 30 18.4696 30 19V24C30 24.5304 29.7893 25.0391 29.4142 25.4142C29.0391 25.7893 28.5304 26 28 26H26M14 22H26V30H14V22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+            </div>
+        </div>
+
+        <?php if( have_rows('theme_steps') ): ?>
+            <?php while( have_rows('theme_steps') ): the_row(); ?>
+                <?php if ( get_sub_field('step') == 'five' ) : ?>
+                    
+                    <?php if( have_rows('theme_content_sections') ): ?>
+                        <?php while ( have_rows('theme_content_sections') ) : the_row(); ?>
+
+                            <?php get_template_part('template-parts/flexible-content/theme' , 'content'); // get flexible content sections ?>
+                        
+                        <?php endwhile; ?>
+                    <?php endif; ?>
+
+                <?php endif; ?>
+            <?php endwhile; ?>
+        <?php endif; ?>
+    </div>
 
 <?php elseif ( isset($_GET['print']) && intval($_GET['step']) == 6 ) : ?>
 
-step 6
+    <div class="max-w-[833px] mx-auto">
+        <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-light-green p-16px py-20px rounded-16px text-green text-24px font-500 leading-120">
+            <div>
+                <?php echo $get_static_text[get_lang()]['curiosities']; ?>
+            </div>
+
+            <div>
+                <span class="inline-block cursor-pointer print-button" onclick="window.print()">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="20" fill="#00665E"/>
+                        <path d="M14 17V10H26V17M14 26H12C11.4696 26 10.9609 25.7893 10.5858 25.4142C10.2107 25.0391 10 24.5304 10 24V19C10 18.4696 10.2107 17.9609 10.5858 17.5858C10.9609 17.2107 11.4696 17 12 17H28C28.5304 17 29.0391 17.2107 29.4142 17.5858C29.7893 17.9609 30 18.4696 30 19V24C30 24.5304 29.7893 25.0391 29.4142 25.4142C29.0391 25.7893 28.5304 26 28 26H26M14 22H26V30H14V22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+            </div>
+        </div>
+
+        <?php if( have_rows('theme_steps') ): ?>
+            <?php while( have_rows('theme_steps') ): the_row(); ?>
+                <?php if ( get_sub_field('step') == 'six' ) : ?>
+                    
+                    <?php if( have_rows('theme_content_sections') ): ?>
+                        <?php while ( have_rows('theme_content_sections') ) : the_row(); ?>
+
+                            <?php get_template_part('template-parts/flexible-content/theme' , 'content'); // get flexible content sections ?>
+                        
+                        <?php endwhile; ?>
+                    <?php endif; ?>
+
+                <?php endif; ?>
+            <?php endwhile; ?>
+        <?php endif; ?>
+    </div>
 
 <?php else : ?>
 

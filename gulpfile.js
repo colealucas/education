@@ -39,7 +39,6 @@ gulp.task( 'sabina-scripts', async () => {
     .pipe( gulp.dest( './assets/js' ) );
 });
 
-
 //sass options
 var options = {};
 options.sass = {
@@ -53,8 +52,21 @@ const cssSourcePath = [
   './src/sass/styles.scss'
 ];
 
+const printSourcePath = [
+  './src/sass/print.scss'
+];
+
 gulp.task('sass', async () => {
   return gulp.src(cssSourcePath)
+    .pipe(plumber())
+    .pipe(sass(options.sass))
+    .pipe(autoprefixer('last 2 versions'))
+    .pipe( rename( { suffix: '.min' } ) )
+    .pipe(gulp.dest('./assets/css/'));
+});
+
+gulp.task('print', async () => {
+  return gulp.src(printSourcePath)
     .pipe(plumber())
     .pipe(sass(options.sass))
     .pipe(autoprefixer('last 2 versions'))
@@ -69,8 +81,9 @@ gulp.task( 'watch', async () => {
   // gulp.watch( [ './src/js/**/*.js', '!./assets/js/*.js' ], gulp.series( 'scripts', 'ajax-posts-scripts', 'calculators-script' ) );
   gulp.watch( [ './src/js/**/*.js', '!./assets/js/*.js' ], gulp.series( 'scripts', 'sabina-scripts') );
   gulp.watch( './src/sass/**/*.scss', gulp.series( 'sass' ) );
+  gulp.watch( './src/sass/**/*.scss', gulp.series( 'print' ) );
 
 });
 
 // gulp.task('default', gulp.series('scripts', 'ajax-posts-scripts', 'calculators-script', 'sass', 'watch'));
-gulp.task('default', gulp.series('scripts', 'sabina-scripts', 'sass', 'watch'));
+gulp.task('default', gulp.series('scripts', 'sabina-scripts', 'sass', 'print', 'watch'));

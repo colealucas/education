@@ -34,6 +34,8 @@ function education_styles() {
 		wp_get_theme()->get( 'Version' )
 	);
 
+	wp_enqueue_style( 'theme-print-style', get_template_directory_uri() . '/assets/css/print.min.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
+
 	// add swiper slider in head
 	wp_enqueue_script('swiper-script',  get_template_directory_uri() . '/assets/js/swiper.bundle.min.js', array(), '', false);
 
