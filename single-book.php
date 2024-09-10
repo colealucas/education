@@ -75,12 +75,12 @@ $get_static_text = [
                         <?php while ($modules->have_posts()) : $modules->the_post(); ?>
 
                             <div class="col-lg-3 col-md-6">
-                                <a href="<?php the_permalink(); ?>" class="block p-24px bg-faded-white hover:bg-green hover:text-white font-500 hover:font-700 mb-20px rounded-24px">
+                                <a href="<?php the_permalink(); ?>" class="block p-24px bg-faded-white hover:text-dark font-500 hover:font-700 mb-20px rounded-24px">
                                     <h3 class="text-28px leading-110 mb-24px min-h-[62px]"><?php the_title(); ?></h3>
 
                                     <?php if ( has_post_thumbnail() ) : $thumbnail_url = get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>
                                         <div class="post-thumbnail">
-                                            <img src="<?php echo $thumbnail_url; ?>" alt="">
+                                            <img class="rounded-16px" src="<?php echo $thumbnail_url; ?>" alt="">
                                         </div>
                                     <?php endif; ?>
                                 </a>

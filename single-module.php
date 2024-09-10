@@ -75,7 +75,9 @@ $themes_count = $all_themes->found_posts;
                     <div class="module-illustration lg:text-right">
                         <?php if ( has_post_thumbnail() ) : $thumbnail_url = get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>
                             <div class="module-thumbnail">
-                                <img src="<?php echo $thumbnail_url; ?>" alt="">
+                                <a href="<?php echo $thumbnail_url; ?>" class="lightbox">
+                                    <img class="max-h-[500px] rounded-16px mx-auto block" src="<?php echo $thumbnail_url; ?>" alt="">
+                                </a>
                             </div>
                         <?php endif; ?>
                     </div>

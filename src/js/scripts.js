@@ -70,6 +70,14 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     handleThemeContentLightbox();
 
+    // lightbox
+
+    Fancybox.bind(".lightbox", {
+        // Your custom options
+        type: 'image',
+        mainClass: "image-lightbox",
+    });
+
     Fancybox.bind("[data-fancybox]", {
         // Your custom options
         backdropClick: false,
@@ -86,8 +94,6 @@ document.addEventListener("DOMContentLoaded", function() {
         dragToClose: false,
         mainClass: "image-lightbox",
     });
-
-    
 
     function handlePrintTheme() {
         const printButtons =  document.querySelectorAll('.print-button');
