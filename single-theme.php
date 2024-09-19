@@ -295,7 +295,8 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
 <!-- Share experience -->
 <div style="display: none;" id="share-experience" class="w-[833px] p-24px rounded-24px">
     <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-light-green p-16px py-20px rounded-16px text-green text-24px font-500 leading-120">
-        <div>
+        <div class="flex gap-16px items-center">
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/stiu_deja.svg'; ?>" width="40" height="40" alt="">
             <?php echo $get_static_text[get_lang()]['share_experience']; ?>
         </div>
 
@@ -335,7 +336,8 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
 <!-- am_curious -->
 <div style="display: none;" id="am-curious" class="w-[833px] p-24px rounded-24px">
     <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-light-green p-16px py-20px rounded-16px text-green text-24px font-500 leading-120">
-        <div>
+        <div class="flex gap-16px items-center">
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/sunt_curios.svg'; ?>" width="40" height="40" alt="">
             <?php echo $get_static_text[get_lang()]['am_curious']; ?>
         </div>
 
@@ -375,7 +377,8 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
 <!-- am_begining -->
 <div style="display: none;" id="am-begining" class="w-[833px] p-24px rounded-24px">
     <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-light-green p-16px py-20px rounded-16px text-green text-24px font-500 leading-120">
-        <div>
+        <div class="flex gap-16px items-center">
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/aventura_continua.svg'; ?>" width="40" height="40" alt="">
             <?php echo $get_static_text[get_lang()]['am_begining']; ?>
         </div>
 
@@ -415,7 +418,8 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
 <!-- am_responsable -->
 <div style="display: none;" id="am-responsable" class="w-[833px] p-24px rounded-24px">
     <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-light-green p-16px py-20px rounded-16px text-green text-24px font-500 leading-120">
-        <div>
+        <div class="flex gap-16px items-center">
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/consum_responsabil.svg'; ?>" width="40" height="40" alt="">
             <?php echo $get_static_text[get_lang()]['am_responsable']; ?>
         </div>
 
@@ -455,7 +459,8 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
 <!-- am_cult -->
 <div style="display: none;" id="am-cult" class="w-[833px] p-24px rounded-24px">
     <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-light-green p-16px py-20px rounded-16px text-green text-24px font-500 leading-120">
-        <div>
+        <div class="flex gap-16px items-center">
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/vorbesc_cult.svg'; ?>" width="40" height="40" alt="">
             <?php echo $get_static_text[get_lang()]['am_cult']; ?>
         </div>
 
@@ -495,7 +500,8 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
 <!-- curiosities -->
 <div style="display: none;" id="curiosities" class="w-[833px] p-24px rounded-24px">
     <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-light-green p-16px py-20px rounded-16px text-green text-24px font-500 leading-120">
-        <div>
+        <div class="flex gap-16px items-center">
+        <img src="<?php echo get_template_directory_uri() . '/assets/images/curiozitati.svg'; ?>" width="40" height="40" alt="">
             <?php echo $get_static_text[get_lang()]['curiosities']; ?>
         </div>
 
