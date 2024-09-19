@@ -624,5 +624,91 @@
     </div>
 
 
+<?php elseif( get_row_layout() == 'clasification_two_columns' ) : // clasification_two_columns
+    $section_title = get_sub_field('title');
+    $section_content = get_sub_field('content');
+    $col_a_title = get_sub_field('column_a_title');
+    $col_b_title = get_sub_field('column_b_title');
+?>
+
+    <div class="flexible-content-section curiosity-section my-24px">
+        <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
+            <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
+                <span class="w-30px block">
+                    <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 17V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <circle cx="1" cy="1" r="1" transform="matrix(1 0 0 -1 11 9)" fill="currentColor"/>
+                        <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </span>
+                <span class="w-[calc(100%-42px)] block">
+                    <?php echo $section_title; ?>
+                </span>
+            </h2>
+        </div>
+
+        <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video <?php echo $addition_classes; ?>">
+            <?php echo $section_content; ?>
+        </div>
+
+        <div class="py-20px">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="bg-light-yellow p-20px rounded-16px text-center">
+                        <h3 class="text-18px font-600 leading-130"><?php echo $col_a_title; ?></h3>
+                    </div>
+
+                    <div class="mt-20px">
+                        <?php if ( have_rows('column_a_items') ) : $counter = 0; ?>
+                            <div class="flex flex-col gap-16px">
+                                <?php while ( have_rows('column_a_items') ) : the_row(); $counter++;
+                                    $item = get_sub_field('item');
+                                ?>
+
+                                    <div class="flex items-center gap-16px">
+                                        <div>
+                                            <input type="text" class="size-32px text-center font-700 text-18px text-dark uppercase border-solid border-2px border-light-yellow focus:outline-none classification_input" name="classification_input" />
+                                        </div>
+                                        <div>
+                                            <p class="leading-140"><?php echo $item; ?></p>
+                                        </div>
+                                    </div>
+
+                                <?php endwhile; ?>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="bg-orange p-20px rounded-16px text-center">
+                        <h3 class="text-18px font-600 leading-130"><?php echo $col_b_title; ?></h3>
+                    </div>
+
+                    <div class="mt-20px">
+                        <?php if ( have_rows('column_b_items') ) : $counter = 0; ?>
+                            <div class="flex flex-col gap-16px">
+                                <?php while ( have_rows('column_b_items') ) : the_row(); $counter++;
+                                    $item = get_sub_field('item');
+                                ?>
+
+                                    <div class="flex items-center gap-16px">
+                                        <div>
+                                            <input type="text" class="size-32px text-center font-700 text-18px text-dark uppercase border-solid border-2px border-orange focus:outline-none classification_input" name="classification_input" />
+                                        </div>
+                                        <div>
+                                            <p class="leading-140"><?php echo $item; ?></p>
+                                        </div>
+                                    </div>
+
+                                <?php endwhile; ?>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 <?php 
 endif;

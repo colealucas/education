@@ -21,6 +21,9 @@ module.exports = {
       'dark-green': '#0C544F',
       'light-green': '#E6F2EB',
       'medium-green': '#C7E1D2',
+      'light-yellow': '#E9DD7F',
+      'yellow': '#FAAF3F',
+      'orange': '#FAAF3F',
     },
     fontFamily: {
       openSans: ['Open Sans', 'sans-serif'],
