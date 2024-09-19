@@ -794,6 +794,10 @@ body.logged-in {
 	table {
 		width: 100%;
 
+		img {
+			border-radius: 4px;
+		}
+
 		td, th {
 			padding: 10px;
 		}
