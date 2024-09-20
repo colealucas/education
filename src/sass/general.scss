@@ -1308,6 +1308,15 @@ ol.found-words-list {
 	}
 }
 
+table.border {
+	border: 1px solid $medium-gray-color;
+
+	th,
+	td {
+		border: 1px solid $medium-gray-color;
+	}
+}
+
 .tcs-content {
 	&:after,
 	p:after,
