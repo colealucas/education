@@ -1308,7 +1308,8 @@ ol.found-words-list {
 }
 
 .tcs-content {
-	&:after {
+	&:after,
+	p:after {
 		display: table;
 		clear: both;
 	}
