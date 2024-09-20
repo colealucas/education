@@ -110,7 +110,7 @@ $get_static_text = [
         </div>
 
         <div class="text-center hidden md:block">
-            <img src="<?php echo get_template_directory_uri() . '/assets/images/logos.svg'; ?>" alt="">
+            <img class="inline-block" src="<?php echo get_template_directory_uri() . '/assets/images/logos.svg'; ?>" alt="">
         </div>
 
         <div class="logo-container block md:hidden">
