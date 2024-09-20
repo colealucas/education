@@ -7,6 +7,8 @@ $dark-color: #171412;
 $green-color: #00665E;
 $light-green-color: #E6F2EB;
 $white-color: #fff;
+$orange-color: #FAAF3F;
+$yellow-color: #FAAF3F;
 $transition: all 0.25s ease;
 
 * {
@@ -1203,6 +1205,25 @@ ol.found-words-list {
 
 	&:hover {
 		transform: scale(1.1);
+	}
+}
+
+.book-module {
+	border: 2px solid transparent;
+	transition: $transition;
+
+	& img {
+		transition: $transition;
+	}
+
+	&:hover {
+		color: $dark-color;
+		border-color: $orange-color;
+
+		& img {
+			opacity: 0.95;
+			transform: scale(1.02);
+		}
 	}
 }
 
