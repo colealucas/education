@@ -55,6 +55,13 @@ document.addEventListener("DOMContentLoaded", function() {
     // Call the function to update all YouTube iframes on the page
     updateYouTubeIframes();
 
+    function isValidImageURL(tag) {
+        const url = tag.href;
+        const isValidExtension = /\.(jpg|png|webp)$/i.test(url);
+
+        return isValidExtension;
+    }
+
     function handleThemeContentLightbox() {
         const images = document.querySelectorAll('[class*="wp-image-"]');
 
@@ -62,8 +69,9 @@ document.addEventListener("DOMContentLoaded", function() {
             images.forEach(function(img) {
                 const parent = img.parentNode;
 
-                if (parent.nodeName.toLowerCase() === 'a') {
-                    parent.setAttribute('theme-fancybox', '');
+                // add lightbox only for a tags containing a image url in href attribute
+                if (parent.nodeName.toLowerCase() === 'a' && isValidImageURL(parent)) {
+                    parent.setAttribute('theme-fancybox', '');     
                 }
             });
         }
