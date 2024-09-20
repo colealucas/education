@@ -1307,6 +1307,13 @@ ol.found-words-list {
 	}
 }
 
+.tcs-content {
+	&:after {
+		display: table;
+		clear: both;
+	}
+}
+
 
 // [class*="wp-image-"]
 .zdx{}
