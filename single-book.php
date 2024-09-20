@@ -21,7 +21,7 @@ $get_static_text = [
 
 <div class="section py-40px md:py-48px bg-faded-gray rounded-48px mx-8px mt-16px manual-intro-section">
     <div class="container">
-        <div class="row">
+        <div class="row items-center">
             <div class="col-lg-6">
                 <div class="max-w-[590px]">
                     <h1 class="text-36px sm:text-50px lg:text-87px font-700 leading-110"><?php echo get_field('book_title'); ?></h1>
