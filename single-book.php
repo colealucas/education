@@ -38,7 +38,7 @@ $get_static_text = [
             <div class="col-lg-6">
                 <div class="manual-cover lg:text-right">
                     <?php if ( get_field('book_cover_image') ) : ?>
-                        <img class="max-w-[467px] w-100% inline-block" src="<?php echo get_field('book_cover_image'); ?>" alt="">
+                        <img class="max-w-[467px] w-100% inline-block rounded-16px" src="<?php echo get_field('book_cover_image'); ?>" alt="">
                     <?php endif; ?>
                 </div>
             </div>

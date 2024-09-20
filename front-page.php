@@ -38,7 +38,7 @@
                                         $thumbnail_url = wp_get_attachment_image_src($thumbnail_id, 'full')[0];
                                     ?>
                                         <a href="<?php the_permalink(); ?>" class="home-book-link">
-                                            <img src="<?php echo $thumbnail_url; ?>" alt="">
+                                            <img class="rounded-16px" src="<?php echo $thumbnail_url; ?>" alt="">
                                         </a>
                                     <?php endif; ?>
                                 </div>
