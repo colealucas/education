@@ -1299,6 +1299,14 @@ ol.found-words-list {
 	}
 }
 
+.table-borders {
+	table,
+	table th,
+	table td {
+		border: 1px solid $medium-gray-color;
+	}
+}
+
 
 // [class*="wp-image-"]
 .zdx{}

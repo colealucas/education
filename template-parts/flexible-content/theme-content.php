@@ -13,6 +13,7 @@
     $full_with_images = get_sub_field('full_with_images');
     $check_paragraphs = get_sub_field('check_paragraphs');
     $click_words      = get_sub_field('click_words');
+    $add_table_boders = get_sub_field('add_table_boders');
 
     if ($full_with_images) {
         $css_classes[] = 'full-width-images';
@@ -24,6 +25,10 @@
 
     if ($click_words) {
         $css_classes[] = 'click-words';
+    }
+
+    if ($add_table_boders) {
+        $css_classes[] = 'table-borders';
     }
 
     // convert array of classes to string
