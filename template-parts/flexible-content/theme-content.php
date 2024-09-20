@@ -711,7 +711,6 @@
     </div>
 
 
-
 <?php elseif( get_row_layout() == 'text_area' ) : // text_area
     $placeholder = get_sub_field('placeholder');
 ?>
@@ -724,6 +723,62 @@
                 <textarea class="w-full p-16px border-2px border-solid border-medium-gray rounded-8px focus:outline-none min-h-[250px]" name="text_area" placeholder="<?php echo $placeholder; ?>"></textarea>
             </form>
         </div>
+    </div>
+
+
+
+<?php elseif( get_row_layout() == 'choose_one' ) : // choose_one
+    $section_title = get_sub_field('title');
+    $section_content = get_sub_field('content');
+    $columns = (get_sub_field('columns') ? get_sub_field('columns') : 'col-md-4'); // default to 3 columns
+?>
+
+    <div class="flexible-content-section curiosity-section my-24px">
+        <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
+            <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
+                <span class="w-30px block">
+                    <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 17V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <circle cx="1" cy="1" r="1" transform="matrix(1 0 0 -1 11 9)" fill="currentColor"/>
+                        <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </span>
+                <span class="w-[calc(100%-42px)] block">
+                    <?php echo $section_title; ?>
+                </span>
+            </h2>
+        </div>
+
+        <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video <?php echo $addition_classes; ?>">
+            <?php echo $section_content; ?>
+        </div>
+
+        <div class="py-30px"> 
+            <?php if ( have_rows('items') ) : $counter = 0; ?>
+                <div class="row">
+                    <?php while ( have_rows('items') ) : the_row(); $counter++;
+                        $item_content = get_sub_field('item_content');
+                    ?>
+
+                        <div class="<?php echo $columns; ?>">
+                            <div class="flex flex-col gap-16px rounded-images mb-16px">
+                                <div class="select-one-content text-center">
+                                    <?php echo $item_content; ?>
+                                </div>
+                                <div class="text-center">
+                                    <label class="custom-checkbox">
+                                        <input type="checkbox" name="choose_one_<?php echo $counter; ?>">
+                                        <span class="checkbox-mark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                    <?php endwhile; ?>
+                </div>
+            <?php endif; ?>
+        </div>
+
     </div>
 
 

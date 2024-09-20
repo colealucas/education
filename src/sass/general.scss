@@ -1227,6 +1227,77 @@ ol.found-words-list {
 	}
 }
 
+/* Hide the default checkbox */
+.custom-checkbox input[type="checkbox"] {
+	display: none;
+  }
+  
+  /* Style the label */
+  .custom-checkbox {
+	display: inline-flex;
+	align-items: center;
+	cursor: pointer;
+	font-size: 15px;
+	user-select: none;
+  }
+  
+  /* Create the custom checkbox mark */
+  .custom-checkbox .checkbox-mark {
+	width: 24px;
+	height: 24px;
+	border: 2px solid $medium-gray-color;
+	border-radius: 4px;
+	position: relative;
+	transition: background-color 0.2s ease;
+  }
+  
+  /* Style for the checkmark */
+  .custom-checkbox .checkbox-mark::after {
+	content: "";
+	position: absolute;
+	width: 6px;
+	height: 12px;
+	border: solid white;
+	border-width: 0 2px 2px 0;
+	top: 2px;
+	left: 6px;
+	transform: rotate(45deg);
+	display: none;
+  }
+  
+  /* Change the background color when the checkbox is checked */
+  .custom-checkbox input[type="checkbox"]:checked + .checkbox-mark {
+	background-color: $orange-color;
+	border-color: $orange-color;
+  }
+  
+  /* Show the checkmark when checked */
+  .custom-checkbox input[type="checkbox"]:checked + .checkbox-mark::after {
+	display: block;
+  }
+
+.rounded-images {
+	img {
+		border-radius: 8px;
+	}
+}
+
+.select-one-content {
+	[class*="wp-image-"] {
+		display: inline-block;
+		margin: 20px 0 0 0;
+		transition: $transition;
+
+		&:hover {
+			transform: scale(1.05);
+		}
+	}
+
+	h1,h2,h3,h4,h5,h6 {
+		font-weight: 700;
+		font-size: 20px;
+	}
+}
 
 
 // [class*="wp-image-"]
