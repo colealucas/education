@@ -710,5 +710,22 @@
 
     </div>
 
+
+
+<?php elseif( get_row_layout() == 'text_area' ) : // text_area
+    $placeholder = get_sub_field('placeholder');
+?>
+
+    <div class="flexible-content-section curiosity-section my-24px">
+
+
+        <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video <?php echo $addition_classes; ?>">
+            <form action="#" method="POST">
+                <textarea class="w-full p-16px border-2px border-solid border-medium-gray rounded-8px focus:outline-none min-h-[250px]" name="text_area" placeholder="<?php echo $placeholder; ?>"></textarea>
+            </form>
+        </div>
+    </div>
+
+
 <?php 
 endif;

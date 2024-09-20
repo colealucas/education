@@ -1767,6 +1767,36 @@
                             ],
                             "min": "",
                             "max": ""
+                        },
+                        "layout_66edcc2bee75e": {
+                            "key": "layout_66edcc2bee75e",
+                            "name": "text_area",
+                            "label": "Text area",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_66edcc36ee760",
+                                    "label": "Placeholder text",
+                                    "name": "placeholder",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "Add placeholder text",
+                                    "prepend": "",
+                                    "append": ""
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
                     },
                     "min": "",
@@ -1795,5 +1825,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726770894
+    "modified": 1726860458
 }
