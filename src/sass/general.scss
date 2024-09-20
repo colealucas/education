@@ -1309,7 +1309,8 @@ ol.found-words-list {
 
 .tcs-content {
 	&:after,
-	p:after {
+	p:after,
+	li:after {
 		content: "";
 		display: table;
 		clear: both;
