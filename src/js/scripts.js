@@ -961,4 +961,17 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     handleCuriosityClick();
+
+    function handleSelectMultiple() {
+        const items = document.querySelectorAll('[data-select-multiple-variant]');
+
+        if (items.length) {
+            items.forEach(function(item) {
+                item.addEventListener('click', function() {
+                    item.classList.toggle('selected');
+                });
+            });
+        } 
+    }
+    handleSelectMultiple();
 });

@@ -1327,6 +1327,16 @@ table.border {
 	}
 }
 
+.variant-item {
+	transition: $transition;
+
+	.selected,
+	.selected:hover {
+		background-color: $light-green-color;
+		color: $green-color;
+	} 
+}
+
 
 // [class*="wp-image-"]
 .zdx{}
