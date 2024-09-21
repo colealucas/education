@@ -260,7 +260,16 @@ $parent_module_url = (is_array( $parent_module ) && $parent_module[0] ? get_perm
 <!-- Key concepts -->
 <div style="display: none;" id="key-concepts" class="w-[833px] p-24px rounded-24px">
     <div class="concept-bar mt-30px mb-20px bg-green p-16px rounded-16px text-white text-24px font-500 leading-120">
-        <?php echo $get_static_text[get_lang()]['concepts']; ?>
+        <div class="flex items-center gap-16px">
+            <div>
+                <div class="size-48px rounded-50 bg-white flex items-center justify-center">
+                    <img src="<?php echo get_template_directory_uri() . '/assets/images/cuvinte_cheie.svg'; ?>" width="30" height="30" alt="">
+                </div>
+            </div>
+            <div>
+                <?php echo $get_static_text[get_lang()]['concepts']; ?>
+            </div>
+        </div>
     </div>
 
     <div class="relative">
