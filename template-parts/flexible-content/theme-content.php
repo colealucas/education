@@ -770,7 +770,7 @@
                             <div class="flex flex-col gap-16px rounded-images mb-16px">
                                 <div class="select-one-content text-center">
                                     <?php if ($item_image) : ?>
-                                        <img src="<?php echo $item_image; ?>" class="w-auto" style="height: <?php echo $image_height; ?>px" alt="">
+                                        <img src="<?php echo $item_image; ?>" class="w-auto inline-block" style="height: <?php echo $image_height; ?>px" alt="">
                                     <?php endif; ?>
                                 </div>
 
