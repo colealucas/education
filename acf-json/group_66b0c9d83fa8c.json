@@ -1874,7 +1874,7 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "",
+                                        "width": "50",
                                         "class": "",
                                         "id": ""
                                     },
@@ -1887,6 +1887,28 @@
                                     "return_format": "value",
                                     "allow_null": 0,
                                     "layout": "horizontal"
+                                },
+                                {
+                                    "key": "field_66eefcf435ee0",
+                                    "label": "Image height (pixels)",
+                                    "name": "image_height",
+                                    "aria-label": "",
+                                    "type": "number",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": 220,
+                                    "min": "",
+                                    "max": "",
+                                    "placeholder": 220,
+                                    "step": 1,
+                                    "prepend": "",
+                                    "append": ""
                                 },
                                 {
                                     "key": "field_66edcf0c714ac",
@@ -1910,11 +1932,11 @@
                                     "rows_per_page": 20,
                                     "sub_fields": [
                                         {
-                                            "key": "field_66edcf33714ad",
-                                            "label": "Item content (Text\/Image)",
-                                            "name": "item_content",
+                                            "key": "field_66eefc3518ffe",
+                                            "label": "Image",
+                                            "name": "image",
                                             "aria-label": "",
-                                            "type": "wysiwyg",
+                                            "type": "image",
                                             "instructions": "",
                                             "required": 0,
                                             "conditional_logic": 0,
@@ -1923,11 +1945,16 @@
                                                 "class": "",
                                                 "id": ""
                                             },
-                                            "default_value": "",
-                                            "tabs": "all",
-                                            "toolbar": "full",
-                                            "media_upload": 1,
-                                            "delay": 1,
+                                            "return_format": "url",
+                                            "library": "all",
+                                            "min_width": "",
+                                            "min_height": "",
+                                            "min_size": "",
+                                            "max_width": "",
+                                            "max_height": "",
+                                            "max_size": "",
+                                            "mime_types": "",
+                                            "preview_size": "full",
                                             "parent_repeater": "field_66edcf0c714ac"
                                         }
                                     ]
@@ -2099,6 +2126,36 @@
                             ],
                             "min": "",
                             "max": ""
+                        },
+                        "layout_66eef4e36ea69": {
+                            "key": "layout_66eef4e36ea69",
+                            "name": "editable_template",
+                            "label": "Editable Template",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_66eef4ee6ea6b",
+                                    "label": "Template",
+                                    "name": "template",
+                                    "aria-label": "",
+                                    "type": "textarea",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "_______________________Titlu_______________________\r\n\r\n Introducere_____________________________________________________________________________________________________________________________________________________________________________________________________________________________\r\nIdeeaprincipală___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________\r\nMesajul final_____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+                                    "maxlength": "",
+                                    "rows": 10,
+                                    "placeholder": "Add template",
+                                    "new_lines": "br"
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
                     },
                     "min": "",
@@ -2127,5 +2184,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726931493
+    "modified": 1726938584
 }
