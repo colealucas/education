@@ -974,4 +974,19 @@ document.addEventListener("DOMContentLoaded", function() {
         } 
     }
     handleSelectMultiple();
+
+    function handleBooksSummary() {
+        const headers = document.querySelectorAll('.book-sum-header'); 
+
+        if (headers.length) {
+            headers.forEach(function(header) {
+                header.addEventListener('click', function() {
+                    header.parentNode.classList.toggle('open');
+                    header.parentNode.querySelector('.book-sum-body').classList.toggle('hide');
+                });
+            });
+        }
+    }
+    handleBooksSummary();
+
 });
