@@ -882,7 +882,7 @@
             <?php echo $section_content; ?>
         </div>
 
-        <div class="relative break-all">
+        <div class="relative break-all p-16px bg-light-gray rounded-8px" contenteditable="true">
             <?php echo $template; ?>
         </div>
 
