@@ -148,7 +148,7 @@ $themes_count = $all_themes->found_posts;
                 <?php else : ?>
 
                     <div class="col-md-12">
-                        <strong><?php _e('No modules found', 'education'); ?>.</strong>
+                        <strong><?php _e('No themes found', 'education'); ?>.</strong>
                     </div>    
 
                 <?php endif; ?>    

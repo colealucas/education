@@ -76,9 +76,9 @@
 
                                                         <li>
                                                            <div class="module-sum-item">
-                                                                <div class="sum-module-header bg-light-gray flex items-center gap-16px rounded-24px border-1px border-solid border-medium-gray justify-between py-16px px-20px">
+                                                                <div class="sum-module-header cursor-pointer bg-light-gray flex items-center gap-16px rounded-24px border-1px border-solid border-medium-gray justify-between py-16px px-20px">
                                                                     <div>
-                                                                        <div class="text-24px font-500 leading-160">
+                                                                        <div class="text-24px font-500 leading-160 select-none cursor-pointer">
                                                                             <?php echo $k . ". " .  get_the_title(); ?>
                                                                         </div>
                                                                     </div>
@@ -92,12 +92,41 @@
                                                                 </div>
 
                                                                 <div class="sum-module-body hide">
-                                                                    <ol class="list-decimal list-inside text-24px font-500 leading-150 text-dark mt-20px pl-20px">
-                                                                        <li>Item here too</li>
-                                                                        <li>Item here too</li>
-                                                                        <li>Item here too</li>
-                                                                        <li>Item here too</li>
-                                                                    </ol>
+                                                                    <?php
+                                                                        $themes = new WP_Query(array(
+                                                                            'post_type' => 'theme',
+                                                                            'post_status' => 'publish',
+                                                                            'meta_query' => array(
+                                                                                array(
+                                                                                    'key' => 'parent_module',
+                                                                                    'value' => '"' . get_the_ID() . '"',
+                                                                                    'compare' => 'LIKE'
+                                                                                ),
+                                                                            ),
+                                                                            'orderby' => 'id',
+                                                                            'order' => 'ASC'
+                                                                        ));
+                                                                    ?>
+
+                                                                    <?php if ( $themes->have_posts() ) : $j=0; ?>
+                                                                        <ol class="list-none list-inside text-dark mt-20px pl-24px">
+                                                                            <?php while ($themes->have_posts()) : $themes->the_post(); $j++; ?>
+
+                                                                            <li><a href="<?php the_permalink(); ?>" class="text-22px font-500 leading-160 block py-2px"><?php echo $j . ". " . get_the_title(); ?></a></li>
+
+                                                                            <?php
+                                                                            endwhile;
+                                                                            wp_reset_postdata();
+                                                                            ?>
+                                                                        </ol>
+                                                                    <?php else : ?>
+
+                                                                        <div class="mt-20px pl-20px text-dark">
+                                                                            <strong><?php _e('No themes found', 'education'); ?>.</strong>
+                                                                        </div>
+
+                                                                    <?php endif; ?>
+
                                                                 </div>
                                                             </div>
                                                         </li>
