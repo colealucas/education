@@ -672,7 +672,7 @@
 
                                     <div class="flex items-center gap-16px">
                                         <div>
-                                            <input type="text" class="size-32px text-center font-700 text-18px text-dark uppercase border-solid border-2px border-light-yellow focus:outline-none classification_input" name="classification_input" />
+                                            <input type="text" class="size-32px text-center font-700 text-18px text-dark uppercase border-solid border-2px border-light-yellow focus:outline-none classification_input" name="classification_input" placeholder="?" />
                                         </div>
                                         <div>
                                             <p class="leading-140"><?php echo $item; ?></p>
@@ -698,7 +698,7 @@
 
                                     <div class="flex items-center gap-16px">
                                         <div>
-                                            <input type="text" class="size-32px text-center font-700 text-18px text-dark uppercase border-solid border-2px border-orange focus:outline-none classification_input" name="classification_input" />
+                                            <input type="text" class="size-32px text-center font-700 text-18px text-dark uppercase border-solid border-2px border-orange focus:outline-none classification_input" name="classification_input" placeholder="?" />
                                         </div>
                                         <div>
                                             <p class="leading-140"><?php echo $item; ?></p>
@@ -814,7 +814,7 @@
             <?php echo $section_content; ?>
         </div>
 
-        <div class="py-30px"> 
+        <div class="relative"> 
             <?php if ( have_rows('items') ) : ?>
                 <div class="row">
                     <?php while ( have_rows('items') ) : the_row();
@@ -822,7 +822,7 @@
                     ?>
 
                         <div class="<?php echo $columns; ?>">
-                            <div class="bg-light-yellow p-16px rounded-16px text-17px font-700 mb-20px">
+                            <div class="bg-light-yellow p-16px rounded-16px text-17px font-700 mb-20px mt-30px">
                                 <?php echo $question; ?>
                             </div>
 
