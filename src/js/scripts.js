@@ -977,12 +977,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function handleBooksSummary() {
         const headers = document.querySelectorAll('.book-sum-header'); 
+        const moduleHeaders = document.querySelectorAll('.sum-module-header'); 
 
         if (headers.length) {
             headers.forEach(function(header) {
                 header.addEventListener('click', function() {
                     header.parentNode.classList.toggle('open');
                     header.parentNode.querySelector('.book-sum-body').classList.toggle('hide');
+                });
+            });
+        }
+
+        if (moduleHeaders.length) {
+            moduleHeaders.forEach(function(sumHeader) {
+                sumHeader.addEventListener('click', function() {
+                    sumHeader.parentNode.classList.toggle('open');
+                    sumHeader.parentNode.querySelector('.sum-module-body').classList.toggle('hide');
                 });
             });
         }

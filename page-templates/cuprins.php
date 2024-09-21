@@ -71,13 +71,35 @@
                                             ?>
 
                                             <?php if ( $modules->have_posts() ) : $k=0; ?>
-                                                <ul class="list-none">
+                                                <ul class="list-none flex flex-col gap-16px my-20px">
                                                     <?php while ($modules->have_posts()) : $modules->the_post(); $k++; ?>
 
                                                         <li>
-                                                            <a href="<?php the_permalink(); ?>" class="text-24px font-500 leading-160">
-                                                                <?php echo $k . ". " .  get_the_title(); ?>
-                                                            </a>
+                                                           <div class="module-sum-item">
+                                                                <div class="sum-module-header bg-light-gray flex items-center gap-16px rounded-24px border-1px border-solid border-medium-gray justify-between py-16px px-20px">
+                                                                    <div>
+                                                                        <div class="text-24px font-500 leading-160">
+                                                                            <?php echo $k . ". " .  get_the_title(); ?>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div>
+                                                                        <div class="size-40px flex items-center justify-center module-sum-arrow">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                                                                <path d="M10 15L20 25L30 15" stroke="#171412" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                            </svg>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="sum-module-body hide">
+                                                                    <ol class="list-decimal list-inside text-24px font-500 leading-150 text-dark mt-20px pl-20px">
+                                                                        <li>Item here too</li>
+                                                                        <li>Item here too</li>
+                                                                        <li>Item here too</li>
+                                                                        <li>Item here too</li>
+                                                                    </ol>
+                                                                </div>
+                                                            </div>
                                                         </li>
                                                     
                                                     <?php

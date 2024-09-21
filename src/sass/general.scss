@@ -1358,6 +1358,22 @@ table.border {
 	}
 }
 
+.module-sum-item {
+	.module-sum-arrow {
+		transition: all 0.2s ease-out;
+
+	}
+
+	&.open {
+		color: $green-color;
+		border-color: $green-color;
+
+		.module-sum-arrow {
+			transform: rotate(-180deg);
+		}
+	}
+}
+
 
 // [class*="wp-image-"]
 .zdx{}
