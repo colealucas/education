@@ -1382,6 +1382,7 @@ table.border {
 		border: 0;
 
 		.mit-element {
+			pointer-events: none;
 			background-color: $ligh-yellow-color;
 			border-color: transparent;
 			text-align: center;

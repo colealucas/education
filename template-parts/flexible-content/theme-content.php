@@ -904,7 +904,7 @@
                             $coresponding_text = get_sub_field('coresponding_text');
                         ?>
                         
-                        <div class="mit-element leading-130 flex items-center justify-center select-none cursor-pointer py-12px px-16px bg-white text-15px font-500 border-1px border-solid border-medium-gray rounded-8px" data-mit-element data-target="placeholder<?php echo $k; ?>">
+                        <div class="mit-element cursor-move leading-130 flex items-center justify-center select-none cursor-pointer py-12px px-16px bg-white text-15px font-500 border-1px border-solid border-medium-gray rounded-8px" data-mit-element data-target="placeholder<?php echo $k; ?>">
                             <?php echo $coresponding_text; ?>
                         </div>
 
