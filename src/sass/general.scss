@@ -9,7 +9,7 @@ $green-color: #00665E;
 $light-green-color: #E6F2EB;
 $white-color: #fff;
 $orange-color: #FAAF3F;
-$yellow-color: #FAAF3F;
+$ligh-yellow-color: #E9DD7F;
 $transition: all 0.25s ease;
 
 * {
@@ -1006,8 +1006,7 @@ ol.found-words-list {
 
 		&.connected,
 		&.success {
-			background-color: $green-color;
-			color: $white-color;
+			background-color: $ligh-yellow-color;
 		}
 
 		&.error {
@@ -1370,6 +1369,23 @@ table.border {
 
 		.module-sum-arrow {
 			transform: rotate(-180deg);
+		}
+	}
+}
+
+.mit-target {
+    border: 2px dashed #d9d9d9;
+    background-color: #f3f4f7;
+
+	&.ready {
+		padding: 0;
+		border: 0;
+
+		.mit-element {
+			background-color: $ligh-yellow-color;
+			border-color: transparent;
+			text-align: center;
+			min-height: 65px;
 		}
 	}
 }

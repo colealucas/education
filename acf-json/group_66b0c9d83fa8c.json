@@ -2156,6 +2156,132 @@
                             ],
                             "min": "",
                             "max": ""
+                        },
+                        "layout_66efeb7b00870": {
+                            "key": "layout_66efeb7b00870",
+                            "name": "match_text_with_image",
+                            "label": "Match Text with Image",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_66eff0219d62f",
+                                    "label": "Columns",
+                                    "name": "columns",
+                                    "aria-label": "",
+                                    "type": "button_group",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "col-md-6": "2 Columns",
+                                        "col-md-4": "3 Columns",
+                                        "col-md-3": "4 Columns"
+                                    },
+                                    "default_value": "",
+                                    "return_format": "value",
+                                    "allow_null": 0,
+                                    "layout": "horizontal"
+                                },
+                                {
+                                    "key": "field_66efec617902e",
+                                    "label": "Image Height (pixels)",
+                                    "name": "image_height",
+                                    "aria-label": "",
+                                    "type": "number",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": 200,
+                                    "min": "",
+                                    "max": "",
+                                    "placeholder": "Image Height",
+                                    "step": 1,
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_66efebc200874",
+                                    "label": "Items",
+                                    "name": "items",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "row",
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add New item",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_66efebcf00875",
+                                            "label": "Image",
+                                            "name": "image",
+                                            "aria-label": "",
+                                            "type": "image",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "return_format": "url",
+                                            "library": "all",
+                                            "min_width": "",
+                                            "min_height": "",
+                                            "min_size": "",
+                                            "max_width": "",
+                                            "max_height": "",
+                                            "max_size": "",
+                                            "mime_types": "",
+                                            "preview_size": "full",
+                                            "parent_repeater": "field_66efebc200874"
+                                        },
+                                        {
+                                            "key": "field_66efebe300876",
+                                            "label": "Coresponding Text",
+                                            "name": "coresponding_text",
+                                            "aria-label": "",
+                                            "type": "textarea",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "rows": 2,
+                                            "placeholder": "Coresponding text",
+                                            "new_lines": "",
+                                            "parent_repeater": "field_66efebc200874"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
                     },
                     "min": "",
@@ -2184,5 +2310,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726950533
+    "modified": 1727000978
 }

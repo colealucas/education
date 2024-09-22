@@ -342,7 +342,9 @@
                             $term = get_sub_field('term');
                         ?>
                         
-                        <div class="ma-item ma-item-left" data-id="<?php echo $i; ?>"><?php echo $term; ?></div>
+                        <div class="ma-item ma-item-left" data-id="<?php echo $i; ?>">
+                            <?php echo $term; ?>
+                        </div>
                         
                         <?php endwhile; ?>
                     <?php endif; ?>
@@ -863,6 +865,54 @@
     <div class="flexible-content-section curiosity-section my-24px">
         <div class="relative break-all p-16px bg-light-gray rounded-8px" contenteditable="true">
             <?php echo $template; ?>
+        </div>
+    </div>
+
+
+
+<?php elseif( get_row_layout() == 'match_text_with_image' ) : // editable_template
+    $columns = (get_sub_field('columns') ? get_sub_field('columns') : 'col-md-4'); // default to 3 columns
+    $image_height = (get_sub_field('image_height') ? get_sub_field('image_height') : 200); // default to 200px image height
+?>
+
+    <div class="flexible-content-section match-image-with-text-section my-24px">
+        <div class="relative">
+            <?php if ( have_rows('items') ) : $index = 0; $k = 0; ?>
+                <div class="mit-wrap">
+
+                    <div class="row" data-select-multiple-wrap>
+                        <?php while ( have_rows('items') ) : the_row(); $index++;
+                            $image = get_sub_field('image');
+                        ?>
+                        
+                        <div class="<?php echo $columns; ?>">
+                            <div class="mit-item mb-24px">
+                                <div class="mit-image text-center">
+                                    <?php if ($image) : ?>
+                                        <img src="<?php echo $image; ?>" class="rounded-8px inline-block" style="height: <?php echo $image_height; ?>px" alt="">
+                                    <?php endif; ?>
+                                </div>
+
+                                <div class="mit-target p-4px mt-12px rounded-8px min-h-50px" data-mit-target id="placeholder<?php echo $index; ?>"></div>
+                            </div>
+                        </div>
+                        <?php endwhile; ?>
+                    </div>
+
+                    <div class="mit-elements flex flex-wrap justify-center gap-20px mt-30px bg-faded-white p-20px rounded-8px">
+                        <?php while ( have_rows('items') ) : the_row(); $k++;
+                            $coresponding_text = get_sub_field('coresponding_text');
+                        ?>
+                        
+                        <div class="mit-element leading-130 flex items-center justify-center select-none cursor-pointer py-12px px-16px bg-white text-15px font-500 border-1px border-solid border-medium-gray rounded-8px" data-mit-element data-target="placeholder<?php echo $k; ?>">
+                            <?php echo $coresponding_text; ?>
+                        </div>
+
+                        <?php endwhile; ?>
+                    </div>
+                    
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 
