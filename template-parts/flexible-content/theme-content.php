@@ -917,5 +917,34 @@
     </div>
 
 
+
+<?php elseif( get_row_layout() == 'select_correct_number' ) : // select_correct_number ?>
+
+    <div class="flexible-content-section numbers-game-section my-24px">
+        <div class="relative">
+            <?php if ( have_rows('numbers') ) : $index = 0; $k = 0; ?>
+                <div class="numbers-wrap bg-faded-gray rounded-16px p-20px">
+
+                    <div class="numbers-flex flex gap-30px justify-center flex-wrap" data-select-multiple-wrap>
+                        <?php while ( have_rows('numbers') ) : the_row(); $index++;
+                            $number = get_sub_field('number');
+                            $correct = get_sub_field('correct');
+                        ?>
+                        
+                        <div>
+                            <div class="text-17px font-600 text-center">
+                                <div class="numbers-item inline-block leading-1 px-24px py-12px rounded-8px bg-white border-1px border-solid border-medium-gray cursor-pointer select-none <?php echo ($correct ? 'correct' : '') ?>"><?php echo $number; ?></div>
+                            </div>
+                        </div>
+
+                        <?php endwhile; ?>
+                    </div>
+                    
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
+
+
 <?php 
 endif;

@@ -5,12 +5,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const translatedText = {
         'ro': {
             'bravo': 'Excelent! Ai realizat corect!',
+            'mate': 'Excelent! Sunteți buni și la mate!',
             'continue': 'Continuă',
             'wordsToFind': 'cuvinte de găsit',
             'wordsFound': 'cuvinte descoperite',
         },
         'ru': {
             'bravo': 'Отлично! Ты сделал правильно!',
+            'mate': 'Отлично! Вы хороши и в математике!',
             'continue': 'Продолжить',
             'wordsToFind': 'слов для поиска',
             'wordsFound': 'найденных слова',
@@ -1069,5 +1071,45 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     handleMitGame();
+
+    function handleNumbersGame() {
+        const wrappers = document.querySelectorAll('.numbers-wrap');
+
+        if (wrappers.length) {
+            wrappers.forEach(function(wrapper) {
+                const numbers = wrapper.querySelectorAll('.numbers-item');
+
+                if (numbers.length) {
+                    numbers.forEach(function(number) {
+                        number.addEventListener('click', function() {
+                            if (number.classList.contains('correct')) {
+                                number.classList.add('selected', 'no-click');
+                                showSuccessPopup( getText('mate') );
+                            } else {
+                                number.classList.add('error');
+
+                                setTimeout(function() {
+                                    number.classList.remove('error');
+                                }, 600);
+                            }
+                        });
+                    });
+                }
+            });
+        }
+    }
+    handleNumbersGame();
+
+
+    // function handleNumbersGame() {
+    //     const wrappers = document.querySelectorAll('.numbers-wrap');
+
+    //     if (wrappers.length) {
+    //         wrappers.forEach(function(wrapper) {
+
+    //         });
+    //     }
+    // }
+    // handleNumbersGame();
 
 });

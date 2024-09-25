@@ -1391,6 +1391,28 @@ table.border {
 	}
 }
 
+.numbers-item {
+	transition: $transition;
+
+	&:hover {
+		background-color: $medium-gray-color
+	}
+
+	&.correct.selected {
+		background-color: $green-color;
+		color: $white-color
+	}
+
+	&.error {
+		border-color: transparent;
+		background-color: lighten(#F00001, 35);
+	}
+
+	&:active {
+		transform: scale(0.95);
+	}
+}
+
 
 // [class*="wp-image-"]
 .zdx{}
