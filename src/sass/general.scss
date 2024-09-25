@@ -1413,6 +1413,30 @@ table.border {
 	}
 }
 
+.curiosity-content {
+	position: relative;
+
+	&:before {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 35px;
+		content: "";
+		width: 0; 
+		height: 0; 
+		border-left: 8px solid transparent;
+		border-right: 8px solid transparent;
+		border-top: 8px solid $gray-color;
+	}
+}
+
+.curiosity-image {
+	border: 2px solid transparent;
+
+	&.active {
+		border-color: $ligh-yellow-color;
+	}
+}
 
 // [class*="wp-image-"]
 .zdx{}

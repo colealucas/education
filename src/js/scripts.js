@@ -945,18 +945,34 @@ document.addEventListener("DOMContentLoaded", function() {
     handleSpotCorrectList();
 
     function handleCuriosityClick(){
-        const curiosities = document.querySelectorAll('.curiosity-img');
+        const curiosities = document.querySelectorAll('.curiosity-image');
+        const allContents =  document.querySelectorAll('.curiosity-content');
 
         if (curiosities.length) {
             curiosities.forEach(function(cur) {
                 cur.onclick = function(ev) {
                     ev.preventDefault();
 
-                    const parent = this.closest('.curiosity-item');
-                    const content = (parent ? parent.querySelector('.curiosity-content') : null);
+                    curiosities.forEach(function(content) {
+                        content.classList.remove('active');
+                    });
 
-                    if (content) {
-                        content.classList.toggle('hide');
+                    this.classList.add('active');
+
+                    const parent = this.closest('.curiosity-item');
+                    const wrap = this.closest('.curiosity-wrap');
+                    const itemIndex = parent.getAttribute('data-curiosity-item');
+                    const contentElement = (itemIndex ? wrap.querySelector(`[data-index='${itemIndex}']`) : null);
+
+
+                    if (allContents.length) {
+                        allContents.forEach(function(content) {
+                            content.classList.add('hide');
+                        });
+                    }
+
+                    if (contentElement) {
+                        contentElement.classList.toggle('hide');
                     }
                 };
             });

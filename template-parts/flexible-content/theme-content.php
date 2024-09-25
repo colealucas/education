@@ -598,20 +598,30 @@
         <div class="curiosity-wrap my-24px">
             <?php if ( $type == 'rich' ) : // animated curiosity ?>
 
-                <?php if ( have_rows('animated_curiosities') ) : $counter = 0; ?>
-                    <div class="flex flex-wrap gap-20px justify-between py-40px">
-                        <?php while ( have_rows('animated_curiosities') ) : the_row(); $counter++;
+                <?php if ( have_rows('animated_curiosities') ) : $counter = 0; $k=0; ?>
+                    <div class="curiosites-tooltips">
+                        <?php while ( have_rows('animated_curiosities') ) : the_row(); 
+                            $k++;
                             $content = get_sub_field('content');
+                        ?>
+
+                            <div class="curiosity-content bg-light-yellow p-20px border-medium-gray mb-16px rounded-16px hide" data-index="<?php echo $k; ?>">
+                                <?php echo $content; ?>
+                            </div>
+
+                        <?php endwhile; ?>
+                    </div>
+
+                    <div class="flex flex-wrap gap-20px justify-between p-30px bg-faded-gray rounded-16px mb-16px">
+                        <?php while ( have_rows('animated_curiosities') ) : the_row(); 
+                            $counter++; 
                             $image = get_sub_field('featured_image');
                         ?>
 
-                            <div class="curiosity-item flex flex-col gap-30px items-center w-[calc(33.3%-20px)]">
+                            <div class="curiosity-item relative flex flex-col gap-30px items-center" data-curiosity-item="<?php echo $counter; ?>">
                                 <?php if ( $image ) : ?>
-                                    <div class="curiosity-image">
-                                        <img class="h-[100px] cursor-pointer select-none curiosity-img" src="<?php echo $image; ?>" alt="">
-                                    </div>
-                                    <div class="curiosity-content bg-light-gray p-16px rounded-16px text-17px hide">
-                                        <?php echo $content; ?>
+                                    <div class="curiosity-image bg-white p-16px rounded-8px">
+                                        <img class="max-h-[150px] cursor-pointer select-none curiosity-img rounded-8px" src="<?php echo $image; ?>" alt="">
                                     </div>
                                 <?php endif; ?>
                             </div>
