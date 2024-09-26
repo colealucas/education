@@ -10,11 +10,25 @@ $get_static_text = [
         'subjects' => 'Subiecte',
         'go_back' => 'Inapoi la Module',
         'access_theme' => 'Acceseaza Tema',
+        'autoevaluation' => 'Autoevaluare',
+        'criteria_title' => 'Criterii de succes/condiții de succes pentru elevi/eleve la disciplina opțională educație pentru media',
+        'unit' => 'Unitatea de învățare',
+        'success_criteria' => 'Criterii de succes',
+        'green_state' => 'Verde/independent',
+        'yellow_state' => 'Galben/ghidat, ajutat',
+        'red_state' => 'Roșu/mult ajutor',
     ],
     'ru' => [
         'subjects' => 'Предметы',
         'go_back' => 'Назад к модулям',
         'access_theme' => 'Открыть Тему',
+        'autoevaluation' => 'Автооценка',
+        'criteria_title' => 'Критерии успеха/условия успеха для учеников/учениц по выборочной дисциплине медиаобразования',
+        'unit' => 'Учебный модуль',
+        'success_criteria' => 'Критерии успеха',
+        'green_state' => 'Зелёный/независимый',
+        'yellow_state' => 'Жёлтый/под руководством, с помощью',
+        'red_state' => 'Красный/много помощи',
     ]
 ];
 
@@ -156,7 +170,7 @@ $current_module_title = '';
                     ?>
 
                         <div class="mt-40px mb-24px">
-                            <h2 class="text-32px font-700">Autoevaluare</h2>
+                            <h2 class="text-32px font-700"><?php echo $get_static_text[get_lang()]['autoevaluation']; ?></h2>
                         </div>
 
                         <div class="module-sum-item">
@@ -164,7 +178,7 @@ $current_module_title = '';
                                 <div>
                                     <div class="text-24px flex items-center font-500 leading-160 select-none cursor-pointer">
                                         <div class="max-w-[890px] leading-130">
-                                            Criterii de succes/condiții de succes pentru elevi/eleve la disciplina opțională educație pentru media
+                                            <?php echo $get_static_text[get_lang()]['criteria_title']; ?>
                                         </div>
                                     </div>
                                 </div>
@@ -233,19 +247,19 @@ $current_module_title = '';
 
                                         <tr>
                                             <th>
-                                                Unitatea de învățare
+                                                <?php echo $get_static_text[get_lang()]['unit']; ?>
                                             </th>
                                             <th>
-                                                Criterii de succes
+                                                <?php echo $get_static_text[get_lang()]['success_criteria']; ?>
                                             </th>
-                                            <th style="background-color: #7BA97D;">
-                                                Verde/independent
+                                            <th class="text-center" style="background-color: #7BA97D;">
+                                                <?php echo $get_static_text[get_lang()]['green_state']; ?>
                                             </th>
-                                            <th style="background-color: #FFF302;">
-                                                Galben/ghidat, ajutat
+                                            <th class="text-center" style="background-color: #FFF302;">
+                                                <?php echo $get_static_text[get_lang()]['yellow_state']; ?>
                                             </th>
-                                            <th style="background-color: #E18067;">
-                                                Roșu/mult ajutor
+                                            <th class="text-center" style="background-color: #E18067;">
+                                                <?php echo $get_static_text[get_lang()]['red_state']; ?>
                                             </th>
                                         </tr>
 
