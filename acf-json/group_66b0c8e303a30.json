@@ -3,6 +3,23 @@
     "title": "Module Details",
     "fields": [
         {
+            "key": "field_66f5613376007",
+            "label": "Settings",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_66b0c8eb4ac0b",
             "label": "Parent Book",
             "name": "parent_book",
@@ -34,6 +51,68 @@
             ],
             "bidirectional": 0,
             "bidirectional_target": []
+        },
+        {
+            "key": "field_66f5613e76008",
+            "label": "Autoevaluation",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_66f562747600b",
+            "label": "Success Criteria",
+            "name": "criteria",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add New",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_66f562827600c",
+                    "label": "Add Criteria",
+                    "name": "criteria",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "Add Criteria",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_66f562747600b"
+                }
+            ]
         }
     ],
     "location": [
@@ -54,5 +133,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1724099643
+    "modified": 1727357699
 }
