@@ -956,5 +956,44 @@
     </div>
 
 
+
+<?php elseif( get_row_layout() == 'image_with_text_field' ) : // image_with_text_field 
+$columns = (get_sub_field('columns') ? get_sub_field('columns') : 'col-md-4'); // default to 3 columns
+$images_height_pixels = (get_sub_field('images_height_pixels') ? get_sub_field('images_height_pixels') : 150); // default to 3 columns
+$placeholder_text = get_sub_field('placeholder_text');
+?>
+
+<div class="flexible-content-section numbers-game-section my-24px">
+    <div class="relative">
+        <?php if ( have_rows('items') ) : $index = 0; $k = 0; ?>
+            <div class="imgtxt-wra py-20px">
+
+                <div class="row" data-select-multiple-wrap>
+                    <?php while ( have_rows('items') ) : the_row(); $index++;
+                        $image = get_sub_field('image');
+                    ?>
+                    
+                    <div class="<?php echo $columns; ?>">
+                        <?php if ($image) : ?>
+                            <div class="flex flex-col gap-12px mb-20px">
+                                <div>
+                                    <img class="object-cover w-full rounded-8px" style="height: <?php echo $images_height_pixels; ?>px" src="<?php echo $image;  ?>" alt="">
+                                </div>
+                                <div>
+                                    <input type="text" class="border-2px text-15px font-500 border-solid border-medium-gray h-40px w-full py-0 px-12px focus:outline-none focus:border-orange" name="user-input[]" placeholder="<?php echo $placeholder_text; ?>">
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+
+                    <?php endwhile; ?>
+                </div>
+                
+            </div>
+        <?php endif; ?>
+    </div>
+</div>
+
+
 <?php 
 endif;
