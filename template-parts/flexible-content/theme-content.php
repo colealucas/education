@@ -966,7 +966,7 @@ $placeholder_text = get_sub_field('placeholder_text');
 <div class="flexible-content-section numbers-game-section my-24px">
     <div class="relative">
         <?php if ( have_rows('items') ) : $index = 0; $k = 0; ?>
-            <div class="imgtxt-wra py-20px">
+            <div class="imgtxt-wrap py-20px">
 
                 <div class="row" data-select-multiple-wrap>
                     <?php while ( have_rows('items') ) : the_row(); $index++;
@@ -989,6 +989,47 @@ $placeholder_text = get_sub_field('placeholder_text');
                     <?php endwhile; ?>
                 </div>
                 
+            </div>
+        <?php endif; ?>
+    </div>
+</div>
+
+
+<?php elseif( get_row_layout() == 'axa' ) : // axa 
+$images_height_pixels = 120;
+?>
+
+<div class="flexible-content-section axa-game-section my-24px">
+    <div class="relative">
+        <?php if ( have_rows('items') ) : $i=0; $k=0; ?>
+            <div class="axa-wrap pt-140px">
+                <div class="axa-row flex border-t-2px border-solid border-black relative">
+                    <?php while ( have_rows('items') ) : the_row(); $i++;
+                        $image = get_sub_field('image');
+                        $text_label = get_sub_field('text_label');
+                    ?>
+                    
+                    <div class="axa-col flex-grow relative w-[16.6%]">
+                        <div id="axa-placeholder<?php echo $i; ?>" class="axa-placeholder axa-target mt-[-140px] flex items-center justify-center h-120px border-2px border-dashed border-medium-gray max-w-90% mx-auto"></div>
+                        <div class="text-center mt-30px axa-label font-15px font-600 text-green"><?php echo $text_label; ?></div>
+                    </div>
+
+                    <?php endwhile; ?>
+                </div>
+                
+                <div class="axa-darg-items axa-elements flex items-center justify-center gap-20px p-20px bg-light-gray rounded-16px mt-16px">
+                    <?php while ( have_rows('items') ) : the_row(); $k++;
+                        $image = get_sub_field('image');
+                    ?>
+                    
+                    <?php if ($image) : ?>
+                        <div class="p-8px bg-white rounded-8px select-none" data-target="axa-placeholder<?php echo $k; ?>">
+                            <img class="inline-block w-full object-cover rounded-8px" style="height: <?php echo $images_height_pixels; ?>px" src="<?php echo $image; ?>" alt="">
+                        </div>
+                    <?php endif; ?>
+
+                    <?php endwhile; ?>
+                </div>
             </div>
         <?php endif; ?>
     </div>

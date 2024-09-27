@@ -1461,6 +1461,44 @@ table {
 	}
 }
 
+.axa-row {
+	position: relative;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: -9px;
+		right: -2px;
+		width: 0; 
+		height: 0; 
+		border-top: 8px solid transparent;
+		border-bottom: 8px solid transparent;
+		border-left: 8px solid #000;
+	}
+}
+
+.axa-label {
+	position: relative;
+
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		z-index: 2;
+		top: -19px;
+		left: 50%;
+		width: 2px;
+		height: 16px;
+		background-color: #000;
+	}
+}
+
+.axa-placeholder {
+	&.ready {
+		border-color: transparent;
+	}
+}
+
 // [class*="wp-image-"]
 .zdx{}
 
