@@ -1156,16 +1156,22 @@ document.addEventListener("DOMContentLoaded", function() {
                                 const targetId = targetPlaceholder.id;
                                 const correctTarget = draggedItem.dataset.target;
 
-                                if (targetId === correctTarget) {
-                                    evt.to.appendChild(evt.item);
-                                    evt.item.classList.add('success');
+                                // if (targetId === correctTarget) {
+                                //     evt.to.appendChild(evt.item);
+                                //     evt.item.classList.add('success');
 
-                                    // if all good, item dragged and placed
-                                    counter++;
-                                } else {
-                                    evt.item.classList.add('error');
-                                    evt.from.appendChild(evt.item); // Return item to original list
-                                }
+                                //     // if all good, item dragged and placed
+                                //     counter++;
+                                // } else {
+                                //     evt.item.classList.add('error');
+                                //     evt.from.appendChild(evt.item); // Return item to original list
+                                // }
+
+                                evt.to.appendChild(evt.item);
+                                evt.item.classList.add('success');
+
+                                // if all good, item dragged and placed
+                                counter++;
 
                                 setTimeout(() => {
                                     evt.item.classList.remove('error', 'success');
