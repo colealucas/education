@@ -1061,5 +1061,38 @@ $images_height_pixels = 120;
 </div>
 
 
+
+<?php elseif( get_row_layout() == 'acrostih_game' ) : // acrostih_game
+$key_word = get_sub_field('key_word');
+?>
+
+<div class="flexible-content-section acrostih-game my-24px">
+    <div class="relative">
+        <?php if ($key_word) : 
+            $letters = str_split($key_word);
+        ?>
+
+        <?php if (count($letters) ) : ?>
+            <div class="acrostih-wrap flex flex-col gap-6px">
+                <?php foreach($letters as $letter) : ?>
+
+                    <div class="acrostih-letter flex items-center gap-6px">
+                        <div class="size-30px text-center leading-1 uppercase text-18px font-700 bg-light-gray flex items-center justify-center select-none cursor-pointer">
+                            <?php echo $letter; ?>
+                        </div>
+                        <div class="w-[calc(100%-36px)]">
+                            <input type="text" class="h-30px px-8px font-700 text-15px border-2px w-full border-solid border-light-gray focus:outline-none focus:border-orange" type="text" name="letter[]" placeholder="scrie aici" />
+                        </div>
+                    </div>
+                    
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
+
+        <?php endif; ?>
+    </div>
+</div>
+
+
 <?php 
 endif;

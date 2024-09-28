@@ -2582,6 +2582,36 @@
                             ],
                             "min": "",
                             "max": ""
+                        },
+                        "layout_66f836783d822": {
+                            "key": "layout_66f836783d822",
+                            "name": "acrostih_game",
+                            "label": "Acrostih Game",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_66f836873d824",
+                                    "label": "Key word",
+                                    "name": "key_word",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "Key word",
+                                    "prepend": "",
+                                    "append": ""
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
                     },
                     "min": "",
@@ -2610,5 +2640,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1727539447
+    "modified": 1727543095
 }
