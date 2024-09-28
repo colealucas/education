@@ -2152,6 +2152,26 @@
                                     "rows": 10,
                                     "placeholder": "Add template",
                                     "new_lines": "br"
+                                },
+                                {
+                                    "key": "field_66f828d8288eb",
+                                    "label": "Print",
+                                    "name": "print",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Print this ?",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
                                 }
                             ],
                             "min": "",
@@ -2590,5 +2610,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1727460235
+    "modified": 1727539447
 }

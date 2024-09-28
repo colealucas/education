@@ -1194,6 +1194,40 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     handleAxaGame();
 
+    function printElement(htmlElement) {
+
+        if (htmlElement) {
+            let divContents = htmlElement.innerHTML;
+            let printWindow = window.open('', '', 'height=600,width=785');
+            printWindow.document.write('<html><head><title>Print</title> <style> .print-trigger{display: none} .editable-template-wrapper {word-break: break-all; font-size: 16px;} </style>');
+            printWindow.document.write('</head><body>');
+            printWindow.document.write(divContents);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            printWindow.print();
+        } else {
+            return false;
+        }
+    }
+
+    function handlePrintElements() {
+        const trigegrs = document.querySelectorAll('[data-print-trigger]');
+
+        if ( trigegrs.length ) {
+            trigegrs.forEach(function(trigger) {
+                trigger.addEventListener('click', function(ev) {
+                    ev.preventDefault();
+                    const parentDiv = trigger.closest('.print-div');
+
+                    if (parentDiv) {
+                        printElement(parentDiv);
+                    }
+                });
+            });
+        }
+    }
+    handlePrintElements();
+
     // function handleNumbersGame() {
     //     const wrappers = document.querySelectorAll('.numbers-wrap');
 
