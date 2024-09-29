@@ -2632,6 +2632,60 @@
                             ],
                             "min": "",
                             "max": ""
+                        },
+                        "layout_66f93762f8850": {
+                            "key": "layout_66f93762f8850",
+                            "name": "reorder_aliniate",
+                            "label": "Reorder aliniate",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_66f93776f8852",
+                                    "label": "Aliniate",
+                                    "name": "aliniate",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "row",
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add New Item",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_66f93781f8853",
+                                            "label": "Aliniat (text)",
+                                            "name": "aliniat",
+                                            "aria-label": "",
+                                            "type": "wysiwyg",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "tabs": "all",
+                                            "toolbar": "full",
+                                            "media_upload": 0,
+                                            "delay": 1,
+                                            "parent_repeater": "field_66f93776f8852"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
                     },
                     "min": "",
@@ -2660,5 +2714,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1727608353
+    "modified": 1727608828
 }

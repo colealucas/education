@@ -1499,6 +1499,13 @@ table {
 	}
 }
 
+.ra-wrap {
+	.success {
+		background-color: $light-green-color;
+		border-color: $green-color
+	}
+}
+
 // [class*="wp-image-"]
 .zdx{}
 

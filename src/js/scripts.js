@@ -1228,6 +1228,48 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     handlePrintElements();
 
+    function handleRAGame() {
+        const wrappers = document.querySelectorAll('.ra-wrap');
+    
+        if (wrappers.length) {
+            wrappers.forEach(function(wrapper) {
+                const listGroup = wrapper.querySelector('.list-group');
+    
+                new Sortable(listGroup, {
+                    animation: 100,
+                    onEnd: function(evt) {
+                        checkOrder(listGroup);
+                    }
+                });
+            });
+        }
+    }
+    
+    // Function to check if the current index matches the data-order attribute
+    function checkOrder(listGroup) {
+        const items = listGroup.querySelectorAll('.list-group-item');
+        let isAllCorrect = true;
+    
+        items.forEach((item, index) => {
+            const dataOrder = parseInt(item.getAttribute('data-order'));
+    
+            // Check if the current child index matches the data-order value
+            if (dataOrder === index) {
+                item.classList.add('success', 'no-click');  // Add success class to correct item
+            } else {
+                item.classList.remove('success', 'no-click');  // Remove success class if incorrect
+                isAllCorrect = false;
+            }
+        });
+    
+        // If all items are correctly placed, log a success message
+        if (isAllCorrect) {
+            showSuccessPopup( getText('bravo') );
+        }
+    }
+    
+    handleRAGame();
+
     // function handleNumbersGame() {
     //     const wrappers = document.querySelectorAll('.numbers-wrap');
 

@@ -1095,5 +1095,53 @@ $placeholder_text = get_sub_field('placeholder_text');
 </div>
 
 
+
+
+
+<?php elseif( get_row_layout() == 'reorder_aliniate' ) : // reorder_aliniate 
+?>
+
+<div class="flexible-content-section ra-game my-24px">
+    <div class="relative">
+
+        <?php if ( have_rows('aliniate') ) : 
+
+        // Store all rows in an array
+        $aliniate = [];
+            
+        ?>
+            <div class="ra-wrap py-20px">
+
+                <div class="ra-row list-group flex flex-col gap-16px bg-light-gray p-20px rounded-16px">
+                    <?php while ( have_rows('aliniate') ) : the_row();
+                        $aliniat = get_sub_field('aliniat');
+                        $aliniate[] = $aliniat;
+                    ?>
+
+                    <?php endwhile; ?>
+
+                    <?php 
+                        // Reverse the array
+                        $aliniate = array_reverse($aliniate);
+                        $index = count($aliniate);
+                    ?>
+
+                    <?php 
+                         // Output the reversed rows
+                        foreach ( $aliniate as $aliniat ) : ?>
+                            <?php $index--; ?>
+                            <div class="list-group-item border-1px border-solid border-transparent p-20px bg-white rounded-16px cursor-move select-none" data-order="<?php echo $index; ?>">
+                                <?php echo $aliniat; ?>
+                            </div>
+                    <?php endforeach; ?>
+                </div>
+                
+            </div>
+        <?php endif; ?>
+
+    </div>
+</div>
+
+
 <?php 
 endif;
