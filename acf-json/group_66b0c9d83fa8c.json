@@ -350,6 +350,26 @@
                                     "ui": 1
                                 },
                                 {
+                                    "key": "field_66f94e2618b39",
+                                    "label": "Add plus (+) before paragraphs",
+                                    "name": "add_plus",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Add (+) before paragraphs ?",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
                                     "key": "field_66d8246a73331",
                                     "label": "Click words",
                                     "name": "click_words",
@@ -2790,5 +2810,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1727614103
+    "modified": 1727614650
 }

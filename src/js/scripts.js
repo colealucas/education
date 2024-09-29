@@ -293,6 +293,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function handleCheckmarks() {
         const checkmarks = document.querySelectorAll('.paragraph-check-options');
+        const addPlus = document.querySelectorAll('.paragraph-pluss-option');
+
+        if (addPlus.length) { 
+            addPlus.forEach(function(plus) {
+                const btn = plus.querySelector('.add-plus-btn');
+
+                btn.addEventListener('click', function() {
+                    btn.classList.toggle('active');
+                });
+            });
+        }
 
         if (checkmarks.length) {
             checkmarks.forEach(function(checkmarkOptions) {
@@ -323,7 +334,8 @@ document.addEventListener("DOMContentLoaded", function() {
         if ( sections.length ) {
             sections.forEach(function(textSection) {
                 if ( textSection ) {
-                    const paragraphs = textSection.querySelectorAll('p:not(:first-child):not(.ignore)');
+                    // const paragraphs = textSection.querySelectorAll('p:not(:first-child):not(.ignore)');
+                    const paragraphs = textSection.querySelectorAll('p:not(.ignore)');
 
                     if ( paragraphs.length ) {
                         paragraphs.forEach(function(p) {
@@ -350,6 +362,34 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     handleCheckParagraphs();
+
+    function handleAddPlus() {
+        const sections = document.querySelectorAll('.add-plus');
+
+        if ( sections.length ) {
+            sections.forEach(function(textSection) {
+                if ( textSection ) {
+                    const paragraphs = textSection.querySelectorAll('p:not(.ignore)');
+
+                    if ( paragraphs.length ) {
+                        paragraphs.forEach(function(p) {
+                            if ( p.textContent.trim().length ) {
+                                const checkboxes = document.createElement('span');
+                                checkboxes.classList.add('paragraph-pluss-option');
+                                checkboxes.innerHTML = `<span class="add-plus-btn">+</span>`;
+
+                                // Insert the <span> before the text content of the <p>
+                                p.prepend(checkboxes);
+                            }
+                        });
+
+                        handleCheckmarks();
+                    }
+                }
+            });
+        }
+    }
+    handleAddPlus();
 
     /**
      * Display success feedback
