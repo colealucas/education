@@ -1276,10 +1276,19 @@ $image_height = (get_sub_field('image_height') ? get_sub_field('image_height') :
                         <?php if ($elements) : ?>
                             <?php foreach( $elements as $element ) :
                                 $text_item = $element['text_item'];
+                                $element_image = ($element['image'] && $element['image']['url'] ? $element['image']['url'] : null);
 
-                                $mixed_elements[] = '<div class="dit-element cursor-move leading-130 flex items-center justify-center select-none py-12px px-16px bg-white text-15px font-500 border-1px border-solid border-medium-gray rounded-8px" data-dit-element data-col-target="'. $y .'">
+                                // print_r($element_image);
+
+                                if ($type == 'images') {
+                                    $mixed_elements[] = '<div class="dit-element cursor-move leading-100 flex items-center justify-center select-none p-8px bg-white text-15px font-500 border-1px border-solid border-medium-gray rounded-8px" data-dit-element data-col-target="'. $y .'">
+                                    <img src="'.$element_image.'" style="height:60px; width: auto;" alt="" />
+                                </div>';
+                                } else {
+                                    $mixed_elements[] = '<div class="dit-element cursor-move leading-130 flex items-center justify-center select-none py-12px px-16px bg-white text-15px font-500 border-1px border-solid border-medium-gray rounded-8px" data-dit-element data-col-target="'. $y .'">
                                     '. $text_item .'
                                 </div>';
+                                }
                             ?>
                                 
                             <?php endforeach; ?>
