@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const translatedText = {
         'ro': {
             'bravo': 'Excelent! Ai realizat corect!',
+            'great_team_work': 'Excelentă muncă în pereche!',
             'mate': 'Excelent! Sunteți buni și la mate!',
             'continue': 'Continuă',
             'wordsToFind': 'cuvinte de găsit',
@@ -12,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         'ru': {
             'bravo': 'Отлично! Ты сделал правильно!',
+            'great_team_work': 'Отличная работа в паре!',
             'mate': 'Отлично! Вы хороши и в математике!',
             'continue': 'Продолжить',
             'wordsToFind': 'слов для поиска',
@@ -1264,7 +1266,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
         // If all items are correctly placed, log a success message
         if (isAllCorrect) {
-            showSuccessPopup( getText('bravo') );
+            showSuccessPopup( getText('great_team_work') );
         }
     }
     
