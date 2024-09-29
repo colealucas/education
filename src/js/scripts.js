@@ -1409,6 +1409,7 @@ document.addEventListener("DOMContentLoaded", function() {
             wrappers.forEach(function(wrapper) {
                 const placeholders = wrapper.querySelectorAll('.dit-target');
                 const mixedItems = wrapper.querySelector('.dit-elements');
+                const totalItems = wrapper.querySelectorAll('.dit-element');
                 let draggedItem = null;
                 let counter = 0;
 
@@ -1429,47 +1430,36 @@ document.addEventListener("DOMContentLoaded", function() {
                         Sortable.create(placeholder, {
                             group: 'shared',
                             animation: 0,
-                            onAdd: function(evt) {
-                                // if (placeholder.children.length > 1) {
-                                //     // Remove the added item to enforce the one-item limit
-                                //     evt.from.appendChild(evt.item);
-                                // }
-                                    
-                                placeholder.classList.add('ready');
+                            onAdd: function(evt) {  
+                                placeholder.classList.add('filled');
 
                                 const targetPlaceholder = evt.to;
-                                const targetId = targetPlaceholder.id;
-                                const correctTarget = draggedItem.dataset.target;
+                                const targetCol = targetPlaceholder.getAttribute('data-col-num');
+                                const correctTarget = draggedItem.getAttribute('data-col-target');
+                                    
+                                if (targetCol === correctTarget) {
+                                    evt.to.appendChild(evt.item);
+                                    evt.item.classList.add('success');
 
-                                evt.to.appendChild(evt.item);
-                                evt.item.classList.add('success');
-
-                                // if all good, item dragged and placed
-                                counter++;
-                                
-                                // if (targetId === correctTarget) {
-                                //     evt.to.appendChild(evt.item);
-                                //     evt.item.classList.add('success');
-
-                                //     // if all good, item dragged and placed
-                                //     counter++;
-                                // } else {
-                                //     evt.item.classList.add('error');
-                                //     evt.from.appendChild(evt.item); // Return item to original list
-                                // }
+                                    // if all good, item dragged and placed
+                                    counter++;
+                                } else {
+                                    evt.item.classList.add('error');
+                                    evt.from.appendChild(evt.item); // Return item to original list
+                                }
 
                                 setTimeout(() => {
                                     evt.item.classList.remove('error', 'success');
                                 }, 700);
 
                                  // if completed
-                                //  if (counter >= placeholders.length ) {
-                                //     //showSuccessPopup( getText('bravo') );
+                                 if (counter >= totalItems.length ) {
+                                    showSuccessPopup( getText('bravo') );
                                     
-                                //     if ( mixedItems ) {
-                                //         mixedItems.classList.add('hide');
-                                //     }
-                                // }
+                                    if ( mixedItems ) {
+                                        mixedItems.classList.add('hide');
+                                    }
+                                }
                             }
                         });
                     });

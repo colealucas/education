@@ -1244,12 +1244,14 @@ $image_height = (get_sub_field('image_height') ? get_sub_field('image_height') :
 
     <div class="flexible-content-section dit-section my-24px">
         <div class="relative">
-            <?php if ( have_rows('target_items') ) : $index = 0; $k = 0; ?>
+            <?php if ( have_rows('target_items') ) : $index = 0; $y=0; ?>
                 <div class="dit-wrap">
 
                     <div class="dit-row flex justify-center gap-24px bg-light-gray p-20px rounded-16px" data-dit-row>
                         <?php while ( have_rows('target_items') ) : the_row(); $index++;
                             $image = get_sub_field('image');
+                            $elements = get_sub_field('elements');
+                            $elements_count = count($elements);
                         ?>
                         
                         <div class="w-25%">
@@ -1260,22 +1262,22 @@ $image_height = (get_sub_field('image_height') ? get_sub_field('image_height') :
                                     <?php endif; ?>
                                 </div>
 
-                                <div class="dit-target flex flex-col gap-4px p-4px mt-12px rounded-8px min-h-50px border-2px border-dashed border-medium-gray bg-white" data-dit-target id="placeholder<?php echo $index; ?>"></div>
+                                <div class="dit-target flex flex-col gap-4px p-4px mt-12px rounded-8px min-h-50px border-2px border-dashed border-medium-gray bg-white" data-dit-target data-col-num="<?php echo $index; ?>" data-elements-count="<?php echo $elements_count; ?>"></div>
                             </div>
                         </div>
                         <?php endwhile; ?>
                     </div>
 
 
-                    <?php while ( have_rows('target_items') ) : the_row(); $index++;
+                    <?php while ( have_rows('target_items') ) : the_row(); $y++;
                         $elements = get_sub_field('elements');
                     ?>
                         
                         <?php if ($elements) : ?>
-                            <?php foreach( $elements as $element ) : $k++;
+                            <?php foreach( $elements as $element ) :
                                 $text_item = $element['text_item'];
 
-                                $mixed_elements[] = '<div class="dit-element cursor-move leading-130 flex items-center justify-center select-none py-12px px-16px bg-white text-15px font-500 border-1px border-solid border-medium-gray rounded-8px" data-dit-element data-target="placeholder'.$k.'">
+                                $mixed_elements[] = '<div class="dit-element cursor-move leading-130 flex items-center justify-center select-none py-12px px-16px bg-white text-15px font-500 border-1px border-solid border-medium-gray rounded-8px" data-dit-element data-col-target="'. $y .'">
                                     '. $text_item .'
                                 </div>';
                             ?>
