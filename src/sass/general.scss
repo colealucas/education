@@ -1527,6 +1527,49 @@ table {
 	}
 }
 
+.splited-text {
+	strong {
+		font-weight: inherit !important;
+	}
+}
+
+.resore-text-options {
+	display: inline-flex;
+	gap: 6px;
+	margin: 0 2px;
+
+	span {
+		display: inline-block;
+		padding: 3px 4px;
+		line-height: 1;
+		border-radius: 4px;
+		cursor: pointer;
+		user-select: none;
+		transition: $transition;
+		background-color: $light-gray-color;
+		border: 1px solid $medium-gray-color;
+
+		&:hover {
+			background-color: $ligh-yellow-color;
+			color: $dark-color;
+			border-color: transparent;
+		}
+
+		&.wrong {
+			background-color: lightcoral;
+			border-color: transparent;
+		}
+
+		&.success {
+			background-color: $green-color;
+			border-color: transparent;
+			color: $white-color
+		}
+	}
+}
+
+
+
 // [class*="wp-image-"]
 .zdx{}
 

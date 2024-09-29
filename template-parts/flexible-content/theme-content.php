@@ -22,6 +22,7 @@
     $full_with_images = get_sub_field('full_with_images');
     $check_paragraphs = get_sub_field('check_paragraphs');
     $add_plus         = get_sub_field('add_plus');
+    $split_variants   = get_sub_field('split_variants');
     $click_words      = get_sub_field('click_words');
     $add_table_boders = get_sub_field('add_table_boders');
 
@@ -35,6 +36,10 @@
 
     if ($add_plus) {
         $css_classes[] = 'add-plus';
+    }
+
+    if ($split_variants) {
+        $css_classes[] = 'split-variants';
     }
 
     if ($click_words) {
@@ -1143,7 +1148,6 @@ $placeholder_text = get_sub_field('placeholder_text');
 </div>
 
 
-
 <?php elseif( get_row_layout() == 'top_3' ) : // top_3
 $image_height = (get_sub_field('image_height') ? get_sub_field('image_height') : 100);
 ?>
@@ -1190,6 +1194,48 @@ $image_height = (get_sub_field('image_height') ? get_sub_field('image_height') :
 
     </div>
 </div>
+
+
+
+
+<?php elseif( get_row_layout() == 'restore_text' ) : // restore_text ?>
+
+<div class="flexible-content-section resore-text-game my-24px">
+    <div class="relative">
+        <?php if ( have_rows('items') ) : ?>
+            <div class="resore-text-wrap">
+                <?php while ( have_rows('items') ) : the_row();
+                    $text_content = get_sub_field('text_content');
+                    $variants = get_sub_field('variants');
+
+                    $variantsHTML = '<span class="resore-text-options">';
+
+                    if ($variants) {
+                        foreach( $variants as $variant ) {
+                            $the_variant = $variant['variant'];
+                            $correct = $variant['correct'];
+
+                            $variantsHTML .= "<span data-restore-text-variant ". ($correct ? 'data-correct': '') .">". $the_variant ."</span>";
+                        }
+                    }
+
+                    $variantsHTML .= '</span>';
+
+                    // Use preg_replace to find the [] and replace it with the span tag
+                    $text_content = preg_replace('/\[\]/', "<span>{$variantsHTML}</span>", $text_content);
+                ?>
+
+                <div class="resore-text-item tcs-content rounded-8px phase-content entry-content content-spacing text-17px responsive-video mb-16px">
+                    <?php echo $text_content; ?>
+                </div>
+
+                <?php endwhile; ?>
+            </div>
+        <?php endif; ?>
+
+    </div>
+</div>
+
 
 
 <?php 

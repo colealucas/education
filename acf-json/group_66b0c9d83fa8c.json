@@ -370,6 +370,26 @@
                                     "ui": 1
                                 },
                                 {
+                                    "key": "field_66f95659f5a1c",
+                                    "label": "Split variants (A\/B)",
+                                    "name": "split_variants",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "Each variant should follow this format (V1\/V2)",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Split variants ?",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
                                     "key": "field_66d8246a73331",
                                     "label": "Click words",
                                     "name": "click_words",
@@ -1841,7 +1861,7 @@
                         "layout_66edce9c714a8": {
                             "key": "layout_66edce9c714a8",
                             "name": "choose_one",
-                            "label": "Choose One",
+                            "label": "Choose One (Image + Checkbox)",
                             "display": "block",
                             "sub_fields": [
                                 {
@@ -1986,7 +2006,7 @@
                         "layout_66eedd3231afb": {
                             "key": "layout_66eedd3231afb",
                             "name": "choose_multiple",
-                            "label": "Choose Multiple",
+                            "label": "Choose Multiple (Text List)",
                             "display": "block",
                             "sub_fields": [
                                 {
@@ -2782,6 +2802,126 @@
                             ],
                             "min": "",
                             "max": ""
+                        },
+                        "layout_66f97ef456398": {
+                            "key": "layout_66f97ef456398",
+                            "name": "restore_text",
+                            "label": "Restore Text",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_66f97efb5639a",
+                                    "label": "Items",
+                                    "name": "items",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "block",
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add New Item",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_66f97f035639b",
+                                            "label": "Text content",
+                                            "name": "text_content",
+                                            "aria-label": "",
+                                            "type": "wysiwyg",
+                                            "instructions": "Use [] to place variants inside text",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "tabs": "all",
+                                            "toolbar": "full",
+                                            "media_upload": 1,
+                                            "delay": 1,
+                                            "parent_repeater": "field_66f97efb5639a"
+                                        },
+                                        {
+                                            "key": "field_66f97f155639c",
+                                            "label": "Variants",
+                                            "name": "variants",
+                                            "aria-label": "",
+                                            "type": "repeater",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "layout": "table",
+                                            "min": 0,
+                                            "max": 0,
+                                            "collapsed": "",
+                                            "button_label": "Add Variant",
+                                            "rows_per_page": 20,
+                                            "sub_fields": [
+                                                {
+                                                    "key": "field_66f97f2d5639d",
+                                                    "label": "Variant",
+                                                    "name": "variant",
+                                                    "aria-label": "",
+                                                    "type": "text",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "maxlength": "",
+                                                    "placeholder": "Variant",
+                                                    "prepend": "",
+                                                    "append": "",
+                                                    "parent_repeater": "field_66f97f155639c"
+                                                },
+                                                {
+                                                    "key": "field_66f9861465ec5",
+                                                    "label": "Correct",
+                                                    "name": "correct",
+                                                    "aria-label": "",
+                                                    "type": "true_false",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "message": "Correct variant?",
+                                                    "default_value": 0,
+                                                    "ui_on_text": "",
+                                                    "ui_off_text": "",
+                                                    "ui": 1,
+                                                    "parent_repeater": "field_66f97f155639c"
+                                                }
+                                            ],
+                                            "parent_repeater": "field_66f97efb5639a"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
                     },
                     "min": "",
@@ -2810,5 +2950,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1727614650
+    "modified": 1727628841
 }

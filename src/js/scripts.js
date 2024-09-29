@@ -1377,6 +1377,30 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     handleTop3Game();
 
+    function restoreTextVariants() {
+        const items = document.querySelectorAll('[data-restore-text-variant]');
+
+        if (items.length) {
+            items.forEach(function(item) {
+                item.addEventListener('click', function(ev) {
+                    ev.preventDefault();
+
+                    if (item.hasAttribute('data-correct')) { // if is correct
+                        item.classList.add('success');
+                    } else {
+                        item.classList.add('wrong');
+
+                        setTimeout(function() {
+                            item.classList.remove('wrong');
+                        }, 500);
+                    }
+                });
+            }); 
+        }
+    }
+    restoreTextVariants();
+    
+   
     // function handleNumbersGame() {
     //     const wrappers = document.querySelectorAll('.numbers-wrap');
 
