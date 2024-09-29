@@ -1118,7 +1118,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     handleNumbersGame();
 
-
     function handleAxaGame() {
         const wrappers = document.querySelectorAll('.axa-wrap');
 
@@ -1271,6 +1270,72 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     
     handleRAGame();
+
+    function handleTop3Game() {
+        const wrappers = document.querySelectorAll('.top3-wrap');
+
+        if (wrappers.length) {
+            wrappers.forEach(function(wrapper) {
+                const placeholders = wrapper.querySelectorAll('.top-placeholder');
+                const mixedItems = wrapper.querySelector('.mixed-items');
+                let draggedItem = null;
+                let counter = 0;
+
+                // bottom mixed items
+                if (Sortable && mixedItems) {
+                    Sortable.create(mixedItems, {
+                        group: 'shared',
+                        animation: 0,
+                        sort: false,
+                        onStart: function (evt) {
+                            draggedItem = evt.item;
+                        }
+                    });
+                }
+                
+                if (placeholders.length) {
+                    placeholders.forEach(function(placeholder) {
+                        Sortable.create(placeholder, {
+                            group: 'shared',
+                            animation: 0,
+                            onAdd: function(evt) {
+                                if (placeholder.children.length > 1) {
+                                    // Remove the added item to enforce the one-item limit
+                                    evt.from.appendChild(evt.item);
+                                }
+                                    
+                                placeholder.classList.add('ready');
+
+                                const targetPlaceholder = evt.to;
+                                const targetId = targetPlaceholder.id;
+                                const correctTarget = draggedItem.dataset.target;
+
+                                // evt.to.appendChild(evt.item);
+                                // evt.item.classList.add('success');
+
+                                // if all good, item dragged and placed
+                                counter++;
+
+                                setTimeout(() => {
+                                    evt.item.classList.remove('error', 'success');
+                                }, 700);
+
+                                 // if completed
+                                 if (counter >= placeholders.length ) {
+                                    //showSuccessPopup( getText('bravo') );
+                                    
+                                    if ( mixedItems ) {
+                                        mixedItems.classList.add('hide');
+                                    }
+                                }
+                            }
+                        });
+                    });
+                }
+            });
+        }
+    }
+    handleTop3Game();
 
     // function handleNumbersGame() {
     //     const wrappers = document.querySelectorAll('.numbers-wrap');

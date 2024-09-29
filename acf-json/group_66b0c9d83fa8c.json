@@ -2686,6 +2686,82 @@
                             ],
                             "min": "",
                             "max": ""
+                        },
+                        "layout_66f9429992fd2": {
+                            "key": "layout_66f9429992fd2",
+                            "name": "top_3",
+                            "label": "Top 3",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_66f94327b6ac4",
+                                    "label": "Image height (pixels)",
+                                    "name": "image_height",
+                                    "aria-label": "",
+                                    "type": "number",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": 100,
+                                    "min": "",
+                                    "max": "",
+                                    "placeholder": 100,
+                                    "step": 1,
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_66f942a592fd4",
+                                    "label": "Items",
+                                    "name": "items",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "row",
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add New Item",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_66f942b792fd5",
+                                            "label": "Image\/Text",
+                                            "name": "imagetext_description",
+                                            "aria-label": "",
+                                            "type": "wysiwyg",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "tabs": "all",
+                                            "toolbar": "full",
+                                            "media_upload": 1,
+                                            "delay": 1,
+                                            "parent_repeater": "field_66f942a592fd4"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
                     },
                     "min": "",
@@ -2714,5 +2790,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1727608828
+    "modified": 1727614103
 }
