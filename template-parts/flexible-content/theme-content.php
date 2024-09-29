@@ -1064,6 +1064,7 @@ $images_height_pixels = 120;
 
 <?php elseif( get_row_layout() == 'acrostih_game' ) : // acrostih_game
 $key_word = get_sub_field('key_word');
+$placeholder_text = get_sub_field('placeholder_text');
 ?>
 
 <div class="flexible-content-section acrostih-game my-24px">
@@ -1081,7 +1082,7 @@ $key_word = get_sub_field('key_word');
                             <?php echo $letter; ?>
                         </div>
                         <div class="w-[calc(100%-36px)]">
-                            <input type="text" class="h-30px px-8px font-700 text-15px border-2px w-full border-solid border-light-gray focus:outline-none focus:border-orange" type="text" name="letter[]" placeholder="scrie aici" />
+                            <input type="text" class="h-30px px-8px font-700 text-15px border-2px w-full border-solid border-light-gray focus:outline-none focus:border-orange" type="text" name="letter[]" placeholder="<?php echo $placeholder_text; ?>" />
                         </div>
                     </div>
                     

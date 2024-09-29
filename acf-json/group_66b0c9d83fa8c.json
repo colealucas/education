@@ -2608,6 +2608,26 @@
                                     "placeholder": "Key word",
                                     "prepend": "",
                                     "append": ""
+                                },
+                                {
+                                    "key": "field_66f93608b26b8",
+                                    "label": "Placeholder text",
+                                    "name": "placeholder_text",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "Placeholder text",
+                                    "prepend": "",
+                                    "append": ""
                                 }
                             ],
                             "min": "",
@@ -2640,5 +2660,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1727543095
+    "modified": 1727608353
 }
