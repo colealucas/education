@@ -1399,6 +1399,85 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     restoreTextVariants();
+
+
+    // drag_items_to_list
+    function handleDITGame() {
+        const wrappers = document.querySelectorAll('.dit-wrap');
+
+        if (wrappers.length) {
+            wrappers.forEach(function(wrapper) {
+                const placeholders = wrapper.querySelectorAll('.dit-target');
+                const mixedItems = wrapper.querySelector('.dit-elements');
+                let draggedItem = null;
+                let counter = 0;
+
+                // bottom mixed items
+                if (Sortable && mixedItems) {
+                    Sortable.create(mixedItems, {
+                        group: 'shared',
+                        animation: 0,
+                        sort: false,
+                        onStart: function (evt) {
+                            draggedItem = evt.item;
+                        }
+                    });
+                }
+                
+                if (placeholders.length) {
+                    placeholders.forEach(function(placeholder) {
+                        Sortable.create(placeholder, {
+                            group: 'shared',
+                            animation: 0,
+                            onAdd: function(evt) {
+                                // if (placeholder.children.length > 1) {
+                                //     // Remove the added item to enforce the one-item limit
+                                //     evt.from.appendChild(evt.item);
+                                // }
+                                    
+                                placeholder.classList.add('ready');
+
+                                const targetPlaceholder = evt.to;
+                                const targetId = targetPlaceholder.id;
+                                const correctTarget = draggedItem.dataset.target;
+
+                                evt.to.appendChild(evt.item);
+                                evt.item.classList.add('success');
+
+                                // if all good, item dragged and placed
+                                counter++;
+                                
+                                // if (targetId === correctTarget) {
+                                //     evt.to.appendChild(evt.item);
+                                //     evt.item.classList.add('success');
+
+                                //     // if all good, item dragged and placed
+                                //     counter++;
+                                // } else {
+                                //     evt.item.classList.add('error');
+                                //     evt.from.appendChild(evt.item); // Return item to original list
+                                // }
+
+                                setTimeout(() => {
+                                    evt.item.classList.remove('error', 'success');
+                                }, 700);
+
+                                 // if completed
+                                //  if (counter >= placeholders.length ) {
+                                //     //showSuccessPopup( getText('bravo') );
+                                    
+                                //     if ( mixedItems ) {
+                                //         mixedItems.classList.add('hide');
+                                //     }
+                                // }
+                            }
+                        });
+                    });
+                }
+            });
+        }
+    }
+    handleDITGame();
     
    
     // function handleNumbersGame() {

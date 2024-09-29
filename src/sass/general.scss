@@ -1568,6 +1568,16 @@ table {
 	}
 }
 
+.dit-target {
+	.success {
+		background-color: $light-green-color;
+	}
+
+	.wrong {
+		background-color: #E18067;
+	}
+}
+
 
 
 // [class*="wp-image-"]

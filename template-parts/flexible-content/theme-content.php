@@ -1196,8 +1196,6 @@ $image_height = (get_sub_field('image_height') ? get_sub_field('image_height') :
 </div>
 
 
-
-
 <?php elseif( get_row_layout() == 'restore_text' ) : // restore_text ?>
 
 <div class="flexible-content-section resore-text-game my-24px">
@@ -1236,6 +1234,70 @@ $image_height = (get_sub_field('image_height') ? get_sub_field('image_height') :
     </div>
 </div>
 
+
+
+<?php elseif( get_row_layout() == 'drag_items_to_list' ) : // drag_items_to_list
+    $type = get_sub_field('type');
+    $images_height = (get_sub_field('images_height') ? get_sub_field('images_height') : 150);
+    $mixed_elements = [];
+?>
+
+    <div class="flexible-content-section dit-section my-24px">
+        <div class="relative">
+            <?php if ( have_rows('target_items') ) : $index = 0; $k = 0; ?>
+                <div class="dit-wrap">
+
+                    <div class="dit-row flex justify-center gap-24px bg-light-gray p-20px rounded-16px" data-dit-row>
+                        <?php while ( have_rows('target_items') ) : the_row(); $index++;
+                            $image = get_sub_field('image');
+                        ?>
+                        
+                        <div class="w-25%">
+                            <div class="dit-item">
+                                <div class="dit-image text-center">
+                                    <?php if ($image) : ?>
+                                        <img src="<?php echo $image; ?>" class="rounded-8px inline-block" style="height: <?php echo $images_height; ?>px" alt="">
+                                    <?php endif; ?>
+                                </div>
+
+                                <div class="dit-target flex flex-col gap-4px p-4px mt-12px rounded-8px min-h-50px border-2px border-dashed border-medium-gray bg-white" data-dit-target id="placeholder<?php echo $index; ?>"></div>
+                            </div>
+                        </div>
+                        <?php endwhile; ?>
+                    </div>
+
+
+                    <?php while ( have_rows('target_items') ) : the_row(); $index++;
+                        $elements = get_sub_field('elements');
+                    ?>
+                        
+                        <?php if ($elements) : ?>
+                            <?php foreach( $elements as $element ) : $k++;
+                                $text_item = $element['text_item'];
+
+                                $mixed_elements[] = '<div class="dit-element cursor-move leading-130 flex items-center justify-center select-none py-12px px-16px bg-white text-15px font-500 border-1px border-solid border-medium-gray rounded-8px" data-dit-element data-target="placeholder'.$k.'">
+                                    '. $text_item .'
+                                </div>';
+                            ?>
+                                
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    <?php endwhile; ?>
+
+                    <?php if ( count($mixed_elements) ) : ?>
+                        <div class="dit-elements flex flex-wrap justify-center gap-20px mt-20px bg-light-gray p-20px rounded-8px">
+                            <?php foreach( $mixed_elements as $el ) : ?>
+
+                                <?php echo $el; ?>
+
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
+                    
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
 
 
 <?php 
