@@ -2550,6 +2550,28 @@
                             "display": "block",
                             "sub_fields": [
                                 {
+                                    "key": "field_66fa85b851d01",
+                                    "label": "Images height (pixels)",
+                                    "name": "images_height",
+                                    "aria-label": "",
+                                    "type": "number",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": 100,
+                                    "min": 50,
+                                    "max": 120,
+                                    "placeholder": 100,
+                                    "step": 1,
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
                                     "key": "field_66f6e8bd0f683",
                                     "label": "Items",
                                     "name": "items",
@@ -3270,5 +3292,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1727690403
+    "modified": 1727694616
 }

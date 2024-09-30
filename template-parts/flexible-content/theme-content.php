@@ -7,9 +7,17 @@
  $get_static_text = [
     'ro' => [
         'print' => 'Printează',
+        'true' => 'Adevărat',
+        'false' => 'Fals',
+        'true_initial' => 'A',
+        'false_initial' => 'F',
     ],
     'ru' => [
         'print' => 'Распечатать',
+        'true' => 'Правда',
+        'false' => 'Ложь',
+        'true_initial' => 'П',
+        'false_initial' => 'Л',
     ]
 ];
 
@@ -1030,8 +1038,8 @@ $placeholder_text = get_sub_field('placeholder_text');
 </div>
 
 
-<?php elseif( get_row_layout() == 'axa' ) : // axa 
-$images_height_pixels = 120;
+<?php elseif( get_row_layout() == 'axa' ) : // axa
+$images_height_pixels = (get_sub_field('images_height') ? get_sub_field('images_height') : 100);
 ?>
 
 <div class="flexible-content-section axa-game-section my-24px">
@@ -1059,7 +1067,7 @@ $images_height_pixels = 120;
                     
                     <?php if ($image) : ?>
                         <div class="p-8px bg-white rounded-8px select-none" data-target="axa-placeholder<?php echo $k; ?>">
-                            <img class="inline-block w-full object-cover rounded-8px" style="height: <?php echo $images_height_pixels; ?>px" src="<?php echo $image; ?>" alt="">
+                            <img class="inline-block w-full rounded-8px" style="height: <?php echo $images_height_pixels; ?>px" src="<?php echo $image; ?>" alt="">
                         </div>
                     <?php endif; ?>
 
@@ -1320,8 +1328,8 @@ $image_height = (get_sub_field('image_height') ? get_sub_field('image_height') :
                 <table class="border table-spacing">
                     <tr>
                         <th></th>
-                        <th>Adevarat</th>
-                        <th>Fals</th>
+                        <th><?php echo $get_static_text[get_lang()]['true']; ?></th>
+                        <th><?php echo $get_static_text[get_lang()]['false']; ?></th>
                     </tr>
 
                     <?php while ( have_rows('items') ) : the_row();
@@ -1336,10 +1344,10 @@ $image_height = (get_sub_field('image_height') ? get_sub_field('image_height') :
                             </div>
                         </td>
                         <td class="text-center">
-                            <span class="tf-inline-btn true-btn text-15px font-700 cursor-pointer select-none inline-block leading-1 py-6px px-16px bg-light-gray hover:bg-light-green border-1px border-solid border-medium-gray hover:border-green rounded-8px" <?php echo ($correct ? 'data-correct' : ''); ?>>A</span>
+                            <span class="tf-inline-btn true-btn text-15px font-700 cursor-pointer select-none inline-block leading-1 py-6px px-16px bg-light-gray hover:bg-light-green border-1px border-solid border-medium-gray hover:border-green rounded-8px" <?php echo ($correct ? 'data-correct' : ''); ?>><?php echo $get_static_text[get_lang()]['true_initial']; ?></span>
                         </td>
                         <td class="text-center">
-                            <span class="tf-inline-btn false-btn text-15px font-700 cursor-pointer select-none inline-block leading-1 py-6px px-16px bg-light-gray hover:bg-light-red border-1px border-solid border-medium-gray hover:border-red rounded-8px" <?php echo (!$correct ? 'data-correct' : ''); ?>>F</span>
+                            <span class="tf-inline-btn false-btn text-15px font-700 cursor-pointer select-none inline-block leading-1 py-6px px-16px bg-light-gray hover:bg-light-red border-1px border-solid border-medium-gray hover:border-red rounded-8px" <?php echo (!$correct ? 'data-correct' : ''); ?>><?php echo $get_static_text[get_lang()]['true_initial']; ?></span>
                         </td>
                     </tr>
 
