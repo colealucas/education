@@ -24,6 +24,8 @@ module.exports = {
       'light-yellow': '#E9DD7F',
       'yellow': '#FAAF3F',
       'orange': '#FAAF3F',
+      'red': '#E18067',
+      'light-red': '#F5D5CD',
     },
     fontFamily: {
       openSans: ['Open Sans', 'sans-serif'],

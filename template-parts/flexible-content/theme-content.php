@@ -1311,6 +1311,47 @@ $image_height = (get_sub_field('image_height') ? get_sub_field('image_height') :
     </div>
 
 
+<?php elseif( get_row_layout() == 'true_false' ) : // true_false ?>
+
+<div class="flexible-content-section tf-game my-24px">
+    <div class="relative">
+        <?php if ( have_rows('items') ) : ?>
+            <div class="tf-wrap">
+                <table class="border table-spacing">
+                    <tr>
+                        <th></th>
+                        <th>Adevarat</th>
+                        <th>Fals</th>
+                    </tr>
+
+                    <?php while ( have_rows('items') ) : the_row();
+                        $item_text = get_sub_field('item_text');
+                        $correct = get_sub_field('correct');
+                    ?>
+
+                    <tr>
+                        <td>
+                            <div class="tf-item">
+                                <?php echo $item_text; ?>
+                            </div>
+                        </td>
+                        <td class="text-center">
+                            <span class="tf-inline-btn true-btn text-15px font-700 cursor-pointer select-none inline-block leading-1 py-6px px-16px bg-light-gray hover:bg-light-green border-1px border-solid border-medium-gray hover:border-green rounded-8px" <?php echo ($correct ? 'data-correct' : ''); ?>>A</span>
+                        </td>
+                        <td class="text-center">
+                            <span class="tf-inline-btn false-btn text-15px font-700 cursor-pointer select-none inline-block leading-1 py-6px px-16px bg-light-gray hover:bg-light-red border-1px border-solid border-medium-gray hover:border-red rounded-8px" <?php echo (!$correct ? 'data-correct' : ''); ?>>F</span>
+                        </td>
+                    </tr>
+
+                <?php endwhile; ?>
+                </table>
+            </div>
+        <?php endif; ?>
+
+    </div>
+</div>
+
+
 <?php elseif( get_row_layout() == 'pyramid' ) : // pyramid ?>
 
 <div class="flexible-content-section pyramid-game my-24px">

@@ -1468,6 +1468,35 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     handleDITGame();
+
+    function handleTrueFalseGame() {
+        const items = document.querySelectorAll('.tf-inline-btn');
+
+        if (items) {
+            items.forEach(function(item) {
+                item.addEventListener('click', function() {
+                    if (item.hasAttribute('data-correct')) {
+                        item.classList.remove('wrong');
+                        item.classList.add('correct');
+
+                        item.closest('td').classList.remove('wrong');
+                        item.closest('td').classList.add('success');
+                    } else {
+                        item.classList.remove('correct');
+                        item.classList.add('wrong');
+
+                        item.closest('td').classList.remove('success');
+                        item.closest('td').classList.add('wrong');
+
+                        setTimeout(function() {
+                            item.closest('td').classList.remove('wrong');
+                        }, 400);
+                    }
+                });
+            });
+        }
+    }
+    handleTrueFalseGame();
     
    
     // function handleNumbersGame() {

@@ -9,6 +9,9 @@ $green-color: #00665E;
 $light-green-color: #E6F2EB;
 $white-color: #fff;
 $orange-color: #FAAF3F;
+$red-color: #E18067;
+// $light-red-color: lighten(#E18067, 24);
+$light-red-color: #F5D5CD;
 $ligh-yellow-color: #E9DD7F;
 $transition: all 0.25s ease;
 
@@ -1640,6 +1643,32 @@ table {
 	transform: translate(-50%, -50%);
 }
 
+
+.tf-wrap {
+	table td.success {
+		background-color: $light-green-color;
+	}
+
+	table td.wrong {
+		background-color: $light-red-color;
+	}
+
+	.tf-inline-btn {
+		&.true-btn {
+			&.correct {
+				border-color: $green-color;
+				background-color: $light-green-color;
+			}
+		}
+
+		&.false-btn {
+			&.correct {
+				border-color: $red-color;
+				background-color: $light-red-color;
+			}
+		}
+	}
+}
 
 // [class*="wp-image-"]
 .zdx{}
