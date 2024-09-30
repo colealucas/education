@@ -3113,6 +3113,60 @@
                             ],
                             "min": "",
                             "max": ""
+                        },
+                        "layout_66f9a785c3c63": {
+                            "key": "layout_66f9a785c3c63",
+                            "name": "pyramid",
+                            "label": "Pyramid",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_66f9a791c3c65",
+                                    "label": "Items",
+                                    "name": "items",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "row",
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add New Item",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_66f9a7a0c3c66",
+                                            "label": "Text item",
+                                            "name": "text_item",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "placeholder": "Item text",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_66f9a791c3c65"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
                     },
                     "min": "",
@@ -3141,5 +3195,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1727635094
+    "modified": 1727637430
 }

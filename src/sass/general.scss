@@ -1578,6 +1578,67 @@ table {
 	}
 }
 
+.pyramid {
+	width: 0;
+	height: 0;
+	border-left: 220px solid transparent;
+	border-right: 220px solid transparent;
+	border-bottom: 440px solid $medium-gray-color;
+	margin: 0 auto;
+}
+
+.pyramid-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+
+.pyramid-overlay {
+	padding-bottom: 10px;
+	padding-left: 10px;
+
+	.pyramid-overlay-placeholder {
+		position: relative;
+		padding: 8px; 
+		min-height: 42px;
+		width: 100%;
+		max-width: 360px;
+		border-radius: 8px;
+		background-color: rgba(255,255,255, 0.95);
+		border: 2px dashed $medium-gray-color;
+
+		&:nth-child(1) {
+			max-width: 184px;
+		}
+
+		&:nth-child(2) {
+			max-width: 230px;
+		}
+
+		&:nth-child(3) {
+			max-width: 280px;
+		}
+
+		&:nth-child(4) {
+			max-width: 330px;
+		}
+	}
+}
+
+.pyramid-overlay-placeholder::before {
+    content: attr(data-index);
+    display: inline-block;
+    font-size: 20px;
+	font-weight: 700;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	color: $medium-gray-color;
+	transform: translate(-50%, -50%);
+}
 
 
 // [class*="wp-image-"]

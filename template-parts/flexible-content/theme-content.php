@@ -1311,5 +1311,42 @@ $image_height = (get_sub_field('image_height') ? get_sub_field('image_height') :
     </div>
 
 
+<?php elseif( get_row_layout() == 'pyramid' ) : // pyramid ?>
+
+<div class="flexible-content-section pyramid-game my-24px">
+    <div class="relative">
+        <?php if ( have_rows('items') ) : ?>
+            <div class="pyramid-wrap flex items-center gap-20px bg-light-gray p-20px rounded-16px">
+                <div class="pyramid-left w-40% flex flex-col gap-16px">
+                    <?php while ( have_rows('items') ) : the_row();
+                        $text_item = get_sub_field('text_item');
+                    ?>
+
+                        <div class="pyramid-text-item py-8px select-none cursor-move px-16px text-15px leading-130 bg-white rounded-8px">
+                            <?php echo $text_item; ?>
+                        </div>
+
+                    <?php endwhile; ?>
+                </div>
+                <div class="pyramid-rirght w-[calc(60%-20px)]">
+                    <div class="pyramid-wrapper relative">
+                        <div class="pyramid"></div>
+
+                        <div class="pyramid-overlay flex flex-col justify-end gap-8px items-center">
+                           <div class="pyramid-overlay-placeholder" data-index="1"></div>
+                           <div class="pyramid-overlay-placeholder" data-index="2"></div>
+                           <div class="pyramid-overlay-placeholder" data-index="3"></div>
+                           <div class="pyramid-overlay-placeholder" data-index="4"></div>
+                           <div class="pyramid-overlay-placeholder" data-index="5"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
+
+    </div>
+</div>
+
+
 <?php 
 endif;
