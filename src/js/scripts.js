@@ -1189,38 +1189,23 @@ document.addEventListener("DOMContentLoaded", function() {
                                 if (placeholder.children.length > 1) {
                                     // Remove the added item to enforce the one-item limit
                                     evt.from.appendChild(evt.item);
+                                } else {
+                                     // if all good, item dragged and placed
+                                    counter++;
+
+                                    placeholder.classList.add('ready', 'no-click');
+
+                                    evt.to.appendChild(evt.item);
+                                    evt.item.classList.add('success');
+
+                                    setTimeout(() => {
+                                        evt.item.classList.remove('error', 'success');
+                                    }, 700);
                                 }
-                                    
-                                placeholder.classList.add('ready');
-
-                                const targetPlaceholder = evt.to;
-                                const targetId = targetPlaceholder.id;
-                                const correctTarget = draggedItem.dataset.target;
-
-                                // if (targetId === correctTarget) {
-                                //     evt.to.appendChild(evt.item);
-                                //     evt.item.classList.add('success');
-
-                                //     // if all good, item dragged and placed
-                                //     counter++;
-                                // } else {
-                                //     evt.item.classList.add('error');
-                                //     evt.from.appendChild(evt.item); // Return item to original list
-                                // }
-
-                                evt.to.appendChild(evt.item);
-                                evt.item.classList.add('success');
-
-                                // if all good, item dragged and placed
-                                counter++;
-
-                                setTimeout(() => {
-                                    evt.item.classList.remove('error', 'success');
-                                }, 700);
 
                                  // if completed
                                  if (counter >= placeholders.length ) {
-                                    showSuccessPopup( getText('bravo') );
+                                    //showSuccessPopup( getText('bravo') );
                                     
                                     if ( mixedItems ) {
                                         mixedItems.classList.add('hide');
