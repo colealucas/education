@@ -294,6 +294,27 @@ document.addEventListener("DOMContentLoaded", function() {
     function handleCheckmarks() {
         const checkmarks = document.querySelectorAll('.paragraph-check-options');
         const addPlus = document.querySelectorAll('.paragraph-pluss-option');
+        const addCardsBtns = document.querySelectorAll('.add-cards-btn');
+
+        if (addCardsBtns.length) { 
+            addCardsBtns.forEach(function(addCardsBtn) {
+                addCardsBtn.addEventListener('click', function() {
+                    const parent = addCardsBtn.closest('.paragraph-cards-options');
+
+                    if (parent) {
+                        const parentButtons = parent.querySelectorAll('.add-cards-btn');
+
+                        if (parentButtons) {
+                            parentButtons.forEach(function(btn) {
+                                btn.classList.remove('active');
+                            });
+                        }
+                    }
+
+                    addCardsBtn.classList.add('active');
+                });
+            });
+        }
 
         if (addPlus.length) { 
             addPlus.forEach(function(plus) {
@@ -390,6 +411,34 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     handleAddPlus();
+
+    function handleAddcards() {
+        const sections = document.querySelectorAll('.add-cards');
+
+        if ( sections.length ) {
+            sections.forEach(function(textSection) {
+                if ( textSection ) {
+                    const paragraphs = textSection.querySelectorAll('p:not(.ignore)');
+
+                    if ( paragraphs.length ) {
+                        paragraphs.forEach(function(p) {
+                            if ( p.textContent.trim().length ) {
+                                const checkboxes = document.createElement('span');
+                                checkboxes.classList.add('paragraph-cards-options');
+                                checkboxes.innerHTML = `<span class="add-cards-btn add-cards-btn-green"></span> <span class="add-cards-btn add-cards-btn-yellow"></span> <span class="add-cards-btn add-cards-btn-red"></span>`;
+
+                                // Insert the <span> before the text content of the <p>
+                                p.prepend(checkboxes);
+                            }
+                        });
+
+                        handleCheckmarks();
+                    }
+                }
+            });
+        }
+    }
+    handleAddcards();
 
     /**
      * Display success feedback

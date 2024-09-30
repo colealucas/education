@@ -30,6 +30,7 @@
     $full_with_images = get_sub_field('full_with_images');
     $check_paragraphs = get_sub_field('check_paragraphs');
     $add_plus         = get_sub_field('add_plus');
+    $add_cards        = get_sub_field('add_cards');
     $split_variants   = get_sub_field('split_variants');
     $click_words      = get_sub_field('click_words');
     $add_table_boders = get_sub_field('add_table_boders');
@@ -44,6 +45,10 @@
 
     if ($add_plus) {
         $css_classes[] = 'add-plus';
+    }
+
+    if ($add_cards) {
+        $css_classes[] = 'add-cards';
     }
 
     if ($split_variants) {

@@ -1685,6 +1685,80 @@ table {
 	}
 }
 
+.paragraph-cards-options {
+	display: inline-flex;
+	gap: 8px;
+	margin-right: 8px;
+	vertical-align: sub;
+}
+
+.add-cards-btn {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 20px;
+	height: 20px;
+	background-color: $light-gray-color;
+	border: 2px solid $medium-gray-color;
+	border-radius: 4px;
+	cursor: pointer;
+	user-select: none;
+	-webkit-transition: all 0.15s ease-out;
+	transition: all 0.15s ease-out;
+
+	&:hover {
+		transform: scale(1.07);
+	}
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		opacity: 0;
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		background-size: 17px;
+		background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPg0KPHN2ZyB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTIxLjU4MjEgNS41NDI4OUMyMS45NzI2IDUuOTMzNDIgMjEuOTcyNiA2LjU2NjU4IDIxLjU4MjEgNi45NTcxMUwxMC4yNTI2IDE4LjI4NjdDOS44NjQ1MiAxOC42NzQ3IDkuMjM2MjcgMTguNjc3NSA4Ljg0NDc1IDE4LjI5M0wyLjI5OTI5IDExLjg2NDRDMS45MDUyNyAxMS40Nzc0IDEuODk5NTYgMTAuODQ0MyAyLjI4NjU1IDEwLjQ1MDNDMi42NzM1NCAxMC4wNTYyIDMuMzA2NjggMTAuMDUwNSAzLjcwMDcxIDEwLjQzNzVMOS41MzkxMSAxNi4xNzE3TDIwLjE2NzkgNS41NDI4OUMyMC41NTg0IDUuMTUyMzcgMjEuMTkxNiA1LjE1MjM3IDIxLjU4MjEgNS41NDI4OVoiIGZpbGw9IiNmZmYiLz4NCjwvc3ZnPg==");
+	}
+
+	&.add-cards-btn-green {
+		background-color: $light-green-color;
+		border-color: $green-color;
+	}
+
+	&.add-cards-btn-yellow {
+		background-color: lighten($orange-color, 30);
+		border-color: $orange-color;
+	}
+
+	&.add-cards-btn-red {
+		background-color: $light-red-color;
+		border-color: $red-color;
+	}
+
+	&.active {
+		&:before {
+			opacity: 1;
+		}
+
+		&.add-cards-btn-green {
+			background-color: $green-color;
+		}
+	
+		&.add-cards-btn-yellow {
+			background-color: $orange-color;
+		}
+	
+		&.add-cards-btn-red {
+			background-color: $red-color;
+		}
+	}
+}
+
 // [class*="wp-image-"]
 .zdx{}
 

@@ -390,6 +390,26 @@
                                     "ui": 1
                                 },
                                 {
+                                    "key": "field_66faee4fb0edb",
+                                    "label": "Add cards",
+                                    "name": "add_cards",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "Add green\/yellow\/red cards before paragraphs",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Add cards ?",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
                                     "key": "field_66d8246a73331",
                                     "label": "Click words",
                                     "name": "click_words",
@@ -3292,5 +3312,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1727694616
+    "modified": 1727721094
 }
