@@ -1483,6 +1483,67 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     handleTrueFalseGame();
     
+    function handlePyramidGame() {
+        const wrappers = document.querySelectorAll('.pyramid-wrap');
+
+        if (wrappers.length) {
+            wrappers.forEach(function(wrapper) {
+                const placeholders = wrapper.querySelectorAll('.pyramid-overlay-placeholder');
+                const mixedItems = wrapper.querySelector('.pyramid-mixed-items');
+                let draggedItem = null;
+                let counter = 0;
+
+                // bottom mixed items
+                if (Sortable && mixedItems) {
+                    Sortable.create(mixedItems, {
+                        group: 'shared',
+                        animation: 0,
+                        sort: false,
+                        onStart: function (evt) {
+                            draggedItem = evt.item;
+                        }
+                    });
+                }
+                
+                if (placeholders.length) {
+                    placeholders.forEach(function(placeholder) {
+                        Sortable.create(placeholder, {
+                            group: 'shared',
+                            animation: 0,
+                            onAdd: function(evt) {  
+                                if (placeholder.children.length > 1) {
+                                    // Remove the added item to enforce the one-item limit
+                                    evt.from.appendChild(evt.item);
+                                } else {
+                                     // if all good, item dragged and placed
+                                    counter++;
+
+                                    placeholder.classList.add('ready');
+
+                                    evt.to.appendChild(evt.item);
+                                    evt.item.classList.add('success');
+
+                                    setTimeout(() => {
+                                        evt.item.classList.remove('error', 'success');
+                                    }, 700);
+                                }
+
+                                 // if completed
+                                //  if (counter >= placeholders.length ) {
+                                //     //showSuccessPopup( getText('bravo') );
+                                    
+                                //     if ( mixedItems ) {
+                                //         mixedItems.classList.add('hide');
+                                //     }
+                                // }
+                            }
+                        });
+                    });
+                }
+            });
+        }
+    }
+    handlePyramidGame();
    
     // function handleNumbersGame() {
     //     const wrappers = document.querySelectorAll('.numbers-wrap');

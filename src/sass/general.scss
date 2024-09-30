@@ -1605,13 +1605,20 @@ table {
 
 	.pyramid-overlay-placeholder {
 		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
 		padding: 8px; 
 		min-height: 42px;
 		width: 100%;
 		max-width: 360px;
 		border-radius: 8px;
 		background-color: rgba(255,255,255, 0.95);
-		border: 2px dashed $medium-gray-color;
+
+		&:empty {
+			border: 2px dashed $medium-gray-color;
+		}
 
 		&:nth-child(1) {
 			max-width: 184px;
@@ -1627,6 +1634,14 @@ table {
 
 		&:nth-child(4) {
 			max-width: 330px;
+		}
+
+		.pyramid-text-item {
+			position: relative;
+			z-index: 3;
+			line-height: 1;
+			padding: 0;
+			background-color: $white-color;
 		}
 	}
 }

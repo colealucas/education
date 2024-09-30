@@ -1366,16 +1366,18 @@ $image_height = (get_sub_field('image_height') ? get_sub_field('image_height') :
     <div class="relative">
         <?php if ( have_rows('items') ) : ?>
             <div class="pyramid-wrap flex items-center gap-20px bg-light-gray p-20px rounded-16px">
-                <div class="pyramid-left w-40% flex flex-col gap-16px">
-                    <?php while ( have_rows('items') ) : the_row();
-                        $text_item = get_sub_field('text_item');
-                    ?>
+                <div class="pyramid-left w-40%">
+                    <div class="pyramid-mixed-items overflow-y-auto max-h-[416px] p-16px flex flex-col gap-16px border-solid border-1px border-medium-gray">
+                        <?php while ( have_rows('items') ) : the_row();
+                            $text_item = get_sub_field('text_item');
+                        ?>
 
-                        <div class="pyramid-text-item py-8px select-none cursor-move px-16px text-15px leading-130 bg-white rounded-8px">
-                            <?php echo $text_item; ?>
-                        </div>
+                            <div class="pyramid-text-item overflow-x-auto whitespace-nowrap py-8px select-none cursor-move px-16px text-15px leading-130 bg-white rounded-8px">
+                                <?php echo $text_item; ?>
+                            </div>
 
-                    <?php endwhile; ?>
+                        <?php endwhile; ?>
+                    </div>
                 </div>
                 <div class="pyramid-rirght w-[calc(60%-20px)]">
                     <div class="pyramid-wrapper relative">
