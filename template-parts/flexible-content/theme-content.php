@@ -1372,7 +1372,7 @@ $image_height = (get_sub_field('image_height') ? get_sub_field('image_height') :
                             $text_item = get_sub_field('text_item');
                         ?>
 
-                            <div class="pyramid-text-item overflow-x-auto whitespace-nowrap py-8px select-none cursor-move px-16px text-15px leading-130 bg-white rounded-8px">
+                            <div class="pyramid-text-item py-8px select-none cursor-move px-16px text-15px leading-130 bg-white rounded-8px">
                                 <?php echo $text_item; ?>
                             </div>
 
