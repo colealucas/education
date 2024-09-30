@@ -1347,7 +1347,7 @@ $image_height = (get_sub_field('image_height') ? get_sub_field('image_height') :
                             <span class="tf-inline-btn true-btn text-15px font-700 cursor-pointer select-none inline-block leading-1 py-6px px-16px bg-light-gray hover:bg-light-green border-1px border-solid border-medium-gray hover:border-green rounded-8px" <?php echo ($correct ? 'data-correct' : ''); ?>><?php echo $get_static_text[get_lang()]['true_initial']; ?></span>
                         </td>
                         <td class="text-center">
-                            <span class="tf-inline-btn false-btn text-15px font-700 cursor-pointer select-none inline-block leading-1 py-6px px-16px bg-light-gray hover:bg-light-red border-1px border-solid border-medium-gray hover:border-red rounded-8px" <?php echo (!$correct ? 'data-correct' : ''); ?>><?php echo $get_static_text[get_lang()]['true_initial']; ?></span>
+                            <span class="tf-inline-btn false-btn text-15px font-700 cursor-pointer select-none inline-block leading-1 py-6px px-16px bg-light-gray hover:bg-light-red border-1px border-solid border-medium-gray hover:border-red rounded-8px" <?php echo (!$correct ? 'data-correct' : ''); ?>><?php echo $get_static_text[get_lang()]['false_initial']; ?></span>
                         </td>
                     </tr>
 
