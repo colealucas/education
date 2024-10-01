@@ -14,7 +14,7 @@
             <h1 class="text-48px font-700 leading-130 text-center"><?php the_title();  ?></h1>
 
             <div class="ghid-content special-headings max-w-[930px] mx-auto mt-20px">
-                <div class="entry-content content-spacing style-content content-clearfix clearfix">
+                <div class="entry-content content-spacing style-content content-clearfix clearfix responsive-video">
                     <?php the_content(); ?>
                 </div>
             </div>
