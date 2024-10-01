@@ -297,6 +297,15 @@ document.addEventListener("DOMContentLoaded", function() {
         const checkmarks = document.querySelectorAll('.paragraph-check-options');
         const addPlus = document.querySelectorAll('.paragraph-pluss-option');
         const addCardsBtns = document.querySelectorAll('.add-cards-btn');
+        const addExclamationBtns = document.querySelectorAll('.add-exclamation-btn');
+
+        if (addExclamationBtns.length) {
+            addExclamationBtns.forEach(function(ex) {
+                ex.addEventListener('click', function() {
+                    ex.classList.toggle('active');
+                });
+            });
+        }
 
         if (addCardsBtns.length) { 
             addCardsBtns.forEach(function(addCardsBtn) {
@@ -441,6 +450,34 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     handleAddcards();
+
+    function handleAddExclamations() {
+        const sections = document.querySelectorAll('.add-exclamation');
+
+        if ( sections.length ) {
+            sections.forEach(function(textSection) {
+                if ( textSection ) {
+                    const paragraphs = textSection.querySelectorAll('p:not(.ignore)');
+
+                    if ( paragraphs.length ) {
+                        paragraphs.forEach(function(p) {
+                            if ( p.textContent.trim().length ) {
+                                const checkboxes = document.createElement('span');
+                                checkboxes.classList.add('paragraph-exclamation-options');
+                                checkboxes.innerHTML = `<span class="add-exclamation-btn">(!)</span>`;
+
+                                // Insert the <span> before the text content of the <p>
+                                p.prepend(checkboxes);
+                            }
+                        });
+
+                        handleCheckmarks();
+                    }
+                }
+            });
+        }
+    }
+    handleAddExclamations();
 
     /**
      * Display success feedback

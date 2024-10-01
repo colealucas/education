@@ -410,6 +410,26 @@
                                     "ui": 1
                                 },
                                 {
+                                    "key": "field_66fc5358a232f",
+                                    "label": "Add Exclamation (!) before paragraphs",
+                                    "name": "add_exclamation",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Add exclamation (!) ?",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
                                     "key": "field_66d8246a73331",
                                     "label": "Click words",
                                     "name": "click_words",
@@ -3366,5 +3386,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1727810272
+    "modified": 1727812798
 }

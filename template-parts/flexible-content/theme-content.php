@@ -35,6 +35,7 @@
     $check_paragraphs = get_sub_field('check_paragraphs');
     $add_plus         = get_sub_field('add_plus');
     $add_cards        = get_sub_field('add_cards');
+    $add_exclamation  = get_sub_field('add_exclamation');
     $split_variants   = get_sub_field('split_variants');
     $click_words      = get_sub_field('click_words');
     $add_table_boders = get_sub_field('add_table_boders');
@@ -53,6 +54,10 @@
 
     if ($add_cards) {
         $css_classes[] = 'add-cards';
+    }
+
+    if ($add_exclamation) {
+        $css_classes[] = 'add-exclamation';
     }
 
     if ($split_variants) {
