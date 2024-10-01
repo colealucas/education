@@ -11,6 +11,8 @@
         'false' => 'Fals',
         'true_initial' => 'A',
         'false_initial' => 'F',
+        'write_here' => 'scrie aici...',
+        'add_field' => '+ Adaugă câmp',
     ],
     'ru' => [
         'print' => 'Распечатать',
@@ -18,6 +20,8 @@
         'false' => 'Ложь',
         'true_initial' => 'П',
         'false_initial' => 'Л',
+        'write_here' => 'пиши здесь...',
+        'add_field' => '+ Добавить поле',
     ]
 ];
 
@@ -1397,6 +1401,45 @@ $image_height = (get_sub_field('image_height') ? get_sub_field('image_height') :
                         </div>
                     </div>
                 </div>
+            </div>
+        <?php endif; ?>
+
+    </div>
+</div>
+
+
+
+<?php elseif( get_row_layout() == 'agenda' ) : // agenda ?>
+
+<div class="flexible-content-section resore-text-game my-24px">
+    <div class="relative">
+        <?php if ( have_rows('items') ) : ?>
+            <div class="agenda-wrap">
+                <table class="agenda-table">
+                    <?php while ( have_rows('items') ) : the_row();
+                        $item = get_sub_field('item');
+                    ?>
+
+                    <tr>
+                        <td style="width: 50%">
+                            <div class="agenda-item">
+                                <?php echo $item; ?>
+                            </div>
+                        </td>
+                        <td style="width: 50%">
+                            <form action="#" method="POST" data-add-fields-form>
+                                <div class="add-fields-wrap flex flex-col gap-4px" data-add-fields-wrap>
+                                    <input type="text" class="h-36px w-full border-solid border-2px border-medium-gray py-0 px-12px focus:outline-none focus:border-orange" name="the_source[]" value="" placeholder="<?php echo $get_static_text[get_lang()]['write_here']; ?>">
+                                    <input type="text" class="h-36px w-full border-solid border-2px border-medium-gray py-0 px-12px focus:outline-none focus:border-orange" name="the_source[]" value="" placeholder="<?php echo $get_static_text[get_lang()]['write_here']; ?>">
+                                </div>
+                                
+                                <div class="p-6px mt-6px leading-130 bg-light-gray transition-all rounded-8px text-dark hover:bg-light-yellow font-500 text-14px text-center cursor-pointer select-none" data-add-field-btn><?php echo $get_static_text[get_lang()]['add_field']; ?></div>
+                            </form>
+                        </td>
+                    </tr>
+
+                    <?php endwhile; ?>
+                </table>
             </div>
         <?php endif; ?>
 

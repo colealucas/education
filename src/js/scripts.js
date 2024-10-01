@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
             'continue': 'Continuă',
             'wordsToFind': 'cuvinte de găsit',
             'wordsFound': 'cuvinte descoperite',
+            'write_here': 'scrie aici...',
         },
         'ru': {
             'bravo': 'Отлично! Ты сделал правильно!',
@@ -18,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
             'continue': 'Продолжить',
             'wordsToFind': 'слов для поиска',
             'wordsFound': 'найденных слова',
+            'write_here': 'пиши здесь...',
         },
     };
 
@@ -1593,6 +1595,26 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     handlePyramidGame();
+
+    function handleAddFields() {
+        // data-add-field-btn
+        const buttons = document.querySelectorAll('[data-add-field-btn]');
+
+        if (buttons) {
+            buttons.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                   const form = btn.closest('form');
+                   const fieldsWrap = (form ? form.querySelector('.add-fields-wrap') : null);
+                   const writeHereText = getText('write_here');
+
+                   if (fieldsWrap) {
+                    fieldsWrap.innerHTML += `<input type="text" class="h-36px w-full border-solid border-2px border-medium-gray py-0 px-12px focus:outline-none focus:border-orange" name="the_source[]" value="" placeholder="${writeHereText}">`;
+                   }
+                });
+            });
+        }
+    }
+    handleAddFields();
    
     // function handleNumbersGame() {
     //     const wrappers = document.querySelectorAll('.numbers-wrap');

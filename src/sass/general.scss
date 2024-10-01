@@ -1803,6 +1803,16 @@ table {
 	}
 }
 
+.agenda-table {
+	border: 1px solid $medium-gray-color;
+
+	th, td {
+		padding: 12px;
+		border: 1px solid $medium-gray-color;
+	}
+}
+
+
 // [class*="wp-image-"]
 .zdx{}
 
