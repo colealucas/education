@@ -1759,6 +1759,49 @@ table {
 	}
 }
 
+.special-headings {
+	h1,h2 {
+		font-size: 24px;
+		font-weight: 500 !important;
+		padding: 16px 20px;
+		border-radius: 16px;
+		line-height: 130%;
+		color: $green-color;
+		background-color: $light-green-color;
+	}
+}
+
+.style-content {
+	a {
+		font-weight: 500;
+		color: $green-color;
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.wp-block-image {
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.clearfix:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+.content-clearfix {
+	p:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+
 // [class*="wp-image-"]
 .zdx{}
 
