@@ -1413,7 +1413,6 @@ $image_height = (get_sub_field('image_height') ? get_sub_field('image_height') :
 </div>
 
 
-
 <?php elseif( get_row_layout() == 'agenda' ) : // agenda ?>
 
 <div class="flexible-content-section resore-text-game my-24px">
@@ -1445,6 +1444,47 @@ $image_height = (get_sub_field('image_height') ? get_sub_field('image_height') :
 
                     <?php endwhile; ?>
                 </table>
+            </div>
+        <?php endif; ?>
+
+    </div>
+</div>
+
+
+
+<?php elseif( get_row_layout() == 'hexagon' ) : // hexagon ?>
+
+<div class="flexible-content-section hexagon-game my-24px">
+    <div class="relative">
+        <?php if ( have_rows('questions') ) : ?>
+            <div class="hexagon-wrap">
+
+                <div class="row items-center">
+                    <div class="col-md-4">
+                        <ul class="list-none flex flex-col gap-8px">
+                            <?php while ( have_rows('questions') ) : the_row();
+                                $question = get_sub_field('question');
+                            ?>
+
+                            <li class="text-16px font-500 leading-130 bg-light-gray rounded-8px p-16px">
+                                <?php echo $question; ?>
+                            </li>
+
+                            <?php endwhile; ?>
+                        </ul>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="hexagon-inner relative">
+                            <svg class="hexagon-shape" viewBox="0 0 100 100">
+                                <polygon points="50,1 93,25 93,75 50,99 7,75 7,25" fill="#E9DD7F"/>
+                            </svg>
+
+                            <div class="hexagon-overlay flex items-center justify-center absolute top-0 right-0 bottom-0 left-0 z-2">
+                                <textarea class="hexagon-textarea" name="hexagon_answers" placeholder="<?php echo $get_static_text[get_lang()]['write_here']; ?>"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         <?php endif; ?>
 

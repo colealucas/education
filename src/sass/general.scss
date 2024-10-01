@@ -1842,6 +1842,35 @@ table {
 	}
 }
 
+.hexagon-shape {
+	width: 100%; /* Adjust size here */
+	display: block;
+	margin: 0 auto;
+}
+
+.hexagon-textarea {
+	width: 360px;
+	height: 240px;
+	border: 2px solid transparent;
+	margin: 0;
+	font-size: 16px;
+	font-weight: 500;
+	padding: 16px;
+	max-height: 290px;
+	background-color: rgba(255,255,255, 0.3);
+
+	&:focus {
+		outline: none;
+		border-color: $white-color;
+	}
+
+	&::placeholder {
+		color: $dark-color;
+		opacity: 0.7;
+		letter-spacing: 1px;
+	}
+}
+
 
 // [class*="wp-image-"]
 .zdx{}

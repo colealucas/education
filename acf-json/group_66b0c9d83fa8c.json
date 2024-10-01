@@ -3358,6 +3358,60 @@
                             ],
                             "min": "",
                             "max": ""
+                        },
+                        "layout_66fc57c7f9cdb": {
+                            "key": "layout_66fc57c7f9cdb",
+                            "name": "hexagon",
+                            "label": "Hexagon Game",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_66fc57e3f9cdd",
+                                    "label": "Questions",
+                                    "name": "questions",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "row",
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add New Item",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_66fc57f3f9cde",
+                                            "label": "Question",
+                                            "name": "question",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "placeholder": "Add question",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_66fc57e3f9cdd"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
                     },
                     "min": "",
@@ -3386,5 +3440,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1727812798
+    "modified": 1727813708
 }
