@@ -143,7 +143,7 @@ $current_module_title = '';
                                         </div>
                                     </div>
                                     <div>
-                                        <a href="<?php the_permalink(); ?>" class="block hover:text-green font-500">
+                                        <a href="<?php the_permalink(); ?>" class="block hover:text-green font-500 min-w-[200px]">
                                             <h3 class="text-30px leading-110 pl-16px"><?php the_title(); ?></h3>
                                         </a>
                                     </div>
