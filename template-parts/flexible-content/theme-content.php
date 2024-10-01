@@ -644,7 +644,7 @@
                         <?php endwhile; ?>
                     </div>
 
-                    <div class="flex flex-wrap gap-20px justify-between p-30px bg-faded-gray rounded-16px mb-16px">
+                    <div class="flex flex-wrap gap-20px justify-center p-30px bg-faded-gray rounded-16px mb-16px">
                         <?php while ( have_rows('animated_curiosities') ) : the_row(); 
                             $counter++; 
                             $image = get_sub_field('featured_image');
