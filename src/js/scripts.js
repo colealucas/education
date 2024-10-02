@@ -1634,7 +1634,6 @@ document.addEventListener("DOMContentLoaded", function() {
     handlePyramidGame();
 
     function handleAddFields() {
-        // data-add-field-btn
         const buttons = document.querySelectorAll('[data-add-field-btn]');
 
         if (buttons) {
@@ -1645,8 +1644,11 @@ document.addEventListener("DOMContentLoaded", function() {
                    const writeHereText = getText('write_here');
 
                    if (fieldsWrap) {
-                    fieldsWrap.innerHTML += `<input type="text" class="h-36px w-full border-solid border-2px border-medium-gray py-0 px-12px focus:outline-none focus:border-orange" name="the_source[]" value="" placeholder="${writeHereText}">`;
-                   }
+                        const div = document.createElement('div');
+                        div.innerHTML = `<input type="text" class="h-36px w-full border-solid border-2px border-medium-gray py-0 px-12px focus:outline-none focus:border-orange" name="the_source[]" value="" placeholder="${writeHereText}">`;
+
+                        fieldsWrap.appendChild(div);
+                    }
                 });
             });
         }

@@ -1480,7 +1480,7 @@ $image_height = (get_sub_field('image_height') ? get_sub_field('image_height') :
                             </svg>
 
                             <div class="hexagon-overlay flex items-center justify-center absolute top-0 right-0 bottom-0 left-0 z-2">
-                                <textarea class="hexagon-textarea" name="hexagon_answers" placeholder="<?php echo $get_static_text[get_lang()]['write_here']; ?>"></textarea>
+                                <textarea class="hexagon-textarea" name="hexagon_answers" placeholder="1. <?php echo $get_static_text[get_lang()]['write_here']; ?>"></textarea>
                             </div>
                         </div>
                     </div>
