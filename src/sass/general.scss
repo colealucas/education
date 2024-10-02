@@ -1010,7 +1010,7 @@ ol.found-words-list {
 
 		&.connected,
 		&.success {
-			background-color: $ligh-yellow-color;
+			background-color: $orange-color;
 		}
 
 		&.error {
@@ -1461,7 +1461,7 @@ table {
 	border: 2px solid transparent;
 
 	&.active {
-		border-color: $ligh-yellow-color;
+		border-color: $orange-color;
 	}
 }
 
@@ -1554,7 +1554,7 @@ table {
 		border: 1px solid $medium-gray-color;
 
 		&:hover {
-			background-color: $ligh-yellow-color;
+			background-color: $orange-color;
 			color: $dark-color;
 			border-color: transparent;
 		}
