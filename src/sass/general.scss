@@ -1188,6 +1188,7 @@ ol.found-words-list {
 	li.correct {
 		background-color: $lime-green;
 		color: $green-color;
+		font-weight: 600;
 
 		&:before {
 			background-color: $green-color;
@@ -1427,7 +1428,8 @@ table {
 
 	&.correct.selected {
 		background-color: $lime-green;
-		color: $dark-color
+		color: $dark-color;
+		border-color: $green-color;
 	}
 
 	&.error {
