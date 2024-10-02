@@ -6,10 +6,11 @@ $faded-gray-color: #F5F5F5;
 $medium-gray-color: #D9D9D9;
 $dark-color: #171412;
 $green-color: #00665E;
+$lime-green: #D7F8DD;
 $light-green-color: #E6F2EB;
 $white-color: #fff;
-$orange-color: #FAAF3F;
-$red-color: #E18067;
+$orange-color: #FFC36B;
+$red-color: #FF774D;
 // $light-red-color: lighten(#E18067, 24);
 $light-red-color: #F5D5CD;
 $ligh-yellow-color: #E9DD7F;
@@ -910,7 +911,7 @@ body.logged-in {
 	.placeholder.correct {
 		border-color: $green-color;
 		color: $green-color;
-		background-color: $light-green-color;
+		background-color: $lime-green;
 	}
 	
 	.placeholder.incorrect {
@@ -1409,7 +1410,7 @@ table {
 
 		.mit-element {
 			pointer-events: none;
-			background-color: $ligh-yellow-color;
+			background-color: $orange-color;
 			border-color: transparent;
 			text-align: center;
 			min-height: 65px;

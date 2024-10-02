@@ -559,7 +559,8 @@ document.addEventListener("DOMContentLoaded", function() {
             if (draggedWord === targetWord) {
                 event.target.classList.add('correct');
                 event.target.classList.remove('incorrect');
-                event.target.innerText = draggedWord;
+                event.target.innerText = '✅ ';
+                event.target.innerText += ' ' + draggedWord;
                 
                 // Remove the dragged word from the list of words
                 const draggedElement = document.querySelector(`.word[data-word="${draggedWord}"]`);

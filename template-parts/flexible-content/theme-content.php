@@ -646,7 +646,7 @@
                             $content = get_sub_field('content');
                         ?>
 
-                            <div class="curiosity-content bg-light-yellow p-20px border-medium-gray mb-16px rounded-16px hide" data-index="<?php echo $k; ?>">
+                            <div class="curiosity-content bg-orange p-20px border-medium-gray mb-16px rounded-16px hide" data-index="<?php echo $k; ?>">
                                 <?php echo $content; ?>
                             </div>
 
@@ -705,14 +705,14 @@
             </h2>
         </div>
 
-        <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video <?php echo $addition_classes; ?>">
+        <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video">
             <?php echo $section_content; ?>
         </div>
 
         <div class="py-20px">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="bg-light-yellow p-20px rounded-16px text-center">
+                    <div class="bg-red p-20px rounded-16px text-center">
                         <h3 class="text-18px font-600 leading-130"><?php echo $col_a_title; ?></h3>
                     </div>
 
@@ -725,7 +725,7 @@
 
                                     <div class="flex items-center gap-16px">
                                         <div>
-                                            <input type="text" class="size-32px text-center font-700 text-18px text-dark uppercase border-solid border-2px border-light-yellow focus:outline-none classification_input" name="classification_input" placeholder="?" />
+                                            <input type="text" class="size-32px text-center font-700 text-18px text-dark uppercase border-solid border-2px border-red focus:outline-none classification_input" name="classification_input" placeholder="?" />
                                         </div>
                                         <div>
                                             <p class="leading-140"><?php echo $item; ?></p>
@@ -776,7 +776,7 @@
     <div class="flexible-content-section curiosity-section my-24px">
 
 
-        <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video <?php echo $addition_classes; ?>">
+        <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video">
             <form action="#" method="POST">
                 <textarea class="w-full p-16px border-2px border-solid border-medium-gray rounded-8px focus:outline-none min-h-[250px]" name="text_area" placeholder="<?php echo $placeholder; ?>"></textarea>
             </form>
@@ -808,7 +808,7 @@
             </h2>
         </div>
 
-        <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video <?php echo $addition_classes; ?>">
+        <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video">
             <?php echo $section_content; ?>
         </div>
 
@@ -866,7 +866,7 @@
             </h2>
         </div>
 
-        <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video <?php echo $addition_classes; ?>">
+        <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video">
             <?php echo $section_content; ?>
         </div>
 
@@ -878,7 +878,7 @@
                     ?>
 
                         <div class="<?php echo $columns; ?>">
-                            <div class="bg-light-yellow p-16px rounded-16px text-17px font-700 mb-20px mt-30px">
+                            <div class="bg-orange p-16px rounded-16px text-17px font-700 mb-20px mt-30px">
                                 <?php echo $question; ?>
                             </div>
 
@@ -1381,7 +1381,7 @@ $image_height = (get_sub_field('image_height') ? get_sub_field('image_height') :
         <?php if ( have_rows('items') ) : ?>
             <div class="pyramid-wrap flex items-center gap-20px bg-light-gray p-20px rounded-16px">
                 <div class="pyramid-left w-40%">
-                    <div class="pyramid-mixed-items overflow-y-auto max-h-[416px] p-16px flex flex-col gap-16px border-solid border-1px border-medium-gray">
+                    <div class="pyramid-mixed-items overflow-y-auto max-h-[416px] p-16px flex flex-col gap-16px border-solid border-1px border-medium-gray rounded-8px">
                         <?php while ( have_rows('items') ) : the_row();
                             $text_item = get_sub_field('text_item');
                         ?>
@@ -1437,7 +1437,7 @@ $image_height = (get_sub_field('image_height') ? get_sub_field('image_height') :
                                     <input type="text" class="h-36px w-full border-solid border-2px border-medium-gray py-0 px-12px focus:outline-none focus:border-orange" name="the_source[]" value="" placeholder="<?php echo $get_static_text[get_lang()]['write_here']; ?>">
                                 </div>
                                 
-                                <div class="p-6px mt-6px leading-130 bg-light-gray transition-all rounded-8px text-dark hover:bg-light-yellow font-500 text-14px text-center cursor-pointer select-none" data-add-field-btn><?php echo $get_static_text[get_lang()]['add_field']; ?></div>
+                                <div class="p-6px mt-6px leading-130 bg-light-gray transition-all rounded-8px text-dark hover:bg-orange font-500 text-14px text-center cursor-pointer select-none" data-add-field-btn><?php echo $get_static_text[get_lang()]['add_field']; ?></div>
                             </form>
                         </td>
                     </tr>
@@ -1476,7 +1476,7 @@ $image_height = (get_sub_field('image_height') ? get_sub_field('image_height') :
                     <div class="col-md-8">
                         <div class="hexagon-inner relative">
                             <svg class="hexagon-shape" viewBox="0 0 100 100">
-                                <polygon points="50,1 93,25 93,75 50,99 7,75 7,25" fill="#E9DD7F"/>
+                                <polygon points="50,1 93,25 93,75 50,99 7,75 7,25" fill="#FFC36B"/>
                             </svg>
 
                             <div class="hexagon-overlay flex items-center justify-center absolute top-0 right-0 bottom-0 left-0 z-2">
