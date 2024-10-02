@@ -1428,7 +1428,7 @@ table {
 
 	&.correct.selected {
 		background-color: $lime-green;
-		color: $dark-color;
+		color: $green-color;
 		border-color: $green-color;
 	}
 
@@ -1568,7 +1568,7 @@ table {
 
 		&.success {
 			background-color: $lime-green;
-			border-color: transparent;
+			border-color: $green-color;
 			color: $dark-color
 		}
 	}
