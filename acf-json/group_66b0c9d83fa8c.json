@@ -3412,6 +3412,36 @@
                             ],
                             "min": "",
                             "max": ""
+                        },
+                        "layout_66fd9f60b923a": {
+                            "key": "layout_66fd9f60b923a",
+                            "name": "computer_parts",
+                            "label": "Computer Parts game",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_66fd9f82b923c",
+                                    "label": "Provide feddback",
+                                    "name": "provide_feddback",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Display Feddback Message ?",
+                                    "default_value": 1,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
                     },
                     "min": "",
@@ -3440,5 +3470,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1727813708
+    "modified": 1727897585
 }

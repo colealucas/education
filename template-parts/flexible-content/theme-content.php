@@ -655,7 +655,7 @@
 
                     <div class="flex gap-20px justify-center p-30px bg-faded-gray rounded-16px mb-16px">
                         <?php while ( have_rows('animated_curiosities') ) : the_row(); 
-                            $counter++;
+                            $counter++; 
                             $image = get_sub_field('featured_image');
                         ?>
 
@@ -1451,7 +1451,6 @@ $image_height = (get_sub_field('image_height') ? get_sub_field('image_height') :
 </div>
 
 
-
 <?php elseif( get_row_layout() == 'hexagon' ) : // hexagon ?>
 
 <div class="flexible-content-section hexagon-game my-24px">
@@ -1488,6 +1487,53 @@ $image_height = (get_sub_field('image_height') ? get_sub_field('image_height') :
             </div>
         <?php endif; ?>
 
+    </div>
+</div>
+
+
+
+<?php elseif( get_row_layout() == 'computer_parts' ) : // computer_parts 
+$display_feedback = get_sub_field('');    
+?>
+
+<div class="flexible-content-section comp-game my-24px">
+    <div class="relative">
+        <div class="comp-wrap w-[740px] mx-auto relative border-solid border-1px border-transparent">
+            <div class="pc-game-wrap">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/pc.png" alt="">
+            </div>
+
+            <span style="transform: rotate(-8deg) scaleY(-1);" class="comp-arrow absolute right-[340px] top-[80px] z-2 w-[70px] h-[70px]">
+                <img class="w-auto h-full" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/long-arrow.png" alt="">
+            </span>
+            <input class="absolute right-[178px] top-[66px] w-[160px] bg-white h-30px focus:outline-none border-2px border-solid border-medium-gray focus:border-orange rounded-8px py-0 px-8px text-15px font-500 text-dark" type="text" name="comp-field[]" placeholder="<?php echo $get_static_text[get_lang()]['write_here']; ?>">
+
+
+            <span style="transform: rotate(85deg)" class="comp-arrow absolute left-[80px] bottom-[110px] z-2 w-[80px] h-[80px]">
+                <img class="w-auto h-full" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/long-arrow.png" alt="">
+            </span>
+            <input class="absolute left-[10px] bottom-[74px] w-[160px] bg-white h-30px focus:outline-none border-2px border-solid border-medium-gray focus:border-orange rounded-8px py-0 px-8px text-15px font-500 text-dark" type="text" name="comp-field[]" placeholder="<?php echo $get_static_text[get_lang()]['write_here']; ?>">
+
+
+            <span style="transform: rotate(92deg) scaleY(-1);" class="comp-arrow absolute right-[90px] bottom-[112px] z-2 w-[80px] h-[80px]">
+                <img class="w-auto h-full" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/long-arrow.png" alt="">
+            </span>
+            <input class="absolute right-[10px] bottom-[74px] w-[160px] bg-white h-30px focus:outline-none border-2px border-solid border-medium-gray focus:border-orange rounded-8px py-0 px-8px text-15px font-500 text-dark" type="text" name="comp-field[]" placeholder="<?php echo $get_static_text[get_lang()]['write_here']; ?>">
+
+
+            <span style="transform: rotate(85deg)" class="comp-arrow absolute left-[232px] bottom-[48px] z-2 w-[60px] h-[60px]">
+                <img class="w-auto h-full" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/long-arrow.png" alt="">
+            </span>
+            <input class="absolute left-[180px] bottom-[12px] w-[160px] bg-white h-30px focus:outline-none border-2px border-solid border-medium-gray focus:border-orange rounded-8px py-0 px-8px text-15px font-500 text-dark" type="text" name="comp-field[]" placeholder="<?php echo $get_static_text[get_lang()]['write_here']; ?>">
+
+
+            <span style="transform: rotate(95deg) scaleY(-1);" class="comp-arrow absolute left-[465px] bottom-[48px] z-2 w-[60px] h-[60px]">
+                <img class="w-auto h-full" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/long-arrow.png" alt="">
+            </span>
+            <input class="absolute left-[464px] bottom-[12px] w-[160px] bg-white h-30px focus:outline-none border-2px border-solid border-medium-gray focus:border-orange rounded-8px py-0 px-8px text-15px font-500 text-dark" type="text" name="comp-field[]" placeholder="<?php echo $get_static_text[get_lang()]['write_here']; ?>">
+
+
+        </div>
     </div>
 </div>
 
