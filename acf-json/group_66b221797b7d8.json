@@ -3,6 +3,30 @@
     "title": "Book Settings",
     "fields": [
         {
+            "key": "field_673085780e218",
+            "label": "Choose Book Target",
+            "name": "choose_book_target",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "primar": "Primar",
+                "gimnaziu": "Gimnaziu",
+                "liceu": "Liceu"
+            },
+            "default_value": "primar",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
             "key": "field_66b2218d132e7",
             "label": "Title",
             "name": "book_title",
@@ -32,7 +56,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -52,7 +76,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -86,5 +110,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1724099710
+    "modified": 1731239753
 }
