@@ -171,7 +171,7 @@ add_filter('manage_module_posts_columns', function ($columns) {
 	 $reordered_columns = [
         'cb'           => $columns['cb'], // Checkbox column
         'title'        => $columns['title'], // Title column
-        'target_book'  => __('Target Book', 'education'), // Target Book column
+        'target_book'  => __('Book', 'education'), // Target Book column
         'date'         => $columns['date'], // Date column
     ];
 
@@ -205,8 +205,6 @@ add_filter('manage_edit-modules_sortable_columns', function ($columns) {
     return $columns;
 });
 
-
-
 add_action('restrict_manage_posts', function ($post_type) {
     // Apply the filter only to the 'module' post type
     if ($post_type === 'module') {
@@ -220,7 +218,7 @@ add_action('restrict_manage_posts', function ($post_type) {
 
         if (!empty($books)) {
             echo '<select name="filter_by_book">';
-            echo '<option value="">' . __('All Books', 'textdomain') . '</option>';
+            echo '<option value="">' . __('All Books', 'education') . '</option>';
             
             foreach ($books as $book) {
                 $selected = (isset($_GET['filter_by_book']) && $_GET['filter_by_book'] == $book->ID) ? ' selected="selected"' : '';
@@ -254,3 +252,143 @@ add_action('pre_get_posts', function ($query) {
         ]);
     }
 });
+
+
+// THEME SETTINGS
+add_filter('manage_theme_posts_columns', function ($columns) {
+    // Add Target Module and Target Book columns to the list
+    $columns['parent_module'] = __('Module', 'education');
+    $columns['parent_book']   = __('Book', 'education');
+
+    // Reorder columns
+    $reordered_columns = [
+        'cb'            => $columns['cb'], // Checkbox column
+        'title'         => $columns['title'], // Title column
+        'parent_module' => __('Module', 'education'), // Target Module column
+        'parent_book'   => __('Book', 'education'), // Target Book column
+        'date'          => $columns['date'], // Date column
+    ];
+
+    return $reordered_columns;
+});
+
+add_action('manage_theme_posts_custom_column', function ($column, $post_id) {
+    if ($column === 'parent_module') {
+        // Retrieve the parent module (relationship field)
+        $parent_modules = get_field('parent_module', $post_id);
+        
+        if (!empty($parent_modules) && is_array($parent_modules)) {
+            $module_titles = array_map(function ($module) {
+                return get_the_title($module);
+            }, $parent_modules);
+            echo implode(', ', $module_titles); // Display module titles separated by commas
+        } else {
+            echo __('Not Assigned', 'education');
+        }
+    }
+
+    if ($column === 'parent_book') {
+        // Retrieve the parent book via the related module's parent_book field
+        $parent_book = get_field('parent_book', $post_id);
+
+		//print_r($parent_book[0]->post_title);
+
+        if (!empty($parent_book) && is_array($parent_book)) {
+            echo ($parent_book[0] ? $parent_book[0]->post_title : '');
+        } else {
+            echo __('Not Assigned', 'education');
+        }
+    }
+}, 10, 2);
+
+
+// make sortable (optional)
+add_filter('manage_edit-theme_sortable_columns', function ($columns) {
+    $columns['parent_module'] = 'parent_module';
+    return $columns;
+});
+
+// Add dropdown filters
+add_action('restrict_manage_posts', function ($post_type) {
+    // Apply the filter only to the 'theme' post type
+    if ($post_type === 'theme') {
+        // Fetch all modules
+        $modules = get_posts([
+            'post_type' => 'module',
+            'posts_per_page' => -1,
+            'orderby' => 'title',
+            'order' => 'ASC',
+        ]);
+
+        if (!empty($modules)) {
+            echo '<select name="filter_by_module">';
+            echo '<option value="">' . __('All Modules', 'education') . '</option>';
+            
+            foreach ($modules as $module) {
+                $selected = (isset($_GET['filter_by_module']) && $_GET['filter_by_module'] == $module->ID) ? ' selected="selected"' : '';
+                echo '<option value="' . esc_attr($module->ID) . '"' . $selected . '>' . esc_html($module->post_title) . '</option>';
+            }
+
+            echo '</select>';
+        }
+
+        // Fetch all target books
+        $books = get_posts([
+            'post_type' => 'book', // Replace with your 'target_book' post type
+            'posts_per_page' => -1,
+            'orderby' => 'title',
+            'order' => 'ASC',
+        ]);
+
+        if (!empty($books)) {
+            echo '<select name="filter_by_book">';
+            echo '<option value="">' . __('All Books', 'education') . '</option>';
+            
+            foreach ($books as $book) {
+                $selected = (isset($_GET['filter_by_book']) && $_GET['filter_by_book'] == $book->ID) ? ' selected="selected"' : '';
+                echo '<option value="' . esc_attr($book->ID) . '"' . $selected . '>' . esc_html($book->post_title) . '</option>';
+            }
+
+            echo '</select>';
+        }
+    }
+});
+
+// Modify the query
+add_action('pre_get_posts', function ($query) {
+    global $pagenow;
+
+    if (
+        is_admin() &&
+        $pagenow === 'edit.php' &&
+        $query->is_main_query() &&
+        $query->get('post_type') === 'theme'
+    ) {
+        $meta_query = [];
+
+        // Filter by module if selected
+        if (!empty($_GET['filter_by_module'])) {
+            $module_id = intval($_GET['filter_by_module']);
+            $meta_query[] = [
+                'key' => 'parent_module', // Replace with your ACF field key
+                'value' => $module_id,
+                'compare' => 'LIKE',
+            ];
+        }
+
+        // Filter by book if selected
+        if (!empty($_GET['filter_by_book'])) {
+            $book_id = intval($_GET['filter_by_book']);
+            $meta_query[] = [
+                'key' => 'parent_book', // Replace with your ACF field key
+                'value' => $book_id,
+                'compare' => 'LIKE',
+            ];
+        }
+
+        if (!empty($meta_query)) {
+            $query->set('meta_query', $meta_query);
+        }
+    }
+});
+
