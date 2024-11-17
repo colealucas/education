@@ -331,7 +331,7 @@
                                 },
                                 {
                                     "key": "field_66ca009f11ab2",
-                                    "label": "Full with images",
+                                    "label": "Full with images (imagini intinse)",
                                     "name": "full_with_images",
                                     "aria-label": "",
                                     "type": "true_false",
@@ -351,7 +351,7 @@
                                 },
                                 {
                                     "key": "field_66cb7bd4b6bbc",
-                                    "label": "Check paragraphs",
+                                    "label": "Check paragraphs (bifeaza paragrafele)",
                                     "name": "check_paragraphs",
                                     "aria-label": "",
                                     "type": "true_false",
@@ -391,7 +391,7 @@
                                 },
                                 {
                                     "key": "field_66f94e2618b39",
-                                    "label": "Add plus (+) before paragraphs",
+                                    "label": "Add plus (+) before paragraphs (adauga + in fata paragrafelor)",
                                     "name": "add_plus",
                                     "aria-label": "",
                                     "type": "true_false",
@@ -411,7 +411,7 @@
                                 },
                                 {
                                     "key": "field_66f95659f5a1c",
-                                    "label": "Split variants (A\/B)",
+                                    "label": "Split variants A\/B (selecteaza variant A sau B)",
                                     "name": "split_variants",
                                     "aria-label": "",
                                     "type": "true_false",
@@ -431,7 +431,7 @@
                                 },
                                 {
                                     "key": "field_66faee4fb0edb",
-                                    "label": "Add cards",
+                                    "label": "Add cards (adauga carduri)",
                                     "name": "add_cards",
                                     "aria-label": "",
                                     "type": "true_false",
@@ -451,7 +451,7 @@
                                 },
                                 {
                                     "key": "field_66fc5358a232f",
-                                    "label": "Add Exclamation (!) before paragraphs",
+                                    "label": "Add Exclamation (!) - (adauga ! in fata paragrafelor)",
                                     "name": "add_exclamation",
                                     "aria-label": "",
                                     "type": "true_false",
@@ -470,8 +470,28 @@
                                     "ui": 1
                                 },
                                 {
+                                    "key": "field_673a243940f9e",
+                                    "label": "Add 4 options before paragraphs (adauga 4 optiuni) [v + - ?]",
+                                    "name": "add_four_options",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Add four options?",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
                                     "key": "field_66d8246a73331",
-                                    "label": "Click words",
+                                    "label": "Click words (click pe cuvinte)",
                                     "name": "click_words",
                                     "aria-label": "",
                                     "type": "true_false",
@@ -491,7 +511,7 @@
                                 },
                                 {
                                     "key": "field_66edd8050615b",
-                                    "label": "Add table boders",
+                                    "label": "Add table boders (adauga chenar la tabele)",
                                     "name": "add_table_boders",
                                     "aria-label": "",
                                     "type": "true_false",
@@ -3490,6 +3510,26 @@
                             "display": "block",
                             "sub_fields": [
                                 {
+                                    "key": "field_673a2a502d069",
+                                    "label": "Placeholder text (text sugestie)",
+                                    "name": "placeholder_text",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "Scrie aici...",
+                                    "maxlength": "",
+                                    "placeholder": "Placeholder text (text sugestie)",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
                                     "key": "field_673a02e37821d",
                                     "label": "Columns",
                                     "name": "columns",
@@ -3564,5 +3604,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731856151
+    "modified": 1731865356
 }

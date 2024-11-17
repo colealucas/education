@@ -1969,6 +1969,30 @@ table {
 	}
 }
 
+.four-options-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	width: 22px;
+	height: 22px;
+	border-radius: 4px;
+	font-size: 15px;
+	font-weight: 600;
+	cursor: pointer;
+	user-select: none;
+	border: 1px solid $medium-gray-color;
+	background-color: $light-gray-color;
+	transition: all 0.2s ease-out;
+
+	&:hover,
+	&.active {
+		background-color: $light-green-color;
+		border-color: $green-color;
+		transform: scale(1.1);
+	}
+}
+
 // [class*="wp-image-"]
 // zdx 
 

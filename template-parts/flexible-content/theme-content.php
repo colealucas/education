@@ -39,6 +39,7 @@
     $add_plus         = get_sub_field('add_plus');
     $add_cards        = get_sub_field('add_cards');
     $add_exclamation  = get_sub_field('add_exclamation');
+    $add_four_options = get_sub_field('add_four_options');
     $split_variants   = get_sub_field('split_variants');
     $click_words      = get_sub_field('click_words');
     $add_table_boders = get_sub_field('add_table_boders');
@@ -61,6 +62,10 @@
 
     if ($add_exclamation) {
         $css_classes[] = 'add-exclamation';
+    }
+    
+    if ($add_four_options) {
+        $css_classes[] = 'add-four-options';
     }
 
     if ($split_variants) {
@@ -1550,6 +1555,7 @@ $display_feedback = get_sub_field('');
 
 <?php elseif( get_row_layout() == 'boxes_with_text_game' ) : 
     $cols = get_sub_field('columns');
+    $placeholder_text = get_sub_field('placeholder_text');
     $cols_count = count($cols);
 ?>
 
@@ -1569,7 +1575,7 @@ $display_feedback = get_sub_field('');
                                 <?php echo $text_content; ?>
                             </div>
                             <div>
-                                <textarea class="border-2px border-none rounded-8px p-12px text-14px w-full min-h-[156px] outline-none hover:outline-none" name="bwt_textarea[]" placeholder="Add text..."></textarea>
+                                <textarea class="border-2px border-none rounded-8px p-12px text-14px w-full min-h-[156px] outline-none hover:outline-none" name="bwt_textarea[]" placeholder="<?php echo $placeholder_text; ?>"></textarea>
                             </div>
                         </div>
 

@@ -300,11 +300,20 @@ document.addEventListener("DOMContentLoaded", function() {
         const addPlus = document.querySelectorAll('.paragraph-pluss-option');
         const addCardsBtns = document.querySelectorAll('.add-cards-btn');
         const addExclamationBtns = document.querySelectorAll('.add-exclamation-btn');
+        const addFourOptionsBtns = document.querySelectorAll('.four-options-btn');
 
         if (addExclamationBtns.length) {
             addExclamationBtns.forEach(function(ex) {
                 ex.addEventListener('click', function() {
                     ex.classList.toggle('active');
+                });
+            });
+        }
+
+        if (addFourOptionsBtns.length) {
+            addFourOptionsBtns.forEach(function(fItem) {
+                fItem.addEventListener('click', function() {
+                    fItem.classList.toggle('active');
                 });
             });
         }
@@ -480,6 +489,39 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     handleAddExclamations();
+
+    function handleAddFourButtons() {
+        const sections = document.querySelectorAll('.add-four-options');
+
+        if (sections.length) {
+            sections.forEach(function(textSection) {
+                if ( textSection ) {
+                    const paragraphs = textSection.querySelectorAll('p:not(.ignore)');
+
+                    if (paragraphs.length) {
+                        paragraphs.forEach(function(p) {
+                            if ( p.textContent.trim().length ) {
+                                const checkboxes = document.createElement('span');
+                                checkboxes.classList.add('paragraph-four-options');
+                                checkboxes.innerHTML = `
+                                <span class="four-options-btn">v</span>
+                                <span class="four-options-btn">+</span>
+                                <span class="four-options-btn">-</span>
+                                <span class="four-options-btn">?</span>
+                                `;
+
+                                // Insert the <span> before the text content of the <p>
+                                p.prepend(checkboxes);
+                            }
+                        });
+
+                        handleCheckmarks();
+                    }
+                }
+            });
+        }
+    }
+    handleAddFourButtons();
 
     /**
      * Display success feedback
