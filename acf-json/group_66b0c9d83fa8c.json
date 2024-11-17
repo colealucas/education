@@ -370,6 +370,26 @@
                                     "ui": 1
                                 },
                                 {
+                                    "key": "field_6738da459a8ad",
+                                    "label": "Words hunt (vanatoarea de cuvinte)",
+                                    "name": "enable_words_hunt",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "Add div before paragraphs",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Enable words hunt ?",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
                                     "key": "field_66f94e2618b39",
                                     "label": "Add plus (+) before paragraphs",
                                     "name": "add_plus",
@@ -3490,5 +3510,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731232929
+    "modified": 1731779221
 }

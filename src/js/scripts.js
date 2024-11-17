@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
             'wordsToFind': 'cuvinte de găsit',
             'wordsFound': 'cuvinte descoperite',
             'write_here': 'scrie aici...',
+            'get_max_bonus': 'Bravo! Ai obținut maximum de bonusuri!',
         },
         'ru': {
             'bravo': 'Отлично! Ты сделал правильно!',
@@ -20,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
             'wordsToFind': 'слов для поиска',
             'wordsFound': 'найденных слова',
             'write_here': 'пиши здесь...',
+            'get_max_bonus': 'Браво! Ты получил максимум бонусов!',
         },
     };
 
@@ -1655,6 +1657,76 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     handleAddFields();
+
+    function handleHuntedWords() {
+        const wrappers = document.querySelectorAll('.text-content-section');
+        const coinContainer = document.querySelector('#coin-container');
+
+        if (wrappers.length) {
+            // SVG code for the coin
+            const svgCoin = `
+                <svg width="34" height="34" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="gold">
+                    <circle cx="32" cy="32" r="30" stroke="orange" stroke-width="5" fill="gold" />
+                    <text x="32" y="44" font-size="30" text-anchor="middle" fill="orange" font-family="Arial" font-weight="bold">+1</text>
+                </svg>
+            `;
+
+            // Coin sound setup
+            const coinSound = new Audio('/wp-content/themes/education/assets/sounds/coin.mp3');
+
+            // Function to show the coin
+            function showCoin(target) {
+                // Create a coin element
+                const coin = document.createElement('div');
+                coin.className = 'coin';
+                coin.innerHTML = svgCoin;
+            
+                // Append the coin to the word
+                target.appendChild(coin);
+
+                // Play the coin sound
+                coinSound.currentTime = 0; // Reset sound to the start for repeated clicks
+                coinSound.play();
+            
+                // Remove the coin after animation
+                setTimeout(() => {
+                    coin.remove();
+                }, 1600);
+            }
+            
+            wrappers.forEach(function(wrapper) {
+                const huntedWords = wrapper.querySelectorAll('.hunted-word');
+                const statsDiv = wrapper.querySelector('.words-hunt-stats');
+                const statsTotalElement = (statsDiv ? statsDiv.querySelector('.words-hunt-total') : null)
+                const totalWords = (huntedWords.length ? huntedWords.length : 0);
+                let foundedCounter = 0;
+
+                if (huntedWords.length) {
+                    huntedWords.forEach(function(word) {
+                        word.addEventListener('click', function(ev) {
+                            ev.preventDefault();
+
+                            showCoin(word);
+                            foundedCounter++;
+
+                            word.classList.add('discovered');
+
+                            if (statsDiv && statsTotalElement) {
+                                statsTotalElement.innerText = `${foundedCounter}/${totalWords}`;
+                                statsDiv.classList.add('active');
+                            }
+
+                            if (foundedCounter >= totalWords) {
+                                // show success message
+                                showSuccessPopup( getText('get_max_bonus') );
+                            }
+                        });
+                    });
+                }
+            });
+        }
+    }
+    handleHuntedWords();
    
     // function handleNumbersGame() {
     //     const wrappers = document.querySelectorAll('.numbers-wrap');

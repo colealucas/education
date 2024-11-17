@@ -1894,9 +1894,68 @@ table {
     right: 8px;
 }
 
+.hunted-word {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	border-bottom: 2px dashed transparent;
+	transition: all 0.15s ease-out;
+
+	&:hover {
+		transform: scale(1.05);
+	}
+
+	&.discovered {
+		font-weight: 600;
+		pointer-events: none;
+		user-select: none;
+		border-bottom: 2px dashed $orange-color;
+	}
+}
+  
+.hunted-word .coin {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 40px;
+	height: 40px;
+	pointer-events: none;
+	animation: rise-and-fade 1s ease-out forwards;
+}
+
+@keyframes rise-and-fade {
+	0% {
+		opacity: 1;
+		transform: translate(-50%, 0);
+	}
+	75% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translate(-50%, -70px);
+	}
+}
+
+.words-hunt-stats {
+	position: sticky;
+	z-index: 9;
+	top: -40px;
+	font-size: 14px;
+	background-color: $orange-color;
+	border-radius: 12px;
+	padding: 16px 20px;
+	margin-bottom: 12px;
+	display: none;
+
+	&.active {
+		display: block;
+	}
+}
 
 // [class*="wp-image-"]
-.zdx{}
+// zdx 
 
 
 @media (max-width: 1350px) {

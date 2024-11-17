@@ -13,6 +13,7 @@
         'false_initial' => 'F',
         'write_here' => 'scrie aici...',
         'add_field' => '+ Adaugă câmp',
+        'founded_words' => 'Cuvinte găsite:',
     ],
     'ru' => [
         'print' => 'Распечатать',
@@ -22,6 +23,7 @@
         'false_initial' => 'Л',
         'write_here' => 'пиши здесь...',
         'add_field' => '+ Добавить поле',
+        'founded_words' => 'Найденные слова',
     ]
 ];
 
@@ -33,6 +35,7 @@
     $section_content  = get_sub_field('content');
     $full_with_images = get_sub_field('full_with_images');
     $check_paragraphs = get_sub_field('check_paragraphs');
+    $enable_words_hunt = get_sub_field('enable_words_hunt');
     $add_plus         = get_sub_field('add_plus');
     $add_cards        = get_sub_field('add_cards');
     $add_exclamation  = get_sub_field('add_exclamation');
@@ -77,7 +80,7 @@
 ?>
 
     <div class="flexible-content-section text-content-section my-24px">
-        <?php if ( $section_title ) : ?>
+        <?php if (strlen(trim($section_title))) : ?>
             <div class="tcs-heading mb-16px bg-green text-white py-20px px-24px rounded-16px">
                 <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
                     <span class="w-30px block">
@@ -88,14 +91,20 @@
                         </svg>
                     </span>
                     <span class="w-[calc(100%-42px)] block">
-                        <?php echo $section_title; ?>
+                        <?php echo ($enable_words_hunt ? replaceBracketsWithSpans($section_title) : $section_title); ?>
                     </span>
                 </h2>
             </div>
         <?php endif; ?>
 
+        <?php if ($enable_words_hunt) : ?>
+            <div class="words-hunt-stats">
+                <?php echo $get_static_text[get_lang()]['founded_words']; ?> <strong class="words-hunt-total">1/1</strong>
+            </div>
+        <?php endif; ?>
+
         <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video <?php echo $addition_classes; ?>">
-            <?php echo $section_content; ?>
+            <?php echo ($enable_words_hunt ? replaceBracketsWithSpans($section_content) : $section_content); ?>
         </div>
     </div>
 
@@ -621,6 +630,7 @@
 ?>
 
     <div class="flexible-content-section curiosity-section my-24px">
+        <?php if (strlen(trim($section_title))) : ?>
         <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
             <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
                 <span class="w-30px block">
@@ -635,6 +645,7 @@
                 </span>
             </h2>
         </div>
+        <?php endif; ?>
 
         <div class="curiosity-wrap my-24px">
             <?php if ( $type == 'rich' ) : // animated curiosity ?>

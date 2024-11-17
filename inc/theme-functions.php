@@ -161,3 +161,9 @@ function generateGrid($rows = 18, $cols = 18, $words = []) {
 
     echo '</div>';
 }
+
+function replaceBracketsWithSpans($text) {
+    return preg_replace_callback('/\{([^}]+)\}/', function($matches) {
+        return "<span class=\"hunted-word\">{$matches[1]}</span>";
+    }, $text);
+}
