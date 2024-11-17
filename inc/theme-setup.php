@@ -164,3 +164,93 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+// Add custom column to the 'modules' post type table
+add_filter('manage_module_posts_columns', function ($columns) {
+	 // Create a new array with the desired order
+	 $reordered_columns = [
+        'cb'           => $columns['cb'], // Checkbox column
+        'title'        => $columns['title'], // Title column
+        'target_book'  => __('Target Book', 'education'), // Target Book column
+        'date'         => $columns['date'], // Date column
+    ];
+
+    return $reordered_columns;
+
+    // $columns['target_book'] = __('Target Book', 'education'); // Add new column
+    // return $columns;
+});
+
+// Populate the custom column with data
+add_action('manage_module_posts_custom_column', function ($column, $post_id) {
+    if ($column === 'target_book') {
+        // Retrieve the relationship field data (returns an array)
+        $target_books = get_field('parent_book', $post_id); // Replace 'target_book' with your actual ACF field key
+        
+        if (!empty($target_books) && is_array($target_books)) {
+            $book_titles = array_map(function ($book) {
+                return get_the_title($book); // Get the title of each related book
+            }, $target_books);
+            
+            echo implode(', ', $book_titles); // Display the book titles separated by commas
+        } else {
+            echo __('Not Assigned', 'education'); // Fallback if no books are assigned
+        }
+    }
+}, 10, 2);
+
+// Make the column sortable (optional)
+add_filter('manage_edit-modules_sortable_columns', function ($columns) {
+    $columns['target_book'] = 'target_book';
+    return $columns;
+});
+
+
+
+add_action('restrict_manage_posts', function ($post_type) {
+    // Apply the filter only to the 'module' post type
+    if ($post_type === 'module') {
+        // Fetch all books (assuming 'parent_book' points to books)
+        $books = get_posts([
+            'post_type' => 'book', // Replace 'book' with the post type for books
+            'posts_per_page' => -1,
+            'orderby' => 'title',
+            'order' => 'ASC',
+        ]);
+
+        if (!empty($books)) {
+            echo '<select name="filter_by_book">';
+            echo '<option value="">' . __('All Books', 'textdomain') . '</option>';
+            
+            foreach ($books as $book) {
+                $selected = (isset($_GET['filter_by_book']) && $_GET['filter_by_book'] == $book->ID) ? ' selected="selected"' : '';
+                echo '<option value="' . esc_attr($book->ID) . '"' . $selected . '>' . esc_html($book->post_title) . '</option>';
+            }
+
+            echo '</select>';
+        }
+    }
+});
+
+add_action('pre_get_posts', function ($query) {
+    global $pagenow;
+
+    if (
+        is_admin() &&
+        $pagenow === 'edit.php' &&
+        $query->is_main_query() &&
+        $query->get('post_type') === 'module' &&
+        !empty($_GET['filter_by_book'])
+    ) {
+        $book_id = intval($_GET['filter_by_book']);
+        
+        // Modify the query to filter by the selected book
+        $query->set('meta_query', [
+            [
+                'key' => 'parent_book', // Replace with your ACF field key
+                'value' => $book_id,
+                'compare' => 'LIKE',
+            ],
+        ]);
+    }
+});
