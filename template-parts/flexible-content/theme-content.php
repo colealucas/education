@@ -1543,7 +1543,41 @@ $display_feedback = get_sub_field('');
             </span>
             <input class="absolute left-[464px] bottom-[12px] w-[160px] bg-white h-30px focus:outline-none border-2px border-solid border-medium-gray focus:border-orange rounded-8px py-0 px-8px text-15px font-500 text-dark" type="text" name="comp-field[]" placeholder="<?php echo $get_static_text[get_lang()]['write_here']; ?>">
 
+        </div>
+    </div>
+</div>
 
+
+<?php elseif( get_row_layout() == 'boxes_with_text_game' ) : 
+    $cols = get_sub_field('columns');
+    $cols_count = count($cols);
+?>
+
+<div class="flexible-content-section boxes-with-text my-24px">
+    <div class="relative">
+        <div class="comp-wrap">
+            <div class="boxes-with-text-wrap">
+                <?php if ( have_rows('columns') ) : $i=0 ?>
+                    <div class="bwt-wrap grid gap-20px grid-cols-<?php echo $cols_count; ?>">
+
+                        <?php while ( have_rows('columns') ) : the_row(); $i++;
+                            $text_content = get_sub_field('text_content');
+                        ?>
+
+                        <div class="bwt-col-<?php echo $i; ?> flex flex-col gap-12px rounded-12px p-12px">
+                            <div class="min-h-[130px]">
+                                <?php echo $text_content; ?>
+                            </div>
+                            <div>
+                                <textarea class="border-2px border-none rounded-8px p-12px text-14px w-full min-h-[156px] outline-none hover:outline-none" name="bwt_textarea[]" placeholder="Add text..."></textarea>
+                            </div>
+                        </div>
+
+                        <?php endwhile; ?>
+                        
+                    </div>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
 </div>

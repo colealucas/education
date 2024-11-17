@@ -546,7 +546,7 @@
                         "layout_66cb8e4f404a2": {
                             "key": "layout_66cb8e4f404a2",
                             "name": "match_words_with_definition",
-                            "label": "Match the words with the definition",
+                            "label": "Match definitions (potriveste definitiile)",
                             "display": "block",
                             "sub_fields": [
                                 {
@@ -661,7 +661,7 @@
                         "layout_66d0bdb21f97b": {
                             "key": "layout_66d0bdb21f97b",
                             "name": "square_table_find_words",
-                            "label": "Square table find words",
+                            "label": "Find words (cauta cuvintele in tabel)",
                             "display": "block",
                             "sub_fields": [
                                 {
@@ -1012,7 +1012,7 @@
                         "layout_66d36b6757aed": {
                             "key": "layout_66d36b6757aed",
                             "name": "match_using_arrows",
-                            "label": "Match using arrows",
+                            "label": "Match arrows (potrivire cu sageti)",
                             "display": "block",
                             "sub_fields": [
                                 {
@@ -1150,7 +1150,7 @@
                         "layout_66d5c69d8463e": {
                             "key": "layout_66d5c69d8463e",
                             "name": "chronological_order",
-                            "label": "Chronological order",
+                            "label": "Chronological order (ordine cronologica)",
                             "display": "block",
                             "sub_fields": [
                                 {
@@ -1270,7 +1270,7 @@
                         "layout_66d836b1bbed9": {
                             "key": "layout_66d836b1bbed9",
                             "name": "select_corect_variant",
-                            "label": "Select corect variant",
+                            "label": "Select corect variant (selecteaza varianta corecta)",
                             "display": "block",
                             "sub_fields": [
                                 {
@@ -1432,7 +1432,7 @@
                         "layout_66d85299e22da": {
                             "key": "layout_66d85299e22da",
                             "name": "write_in_table",
-                            "label": "Write in table",
+                            "label": "Write in table (scrie in tabel)",
                             "display": "block",
                             "sub_fields": [
                                 {
@@ -1574,7 +1574,7 @@
                         "layout_66d8860298caa": {
                             "key": "layout_66d8860298caa",
                             "name": "curiosities",
-                            "label": "Curiosities",
+                            "label": "Curiosities (curiozitati)",
                             "display": "block",
                             "sub_fields": [
                                 {
@@ -1733,7 +1733,7 @@
                         "layout_66ec6cb02ca69": {
                             "key": "layout_66ec6cb02ca69",
                             "name": "clasification_two_columns",
-                            "label": "Clasification 2 columns (A | B)",
+                            "label": "Clasification 2 columns (A | B) (clasificare)",
                             "display": "block",
                             "sub_fields": [
                                 {
@@ -1911,7 +1911,7 @@
                         "layout_66edcc2bee75e": {
                             "key": "layout_66edcc2bee75e",
                             "name": "text_area",
-                            "label": "Text area",
+                            "label": "Text area (zona de etxt)",
                             "display": "block",
                             "sub_fields": [
                                 {
@@ -1941,7 +1941,7 @@
                         "layout_66edce9c714a8": {
                             "key": "layout_66edce9c714a8",
                             "name": "choose_one",
-                            "label": "Choose One (Image + Checkbox)",
+                            "label": "Choose One Image + Checkbox (alege o varianta)",
                             "display": "block",
                             "sub_fields": [
                                 {
@@ -2086,7 +2086,7 @@
                         "layout_66eedd3231afb": {
                             "key": "layout_66eedd3231afb",
                             "name": "choose_multiple",
-                            "label": "Choose Multiple (Text List)",
+                            "label": "Choose From Text List (alege din lista text)",
                             "display": "block",
                             "sub_fields": [
                                 {
@@ -2250,7 +2250,7 @@
                         "layout_66eef4e36ea69": {
                             "key": "layout_66eef4e36ea69",
                             "name": "editable_template",
-                            "label": "Editable Template",
+                            "label": "Editable Template (text editabil)",
                             "display": "block",
                             "sub_fields": [
                                 {
@@ -2300,7 +2300,7 @@
                         "layout_66efeb7b00870": {
                             "key": "layout_66efeb7b00870",
                             "name": "match_text_with_image",
-                            "label": "Match Text with Image",
+                            "label": "Match Text with Image (potriveste text cu imagine)",
                             "display": "block",
                             "sub_fields": [
                                 {
@@ -2426,7 +2426,7 @@
                         "layout_66f457368c7f3": {
                             "key": "layout_66f457368c7f3",
                             "name": "select_correct_number",
-                            "label": "Select Correct Number",
+                            "label": "Select Number (alege numarul corect)",
                             "display": "block",
                             "sub_fields": [
                                 {
@@ -2501,7 +2501,7 @@
                         "layout_66f6c95bfe262": {
                             "key": "layout_66f6c95bfe262",
                             "name": "image_with_text_field",
-                            "label": "Image + Text Field",
+                            "label": "Image + Text Field (imagine + camp text)",
                             "display": "block",
                             "sub_fields": [
                                 {
@@ -2626,7 +2626,7 @@
                         "layout_66f6e89a0f680": {
                             "key": "layout_66f6e89a0f680",
                             "name": "axa",
-                            "label": "Axa",
+                            "label": "Axa game (axa cronologica)",
                             "display": "block",
                             "sub_fields": [
                                 {
@@ -2778,7 +2778,7 @@
                         "layout_66f93762f8850": {
                             "key": "layout_66f93762f8850",
                             "name": "reorder_aliniate",
-                            "label": "Reorder aliniate",
+                            "label": "Reorder aliniate (ordoneaza aliniatele)",
                             "display": "block",
                             "sub_fields": [
                                 {
@@ -2908,7 +2908,7 @@
                         "layout_66f97ef456398": {
                             "key": "layout_66f97ef456398",
                             "name": "restore_text",
-                            "label": "Restore Text",
+                            "label": "Restore Text (restabileste textul)",
                             "display": "block",
                             "sub_fields": [
                                 {
@@ -3028,7 +3028,7 @@
                         "layout_66f98a2d688f7": {
                             "key": "layout_66f98a2d688f7",
                             "name": "drag_items_to_list",
-                            "label": "Drag Items To List",
+                            "label": "Drag Items To List (trage itemi in lista)",
                             "display": "block",
                             "sub_fields": [
                                 {
@@ -3219,7 +3219,7 @@
                         "layout_66f9a785c3c63": {
                             "key": "layout_66f9a785c3c63",
                             "name": "pyramid",
-                            "label": "Pyramid",
+                            "label": "Pyramid (piramida)",
                             "display": "block",
                             "sub_fields": [
                                 {
@@ -3273,7 +3273,7 @@
                         "layout_66fa75ba573af": {
                             "key": "layout_66fa75ba573af",
                             "name": "true_false",
-                            "label": "True \/ False",
+                            "label": "True \/ False (adevarat\/fals)",
                             "display": "block",
                             "sub_fields": [
                                 {
@@ -3456,7 +3456,7 @@
                         "layout_66fd9f60b923a": {
                             "key": "layout_66fd9f60b923a",
                             "name": "computer_parts",
-                            "label": "Computer Parts game",
+                            "label": "Computer Parts (piesele calculatorului)",
                             "display": "block",
                             "sub_fields": [
                                 {
@@ -3478,6 +3478,60 @@
                                     "ui_on_text": "",
                                     "ui_off_text": "",
                                     "ui": 1
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        },
+                        "layout_673a02bf7821b": {
+                            "key": "layout_673a02bf7821b",
+                            "name": "boxes_with_text_game",
+                            "label": "Boxes with Text (casete cu text + textarea)",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_673a02e37821d",
+                                    "label": "Columns",
+                                    "name": "columns",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "row",
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add Item",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_673a045b7821e",
+                                            "label": "Text content",
+                                            "name": "text_content",
+                                            "aria-label": "",
+                                            "type": "wysiwyg",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "tabs": "all",
+                                            "toolbar": "full",
+                                            "media_upload": 1,
+                                            "delay": 0,
+                                            "parent_repeater": "field_673a02e37821d"
+                                        }
+                                    ]
                                 }
                             ],
                             "min": "",
@@ -3510,5 +3564,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731779221
+    "modified": 1731856151
 }
