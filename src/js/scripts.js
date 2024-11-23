@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const lang = (education_theme_localized && education_theme_localized.lang ? education_theme_localized.lang : 'ro'); // default to ro
 
+    // Get the base URL
+    const baseUrl = `${window.location.protocol}//${window.location.host}/`;
+
     const translatedText = {
         'ro': {
             'bravo': 'Excelent! Ai realizat corect!',
@@ -1353,12 +1356,86 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     handleAxaGame();
 
-    function printElement(htmlElement) {
+    function getNodeIndex(node) {
+        return Array.prototype.indexOf.call(node.parentNode.children, node);
+    }
 
+    function cloneElementWithLiveValues(htmlElement) {
+        // Clone the node
+        const clonedElement = htmlElement.cloneNode(true);
+    
+        // Update textarea values
+        const textareas = htmlElement.querySelectorAll('textarea');
+        const clonedTextareas = clonedElement.querySelectorAll('textarea');
+    
+        if (clonedTextareas.length) {
+            textareas.forEach((textarea, index) => {
+                clonedTextareas[index].innerText = textarea.value;
+            });
+        }
+    
+        // Update other form elements if necessary (e.g., inputs, selects)
+        const inputs = htmlElement.querySelectorAll('input');
+        const clonedInputs = clonedElement.querySelectorAll('input');
+
+        const selects = htmlElement.querySelectorAll('select');
+        const clonedSelects = clonedElement.querySelectorAll('select');
+
+        if (clonedInputs.length) {
+            inputs.forEach((input, index) => {
+                clonedInputs[index].setAttribute('value', input.value);
+
+                // for checkboxes and radio inputs
+                if (input.checked) {
+                    clonedInputs[index].setAttribute('checked', input.checked);
+                }
+            });
+        }
+
+        if (clonedSelects.length) {
+            selects.forEach((select, index) => {
+                const selectedIndex = select.selectedIndex;
+
+                clonedSelects[index].querySelectorAll('option').forEach(function(option) {
+                    if (option.hasAttribute('selected')) {
+                        option.removeAttribute('selected');
+                    }
+                });
+
+                clonedSelects[index].querySelectorAll('option').forEach(function(option) {
+                    if( getNodeIndex(option) === selectedIndex) {
+                        option.setAttribute('selected', true);
+                    }
+                });
+            });
+        }
+    
+        return clonedElement;
+    }
+
+    function printElement(htmlElement) {
         if (htmlElement) {
-            let divContents = htmlElement.innerHTML;
-            let printWindow = window.open('', '', 'height=600,width=785');
-            printWindow.document.write('<html><head><title>Print</title> <style> .print-trigger{display: none} .editable-template-wrapper {word-break: break-all; font-size: 16px;} </style>');
+            const clonedElement = cloneElementWithLiveValues(htmlElement);
+            let divContents = clonedElement.innerHTML;
+
+            let printWindow = window.open('', '', 'height=600,width=840');
+            const themeCSSURL =  baseUrl + '/wp-content/themes/education/assets/css/styles.min.css';
+            const tailwindCSSURL =  baseUrl + '/wp-content/themes/education/assets/css/tw.css';
+
+            printWindow.document.write(`
+                <html>
+                <head>
+                <title>Print</title>
+                <link rel='stylesheet' id='education-theme-css-css' href='${themeCSSURL}' media='all' />
+                <link rel='stylesheet' id='education-theme-css-css' href='${tailwindCSSURL}' media='all' />
+                <style>
+                body {
+                    padding: 10px;
+                }
+                    .print-trigger{display: none} .editable-template-wrapper {word-break: break-all; font-size: 16px;} 
+                </style>
+            `);
+
             printWindow.document.write('</head><body>');
             printWindow.document.write(divContents);
             printWindow.document.write('</body></html>');

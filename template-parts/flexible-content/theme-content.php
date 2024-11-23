@@ -931,7 +931,7 @@
 ?>
 
     <div class="flexible-content-section curiosity-section my-30px">
-        <div class="print-div" data-print-div>
+        <div class="print-div">
             <?php if ($print) : ?>
                 <div class="print-trigger-wrap flex justify-end mb-8px">
                     <a href="#" class="inline-flex leading-1 bg-light-gray py-4px px-20px rounded-8px text-15px font-600 items-center gap-4px print-trigger" data-print-trigger>
@@ -1598,35 +1598,66 @@ $display_feedback = get_sub_field('');
 
 <div class="flexible-content-section editble-table my-24px">
     <div class="relative">
-        <div class="et-wrap">
+        <div class="et-wrap print-div">
+            <div class="flex justify-end">
+                <div>
+                    <div class="print-trigger-wrap flex justify-end mb-8px">
+                        <a href="#" class="inline-flex leading-1 bg-light-gray py-4px px-20px rounded-8px text-15px font-600 items-center gap-4px print-trigger" data-print-trigger>
+                            <span>
+                                <svg fill="#000000" width="30px" height="30px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.656 6.938l-0.344 2.688h11.781l-0.344-2.688c0-0.813-0.656-1.438-1.469-1.438h-8.188c-0.813 0-1.438 0.625-1.438 1.438zM1.438 11.094h19.531c0.813 0 1.438 0.625 1.438 1.438v8.563c0 0.813-0.625 1.438-1.438 1.438h-2.656v3.969h-14.219v-3.969h-2.656c-0.813 0-1.438-0.625-1.438-1.438v-8.563c0-0.813 0.625-1.438 1.438-1.438zM16.875 25.063v-9.281h-11.344v9.281h11.344zM15.188 18.469h-8.125c-0.188 0-0.344-0.188-0.344-0.375v-0.438c0-0.188 0.156-0.344 0.344-0.344h8.125c0.188 0 0.375 0.156 0.375 0.344v0.438c0 0.188-0.188 0.375-0.375 0.375zM15.188 21.063h-8.125c-0.188 0-0.344-0.188-0.344-0.375v-0.438c0-0.188 0.156-0.344 0.344-0.344h8.125c0.188 0 0.375 0.156 0.375 0.344v0.438c0 0.188-0.188 0.375-0.375 0.375zM15.188 23.656h-8.125c-0.188 0-0.344-0.188-0.344-0.375v-0.438c0-0.188 0.156-0.344 0.344-0.344h8.125c0.188 0 0.375 0.156 0.375 0.344v0.438c0 0.188-0.188 0.375-0.375 0.375z"></path>
+                                </svg>
+                            </span>
+                            <?php echo $get_static_text[get_lang()]['print']; ?>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <?php if ($cols) : ?>
-                <table class="et-table table-stripped border-solid border-1px border-orange">
-                    <tr class="border-solid border-1px border-orange">
-                        <?php while ( have_rows('column_headers') ) : the_row();
-                            $col_title = get_sub_field('col_title');
-                        ?>
-                        <th class="p-8px text-15px text-left"><?php echo $col_title; ?></th>
-                        <?php endwhile; ?>
-                    </tr>
-
-                    <?php if ($rows) : ?>
-                        <?php while ( have_rows('rows_headers') ) : the_row();
-                            $row_title = get_sub_field('row_title');
-                        ?>
-
-                        <tr>
-                            <td class="p-8px text-15px font-600"><?php echo $row_title; ?></td>
-                            <?php if ($cols_count) : ?>
-                                <?php for ($i=0; $i<$cols_count - 1; $i++) : ?>
-                                    <td class="align-top p-8px text-15px text-left">
-                                        <textarea name="et-textarea" class="w-full p-12px border-2px border-solid border-medium-gray rounded-8px text-14px leading-140 text-dark outline-none focus:border-orange" placeholder="<?php echo $placeholder_text; ?>"></textarea>
-                                    </td>
-                                <?php endfor; ?>
-                            <?php endif; ?>
+                <form action="#" method="post">
+                    <table class="et-table table-stripped border-solid border-1px border-orange">
+                        <tr class="border-solid border-1px border-orange">
+                            <?php while ( have_rows('column_headers') ) : the_row();
+                                $col_title = get_sub_field('col_title');
+                            ?>
+                            <th class="p-8px text-15px text-left"><?php echo $col_title; ?></th>
+                            <?php endwhile; ?>
                         </tr>
-                        <?php endwhile; ?>
-                    <?php endif; ?>
-                </table>
+
+                        <?php if ($rows) : ?>
+                            <?php while ( have_rows('rows_headers') ) : the_row();
+                                $row_title = get_sub_field('row_title');
+                            ?>
+
+                            <tr>
+                                <td class="p-8px text-15px font-600"><?php echo $row_title; ?></td>
+                                <?php if ($cols_count) : ?>
+                                    <?php for ($i=0; $i<$cols_count - 1; $i++) : ?>
+                                        <td class="align-top p-8px text-15px text-left">
+                                            <textarea name="et-textarea[]" class="et-textarea w-full p-12px border-2px border-solid border-medium-gray rounded-8px text-14px leading-140 text-dark outline-none focus:border-orange" placeholder="<?php echo $placeholder_text; ?>"></textarea>
+                                        </td>
+                                    <?php endfor; ?>
+                                <?php endif; ?>
+                            </tr>
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+                    </table>
+
+                    <input type="text" name="test-input-field" placeholder="Write here">
+
+                    <input type="checkbox" name="ch1" value="ready">
+                    <input type="checkbox" name="ch2" value="not ready">
+
+                    <input type="radio" name="radio-field" value="radio option 1">
+                    <input type="radio" name="radio-field" value="radio option 2">
+
+                    <select name="text-select">
+                        <option value="one">One</option>
+                        <option value="two">Two</option>
+                        <option value="two" selected>Three</option>
+                    </select>
+                </form>
             <?php endif; ?>
         </div>
     </div>
