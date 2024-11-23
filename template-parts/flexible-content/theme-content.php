@@ -1563,7 +1563,7 @@ $display_feedback = get_sub_field('');
     <div class="relative">
         <div class="comp-wrap">
             <div class="boxes-with-text-wrap">
-                <?php if ( have_rows('columns') ) : $i=0 ?>
+                <?php if ( have_rows('columns') ) : $i=0; ?>
                     <div class="bwt-wrap grid gap-20px grid-cols-<?php echo $cols_count; ?>">
 
                         <?php while ( have_rows('columns') ) : the_row(); $i++;
@@ -1584,6 +1584,50 @@ $display_feedback = get_sub_field('');
                     </div>
                 <?php endif; ?>
             </div>
+        </div>
+    </div>
+</div>
+
+
+<?php elseif( get_row_layout() == 'printable_table' ) : // printable_table
+    $cols = get_sub_field('column_headers');
+    $rows = get_sub_field('rows_headers');
+    $cols_count = count($cols);
+    $placeholder_text = get_sub_field('placeholder_text');
+?>
+
+<div class="flexible-content-section editble-table my-24px">
+    <div class="relative">
+        <div class="et-wrap">
+            <?php if ($cols) : ?>
+                <table class="et-table table-stripped border-solid border-1px border-orange">
+                    <tr class="border-solid border-1px border-orange">
+                        <?php while ( have_rows('column_headers') ) : the_row();
+                            $col_title = get_sub_field('col_title');
+                        ?>
+                        <th class="p-8px text-15px text-left"><?php echo $col_title; ?></th>
+                        <?php endwhile; ?>
+                    </tr>
+
+                    <?php if ($rows) : ?>
+                        <?php while ( have_rows('rows_headers') ) : the_row();
+                            $row_title = get_sub_field('row_title');
+                        ?>
+
+                        <tr>
+                            <td class="p-8px text-15px font-600"><?php echo $row_title; ?></td>
+                            <?php if ($cols_count) : ?>
+                                <?php for ($i=0; $i<$cols_count - 1; $i++) : ?>
+                                    <td class="align-top p-8px text-15px text-left">
+                                        <textarea name="et-textarea" class="w-full p-12px border-2px border-solid border-medium-gray rounded-8px text-14px leading-140 text-dark outline-none focus:border-orange" placeholder="<?php echo $placeholder_text; ?>"></textarea>
+                                    </td>
+                                <?php endfor; ?>
+                            <?php endif; ?>
+                        </tr>
+                        <?php endwhile; ?>
+                    <?php endif; ?>
+                </table>
+            <?php endif; ?>
         </div>
     </div>
 </div>

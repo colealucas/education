@@ -2307,7 +2307,7 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "message": "Print this ?",
+                                    "message": "Print this (Printeaza)?",
                                     "default_value": 0,
                                     "ui_on_text": "",
                                     "ui_off_text": "",
@@ -3576,6 +3576,124 @@
                             ],
                             "min": "",
                             "max": ""
+                        },
+                        "layout_6741f09c258a2": {
+                            "key": "layout_6741f09c258a2",
+                            "name": "printable_table",
+                            "label": "Printable Table (tabel printabil)",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_6741f3743eafa",
+                                    "label": "Placeholder text (text sugestie)",
+                                    "name": "placeholder_text",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "Scrie aici...",
+                                    "maxlength": "",
+                                    "placeholder": "Add placeholder",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_6741f163b907e",
+                                    "label": "Add column title (adauga titluri coloane)",
+                                    "name": "column_headers",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "table",
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add New Column",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_6741f183b907f",
+                                            "label": "Titlu coloana",
+                                            "name": "col_title",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "placeholder": "Add title",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_6741f163b907e"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "key": "field_6741f19bb9080",
+                                    "label": "Add row titles (adauga titluri randuri)",
+                                    "name": "rows_headers",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "table",
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add New Row",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_6741f19bb9081",
+                                            "label": "Titlu rand",
+                                            "name": "row_title",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "placeholder": "Add title",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_6741f19bb9080"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
                     },
                     "min": "",
@@ -3604,5 +3722,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731865356
+    "modified": 1732376690
 }

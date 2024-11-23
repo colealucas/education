@@ -1999,6 +1999,12 @@ table {
 	}
 }
 
+.table-stripped {
+	tr:nth-child(odd) {
+		background-color: lighten($color: $orange-color, $amount: 23);
+	}
+}
+
 // [class*="wp-image-"]
 // zdx 
 
