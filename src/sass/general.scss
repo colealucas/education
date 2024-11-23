@@ -1993,6 +1993,12 @@ table {
 	}
 }
 
+.flexible-content-section {
+	table, tr, td {
+		height: auto !important;
+	}
+}
+
 // [class*="wp-image-"]
 // zdx 
 

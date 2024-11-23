@@ -167,3 +167,9 @@ function replaceBracketsWithSpans($text) {
         return "<span class=\"hunted-word\">{$matches[1]}</span>";
     }, $text);
 }
+
+function custom_mce_settings($initArray) {
+    $initArray['invalid_elements'] = 'table[height], tr[height], td[height]';
+    return $initArray;
+}
+add_filter('tiny_mce_before_init', 'custom_mce_settings');
