@@ -594,7 +594,7 @@ function get_theme_translated_text($step_name) {
                 <?php while ( have_posts() ) : the_post(); ?>
                         
                 <div class="row items-center">
-                    <div class="col-lg-6">
+                    <div class="col-lg-9">
                         <div class="relative">
                             <div class="go-back">
                                 <a href="<?php echo $parent_module_url; ?>" class="flex items-center gap-8px text-white hover:text-white focus:text-white">
@@ -614,7 +614,7 @@ function get_theme_translated_text($step_name) {
                             </div>
                         </div> 
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-3">
                         <div class="keey-concepts">
                             <div class="flex justify-end">
                                 <a data-fancybox data-src="#key-concepts" href="javascript:;" class="inline-flex items-center gap-8px text-green text-14px rounded-24px bg-light-green hover:bg-white px-10px py-6px leading-1">
