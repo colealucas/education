@@ -9,12 +9,12 @@ $get_static_text = [
         'subjects' => 'Subiecte',
         'go_back' => 'Inapoi la Teme',
         'concepts' => 'Concepte Cheie',
-        'step1' => 'Știu deja și împărtășesc altora experiența mea',
-        'step2' => 'Sunt curios/curioasă să aflu mai mult',
-        'step3' => 'Aventura mea media continuă',
+        'step1' => 'Știu deja și împărtășesc altora experiența mea!',
+        'step2' => 'Sunt curios/curioasă să aflu mai mult!',
+        'step3' => 'Aventura mea media continuă!',
         'step4' => 'Consum și creez produse media cu responsabilitate',
         'step5' => 'Vorbesc cult',
-        'step6' => 'Curiozități',
+        'step6' => 'Știai că',
 
         // gimnaziu
         'gimnaziu' => [
@@ -34,24 +34,24 @@ $get_static_text = [
             'subjects' => 'Subiecte',
             'go_back' => 'Inapoi la Teme',
             'concepts' => 'Concepte Cheie',
-            'share_experience' => 'Știu deja și împărtășesc altora experiența mea',
-            'am_curious' => 'Sunt curios/curioasă să aflu mai mult',
-            'am_cult' => 'Vorbesc cult',
-            'am_responsable' => 'Consum și creez produse media cu responsabilitate',
-            'am_begining' => 'Aventura mea media continuă',
-            'curiosities' => 'Curiozități',
+            'step1' => 'Știu deja și împărtășesc altora experiența mea',
+            'step2' => 'Sunt curios/curioasă să aflu mai mult',
+            'step3' => 'Vorbesc cult',
+            'step4' => 'Consum și creez produse media cu responsabilitate',
+            'step5' => 'Aventura mea media continuă',
+            'step6' => 'Știai că',
         ],
     ],
     'ru' => [
         'subjects' => 'Предметы',
         'go_back' => 'Назад к Темам',
         'concepts' => 'Ключевые Понятия',
-        'share_experience' => 'Я уже знаю и делюсь своим опытом с другими',
-        'am_curious' => 'Мне интересно узнать больше',
-        'am_cult' => 'Я говорю на культурном языке',
-        'am_responsable' => 'Я потребляю и создаю медиа-продукты ответственно',
-        'am_begining' => 'Мое медийное приключение продолжается',
-        'curiosities' => 'Удивительные факты',
+        'step1' => 'Я уже знаю и делюсь своим опытом с другими!',
+        'step2' => 'Мне интересно узнать больше!',
+        'step3' => 'Я говорю на культурном языке!',
+        'step4' => 'Я потребляю и создаю медиа-продукты ответственно',
+        'step5' => 'Мое медийное приключение продолжается!',
+        'step6' => 'Удивительные факты',
     ]
 ];
 
@@ -327,7 +327,7 @@ function get_theme_translated_text($step_name) {
                         echo '<ol class="key_concepts p-0 pl-25px m-0 w-[calc(33%-12px)] text-16px" start="' . ($counter + 1) . '">';
                     }
                 ?>
-                    <li class="list-decimal">
+                    <li class="list-none">
                         <?php echo acf_esc_html($concept); ?>
                     </li>
                 <?php 
@@ -900,8 +900,6 @@ function get_theme_translated_text($step_name) {
 </div>
 
 <?php endif; ?>
-
-
 
 
 

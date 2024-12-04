@@ -3694,6 +3694,129 @@
                             ],
                             "min": "",
                             "max": ""
+                        },
+                        "layout_674214c2de463": {
+                            "key": "layout_674214c2de463",
+                            "name": "functions_box",
+                            "label": "Functions Box (Caseta cu functii)",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_6742154fde468",
+                                    "label": "Columns",
+                                    "name": "columns",
+                                    "aria-label": "",
+                                    "type": "button_group",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "col-md-12": "1 Column",
+                                        "col-md-6": "2 Columns",
+                                        "col-md-4": "3 Columns"
+                                    },
+                                    "default_value": "col-md-12",
+                                    "return_format": "value",
+                                    "allow_null": 0,
+                                    "layout": "horizontal"
+                                },
+                                {
+                                    "key": "field_674214dfde465",
+                                    "label": "Add Items (adauga itemii)",
+                                    "name": "items",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "row",
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add Item",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_674214fbde466",
+                                            "label": "Content",
+                                            "name": "content",
+                                            "aria-label": "",
+                                            "type": "wysiwyg",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "tabs": "all",
+                                            "toolbar": "full",
+                                            "media_upload": 1,
+                                            "delay": 0,
+                                            "parent_repeater": "field_674214dfde465"
+                                        },
+                                        {
+                                            "key": "field_6742150ede467",
+                                            "label": "Functions (functii)",
+                                            "name": "functions",
+                                            "aria-label": "",
+                                            "type": "repeater",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "layout": "block",
+                                            "min": 0,
+                                            "max": 0,
+                                            "collapsed": "",
+                                            "button_label": "Add New Function",
+                                            "rows_per_page": 20,
+                                            "sub_fields": [
+                                                {
+                                                    "key": "field_67421613551fc",
+                                                    "label": "Title",
+                                                    "name": "title",
+                                                    "aria-label": "",
+                                                    "type": "textarea",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "maxlength": "",
+                                                    "rows": 2,
+                                                    "placeholder": "Add title",
+                                                    "new_lines": "br",
+                                                    "parent_repeater": "field_6742150ede467"
+                                                }
+                                            ],
+                                            "parent_repeater": "field_674214dfde465"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
                     },
                     "min": "",
@@ -3722,5 +3845,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1732376690
+    "modified": 1732384352
 }

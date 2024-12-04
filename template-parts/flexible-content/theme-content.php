@@ -1643,22 +1643,48 @@ $display_feedback = get_sub_field('');
                             <?php endwhile; ?>
                         <?php endif; ?>
                     </table>
-
-                    <input type="text" name="test-input-field" placeholder="Write here">
-
-                    <input type="checkbox" name="ch1" value="ready">
-                    <input type="checkbox" name="ch2" value="not ready">
-
-                    <input type="radio" name="radio-field" value="radio option 1">
-                    <input type="radio" name="radio-field" value="radio option 2">
-
-                    <select name="text-select">
-                        <option value="one">One</option>
-                        <option value="two">Two</option>
-                        <option value="two" selected>Three</option>
-                    </select>
                 </form>
             <?php endif; ?>
+        </div>
+    </div>
+</div>
+
+<?php elseif( get_row_layout() == 'functions_box' ) : // functions_box
+    $columns = (get_sub_field('columns') ? get_sub_field('columns') : 'col-md-12');
+    $items = get_sub_field('items');
+?>
+
+<div class="flexible-content-section functions-box my-24px">
+    <div class="relative">
+        <div class="fb-wrap print-div">
+            <div class="row">
+                <?php if ( have_rows('items') ) : ?>
+                    <?php while ( have_rows('items') ) : the_row();
+                        $content = get_sub_field('content');
+                        $functions = get_sub_field('functions');
+                    ?>
+
+                    <div class="<?php echo $columns; ?>">
+                        <div class="fb-entry-content">
+                            <?php echo $content; ?>
+                        </div>
+
+                        <div class="mt-24px">
+                            <?php if ( have_rows('functions') ) : ?>
+                                <?php while ( have_rows('functions') ) : the_row(); 
+                                    $title = get_sub_field('title');
+                                ?>
+
+                                <div class="p-8px"><?php echo $title; ?></div>
+
+                                <?php endwhile; ?>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+
+                    <?php endwhile; ?>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
 </div>
