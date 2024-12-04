@@ -212,7 +212,7 @@
                     "name": "step",
                     "aria-label": "",
                     "type": "button_group",
-                    "instructions": "",
+                    "instructions": "Selecteaza etapa.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -228,10 +228,31 @@
                         "five": "Step 5",
                         "six": "Step 6"
                     },
-                    "default_value": "",
+                    "default_value": "one",
                     "return_format": "value",
                     "allow_null": 0,
                     "layout": "horizontal",
+                    "parent_repeater": "field_66c9f360bf5fb"
+                },
+                {
+                    "key": "field_67501d031df1e",
+                    "label": "Hide this step (Ascunde aceasta etapa)",
+                    "name": "hide_this_step",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "Hide this step ? (Ascunzi aceasta etapa?)",
+                    "default_value": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "ui": 1,
                     "parent_repeater": "field_66c9f360bf5fb"
                 },
                 {
@@ -242,7 +263,15 @@
                     "type": "flexible_content",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_67501d031df1e",
+                                "operator": "!=",
+                                "value": "1"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -3845,5 +3874,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1732384352
+    "modified": 1733307994
 }

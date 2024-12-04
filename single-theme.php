@@ -11,8 +11,8 @@ $get_static_text = [
         'concepts' => 'Concepte Cheie',
         'step1' => 'Știu deja și împărtășesc altora experiența mea!',
         'step2' => 'Sunt curios/curioasă să aflu mai mult!',
-        'step3' => 'Aventura mea media continuă!',
-        'step4' => 'Consum și creez produse media cu responsabilitate',
+        'step3' => 'Consum și creez produse media cu responsabilitate',
+        'step4' => 'Aventura mea media continuă!',
         'step5' => 'Vorbesc cult',
         'step6' => 'Știai că',
 
@@ -34,12 +34,12 @@ $get_static_text = [
             'subjects' => 'Subiecte',
             'go_back' => 'Inapoi la Teme',
             'concepts' => 'Concepte Cheie',
-            'step1' => 'Știu deja și împărtășesc altora experiența mea',
-            'step2' => 'Sunt curios/curioasă să aflu mai mult',
-            'step3' => 'Vorbesc cult',
-            'step4' => 'Consum și creez produse media cu responsabilitate',
-            'step5' => 'Aventura mea media continuă',
-            'step6' => 'Știai că',
+            'step1' => 'Step name',
+            'step2' => 'Step name',
+            'step3' => 'Step name',
+            'step4' => 'Step name',
+            'step5' => 'Step name',
+            'step6' => 'Step name',
         ],
     ],
     'ru' => [
@@ -48,9 +48,9 @@ $get_static_text = [
         'concepts' => 'Ключевые Понятия',
         'step1' => 'Я уже знаю и делюсь своим опытом с другими!',
         'step2' => 'Мне интересно узнать больше!',
-        'step3' => 'Я говорю на культурном языке!',
-        'step4' => 'Я потребляю и создаю медиа-продукты ответственно',
-        'step5' => 'Мое медийное приключение продолжается!',
+        'step3' => 'Я потребляю и создаю медиа-продукты ответственно',
+        'step4' => 'Мое медийное приключение продолжается!',
+        'step5' => 'Я говорю на культурном языке!',
         'step6' => 'Удивительные факты',
     ]
 ];
@@ -642,6 +642,8 @@ function get_theme_translated_text($step_name) {
 <div class="section py-32px theme-steps">
     <div class="container">
         <div class="parts flex flex-wrap gap-20px">
+
+            <!-- Step 1 -->
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
                 <a href="javascript:;" data-fancybox data-src="#share-experience" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
                     <span class="step-icon flex items-center justify-center size-[74px] rounded-50 bg-medium-green">
@@ -673,6 +675,7 @@ function get_theme_translated_text($step_name) {
                 </a>
             </div>
             
+            <!-- Step 2 -->
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
                 <a href="javascript:;" data-fancybox data-src="#am-curious" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
                     <span class="step-icon flex items-center justify-center size-[74px] rounded-50 bg-medium-green">
@@ -696,6 +699,7 @@ function get_theme_translated_text($step_name) {
                 </a>
             </div>
             
+            <!-- Step 3 -->
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
                 <a href="javascript:;" data-fancybox data-src="#am-begining" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
                     <span class="step-icon flex items-center justify-center size-[74px] rounded-50 bg-medium-green">
@@ -724,6 +728,7 @@ function get_theme_translated_text($step_name) {
                 </a>
             </div>
 
+            <!-- Step 4 -->
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
                 <a href="javascript:;" data-fancybox data-src="#am-responsable" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
                     <span class="step-icon flex items-center justify-center size-[74px] rounded-50 bg-medium-green">
@@ -743,6 +748,7 @@ function get_theme_translated_text($step_name) {
                 </a>
             </div>
 
+            <!-- Step 5 -->
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
                 <a href="javascript:;" data-fancybox data-src="#am-cult" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
                     <span class="step-icon flex items-center justify-center size-[74px] rounded-50 bg-medium-green">
@@ -755,6 +761,7 @@ function get_theme_translated_text($step_name) {
                 </a>
             </div>
 
+            <!-- Step 6 -->
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
                 <a href="javascript:;" data-fancybox data-src="#curiosities" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
                     <span class="step-icon flex items-center justify-center size-[74px] rounded-50 bg-medium-green">
