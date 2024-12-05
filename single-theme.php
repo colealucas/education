@@ -327,8 +327,8 @@ function get_theme_translated_text($step_name) {
                         echo '<ol class="key_concepts p-0 pl-25px m-0 w-[calc(33%-12px)] text-16px" start="' . ($counter + 1) . '">';
                     }
                 ?>
-                    <li class="list-none text-dark font-500">
-                        <span class=""><?php echo acf_esc_html($concept); ?></span>
+                    <li class="list-none text-green font-500">
+                        <span class="inline-block mb-4px"><?php echo acf_esc_html($concept); ?></span>
                     </li>
                 <?php 
                     $counter++;
