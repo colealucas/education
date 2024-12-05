@@ -160,14 +160,14 @@
                 ?>
                 
                     <div class="flex flex-nowrap gap-24px">
-                        <div class="w-50% definitions-column">
-                            <div class="definition rounded-8px py-16px px-20px bg-light-gray font-600 text-16px" data-word="<?php echo $word; ?>">
-                                <?php echo $def; ?>
-                            </div>
-                        </div>
-
                         <div class="w-50% placeholders-column flex items-center">
                             <div class="placeholder h-full rounded-8px text-16px font-600 flex items-center justify-center w-full min-h-[40px]" data-word="<?php echo $word; ?>"></div>
+                        </div>
+
+                        <div class="w-50% definitions-column">
+                            <div class="definition rounded-8px py-16px px-20px bg-light-gray font-600 text-16px" data-word="<?php echo $word; ?>">
+                                - <?php echo $def; ?>
+                            </div>
                         </div>
                     </div>
 
@@ -740,10 +740,14 @@
                                 ?>
 
                                     <div class="flex items-center gap-16px">
-                                        <div>
-                                            <input type="text" class="size-32px text-center font-700 text-18px text-dark uppercase border-solid border-2px border-red focus:outline-none classification_input" name="classification_input" placeholder="?" />
+                                        <div class="w-30px">
+                                            <svg width="30" height="30" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none">
+                                                <path stroke="#E18067" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6.5 17l6 6 13-13"/>
+                                            </svg>
+                                            <!-- <input type="text" class="size-32px text-center font-700 text-18px text-dark uppercase border-solid border-2px border-red focus:outline-none classification_input" name="classification_input" placeholder="?" /> -->
                                         </div>
-                                        <div>
+
+                                        <div class="flex-1">
                                             <p class="leading-140"><?php echo $item; ?></p>
                                         </div>
                                     </div>
@@ -766,10 +770,14 @@
                                 ?>
 
                                     <div class="flex items-center gap-16px">
-                                        <div>
-                                            <input type="text" class="size-32px text-center font-700 text-18px text-dark uppercase border-solid border-2px border-orange focus:outline-none classification_input" name="classification_input" placeholder="?" />
+                                        <div class="w-30px">
+                                            <svg width="30" height="30" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none">
+                                                <path stroke="#FFC36B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6.5 17l6 6 13-13"/>
+                                            </svg>
+                                            <!-- <input type="text" class="size-32px text-center font-700 text-18px text-dark uppercase border-solid border-2px border-orange focus:outline-none classification_input" name="classification_input" placeholder="?" /> -->
                                         </div>
-                                        <div>
+
+                                        <div class="flex-1">
                                             <p class="leading-140"><?php echo $item; ?></p>
                                         </div>
                                     </div>

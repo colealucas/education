@@ -8,7 +8,7 @@ $get_static_text = [
     'ro' => [
         'subjects' => 'Subiecte',
         'go_back' => 'Inapoi la Teme',
-        'concepts' => 'Concepte Cheie',
+        'concepts' => 'Concepte cheie',
         'step1' => 'Știu deja și împărtășesc altora experiența mea!',
         'step2' => 'Sunt curios/curioasă să aflu mai mult!',
         'step3' => 'Consum și creez produse media cu responsabilitate',
@@ -20,7 +20,7 @@ $get_static_text = [
         'gimnaziu' => [
             'subjects' => 'Subiecte',
             'go_back' => 'Inapoi la Teme',
-            'concepts' => 'Concepte Cheie',
+            'concepts' => 'Concepte cheie',
             'step1' => 'Evocare',
             'step2' => 'Realizarea sensului',
             'step3' => 'Exercițiu practic',
@@ -327,8 +327,8 @@ function get_theme_translated_text($step_name) {
                         echo '<ol class="key_concepts p-0 pl-25px m-0 w-[calc(33%-12px)] text-16px" start="' . ($counter + 1) . '">';
                     }
                 ?>
-                    <li class="list-none">
-                        <?php echo acf_esc_html($concept); ?>
+                    <li class="list-none text-dark font-500">
+                        <span class="inline-block py-4px px-8px bg-light-green rounded-[8px] mb-8px"><?php echo acf_esc_html($concept); ?></span>
                     </li>
                 <?php 
                     $counter++;
