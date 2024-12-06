@@ -306,8 +306,8 @@
                                     "label": "Title",
                                     "name": "title",
                                     "aria-label": "",
-                                    "type": "text",
-                                    "instructions": "",
+                                    "type": "textarea",
+                                    "instructions": "Feel free to format the text (Poti trece textul in linie noua)",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
@@ -317,9 +317,9 @@
                                     },
                                     "default_value": "",
                                     "maxlength": "",
-                                    "placeholder": "Add title",
-                                    "prepend": "",
-                                    "append": ""
+                                    "rows": 2,
+                                    "placeholder": "Add title (adauga titlu)",
+                                    "new_lines": "br"
                                 },
                                 {
                                     "key": "field_66c9f48b1ac80",
@@ -3874,5 +3874,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733307994
+    "modified": 1733471341
 }
