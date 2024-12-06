@@ -317,7 +317,7 @@
                                     },
                                     "default_value": "",
                                     "maxlength": "",
-                                    "rows": 2,
+                                    "rows": 3,
                                     "placeholder": "Add title (adauga titlu)",
                                     "new_lines": "br"
                                 },
@@ -3874,5 +3874,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733471341
+    "modified": 1733471473
 }
