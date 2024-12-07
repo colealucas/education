@@ -793,7 +793,24 @@ body.logged-in {
 	}
 
 	ul {
-		list-style: disc;
+		list-style: none;
+
+		li {
+			position: relative;
+			padding-left: 15px;
+
+			&::before {
+				content: '';
+				display: block;
+				width: 8px;
+				height: 8px;
+				background-color: #D1222A;
+				border-radius: 50%;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
 	}
 
 	ol {
