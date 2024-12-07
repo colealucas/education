@@ -1187,6 +1187,8 @@ ol.found-words-list {
 		letter-spacing: 1px;
 		padding: 12px 28px;
 		border-radius: 4px;
+		background-color: $white-color;
+		border: 1px solid $medium-gray-color;
 
 		&:before {
 			content: '';
@@ -1198,7 +1200,7 @@ ol.found-words-list {
 			width: 8px;
 			height: 8px;
 			border-radius: 50%;
-			background-color: $medium-gray-color;
+			background-color: $dark-color;
 			transition: all 0.2s ease-out;
 		}
 
@@ -2076,6 +2078,12 @@ table {
 		&:hover {
 			border-bottom-color: $orange-color;
 		}
+	}
+}
+
+.spot-correct-inner {
+	iframe {
+		margin-bottom: 0;
 	}
 }
 
