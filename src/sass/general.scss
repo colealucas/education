@@ -823,9 +823,9 @@ body.logged-in {
 			margin: 0.5em 0;
 
 			&::before {
-				content: "Step " counter(custom-counter) ": "; /* Define custom numbering format */
-				font-weight: bold; /* Style the numbering */
-				color: #D1222A; /* Add color */
+				content: "counter(custom-counter)"; /* Define custom numbering format */
+				font-weight: bold;
+				color: #D1222A;
 			}
 		} 
 	}
