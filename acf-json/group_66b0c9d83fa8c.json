@@ -562,6 +562,56 @@
                             "min": "",
                             "max": ""
                         },
+                        "layout_67549bf7835c9": {
+                            "key": "layout_67549bf7835c9",
+                            "name": "remember",
+                            "label": "Remember (Retine)",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_67549c49835cc",
+                                    "label": "Title (titlu)",
+                                    "name": "title",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "Reține",
+                                    "maxlength": "",
+                                    "placeholder": "Add title",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_67549c1e835cb",
+                                    "label": "Content",
+                                    "name": "content",
+                                    "aria-label": "",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "tabs": "all",
+                                    "toolbar": "full",
+                                    "media_upload": 1,
+                                    "delay": 1
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        },
                         "layout_66c9f49a1ac81": {
                             "key": "layout_66c9f49a1ac81",
                             "name": "video_section",
@@ -3916,5 +3966,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733596293
+    "modified": 1733598739
 }

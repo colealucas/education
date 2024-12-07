@@ -795,8 +795,6 @@
 ?>
 
     <div class="flexible-content-section curiosity-section my-24px">
-
-
         <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video">
             <form action="#" method="POST">
                 <textarea rows="<?php echo $rows; ?>" class="w-full p-16px border-2px border-solid border-medium-gray rounded-8px focus:outline-none" name="text_area" placeholder="<?php echo $placeholder; ?>"></textarea>
@@ -804,6 +802,27 @@
         </div>
     </div>
 
+
+<?php elseif( get_row_layout() == 'remember' ) : // remember
+    $content = get_sub_field('content');
+    $title = get_sub_field('title');
+?>
+
+    <div class="flexible-content-section remeber-section my-24px">
+        <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video">
+        
+            <div class="remember-wrap flex gap-4px">
+                <div class="p-20px bg-green text-white font-600 text-20px w-30%">
+                    <?php echo $title; ?>
+                </div>
+
+                <div class="p-20px bg-light-gray flex-1">
+                    <?php echo $content; ?>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 
 <?php elseif( get_row_layout() == 'choose_one' ) : // choose_one
