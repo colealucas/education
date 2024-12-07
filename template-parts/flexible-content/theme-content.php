@@ -503,7 +503,7 @@
 
     <div class="flexible-content-section spot-correct-game my-24px">
         
-        <div class="py-20px text-20px font-600 text-green">
+        <div class="mt-30px text-20px font-600 text-green">
             <?php echo $section_title; ?>
         </div>
 
