@@ -519,8 +519,8 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="py-20px spot-correct-inner">
+                    <div class="col-md-4">
+                        <div class="py-12px spot-correct-inner">
                             <?php if ( have_rows('items') ) : ?>
                                 <ul class="spot-correct-list">
                                     <?php while ( have_rows('items') ) : the_row(); 
@@ -536,7 +536,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                         <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video">
                             <?php echo $section_text_content; ?>
                         </div>
