@@ -813,6 +813,21 @@ body.logged-in {
 
 	ol {
 		padding-left: 30px;
+		list-style: none;
+		counter-reset: custom-counter; /* Initialize a custom counter */
+
+		li {
+			counter-increment: custom-counter; /* Increment the counter */
+			list-style: none; /* Remove default numbering */
+			position: relative;
+			margin: 0.5em 0;
+
+			&::before {
+				content: "Step " counter(custom-counter) ": "; /* Define custom numbering format */
+				font-weight: bold; /* Style the numbering */
+				color: #007BFF; /* Add color */
+			}
+		} 
 	}
 
 	ul {
