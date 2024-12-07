@@ -356,7 +356,7 @@ $hide_step_6 = false;
     <div class="relative">
         <?php if( have_rows('key_concepts') ) : ?>
             <div class="relative">
-                <ol class="flex gap-20px">
+                <ol class="flex gap-20px pl-20px">
                     <?php while( have_rows('key_concepts') ): the_row(); 
                         $concept = get_sub_field('concept'); 
                     ?>
