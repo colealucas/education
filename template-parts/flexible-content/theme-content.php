@@ -834,11 +834,7 @@
         </div>
         <?php endif; ?>
 
-        <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video">
-            <?php echo $section_content; ?>
-        </div>
-
-        <div class="py-30px"> 
+        <div class="py-20px"> 
             <?php if ( have_rows('items') ) : $counter = 0; ?>
                 <div class="row">
                     <?php while ( have_rows('items') ) : the_row(); $counter++;
@@ -865,6 +861,10 @@
                     <?php endwhile; ?>
                 </div>
             <?php endif; ?>
+        </div>
+
+        <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video">
+            <?php echo $section_content; ?>
         </div>
 
     </div>
