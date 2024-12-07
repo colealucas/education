@@ -2014,24 +2014,26 @@
                                     "append": ""
                                 },
                                 {
-                                    "key": "field_66edcefb714ab",
-                                    "label": "Description",
-                                    "name": "content",
+                                    "key": "field_66eefcf435ee0",
+                                    "label": "Image height (pixels)",
+                                    "name": "image_height",
                                     "aria-label": "",
-                                    "type": "wysiwyg",
+                                    "type": "number",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "",
+                                        "width": "50",
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": "",
-                                    "tabs": "all",
-                                    "toolbar": "full",
-                                    "media_upload": 1,
-                                    "delay": 1
+                                    "default_value": 220,
+                                    "min": "",
+                                    "max": "",
+                                    "placeholder": 220,
+                                    "step": 1,
+                                    "prepend": "",
+                                    "append": ""
                                 },
                                 {
                                     "key": "field_66edd048406dc",
@@ -2056,28 +2058,6 @@
                                     "return_format": "value",
                                     "allow_null": 0,
                                     "layout": "horizontal"
-                                },
-                                {
-                                    "key": "field_66eefcf435ee0",
-                                    "label": "Image height (pixels)",
-                                    "name": "image_height",
-                                    "aria-label": "",
-                                    "type": "number",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "50",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": 220,
-                                    "min": "",
-                                    "max": "",
-                                    "placeholder": 220,
-                                    "step": 1,
-                                    "prepend": "",
-                                    "append": ""
                                 },
                                 {
                                     "key": "field_66edcf0c714ac",
@@ -2127,6 +2107,26 @@
                                             "parent_repeater": "field_66edcf0c714ac"
                                         }
                                     ]
+                                },
+                                {
+                                    "key": "field_66edcefb714ab",
+                                    "label": "Description",
+                                    "name": "content",
+                                    "aria-label": "",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "tabs": "all",
+                                    "toolbar": "full",
+                                    "media_upload": 1,
+                                    "delay": 1
                                 }
                             ],
                             "min": "",
@@ -3894,5 +3894,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733590630
+    "modified": 1733593628
 }
