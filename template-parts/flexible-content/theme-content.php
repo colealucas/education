@@ -919,19 +919,19 @@
                         $question = get_sub_field('question');
                     ?>
 
-                        <div class="w-25%">
+                        <div class="w-full">
                             <div class="bg-orange p-16px rounded-16px text-17px font-700 mb-20px mt-30px">
                                 <?php echo $question; ?>
                             </div>
 
                             <div>
                                 <?php if ( have_rows('variants') ) : ?>
-                                    <div class="variants-wrap flex flex-col gap-16px" data-select-multiple-wrap>
+                                    <div class="variants-wrap flex flex-wrap gap-16px" data-select-multiple-wrap>
                                         <?php while ( have_rows('variants') ) : the_row();
                                             $variant = get_sub_field('variant');
                                         ?>
 
-                                            <div class="variant-item">
+                                            <div class="variant-item w-25%">
                                                 <div class="bg-light-gray p-16px rounded-16px text-16px font-500 cursor-pointer select-none hover:bg-medium-gray" data-select-multiple-variant>
                                                     <?php echo $variant; ?>
                                                 </div>
