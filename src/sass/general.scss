@@ -2057,6 +2057,17 @@ table {
 	transform: rotate(180deg);
 }
 
+.tcs-heading {
+	a {
+		color: inherit;
+
+		&:hover {
+			color: $orange-color;
+			text-decoration: underline;
+		}
+	}
+}
+
 
 // [class*="wp-image-"]
 // zdx 
