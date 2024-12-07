@@ -704,9 +704,13 @@ body.logged-in {
 }
 
 .content-spacing {
-	p,h1,h2,h3,h4,h5,h6, ul, ol, table, iframe, blockquote, video {
+	p, ul, ol, table, iframe, blockquote, video {
 		margin-bottom: 20px;
 	}
+
+	h1,h2,h3,h4,h5,h6 {
+		margin-bottom: 12px;
+	} 
 
 	& > *:last-child {
 		margin-bottom: 0!important;
