@@ -356,27 +356,17 @@ $hide_step_6 = false;
     <div class="relative">
         <?php if( have_rows('key_concepts') ) : ?>
             <div class="flex gap-12px flex-nowrap">
-                <?php 
-                $counter = 0;
-                while( have_rows('key_concepts') ): the_row(); 
-                    $concept = get_sub_field('concept');
+                <ol>
+                    <?php while( have_rows('key_concepts') ): the_row(); 
+                        $concept = get_sub_field('concept'); 
+                    ?>
 
-                    // Start a new <ol> for every two items
-                    if ($counter % 2 == 0) {
-                        if ($counter > 0) {
-                            echo '</ol>'; // Close the previous <ol> if it's not the first one
-                        }
-                        echo '<ol class="key_concepts p-0 pl-25px m-0 w-[calc(33%-12px)] text-16px" start="' . ($counter + 1) . '">';
-                    }
-                ?>
-                    <li class="list-none text-dark font-500">
-                        <span class="inline-block mb-8px border-b-2px border-solid border-orange"><?php echo acf_esc_html($concept); ?></span>
-                    </li>
-                <?php 
-                    $counter++;
-                endwhile; 
-                echo '</ol>';
-                ?>
+                        <li class="list-none text-dark font-500">
+                            <span class="inline-block mb-8px border-b-2px border-solid border-orange"><?php echo acf_esc_html($concept); ?></span>
+                        </li>
+                        
+                    <?php endwhile; ?>
+                </ol>
             </div>
         <?php endif; ?>
     </div>
