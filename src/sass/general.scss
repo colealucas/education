@@ -817,13 +817,13 @@ body.logged-in {
 		counter-reset: custom-counter; /* Initialize a custom counter */
 
 		li {
-			counter-increment: custom-counter; /* Increment the counter */
-			list-style: none; /* Remove default numbering */
+			counter-increment: custom-counter;
+			list-style: none;
 			position: relative;
 			margin: 0.5em 0;
 
 			&::before {
-				content: "counter(custom-counter)"; /* Define custom numbering format */
+				content: counter(custom-counter);
 				font-weight: bold;
 				color: #D1222A;
 			}
