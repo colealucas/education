@@ -356,13 +356,13 @@ $hide_step_6 = false;
     <div class="relative">
         <?php if( have_rows('key_concepts') ) : ?>
             <div class="relative">
-                <ol class="flex gap-20px pl-20px">
+                <ol class="flex flex-wrap pl-20px">
                     <?php while( have_rows('key_concepts') ): the_row(); 
                         $concept = get_sub_field('concept'); 
                     ?>
 
                         <li class="list-none text-dark font-500">
-                            <span class="inline-block mb-8px border-b-2px border-solid border-orange"><?php echo acf_esc_html($concept); ?></span>
+                            <span class="inline-block mr-20px mb-12px mb-8px border-b-2px border-solid border-orange"><?php echo acf_esc_html($concept); ?></span>
                         </li>
                         
                     <?php endwhile; ?>
