@@ -1238,7 +1238,9 @@ ol.found-words-list {
 	}
 
 	li.wrong {
+		color: red;
 		background-color: rgba(#F00001, 0.12);
+		border-color: rgba(#F00001, 0.2);
 	}
 }
 
