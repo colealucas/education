@@ -937,6 +937,7 @@
 
 <?php elseif( get_row_layout() == 'editable_template' ) : // editable_template
     $template = get_sub_field('template');
+    $template_title = get_sub_field('title');
     $print = get_sub_field('print');
 ?>
 
@@ -955,9 +956,18 @@
                 </div>
             <?php endif; ?>
 
-            <div class="relative break-all p-16px bg-light-gray rounded-8px editable-template-wrapper" contenteditable="true">
-                <?php echo $template; ?>
+            <div class="p-16px bg-light-gray rounded-8px">
+                <?php if ($template_title) : ?>
+                <div class="editable-template-title text-center text-24px font-600 leading-130">
+                    <?php echo $template_title; ?>
+                </div>
+                <?php endif; ?>
+            
+                <div class="relative break-all  editable-template-wrapper" contenteditable="true">
+                    <?php echo $template; ?>
+                </div>
             </div>
+
         </div>
     </div>
 

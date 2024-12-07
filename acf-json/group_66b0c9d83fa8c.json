@@ -373,7 +373,7 @@
                                         "id": ""
                                     },
                                     "message": "Full with images ?",
-                                    "default_value": 1,
+                                    "default_value": 0,
                                     "ui_on_text": "",
                                     "ui_off_text": "",
                                     "ui": 1
@@ -2303,6 +2303,26 @@
                             "display": "block",
                             "sub_fields": [
                                 {
+                                    "key": "field_67547da6dfaed",
+                                    "label": "Title",
+                                    "name": "title",
+                                    "aria-label": "",
+                                    "type": "textarea",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "rows": 2,
+                                    "placeholder": "Add title (titlu)",
+                                    "new_lines": "br"
+                                },
+                                {
                                     "key": "field_66eef4ee6ea6b",
                                     "label": "Template",
                                     "name": "template",
@@ -3874,5 +3894,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733471473
+    "modified": 1733590630
 }
