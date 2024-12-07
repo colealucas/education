@@ -7,7 +7,9 @@
 $get_static_text = [
     'ro' => [
         'subjects' => 'Subiecte',
-        'go_back' => 'Inapoi la Teme',
+        'go_back' => 'Înapoi la Teme',
+        'pagination_back' => 'Înapoi',
+        'pagination_next' => 'Înainte',
         'concepts' => 'Concepte cheie',
         'step1' => 'Știu deja și împărtășesc altora experiența mea!',
         'step2' => 'Sunt curios/curioasă să aflu mai mult!',
@@ -45,6 +47,8 @@ $get_static_text = [
     'ru' => [
         'subjects' => 'Предметы',
         'go_back' => 'Назад к Темам',
+        'pagination_back' => 'Назад',
+        'pagination_next' => 'Вперед',
         'concepts' => 'Ключевые Понятия',
         'step1' => 'Я уже знаю и делюсь своим опытом с другими!',
         'step2' => 'Мне интересно узнать больше!',
@@ -414,8 +418,21 @@ $hide_step_6 = false;
         <?php endif; ?>
     </div>
 
-    <div class="mt-24px interactive-task-trigger bg-green rounded-16px hide">
-        <img src="<?php echo get_template_directory_uri() . '/assets/images/interactive-task-bg.svg'; ?>" alt="">
+    <div class="mt-24px pagination-wrapper bg-light-gray rounded-16px">
+        <a href="http://education.local/modules/initiere-in-mass-media/" class="theme-pagination-btn tp-button-left hide" data-fancybox data-src="#share-experience">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
+                <path d="M12.8334 7.50002H1.16669M1.16669 7.50002L7.00002 13.3334M1.16669 7.50002L7.00002 1.66669" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            <?php echo $get_static_text[get_lang()]['pagination_back']; ?>
+        </a>
+
+        <a href="http://education.local/modules/initiere-in-mass-media/" class="theme-pagination-btn tp-button-right" data-fancybox data-src="#am-curious">
+            <?php echo $get_static_text[get_lang()]['pagination_next']; ?>
+
+            <svg class="rotate180" xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
+                <path d="M12.8334 7.50002H1.16669M1.16669 7.50002L7.00002 13.3334M1.16669 7.50002L7.00002 1.66669" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </a>
     </div>
 </div>
 
@@ -455,8 +472,21 @@ $hide_step_6 = false;
         <?php endif; ?>
     </div>
 
-    <div class="mt-24px interactive-task-trigger bg-green rounded-16px hide">
-        <img src="<?php echo get_template_directory_uri() . '/assets/images/interactive-task-bg.svg'; ?>" alt="">
+    <div class="mt-24px pagination-wrapper bg-light-gray rounded-16px">
+        <a href="http://education.local/modules/initiere-in-mass-media/" class="theme-pagination-btn tp-button-left" data-fancybox data-src="#share-experience">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
+                <path d="M12.8334 7.50002H1.16669M1.16669 7.50002L7.00002 13.3334M1.16669 7.50002L7.00002 1.66669" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            <?php echo $get_static_text[get_lang()]['pagination_back']; ?>
+        </a>
+
+        <a href="http://education.local/modules/initiere-in-mass-media/" class="theme-pagination-btn tp-button-right" data-fancybox data-src="#am-begining">
+            <?php echo $get_static_text[get_lang()]['pagination_next']; ?>
+
+            <svg class="rotate180" xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
+                <path d="M12.8334 7.50002H1.16669M1.16669 7.50002L7.00002 13.3334M1.16669 7.50002L7.00002 1.66669" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </a>
     </div>
 </div>
 
@@ -496,8 +526,21 @@ $hide_step_6 = false;
         <?php endif; ?>
     </div>
 
-    <div class="mt-24px interactive-task-trigger bg-green rounded-16px hide">
-        <img src="<?php echo get_template_directory_uri() . '/assets/images/interactive-task-bg.svg'; ?>" alt="">
+    <div class="mt-24px pagination-wrapper bg-light-gray rounded-16px">
+        <a href="http://education.local/modules/initiere-in-mass-media/" class="theme-pagination-btn tp-button-left" data-fancybox data-src="#am-curious">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
+                <path d="M12.8334 7.50002H1.16669M1.16669 7.50002L7.00002 13.3334M1.16669 7.50002L7.00002 1.66669" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            <?php echo $get_static_text[get_lang()]['pagination_back']; ?>
+        </a>
+
+        <a href="http://education.local/modules/initiere-in-mass-media/" class="theme-pagination-btn tp-button-right" data-fancybox data-src="#am-responsable">
+            <?php echo $get_static_text[get_lang()]['pagination_next']; ?>
+
+            <svg class="rotate180" xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
+                <path d="M12.8334 7.50002H1.16669M1.16669 7.50002L7.00002 13.3334M1.16669 7.50002L7.00002 1.66669" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </a>
     </div>
 </div>
 
@@ -537,8 +580,21 @@ $hide_step_6 = false;
         <?php endif; ?>
     </div>
 
-    <div class="mt-24px interactive-task-trigger bg-green rounded-16px hide">
-        <img src="<?php echo get_template_directory_uri() . '/assets/images/interactive-task-bg.svg'; ?>" alt="">
+    <div class="mt-24px pagination-wrapper bg-light-gray rounded-16px">
+        <a href="http://education.local/modules/initiere-in-mass-media/" class="theme-pagination-btn tp-button-left" data-fancybox data-src="#am-curious">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
+                <path d="M12.8334 7.50002H1.16669M1.16669 7.50002L7.00002 13.3334M1.16669 7.50002L7.00002 1.66669" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            <?php echo $get_static_text[get_lang()]['pagination_back']; ?>
+        </a>
+
+        <a href="http://education.local/modules/initiere-in-mass-media/" class="theme-pagination-btn tp-button-right" data-fancybox data-src="#am-cult">
+            <?php echo $get_static_text[get_lang()]['pagination_next']; ?>
+
+            <svg class="rotate180" xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
+                <path d="M12.8334 7.50002H1.16669M1.16669 7.50002L7.00002 13.3334M1.16669 7.50002L7.00002 1.66669" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </a>
     </div>
 </div>
 
@@ -578,8 +634,21 @@ $hide_step_6 = false;
         <?php endif; ?>
     </div>
 
-    <div class="mt-24px interactive-task-trigger bg-green rounded-16px hide">
-        <img src="<?php echo get_template_directory_uri() . '/assets/images/interactive-task-bg.svg'; ?>" alt="">
+    <div class="mt-24px pagination-wrapper bg-light-gray rounded-16px">
+        <a href="http://education.local/modules/initiere-in-mass-media/" class="theme-pagination-btn tp-button-left" data-fancybox data-src="#am-responsable">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
+                <path d="M12.8334 7.50002H1.16669M1.16669 7.50002L7.00002 13.3334M1.16669 7.50002L7.00002 1.66669" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            <?php echo $get_static_text[get_lang()]['pagination_back']; ?>
+        </a>
+
+        <a href="http://education.local/modules/initiere-in-mass-media/" class="theme-pagination-btn tp-button-right" data-fancybox data-src="#curiosities">
+            <?php echo $get_static_text[get_lang()]['pagination_next']; ?>
+
+            <svg class="rotate180" xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
+                <path d="M12.8334 7.50002H1.16669M1.16669 7.50002L7.00002 13.3334M1.16669 7.50002L7.00002 1.66669" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </a>
     </div>
 </div>
 
@@ -619,8 +688,21 @@ $hide_step_6 = false;
         <?php endif; ?>
     </div>
 
-    <div class="mt-24px interactive-task-trigger bg-green rounded-16px hide">
-        <img src="<?php echo get_template_directory_uri() . '/assets/images/interactive-task-bg.svg'; ?>" alt="">
+    <div class="mt-24px pagination-wrapper bg-light-gray rounded-16px">
+        <a href="http://education.local/modules/initiere-in-mass-media/" class="theme-pagination-btn tp-button-left" data-fancybox data-src="#am-cult">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
+                <path d="M12.8334 7.50002H1.16669M1.16669 7.50002L7.00002 13.3334M1.16669 7.50002L7.00002 1.66669" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            <?php echo $get_static_text[get_lang()]['pagination_back']; ?>
+        </a>
+
+        <a href="http://education.local/modules/initiere-in-mass-media/" class="theme-pagination-btn tp-button-right hide" data-fancybox data-src="#share-experience">
+            <?php echo $get_static_text[get_lang()]['pagination_next']; ?>
+
+            <svg class="rotate180" xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
+                <path d="M12.8334 7.50002H1.16669M1.16669 7.50002L7.00002 13.3334M1.16669 7.50002L7.00002 1.66669" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </a>
     </div>
 </div>
 

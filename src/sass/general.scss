@@ -2023,6 +2023,35 @@ table {
 	}
 }
 
+.pagination-wrapper {
+	display: flex;
+	gap: 12px;
+	padding: 24px;
+	align-items: center;
+	justify-content: center;
+
+	.theme-pagination-btn {
+		line-height: 1;
+		display: inline-flex;
+		gap: 6px;
+		padding: 14px 30px;
+		color: $green-color;
+		font-weight: 500;
+		border-radius: 8px;
+		border: 2px solid $green-color;
+
+		&:hover {
+			background-color: $green-color;
+			color: $white-color;
+		}
+	}
+}
+
+.rotate180 {
+	transform: rotate(180deg);
+}
+
+
 // [class*="wp-image-"]
 // zdx 
 
