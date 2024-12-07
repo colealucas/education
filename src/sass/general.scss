@@ -812,7 +812,7 @@ body.logged-in {
 	}
 
 	ol {
-		padding-left: 30px;
+		padding-left: 12px;
 		list-style: none;
 		counter-reset: custom-counter; /* Initialize a custom counter */
 
@@ -820,7 +820,7 @@ body.logged-in {
 			counter-increment: custom-counter;
 			list-style: none;
 			position: relative;
-			margin: 0.5em 0;
+			padding-left: 10px;
 
 			&::before {
 				content: counter(custom-counter);
