@@ -1230,6 +1230,7 @@ ol.found-words-list {
 	li.correct {
 		background-color: $lime-green;
 		color: $green-color;
+		border-color: $green-color;
 		font-weight: 600;
 
 		&:before {
