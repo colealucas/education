@@ -1364,11 +1364,9 @@ table {
 }
 
 .tcs-content {
-	&:after,
-	p:after,
-	li:after {
+	&:after {
 		content: "";
-		display: none;
+		display: table;
 		clear: both;
 	}
 }
