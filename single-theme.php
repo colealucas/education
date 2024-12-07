@@ -14,7 +14,7 @@ $get_static_text = [
         'step3' => 'Consum și creez produse media cu responsabilitate',
         'step4' => 'Aventura mea media continuă!',
         'step5' => 'Vorbesc cult',
-        'step6' => 'Știai că',
+        'step6' => 'Știai că...',
 
         // gimnaziu
         'gimnaziu' => [
@@ -26,7 +26,7 @@ $get_static_text = [
             'step3' => 'Exercițiu practic',
             'step4' => 'Reflecție',
             'step5' => 'Extindere',
-            'step6' => 'Știai că',
+            'step6' => 'Știai că...',
         ],
 
         // liceu
