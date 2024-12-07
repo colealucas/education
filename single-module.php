@@ -8,8 +8,8 @@ get_header();
 $get_static_text = [
     'ro' => [
         'subjects' => 'Subiecte',
-        'go_back' => 'Inapoi la Module',
-        'access_theme' => 'Acceseaza Tema',
+        'go_back' => 'Înapoi la Module',
+        'access_theme' => 'Accesează Tema',
         'autoevaluation' => 'Autoevaluare',
         'criteria_title' => 'Criterii de succes',
         'unit' => 'Unitatea de învățare',
@@ -138,7 +138,7 @@ $current_module_title = '';
                             <div>
                                 <div class="flex flex-nowrap items-center">
                                     <div>
-                                        <div class="subject-num flex items-center justify-center leading-1 size-78px bg-light-green text-green text-40px rounded-16px">
+                                        <div class="subject-num flex items-center justify-center leading-1 size-78px bg-light-green text-green text-36px rounded-16px">
                                             <?php echo (get_field('theme_number') ? get_field('theme_number') : $i); ?>
                                         </div>
                                     </div>
