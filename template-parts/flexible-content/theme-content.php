@@ -931,8 +931,8 @@
                                             $variant = get_sub_field('variant');
                                         ?>
 
-                                            <div class="variant-item w-[22%]">
-                                                <div class="bg-light-gray p-16px rounded-16px text-16px font-500 cursor-pointer select-none hover:bg-medium-gray" data-select-multiple-variant>
+                                            <div class="variant-item w-[23%]">
+                                                <div class="bg-light-gray p-16px text-center rounded-16px text-16px font-500 cursor-pointer select-none hover:bg-medium-gray" data-select-multiple-variant>
                                                     <?php echo $variant; ?>
                                                 </div>
                                             </div>
