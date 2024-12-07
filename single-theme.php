@@ -70,7 +70,45 @@ function get_theme_translated_text($step_name) {
        return $get_static_text[get_lang()][$step_name];
     }
 }
+
+// hide steps settings
+$hide_step_1 = false;
+$hide_step_2 = false;
+$hide_step_3 = false;
+$hide_step_4 = false;
+$hide_step_5 = false;
+$hide_step_6 = false;
 ?>
+
+<?php if( have_rows('theme_steps') ) : // read hide step fields ?>
+    <?php while( have_rows('theme_steps') ): the_row(); ?>
+
+        <?php if ( get_sub_field('step') == 'one' ) : ?>
+            <?php $hide_step_1 = get_sub_field('hide_this_step'); ?>
+        <?php endif; ?>
+
+        <?php if ( get_sub_field('step') == 'two' ) : ?>
+            <?php $hide_step_2 = get_sub_field('hide_this_step'); ?>
+        <?php endif; ?>
+
+        <?php if ( get_sub_field('step') == 'three' ) : ?>
+            <?php $hide_step_3 = get_sub_field('hide_this_step'); ?>
+        <?php endif; ?>
+
+        <?php if ( get_sub_field('step') == 'four' ) : ?>
+            <?php $hide_step_4 = get_sub_field('hide_this_step'); ?>
+        <?php endif; ?>
+
+        <?php if ( get_sub_field('step') == 'five' ) : ?>
+            <?php $hide_step_5 = get_sub_field('hide_this_step'); ?>
+        <?php endif; ?>
+
+        <?php if ( get_sub_field('step') == 'six' ) : ?>
+            <?php $hide_step_6 = get_sub_field('hide_this_step'); ?>
+        <?php endif; ?>
+        
+    <?php endwhile; ?>
+<?php endif; ?>
 
 <?php if ( isset($_GET['print']) ) : ?>
 
@@ -644,6 +682,7 @@ function get_theme_translated_text($step_name) {
         <div class="parts flex flex-wrap gap-20px">
 
             <!-- Step 1 -->
+            <?php if ( !$hide_step_1 ) : ?>
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
                 <a href="javascript:;" data-fancybox data-src="#share-experience" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
                     <span class="step-icon flex items-center justify-center size-[74px] rounded-50 bg-medium-green">
@@ -674,8 +713,10 @@ function get_theme_translated_text($step_name) {
                     </span>
                 </a>
             </div>
+            <?php endif; ?>
             
             <!-- Step 2 -->
+            <?php if ( !$hide_step_2 ) : ?>
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
                 <a href="javascript:;" data-fancybox data-src="#am-curious" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
                     <span class="step-icon flex items-center justify-center size-[74px] rounded-50 bg-medium-green">
@@ -698,8 +739,10 @@ function get_theme_translated_text($step_name) {
                     </span>
                 </a>
             </div>
+            <?php endif; ?>
             
             <!-- Step 3 -->
+            <?php if ( !$hide_step_3 ) : ?>
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
                 <a href="javascript:;" data-fancybox data-src="#am-begining" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
                     <span class="step-icon flex items-center justify-center size-[74px] rounded-50 bg-medium-green">
@@ -727,8 +770,10 @@ function get_theme_translated_text($step_name) {
                     </span>
                 </a>
             </div>
+            <?php endif; ?>
 
             <!-- Step 4 -->
+            <?php if ( !$hide_step_4 ) : ?>
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
                 <a href="javascript:;" data-fancybox data-src="#am-responsable" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
                     <span class="step-icon flex items-center justify-center size-[74px] rounded-50 bg-medium-green">
@@ -747,8 +792,10 @@ function get_theme_translated_text($step_name) {
                     <h3 class="text-28px font-500 text-green leading-120"><?php echo get_theme_translated_text('step4'); ?></h3>
                 </a>
             </div>
+            <?php endif; ?>
 
             <!-- Step 5 -->
+            <?php if ( !$hide_step_5 ) : ?>
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
                 <a href="javascript:;" data-fancybox data-src="#am-cult" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
                     <span class="step-icon flex items-center justify-center size-[74px] rounded-50 bg-medium-green">
@@ -760,8 +807,10 @@ function get_theme_translated_text($step_name) {
                     <h3 class="text-28px font-500 text-green leading-120"><?php echo get_theme_translated_text('step5'); ?></h3>
                 </a>
             </div>
+            <?php endif; ?>
 
             <!-- Step 6 -->
+            <?php if ( !$hide_step_6 ) : ?>
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
                 <a href="javascript:;" data-fancybox data-src="#curiosities" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
                     <span class="step-icon flex items-center justify-center size-[74px] rounded-50 bg-medium-green">
@@ -780,6 +829,7 @@ function get_theme_translated_text($step_name) {
                     <h3 class="text-28px font-500 text-green leading-120"><?php echo get_theme_translated_text('step6'); ?></h3>
                 </a>
             </div>
+            <?php endif; ?>
         </div>
     </div>
 </div>
