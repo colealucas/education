@@ -520,9 +520,9 @@
 
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="py-12px spot-correct-inner">
+                        <div class="p-12px spot-correct-inner bg-light-gray rounded-8px h-full">
                             <?php if ( have_rows('items') ) : ?>
-                                <ul class="spot-correct-list">
+                                <ul class="spot-correct-list pl-0">
                                     <?php while ( have_rows('items') ) : the_row(); 
                                         $item = get_sub_field('item');
                                         $correct = get_sub_field('correct');
