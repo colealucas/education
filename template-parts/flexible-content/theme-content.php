@@ -817,6 +817,7 @@
 ?>
 
     <div class="flexible-content-section curiosity-section my-24px">
+        <?php if ($section_title) : ?>
         <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
             <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
                 <span class="w-30px block">
@@ -831,6 +832,7 @@
                 </span>
             </h2>
         </div>
+        <?php endif; ?>
 
         <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video">
             <?php echo $section_content; ?>
