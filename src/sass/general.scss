@@ -807,12 +807,11 @@ body.logged-in {
 	h5 { font-size: 18px }
 	h6 { font-size: 17px }
 
-	ul {
+	ul, ol {
 		padding-left: 12px;
 	}
 
 	ol {
-		padding-left: 12px;
 		list-style: none;
 		counter-reset: custom-counter; /* Initialize a custom counter */
 
@@ -820,12 +819,12 @@ body.logged-in {
 			counter-increment: custom-counter;
 			list-style: none;
 			position: relative;
-			padding-left: 10px;
 
 			&::before {
 				content: counter(custom-counter);
 				font-weight: bold;
 				color: #D1222A;
+				margin-right: 10px;
 			}
 		} 
 	}
