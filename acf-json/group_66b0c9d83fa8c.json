@@ -1979,7 +1979,7 @@
                                     },
                                     "default_value": "",
                                     "maxlength": "",
-                                    "placeholder": "Add placeholder text",
+                                    "placeholder": "Add placeholder text (text sugestie)",
                                     "prepend": "",
                                     "append": ""
                                 }
@@ -3894,5 +3894,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733593628
+    "modified": 1733594823
 }
