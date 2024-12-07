@@ -2059,11 +2059,11 @@ table {
 
 .tcs-heading {
 	a {
-		color: inherit;
+		color: $orange-color;
+		border-bottom: 1px solid transparent;
 
 		&:hover {
-			color: $orange-color;
-			text-decoration: underline;
+			border-bottom-color: $orange-color;
 		}
 	}
 }
