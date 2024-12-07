@@ -514,7 +514,7 @@
                     $section_description = get_sub_field('description');
                 ?>
 
-                <div class="tcs-content phase-content entry-content content-spacing text-17px mt-24px">
+                <div class="tcs-content phase-content entry-content content-spacing text-17px mt-24px mb-20px">
                     <?php echo $section_description; ?>
                 </div>
 
