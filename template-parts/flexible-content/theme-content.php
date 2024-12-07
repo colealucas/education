@@ -514,27 +514,33 @@
                     $section_description = get_sub_field('description');
                 ?>
 
-                <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video">
-                    <?php echo $section_text_content; ?>
-                </div>
-
                 <div class="tcs-content phase-content entry-content content-spacing text-17px mt-24px">
                     <?php echo $section_description; ?>
                 </div>
 
-                <div class="py-20px spot-correct-inner">
-                    <?php if ( have_rows('items') ) : ?>
-                        <ul class="spot-correct-list">
-                            <?php while ( have_rows('items') ) : the_row(); 
-                                $item = get_sub_field('item');
-                                $correct = get_sub_field('correct');
-                            ?>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="py-20px spot-correct-inner">
+                            <?php if ( have_rows('items') ) : ?>
+                                <ul class="spot-correct-list">
+                                    <?php while ( have_rows('items') ) : the_row(); 
+                                        $item = get_sub_field('item');
+                                        $correct = get_sub_field('correct');
+                                    ?>
 
-                            <li data-correct="<?php echo ($correct ? '1' : '0'); ?>"><?php echo $item; ?></li>
+                                    <li data-correct="<?php echo ($correct ? '1' : '0'); ?>"><?php echo $item; ?></li>
 
-                            <?php endwhile; ?>
-                        </ul>
-                    <?php endif; ?>
+                                    <?php endwhile; ?>
+                                </ul>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video">
+                            <?php echo $section_text_content; ?>
+                        </div>
+                    </div>
                 </div>
 
                 <?php endwhile; ?>
