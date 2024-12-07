@@ -958,7 +958,7 @@
 
             <div class="p-16px bg-light-gray rounded-8px">
                 <?php if ($template_title) : ?>
-                <div class="editable-template-title text-center text-24px font-600 leading-130">
+                <div class="editable-template-title text-center text-24px font-600 leading-130 text-green">
                     <?php echo $template_title; ?>
                 </div>
                 <?php endif; ?>
