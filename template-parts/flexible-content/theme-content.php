@@ -914,12 +914,12 @@
 
         <div class="relative"> 
             <?php if ( have_rows('items') ) : ?>
-                <div class="row">
+                <div class="flex gap-20px flex-wrap">
                     <?php while ( have_rows('items') ) : the_row();
                         $question = get_sub_field('question');
                     ?>
 
-                        <div class="<?php echo $columns; ?>">
+                        <div class="w-25%">
                             <div class="bg-orange p-16px rounded-16px text-17px font-700 mb-20px mt-30px">
                                 <?php echo $question; ?>
                             </div>
