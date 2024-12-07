@@ -229,8 +229,8 @@ a:active {
 	float: right;
 
 	/*rtl:ignore*/
-	margin-left: 1.5em;
-	margin-bottom: 1.5em;
+	margin-left: 10px;
+	margin-bottom: 10px;
 }
 
 .aligncenter {
@@ -721,7 +721,7 @@ body.logged-in {
 
 	p:after {
 		content: '';
-		display: table;
+		display: none;
 		clear: both;
 	}
 
@@ -1368,7 +1368,7 @@ table {
 	p:after,
 	li:after {
 		content: "";
-		display: table;
+		display: none;
 		clear: both;
 	}
 }
@@ -1819,7 +1819,7 @@ table {
 .content-clearfix {
 	p:after {
 		content: '';
-		display: table;
+		display: none;
 		clear: both;
 	}
 }
