@@ -812,7 +812,7 @@
     $columns = (get_sub_field('columns') ? get_sub_field('columns') : 'col-md-4'); // default to 3 columns
 ?>
 
-    <div class="flexible-content-section curiosity-section my-24px">
+    <div class="flexible-content-section my-16px">
         <?php if ($section_title) : ?>
         <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
             <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
@@ -830,7 +830,7 @@
         </div>
         <?php endif; ?>
 
-        <div class="py-20px"> 
+        <div class="pt-20px">
             <?php if ( have_rows('items') ) : $counter = 0; ?>
                 <div class="row">
                     <?php while ( have_rows('items') ) : the_row(); $counter++;
