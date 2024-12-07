@@ -507,7 +507,7 @@
             <?php echo $section_title; ?>
         </div>
 
-        <div class="spot-correct-wrap py-20px mb-24px">
+        <div class="spot-correct-wrap py-12px mb-24px">
             <?php if ( have_rows('content') ) : ?>
                 <?php while ( have_rows('content') ) : the_row();
                     $section_text_content = get_sub_field('section_text_content');
