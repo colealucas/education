@@ -582,7 +582,7 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": "Reține",
+                                    "default_value": "Reține!",
                                     "maxlength": "",
                                     "placeholder": "Add title",
                                     "prepend": "",
@@ -3966,5 +3966,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733598739
+    "modified": 1733599475
 }
