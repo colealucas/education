@@ -817,7 +817,7 @@
                 </div> -->
 
                 <div class="p-20px bg-orange border-2px border-solid border-orange text-dark rounded-16px flex-1">
-                    <div class="text-24px font-700 mb-8px text-green">
+                    <div class="text-22px font-700 mb-8px text-green">
                         <?php echo $title; ?>
                     </div>
 
