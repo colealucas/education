@@ -1263,7 +1263,7 @@ $placeholder_text = get_sub_field('placeholder_text');
                             ?>
 
                             <div class="p-8px rounded-8px bg-white text-16px font-500">
-                                <div class="top3-item"><?php echo $content; ?></div>
+                                <div class="top3-item cursor-move"><?php echo $content; ?></div>
                             </div>
 
                             <?php endwhile; ?>
