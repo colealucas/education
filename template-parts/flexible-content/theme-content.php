@@ -1232,6 +1232,7 @@ $placeholder_text = get_sub_field('placeholder_text');
         width: auto;
         height: <?php echo $image_height; ?>px;
         border-radius: 4px;
+        object-fit: cover;
     }
 </style>
 <div class="flexible-content-section top3-game my-24px">
