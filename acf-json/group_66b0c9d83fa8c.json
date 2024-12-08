@@ -2986,7 +2986,7 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "",
+                                        "width": "50",
                                         "class": "",
                                         "id": ""
                                     },
@@ -2999,8 +2999,29 @@
                                     "append": ""
                                 },
                                 {
+                                    "key": "field_6755a9f7fe407",
+                                    "label": "Top Items Amount (Top itemi)",
+                                    "name": "top_items_amount",
+                                    "aria-label": "",
+                                    "type": "range",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": 3,
+                                    "min": 1,
+                                    "max": 10,
+                                    "step": 1,
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
                                     "key": "field_66f942a592fd4",
-                                    "label": "Items",
+                                    "label": "Variants (variante)",
                                     "name": "items",
                                     "aria-label": "",
                                     "type": "repeater",
@@ -3966,5 +3987,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733599475
+    "modified": 1733668251
 }

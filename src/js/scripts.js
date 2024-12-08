@@ -1541,13 +1541,6 @@ document.addEventListener("DOMContentLoaded", function() {
                                     
                                 placeholder.classList.add('ready');
 
-                                const targetPlaceholder = evt.to;
-                                const targetId = targetPlaceholder.id;
-                                const correctTarget = draggedItem.dataset.target;
-
-                                // evt.to.appendChild(evt.item);
-                                // evt.item.classList.add('success');
-
                                 // if all good, item dragged and placed
                                 counter++;
 
@@ -1559,9 +1552,9 @@ document.addEventListener("DOMContentLoaded", function() {
                                  if (counter >= placeholders.length ) {
                                     //showSuccessPopup( getText('bravo') );
                                     
-                                    if ( mixedItems ) {
-                                        mixedItems.classList.add('hide');
-                                    }
+                                    // if ( mixedItems ) {
+                                    //     mixedItems.classList.add('hide');
+                                    // }
                                 }
                             }
                         });
@@ -1781,42 +1774,42 @@ document.addEventListener("DOMContentLoaded", function() {
         const wrappers = document.querySelectorAll('.text-content-section');
         const coinContainer = document.querySelector('#coin-container');
 
+        // SVG code for the coin
+        const svgCoin = `
+            <svg width="34" height="34" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="gold">
+                <circle cx="32" cy="32" r="30" stroke="orange" stroke-width="5" fill="gold" />
+                <text x="32" y="44" font-size="30" text-anchor="middle" fill="orange" font-family="Arial" font-weight="bold">+1</text>
+            </svg>
+        `;
+
+        // Coin sound setup
+        const coinSound = new Audio('/wp-content/themes/education/assets/sounds/coin.mp3');
+
+        // Function to show the coin
+        function showCoin(target) {
+            // Create a coin element
+            const coin = document.createElement('div');
+            coin.className = 'coin';
+            coin.innerHTML = svgCoin;
+        
+            // Append the coin to the word
+            target.appendChild(coin);
+
+            // Play the coin sound
+            coinSound.currentTime = 0; // Reset sound to the start for repeated clicks
+            coinSound.play();
+        
+            // Remove the coin after animation
+            setTimeout(() => {
+                coin.remove();
+            }, 1600);
+        }
+
         if (wrappers.length) {
-            // SVG code for the coin
-            const svgCoin = `
-                <svg width="34" height="34" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="gold">
-                    <circle cx="32" cy="32" r="30" stroke="orange" stroke-width="5" fill="gold" />
-                    <text x="32" y="44" font-size="30" text-anchor="middle" fill="orange" font-family="Arial" font-weight="bold">+1</text>
-                </svg>
-            `;
-
-            // Coin sound setup
-            const coinSound = new Audio('/wp-content/themes/education/assets/sounds/coin.mp3');
-
-            // Function to show the coin
-            function showCoin(target) {
-                // Create a coin element
-                const coin = document.createElement('div');
-                coin.className = 'coin';
-                coin.innerHTML = svgCoin;
-            
-                // Append the coin to the word
-                target.appendChild(coin);
-
-                // Play the coin sound
-                coinSound.currentTime = 0; // Reset sound to the start for repeated clicks
-                coinSound.play();
-            
-                // Remove the coin after animation
-                setTimeout(() => {
-                    coin.remove();
-                }, 1600);
-            }
-            
             wrappers.forEach(function(wrapper) {
                 const huntedWords = wrapper.querySelectorAll('.hunted-word');
                 const statsDiv = wrapper.querySelector('.words-hunt-stats');
-                const statsTotalElement = (statsDiv ? statsDiv.querySelector('.words-hunt-total') : null)
+                const statsTotalElement = (statsDiv ? statsDiv.querySelector('.words-hunt-total') : null);
                 const totalWords = (huntedWords.length ? huntedWords.length : 0);
                 let foundedCounter = 0;
 

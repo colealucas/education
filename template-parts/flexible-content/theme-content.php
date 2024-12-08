@@ -1223,7 +1223,8 @@ $placeholder_text = get_sub_field('placeholder_text');
 
 
 <?php elseif( get_row_layout() == 'top_3' ) : // top_3
-$image_height = (get_sub_field('image_height') ? get_sub_field('image_height') : 100);
+    $image_height = (get_sub_field('image_height') ? get_sub_field('image_height') : 100);
+    $top_items_amount = (get_sub_field('top_items_amount') ? get_sub_field('top_items_amount') : 3);
 ?>
 
 <style>
@@ -1236,31 +1237,37 @@ $image_height = (get_sub_field('image_height') ? get_sub_field('image_height') :
 <div class="flexible-content-section top3-game my-24px">
     <div class="relative">
         <?php if ( have_rows('items') ) : $z=0; ?>
-            <div class="top3-wrap py-20px bg-light-gray rounded-8px">
+            <div class="top3-wrap p-20px bg-light-gray rounded-8px">
 
-                <div class="top-placeholders p-20px flex flex-col gap-12px">
-                    <?php while ( have_rows('items') ) : the_row(); $z++; ?>
+                <div class="flex-col">
+                    <div class="w-full">
+                        <?php if ($top_items_amount) : ?>
+                            <div class="top-placeholders flex gap-20px">
+                                <?php for ($i=1; $i<=$top_items_amount; $i++) : ?>
 
-                        <div class="flex gap-6px">
-                            <div class="w-40px h-50px text-20px font-700 rounded-8px flex items-center justify-center text-gray">
-                                <?php echo $z; ?>
+                                    <div class="top-placeholder-inner flex-1">
+                                        <span class="top-placeholder-inner-number"><?php echo $i; ?></span>
+                                        <div class="bg-white min-h-[80px] flex items-center justify-center rounded-8px border-2px border-medium-gray border-dashed top-placeholder"></div>
+                                    </div>
+                                    
+                                <?php endfor; ?>
                             </div>
-                            <div class="bg-white w-[calc(100%-46px)] flex items-center rounded-8px border-2px border-medium-gray border-dashed top-placeholder"></div>
-                        </div>
-
-                    <?php endwhile; ?>
-                </div>
-
-                <div class="flex gap-20px flex-wrap items-center justify-center mixed-items">
-                    <?php while ( have_rows('items') ) : the_row();
-                        $content = get_sub_field('imagetext_description');
-                    ?>
-
-                    <div class="p-8px rounded-8px bg-white text-16px font-500">
-                        <div class="top3-item"><?php echo $content; ?></div>
+                        <?php endif; ?>
                     </div>
 
-                    <?php endwhile; ?>
+                    <div class="w-full bg-white rounded-16px mt-20px">
+                        <div class="flex flex-wrap items-center justify-center mixed-items p-8px rounded-16px">
+                            <?php while ( have_rows('items') ) : the_row();
+                                $content = get_sub_field('imagetext_description');
+                            ?>
+
+                            <div class="p-8px rounded-8px bg-white text-16px font-500">
+                                <div class="top3-item"><?php echo $content; ?></div>
+                            </div>
+
+                            <?php endwhile; ?>
+                        </div>
+                    </div>
                 </div>
                 
             </div>
