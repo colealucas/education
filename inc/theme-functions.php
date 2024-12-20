@@ -173,3 +173,23 @@ function custom_mce_settings($initArray) {
     return $initArray;
 }
 add_filter('tiny_mce_before_init', 'custom_mce_settings');
+
+
+function add_custom_body_class( $classes ) {
+    $parent_book = get_field('parent_book');
+    $parent_book_id = (is_array( $parent_book ) && $parent_book[0] ? $parent_book[0]->ID : false);
+
+    // if this is a single theme or single module page
+    if ($parent_book_id) {
+        $book_target = get_field('choose_book_target', $parent_book_id);
+        $classes[] = 'manual-' . $book_target;
+    }
+    // if this is the book page
+    else if ( get_field('choose_book_target', get_the_ID() ) ) {
+        $book_target = get_field('choose_book_target', get_the_ID() );
+        $classes[] = 'manual-' . $book_target;
+    }
+
+    return $classes;
+}
+add_filter( 'body_class', 'add_custom_body_class' );
