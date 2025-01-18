@@ -1845,16 +1845,10 @@ document.addEventListener("DOMContentLoaded", function() {
         return text.replace(regex, (match, correct1, incorrect1, incorrect2, correct2) => {
             if (correct1) {
                 // First variant is correct
-                return `(
-                    <span class="variant-btn correct">${correct1}</span>/
-                    <span class="variant-btn">${incorrect1}</span>
-                )`;
+                return `(<span class="variant-btn correct">${correct1}</span>/<span class="variant-btn">${incorrect1}</span>)`;
             } else {
                 // Second variant is correct
-                return `(
-                    <span class="variant-btn">${incorrect2}</span>/
-                    <span class="variant-btn correct">${correct2}</span>
-                )`;
+                return `(<span class="variant-btn">${incorrect2}</span>/ <span class="variant-btn correct">${correct2}</span>)`;
             }
         });
       }
