@@ -1863,6 +1863,27 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 // console.log(processedText);
                 wrapper.innerHTML = processedText;
+
+                setTimeout(function() {
+                    const variantBtns = wrapper.querySelectorAll('.variant-btn');
+        
+                    if (variantBtns.length) {
+                        variantBtns.forEach(function(btn) {
+                            btn.addEventListener('click', function() {
+                                if (btn.classList.contains('correct')) {
+                                    btn.classList.add('success');
+                                    showSuccessPopup( getText('bravo') );
+                                } else {
+                                    btn.classList.add('error');
+        
+                                    setTimeout(function() {
+                                        btn.classList.remove('error');
+                                    }, 500);
+                                }
+                            });
+                        });
+                    }
+                }, 500);
             });
         }
 

@@ -1292,6 +1292,16 @@ ol.found-words-list {
 			background-color: $lime-green;
 			color: $white-color;
 		}
+
+		&.error {
+			background-color: $red-color;
+			color: $white-color;
+		}
+
+		&.success {
+			background-color: $green-color;
+			color: $white-color;
+		}
 	}
 }
 
