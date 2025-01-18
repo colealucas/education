@@ -799,11 +799,8 @@
 
 <?php if ( $text_color ) : ?>
     <style>
-        .user-textarea {
-            color: <?php echo $text_color; ?> !important;
-        }
         .user-textarea::placeholder {
-            color: <?php echo $text_color; ?> !important;
+            color: inherit !important;
         }
     </style>
 <?php endif; ?>
@@ -811,7 +808,7 @@
     <div class="flexible-content-section curiosity-section my-24px">
         <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video">
             <form action="#" method="POST">
-                <textarea rows="<?php echo $rows; ?>" class="w-full p-16px border-2px border-solid border-medium-gray bg-light-gray focus:bg-white rounded-8px focus:outline-none user-textarea" name="text_area" placeholder="<?php echo $placeholder; ?>"></textarea>
+                <textarea <?php echo ($text_color ? 'style="color:' . $text_color .' !important;"' : ''); ?> rows="<?php echo $rows; ?>" class="w-full p-16px border-2px border-solid border-medium-gray bg-light-gray focus:bg-white rounded-8px focus:outline-none user-textarea" name="text_area" placeholder="<?php echo $placeholder; ?>"></textarea>
             </form>
         </div>
     </div>
