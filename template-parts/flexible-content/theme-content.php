@@ -815,7 +815,7 @@
         
             <div class="remember-wrap flex gap-4px">
                 <div class="flex rounded-12px overflow-hidden">
-                    <div class="text-22px font-700 text-white bg-orange p-20px min-w-[160px]">
+                    <div class="text-22px font-700 text-white bg-[#FF6801] p-20px min-w-[160px]">
                         <div class="flex h-full items-center justify-center">
                             <div>
                                 <?php echo $title; ?>
@@ -823,7 +823,7 @@
                         </div>
                     </div>
 
-                    <div class="bg-blue text-white flex-1 p-20px font-500">
+                    <div class="bg-blue text-white flex-1 p-20px font-500 italic">
                         <?php echo $content; ?>
                     </div>
                 </div>
