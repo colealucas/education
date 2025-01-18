@@ -835,7 +835,7 @@
                         </div>
                     </div>
 
-                    <div class="bg-orange text-dark flex-1 p-20px font-500 italic">
+                    <div class="bg-orange text-dark flex-1 p-20px font-600 italic">
                         <div class="flex h-full items-center">
                             <div class="flex-1 last-no-margin">
                                 <?php echo $content; ?>
