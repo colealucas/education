@@ -2169,6 +2169,11 @@ table {
 // css styles for liceu
 .manual-liceu {}
 
+.last-no-margin {
+	:last-child {
+		margin-bottom: 0 !important;
+	}
+}
 
 // [class*="wp-image-"]
 // zdx 
