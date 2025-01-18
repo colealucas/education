@@ -1841,12 +1841,21 @@ document.addEventListener("DOMContentLoaded", function() {
     handleHuntedWords();
 
     function processText(text) {
-        const regex = /\(([^/]+)\/<strong>([^<]+)<\/strong>\)/g;
-        return text.replace(regex, (match, variant1, variant2) => {
-            return `(
-                <span class="variant-btn">${variant1}</span>/
-                <span class="variant-btn correct">${variant2}</span>
-            )`;
+        const regex = /\(<strong>([^<]+)<\/strong>\/([^<]+)\)|\(([^/]+)\/<strong>([^<]+)<\/strong>\)/g;
+        return text.replace(regex, (match, correct1, incorrect1, incorrect2, correct2) => {
+            if (correct1) {
+                // First variant is correct
+                return `(
+                    <span class="variant-btn correct">${correct1}</span>/
+                    <span class="variant-btn">${incorrect1}</span>
+                )`;
+            } else {
+                // Second variant is correct
+                return `(
+                    <span class="variant-btn">${incorrect2}</span>/
+                    <span class="variant-btn correct">${correct2}</span>
+                )`;
+            }
         });
       }
 
@@ -1863,7 +1872,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         }
 
-        const inputText = "This is an example text with (variant 1/<strong>variant 2</strong>) and another one (option A, <strong>option B</strong>)";
+        const inputText = "This is an example text with (variant 1/<strong>variant 2</strong>) and another one ( <strong>option A </strong>/option B). Fine.";
         const processedText = processText(inputText);
           
         console.log(processedText);
