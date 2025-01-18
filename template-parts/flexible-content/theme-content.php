@@ -813,11 +813,11 @@
         
             <div class="remember-wrap flex gap-4px">
                 <div class="flex rounded-20px">
-                    <div class="text-22px font-700 text-white bg-orange p-20px min-w-[200px]">
+                    <div class="text-22px font-700 text-white bg-orange p-20px min-w-[180px]">
                         <?php echo $title; ?>
                     </div>
 
-                    <div class="bg-blue text-white flex-1 p-20px">
+                    <div class="bg-blue text-white flex-1 p-20px font-500">
                         <?php echo $content; ?>
                     </div>
                 </div>
