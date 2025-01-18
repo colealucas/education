@@ -813,7 +813,7 @@
         
             <div class="remember-wrap flex gap-4px">
                 <div class="flex rounded-20px">
-                    <div class="text-22px font-700 text-white bg-orange p-20px min-w-[180px]">
+                    <div class="text-22px font-700 text-white bg-orange p-20px min-w-[200px]">
                         <?php echo $title; ?>
                     </div>
 
