@@ -813,7 +813,7 @@
         
             <div class="remember-wrap flex gap-4px">
                 <div class="flex rounded-12px overflow-hidden">
-                    <div class="text-22px font-700 text-white bg-orange p-20px min-w-[180px]">
+                    <div class="text-22px font-700 text-white bg-orange p-20px min-w-[190px]">
                         <div class="flex h-full items-center justify-center">
                             <div>
                                 <?php echo $title; ?>
