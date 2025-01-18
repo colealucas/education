@@ -2054,6 +2054,24 @@
                                     "step": 1,
                                     "prepend": "",
                                     "append": ""
+                                },
+                                {
+                                    "key": "field_678bfc9819929",
+                                    "label": "Text color (culoare text)",
+                                    "name": "text_color",
+                                    "aria-label": "",
+                                    "type": "color_picker",
+                                    "instructions": "Set text area color. Seteaza culoarea textului.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "#222222",
+                                    "enable_opacity": 0,
+                                    "return_format": "string"
                                 }
                             ],
                             "min": "",
@@ -3987,5 +4005,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733668251
+    "modified": 1737227738
 }
