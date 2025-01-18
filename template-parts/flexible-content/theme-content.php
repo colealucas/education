@@ -812,12 +812,14 @@
         <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video">
         
             <div class="remember-wrap flex gap-4px">
-                <div class="p-20px bg-blue text-white rounded-16px flex-1">
-                    <div class="text-22px font-700 mb-8px text-white">
+                <div class="flex gap-20px">
+                    <div class="text-22px font-700 text-white bg-orange p-20px min-w-[200px]">
                         <?php echo $title; ?>
                     </div>
 
-                    <?php echo $content; ?>
+                    <div class="bg-blue text-white flex-1 p-20px">
+                        <?php echo $content; ?>
+                    </div>
                 </div>
             </div>
 
