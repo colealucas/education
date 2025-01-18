@@ -1274,11 +1274,12 @@ ol.found-words-list {
 .split-variants {
 	span.variant-btn {
 		display: inline-block;
-		padding: 5px 10px;
+		padding: 4px 8px;
 		border-radius: 4px;
 		background-color: $orange-color;
 		cursor: pointer;
 		line-height: 1;
+		font-weight: 500;
 		transition: all 0.2s ease-out;
 		border: 1px solid transparent;
 
