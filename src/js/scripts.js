@@ -1841,9 +1841,12 @@ document.addEventListener("DOMContentLoaded", function() {
     handleHuntedWords();
 
     function processText(text) {
-        const regex = /\(([^)]+)\s*,\s*<strong>([^<]+)<\/strong>\)/g;
+        const regex = /\(([^/]+)\/<strong>([^<]+)<\/strong>\)/g;
         return text.replace(regex, (match, variant1, variant2) => {
-          return `(<span class="variant1-btn">${variant1}</span>, <span class="variant2-btn correct">${variant2}</span>)`;
+            return `(
+                <span class="variant-btn">${variant1}</span>/
+                <span class="variant-btn correct">${variant2}</span>
+            )`;
         });
       }
 
