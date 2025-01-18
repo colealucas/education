@@ -1839,6 +1839,33 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     handleHuntedWords();
+
+    function processText(text) {
+        const regex = /\(([^)]+)\s*,\s*<strong>([^<]+)<\/strong>\)/g;
+        return text.replace(regex, (match, variant1, variant2) => {
+          return `(<span class="variant1-btn">${variant1}</span>, <span class="variant2-btn correct">${variant2}</span>)`;
+        });
+      }
+
+    function handleSplitVariants() {
+        const wrappers = document.querySelectorAll('.split-variants');
+
+        if (wrappers.length) {
+            wrappers.forEach(function(wrapper) {
+                const text = wrapper.textContent;
+                const processedText = processText(text);
+                wrapper.innerHTML = processedText;
+            });
+        }
+
+        const inputText = "This is an example text with (variant 1, <strong>variant 2</strong>) and another one (option A, <strong>option B</strong>)";
+        const processedText = processText(inputText);
+          
+        console.log(processedText);
+        // Output:
+        // This is an example text with (<span class="variant1-btn">variant 1</span>, <span class="variant1-btn correct">variant 2</span>) and another one (<span class="variant1-btn">option A</span>, <span class="variant1-btn correct">option B</span>)
+    }
+    handleSplitVariants();
    
     // function handleNumbersGame() {
     //     const wrappers = document.querySelectorAll('.numbers-wrap');
