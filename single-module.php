@@ -76,7 +76,7 @@ $current_module_title = '';
                             </a>
                         </div>
 
-                        <h1 class="text-36px md:text-48px font-500 leading-120 mt-8px text-green">
+                        <h1 class="text-36px md:text-48px font-500 leading-120 mt-8px text-green uppercase">
                             <?php the_title(); ?>
                         </h1>
 
