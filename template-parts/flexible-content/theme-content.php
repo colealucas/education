@@ -987,7 +987,7 @@
                 </div>
                 <?php endif; ?>
             
-                <div class="relative break-all  editable-template-wrapper" contenteditable="true">
+                <div class="relative break-words  editable-template-wrapper" contenteditable="true">
                     <?php echo $template; ?>
                 </div>
             </div>
