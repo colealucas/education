@@ -2113,10 +2113,10 @@ table {
 		&:hover {
 			background-color: $green-color;
 			color: $white-color;
+		}
 
-			svg {
-				transition: transform 0.25s ease-out;
-			}
+		svg {
+			transition: transform 0.25s ease-out;
 		}
 
 		&.tp-button-left {
@@ -2136,7 +2136,7 @@ table {
 				color: $white-color;
 
 				svg {
-					transform: rotate(180deg) translateX(5px);
+					transform: rotate(180deg) translateX(-5px);
 				}
 			}
 		}
