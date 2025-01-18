@@ -2115,7 +2115,7 @@ table {
 			color: $white-color;
 
 			svg {
-				transition: $transition;
+				transition: transform 0.25s ease-out;
 			}
 		}
 
@@ -2136,7 +2136,7 @@ table {
 				color: $white-color;
 
 				svg {
-					transform: translateX(6px);
+					transform: rotate(180deg) translateX(6px);
 				}
 			}
 		}
