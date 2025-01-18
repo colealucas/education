@@ -996,7 +996,6 @@
     </div>
 
 
-
 <?php elseif( get_row_layout() == 'match_text_with_image' ) : // editable_template
     $columns = (get_sub_field('columns') ? get_sub_field('columns') : 'col-md-4'); // default to 3 columns
     $image_height = (get_sub_field('image_height') ? get_sub_field('image_height') : 200); // default to 200px image height

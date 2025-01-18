@@ -1640,13 +1640,13 @@ table {
 		cursor: pointer;
 		user-select: none;
 		transition: $transition;
-		background-color: $light-gray-color;
-		border: 1px solid $medium-gray-color;
+		background-color: $orange-color;
+		border: 1px solid $orange-color;
 
 		&:hover {
 			background-color: $orange-color;
 			color: $dark-color;
-			border-color: transparent;
+			border-color: $dark-color;
 		}
 
 		&.wrong {
