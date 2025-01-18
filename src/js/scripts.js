@@ -1852,7 +1852,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (wrappers.length) {
             wrappers.forEach(function(wrapper) {
-                const text = wrapper.textContent;
+                const text = wrapper.innerHTML;
                 const processedText = processText(text);
 
                 console.log(processedText);
