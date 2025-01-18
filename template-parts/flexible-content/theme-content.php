@@ -812,7 +812,7 @@
         <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video">
         
             <div class="remember-wrap flex gap-4px">
-                <div class="flex rounded-20px">
+                <div class="flex rounded-20px overflow-hidden">
                     <div class="text-22px font-700 text-white bg-orange p-20px min-w-[200px]">
                         <?php echo $title; ?>
                     </div>
