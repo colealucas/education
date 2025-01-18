@@ -848,7 +848,7 @@ body.logged-in {
 			position: relative;
 
 			&::before {
-				content: counter(custom-counter);
+				content: counter(custom-counter) ". ";
 				font-weight: bold;
 				color: #D1222A;
 				margin-right: 10px;
