@@ -2116,13 +2116,13 @@ table {
 		}
 
 		svg {
-			transition: transform 0.25s ease-out;
+			transition: transform 0.3s ease-out;
 		}
 
 		&.tp-button-left {
 			&:hover {
 				svg {
-					transform: translateX(-5px);
+					transform: translateX(-4px);
 				}
 			}
 		}
@@ -2136,7 +2136,7 @@ table {
 				color: $white-color;
 
 				svg {
-					transform: rotate(180deg) translateX(-5px);
+					transform: rotate(180deg) translateX(-4px);
 				}
 			}
 		}
