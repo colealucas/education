@@ -15,7 +15,7 @@ $get_static_text = [
         'step2' => 'Sunt curios/curioasă să aflu mai mult!',
         'step3' => 'Consum și creez produse media cu responsabilitate',
         'step4' => 'Aventura mea media continuă!',
-        'step5' => 'Vorbesc cult',
+        'step5' => 'Vorbesc cult!',
         'step6' => 'Știai că...',
 
         // gimnaziu
