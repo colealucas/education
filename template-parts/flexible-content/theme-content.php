@@ -1517,11 +1517,11 @@ $placeholder_text = get_sub_field('placeholder_text');
                         <td style="width: 50%">
                             <form action="#" method="POST" data-add-fields-form>
                                 <div class="add-fields-wrap flex flex-col gap-4px" data-add-fields-wrap>
-                                    <input type="text" class="h-36px w-full border-solid border-2px border-medium-gray py-0 px-12px focus:outline-none focus:border-orange" name="the_source[]" value="" placeholder="<?php echo $get_static_text[get_lang()]['write_here']; ?>">
-                                    <input type="text" class="h-36px w-full border-solid border-2px border-medium-gray py-0 px-12px focus:outline-none focus:border-orange" name="the_source[]" value="" placeholder="<?php echo $get_static_text[get_lang()]['write_here']; ?>">
+                                    <input type="text" class="h-36px w-full border-solid border-2px border-medium-gray py-0 px-12px focus:outline-none focus:border-green" name="the_source[]" value="" placeholder="<?php echo $get_static_text[get_lang()]['write_here']; ?>">
+                                    <input type="text" class="h-36px w-full border-solid border-2px border-medium-gray py-0 px-12px focus:outline-none focus:border-green" name="the_source[]" value="" placeholder="<?php echo $get_static_text[get_lang()]['write_here']; ?>">
                                 </div>
                                 
-                                <div class="p-6px mt-6px leading-130 bg-light-gray transition-all rounded-8px text-dark hover:bg-orange font-500 text-14px text-center cursor-pointer select-none" data-add-field-btn><?php echo $get_static_text[get_lang()]['add_field']; ?></div>
+                                <div class="p-6px mt-6px leading-130 bg-light-gray transition-all rounded-8px text-dark hover:bg-green font-500 text-14px text-center cursor-pointer select-none" data-add-field-btn><?php echo $get_static_text[get_lang()]['add_field']; ?></div>
                             </form>
                         </td>
                     </tr>
