@@ -1500,14 +1500,15 @@ $placeholder_text = get_sub_field('placeholder_text');
 
 <div class="flexible-content-section resore-text-game my-24px">
     <div class="relative">
-        <?php if ( have_rows('items') ) : ?>
+        <?php if ( have_rows('items') ) : $k=0; ?>
             <div class="agenda-wrap">
                 <table class="agenda-table">
                     <?php while ( have_rows('items') ) : the_row();
                         $item = get_sub_field('item');
+                        $k++;
                     ?>
 
-                    <tr>
+                    <tr style="background-color:<?php echo (($k % 2 == 0) ? 'rgba(253,161,114, 0.3)' : 'rgba(250,129,40, 0.2)') ?>">
                         <td style="width: 50%">
                             <div class="agenda-item">
                                 <?php echo $item; ?>
