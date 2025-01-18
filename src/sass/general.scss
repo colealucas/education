@@ -2113,6 +2113,32 @@ table {
 		&:hover {
 			background-color: $green-color;
 			color: $white-color;
+
+			svg {
+				transition: $transition;
+			}
+		}
+
+		&.tp-button-left {
+			&:hover {
+				svg {
+					transform: translateX(-6px);
+				}
+			}
+		}
+
+		&.tp-button-right {
+			background-color: $green-color;
+			color: $white-color;
+
+			&:hover {
+				background-color: $green-color;
+				color: $white-color;
+
+				svg {
+					transform: translateX(6px);
+				}
+			}
 		}
 	}
 }
