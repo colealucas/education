@@ -1871,14 +1871,14 @@ document.addEventListener("DOMContentLoaded", function() {
                         variantBtns.forEach(function(btn) {
                             btn.addEventListener('click', function() {
                                 if (btn.classList.contains('correct')) {
-                                    btn.classList.add('success');
+                                    btn.classList.add('success', 'no-click');
                                     showSuccessPopup( getText('bravo') );
                                 } else {
                                     btn.classList.add('error');
         
                                     setTimeout(function() {
                                         btn.classList.remove('error');
-                                    }, 500);
+                                    }, 800);
                                 }
                             });
                         });
