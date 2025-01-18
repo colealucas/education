@@ -824,7 +824,11 @@
                     </div>
 
                     <div class="bg-orange text-dark flex-1 p-20px font-500 italic">
-                        <?php echo $content; ?>
+                        <div class="flex h-full items-center">
+                            <div class="flex-1">
+                                <?php echo $content; ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
