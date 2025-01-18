@@ -108,9 +108,11 @@
             </div>
         <?php endif; ?>
 
-        <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video <?php echo $addition_classes; ?>">
-            <?php echo ($enable_words_hunt ? replaceBracketsWithSpans($section_content) : $section_content); ?>
-        </div>
+        <?php if ( strlen(trim($section_content)) ) : ?>
+            <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video <?php echo $addition_classes; ?>">
+                <?php echo ($enable_words_hunt ? replaceBracketsWithSpans($section_content) : $section_content); ?>
+            </div>
+        <?php endif; ?>
     </div>
 
 
