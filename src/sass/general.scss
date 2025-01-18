@@ -1271,6 +1271,26 @@ ol.found-words-list {
 	}
 }
 
+.split-variants {
+	span.variant-btn {
+		display: inline-block;
+		padding: 8px 16px;
+		border-radius: 4px;
+		background-color: $light-gray-color;
+		cursor: pointer;
+		transition: all 0.2s ease-out;
+
+		&:hover {
+			background-color: $medium-gray-color;
+		}
+
+		&.selected {
+			background-color: $green-color;
+			color: $white-color;
+		}
+	}
+}
+
 .spot-correct-wrap {
 	li.correct {
 		background-color: $lime-green;
