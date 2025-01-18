@@ -2122,7 +2122,7 @@ table {
 		&.tp-button-left {
 			&:hover {
 				svg {
-					transform: translateX(-4px);
+					transform: translateX(-5px);
 				}
 			}
 		}
@@ -2136,7 +2136,7 @@ table {
 				color: $white-color;
 
 				svg {
-					transform: rotate(180deg) translateX(-4px);
+					transform: rotate(180deg) translateX(-5px);
 				}
 			}
 		}
