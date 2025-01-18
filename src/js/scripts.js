@@ -1841,7 +1841,7 @@ document.addEventListener("DOMContentLoaded", function() {
     handleHuntedWords();
 
     function processText(text) {
-        const regex = /\(<strong>([^<]+)<\/strong>\/([^<]+)\)|\(([^/]+)\/<strong>([^<]+)<\/strong>\)/g;
+        const regex = /\[<strong>([^<]+)<\/strong>\/([^<]+)\]|\[([^/]+)\/<strong>([^<]+)<\/strong>\]/g;
         return text.replace(regex, (match, correct1, incorrect1, incorrect2, correct2) => {
             if (correct1) {
                 // First variant is correct
