@@ -1867,17 +1867,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 const text = wrapper.innerHTML;
                 const processedText = processText(text);
 
-                console.log(processedText);
-                // wrapper.innerHTML = processedText;
+                // console.log(processedText);
+                wrapper.innerHTML = processedText;
             });
         }
 
-        const inputText = "This is an example text with (variant 1/<strong>variant 2</strong>) and another one ( <strong>option A </strong>/option B). Fine.";
-        const processedText = processText(inputText);
-          
-        console.log(processedText);
-        // Output:
-        // This is an example text with (<span class="variant1-btn">variant 1</span>, <span class="variant1-btn correct">variant 2</span>) and another one (<span class="variant1-btn">option A</span>, <span class="variant1-btn correct">option B</span>)
+        // const inputText = "This is an example text with (variant 1/<strong>variant 2</strong>) and another one ( <strong>option A </strong>/option B). Fine.";
+        // const processedText = processText(inputText); 
+        // console.log(processedText);
     }
     handleSplitVariants();
    
