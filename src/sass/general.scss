@@ -1274,18 +1274,20 @@ ol.found-words-list {
 .split-variants {
 	span.variant-btn {
 		display: inline-block;
-		padding: 8px 16px;
+		padding: 5px 10px;
 		border-radius: 4px;
-		background-color: $light-gray-color;
+		background-color: $orange-color;
 		cursor: pointer;
 		transition: all 0.2s ease-out;
+		border: 1px solid transparent;
 
 		&:hover {
-			background-color: $medium-gray-color;
+			background-color: $orange-color;
+			border-color: $dark-color;
 		}
 
 		&.selected {
-			background-color: $green-color;
+			background-color: $lime-green;
 			color: $white-color;
 		}
 	}
