@@ -1860,7 +1860,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         }
 
-        const inputText = "This is an example text with (variant 1, <strong>variant 2</strong>) and another one (option A, <strong>option B</strong>)";
+        const inputText = "This is an example text with (variant 1/<strong>variant 2</strong>) and another one (option A, <strong>option B</strong>)";
         const processedText = processText(inputText);
           
         console.log(processedText);
