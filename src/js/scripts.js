@@ -1854,7 +1854,9 @@ document.addEventListener("DOMContentLoaded", function() {
             wrappers.forEach(function(wrapper) {
                 const text = wrapper.textContent;
                 const processedText = processText(text);
-                wrapper.innerHTML = processedText;
+
+                console.log(processedText);
+                // wrapper.innerHTML = processedText;
             });
         }
 
