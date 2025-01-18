@@ -1508,7 +1508,7 @@ $placeholder_text = get_sub_field('placeholder_text');
                         $k++;
                     ?>
 
-                    <tr style="background-color:<?php echo (($k % 2 == 0) ? 'rgba(253,161,114, 0.15)' : 'rgba(250,129,40, 0.3)') ?>">
+                    <tr style="background-color:<?php echo (($k % 2 == 0) ? 'rgba(253,161,114, 0.15)' : 'rgba(250,129,40, 0.2)') ?>">
                         <td style="width: 50%">
                             <div class="agenda-item">
                                 <?php echo $item; ?>
