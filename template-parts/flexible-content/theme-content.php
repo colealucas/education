@@ -1459,7 +1459,7 @@ $placeholder_text = get_sub_field('placeholder_text');
 <div class="flexible-content-section pyramid-game my-24px">
     <div class="relative">
         <?php if ( have_rows('items') ) : ?>
-            <div class="pyramid-wrap flex items-center gap-20px bg-light-gray p-20px rounded-16px">
+            <div class="pyramid-wrap flex items-center gap-20px bg-orange p-20px rounded-16px">
                 <div class="pyramid-left w-40%">
                     <div class="pyramid-mixed-items overflow-y-auto max-h-[416px] p-16px flex flex-col gap-16px border-solid border-1px border-medium-gray rounded-8px">
                         <?php while ( have_rows('items') ) : the_row();
