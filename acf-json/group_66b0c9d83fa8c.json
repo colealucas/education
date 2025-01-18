@@ -444,7 +444,7 @@
                                     "name": "split_variants",
                                     "aria-label": "",
                                     "type": "true_false",
-                                    "instructions": "Each variant should follow this format (V1\/V2)",
+                                    "instructions": "Each variant should follow this format [V1\/V2], example: [variant1\/<strong>variant2<\/strong>]",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
@@ -4005,5 +4005,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1737227738
+    "modified": 1737235690
 }
