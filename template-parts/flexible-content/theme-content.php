@@ -1654,7 +1654,7 @@ $display_feedback = get_sub_field('');
         <div class="comp-wrap">
             <div class="boxes-with-text-wrap">
                 <?php if ( have_rows('columns') ) : $i=0; ?>
-                    <div class="bwt-wrap grid gap-20px grid-cols-<?php echo $cols_count; ?>">
+                    <div class="bwt-wrap grid gap-20px grid-cols-3">
 
                         <?php while ( have_rows('columns') ) : the_row(); $i++;
                             $text_content = get_sub_field('text_content');
