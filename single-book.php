@@ -76,7 +76,7 @@ $get_static_text = [
 
                             <div class="col-lg-3 col-md-6">
                                 <a href="<?php the_permalink(); ?>" class="block book-module p-24px bg-faded-white font-500 mb-20px rounded-24px">
-                                    <h3 class="text-28px leading-110 mb-24px min-h-[62px]"><?php the_title(); ?></h3>
+                                    <h3 class="text-26px leading-110 mb-24px min-h-[62px]"><?php the_title(); ?></h3>
 
                                     <?php if ( has_post_thumbnail() ) : $thumbnail_url = get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>
                                         <div class="post-thumbnail">
