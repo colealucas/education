@@ -823,7 +823,7 @@
         <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video">
         
             <div class="remember-wrap flex gap-4px">
-                <div class="flex rounded-12px overflow-hidden">
+                <div class="flex rounded-12px overflow-hidden w-full">
                     <div class="text-22px font-700 text-white bg-blue p-20px min-w-[160px]">
                         <div class="flex h-full items-center justify-center">
                             <div>
