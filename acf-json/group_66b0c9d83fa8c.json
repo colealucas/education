@@ -364,7 +364,7 @@
                                     "name": "background_color",
                                     "aria-label": "",
                                     "type": "color_picker",
-                                    "instructions": "Add background color. (Adauga culoare de fundal)",
+                                    "instructions": "Add background color. Green: #EDF6E9 | #E6F2EA | Orange: #E9DD7F | #FAAF3F",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
@@ -372,8 +372,8 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": "#EDF6E9",
-                                    "enable_opacity": 0,
+                                    "default_value": "#ffffff",
+                                    "enable_opacity": 1,
                                     "return_format": "string"
                                 },
                                 {
@@ -4109,5 +4109,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1737304833
+    "modified": 1737305286
 }
