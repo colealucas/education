@@ -896,6 +896,18 @@ body.logged-in {
 			padding: 10px;
 		}
 	}
+
+	blockquote {
+		background-color: $green-color;
+		padding: 20px 24px;
+		border-radius: 16px;
+		margin-bottom: 16px;
+		color: $white-color;
+
+		p {
+			margin: 0;
+		}
+	}
 }
 
 .video-container {
