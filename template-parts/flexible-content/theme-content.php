@@ -84,7 +84,7 @@
     $addition_classes = implode(' ', $css_classes);
 ?>
 
-    <div class="flexible-content-section text-content-section my-24px">
+    <div class="flexible-content-section text-content-section my-20px">
         <?php if (strlen(trim($section_title))) : ?>
             <div class="tcs-heading mb-16px bg-green text-white py-20px px-24px rounded-16px">
                 <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
@@ -120,7 +120,7 @@
     $video_link = get_sub_field('video_code');
 ?>
 
-    <div class="flexible-content-section video-section my-24px">
+    <div class="flexible-content-section video-section my-20px">
         <?php if ( $video_link ) : ?>
             <div class="video-container">
                 <?php echo $video_link; ?>
@@ -134,7 +134,7 @@
     $section_description = get_sub_field('description');
 ?>
 
-    <div class="flexible-content-section match-definitions my-24px">
+    <div class="flexible-content-section match-definitions my-20px">
         <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
             <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
                 <span class="w-30px block">
@@ -154,7 +154,7 @@
             <?php echo $section_description; // optional ?>
         </div>
 
-        <div class="match-definitions-wrap my-24px flex flex-col gap-16px">
+        <div class="match-definitions-wrap my-20px flex flex-col gap-16px">
             <?php if( have_rows('definitions') ): ?>
                 <?php while( have_rows('definitions') ): the_row();
                     $word = get_sub_field('word');
@@ -268,7 +268,7 @@
     }
 ?>
 
-    <div class="flexible-content-section match-definitions my-24px">
+    <div class="flexible-content-section match-definitions my-20px">
         <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
             <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
                 <span class="w-30px block">
@@ -370,7 +370,7 @@
     }
 ?>
 
-    <div class="flexible-content-section match-arrows my-24px">
+    <div class="flexible-content-section match-arrows my-20px">
         <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
             <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
                 <span class="w-30px block">
@@ -390,7 +390,7 @@
             <?php echo $section_description; // optional ?>
         </div>
 
-        <div class="match-arrows-game my-24px flex flex-col gap-16px">
+        <div class="match-arrows-game my-20px flex flex-col gap-16px">
 
             <div class="ma-container">
                 <div class="ma-column left">
@@ -449,7 +449,7 @@
     }
 ?>
 
-    <div class="flexible-content-section crono-game my-24px">
+    <div class="flexible-content-section crono-game my-20px">
         <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
             <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
                 <span class="w-30px block">
@@ -503,7 +503,7 @@
 
 ?>
 
-    <div class="flexible-content-section spot-correct-game my-24px">
+    <div class="flexible-content-section spot-correct-game my-20px">
         
         <div class="mt-30px text-20px font-600 text-green">
             <?php echo $section_title; ?>
@@ -558,7 +558,7 @@
     $text_fields = get_sub_field('text_fields');
 ?>
 
-    <div class="flexible-content-section table-game my-24px">
+    <div class="flexible-content-section table-game my-20px">
         <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
             <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
                 <span class="w-30px block">
@@ -578,7 +578,7 @@
             <?php echo $section_content; ?>
         </div>
 
-        <div class="table-game-wrap my-24px">
+        <div class="table-game-wrap my-20px">
             <?php if ( have_rows('items') ) : $counter = 0; ?>
                 <table>
                     <tr>
@@ -632,7 +632,7 @@
     $section_content = get_sub_field('content');
 ?>
 
-    <div class="flexible-content-section curiosity-section my-24px">
+    <div class="flexible-content-section curiosity-section my-20px">
         <?php if (strlen(trim($section_title))) : ?>
         <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
             <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
@@ -650,7 +650,7 @@
         </div>
         <?php endif; ?>
 
-        <div class="curiosity-wrap my-24px">
+        <div class="curiosity-wrap my-20px">
             <?php if ( $type == 'rich' ) : // animated curiosity ?>
 
                 <?php if ( have_rows('animated_curiosities') ) : $counter = 0; $k=0; ?>
@@ -703,7 +703,7 @@
     $col_b_title = get_sub_field('column_b_title');
 ?>
 
-    <div class="flexible-content-section curiosity-section my-24px">
+    <div class="flexible-content-section curiosity-section my-20px">
         <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
             <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
                 <span class="w-30px block">
@@ -805,7 +805,7 @@
     </style>
 <?php endif; ?>
 
-    <div class="flexible-content-section curiosity-section my-24px">
+    <div class="flexible-content-section curiosity-section my-20px">
         <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video">
             <form action="#" method="POST">
                 <textarea <?php echo ($text_color ? 'style="color:' . $text_color .' !important;"' : ''); ?> rows="<?php echo $rows; ?>" class="w-full p-16px border-2px border-solid border-medium-gray bg-light-gray focus:bg-white rounded-8px focus:outline-none user-textarea" name="text_area" placeholder="<?php echo $placeholder; ?>"></textarea>
@@ -819,7 +819,7 @@
     $title = get_sub_field('title');
 ?>
 
-    <div class="flexible-content-section remeber-section my-24px">
+    <div class="flexible-content-section remeber-section my-20px">
         <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video">
         
             <div class="remember-wrap flex gap-4px">
@@ -852,7 +852,7 @@
     $background_color = (get_sub_field('background_color') ? get_sub_field('background_color') : '#F78D1E');
 ?>
 
-    <div class="flexible-content-section color-section my-24px">
+    <div class="flexible-content-section color-section my-20px">
         <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video">
             <div class="flex flex-col gap-12px p-20px text-<?php echo $text_color; ?> rounded-16px" style="background-color: <?php echo $background_color; ?>; color: <?php echo $text_color; ?>;">
                 <?php if ($title): ?>
@@ -938,7 +938,7 @@
     $columns = (get_sub_field('columns') ? get_sub_field('columns') : 'col-md-6'); // default to 2 columns
 ?>
 
-    <div class="flexible-content-section curiosity-section my-24px">
+    <div class="flexible-content-section curiosity-section my-20px">
         <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
             <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
                 <span class="w-30px block">
@@ -1039,7 +1039,7 @@
     $image_height = (get_sub_field('image_height') ? get_sub_field('image_height') : 200); // default to 200px image height
 ?>
 
-    <div class="flexible-content-section match-image-with-text-section my-24px">
+    <div class="flexible-content-section match-image-with-text-section my-20px">
         <div class="relative">
             <?php if ( have_rows('items') ) : $index = 0; $k = 0; ?>
                 <div class="mit-wrap">
@@ -1084,7 +1084,7 @@
 
 <?php elseif( get_row_layout() == 'select_correct_number' ) : // select_correct_number ?>
 
-    <div class="flexible-content-section numbers-game-section my-24px">
+    <div class="flexible-content-section numbers-game-section my-20px">
         <div class="relative">
             <?php if ( have_rows('numbers') ) : $index = 0; $k = 0; ?>
                 <div class="numbers-wrap bg-faded-gray rounded-16px p-20px">
@@ -1117,7 +1117,7 @@ $images_height_pixels = (get_sub_field('images_height_pixels') ? get_sub_field('
 $placeholder_text = get_sub_field('placeholder_text');
 ?>
 
-<div class="flexible-content-section numbers-game-section my-24px">
+<div class="flexible-content-section numbers-game-section my-20px">
     <div class="relative">
         <?php if ( have_rows('items') ) : $index = 0; $k = 0; ?>
             <div class="imgtxt-wrap py-20px">
@@ -1153,7 +1153,7 @@ $placeholder_text = get_sub_field('placeholder_text');
 $images_height_pixels = (get_sub_field('images_height') ? get_sub_field('images_height') : 100);
 ?>
 
-<div class="flexible-content-section axa-game-section my-24px">
+<div class="flexible-content-section axa-game-section my-20px">
     <div class="relative">
         <?php if ( have_rows('items') ) : $i=0; $k=0; ?>
             <div class="axa-wrap pt-140px">
@@ -1195,7 +1195,7 @@ $key_word = get_sub_field('key_word');
 $placeholder_text = get_sub_field('placeholder_text');
 ?>
 
-<div class="flexible-content-section acrostih-game my-24px">
+<div class="flexible-content-section acrostih-game my-20px">
     <div class="relative">
         <?php if ($key_word) : 
             $letters = str_split($key_word);
@@ -1225,7 +1225,7 @@ $placeholder_text = get_sub_field('placeholder_text');
 
 <?php elseif( get_row_layout() == 'reorder_aliniate' ) : // reorder_aliniate ?>
 
-<div class="flexible-content-section ra-game my-24px">
+<div class="flexible-content-section ra-game my-20px">
     <div class="relative">
 
         <?php if ( have_rows('aliniate') ) : 
@@ -1280,7 +1280,7 @@ $placeholder_text = get_sub_field('placeholder_text');
         object-fit: cover;
     }
 </style>
-<div class="flexible-content-section top3-game my-24px">
+<div class="flexible-content-section top3-game my-20px">
     <div class="relative">
         <?php if ( have_rows('items') ) : $z=0; ?>
             <div class="top3-wrap p-20px bg-light-gray rounded-8px">
@@ -1325,7 +1325,7 @@ $placeholder_text = get_sub_field('placeholder_text');
 
 <?php elseif( get_row_layout() == 'restore_text' ) : // restore_text ?>
 
-<div class="flexible-content-section resore-text-game my-24px">
+<div class="flexible-content-section resore-text-game my-20px">
     <div class="relative">
         <?php if ( have_rows('items') ) : ?>
             <div class="resore-text-wrap">
@@ -1369,7 +1369,7 @@ $placeholder_text = get_sub_field('placeholder_text');
     $mixed_elements = [];
 ?>
 
-    <div class="flexible-content-section dit-section my-24px">
+    <div class="flexible-content-section dit-section my-20px">
         <div class="relative">
             <?php if ( have_rows('target_items') ) : $index = 0; $y=0; ?>
                 <div class="dit-wrap">
@@ -1440,7 +1440,7 @@ $placeholder_text = get_sub_field('placeholder_text');
 
 <?php elseif( get_row_layout() == 'true_false' ) : // true_false ?>
 
-<div class="flexible-content-section tf-game my-24px">
+<div class="flexible-content-section tf-game my-20px">
     <div class="relative">
         <?php if ( have_rows('items') ) : ?>
             <div class="tf-wrap">
@@ -1481,7 +1481,7 @@ $placeholder_text = get_sub_field('placeholder_text');
 
 <?php elseif( get_row_layout() == 'pyramid' ) : // pyramid ?>
 
-<div class="flexible-content-section pyramid-game my-24px">
+<div class="flexible-content-section pyramid-game my-20px">
     <div class="relative">
         <?php if ( have_rows('items') ) : ?>
             <div class="pyramid-wrap flex items-center gap-20px bg-orange p-20px rounded-16px">
@@ -1520,7 +1520,7 @@ $placeholder_text = get_sub_field('placeholder_text');
 
 <?php elseif( get_row_layout() == 'agenda' ) : // agenda ?>
 
-<div class="flexible-content-section resore-text-game my-24px">
+<div class="flexible-content-section resore-text-game my-20px">
     <div class="relative">
         <?php if ( have_rows('items') ) : $k=0; ?>
             <div class="agenda-wrap">
@@ -1559,7 +1559,7 @@ $placeholder_text = get_sub_field('placeholder_text');
 
 <?php elseif( get_row_layout() == 'hexagon' ) : // hexagon ?>
 
-<div class="flexible-content-section hexagon-game my-24px">
+<div class="flexible-content-section hexagon-game my-20px">
     <div class="relative">
         <?php if ( have_rows('questions') ) : ?>
             <div class="hexagon-wrap">
@@ -1602,7 +1602,7 @@ $placeholder_text = get_sub_field('placeholder_text');
 $display_feedback = get_sub_field('');    
 ?>
 
-<div class="flexible-content-section comp-game my-24px">
+<div class="flexible-content-section comp-game my-20px">
     <div class="relative">
         <div class="comp-wrap w-[740px] mx-auto relative border-solid border-1px border-transparent">
             <div class="pc-game-wrap">
@@ -1649,7 +1649,7 @@ $display_feedback = get_sub_field('');
     $cols_count = count($cols);
 ?>
 
-<div class="flexible-content-section boxes-with-text my-24px">
+<div class="flexible-content-section boxes-with-text my-20px">
     <div class="relative">
         <div class="comp-wrap">
             <div class="boxes-with-text-wrap">
@@ -1686,7 +1686,7 @@ $display_feedback = get_sub_field('');
     $placeholder_text = get_sub_field('placeholder_text');
 ?>
 
-<div class="flexible-content-section editble-table my-24px">
+<div class="flexible-content-section editble-table my-20px">
     <div class="relative">
         <div class="et-wrap print-div">
             <div class="flex justify-end">
@@ -1744,7 +1744,7 @@ $display_feedback = get_sub_field('');
     $items = get_sub_field('items');
 ?>
 
-<div class="flexible-content-section functions-box my-24px">
+<div class="flexible-content-section functions-box my-20px">
     <div class="relative">
         <div class="fb-wrap print-div">
             <div class="row">
