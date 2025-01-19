@@ -845,6 +845,31 @@
         </div>
     </div>
 
+<?php elseif( get_row_layout() == 'text_section_with_background' ) : // text_section_with_background
+    $content = get_sub_field('text_content');
+    $title = get_sub_field('section_title');
+    $text_color = (get_sub_field('text_color') ? get_sub_field('text_color') : '#ffffff');
+    $background_color = (get_sub_field('background_color') ? get_sub_field('background_color') : '#F78D1E');
+?>
+
+    <div class="flexible-content-section color-section my-24px">
+        <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video">
+            <div class="flex flex-col gap-12px p-20px text-<?php echo $text_color; ?> rounded-16px" style="background-color: <?php echo $background_color; ?>; color: <?php echo $text_color; ?>;">
+                <?php if ($title): ?>
+                    <div>
+                        <h2 class="text-22px font-600 leading-130"><?php echo $title; ?></h2>
+                    </div>
+                <?php endif; ?>
+
+                <?php if ($content): ?>
+                    <div class="color-section-content">
+                        <?php echo $content; ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+
 
 <?php elseif( get_row_layout() == 'choose_one' ) : // choose_one
     $section_title = get_sub_field('title');

@@ -562,6 +562,92 @@
                             "min": "",
                             "max": ""
                         },
+                        "layout_678d0cf683652": {
+                            "key": "layout_678d0cf683652",
+                            "name": "text_section_with_background",
+                            "label": "Text section + Backround (Sectiune text cu fundal colorat)",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_678d0d1a83654",
+                                    "label": "Title (titlu)",
+                                    "name": "section_title",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "Add title",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_678d0d4483655",
+                                    "label": "Text content",
+                                    "name": "text_content",
+                                    "aria-label": "",
+                                    "type": "textarea",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "rows": 4,
+                                    "placeholder": "Add text content",
+                                    "new_lines": ""
+                                },
+                                {
+                                    "key": "field_678d0d5b83656",
+                                    "label": "Text color",
+                                    "name": "text_color",
+                                    "aria-label": "",
+                                    "type": "color_picker",
+                                    "instructions": "Set text color. (Seteaza culoarea textului)",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "#ffffff",
+                                    "enable_opacity": 0,
+                                    "return_format": "string"
+                                },
+                                {
+                                    "key": "field_678d0d8083657",
+                                    "label": "Background color",
+                                    "name": "background_color",
+                                    "aria-label": "",
+                                    "type": "color_picker",
+                                    "instructions": "Set background color. (Seteaza culoarea de fundal)",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "#F78D1E",
+                                    "enable_opacity": 0,
+                                    "return_format": "string"
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        },
                         "layout_67549bf7835c9": {
                             "key": "layout_67549bf7835c9",
                             "name": "remember",
@@ -4005,5 +4091,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1737235690
+    "modified": 1737297365
 }
