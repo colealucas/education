@@ -924,6 +924,10 @@ body.logged-in {
 			text-align: left;
 		}
 
+		:first-child {
+			flex: 1 1 0%;
+		}
+
 		p {
 			margin: 0;
 		}
