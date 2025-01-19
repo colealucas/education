@@ -1654,13 +1654,13 @@ $display_feedback = get_sub_field('');
         <div class="comp-wrap">
             <div class="boxes-with-text-wrap">
                 <?php if ( have_rows('columns') ) : $i=0; ?>
-                    <div class="bwt-wrap flex gap-20px">
+                    <div class="bwt-wrap flex flex-wrap gap-12px">
 
                         <?php while ( have_rows('columns') ) : the_row(); $i++;
                             $text_content = get_sub_field('text_content');
                         ?>
 
-                        <div class="bwt-col-<?php echo $i; ?> flex flex-col gap-12px rounded-12px p-12px flex-1">
+                        <div class="bwt-col-<?php echo $i; ?> flex flex-col gap-12px rounded-12px p-12px flex-1 min-w-200px">
                             <div class="min-h-[130px]">
                                 <?php echo $text_content; ?>
                             </div>
