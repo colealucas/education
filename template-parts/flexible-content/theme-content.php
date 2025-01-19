@@ -43,6 +43,7 @@
     $split_variants   = get_sub_field('split_variants');
     $click_words      = get_sub_field('click_words');
     $add_table_boders = get_sub_field('add_table_boders');
+    $background_color = (get_sub_field('background_color') ? get_sub_field('background_color') : 'transparent');
 
     if ($full_with_images) {
         $css_classes[] = 'full-width-images';
@@ -84,7 +85,7 @@
     $addition_classes = implode(' ', $css_classes);
 ?>
 
-    <div class="flexible-content-section text-content-section my-20px">
+    <div class="flexible-content-section text-content-section my-20px" style="background-color: <?php echo $background_color; ?>">
         <?php if (strlen(trim($section_title))) : ?>
             <div class="tcs-heading mb-16px bg-green text-white py-20px px-24px rounded-16px">
                 <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
