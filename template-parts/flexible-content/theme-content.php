@@ -85,7 +85,7 @@
     $addition_classes = implode(' ', $css_classes);
 ?>
 
-    <div class="flexible-content-section text-content-section my-20px" style="background-color: <?php echo $background_color; ?>">
+    <div class="flexible-content-section text-content-section my-20px">
         <?php if (strlen(trim($section_title))) : ?>
             <div class="tcs-heading mb-16px bg-green text-white py-20px px-24px rounded-16px">
                 <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
@@ -110,7 +110,7 @@
         <?php endif; ?>
 
         <?php if ( strlen(trim($section_content)) ) : ?>
-            <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video <?php echo $addition_classes; ?>">
+            <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video <?php echo $addition_classes; ?> <?php if (strlen($background_color) && strtolower($background_color) != '#ffffff') :  ?> p-20px <?php endif; ?>" <?php if (strlen($background_color) && strtolower($background_color) != '#ffffff') :  ?>style="background-color: <?php echo $background_color; ?>"<?php endif; ?>>
                 <?php echo ($enable_words_hunt ? replaceBracketsWithSpans($section_content) : $section_content); ?>
             </div>
         <?php endif; ?>
