@@ -565,7 +565,7 @@
                         "layout_678d0cf683652": {
                             "key": "layout_678d0cf683652",
                             "name": "text_section_with_background",
-                            "label": "Text section + Backround (Sectiune text cu fundal colorat)",
+                            "label": "Text section + color backround",
                             "display": "block",
                             "sub_fields": [
                                 {
@@ -4091,5 +4091,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1737297365
+    "modified": 1737298014
 }
