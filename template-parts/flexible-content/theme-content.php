@@ -856,7 +856,7 @@
         <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video">
             <div class="flex flex-col gap-12px p-20px text-<?php echo $text_color; ?> rounded-16px" style="background-color: <?php echo $background_color; ?>; color: <?php echo $text_color; ?>;">
                 <?php if ($title): ?>
-                    <div class="text-22px font-600 leading-130">
+                    <div class="text-20px font-600 leading-130">
                        <?php echo $title; ?>
                     </div>
                 <?php endif; ?>
