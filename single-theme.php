@@ -738,7 +738,6 @@ $hide_step_6 = false;
 
 
 <!-- Theme steps -->
-
 <?php if ($book_target == 'primar') : ?>
     
 <div class="section py-32px theme-steps">
@@ -899,7 +898,6 @@ $hide_step_6 = false;
 </div>
 
 <?php endif; ?>
-
 
 <?php if ($book_target == 'gimnaziu') : ?>
     

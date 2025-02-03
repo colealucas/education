@@ -67,7 +67,7 @@ $get_static_text = [
                                 ),
                             ),
                             'orderby' => 'id',
-                            'order' => 'ASC'
+                            'order' => 'DESC'
                         ));
                     ?>
 
