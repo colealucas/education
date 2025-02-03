@@ -46,9 +46,12 @@ $all_themes = new WP_Query(array(
             'compare' => 'LIKE'
         ),
     ),
-    'orderby' => 'id',
-    'order' => 'DESC',
+    // 'orderby' => 'id',
+    // 'order' => 'DESC',
     'fields' => 'ids', // This retrieves only post IDs instead of full post objects
+    'meta_key'       => 'theme_order_number', // Set the ACF field for ordering
+    'orderby'        => 'meta_value_num', // Ensure numeric sorting
+    'order'          => 'ASC', // Change to DESC if needed
 ));
 
 // Get the count of posts

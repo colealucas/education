@@ -20,22 +20,24 @@
             "endpoint": 0
         },
         {
-            "key": "field_6730845248983",
-            "label": "Theme Number",
-            "name": "theme_number",
+            "key": "field_67a146caffa13",
+            "label": "Theme order number (numar de ordine tema)",
+            "name": "theme_order_number",
             "aria-label": "",
-            "type": "text",
-            "instructions": "Add theme number",
-            "required": 0,
+            "type": "number",
+            "instructions": "Add theme order (adauga numarul de ordine al temei)",
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "1-2",
+            "default_value": 1,
+            "min": 1,
+            "max": 100,
+            "placeholder": "Theme order",
+            "step": 1,
             "prepend": "",
             "append": ""
         },
@@ -104,6 +106,26 @@
             ],
             "bidirectional": 0,
             "bidirectional_target": []
+        },
+        {
+            "key": "field_6730845248983",
+            "label": "Theme Number",
+            "name": "theme_number",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Add theme number",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "1-2",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_66c71e80eac63",
@@ -4109,5 +4131,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1737305286
+    "modified": 1738622744
 }
