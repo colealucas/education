@@ -66,8 +66,11 @@ $get_static_text = [
                                     'compare' => 'LIKE'
                                 ),
                             ),
-                            'orderby' => 'id',
-                            'order' => 'DESC'
+                            'meta_key'       => 'order_number', // Set the ACF field for ordering
+                            'orderby'        => 'meta_value_num', // Ensure numeric sorting
+                            'order'          => 'ASC', // Change to DESC if needed
+                            // 'orderby' => 'id',
+                            // 'order' => 'DESC'
                         ));
                     ?>
 
