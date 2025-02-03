@@ -24,7 +24,7 @@
             "label": "Order (numar de ordine)",
             "name": "order_number",
             "aria-label": "",
-            "type": "text",
+            "type": "number",
             "instructions": "Add order (adauga numar de ordine)",
             "required": 0,
             "conditional_logic": 0,
@@ -33,9 +33,11 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": 1,
+            "default_value": 1,
+            "min": 1,
+            "max": 100,
+            "placeholder": "Order number",
+            "step": 1,
             "prepend": "",
             "append": ""
         },
@@ -153,5 +155,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738621517
+    "modified": 1738622051
 }
