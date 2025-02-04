@@ -130,7 +130,7 @@ function generateGrid($rows = 18, $cols = 18, $words = []) {
         }
     }
 
-    // Fill remaining empty cells with random Romanian letters
+    // Fill remaining empty cells with random letters
     for ($i = 0; $i < $rows; $i++) {
         for ($j = 0; $j < $cols; $j++) {
             if ($grid[$i][$j] === '') {
@@ -145,14 +145,14 @@ function generateGrid($rows = 18, $cols = 18, $words = []) {
     $x=0;
     foreach ($grid as $row) : $x++; ?>
 
-        <div class="words-row" data-row="<?php echo $x; ?>">
+        <div class="words-row" data-row="<?php echo $x; ?>" data-word="<?php echo htmlspecialchars($word, ENT_QUOTES, 'UTF-8'); ?>">
             <?php 
             $y=0;
             foreach ($row as $letter) : $y++;
                 $index_left = ($y == 1 ? $x : '');
                 $index_top = ($x == 1 ? $y : '');
             ?>
-                <span class="letter"  data-column="<?php echo $y; ?>" data-letter="<?php echo htmlspecialchars($letter, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($letter, ENT_QUOTES, 'UTF-8'); ?> <i class="left-index"><?php echo $index_left; ?></i> <i class="top-index"><?php echo $index_top; ?></i></span>
+                <span class="letter" data-column="<?php echo $y; ?>" data-letter="<?php echo htmlspecialchars($letter, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($letter, ENT_QUOTES, 'UTF-8'); ?> <i class="left-index"><?php echo $index_left; ?></i> <i class="top-index"><?php echo $index_top; ?></i></span>
             <?php endforeach; ?>
         </div>
 

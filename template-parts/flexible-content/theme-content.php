@@ -224,7 +224,7 @@
 
     if( $words_repeater ) : 
         foreach( $words_repeater as $word_array ) :
-            $words_to_discover[] = $word_array['word'];
+            $words_to_discover[] = mb_strtolower($word_array['word']);
             $the_word = $word_array['word'];
             $direction = $word_array['direction'];
             $row_number = ($direction == 'horizontal' ? intval($word_array['horizontal_row_number']) - 1 : 0);
@@ -261,7 +261,7 @@
     // echo "<br><br>";
 
     if ( count( $words_to_discover ) ) {
-        $jsonString = json_encode($words_to_discover, JSON_UNESCAPED_UNICODE); // Convert the PHP array to a JSON string
+        $jsonString = json_encode($words_to_discover, JSON_UNESCAPED_UNICODE); // Convert PHP array to a JSON string
 
         // Escape single quotes, double quotes, and HTML special characters
         $escaped_json_string = htmlspecialchars($jsonString, ENT_QUOTES, 'UTF-8');
