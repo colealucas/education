@@ -1111,6 +1111,14 @@ ol.found-words-list {
 		display: flex;
 		flex-direction: column;
 		gap: 12px;
+
+		&.left {
+			width: 28%;
+		}
+
+		&.right {
+			width: 72%;
+		}
 	}
 	
 	.ma-item {
