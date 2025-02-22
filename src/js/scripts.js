@@ -498,12 +498,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (sections.length) {
             sections.forEach(function(textSection) {
-                if ( textSection ) {
+                if (textSection) {
                     const paragraphs = textSection.querySelectorAll('p:not(.ignore)');
 
                     if (paragraphs.length) {
                         paragraphs.forEach(function(p) {
-                            if ( p.textContent.trim().length ) {
+                            // Check if the paragraph is not a child of blockquote, ul, ol, or table and is not empty
+                            if (!p.closest('blockquote, ul, ol, table') && p.textContent.trim().length > 0) {
                                 const checkboxes = document.createElement('span');
                                 checkboxes.classList.add('paragraph-four-options');
                                 checkboxes.innerHTML = `
