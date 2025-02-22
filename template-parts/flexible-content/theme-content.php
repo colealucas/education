@@ -130,6 +130,56 @@
     </div>
 
 
+<?php elseif( get_row_layout() == 't_graphic' ) : // t_graphic
+    $left_title = get_sub_field('title_left');
+    $right_title = get_sub_field('title_right');
+    $textarea_rows = get_sub_field('textarea_rows') ? get_sub_field('textarea_rows') : 10;
+    $print = get_sub_field('print');
+    $placeholder = get_sub_field('placeholder');
+?>
+
+    <div class="flexible-content-section t-graphic my-20px">
+        <div class="print-div">
+            <?php if ($print) : ?>
+                <div class="print-trigger-wrap flex justify-end mb-8px">
+                    <a href="#" class="inline-flex leading-1 bg-light-gray py-4px px-20px rounded-8px text-15px font-600 items-center gap-4px print-trigger" data-print-trigger>
+                        <span>
+                            <svg fill="#000000" width="30px" height="30px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.656 6.938l-0.344 2.688h11.781l-0.344-2.688c0-0.813-0.656-1.438-1.469-1.438h-8.188c-0.813 0-1.438 0.625-1.438 1.438zM1.438 11.094h19.531c0.813 0 1.438 0.625 1.438 1.438v8.563c0 0.813-0.625 1.438-1.438 1.438h-2.656v3.969h-14.219v-3.969h-2.656c-0.813 0-1.438-0.625-1.438-1.438v-8.563c0-0.813 0.625-1.438 1.438-1.438zM16.875 25.063v-9.281h-11.344v9.281h11.344zM15.188 18.469h-8.125c-0.188 0-0.344-0.188-0.344-0.375v-0.438c0-0.188 0.156-0.344 0.344-0.344h8.125c0.188 0 0.375 0.156 0.375 0.344v0.438c0 0.188-0.188 0.375-0.375 0.375zM15.188 21.063h-8.125c-0.188 0-0.344-0.188-0.344-0.375v-0.438c0-0.188 0.156-0.344 0.344-0.344h8.125c0.188 0 0.375 0.156 0.375 0.344v0.438c0 0.188-0.188 0.375-0.375 0.375zM15.188 23.656h-8.125c-0.188 0-0.344-0.188-0.344-0.375v-0.438c0-0.188 0.156-0.344 0.344-0.344h8.125c0.188 0 0.375 0.156 0.375 0.344v0.438c0 0.188-0.188 0.375-0.375 0.375z"></path>
+                            </svg>
+                        </span>
+                        <?php echo $get_static_text[get_lang()]['print']; ?>
+                    </a>
+                </div>
+            <?php endif; ?>
+
+            <div class="t-graphic-wrap flex gap-12px p-12px bg-light-gray rounded-16px">
+                <div class="t-graphic-left w-50%">
+                    <h3 class="text-16px font-600 leading-130 bg-orange text-white py-20px px-24px rounded-16px">
+                        <?php echo $left_title; ?>
+                    </h3>
+
+                    <div class="t-graphic-left-content mt-12px border-t-2px border-solid border-dark pt-12px">
+                        <textarea name="t-graphic-left-textarea[]" class="w-full bg-white border-none rounded-12px text-15px p-12px outline-orange" rows="<?php echo $textarea_rows; ?>" placeholder="<?php echo $placeholder; ?>"></textarea>
+                    </div>
+                </div>
+
+                <div style="width: 2px;" class="bg-dark"></div>
+
+                <div class="t-graphic-right w-50%">
+                    <h3 class="text-16px font-600 leading-130 bg-red text-white py-20px px-24px rounded-16px">
+                        <?php echo $right_title; ?>
+                    </h3>
+
+                    <div class="t-graphic-right-content mt-12px border-t-2px border-solid border-dark pt-12px">
+                        <textarea name="t-graphic-right-textarea[]" class="w-full bg-white border-none rounded-12px text-15px p-12px outline-red" rows="<?php echo $textarea_rows; ?>" placeholder="<?php echo $placeholder; ?>"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 <?php elseif( get_row_layout() == 'match_words_with_definition' ) : // match_words_with_definition
     $section_title = get_sub_field('title');
     $section_description = get_sub_field('description');
@@ -1377,18 +1427,26 @@ $placeholder_text = get_sub_field('placeholder_text');
 
                     <div class="dit-row flex justify-center gap-24px bg-light-gray p-20px rounded-16px" data-dit-row>
                         <?php while ( have_rows('target_items') ) : the_row(); $index++;
+                            $title = get_sub_field('title');
                             $image = get_sub_field('image');
                             $elements = get_sub_field('elements');
                             $elements_count = count($elements);
                         ?>
                         
-                        <div class="w-25%">
+                        <div class="w-35%">
                             <div class="dit-item">
-                                <div class="dit-image text-center">
-                                    <?php if ($image) : ?>
+                                <?php if ($title) : ?>
+                                    <div class="dit-title text-center text-16px font-600 leading-130 bg-green text-white rounded-8px p-12px mb-12px">
+                                        <?php echo $title; ?>
+                                    </div>
+                                <?php endif; ?>
+
+                                
+                                <?php if ($image) : ?>
+                                    <div class="dit-image text-center bg-white rounded-8px p-12px">
                                         <img src="<?php echo $image; ?>" class="rounded-8px inline-block" style="height: <?php echo $images_height; ?>px" alt="">
-                                    <?php endif; ?>
-                                </div>
+                                    </div>
+                                <?php endif; ?>
 
                                 <div class="dit-target flex flex-col gap-4px p-4px mt-12px rounded-8px min-h-50px border-2px border-dashed border-medium-gray bg-white" data-dit-target data-col-num="<?php echo $index; ?>" data-elements-count="<?php echo $elements_count; ?>"></div>
                             </div>

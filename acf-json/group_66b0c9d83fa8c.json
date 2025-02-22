@@ -738,19 +738,59 @@
                             "min": "",
                             "max": ""
                         },
-                        "layout_66c9f49a1ac81": {
-                            "key": "layout_66c9f49a1ac81",
-                            "name": "video_section",
-                            "label": "Vide section",
+                        "layout_67b9f3e5aeb8b": {
+                            "key": "layout_67b9f3e5aeb8b",
+                            "name": "t_graphic",
+                            "label": "TGraphic (Graficul T)",
                             "display": "block",
                             "sub_fields": [
                                 {
-                                    "key": "field_66c9f4a31ac83",
-                                    "label": "Video code",
-                                    "name": "video_code",
+                                    "key": "field_67b9f40eaeb8d",
+                                    "label": "Title left (titlu stanga)",
+                                    "name": "title_left",
                                     "aria-label": "",
-                                    "type": "textarea",
-                                    "instructions": "Add youtube video embed code",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "Title",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_67b9f42eaeb8e",
+                                    "label": "Title right (titlu dreapta)",
+                                    "name": "title_right",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "Title",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_67b9f6f1d80fe",
+                                    "label": "Text area rows (randuri pentru text)",
+                                    "name": "textarea_rows",
+                                    "aria-label": "",
+                                    "type": "range",
+                                    "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
@@ -758,11 +798,170 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": "",
+                                    "default_value": 10,
+                                    "min": 3,
+                                    "max": 20,
+                                    "step": 1,
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_67b9fd47a2603",
+                                    "label": "Print? (Adauga buton printeaza)",
+                                    "name": "print",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Add print button?",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
+                                    "key": "field_67b9ffd18f7ca",
+                                    "label": "Placeholder (text sugestie)",
+                                    "name": "placeholder",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "Scrie aici...",
                                     "maxlength": "",
-                                    "rows": 4,
-                                    "placeholder": "Youtube embed code",
-                                    "new_lines": ""
+                                    "placeholder": "Placeholder",
+                                    "prepend": "",
+                                    "append": ""
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        },
+                        "layout_6741f09c258a2": {
+                            "key": "layout_6741f09c258a2",
+                            "name": "printable_table",
+                            "label": "Printable Table (tabel printabil)",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_6741f3743eafa",
+                                    "label": "Placeholder text (text sugestie)",
+                                    "name": "placeholder_text",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "Scrie aici...",
+                                    "maxlength": "",
+                                    "placeholder": "Add placeholder",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_6741f163b907e",
+                                    "label": "Add column title (adauga titluri coloane)",
+                                    "name": "column_headers",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "table",
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add New Column",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_6741f183b907f",
+                                            "label": "Titlu coloana",
+                                            "name": "col_title",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "placeholder": "Add title",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_6741f163b907e"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "key": "field_6741f19bb9080",
+                                    "label": "Add row titles (adauga titluri randuri)",
+                                    "name": "rows_headers",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "table",
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add New Row",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_6741f19bb9081",
+                                            "label": "Titlu rand",
+                                            "name": "row_title",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "placeholder": "Add title",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_6741f19bb9080"
+                                        }
+                                    ]
                                 }
                             ],
                             "min": "",
@@ -1372,14 +1571,14 @@
                             "min": "",
                             "max": ""
                         },
-                        "layout_66d5c69d8463e": {
-                            "key": "layout_66d5c69d8463e",
-                            "name": "chronological_order",
-                            "label": "Chronological order (ordine cronologica)",
+                        "layout_66d8860298caa": {
+                            "key": "layout_66d8860298caa",
+                            "name": "curiosities",
+                            "label": "Curiosities (curiozitati)",
                             "display": "block",
                             "sub_fields": [
                                 {
-                                    "key": "field_66d5c6f384643",
+                                    "key": "field_66d8861998cac",
                                     "label": "Title",
                                     "name": "title",
                                     "aria-label": "",
@@ -1399,12 +1598,12 @@
                                     "append": ""
                                 },
                                 {
-                                    "key": "field_66d5c6ac84640",
-                                    "label": "Items",
-                                    "name": "items",
+                                    "key": "field_66d8863598cad",
+                                    "label": "Type",
+                                    "name": "type",
                                     "aria-label": "",
-                                    "type": "repeater",
-                                    "instructions": "",
+                                    "type": "button_group",
+                                    "instructions": "Choose how to dislay curiosities",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
@@ -1412,20 +1611,79 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "layout": "row",
+                                    "choices": {
+                                        "text": "Simple Text",
+                                        "rich": "Animated + Image"
+                                    },
+                                    "default_value": "",
+                                    "return_format": "value",
+                                    "allow_null": 0,
+                                    "layout": "horizontal"
+                                },
+                                {
+                                    "key": "field_66d88ea1a37bb",
+                                    "label": "Content",
+                                    "name": "content",
+                                    "aria-label": "",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_66d8863598cad",
+                                                "operator": "==",
+                                                "value": "text"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "tabs": "all",
+                                    "toolbar": "full",
+                                    "media_upload": 1,
+                                    "delay": 1
+                                },
+                                {
+                                    "key": "field_66d88ee6a37bc",
+                                    "label": "Animated Curiosities",
+                                    "name": "animated_curiosities",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_66d8863598cad",
+                                                "operator": "==",
+                                                "value": "rich"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "block",
                                     "min": 0,
                                     "max": 0,
                                     "collapsed": "",
-                                    "button_label": "Add Item",
+                                    "button_label": "Add Curiosity",
                                     "rows_per_page": 20,
                                     "sub_fields": [
                                         {
-                                            "key": "field_66d5c6cf84641",
-                                            "label": "Image",
-                                            "name": "image",
+                                            "key": "field_66d890e7a37bd",
+                                            "label": "Featured Image",
+                                            "name": "featured_image",
                                             "aria-label": "",
                                             "type": "image",
-                                            "instructions": "",
+                                            "instructions": "Add featured image. Curiosity will open on image click.",
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
@@ -1443,15 +1701,15 @@
                                             "max_size": "",
                                             "mime_types": "",
                                             "preview_size": "full",
-                                            "parent_repeater": "field_66d5c6ac84640"
+                                            "parent_repeater": "field_66d88ee6a37bc"
                                         },
                                         {
-                                            "key": "field_66d5c6dc84642",
-                                            "label": "Title",
-                                            "name": "title",
+                                            "key": "field_66d89533a37be",
+                                            "label": "Content",
+                                            "name": "content",
                                             "aria-label": "",
-                                            "type": "text",
-                                            "instructions": "",
+                                            "type": "wysiwyg",
+                                            "instructions": "Add cusriosity content",
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
@@ -1460,21 +1718,31 @@
                                                 "id": ""
                                             },
                                             "default_value": "",
-                                            "maxlength": "",
-                                            "placeholder": "Add title",
-                                            "prepend": "",
-                                            "append": "",
-                                            "parent_repeater": "field_66d5c6ac84640"
+                                            "tabs": "all",
+                                            "toolbar": "full",
+                                            "media_upload": 1,
+                                            "delay": 1,
+                                            "parent_repeater": "field_66d88ee6a37bc"
                                         }
                                     ]
-                                },
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        },
+                        "layout_66c9f49a1ac81": {
+                            "key": "layout_66c9f49a1ac81",
+                            "name": "video_section",
+                            "label": "Vide section",
+                            "display": "block",
+                            "sub_fields": [
                                 {
-                                    "key": "field_66d5c73784644",
-                                    "label": "Description",
-                                    "name": "description",
+                                    "key": "field_66c9f4a31ac83",
+                                    "label": "Video code",
+                                    "name": "video_code",
                                     "aria-label": "",
-                                    "type": "wysiwyg",
-                                    "instructions": "",
+                                    "type": "textarea",
+                                    "instructions": "Add youtube video embed code",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
@@ -1483,10 +1751,10 @@
                                         "id": ""
                                     },
                                     "default_value": "",
-                                    "tabs": "all",
-                                    "toolbar": "full",
-                                    "media_upload": 1,
-                                    "delay": 1
+                                    "maxlength": "",
+                                    "rows": 4,
+                                    "placeholder": "Youtube embed code",
+                                    "new_lines": ""
                                 }
                             ],
                             "min": "",
@@ -1796,14 +2064,14 @@
                             "min": "",
                             "max": ""
                         },
-                        "layout_66d8860298caa": {
-                            "key": "layout_66d8860298caa",
-                            "name": "curiosities",
-                            "label": "Curiosities (curiozitati)",
+                        "layout_66d5c69d8463e": {
+                            "key": "layout_66d5c69d8463e",
+                            "name": "chronological_order",
+                            "label": "Chronological order (ordine cronologica)",
                             "display": "block",
                             "sub_fields": [
                                 {
-                                    "key": "field_66d8861998cac",
+                                    "key": "field_66d5c6f384643",
                                     "label": "Title",
                                     "name": "title",
                                     "aria-label": "",
@@ -1823,12 +2091,12 @@
                                     "append": ""
                                 },
                                 {
-                                    "key": "field_66d8863598cad",
-                                    "label": "Type",
-                                    "name": "type",
+                                    "key": "field_66d5c6ac84640",
+                                    "label": "Items",
+                                    "name": "items",
                                     "aria-label": "",
-                                    "type": "button_group",
-                                    "instructions": "Choose how to dislay curiosities",
+                                    "type": "repeater",
+                                    "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
@@ -1836,79 +2104,20 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "choices": {
-                                        "text": "Simple Text",
-                                        "rich": "Animated + Image"
-                                    },
-                                    "default_value": "",
-                                    "return_format": "value",
-                                    "allow_null": 0,
-                                    "layout": "horizontal"
-                                },
-                                {
-                                    "key": "field_66d88ea1a37bb",
-                                    "label": "Content",
-                                    "name": "content",
-                                    "aria-label": "",
-                                    "type": "wysiwyg",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": [
-                                        [
-                                            {
-                                                "field": "field_66d8863598cad",
-                                                "operator": "==",
-                                                "value": "text"
-                                            }
-                                        ]
-                                    ],
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "tabs": "all",
-                                    "toolbar": "full",
-                                    "media_upload": 1,
-                                    "delay": 1
-                                },
-                                {
-                                    "key": "field_66d88ee6a37bc",
-                                    "label": "Animated Curiosities",
-                                    "name": "animated_curiosities",
-                                    "aria-label": "",
-                                    "type": "repeater",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": [
-                                        [
-                                            {
-                                                "field": "field_66d8863598cad",
-                                                "operator": "==",
-                                                "value": "rich"
-                                            }
-                                        ]
-                                    ],
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "layout": "block",
+                                    "layout": "row",
                                     "min": 0,
                                     "max": 0,
                                     "collapsed": "",
-                                    "button_label": "Add Curiosity",
+                                    "button_label": "Add Item",
                                     "rows_per_page": 20,
                                     "sub_fields": [
                                         {
-                                            "key": "field_66d890e7a37bd",
-                                            "label": "Featured Image",
-                                            "name": "featured_image",
+                                            "key": "field_66d5c6cf84641",
+                                            "label": "Image",
+                                            "name": "image",
                                             "aria-label": "",
                                             "type": "image",
-                                            "instructions": "Add featured image. Curiosity will open on image click.",
+                                            "instructions": "",
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
@@ -1926,15 +2135,15 @@
                                             "max_size": "",
                                             "mime_types": "",
                                             "preview_size": "full",
-                                            "parent_repeater": "field_66d88ee6a37bc"
+                                            "parent_repeater": "field_66d5c6ac84640"
                                         },
                                         {
-                                            "key": "field_66d89533a37be",
-                                            "label": "Content",
-                                            "name": "content",
+                                            "key": "field_66d5c6dc84642",
+                                            "label": "Title",
+                                            "name": "title",
                                             "aria-label": "",
-                                            "type": "wysiwyg",
-                                            "instructions": "Add cusriosity content",
+                                            "type": "text",
+                                            "instructions": "",
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
@@ -1943,13 +2152,33 @@
                                                 "id": ""
                                             },
                                             "default_value": "",
-                                            "tabs": "all",
-                                            "toolbar": "full",
-                                            "media_upload": 1,
-                                            "delay": 1,
-                                            "parent_repeater": "field_66d88ee6a37bc"
+                                            "maxlength": "",
+                                            "placeholder": "Add title",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_66d5c6ac84640"
                                         }
                                     ]
+                                },
+                                {
+                                    "key": "field_66d5c73784644",
+                                    "label": "Description",
+                                    "name": "description",
+                                    "aria-label": "",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "tabs": "all",
+                                    "toolbar": "full",
+                                    "media_upload": 1,
+                                    "delay": 1
                                 }
                             ],
                             "min": "",
@@ -3404,6 +3633,27 @@
                                     "rows_per_page": 20,
                                     "sub_fields": [
                                         {
+                                            "key": "field_67ba05f48d748",
+                                            "label": "Title",
+                                            "name": "title",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "placeholder": "Add title or image",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_66f98a42688f9"
+                                        },
+                                        {
                                             "key": "field_66f9974937e3b",
                                             "label": "Image",
                                             "name": "image",
@@ -3863,124 +4113,6 @@
                             "min": "",
                             "max": ""
                         },
-                        "layout_6741f09c258a2": {
-                            "key": "layout_6741f09c258a2",
-                            "name": "printable_table",
-                            "label": "Printable Table (tabel printabil)",
-                            "display": "block",
-                            "sub_fields": [
-                                {
-                                    "key": "field_6741f3743eafa",
-                                    "label": "Placeholder text (text sugestie)",
-                                    "name": "placeholder_text",
-                                    "aria-label": "",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "Scrie aici...",
-                                    "maxlength": "",
-                                    "placeholder": "Add placeholder",
-                                    "prepend": "",
-                                    "append": ""
-                                },
-                                {
-                                    "key": "field_6741f163b907e",
-                                    "label": "Add column title (adauga titluri coloane)",
-                                    "name": "column_headers",
-                                    "aria-label": "",
-                                    "type": "repeater",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "layout": "table",
-                                    "min": 0,
-                                    "max": 0,
-                                    "collapsed": "",
-                                    "button_label": "Add New Column",
-                                    "rows_per_page": 20,
-                                    "sub_fields": [
-                                        {
-                                            "key": "field_6741f183b907f",
-                                            "label": "Titlu coloana",
-                                            "name": "col_title",
-                                            "aria-label": "",
-                                            "type": "text",
-                                            "instructions": "",
-                                            "required": 0,
-                                            "conditional_logic": 0,
-                                            "wrapper": {
-                                                "width": "",
-                                                "class": "",
-                                                "id": ""
-                                            },
-                                            "default_value": "",
-                                            "maxlength": "",
-                                            "placeholder": "Add title",
-                                            "prepend": "",
-                                            "append": "",
-                                            "parent_repeater": "field_6741f163b907e"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "key": "field_6741f19bb9080",
-                                    "label": "Add row titles (adauga titluri randuri)",
-                                    "name": "rows_headers",
-                                    "aria-label": "",
-                                    "type": "repeater",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "layout": "table",
-                                    "min": 0,
-                                    "max": 0,
-                                    "collapsed": "",
-                                    "button_label": "Add New Row",
-                                    "rows_per_page": 20,
-                                    "sub_fields": [
-                                        {
-                                            "key": "field_6741f19bb9081",
-                                            "label": "Titlu rand",
-                                            "name": "row_title",
-                                            "aria-label": "",
-                                            "type": "text",
-                                            "instructions": "",
-                                            "required": 0,
-                                            "conditional_logic": 0,
-                                            "wrapper": {
-                                                "width": "",
-                                                "class": "",
-                                                "id": ""
-                                            },
-                                            "default_value": "",
-                                            "maxlength": "",
-                                            "placeholder": "Add title",
-                                            "prepend": "",
-                                            "append": "",
-                                            "parent_repeater": "field_6741f19bb9080"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "min": "",
-                            "max": ""
-                        },
                         "layout_674214c2de463": {
                             "key": "layout_674214c2de463",
                             "name": "functions_box",
@@ -4131,5 +4263,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738622744
+    "modified": 1740244524
 }

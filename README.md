@@ -1,5 +1,14 @@
 [![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
 
+Commands to build the files:
+===
+
+```sh
+$ npm install
+$ gulp
+$ npm run watch:tw
+```
+
 _s
 ===
 
