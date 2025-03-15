@@ -584,7 +584,6 @@
 <?php elseif( get_row_layout() == 'select_corect_variant' ) : // match_words_with_definition
     $section_title = get_sub_field('title');
     $section_content = get_sub_field('content');
-
 ?>
 
     <div class="flexible-content-section spot-correct-game my-20px">
@@ -592,46 +591,45 @@
         <div class="mt-30px text-20px font-600 text-green">
             <?php echo $section_title; ?>
         </div>
-
-        <div class="spot-correct-wrap py-12px mb-24px">
+        
             <?php if ( have_rows('content') ) : ?>
                 <?php while ( have_rows('content') ) : the_row();
                     $section_text_content = get_sub_field('section_text_content');
                     $section_description = get_sub_field('description');
                 ?>
+                    <div class="spot-correct-wrap py-12px mb-24px">
 
-                <div class="tcs-content phase-content entry-content content-spacing text-17px mb-20px">
-                    <?php echo $section_description; ?>
-                </div>
+                        <div class="tcs-content phase-content entry-content content-spacing text-17px mb-20px">
+                            <?php echo $section_description; ?>
+                        </div>
 
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="p-12px spot-correct-inner bg-light-gray rounded-8px h-full">
-                            <?php if ( have_rows('items') ) : ?>
-                                <ul class="spot-correct-list pl-0">
-                                    <?php while ( have_rows('items') ) : the_row(); 
-                                        $item = get_sub_field('item');
-                                        $correct = get_sub_field('correct');
-                                    ?>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="p-12px spot-correct-inner bg-light-gray rounded-8px h-full">
+                                    <?php if ( have_rows('items') ) : ?>
+                                        <ul class="spot-correct-list pl-0">
+                                            <?php while ( have_rows('items') ) : the_row(); 
+                                                $item = get_sub_field('item');
+                                                $correct = get_sub_field('correct');
+                                            ?>
 
-                                    <li data-correct="<?php echo ($correct ? '1' : '0'); ?>"><?php echo $item; ?></li>
+                                            <li data-correct="<?php echo ($correct ? '1' : '0'); ?>"><?php echo $item; ?></li>
 
-                                    <?php endwhile; ?>
-                                </ul>
-                            <?php endif; ?>
+                                            <?php endwhile; ?>
+                                        </ul>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+
+                            <div class="col-md-8">
+                                <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video">
+                                    <?php echo $section_text_content; ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="col-md-8">
-                        <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video">
-                            <?php echo $section_text_content; ?>
-                        </div>
-                    </div>
-                </div>
-
                 <?php endwhile; ?>
             <?php endif; ?>
-
         </div>
     </div>
 
@@ -1788,10 +1786,11 @@ $display_feedback = get_sub_field('');
                             <span>
                                 <svg fill="#000000" width="30px" height="30px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M5.656 6.938l-0.344 2.688h11.781l-0.344-2.688c0-0.813-0.656-1.438-1.469-1.438h-8.188c-0.813 0-1.438 0.625-1.438 1.438zM1.438 11.094h19.531c0.813 0 1.438 0.625 1.438 1.438v8.563c0 0.813-0.625 1.438-1.438 1.438h-2.656v3.969h-14.219v-3.969h-2.656c-0.813 0-1.438-0.625-1.438-1.438v-8.563c0-0.813 0.625-1.438 1.438-1.438zM16.875 25.063v-9.281h-11.344v9.281h11.344zM15.188 18.469h-8.125c-0.188 0-0.344-0.188-0.344-0.375v-0.438c0-0.188 0.156-0.344 0.344-0.344h8.125c0.188 0 0.375 0.156 0.375 0.344v0.438c0 0.188-0.188 0.375-0.375 0.375zM15.188 21.063h-8.125c-0.188 0-0.344-0.188-0.344-0.375v-0.438c0-0.188 0.156-0.344 0.344-0.344h8.125c0.188 0 0.375 0.156 0.375 0.344v0.438c0 0.188-0.188 0.375-0.375 0.375zM15.188 23.656h-8.125c-0.188 0-0.344-0.188-0.344-0.375v-0.438c0-0.188 0.156-0.344 0.344-0.344h8.125c0.188 0 0.375 0.156 0.375 0.344v0.438c0 0.188-0.188 0.375-0.375 0.375z"></path>
-                                </svg>
-                            </span>
-                            <?php echo $get_static_text[get_lang()]['print']; ?>
-                        </a>
+                                    </svg>
+                                </span>
+                                <?php echo $get_static_text[get_lang()]['print']; ?>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1870,7 +1869,6 @@ $display_feedback = get_sub_field('');
         </div>
     </div>
 </div>
-
 
 <?php 
 endif;

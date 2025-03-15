@@ -924,36 +924,6 @@
                             "min": "",
                             "max": ""
                         },
-                        "layout_67d57ea9a2dea": {
-                            "key": "layout_67d57ea9a2dea",
-                            "name": "identify_correct_function",
-                            "label": "Identify Correct Function (Identifica Functia)",
-                            "display": "block",
-                            "sub_fields": [
-                                {
-                                    "key": "field_67d57eefa2dec",
-                                    "label": "Title",
-                                    "name": "section_title",
-                                    "aria-label": "",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "maxlength": "",
-                                    "placeholder": "Section title",
-                                    "prepend": "",
-                                    "append": ""
-                                }
-                            ],
-                            "min": "",
-                            "max": ""
-                        },
                         "layout_6741f09c258a2": {
                             "key": "layout_6741f09c258a2",
                             "name": "printable_table",
@@ -4368,5 +4338,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1742045146
+    "modified": 1742048310
 }
