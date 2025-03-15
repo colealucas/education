@@ -151,6 +151,18 @@
         <?php endif; ?>
     </div>
 
+<?php elseif( get_row_layout() == 'video_section' ) : // video_section
+    $video_link = get_sub_field('video_code');
+?>
+
+    <div class="flexible-content-section video-section my-20px">
+        <?php if ( $video_link ) : ?>
+            <div class="video-container">
+                <?php echo $video_link; ?>
+            </div>
+        <?php endif; ?>
+    </div>
+
 <?php elseif( get_row_layout() == 't_graphic' ) : // t_graphic
     $left_title = get_sub_field('title_left');
     $right_title = get_sub_field('title_right');
