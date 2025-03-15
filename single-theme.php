@@ -372,8 +372,8 @@ $hide_step_6 = false;
     </div>
 </div>
 
-<!-- Share experience -->
-<div style="display: none;" id="share-experience" class="w-[833px] p-24px rounded-24px">
+<!-- Modal 1 -->
+<div style="display: none;" id="modal-1" class="w-[833px] p-24px rounded-24px">
     <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-light-green p-16px py-20px rounded-16px text-green text-24px font-500 leading-120">
         <div class="flex gap-16px items-center">
             <img src="<?php echo get_template_directory_uri() . '/assets/images/stiu_deja.svg'; ?>" width="40" height="40" alt="">
@@ -409,14 +409,14 @@ $hide_step_6 = false;
     </div>
 
     <div class="mt-12px pagination-wrapper bg-light-gray rounded-16px">
-        <a href="http://education.local/modules/initiere-in-mass-media/" class="theme-pagination-btn tp-button-left hide" data-fancybox data-src="#share-experience">
+        <a href="#" class="theme-pagination-btn tp-button-left hide" data-fancybox data-src="#modal-1">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
                 <path d="M12.8334 7.50002H1.16669M1.16669 7.50002L7.00002 13.3334M1.16669 7.50002L7.00002 1.66669" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
             <?php echo $get_static_text[get_lang()]['pagination_back']; ?>
         </a>
 
-        <a href="http://education.local/modules/initiere-in-mass-media/" class="theme-pagination-btn tp-button-right" data-fancybox data-src="#am-curious">
+        <a href="#" class="theme-pagination-btn tp-button-right" data-fancybox data-src="#modal-2">
             <?php echo $get_static_text[get_lang()]['pagination_next']; ?>
 
             <svg class="rotate180" xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
@@ -426,8 +426,8 @@ $hide_step_6 = false;
     </div>
 </div>
 
-<!-- am_curious -->
-<div style="display: none;" id="am-curious" class="w-[833px] p-24px rounded-24px">
+<!-- Modal 2 -->
+<div style="display: none;" id="modal-2" class="w-[833px] p-24px rounded-24px">
     <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-light-green p-16px py-20px rounded-16px text-green text-24px font-500 leading-120">
         <div class="flex gap-16px items-center">
             <img src="<?php echo get_template_directory_uri() . '/assets/images/sunt_curios.svg'; ?>" width="40" height="40" alt="">
@@ -463,14 +463,14 @@ $hide_step_6 = false;
     </div>
 
     <div class="mt-12px pagination-wrapper bg-light-gray rounded-16px">
-        <a href="http://education.local/modules/initiere-in-mass-media/" class="theme-pagination-btn tp-button-left" data-fancybox data-src="#share-experience">
+        <a href="#" class="theme-pagination-btn tp-button-left" data-fancybox data-src="#modal-1">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
                 <path d="M12.8334 7.50002H1.16669M1.16669 7.50002L7.00002 13.3334M1.16669 7.50002L7.00002 1.66669" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
             <?php echo $get_static_text[get_lang()]['pagination_back']; ?>
         </a>
 
-        <a href="http://education.local/modules/initiere-in-mass-media/" class="theme-pagination-btn tp-button-right" data-fancybox data-src="#am-begining">
+        <a href="#" class="theme-pagination-btn tp-button-right" data-fancybox data-src="<?php echo ($book_target == 'gimnaziu' ? '#modal-4' : '#modal-3'); ?>">
             <?php echo $get_static_text[get_lang()]['pagination_next']; ?>
 
             <svg class="rotate180" xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
@@ -480,8 +480,8 @@ $hide_step_6 = false;
     </div>
 </div>
 
-<!-- am_begining -->
-<div style="display: none;" id="am-begining" class="w-[833px] p-24px rounded-24px">
+<!-- Modal 3 -->
+<div style="display: none;" id="modal-3" class="w-[833px] p-24px rounded-24px">
     <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-light-green p-16px py-20px rounded-16px text-green text-24px font-500 leading-120">
         <div class="flex gap-16px items-center">
             <img src="<?php echo get_template_directory_uri() . '/assets/images/aventura_continua.svg'; ?>" width="40" height="40" alt="">
@@ -517,14 +517,14 @@ $hide_step_6 = false;
     </div>
 
     <div class="mt-12px pagination-wrapper bg-light-gray rounded-16px">
-        <a href="http://education.local/modules/initiere-in-mass-media/" class="theme-pagination-btn tp-button-left" data-fancybox data-src="#am-curious">
+        <a href="#" class="theme-pagination-btn tp-button-left" data-fancybox data-src="#modal-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
                 <path d="M12.8334 7.50002H1.16669M1.16669 7.50002L7.00002 13.3334M1.16669 7.50002L7.00002 1.66669" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
             <?php echo $get_static_text[get_lang()]['pagination_back']; ?>
         </a>
 
-        <a href="http://education.local/modules/initiere-in-mass-media/" class="theme-pagination-btn tp-button-right" data-fancybox data-src="#am-responsable">
+        <a href="#" class="theme-pagination-btn tp-button-right" data-fancybox data-src="#modal-4">
             <?php echo $get_static_text[get_lang()]['pagination_next']; ?>
 
             <svg class="rotate180" xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
@@ -534,8 +534,8 @@ $hide_step_6 = false;
     </div>
 </div>
 
-<!-- am_responsable -->
-<div style="display: none;" id="am-responsable" class="w-[833px] p-24px rounded-24px">
+<!-- Modal 4 -->
+<div style="display: none;" id="modal-4" class="w-[833px] p-24px rounded-24px">
     <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-light-green p-16px py-20px rounded-16px text-green text-24px font-500 leading-120">
         <div class="flex gap-16px items-center">
             <img src="<?php echo get_template_directory_uri() . '/assets/images/consum_responsabil.svg'; ?>" width="40" height="40" alt="">
@@ -571,14 +571,14 @@ $hide_step_6 = false;
     </div>
 
     <div class="mt-12px pagination-wrapper bg-light-gray rounded-16px">
-        <a href="http://education.local/modules/initiere-in-mass-media/" class="theme-pagination-btn tp-button-left" data-fancybox data-src="#am-begining">
+        <a href="#" class="theme-pagination-btn tp-button-left" data-fancybox data-src="#modal-3">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
                 <path d="M12.8334 7.50002H1.16669M1.16669 7.50002L7.00002 13.3334M1.16669 7.50002L7.00002 1.66669" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
             <?php echo $get_static_text[get_lang()]['pagination_back']; ?>
         </a>
 
-        <a href="http://education.local/modules/initiere-in-mass-media/" class="theme-pagination-btn tp-button-right" data-fancybox data-src="<?php echo ($hide_step_5 ? '#curiosities' : '#am-cult'); ?>">
+        <a href="#" class="theme-pagination-btn tp-button-right" data-fancybox data-src="<?php echo ($hide_step_5 ? '#modal-6' : '#modal-5'); ?>">
             <?php echo $get_static_text[get_lang()]['pagination_next']; ?>
 
             <svg class="rotate180" xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
@@ -588,8 +588,8 @@ $hide_step_6 = false;
     </div>
 </div>
 
-<!-- am_cult -->
-<div style="display: none;" id="am-cult" class="w-[833px] p-24px rounded-24px">
+<!-- Modal 5 -->
+<div style="display: none;" id="modal-5" class="w-[833px] p-24px rounded-24px">
     <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-light-green p-16px py-20px rounded-16px text-green text-24px font-500 leading-120">
         <div class="flex gap-16px items-center">
             <img src="<?php echo get_template_directory_uri() . '/assets/images/vorbesc_cult.svg'; ?>" width="40" height="40" alt="">
@@ -625,14 +625,14 @@ $hide_step_6 = false;
     </div>
 
     <div class="mt-12px pagination-wrapper bg-light-gray rounded-16px">
-        <a href="http://education.local/modules/initiere-in-mass-media/" class="theme-pagination-btn tp-button-left" data-fancybox data-src="#am-responsable">
+        <a href="#" class="theme-pagination-btn tp-button-left" data-fancybox data-src="#modal-4">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
                 <path d="M12.8334 7.50002H1.16669M1.16669 7.50002L7.00002 13.3334M1.16669 7.50002L7.00002 1.66669" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
             <?php echo $get_static_text[get_lang()]['pagination_back']; ?>
         </a>
 
-        <a href="http://education.local/modules/initiere-in-mass-media/" class="theme-pagination-btn tp-button-right" data-fancybox data-src="#curiosities">
+        <a href="#" class="theme-pagination-btn tp-button-right" data-fancybox data-src="#modal-6">
             <?php echo $get_static_text[get_lang()]['pagination_next']; ?>
 
             <svg class="rotate180" xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
@@ -642,8 +642,8 @@ $hide_step_6 = false;
     </div>
 </div>
 
-<!-- curiosities -->
-<div style="display: none;" id="curiosities" class="w-[833px] p-24px rounded-24px">
+<!-- Modal 6 -->
+<div style="display: none;" id="modal-6" class="w-[833px] p-24px rounded-24px">
     <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-light-green p-16px py-20px rounded-16px text-green text-24px font-500 leading-120">
         <div class="flex gap-16px items-center">
         <img src="<?php echo get_template_directory_uri() . '/assets/images/curiozitati.svg'; ?>" width="40" height="40" alt="">
@@ -679,7 +679,7 @@ $hide_step_6 = false;
     </div>
 
     <div class="mt-12px pagination-wrapper bg-light-gray rounded-16px">
-        <a href="http://education.local/modules/initiere-in-mass-media/" class="theme-pagination-btn tp-button-left" data-fancybox data-src="<?php echo ($hide_step_5 ? '#am-responsable' : '#am-cult'); ?>">
+        <a href="#" class="theme-pagination-btn tp-button-left" data-fancybox data-src="<?php echo ($hide_step_5 ? '#modal-4' : '#modal-5'); ?>">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
                 <path d="M12.8334 7.50002H1.16669M1.16669 7.50002L7.00002 13.3334M1.16669 7.50002L7.00002 1.66669" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
@@ -747,7 +747,7 @@ $hide_step_6 = false;
             <!-- Step 1 -->
             <?php if ( !$hide_step_1 ) : ?>
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
-                <a href="javascript:;" data-fancybox data-src="#share-experience" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
+                <a href="javascript:;" data-fancybox data-src="#modal-1" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
                     <span class="step-icon flex items-center justify-center size-[74px] rounded-50 bg-medium-green">
                         <svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="none">
                             <path d="M38.5703 0.352024C38.4816 0.227077 38.358 0.13114 38.215 0.0762815C38.0719 0.021423 37.9158 0.0100936 37.7664 0.0437186C37.6169 0.0773436 37.4807 0.154421 37.375 0.265254C37.2692 0.376088 37.1986 0.515726 37.172 0.666603C37.1454 0.81748 37.164 0.972856 37.2254 1.11318C37.2869 1.25351 37.3885 1.37252 37.5175 1.45525C37.6464 1.53797 37.797 1.58072 37.9501 1.5781C38.1033 1.57548 38.2523 1.52762 38.3784 1.44054C38.463 1.38209 38.5351 1.30743 38.5906 1.22089C38.6461 1.13435 38.6839 1.03765 38.7018 0.936389C38.7196 0.835132 38.7172 0.731337 38.6946 0.631025C38.6721 0.530712 38.6298 0.435879 38.5703 0.352024Z" fill="#496F76"/>
@@ -781,7 +781,7 @@ $hide_step_6 = false;
             <!-- Step 2 -->
             <?php if ( !$hide_step_2 ) : ?>
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
-                <a href="javascript:;" data-fancybox data-src="#am-curious" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
+                <a href="javascript:;" data-fancybox data-src="#modal-2" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
                     <span class="step-icon flex items-center justify-center size-[74px] rounded-50 bg-medium-green">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <path d="M24.1643 14.8106C24.0101 14.8106 23.8594 14.8564 23.7311 14.942C23.6029 15.0277 23.503 15.1495 23.444 15.2919C23.385 15.4344 23.3695 15.5912 23.3996 15.7424C23.4297 15.8937 23.504 16.0326 23.613 16.1416C23.7221 16.2507 23.861 16.3249 24.0122 16.355C24.1635 16.3851 24.3202 16.3696 24.4627 16.3106C24.6051 16.2516 24.7269 16.1517 24.8126 16.0235C24.8983 15.8953 24.944 15.7445 24.944 15.5903C24.944 15.3835 24.8618 15.1852 24.7156 15.039C24.5694 14.8928 24.3711 14.8106 24.1643 14.8106Z" fill="#00665E"/>
@@ -807,7 +807,7 @@ $hide_step_6 = false;
             <!-- Step 3 -->
             <?php if ( !$hide_step_3 ) : ?>
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
-                <a href="javascript:;" data-fancybox data-src="#am-begining" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
+                <a href="javascript:;" data-fancybox data-src="#modal-3" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
                     <span class="step-icon flex items-center justify-center size-[74px] rounded-50 bg-medium-green">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <g clip-path="url(#clip0_92_907)">
@@ -838,7 +838,7 @@ $hide_step_6 = false;
             <!-- Step 4 -->
             <?php if ( !$hide_step_4 ) : ?>
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
-                <a href="javascript:;" data-fancybox data-src="#am-responsable" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
+                <a href="javascript:;" data-fancybox data-src="#modal-4" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
                     <span class="step-icon flex items-center justify-center size-[74px] rounded-50 bg-medium-green">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <path d="M6.66602 23.3333V30.6666C6.66602 31.219 7.11373 31.6666 7.66602 31.6666H16.666" stroke="#00665E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -860,7 +860,7 @@ $hide_step_6 = false;
             <!-- Step 5 -->
             <?php if ( !$hide_step_5 ) : ?>
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
-                <a href="javascript:;" data-fancybox data-src="#am-cult" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
+                <a href="javascript:;" data-fancybox data-src="#modal-5" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
                     <span class="step-icon flex items-center justify-center size-[74px] rounded-50 bg-medium-green">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <path d="M14.9293 4.87848H38.5265C39.0651 4.87848 39.5021 5.31549 39.5021 5.85408V21.6295C39.5021 22.1685 39.0651 22.6055 38.5265 22.6055H35.8567V30.1141C35.8567 31.0708 34.6222 31.445 34.0812 30.6735L27.6522 22.6055H26.0464V25.6632C26.0464 26.2018 25.6098 26.6388 25.0708 26.6388H12.3478L5.91882 34.7072C5.37787 35.4787 4.14384 35.1045 4.14384 34.1478V26.6388H1.47358C0.934997 26.6388 0.497986 26.2018 0.497986 25.6632V9.88781C0.497986 9.34875 0.934997 8.91221 1.47358 8.91221H13.9537V5.85408C13.9537 5.31549 14.3907 4.87848 14.9293 4.87848ZM24.0952 22.6055H14.9293C14.3907 22.6055 13.9537 22.1685 13.9537 21.6295V10.8634H2.44965V24.6876H5.11944C5.65803 24.6876 6.09504 25.1246 6.09504 25.6632V31.3609L11.1181 25.0571C11.3104 24.8156 11.5938 24.6895 11.8801 24.6895L24.0952 24.6876V22.6055ZM20.9615 12.6629C19.6778 12.6629 19.6778 10.7113 20.9615 10.7113H32.4948C33.7779 10.7113 33.7779 12.6629 32.4948 12.6629H20.9615ZM20.9615 16.7723C19.6778 16.7723 19.6778 14.8211 20.9615 14.8211H32.4948C33.7779 14.8211 33.7779 16.7723 32.4948 16.7723H20.9615ZM37.5509 6.82968H15.9049V20.6539L28.1199 20.6558C28.4062 20.6562 28.6902 20.7819 28.882 21.0238L33.905 27.3272V21.6295C33.905 21.0909 34.342 20.6539 34.8806 20.6539H37.5509V6.82968Z" fill="#00665E"/>
@@ -875,7 +875,7 @@ $hide_step_6 = false;
             <!-- Step 6 -->
             <?php if ( !$hide_step_6 ) : ?>
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
-                <a href="javascript:;" data-fancybox data-src="#curiosities" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
+                <a href="javascript:;" data-fancybox data-src="#modal-6" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
                     <span class="step-icon flex items-center justify-center size-[74px] rounded-50 bg-medium-green">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <g clip-path="url(#clip0_92_897)">
@@ -905,7 +905,7 @@ $hide_step_6 = false;
     <div class="container">
         <div class="parts flex flex-wrap gap-20px">
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
-                <a href="javascript:;" data-fancybox data-src="#share-experience" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
+                <a href="javascript:;" data-fancybox data-src="#modal-1" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
                     <span class="step-icon flex items-center justify-center size-[74px] rounded-50 bg-medium-green">
                         <svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="none">
                             <path d="M38.5703 0.352024C38.4816 0.227077 38.358 0.13114 38.215 0.0762815C38.0719 0.021423 37.9158 0.0100936 37.7664 0.0437186C37.6169 0.0773436 37.4807 0.154421 37.375 0.265254C37.2692 0.376088 37.1986 0.515726 37.172 0.666603C37.1454 0.81748 37.164 0.972856 37.2254 1.11318C37.2869 1.25351 37.3885 1.37252 37.5175 1.45525C37.6464 1.53797 37.797 1.58072 37.9501 1.5781C38.1033 1.57548 38.2523 1.52762 38.3784 1.44054C38.463 1.38209 38.5351 1.30743 38.5906 1.22089C38.6461 1.13435 38.6839 1.03765 38.7018 0.936389C38.7196 0.835132 38.7172 0.731337 38.6946 0.631025C38.6721 0.530712 38.6298 0.435879 38.5703 0.352024Z" fill="#496F76"/>
@@ -936,7 +936,7 @@ $hide_step_6 = false;
             </div>
             
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
-                <a href="javascript:;" data-fancybox data-src="#am-curious" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
+                <a href="javascript:;" data-fancybox data-src="#modal-2" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
                     <span class="step-icon flex items-center justify-center size-[74px] rounded-50 bg-medium-green">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <path d="M24.1643 14.8106C24.0101 14.8106 23.8594 14.8564 23.7311 14.942C23.6029 15.0277 23.503 15.1495 23.444 15.2919C23.385 15.4344 23.3695 15.5912 23.3996 15.7424C23.4297 15.8937 23.504 16.0326 23.613 16.1416C23.7221 16.2507 23.861 16.3249 24.0122 16.355C24.1635 16.3851 24.3202 16.3696 24.4627 16.3106C24.6051 16.2516 24.7269 16.1517 24.8126 16.0235C24.8983 15.8953 24.944 15.7445 24.944 15.5903C24.944 15.3835 24.8618 15.1852 24.7156 15.039C24.5694 14.8928 24.3711 14.8106 24.1643 14.8106Z" fill="#00665E"/>
@@ -959,7 +959,7 @@ $hide_step_6 = false;
             </div>
 
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
-                <a href="javascript:;" data-fancybox data-src="#am-responsable" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
+                <a href="javascript:;" data-fancybox data-src="#modal-4" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
                     <span class="step-icon flex items-center justify-center size-[74px] rounded-50 bg-medium-green">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <path d="M6.66602 23.3333V30.6666C6.66602 31.219 7.11373 31.6666 7.66602 31.6666H16.666" stroke="#00665E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -985,7 +985,7 @@ $hide_step_6 = false;
             </div>
 
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
-                <a href="javascript:;" data-fancybox data-src="#am-cult" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
+                <a href="javascript:;" data-fancybox data-src="#modal-5" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
                     <span class="step-icon flex items-center justify-center size-[74px] rounded-50 bg-medium-green">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <path d="M14.9293 4.87848H38.5265C39.0651 4.87848 39.5021 5.31549 39.5021 5.85408V21.6295C39.5021 22.1685 39.0651 22.6055 38.5265 22.6055H35.8567V30.1141C35.8567 31.0708 34.6222 31.445 34.0812 30.6735L27.6522 22.6055H26.0464V25.6632C26.0464 26.2018 25.6098 26.6388 25.0708 26.6388H12.3478L5.91882 34.7072C5.37787 35.4787 4.14384 35.1045 4.14384 34.1478V26.6388H1.47358C0.934997 26.6388 0.497986 26.2018 0.497986 25.6632V9.88781C0.497986 9.34875 0.934997 8.91221 1.47358 8.91221H13.9537V5.85408C13.9537 5.31549 14.3907 4.87848 14.9293 4.87848ZM24.0952 22.6055H14.9293C14.3907 22.6055 13.9537 22.1685 13.9537 21.6295V10.8634H2.44965V24.6876H5.11944C5.65803 24.6876 6.09504 25.1246 6.09504 25.6632V31.3609L11.1181 25.0571C11.3104 24.8156 11.5938 24.6895 11.8801 24.6895L24.0952 24.6876V22.6055ZM20.9615 12.6629C19.6778 12.6629 19.6778 10.7113 20.9615 10.7113H32.4948C33.7779 10.7113 33.7779 12.6629 32.4948 12.6629H20.9615ZM20.9615 16.7723C19.6778 16.7723 19.6778 14.8211 20.9615 14.8211H32.4948C33.7779 14.8211 33.7779 16.7723 32.4948 16.7723H20.9615ZM37.5509 6.82968H15.9049V20.6539L28.1199 20.6558C28.4062 20.6562 28.6902 20.7819 28.882 21.0238L33.905 27.3272V21.6295C33.905 21.0909 34.342 20.6539 34.8806 20.6539H37.5509V6.82968Z" fill="#00665E"/>
@@ -997,7 +997,7 @@ $hide_step_6 = false;
             </div>
 
             <div class="w-full md:w-[calc(50%-20px)] lg:w-[calc(25%-20px)] part-col">
-                <a href="javascript:;" data-fancybox data-src="#curiosities" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
+                <a href="javascript:;" data-fancybox data-src="#modal-6" class="step-box flex flex-col gap-20px justify-between bg-light-green p-32px rounded-24px min-h-[300px]">
                     <span class="step-icon flex items-center justify-center size-[74px] rounded-50 bg-medium-green">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <g clip-path="url(#clip0_92_897)">
