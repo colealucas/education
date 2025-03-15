@@ -4310,6 +4310,104 @@
                             ],
                             "min": "",
                             "max": ""
+                        },
+                        "layout_67d5961704e49": {
+                            "key": "layout_67d5961704e49",
+                            "name": "fill_table",
+                            "label": "Fill in Table (Completeaza tabelul)",
+                            "display": "row",
+                            "sub_fields": [
+                                {
+                                    "key": "field_67d5963404e4b",
+                                    "label": "Headers (Titluri)",
+                                    "name": "table_headers",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "table",
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add header",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_67d596b104e4c",
+                                            "label": "Headers",
+                                            "name": "table_header",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "placeholder": "Add header",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_67d5963404e4b"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "key": "field_67d596e204e4d",
+                                    "label": "Rows (Randuri)",
+                                    "name": "table_rows",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "table",
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add Row",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_67d5972a04e4e",
+                                            "label": "Rows",
+                                            "name": "row_title",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "placeholder": "Add row",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_67d596e204e4d"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
                     },
                     "min": "",
@@ -4338,5 +4436,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1742048310
+    "modified": 1742051715
 }

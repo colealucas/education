@@ -598,7 +598,6 @@
                     $section_description = get_sub_field('description');
                 ?>
                     <div class="spot-correct-wrap py-12px mb-24px">
-
                         <div class="tcs-content phase-content entry-content content-spacing text-17px mb-20px">
                             <?php echo $section_description; ?>
                         </div>
@@ -1869,6 +1868,51 @@ $display_feedback = get_sub_field('');
         </div>
     </div>
 </div>
+
+
+<?php elseif( get_row_layout() == 'fill_table' ) : // fill_table 
+    $header_count = count(get_sub_field('table_headers'));
+?>
+
+    <div class="flexible-content-section table-characteristics my-20px">
+        <div class="table-characteristics-wrap my-20px">
+            <?php if ( have_rows('table_headers') ) : $counter = 0; ?>
+                <table class="table-characteristics-table border-1px border-solid border-medium-gray">
+                    <tr>
+                        <?php while ( have_rows('table_headers') ) : the_row(); $counter++;
+                            $table_header = get_sub_field('table_header');
+                        ?>
+                        
+                            <td class="p-8px text-15px font-600 text-center border-1px border-solid border-medium-gray">
+                                <?php echo $table_header; ?>
+                            </td>
+
+                        <?php endwhile; ?>
+                    </tr>
+
+                    <?php if ( have_rows('table_rows') && $header_count > 0 ) : ?>
+                        <?php while ( have_rows('table_rows') ) : the_row();
+                            $row_title = get_sub_field('row_title');
+                        ?>
+
+                        <tr>
+                            <td class="p-8px text-15px font-600 text-center border-1px border-solid border-medium-gray">
+                                <?php echo $row_title; ?>
+                            </td>
+
+                            <?php for ($i=1; $i < $header_count; $i++) : ?>
+                                <td class="p-8px text-15px text-center border-1px border-solid border-medium-gray">
+                                    <textarea type="text" class="w-100% border-1px border-medium-gray rounded-8px p-8px text-14px focus:outline-none focus:border-orange" name="table_characteristics_field[]" placeholder="<?php echo $get_static_text[get_lang()]['write_here']; ?>" rows="1"></textarea>
+                                </td>
+                            <?php endfor; ?>
+                        </tr>
+
+                        <?php endwhile; ?>
+                    <?php endif; ?>
+                </table>
+            <?php endif; ?>
+        </div>
+    </div>
 
 <?php 
 endif;
