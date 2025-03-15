@@ -2279,6 +2279,22 @@ table {
 	}
 }
 
+.option-item-wrap {
+	.option-item-feedback {
+		display: none;
+	}
+
+	&.active {
+		.option-item {
+			color: $green-color;
+			border-color: $green-color;
+		}
+
+		.option-item-feedback {
+			display: block;
+		}
+	}
+}
 // [class*="wp-image-"]
 // zdx 
 

@@ -129,6 +129,27 @@
         <?php endif; ?>
     </div>
 
+<?php elseif( get_row_layout() == 'options_with_feedback' ) : // options_with_feedback
+    $options_repeater = get_sub_field('options');
+?>
+
+    <div class="flexible-content-section options-with-feedback my-20px">
+        <?php if ( $options_repeater ) : ?>
+            <div class="options-container flex flex-wrap gap-16px">
+                <?php foreach( $options_repeater as $option ) : ?>
+                    <div class="option-item-wrap flex-1">
+                        <div class="option-item p-12px bg-light-gray text-center select-none rounded-8px text-15px font-600 border-solid border-transparent cursor-pointer border-1px hover:border-green hover:text-green" data-toggle-class="active">
+                            <?php echo $option['option']; ?>
+                        </div>
+
+                        <div class="option-item-feedback text-center mt-12px text-15px p-12px bg-green text-white rounded-8px font-600 border-solid border-transparent cursor-pointer border-1px">
+                            <?php echo $option['feedback']; ?>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
+    </div>
 
 <?php elseif( get_row_layout() == 't_graphic' ) : // t_graphic
     $left_title = get_sub_field('title_left');

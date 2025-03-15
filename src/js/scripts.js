@@ -1414,6 +1414,26 @@ document.addEventListener("DOMContentLoaded", function() {
         return clonedElement;
     }
 
+    function handleOptionToggleClass() {
+        const items = document.querySelectorAll('[data-toggle-class]');
+
+        if (items.length) {
+            items.forEach(function(item) {
+                item.addEventListener('click', function() {
+                    // remove all active classes
+                    items.forEach(function(item) {
+                        item.classList.remove('active');
+                        item.closest('.option-item-wrap').classList.remove('active');
+                    });
+
+                    item.classList.toggle('active');
+                    item.closest('.option-item-wrap').classList.toggle('active');
+                });
+            });
+        }
+    }
+    handleOptionToggleClass();
+
     function printElement(htmlElement) {
         if (htmlElement) {
             const clonedElement = cloneElementWithLiveValues(htmlElement);

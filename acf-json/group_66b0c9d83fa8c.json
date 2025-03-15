@@ -849,6 +849,81 @@
                             "min": "",
                             "max": ""
                         },
+                        "layout_67d56bd9d0dd9": {
+                            "key": "layout_67d56bd9d0dd9",
+                            "name": "options_with_feedback",
+                            "label": "Options + Feedback",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_67d56bfcd0ddb",
+                                    "label": "Options",
+                                    "name": "options",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "Add options with feedback (Adauga optiuni text + feedback)",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "table",
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add New Option",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_67d56c0ed0ddc",
+                                            "label": "Option",
+                                            "name": "option",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "Add option",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "placeholder": "Add option",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_67d56bfcd0ddb"
+                                        },
+                                        {
+                                            "key": "field_67d56c34d0ddd",
+                                            "label": "Feedback",
+                                            "name": "feedback",
+                                            "aria-label": "",
+                                            "type": "textarea",
+                                            "instructions": "Add option feedback",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "rows": 1,
+                                            "placeholder": "Option feedback",
+                                            "new_lines": "br",
+                                            "parent_repeater": "field_67d56bfcd0ddb"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        },
                         "layout_6741f09c258a2": {
                             "key": "layout_6741f09c258a2",
                             "name": "printable_table",
@@ -4263,5 +4338,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1740244524
+    "modified": 1742040328
 }
