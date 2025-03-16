@@ -592,44 +592,43 @@
             <?php echo $section_title; ?>
         </div>
         
-            <?php if ( have_rows('content') ) : ?>
-                <?php while ( have_rows('content') ) : the_row();
-                    $section_text_content = get_sub_field('section_text_content');
-                    $section_description = get_sub_field('description');
-                ?>
-                    <div class="spot-correct-wrap py-12px mb-24px">
-                        <div class="tcs-content phase-content entry-content content-spacing text-17px mb-20px">
-                            <?php echo $section_description; ?>
+        <?php if ( have_rows('content') ) : ?>
+            <?php while ( have_rows('content') ) : the_row();
+                $section_text_content = get_sub_field('section_text_content');
+                $section_description = get_sub_field('description');
+            ?>
+                <div class="spot-correct-wrap py-12px mb-24px">
+                    <div class="tcs-content phase-content entry-content content-spacing text-17px mb-20px">
+                        <?php echo $section_description; ?>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="p-12px spot-correct-inner bg-light-gray rounded-8px h-full">
+                                <?php if ( have_rows('items') ) : ?>
+                                    <ul class="spot-correct-list pl-0">
+                                        <?php while ( have_rows('items') ) : the_row(); 
+                                            $item = get_sub_field('item');
+                                            $correct = get_sub_field('correct');
+                                        ?>
+
+                                        <li data-correct="<?php echo ($correct ? '1' : '0'); ?>"><?php echo $item; ?></li>
+
+                                        <?php endwhile; ?>
+                                    </ul>
+                                <?php endif; ?>
+                            </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="p-12px spot-correct-inner bg-light-gray rounded-8px h-full">
-                                    <?php if ( have_rows('items') ) : ?>
-                                        <ul class="spot-correct-list pl-0">
-                                            <?php while ( have_rows('items') ) : the_row(); 
-                                                $item = get_sub_field('item');
-                                                $correct = get_sub_field('correct');
-                                            ?>
-
-                                            <li data-correct="<?php echo ($correct ? '1' : '0'); ?>"><?php echo $item; ?></li>
-
-                                            <?php endwhile; ?>
-                                        </ul>
-                                    <?php endif; ?>
-                                </div>
-                            </div>
-
-                            <div class="col-md-8">
-                                <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video">
-                                    <?php echo $section_text_content; ?>
-                                </div>
+                        <div class="col-md-8">
+                            <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video">
+                                <?php echo $section_text_content; ?>
                             </div>
                         </div>
                     </div>
-                <?php endwhile; ?>
-            <?php endif; ?>
-        </div>
+                </div>
+            <?php endwhile; ?>
+        <?php endif; ?>
     </div>
 
 
@@ -1149,7 +1148,7 @@
                             $coresponding_text = get_sub_field('coresponding_text');
                         ?>
                         
-                        <div class="mit-element cursor-move leading-130 flex items-center justify-center select-none cursor-pointer py-12px px-16px bg-white text-15px font-500 border-1px border-solid border-medium-gray rounded-8px" data-mit-element data-target="placeholder<?php echo $k; ?>">
+                        <div class="mit-element leading-130 flex items-center justify-center select-none cursor-pointer py-12px px-16px bg-white text-15px font-500 border-1px border-solid border-medium-gray rounded-8px" data-mit-element data-target="placeholder<?php echo $k; ?>">
                             <?php echo $coresponding_text; ?>
                         </div>
 
