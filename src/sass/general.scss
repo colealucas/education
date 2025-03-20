@@ -931,6 +931,15 @@ body.logged-in {
 		p {
 			margin: 0;
 		}
+
+		a {
+			color: $white-color;
+			text-decoration: underline;
+
+			&:hover {
+				text-decoration: none
+			}
+		}
 	}
 }
 
