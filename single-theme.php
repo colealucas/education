@@ -571,7 +571,7 @@ $hide_step_6 = false;
     </div>
 
     <div class="mt-12px pagination-wrapper bg-light-gray rounded-16px">
-        <a href="#" class="theme-pagination-btn tp-button-left" data-fancybox data-src="#modal-3">
+        <a href="#" class="theme-pagination-btn tp-button-left" data-fancybox data-src="<?php echo ($book_target == 'gimnaziu' ? '#modal-2' : '#modal-3'); ?>">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
                 <path d="M12.8334 7.50002H1.16669M1.16669 7.50002L7.00002 13.3334M1.16669 7.50002L7.00002 1.66669" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
