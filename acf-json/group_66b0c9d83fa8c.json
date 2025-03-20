@@ -4141,6 +4141,26 @@
                                     "append": ""
                                 },
                                 {
+                                    "key": "field_67dc6641002b0",
+                                    "label": "Print? (Printeaza)",
+                                    "name": "print",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Add print option (Adauga optiunea de printare)",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
                                     "key": "field_673a02e37821d",
                                     "label": "Columns",
                                     "name": "columns",
@@ -4436,5 +4456,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1742051715
+    "modified": 1742497479
 }
