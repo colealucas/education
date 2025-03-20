@@ -933,11 +933,12 @@ body.logged-in {
 		}
 
 		a {
-			color: $white-color;
+			color: $orange-color;
 			text-decoration: underline;
 
 			&:hover {
-				text-decoration: none
+				color: $orange-color;
+				text-decoration: none;
 			}
 		}
 	}
