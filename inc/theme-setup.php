@@ -412,3 +412,10 @@ function custom_mce_plugin($plugins) {
     return $plugins;
 }
 add_filter('mce_external_plugins', 'custom_mce_plugin');
+
+function load_custom_mce_script($hook) {
+    if ('post.php' === $hook || 'post-new.php' === $hook) {
+        wp_enqueue_script('custom-mce-plugin', get_template_directory_uri() . '/js/custom-mce-plugin.js', array('jquery'), null, true);
+    }
+}
+add_action('admin_enqueue_scripts', 'load_custom_mce_script');

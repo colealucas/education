@@ -1,17 +1,16 @@
 (function() {
-    console.log('Custom TinyMCE plugin loaded');
-
     tinymce.PluginManager.add('custom_class_plugin', function(editor, url) {
-        editor.ui.registry.addButton('custom_class_button', {
-            text: 'Custom Class',
-            icon: 'format',
-            onAction: function() {
+        editor.addButton('custom_class_button', {
+            text: '',
+            icon: 'mce-ico mce-i-notice',
+            tooltip: 'Ignore paragraph', // Added tooltip text
+            onclick: function() {
                 let selectedText = editor.selection.getContent({format: 'html'});
 
                 if (selectedText) {
-                    editor.insertContent('<p class="my-custom-class">' + selectedText + '</p>');
+                    editor.insertContent('<p class="ignore">' + selectedText + '</p>');
                 } else {
-                    alert('Please select some text first.');
+                    alert('Selecteaza un paragraf mai intai :)');
                 }
             }
         });
