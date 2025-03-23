@@ -4121,6 +4121,30 @@
                             "display": "block",
                             "sub_fields": [
                                 {
+                                    "key": "field_67e0108467f73",
+                                    "label": "Columns",
+                                    "name": "cols",
+                                    "aria-label": "",
+                                    "type": "button_group",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "col-md-12": "1 Column",
+                                        "col-md-6": "2 Columns",
+                                        "col-md-4": "3 Columns"
+                                    },
+                                    "default_value": "col-md-6",
+                                    "return_format": "value",
+                                    "allow_null": 0,
+                                    "layout": "horizontal"
+                                },
+                                {
                                     "key": "field_673a2a502d069",
                                     "label": "Placeholder text (text sugestie)",
                                     "name": "placeholder_text",
@@ -4162,7 +4186,7 @@
                                 },
                                 {
                                     "key": "field_673a02e37821d",
-                                    "label": "Columns",
+                                    "label": "Columns content",
                                     "name": "columns",
                                     "aria-label": "",
                                     "type": "repeater",
@@ -4456,5 +4480,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1742497479
+    "modified": 1742737667
 }

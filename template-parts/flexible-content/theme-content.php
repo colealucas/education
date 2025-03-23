@@ -1735,6 +1735,7 @@ $display_feedback = get_sub_field('');
 
 <?php elseif( get_row_layout() == 'boxes_with_text_game' ) : 
     $cols = get_sub_field('columns');
+    $columns_per_row = (get_sub_field('cols') ? get_sub_field('cols') : 'col-md-12');
     $placeholder_text = get_sub_field('placeholder_text');
     $cols_count = count($cols);
     $print = get_sub_field('print');
@@ -1758,19 +1759,21 @@ $display_feedback = get_sub_field('');
         <div class="comp-wrap">
             <div class="boxes-with-text-wrap">
                 <?php if ( have_rows('columns') ) : $i=0; ?>
-                    <div class="bwt-wrap flex flex-wrap gap-12px">
+                    <div class="bwt-wrap row">
 
                         <?php while ( have_rows('columns') ) : the_row(); $i++;
                             $text_content = get_sub_field('text_content');
                         ?>
 
-                        <div class="bwt-col-<?php echo $i; ?> flex flex-col gap-12px rounded-12px p-12px flex-1 min-w-200px">
-                            <!-- <div class="md:min-h-[130px]"> -->
-                            <div class="relative">
-                                <?php echo $text_content; ?>
-                            </div>
-                            <div>
-                                <textarea class="border-2px border-none rounded-8px p-12px text-14px w-full min-h-[156px] outline-none hover:outline-none" name="bwt_textarea[]" placeholder="<?php echo $placeholder_text; ?>"></textarea>
+                        <div class="<?php echo $columns_per_row; ?>">
+                            <div class="bwt-col p-12px rounded-8px mb-24px">
+                                <div class="relative">
+                                    <?php echo $text_content; ?>
+                                </div>
+
+                                <div class="mt-12px">
+                                    <textarea class="border-2px border-none rounded-8px p-12px text-14px w-full min-h-[156px] outline-none hover:outline-none" name="bwt_textarea[]" placeholder="<?php echo $placeholder_text; ?>"></textarea>
+                                </div>
                             </div>
                         </div>
 
