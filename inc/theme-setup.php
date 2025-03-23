@@ -392,3 +392,9 @@ add_action('pre_get_posts', function ($query) {
     }
 });
 
+// Custom TinyMCE settings, allow only <p> tags in tables
+function custom_tinymce_settings($settings) {
+    $settings['valid_children'] = '+body[style],+td[p]'; 
+    return $settings;
+}
+add_filter('tiny_mce_before_init', 'custom_tinymce_settings');
