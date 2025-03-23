@@ -598,9 +598,11 @@
                 $section_description = get_sub_field('description');
             ?>
                 <div class="spot-correct-wrap py-12px mb-24px">
-                    <div class="tcs-content phase-content entry-content content-spacing text-17px mb-20px">
-                        <?php echo $section_description; ?>
-                    </div>
+                    <?php if (strlen(trim($section_description))) : ?>
+                        <div class="tcs-content phase-content entry-content content-spacing text-17px mb-20px">
+                            <?php echo $section_description; ?>
+                        </div>
+                    <?php endif; ?>
 
                     <div class="row">
                         <div class="col-md-8">
