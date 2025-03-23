@@ -603,6 +603,12 @@
                     </div>
 
                     <div class="row">
+                        <div class="col-md-8">
+                            <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video">
+                                <?php echo $section_text_content; ?>
+                            </div>
+                        </div>
+
                         <div class="col-md-4">
                             <div class="p-12px spot-correct-inner bg-light-gray rounded-8px h-full">
                                 <?php if ( have_rows('items') ) : ?>
@@ -617,12 +623,6 @@
                                         <?php endwhile; ?>
                                     </ul>
                                 <?php endif; ?>
-                            </div>
-                        </div>
-
-                        <div class="col-md-8">
-                            <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video">
-                                <?php echo $section_text_content; ?>
                             </div>
                         </div>
                     </div>

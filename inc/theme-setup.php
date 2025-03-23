@@ -398,3 +398,17 @@ function custom_tinymce_settings($settings) {
     return $settings;
 }
 add_filter('tiny_mce_before_init', 'custom_tinymce_settings');
+
+// Custom TinyMCE buttons
+function custom_mce_buttons($buttons) {
+    array_push($buttons, 'custom_class_button'); // Add custom button
+    return $buttons;
+}
+add_filter('mce_buttons', 'custom_mce_buttons');
+
+// Custom TinyMCE plugin
+function custom_mce_plugin($plugins) {
+    $plugins['custom_class_plugin'] = get_template_directory_uri() . '/assets/js/custom-mce-plugin.js';
+    return $plugins;
+}
+add_filter('mce_external_plugins', 'custom_mce_plugin');
