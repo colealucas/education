@@ -507,7 +507,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     if (paragraphs.length) {
                         paragraphs.forEach(function(p) {
                             // Check if the paragraph is not a child of blockquote, ul, ol, or table and is not empty
-                            if (!p.closest('blockquote, ul, ol, table') && p.textContent.trim().length > 0) {
+                            if (!p.closest('blockquote, ul, ol') && p.textContent.trim().length > 0) {
                                 const checkboxes = document.createElement('span');
                                 checkboxes.classList.add('paragraph-four-options');
                                 checkboxes.innerHTML = `
