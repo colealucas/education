@@ -104,6 +104,9 @@ document.addEventListener("DOMContentLoaded", function() {
         closeExisting: true,
         dragToClose: false,
         mainClass: "regular-lightbox",
+        keyboard: {
+            Escape: false // Disable closing with ESC key
+        }
     });
 
     Fancybox.bind("[theme-fancybox]", {
