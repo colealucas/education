@@ -1766,8 +1766,8 @@ $display_feedback = get_sub_field('');
                         ?>
 
                         <div class="<?php echo $columns_per_row; ?>">
-                            <div class="bwt-col p-12px rounded-8px mb-24px">
-                                <div class="relative">
+                            <div class="bwt-col p-12px rounded-8px mb-20px">
+                                <div class="relative tcs-content phase-content entry-content content-spacing text-17px responsive-video">
                                     <?php echo $text_content; ?>
                                 </div>
 
