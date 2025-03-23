@@ -1737,7 +1737,6 @@ $display_feedback = get_sub_field('');
     $cols = get_sub_field('columns');
     $columns_per_row = (get_sub_field('cols') ? get_sub_field('cols') : 'col-md-12');
     $placeholder_text = get_sub_field('placeholder_text');
-    $cols_count = count($cols);
     $print = get_sub_field('print');
 ?>
 
