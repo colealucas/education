@@ -1765,7 +1765,8 @@ $display_feedback = get_sub_field('');
                         ?>
 
                         <div class="bwt-col-<?php echo $i; ?> flex flex-col gap-12px rounded-12px p-12px flex-1 min-w-200px">
-                            <div class="md:min-h-[130px]">
+                            <!-- <div class="md:min-h-[130px]"> -->
+                            <div class="relative">
                                 <?php echo $text_content; ?>
                             </div>
                             <div>
