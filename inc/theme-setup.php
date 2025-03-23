@@ -398,35 +398,3 @@ function custom_tinymce_settings($settings) {
     return $settings;
 }
 add_filter('tiny_mce_before_init', 'custom_tinymce_settings');
-
-// Force <p> tags inside <td> elements
-function force_paragraph_inside_td($content) {
-    // Use DOMDocument to manipulate the content
-    if (!class_exists('DOMDocument')) {
-        return $content; // Fallback if DOMDocument is not available
-    }
-
-    $dom = new DOMDocument();
-    libxml_use_internal_errors(true); // Suppress errors from invalid HTML
-    $dom->loadHTML('<?xml encoding="utf-8" ?>' . $content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-    libxml_clear_errors();
-
-    $tds = $dom->getElementsByTagName('td');
-
-    foreach ($tds as $td) {
-        // Check if the <td> contains direct text nodes (not wrapped in any element)
-        foreach ($td->childNodes as $child) {
-            if ($child->nodeType === XML_TEXT_NODE && trim($child->nodeValue) !== '') {
-                // Wrap the text inside a <p> tag
-                $p = $dom->createElement('p', htmlspecialchars($child->nodeValue));
-                $td->replaceChild($p, $child);
-            }
-        }
-    }
-
-    return $dom->saveHTML();
-}
-
-// Apply the filter when content is saved or displayed
-add_filter('the_content', 'force_paragraph_inside_td', 10);
-add_filter('content_save_pre', 'force_paragraph_inside_td', 10);
