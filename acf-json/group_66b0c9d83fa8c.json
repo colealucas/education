@@ -364,6 +364,58 @@
                                     "delay": 0
                                 },
                                 {
+                                    "key": "field_67e021fc8469e",
+                                    "label": "Cuvinte cheie dropdown",
+                                    "name": "dropdown_words",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_67e0208cfefae",
+                                                "operator": "==",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "row",
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add Word",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_67e025ff8469f",
+                                            "label": "Word (cuvant)",
+                                            "name": "word",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "placeholder": "Add word (adauga cuvant)",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_67e021fc8469e"
+                                        }
+                                    ]
+                                },
+                                {
                                     "key": "field_66ca00e9142b5",
                                     "label": "Settings",
                                     "name": "",
@@ -573,6 +625,26 @@
                                         "id": ""
                                     },
                                     "message": "Click words to focus?",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
+                                    "key": "field_67e0208cfefae",
+                                    "label": "Add dropdown game (adauga dropdown cu cuvinte)",
+                                    "name": "add_dropdown_game",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "Adauga lista derulanta cu variante pentru cuvinte cheie. Marcheaza {cuvantele} cheie.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Adauga dropdwn cu cuivinte",
                                     "default_value": 0,
                                     "ui_on_text": "",
                                     "ui_off_text": "",
@@ -4480,5 +4552,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1742737667
+    "modified": 1742743300
 }

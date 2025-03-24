@@ -2311,9 +2311,65 @@ table {
 		max-width: 48%;
 	}
 }
-// [class*="wp-image-"]
-// zdx 
 
+.custom-dropdown-element {
+	position: relative;
+
+	&.resolved {
+		.custom-dropdown-element-label {
+			pointer-events: none;
+		}
+	}
+
+	.custom-dropdown-element-label {
+		cursor: pointer;
+		user-select: none;
+		font-weight: bold;
+		color: $orange-color;
+	}
+	
+	.custom-dropdown-element-options {
+		position: absolute;
+		z-index: 9;
+		top: 100%;
+		left: 0;
+		background-color: $white-color;
+		border: 1px solid $medium-gray-color;
+		border-radius: 4px;
+		display: none;
+		min-width: 200px;
+		width: fit-content;
+		max-width: 245px;
+		overflow-y: auto;
+	}
+
+	&.active {
+		.custom-dropdown-element-options {
+			display: block;
+		}
+	}
+
+	.custom-dropdown-element-option {
+		cursor: pointer;
+		user-select: none;
+		font-weight: bold;
+		padding: 6px 12px;
+		display: block;
+		transition: all 0.15s ease-out;
+
+		&.has-error {
+			background-color: $light-red-color;
+			color: $red-color;
+		}
+
+		&:hover {
+			background-color: $light-gray-color;
+		}
+	}
+}
+
+
+// zdx
 
 @media (max-width: 1350px) {
 	.footer-menu-wrap  ul {

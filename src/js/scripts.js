@@ -307,6 +307,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const addCardsBtns = document.querySelectorAll('.add-cards-btn');
         const addExclamationBtns = document.querySelectorAll('.add-exclamation-btn');
         const addFourOptionsBtns = document.querySelectorAll('.four-options-btn');
+        const customDropdownElementsLabels = document.querySelectorAll('.custom-dropdown-element-label');
 
         if (addExclamationBtns.length) {
             addExclamationBtns.forEach(function(ex) {
@@ -495,6 +496,95 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     handleAddExclamations();
+
+    function handleDropdownGame() {
+        const sections = document.querySelectorAll('.dropdown-game');
+
+        if (sections.length) {
+            sections.forEach(function(textSection) {
+                // find all text matches by this template {California} and replace with custom dropdown html
+                let text = textSection.innerHTML;
+                const matches = text.match(/{(.*?)}/g);
+                const dropdownWords = textSection.getAttribute('data-dropdown-words');
+                const dropdownWordsArray = JSON.parse(dropdownWords);
+
+                if (matches && dropdownWordsArray.length) {
+                    matches.forEach(function(match) {
+                        // now clear the match from any special characters {}
+                        const cleanMatch = match.replace(/[{}]/g, '').trim().toLowerCase();
+                        const originalMatch = match.replace(/[{}]/g, '');
+
+                        const dropdown = document.createElement('span');
+                        dropdown.classList.add('custom-dropdown-element');
+                        dropdown.innerHTML = `
+                            <span class="custom-dropdown-element-label" data-match="${cleanMatch}" data-original-match="${originalMatch}">{...}</span>
+                            <span class="custom-dropdown-element-options">
+                                ${dropdownWordsArray.map(word => `<span class="custom-dropdown-element-option" data-word="${word.trim().toLowerCase()}">${word}</span>`).join('')}
+                            </span>
+                        `;
+
+                        // replace the match with the dropdown
+                        text = text.replace(match, dropdown.outerHTML);
+                    });
+
+                    textSection.innerHTML = text;
+
+                    let correctMatches = 0;
+                    const customDropdownElementsLabels = textSection.querySelectorAll('.custom-dropdown-element-label');
+
+                    if (customDropdownElementsLabels.length) {
+                        customDropdownElementsLabels.forEach(function(customDropdownElementLabel) {
+                            customDropdownElementLabel.addEventListener('click', function() {
+                                // first remove active class of existing active custom dropdown elements
+                                const activeCustomDropdownElements = document.querySelectorAll('.custom-dropdown-element.active');
+                                activeCustomDropdownElements.forEach(function(element) {
+                                    element.classList.remove('active');
+                                });
+                                
+                                customDropdownElementLabel.closest('.custom-dropdown-element').classList.toggle('active');
+            
+                                const match = customDropdownElementLabel.getAttribute('data-match');
+                                const originalMatch = customDropdownElementLabel.getAttribute('data-original-match');
+                                const options = customDropdownElementLabel.closest('.custom-dropdown-element').querySelector('.custom-dropdown-element-options');
+            
+                                if (match && options) {
+                                    options.querySelectorAll('.custom-dropdown-element-option').forEach(function(option) {
+                                        option.addEventListener('click', function() {
+                                            const word = option.getAttribute('data-word');
+            
+                                            // replace the match with the word if the word == match
+                                            if (word === match) {
+                                                correctMatches++;
+
+                                                if (correctMatches === matches.length) {
+                                                    showSuccessPopup( getText('bravo') );
+                                                }
+
+                                                customDropdownElementLabel.closest('.custom-dropdown-element').querySelector('.custom-dropdown-element-label').textContent = originalMatch;
+            
+                                                // dropdown element remove active class
+                                                customDropdownElementLabel.closest('.custom-dropdown-element').classList.remove('active');
+            
+                                                // add resolved class to the parent element
+                                                customDropdownElementLabel.closest('.custom-dropdown-element').classList.add('resolved');
+                                            } else {
+                                                // add error class to the option and remove it after 1 second delay 
+                                                option.classList.add('has-error');
+                                                setTimeout(function() {
+                                                    option.classList.remove('has-error');
+                                                }, 600);
+                                            }
+                                        });
+                                    });
+                                }
+                            });
+                        });
+                    }
+                }
+            });
+        }
+    }
+    handleDropdownGame();
 
     function handleAddFourButtons() {
         const sections = document.querySelectorAll('.add-four-options');

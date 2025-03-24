@@ -43,6 +43,17 @@
     $split_variants   = get_sub_field('split_variants');
     $click_words      = get_sub_field('click_words');
     $add_table_boders = get_sub_field('add_table_boders');
+    $add_dropdown_game = get_sub_field('add_dropdown_game');
+    $dropdown_words_repeater = get_sub_field('dropdown_words');
+    $dropdown_words = [];
+
+    if ($dropdown_words_repeater) {
+        foreach ($dropdown_words_repeater as $word) {
+            $dropdown_words[] = $word['word'];
+        }
+    }
+    $dropdown_words_json = htmlspecialchars(json_encode($dropdown_words, JSON_UNESCAPED_UNICODE), ENT_QUOTES, 'UTF-8');
+
     $background_color = (get_sub_field('background_color') ? get_sub_field('background_color') : 'transparent');
 
     if ($full_with_images) {
@@ -81,6 +92,10 @@
         $css_classes[] = 'table-borders';
     }
 
+    if ($add_dropdown_game) {
+        $css_classes[] = 'dropdown-game';
+    }
+
     // convert array of classes to string
     $addition_classes = implode(' ', $css_classes);
 ?>
@@ -110,7 +125,7 @@
         <?php endif; ?>
 
         <?php if ( strlen(trim($section_content)) ) : ?>
-            <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video <?php echo $addition_classes; ?> <?php if (strlen($background_color) && strtolower($background_color) != 'rgb(255,255,255)') :  ?> p-20px rounded-16px <?php endif; ?>" <?php if (strlen($background_color) && strtolower($background_color) != 'rgb(255,255,255)') :  ?>style="background-color: <?php echo $background_color; ?>"<?php endif; ?>>
+            <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video <?php echo $addition_classes; ?> <?php if (strlen($background_color) && strtolower($background_color) != 'rgb(255,255,255)') :  ?> p-20px rounded-16px <?php endif; ?>" <?php if (strlen($background_color) && strtolower($background_color) != 'rgb(255,255,255)') :  ?>style="background-color: <?php echo $background_color; ?>"<?php endif; ?> data-dropdown-words="<?php echo $dropdown_words_json; ?>">
                 <?php echo ($enable_words_hunt ? replaceBracketsWithSpans($section_content) : $section_content); ?>
             </div>
         <?php endif; ?>
