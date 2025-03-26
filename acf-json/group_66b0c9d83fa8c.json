@@ -4524,6 +4524,141 @@
                             ],
                             "min": "",
                             "max": ""
+                        },
+                        "layout_67e443a99ca29": {
+                            "key": "layout_67e443a99ca29",
+                            "name": "wordex",
+                            "label": "Wordex (Construeste Cuvinte)",
+                            "display": "row",
+                            "sub_fields": [
+                                {
+                                    "key": "field_67e44c8c7b586",
+                                    "label": "Left Column Title",
+                                    "name": "left_column_title",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "Add title",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_67e44cad7b587",
+                                    "label": "Right Column Title",
+                                    "name": "right_column_title",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "Add title",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_67e443c79ca2b",
+                                    "label": "Key words (Cuvinte Cheie)",
+                                    "name": "key_words",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "Adauga cuvinte cheie",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "table",
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add Word",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_67e443ec9ca2c",
+                                            "label": "Word",
+                                            "name": "word",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "placeholder": "Add word",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_67e443c79ca2b"
+                                        },
+                                        {
+                                            "key": "field_67e44ea9d9bac",
+                                            "label": "Correct",
+                                            "name": "correct",
+                                            "aria-label": "",
+                                            "type": "true_false",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "message": "",
+                                            "default_value": 0,
+                                            "ui_on_text": "",
+                                            "ui_off_text": "",
+                                            "ui": 1,
+                                            "parent_repeater": "field_67e443c79ca2b"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "key": "field_67e4441d9ca2d",
+                                    "label": "Prefix",
+                                    "name": "prefix",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "Add prefix word (Adaga prefix)",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "Prefix word",
+                                    "prepend": "",
+                                    "append": ""
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
                     },
                     "min": "",
@@ -4552,5 +4687,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1742743300
+    "modified": 1743015615
 }

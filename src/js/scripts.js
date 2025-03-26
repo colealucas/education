@@ -1862,6 +1862,64 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     handlePyramidGame();
 
+    function handleBuildWordsGame() {
+        const wrappers = document.querySelectorAll('.build-words-wrap');
+
+        if (wrappers.length) {
+            wrappers.forEach(function(wrapper) {
+                const placeholders = wrapper.querySelectorAll('.build-words-placeholder');
+                const mixedItems = wrapper.querySelector('.key-words-wrap');
+                let draggedItem = null;
+                let counter = 0;
+                let correctItemsCount = mixedItems.querySelectorAll('[data-correct]').length || 0;
+
+                // bottom mixed items
+                if (Sortable && mixedItems) {
+                    Sortable.create(mixedItems, {
+                        group: 'shared',
+                        animation: 0,
+                        sort: false,
+                        onStart: function (evt) {
+                            draggedItem = evt.item;
+                        }
+                    });
+                }
+                
+                if (placeholders.length) {
+                    placeholders.forEach(function(placeholder) {
+                        Sortable.create(placeholder, {
+                            group: 'shared',
+                            animation: 0,
+                            onAdd: function(evt) {  
+                                // if correct, item dragged and placed
+                                if (evt.item.hasAttribute('data-correct')) {
+                                    counter++;
+                                    evt.to.appendChild(evt.item);
+                                    evt.item.classList.add('success'); 
+                                } else {
+                                    evt.item.classList.add('error');
+                                    evt.from.appendChild(evt.item); // Return item to original list
+                                }
+
+                                setTimeout(() => {
+                                    evt.item.classList.remove('error', 'success');
+                                }, 600);
+
+                                 // if completed
+                                 if (counter >= correctItemsCount && !placeholder.classList.contains('resolved')) {
+                                    placeholder.classList.add('resolved');
+                                    showSuccessPopup( getText('bravo') );
+                                    
+                                }
+                            }
+                        });
+                    });
+                }
+            });
+        }
+    }
+    handleBuildWordsGame();
+
     function handleAddFields() {
         const buttons = document.querySelectorAll('[data-add-field-btn]');
 

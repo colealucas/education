@@ -1947,5 +1947,45 @@ $display_feedback = get_sub_field('');
         </div>
     </div>
 
+
+
+<?php elseif( get_row_layout() == 'wordex' ) : // wordex, build words game
+    $key_words = get_sub_field('key_words');
+    $prefix = get_sub_field('prefix');
+    $left_column_title = get_sub_field('left_column_title');
+    $right_column_title = get_sub_field('right_column_title');
+?>
+
+    <div class="flexible-content-section build-words my-20px">
+        <div class="build-words-wrap my-20px">
+            <?php if ( have_rows('key_words') ) : ?>
+                <div class="wordex-wrap flex gap-20px">
+                    <div class="w-40% bg-blue p-20px rounded-8px">
+                        <div class="text-18px text-center font-600 text-white mb-12px"><?php echo $left_column_title; ?></div>
+                        <div class="key-words-wrap text-white flex flex-col gap-4px">
+                            <?php while ( have_rows('key_words') ) : the_row();
+                                $key_word = get_sub_field('word');
+                                $correct = get_sub_field('correct');
+                            ?>
+                                <div class="key-word text-15px text-center select-none cursor-move text-dark font-500 leading-130 bg-white rounded-8px p-8px" <?php echo $correct ? 'data-correct' : ''; ?>>
+                                    <?php echo $key_word; ?>
+                                </div>
+                            <?php endwhile; ?>
+                        </div>
+                    </div>
+
+                    <div class="flex-1 text-blue text-36px font-700 leading-120 flex items-center justify-center">
+                        <?php echo $prefix; ?>
+                    </div>
+
+                    <div class="w-40% bg-light-gray p-20px rounded-8px">
+                        <div class="text-18px text-center font-600 text-dark mb-12px"><?php echo $right_column_title; ?></div>
+                        <div class="build-words-placeholder min-h-[72px] flex flex-col gap-4px border-1px border-dashed border-green rounded-8px p-6px"></div>
+                    </div>
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
+
 <?php 
 endif;
