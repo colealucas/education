@@ -17,6 +17,7 @@ $get_static_text = [
         'green_state' => 'Verde/independent',
         'yellow_state' => 'Galben/ghidat, ajutat',
         'red_state' => 'Roșu/mult ajutor',
+        'explore_subjects' => 'Explorează Subiecte',
     ],
     'ru' => [
         'subjects' => 'Предметы',
@@ -29,6 +30,7 @@ $get_static_text = [
         'green_state' => 'Зелёный/независимый',
         'yellow_state' => 'Жёлтый/под руководством, с помощью',
         'red_state' => 'Красный/много помощи',
+        'explore_subjects' => 'Исследуйте Предметы',
     ]
 ];
 
@@ -86,6 +88,10 @@ $current_module_title = '';
 
                         <div class="module-subjects-count mt-16px text-green">
                             <?php echo $themes_count . " " . $get_static_text[get_lang()]['subjects']; ?>
+                        </div>
+
+                        <div class="mb-32px">
+                            <a href="#subjects" class="btn"><?php echo $get_static_text[get_lang()]['explore_subjects']; ?></a>
                         </div>
                     </div> 
                 </div>
