@@ -1948,7 +1948,6 @@ $display_feedback = get_sub_field('');
     </div>
 
 
-
 <?php elseif( get_row_layout() == 'wordex' ) : // wordex, build words game
     $key_words = get_sub_field('key_words');
     $prefix = get_sub_field('prefix');
@@ -1981,6 +1980,51 @@ $display_feedback = get_sub_field('');
                     <div class="w-40% bg-light-gray p-20px rounded-8px">
                         <div class="text-18px text-center font-600 text-dark mb-12px"><?php echo $right_column_title; ?></div>
                         <div class="build-words-placeholder min-h-[72px] flex flex-col gap-4px border-1px border-dashed border-blue rounded-8px p-6px"></div>
+                    </div>
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
+
+
+<?php elseif( get_row_layout() == 'ship_game' ) : // ship_game
+    $key_words = get_sub_field('key_words');
+?>
+
+    <div class="flexible-content-section ship-game my-20px">
+        <div class="ship-game-wrap my-20px bg-white rounded-8px">
+            <?php if ( have_rows('objects') ) : ?>
+                <div class="flex gap-24px items-center bg-[#E6D0A8] rounded-8px"> 
+                    <div class="pirate-image w-[140px] select-none p-12px">
+                        <img class="w-full" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/pirate.png" alt="" draggable="false">
+                    </div>
+                    
+                    <div class="ship-game-objects min-h-[160px] flex-1 flex gap-20px flex-wrap p-20px bg-[#EEE1BD] rounded-r-8px">
+                        <?php while ( have_rows('objects') ) : the_row();
+                            $image = get_sub_field('image'); // image link
+                        ?>
+                            <div class="ship-game-object">
+                                <div class="ship-game-object-image bg-[rgba(255,255,255,0.25)] rounded-8px p-4px border-1px border-dashed border-white cursor-move hover:bg-[rgba(255,255,255,1)]">
+                                    <img class="w-auto h-[40px] select-none" src="<?php echo $image; ?>" alt="">
+                                </div>
+                            </div>
+                        <?php endwhile; ?>
+                    </div>
+                </div>
+
+                <div class="ship flex items-end gap-24px mt-40px">
+                    <div class="ship-image relative">
+                        <div class="ship-placeholder absolute top-[28px] left-[84px] w-auto min-w-[40px] h-[40px] bg-[rgba(255,255,255,0.8)] border-2px border-dashed border-orange rounded-8px p-4px flex items-center justify-center"></div>
+                        <div class="ship-placeholder absolute top-[34px] left-[180px] w-auto min-w-[40px] h-[40px] bg-[rgba(255,255,255,0.8)] border-2px border-dashed border-orange rounded-8px p-4px flex items-center justify-center"></div>
+                        <div class="ship-placeholder absolute top-[38px] left-[254px] w-auto min-w-[40px] h-[40px] bg-[rgba(255,255,255,0.8)] border-2px border-dashed border-orange rounded-8px p-4px flex items-center justify-center"></div>
+                        
+                        <div class="ship-placeholder absolute top-[120px] left-[265px] w-auto min-w-[40px] h-[40px] bg-[rgba(255,255,255,0.8)] border-2px border-dashed border-orange rounded-8px p-4px flex items-center justify-center"></div>
+                        <div class="ship-placeholder absolute top-[120px] right-[190px] w-auto min-w-[40px] h-[40px] bg-[rgba(255,255,255,0.8)] border-2px border-dashed border-orange rounded-8px p-4px flex items-center justify-center"></div>
+                        <div class="ship-placeholder absolute top-[70px] right-[170px] w-auto min-w-[40px] h-[40px] bg-[rgba(255,255,255,0.8)] border-2px border-dashed border-orange rounded-8px p-4px flex items-center justify-center"></div>
+                       
+                        <div class="ship-placeholder absolute top-[96px] right-[300px] w-auto min-w-[40px] h-[40px] bg-[rgba(255,255,255,0.8)] border-2px border-dashed border-orange rounded-8px p-4px flex items-center justify-center"></div>
+                        
+                        <img class="w-[785px] h-[404px] select-none pointer-events-none" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/ship.png" alt="" draggable="false">
                     </div>
                 </div>
             <?php endif; ?>

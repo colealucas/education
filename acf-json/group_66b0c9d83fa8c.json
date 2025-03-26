@@ -4659,6 +4659,65 @@
                             ],
                             "min": "",
                             "max": ""
+                        },
+                        "layout_67e45d4663aaa": {
+                            "key": "layout_67e45d4663aaa",
+                            "name": "ship_game",
+                            "label": "Ship (Corabia cu obiecte)",
+                            "display": "row",
+                            "sub_fields": [
+                                {
+                                    "key": "field_67e45d5863aac",
+                                    "label": "Objects",
+                                    "name": "objects",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "row",
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add Object",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_67e45d7563aad",
+                                            "label": "Image",
+                                            "name": "image",
+                                            "aria-label": "",
+                                            "type": "image",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "return_format": "url",
+                                            "library": "all",
+                                            "min_width": "",
+                                            "min_height": "",
+                                            "min_size": "",
+                                            "max_width": "",
+                                            "max_height": "",
+                                            "max_size": "",
+                                            "mime_types": "",
+                                            "preview_size": "full",
+                                            "parent_repeater": "field_67e45d5863aac"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
                     },
                     "min": "",
@@ -4687,5 +4746,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1743015615
+    "modified": 1743019562
 }

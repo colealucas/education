@@ -1909,7 +1909,6 @@ document.addEventListener("DOMContentLoaded", function() {
                                  if (counter >= correctItemsCount && !placeholder.classList.contains('resolved')) {
                                     placeholder.classList.add('resolved');
                                     showSuccessPopup( getText('bravo') );
-                                    
                                 }
                             }
                         });
@@ -1919,6 +1918,38 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     handleBuildWordsGame();
+
+    function handleShipGame() {
+        const wrappers = document.querySelectorAll('.ship-game-wrap');
+
+        if (wrappers.length) {
+            wrappers.forEach(function(wrapper) {
+                const placeholders = wrapper.querySelectorAll('.ship-placeholder');
+                const mixedItems = wrapper.querySelector('.ship-game-objects');
+
+                // mixed items
+                if (Sortable && mixedItems) {
+                    Sortable.create(mixedItems, {
+                        group: 'shared',
+                        animation: 0,
+                    });
+                }
+                
+                if (placeholders.length) {
+                    placeholders.forEach(function(placeholder) {
+                        Sortable.create(placeholder, {
+                            group: 'shared',
+                            animation: 0,
+                            onAdd: function(evt) {
+                                placeholder.classList.add('resolved');
+                            }
+                        });
+                    });
+                }
+            });
+        }
+    }
+    handleShipGame();
 
     function handleAddFields() {
         const buttons = document.querySelectorAll('[data-add-field-btn]');
