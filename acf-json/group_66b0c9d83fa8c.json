@@ -4667,6 +4667,26 @@
                             "display": "row",
                             "sub_fields": [
                                 {
+                                    "key": "field_67e475f11995e",
+                                    "label": "Print",
+                                    "name": "print",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Print?",
+                                    "default_value": 1,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
                                     "key": "field_67e45d5863aac",
                                     "label": "Objects",
                                     "name": "objects",
@@ -4746,5 +4766,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1743019562
+    "modified": 1743025672
 }
