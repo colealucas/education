@@ -141,7 +141,7 @@ $current_module_title = '';
                             <div>
                                 <div class="flex flex-nowrap items-center">
                                     <div>
-                                        <div class="subject-num flex items-center justify-center leading-1 size-78px bg-light-green text-green text-36px rounded-16px">
+                                        <div class="subject-num flex items-center justify-center leading-1 size-78px bg-light-green text-green text-32px rounded-16px">
                                             <?php echo (get_field('theme_number') ? get_field('theme_number') : $i); ?>
                                         </div>
                                     </div>
