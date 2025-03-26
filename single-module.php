@@ -17,7 +17,7 @@ $get_static_text = [
         'green_state' => 'Verde/independent',
         'yellow_state' => 'Galben/ghidat, ajutat',
         'red_state' => 'Roșu/mult ajutor',
-        'explore_subjects' => 'Explorează Subiecte',
+        'explore_subjects' => 'Explorează Subiectele',
     ],
     'ru' => [
         'subjects' => 'Предметы',
