@@ -1980,7 +1980,7 @@ $display_feedback = get_sub_field('');
 
                     <div class="w-40% bg-light-gray p-20px rounded-8px">
                         <div class="text-18px text-center font-600 text-dark mb-12px"><?php echo $right_column_title; ?></div>
-                        <div class="build-words-placeholder min-h-[72px] flex flex-col gap-4px border-1px border-dashed border-green rounded-8px p-6px"></div>
+                        <div class="build-words-placeholder min-h-[72px] flex flex-col gap-4px border-1px border-dashed border-blue rounded-8px p-6px"></div>
                     </div>
                 </div>
             <?php endif; ?>
