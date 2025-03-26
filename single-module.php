@@ -91,7 +91,7 @@ $current_module_title = '';
                         </div>
 
                         <div class="mt-30px">
-                            <a href="#subjects" class="btn"><?php echo $get_static_text[get_lang()]['explore_subjects']; ?></a>
+                            <a href="#modules" class="btn"><?php echo $get_static_text[get_lang()]['explore_subjects']; ?></a>
                         </div>
                     </div> 
                 </div>
