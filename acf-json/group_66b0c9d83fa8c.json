@@ -591,6 +591,26 @@
                                     "ui": 1
                                 },
                                 {
+                                    "key": "field_67e7f1e5a8023",
+                                    "label": "Add (!) (?) signs - (adauga (!) (?) in fata paragrafelor)",
+                                    "name": "add_exclamation_interogation",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Add (!) (?) signs ?",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
                                     "key": "field_673a243940f9e",
                                     "label": "Add 4 options before paragraphs (adauga 4 optiuni) [v + - ?]",
                                     "name": "add_four_options",
@@ -4434,6 +4454,26 @@
                             "display": "row",
                             "sub_fields": [
                                 {
+                                    "key": "field_67e7f02b3900b",
+                                    "label": "Print",
+                                    "name": "print",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Print this?",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
                                     "key": "field_67d5963404e4b",
                                     "label": "Headers (Titluri)",
                                     "name": "table_headers",
@@ -4766,5 +4806,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1743025672
+    "modified": 1743254070
 }

@@ -1991,11 +1991,14 @@ table {
 	}
 }
 
-.paragraph-exclamation-options {
+.paragraph-exclamation-options,
+.paragraph-exclamation-interogation-options {
 	display: inline-flex;
+	gap: 4px;
 	margin-right: 8px;
 
-	.add-exclamation-btn {
+	.add-exclamation-btn,
+	.add-exclamation-interogation-btn {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;

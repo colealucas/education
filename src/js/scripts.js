@@ -306,6 +306,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const addPlus = document.querySelectorAll('.paragraph-pluss-option');
         const addCardsBtns = document.querySelectorAll('.add-cards-btn');
         const addExclamationBtns = document.querySelectorAll('.add-exclamation-btn');
+        const addExclamationInterogationBtns = document.querySelectorAll('.add-exclamation-interogation-btn');
         const addFourOptionsBtns = document.querySelectorAll('.four-options-btn');
         const customDropdownElementsLabels = document.querySelectorAll('.custom-dropdown-element-label');
 
@@ -317,6 +318,13 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         }
 
+        if (addExclamationInterogationBtns.length) {
+            addExclamationInterogationBtns.forEach(function(ex) {
+                ex.addEventListener('click', function() {
+                    ex.classList.toggle('active');
+                });
+            });
+        }
         if (addFourOptionsBtns.length) {
             addFourOptionsBtns.forEach(function(fItem) {
                 fItem.addEventListener('click', function() {
@@ -496,6 +504,34 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     handleAddExclamations();
+
+    function handleAddExclamationInterogation() {
+        const sections = document.querySelectorAll('.add-exclamation-interogation');
+
+        if ( sections.length ) {
+            sections.forEach(function(textSection) {
+                if ( textSection ) {
+                    const paragraphs = textSection.querySelectorAll('p:not(.ignore)');
+
+                    if ( paragraphs.length ) {
+                        paragraphs.forEach(function(p) {
+                            if ( p.textContent.trim().length ) {
+                                const checkboxes = document.createElement('span');
+                                checkboxes.classList.add('paragraph-exclamation-interogation-options');
+                                checkboxes.innerHTML = `<span class="add-exclamation-btn">(!)</span> <span class="add-exclamation-interogation-btn">?</span>`;
+
+                                // Insert the <span> before the text content of the <p>
+                                p.prepend(checkboxes);
+                            }
+                        });
+
+                        handleCheckmarks();
+                    }
+                }
+            });
+        }
+    }
+    handleAddExclamationInterogation();
 
     function handleDropdownGame() {
         const sections = document.querySelectorAll('.dropdown-game');
