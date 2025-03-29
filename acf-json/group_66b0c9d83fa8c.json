@@ -4778,6 +4778,102 @@
                             ],
                             "min": "",
                             "max": ""
+                        },
+                        "layout_67e7f62a73cf6": {
+                            "key": "layout_67e7f62a73cf6",
+                            "name": "fill_the_bawl",
+                            "label": "Fill the bawl (Umple bolul)",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_67e7f83f475f0",
+                                    "label": "Max words (cuvinte acceptate)",
+                                    "name": "max_words",
+                                    "aria-label": "",
+                                    "type": "number",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": 5,
+                                    "min": 1,
+                                    "max": 20,
+                                    "placeholder": "Max words",
+                                    "step": 1,
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_67e7f66673cf9",
+                                    "label": "Print",
+                                    "name": "print",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Print?",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
+                                    "key": "field_67e7f63f73cf8",
+                                    "label": "Words (cuvinte)",
+                                    "name": "words",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "Add words (adauga cuvinte)",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "row",
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add Word",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_67e7f69273cfa",
+                                            "label": "Word (cuvant)",
+                                            "name": "word",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "placeholder": "Add word",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_67e7f63f73cf8"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
                     },
                     "min": "",
@@ -4806,5 +4902,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1743254070
+    "modified": 1743255805
 }

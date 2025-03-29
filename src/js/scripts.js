@@ -1880,15 +1880,6 @@ document.addEventListener("DOMContentLoaded", function() {
                                         evt.item.classList.remove('error', 'success');
                                     }, 700);
                                 }
-
-                                 // if completed
-                                //  if (counter >= placeholders.length ) {
-                                //     //showSuccessPopup( getText('bravo') );
-                                    
-                                //     if ( mixedItems ) {
-                                //         mixedItems.classList.add('hide');
-                                //     }
-                                // }
                             }
                         });
                     });
@@ -1954,6 +1945,62 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     handleBuildWordsGame();
+
+    function handleFillTheBawlGame() {
+        const wrappers = document.querySelectorAll('.fill-the-bawl-wrap');
+
+        if (wrappers.length) {
+            wrappers.forEach(function(wrapper) {
+                const placeholders = wrapper.querySelectorAll('.fill-the-bawl-placeholder');
+                const mixedItems = wrapper.querySelector('.key-words-wrap');
+                
+                
+                if (Sortable && mixedItems) {
+                    Sortable.create(mixedItems, {
+                        group: 'shared',
+                        animation: 0,
+                        sort: false,
+                    });
+                }
+
+                if (placeholders.length) {
+                    placeholders.forEach(function(placeholder) {
+                        Sortable.create(placeholder, {
+                            group: 'shared',
+                            animation: 0,
+                            onAdd: function(evt) {
+                                const placeholder = evt.to;
+                                const maxWords = parseInt(placeholder.getAttribute('data-max-words'));
+                                const placeholderMaxWords = placeholder.querySelectorAll('.key-word').length;
+
+                                if (placeholderMaxWords >= maxWords) {
+                                    placeholder.classList.add('resolved', 'no-click');
+                                    mixedItems.classList.add('no-click');
+                                    mixedItems.classList.add('no-click');
+                                    mixedItems.style.opacity = '0.5';
+                                }
+                            }
+                        });
+                    });
+                }
+
+                if (mixedItems.length) {
+                    mixedItems.forEach(function(item) {
+                        item.addEventListener('click', function() {
+                            console.log('item clicked');
+                        });
+                    });
+                }
+
+                if (placeholders.length) {
+                    placeholders.forEach(function(placeholder) {
+                       
+                    });
+                }
+            });
+        }
+    }
+    handleFillTheBawlGame();
 
     function handleShipGame() {
         const wrappers = document.querySelectorAll('.ship-game-wrap');
