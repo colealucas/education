@@ -1997,8 +1997,7 @@ table {
 	gap: 4px;
 	margin-right: 8px;
 
-	.add-exclamation-btn,
-	.add-exclamation-interogation-btn {
+	.add-exclamation-btn {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
@@ -2020,6 +2019,31 @@ table {
 		&.active {
 			filter: grayscale(0);
 			border-color: $red-color;
+		}
+	}
+
+	.add-exclamation-interogation-btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		font-weight: 600;
+		background-color: $orange-color;
+		border: 2px solid transparent;
+		cursor: pointer;
+		filter: grayscale(1);
+		transition: transform 0.1s ease-out;
+
+		&:hover {
+			transform: scale(1.07);
+			filter: grayscale(0);
+		}
+
+		&.active {
+			filter: grayscale(0);
+			border-color: $orange-color;
 		}
 	}
 }

@@ -306,7 +306,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const addPlus = document.querySelectorAll('.paragraph-pluss-option');
         const addCardsBtns = document.querySelectorAll('.add-cards-btn');
         const addExclamationBtns = document.querySelectorAll('.add-exclamation-btn');
-        const addExclamationInterogationBtns = document.querySelectorAll('.add-exclamation-interogation-btn');
         const addFourOptionsBtns = document.querySelectorAll('.four-options-btn');
 
         if (addExclamationBtns.length) {
@@ -317,14 +316,6 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         }
 
-        if (addExclamationInterogationBtns.length) {
-            addExclamationInterogationBtns.forEach(function(ex) {
-                ex.addEventListener('click', function() {
-                    console.log('exclamation interogation btn clicked');
-                    ex.classList.toggle('active');
-                });
-            });
-        }
         if (addFourOptionsBtns.length) {
             addFourOptionsBtns.forEach(function(fItem) {
                 fItem.addEventListener('click', function() {
@@ -512,20 +503,34 @@ document.addEventListener("DOMContentLoaded", function() {
             sections.forEach(function(textSection) {
                 if ( textSection ) {
                     const paragraphs = textSection.querySelectorAll('p:not(.ignore)');
-
+                    
                     if ( paragraphs.length ) {
                         paragraphs.forEach(function(p) {
                             if ( p.textContent.trim().length ) {
                                 const checkboxes = document.createElement('span');
                                 checkboxes.classList.add('paragraph-exclamation-interogation-options');
-                                checkboxes.innerHTML = `<span class="add-exclamation-btn">(!)</span> <span class="add-exclamation-interogation-btn">?</span>`;
+                                checkboxes.innerHTML = `<span class="add-exclamation-btn ex-btn">(!)</span> <span class="add-exclamation-interogation-btn ex-btn">?</span>`;
 
                                 // Insert the <span> before the text content of the <p>
                                 p.prepend(checkboxes);
                             }
                         });
 
-                        handleCheckmarks();
+                        const addExclamationInterogationBtns = textSection.querySelectorAll('.ex-btn');
+
+                        if (addExclamationInterogationBtns.length) {
+                            addExclamationInterogationBtns.forEach(function(ex) {
+                                ex.addEventListener('click', function() {
+                                    // first remove active class of existing active ex-btn
+                                    const activeExBtns = this.parentNode.querySelectorAll('.ex-btn.active');
+                                    activeExBtns.forEach(function(element) {
+                                        element.classList.remove('active');
+                                    });
+
+                                    ex.classList.toggle('active');
+                                });
+                            });
+                        }
                     }
                 }
             });
