@@ -308,7 +308,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const addExclamationBtns = document.querySelectorAll('.add-exclamation-btn');
         const addExclamationInterogationBtns = document.querySelectorAll('.add-exclamation-interogation-btn');
         const addFourOptionsBtns = document.querySelectorAll('.four-options-btn');
-        const customDropdownElementsLabels = document.querySelectorAll('.custom-dropdown-element-label');
 
         if (addExclamationBtns.length) {
             addExclamationBtns.forEach(function(ex) {
@@ -321,6 +320,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (addExclamationInterogationBtns.length) {
             addExclamationInterogationBtns.forEach(function(ex) {
                 ex.addEventListener('click', function() {
+                    console.log('exclamation interogation btn clicked');
                     ex.classList.toggle('active');
                 });
             });
