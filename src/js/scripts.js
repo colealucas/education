@@ -1977,24 +1977,10 @@ document.addEventListener("DOMContentLoaded", function() {
                                     placeholder.classList.add('resolved', 'no-click');
                                     mixedItems.classList.add('no-click');
                                     mixedItems.classList.add('no-click');
-                                    mixedItems.style.opacity = '0.5';
+                                    mixedItems.style.opacity = '0.5'; // disable items
                                 }
                             }
                         });
-                    });
-                }
-
-                if (mixedItems.length) {
-                    mixedItems.forEach(function(item) {
-                        item.addEventListener('click', function() {
-                            console.log('item clicked');
-                        });
-                    });
-                }
-
-                if (placeholders.length) {
-                    placeholders.forEach(function(placeholder) {
-                       
                     });
                 }
             });
