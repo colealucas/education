@@ -563,6 +563,39 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     handleReactions();
 
+    function handleCorrectAnswers() {
+        const sections = document.querySelectorAll('.correct-answers');
+
+        if (sections.length) {
+            sections.forEach(function(textSection) {
+                const contentFunctions = textSection.querySelectorAll('.content-function');
+                const totalCorrectItems = textSection.querySelectorAll('.content-function[data-correct="true"]');
+                let correctAnswers = 0;
+
+                if (contentFunctions.length) {
+                    contentFunctions.forEach(function(contentFunction) {
+                        contentFunction.addEventListener('click', function() {
+                            contentFunction.classList.toggle('active');
+
+                            if (contentFunction.getAttribute('data-correct') === 'true') {
+                                correctAnswers++;
+
+                                if (correctAnswers >= totalCorrectItems.length) {
+                                    showSuccessPopup( getText('bravo') );
+                                }
+                            } else {
+                                setTimeout(() => {
+                                    contentFunction.classList.remove('active');
+                                }, 500);
+                            }
+                        });
+                    });
+                }
+            });
+        }
+    }
+    handleCorrectAnswers();
+
     function handleDropdownGame() {
         const sections = document.querySelectorAll('.dropdown-game');
 

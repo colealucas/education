@@ -110,9 +110,10 @@
     $addition_classes = implode(' ', $css_classes);
 
     $reacions = get_sub_field('reactions');
+    $content_functions = get_sub_field('content_functions');
 ?>
 
-    <div class="flexible-content-section text-content-section my-20px">
+    <div class="flexible-content-section text-content-section my-20px <?php echo ($content_functions ? 'correct-answers' : ''); ?>">
         <?php if (strlen(trim($section_title))) : ?>
             <div class="tcs-heading mb-16px bg-green text-white py-20px px-24px rounded-16px">
                 <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
@@ -169,6 +170,23 @@
                     <?php endforeach; ?>
                 </div>
             <?php endif; ?>
+
+            <?php 
+                // Get content functions repeater
+                if ($content_functions) : ?>
+                    <div class="content-functions flex flex-wrap items-center gap-8px px-20px border-t-1px border-solid border-medium-gray pt-16px border-b-1px pb-16px">
+                        <?php foreach ($content_functions as $function) :
+                            $function_name = $function['function_nme'];
+                            $correct = $function['correct'];
+
+                            if ($function_name) : ?>
+                                <div class="content-function py-10px px-12px font-500 leading-130 rounded-20px bg-light-gray text-15px cursor-pointer border-2px border-solid border-medium-gray" data-correct="<?php echo ($correct ? 'true' : 'false'); ?>">
+                                    <?php echo esc_html($function_name); ?>
+                                </div>
+                            <?php endif;
+                        endforeach; ?>
+                    </div>
+                <?php endif; ?>
         <?php endif; ?>
     </div>
 

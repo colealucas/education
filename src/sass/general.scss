@@ -2440,6 +2440,19 @@ table {
 	}
 }
 
+.content-function {
+	&.active[data-correct="true"] {
+		background-color: $light-green-color;
+		color: $green-color;
+		border-color: $green-color;
+	}
+
+	&.active[data-correct="false"] {
+		background-color: $light-red-color;
+		border-color: $red-color;
+	}
+}
+
 @media (max-width: 1350px) {
 	.footer-menu-wrap  ul {
 		flex-wrap: wrap;

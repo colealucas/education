@@ -498,6 +498,79 @@
                                     ]
                                 },
                                 {
+                                    "key": "field_67e841c5e8017",
+                                    "label": "Functions",
+                                    "name": "content_functions",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "Identify function",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_67e84191e8016",
+                                                "operator": "==",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "table",
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add Function",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_67e84217e8018",
+                                            "label": "Function nme",
+                                            "name": "function_nme",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "placeholder": "Function name",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_67e841c5e8017"
+                                        },
+                                        {
+                                            "key": "field_67e8424fe8019",
+                                            "label": "Correct?",
+                                            "name": "correct",
+                                            "aria-label": "",
+                                            "type": "true_false",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "message": "",
+                                            "default_value": 0,
+                                            "ui_on_text": "",
+                                            "ui_off_text": "",
+                                            "ui": 1,
+                                            "parent_repeater": "field_67e841c5e8017"
+                                        }
+                                    ]
+                                },
+                                {
                                     "key": "field_66ca00e9142b5",
                                     "label": "Settings",
                                     "name": "",
@@ -787,6 +860,26 @@
                                         "id": ""
                                     },
                                     "message": "Add reactions? (Adaugi reactii?)",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
+                                    "key": "field_67e84191e8016",
+                                    "label": "Identify function (identifica functia)",
+                                    "name": "identify_function",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Use Identify function? (Utilizeaza identifica functia)",
                                     "default_value": 0,
                                     "ui_on_text": "",
                                     "ui_off_text": "",
@@ -5004,5 +5097,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1743271273
+    "modified": 1743274659
 }
