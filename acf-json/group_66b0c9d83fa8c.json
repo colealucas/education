@@ -416,6 +416,88 @@
                                     ]
                                 },
                                 {
+                                    "key": "field_67e82b6eaa5a5",
+                                    "label": "Reactions (Reactii)",
+                                    "name": "reactions",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_67e82b2aaa5a4",
+                                                "operator": "==",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "block",
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add reaction",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_67e82bb7aa5a6",
+                                            "label": "Titlu",
+                                            "name": "reaction_title",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "50",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "placeholder": "Add title",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_67e82b6eaa5a5"
+                                        },
+                                        {
+                                            "key": "field_67e82bd1aa5a7",
+                                            "label": "Reaction type",
+                                            "name": "reaction_type",
+                                            "aria-label": "",
+                                            "type": "select",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "50",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "choices": {
+                                                "sad": "Sad (trist)",
+                                                "admiration": "Admiration (admiratie)",
+                                                "confuzion": "Confuzion (confuzie)",
+                                                "joy": "Joy (bucurie)",
+                                                "other": "Other (altele)"
+                                            },
+                                            "default_value": "smile",
+                                            "return_format": "value",
+                                            "multiple": 0,
+                                            "allow_null": 0,
+                                            "ui": 0,
+                                            "ajax": 0,
+                                            "placeholder": "",
+                                            "parent_repeater": "field_67e82b6eaa5a5"
+                                        }
+                                    ]
+                                },
+                                {
                                     "key": "field_66ca00e9142b5",
                                     "label": "Settings",
                                     "name": "",
@@ -685,6 +767,26 @@
                                         "id": ""
                                     },
                                     "message": "Add table boders ?",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
+                                    "key": "field_67e82b2aaa5a4",
+                                    "label": "Add Reactions (Adauga reactii)",
+                                    "name": "add_reactions",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Add reactions? (Adaugi reactii?)",
                                     "default_value": 0,
                                     "ui_on_text": "",
                                     "ui_off_text": "",
@@ -4902,5 +5004,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1743255805
+    "modified": 1743271273
 }

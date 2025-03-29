@@ -538,6 +538,31 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     handleAddExclamationInterogation();
 
+    function handleReactions() {
+        const reactionsWrap = document.querySelectorAll('.reactions-wrap');
+
+        if (reactionsWrap.length) {
+            reactionsWrap.forEach(function(reactionWrap) {
+                const reactionItems = reactionWrap.querySelectorAll('.reaction-item');
+
+                if (reactionItems.length) {
+                    reactionItems.forEach(function(reactionItem) {
+                        reactionItem.addEventListener('click', function() {
+                            // remove active class of existing active reaction items
+                            const activeReactionItems = reactionWrap.querySelectorAll('.reaction-item.active');
+                            activeReactionItems.forEach(function(element) {
+                                element.classList.remove('active');
+                            });
+
+                            reactionItem.classList.add('active');
+                        });
+                    });
+                }
+            });
+        }
+    }
+    handleReactions();
+
     function handleDropdownGame() {
         const sections = document.querySelectorAll('.dropdown-game');
 

@@ -2421,7 +2421,24 @@ table {
 }
 
 
-// zdx
+// zdravi
+.reaction-item {
+	transition: all 0.15s ease-out;
+
+	&.active {
+		background-color: $light-green-color;
+		color: $green-color;
+		border-color: $green-color;
+	}
+
+	&:hover {
+		transform: scale(1.03);
+	}
+
+	&:active {
+		transform: scale(0.98);
+	}
+}
 
 @media (max-width: 1350px) {
 	.footer-menu-wrap  ul {
