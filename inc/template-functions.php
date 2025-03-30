@@ -22,6 +22,14 @@ function education_body_classes( $classes ) {
 		$classes[] = 'no-sidebar';
 	}
 
+	if (isBook1()) {
+		$classes[] = 'book-1';
+	} elseif (isBook2()) {
+		$classes[] = 'book-2';
+	} elseif (isBook3()) {
+		$classes[] = 'book-3';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'education_body_classes' );

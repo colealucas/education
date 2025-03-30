@@ -28,11 +28,11 @@
                         <div class="books-summary-wrap mx-auto max-w-[998px]">
                             <?php while ($query->have_posts()) : $query->the_post(); $i++; ?>
                                 <div class="book-sum p-16px bg-faded-white border-1px border-solid border-border-gray rounded-24px mb-24px">
-                                    <div class="book-sum-header select-none flex gap-16px justify-between items-center cursor-pointer hover:text-green">
+                                    <div class="book-sum-header select-none flex gap-16px justify-between items-center cursor-pointer hover:text-primary">
                                         <div>
                                             <div class="flex items-center gap-16px">
                                                 <div>
-                                                    <div class="size-64px text-green book-sum-index rounded-12px flex items-center justify-center bg-light-green text-32px font-500 leading-1">
+                                                    <div class="size-64px text-primary book-sum-index rounded-12px flex items-center justify-center bg-primary-light text-32px font-500 leading-1">
                                                         <?php echo $i; ?>
                                                     </div>
                                                 </div>

@@ -29,6 +29,11 @@ module.exports = {
       'light-red': '#F5D5CD',
       'blue': '#02739F',
       'papirus': '#FEDFAC',
+
+      // Dynamic colors
+      'primary': 'var(--primary-color)',
+      'primary-medium': 'var(--primary-color-medium)',
+      'primary-light': 'var(--primary-color-light)',
     },
     fontFamily: {
       openSans: ['Open Sans', 'sans-serif'],

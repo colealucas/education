@@ -115,7 +115,7 @@
 
     <div class="flexible-content-section text-content-section my-20px <?php echo ($content_functions ? 'correct-answers' : ''); ?>">
         <?php if (strlen(trim($section_title))) : ?>
-            <div class="tcs-heading mb-16px bg-green text-white py-20px px-24px rounded-16px">
+            <div class="tcs-heading mb-16px bg-primary text-white py-20px px-24px rounded-16px">
                 <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
                     <span class="w-30px block">
                         <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -145,7 +145,7 @@
             <?php if ($reacions) : ?>
                 <div class="reactions-wrap flex flex-wrap justify-center gap-8px border-t-1px border-solid border-medium-gray pt-16px border-b-1px pb-16px">
                     <?php foreach ($reacions as $reaction) : ?>
-                        <div class="reaction-item min-h-42px py-8px px-12px text-14px font-600 leading-1 select-none cursor-pointer inline-flex items-center justify-center gap-8px hover:text-green hover:bg-light-green hover:border-green border-1px border-solid border-medium-gray rounded-8px">
+                        <div class="reaction-item min-h-42px py-8px px-12px text-14px font-600 leading-1 select-none cursor-pointer inline-flex items-center justify-center gap-8px hover:text-primary hover:bg-primary-light hover:border-green border-1px border-solid border-medium-gray rounded-8px">
                             <?php if ($reaction['reaction_type'] == 'sad') : ?>
                                 <span class="reaction-emoji text-30px">
                                     <svg width="30" height="30" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M512.004 512.002m-491.988 0a491.988 491.988 0 1 0 983.976 0 491.988 491.988 0 1 0-983.976 0Z" fill="#FDDF6D" /><path d="M617.43 931.354c-271.716 0-491.986-220.268-491.986-491.986 0-145.168 62.886-275.632 162.888-365.684C129.056 155.124 20.016 320.824 20.016 512c0 271.716 220.268 491.986 491.986 491.986 126.548 0 241.924-47.796 329.098-126.298-67.106 34.308-143.124 53.666-223.67 53.666z" fill="#FCC56B" /><path d="M735.828 834.472H496.912c-11.056 0-20.014-8.958-20.014-20.014s8.958-20.014 20.014-20.014h238.914c11.056 0 20.014 8.958 20.014 20.014s-8.956 20.014-20.012 20.014zM442.172 628.498c-48.674 0-92.65-12.454-117.634-33.316-8.486-7.082-9.62-19.706-2.536-28.188 7.082-8.484 19.702-9.62 28.188-2.536 17.472 14.586 53.576 24.012 91.98 24.012 37.486 0 74.086-9.604 93.242-24.464 8.732-6.776 21.3-5.188 28.08 3.546 6.776 8.732 5.188 21.304-3.546 28.08-26.524 20.58-70.554 32.866-117.774 32.866zM789.346 628.498c-48.674 0-92.65-12.454-117.634-33.316-8.486-7.082-9.62-19.706-2.536-28.188s19.706-9.62 28.188-2.536c17.472 14.586 53.576 24.012 91.98 24.012 37.486 0 74.086-9.604 93.242-24.464 8.73-6.776 21.304-5.188 28.08 3.546 6.776 8.732 5.188 21.304-3.546 28.08-26.526 20.58-70.554 32.866-117.774 32.866zM347.382 526.08c-7.438 0-14.36-0.836-20.53-2.544-10.654-2.946-16.9-13.972-13.954-24.628 2.948-10.654 13.984-16.904 24.628-13.954 9.852 2.73 30.072 0.814 53.044-9.608 22.486-10.194 37.75-24.62 42.904-34.39 5.156-9.78 17.26-13.528 27.038-8.368 9.778 5.156 13.524 17.264 8.368 27.038-10.488 19.886-33.582 39.392-61.778 52.178-20.608 9.346-41.672 14.276-59.72 14.276zM878.98 526.08c-18.05 0-39.108-4.928-59.724-14.278-28.194-12.782-51.288-32.288-61.774-52.174-5.158-9.776-1.41-21.882 8.368-27.038 9.778-5.164 21.882-1.406 27.038 8.368 5.156 9.77 20.418 24.194 42.898 34.388 22.974 10.42 43.2 12.338 53.044 9.61 10.666-2.938 21.68 3.298 24.628 13.952 2.946 10.654-3.298 21.68-13.952 24.628-6.166 1.706-13.09 2.544-20.526 2.544z" fill="#7F184C" /><path d="M711.124 40.168c-10.176-4.304-21.922 0.464-26.224 10.646s0.464 21.926 10.646 26.224c175.212 74.03 288.428 244.764 288.428 434.96 0 260.248-211.724 471.97-471.968 471.97S40.03 772.244 40.03 511.998 251.756 40.03 512.002 40.03c11.056 0 20.014-8.958 20.014-20.014S523.058 0 512.002 0c-282.32 0-512 229.68-512 511.998 0 282.32 229.68 512.002 512 512.002C794.318 1024 1024 794.32 1024 512c0.002-206.322-122.812-391.528-312.876-471.832z" fill="" /><path d="M496.912 794.444c-11.056 0-20.014 8.958-20.014 20.014s8.958 20.014 20.014 20.014h238.914c11.056 0 20.014-8.958 20.014-20.014s-8.958-20.014-20.014-20.014H496.912zM350.194 564.46c-8.488-7.088-21.106-5.948-28.188 2.536-7.086 8.486-5.948 21.106 2.536 28.188 24.984 20.86 68.96 33.316 117.634 33.316 47.218 0 91.248-12.286 117.778-32.864 8.734-6.776 10.322-19.348 3.546-28.08-6.778-8.738-19.348-10.32-28.08-3.546-19.158 14.858-55.758 24.464-93.242 24.464-38.408-0.002-74.514-9.43-91.984-24.014zM671.714 595.184c24.984 20.86 68.96 33.316 117.634 33.316 47.218 0 91.248-12.286 117.778-32.864 8.734-6.776 10.322-19.348 3.546-28.08-6.776-8.738-19.35-10.32-28.08-3.546-19.158 14.858-55.758 24.464-93.242 24.464-38.404 0-74.508-9.426-91.98-24.012-8.486-7.088-21.104-5.948-28.188 2.536-7.09 8.48-5.954 21.104 2.532 28.186zM347.382 526.08c18.048 0 39.108-4.926 59.718-14.272 28.196-12.786 51.294-32.29 61.778-52.176 5.158-9.776 1.41-21.882-8.368-27.038-9.778-5.164-21.882-1.41-27.038 8.368-5.156 9.77-20.418 24.194-42.904 34.388-22.972 10.42-43.19 12.34-53.042 9.608-10.646-2.936-21.68 3.298-24.628 13.952-2.946 10.65 3.296 21.68 13.952 24.628 6.17 1.704 13.094 2.542 20.532 2.542zM819.26 511.808c20.616 9.346 41.674 14.272 59.722 14.272 7.434 0 14.362-0.836 20.532-2.546 10.65-2.948 16.896-13.976 13.946-24.628a20.004 20.004 0 0 0-24.628-13.946c-9.842 2.714-30.062 0.812-53.042-9.61-22.48-10.192-37.746-24.618-42.898-34.388-5.156-9.778-17.26-13.53-27.038-8.368-9.778 5.156-13.524 17.264-8.368 27.038 10.482 19.888 33.576 39.39 61.774 52.176z" fill="" /><path d="M638.204 37.682m-20.014 0a20.014 20.014 0 1 0 40.028 0 20.014 20.014 0 1 0-40.028 0Z" fill="" /></svg>
@@ -212,11 +212,11 @@
             <div class="options-container flex flex-wrap gap-16px">
                 <?php foreach( $options_repeater as $option ) : ?>
                     <div class="option-item-wrap flex-1">
-                        <div class="option-item p-12px bg-light-gray text-center select-none rounded-8px text-15px font-600 border-solid border-transparent cursor-pointer border-1px hover:border-green hover:text-green" data-toggle-class="active">
+                        <div class="option-item p-12px bg-light-gray text-center select-none rounded-8px text-15px font-600 border-solid border-transparent cursor-pointer border-1px hover:border-primary hover:text-primary" data-toggle-class="active">
                             <?php echo $option['option']; ?>
                         </div>
 
-                        <div class="option-item-feedback text-center mt-12px text-15px p-12px bg-green text-white rounded-8px font-600 border-solid border-transparent cursor-pointer border-1px">
+                        <div class="option-item-feedback text-center mt-12px text-15px p-12px bg-primary text-white rounded-8px font-600 border-solid border-transparent cursor-pointer border-1px">
                             <?php echo $option['feedback']; ?>
                         </div>
                     </div>
@@ -293,7 +293,7 @@
 ?>
 
     <div class="flexible-content-section match-definitions my-20px">
-        <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
+        <div class="theme-heading bg-primary text-white py-20px px-24px rounded-16px mb-16px">
             <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
                 <span class="w-30px block">
                     <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -333,7 +333,7 @@
 
                 <?php endwhile; ?>
 
-                <div class="words mt-20px bg-light-green p-24px flex gap-10px flex-wrap justify-center rounded-8px">
+                <div class="words mt-20px bg-primary-light p-24px flex gap-10px flex-wrap justify-center rounded-8px">
                     <?php 
                         $words_data = [];
 
@@ -427,7 +427,7 @@
 ?>
 
     <div class="flexible-content-section match-definitions my-20px">
-        <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
+        <div class="theme-heading bg-primary text-white py-20px px-24px rounded-16px mb-16px">
             <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
                 <span class="w-30px block">
                     <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -499,7 +499,7 @@
                 // echo '</div>';
             ?>
 
-            <div class="mt-24px p-20px bg-light-green text-16px font-500 rounded-16px">
+            <div class="mt-24px p-20px bg-primary-light text-16px font-500 rounded-16px">
                 <div class="game-status mb-10px font-600"></div>
                 <div class="found-words flex gap-20px"></div>
             </div>
@@ -529,7 +529,7 @@
 ?>
 
     <div class="flexible-content-section match-arrows my-20px">
-        <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
+        <div class="theme-heading bg-primary text-white py-20px px-24px rounded-16px mb-16px">
             <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
                 <span class="w-30px block">
                     <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -608,7 +608,7 @@
 ?>
 
     <div class="flexible-content-section crono-game my-20px">
-        <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
+        <div class="theme-heading bg-primary text-white py-20px px-24px rounded-16px mb-16px">
             <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
                 <span class="w-30px block">
                     <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -639,7 +639,7 @@
 
                 </div>
 
-                <div class="crono-mixed-items flex flex-wrap justify-center gap-20px mt-30px bg-light-green p-20px rounded-16px">
+                <div class="crono-mixed-items flex flex-wrap justify-center gap-20px mt-30px bg-primary-light p-20px rounded-16px">
                     <?php if ($items_array) : ?>
                         <?php foreach( $items_array as $item ) : ?>
                             <?php echo $item; ?>
@@ -662,7 +662,7 @@
 
     <div class="flexible-content-section spot-correct-game my-20px">
         
-        <div class="mt-30px text-20px font-600 text-green">
+        <div class="mt-30px text-20px font-600 text-primary">
             <?php echo $section_title; ?>
         </div>
         
@@ -715,7 +715,7 @@
 ?>
 
     <div class="flexible-content-section table-game my-20px">
-        <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
+        <div class="theme-heading bg-primary text-white py-20px px-24px rounded-16px mb-16px">
             <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
                 <span class="w-30px block">
                     <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -790,7 +790,7 @@
 
     <div class="flexible-content-section curiosity-section my-20px">
         <?php if (strlen(trim($section_title))) : ?>
-        <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
+        <div class="theme-heading bg-primary text-white py-20px px-24px rounded-16px mb-16px">
             <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
                 <span class="w-30px block">
                     <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -860,7 +860,7 @@
 ?>
 
     <div class="flexible-content-section curiosity-section my-20px">
-        <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
+        <div class="theme-heading bg-primary text-white py-20px px-24px rounded-16px mb-16px">
             <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
                 <span class="w-30px block">
                     <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1036,7 +1036,7 @@
 
     <div class="flexible-content-section my-16px">
         <?php if ($section_title) : ?>
-        <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
+        <div class="theme-heading bg-primary text-white py-20px px-24px rounded-16px mb-16px">
             <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
                 <span class="w-30px block">
                     <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1095,7 +1095,7 @@
 ?>
 
     <div class="flexible-content-section curiosity-section my-20px">
-        <div class="theme-heading bg-green text-white py-20px px-24px rounded-16px mb-16px">
+        <div class="theme-heading bg-primary text-white py-20px px-24px rounded-16px mb-16px">
             <h2 class="text-20px font-500 leading-130 flex items-center gap-16px">
                 <span class="w-30px block">
                     <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1176,7 +1176,7 @@
 
             <div class="p-16px bg-papirus rounded-8px">
                 <?php if ($template_title) : ?>
-                <div class="editable-template-title text-center text-24px font-600 leading-130 text-green mb-12px">
+                <div class="editable-template-title text-center text-24px font-600 leading-130 text-primary mb-12px">
                     <?php echo $template_title; ?>
                 </div>
                 <?php endif; ?>
@@ -1321,7 +1321,7 @@ $images_height_pixels = (get_sub_field('images_height') ? get_sub_field('images_
                     
                     <div class="axa-col flex-grow relative w-[16.6%]">
                         <div id="axa-placeholder<?php echo $i; ?>" class="axa-placeholder axa-target mt-[-140px] flex items-center justify-center h-120px border-2px border-dashed border-medium-gray max-w-90% mx-auto"></div>
-                        <div class="text-center mt-30px axa-label font-15px font-600 text-green"><?php echo $text_label; ?></div>
+                        <div class="text-center mt-30px axa-label font-15px font-600 text-primary"><?php echo $text_label; ?></div>
                     </div>
 
                     <?php endwhile; ?>
@@ -1541,7 +1541,7 @@ $placeholder_text = get_sub_field('placeholder_text');
                         <div class="w-35%">
                             <div class="dit-item">
                                 <?php if ($title) : ?>
-                                    <div class="dit-title text-center text-16px font-600 leading-130 bg-green text-white rounded-8px p-12px mb-12px">
+                                    <div class="dit-title text-center text-16px font-600 leading-130 bg-primary text-white rounded-8px p-12px mb-12px">
                                         <?php echo $title; ?>
                                     </div>
                                 <?php endif; ?>
@@ -1627,7 +1627,7 @@ $placeholder_text = get_sub_field('placeholder_text');
                             </div>
                         </td>
                         <td class="text-center">
-                            <span class="tf-inline-btn true-btn text-15px font-700 cursor-pointer select-none inline-block leading-1 py-6px px-16px bg-light-gray hover:bg-light-green border-1px border-solid border-medium-gray hover:border-green rounded-8px" <?php echo ($correct ? 'data-correct' : ''); ?>><?php echo $get_static_text[get_lang()]['true_initial']; ?></span>
+                            <span class="tf-inline-btn true-btn text-15px font-700 cursor-pointer select-none inline-block leading-1 py-6px px-16px bg-light-gray hover:bg-primary-light border-1px border-solid border-medium-gray hover:border-green rounded-8px" <?php echo ($correct ? 'data-correct' : ''); ?>><?php echo $get_static_text[get_lang()]['true_initial']; ?></span>
                         </td>
                         <td class="text-center">
                             <span class="tf-inline-btn false-btn text-15px font-700 cursor-pointer select-none inline-block leading-1 py-6px px-16px bg-light-gray hover:bg-light-red border-1px border-solid border-medium-gray hover:border-red rounded-8px" <?php echo (!$correct ? 'data-correct' : ''); ?>><?php echo $get_static_text[get_lang()]['false_initial']; ?></span>
@@ -1707,7 +1707,7 @@ $placeholder_text = get_sub_field('placeholder_text');
                                     <input type="text" class="h-36px w-full border-solid border-2px border-medium-gray py-0 px-12px focus:outline-none focus:border-green" name="the_source[]" value="" placeholder="<?php echo $get_static_text[get_lang()]['write_here']; ?>">
                                 </div>
                                 
-                                <div class="p-6px mt-6px leading-130 bg-green transition-all rounded-8px text-white font-500 text-14px text-center cursor-pointer select-none" data-add-field-btn><?php echo $get_static_text[get_lang()]['add_field']; ?></div>
+                                <div class="p-6px mt-6px leading-130 bg-primary transition-all rounded-8px text-white font-500 text-14px text-center cursor-pointer select-none" data-add-field-btn><?php echo $get_static_text[get_lang()]['add_field']; ?></div>
                             </form>
                         </td>
                     </tr>

@@ -59,7 +59,7 @@ $themes_count = $all_themes->found_posts;
 $current_module_title = '';
 ?>
 
-<div class="section py-40px bg-medium-green rounded-24px mx-8px mt-34px module-intro-section">
+<div class="section py-40px bg-primary-light rounded-24px mx-8px mt-34px module-intro-section">
     <div class="container">
         <?php if ( have_posts() ) : ?>
             <?php while ( have_posts() ) : the_post(); 
@@ -70,7 +70,7 @@ $current_module_title = '';
                 <div class="col-lg-6">
                     <div class="max-w-[539px]">
                         <div class="go-back">
-                            <a href="<?php echo $parent_book_url ; ?>" class="flex items-center gap-8px text-green hover:text-dark">
+                            <a href="<?php echo $parent_book_url ; ?>" class="flex items-center gap-8px text-primary hover:text-dark">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
                                     <path d="M12.8334 7.50002H1.16669M1.16669 7.50002L7.00002 13.3334M1.16669 7.50002L7.00002 1.66669" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -78,7 +78,7 @@ $current_module_title = '';
                             </a>
                         </div>
 
-                        <h1 class="text-36px md:text-48px font-500 leading-120 mt-8px text-green uppercase">
+                        <h1 class="text-36px md:text-48px font-500 leading-120 mt-8px text-primary uppercase">
                             <?php the_title(); ?>
                         </h1>
 
@@ -86,7 +86,7 @@ $current_module_title = '';
                             <?php the_content(); ?>
                         </div>
 
-                        <div class="module-subjects-count mt-16px text-green">
+                        <div class="module-subjects-count mt-16px text-primary">
                             <?php echo $themes_count . " " . $get_static_text[get_lang()]['subjects']; ?>
                         </div>
 
@@ -147,12 +147,12 @@ $current_module_title = '';
                             <div>
                                 <div class="flex flex-nowrap items-center">
                                     <div>
-                                        <div class="subject-num flex items-center justify-center leading-1 size-78px bg-light-green text-green text-32px rounded-16px">
+                                        <div class="subject-num flex items-center justify-center leading-1 size-78px bg-primary-light text-primary text-32px rounded-16px">
                                             <?php echo (get_field('theme_number') ? get_field('theme_number') : $i); ?>
                                         </div>
                                     </div>
                                     <div>
-                                        <a href="<?php the_permalink(); ?>" class="block hover:text-green font-500">
+                                        <a href="<?php the_permalink(); ?>" class="block hover:text-primary font-500">
                                             <h3 class="text-30px leading-130 pl-16px pr-30px max-w-[850px]"><?php the_title(); ?></h3>
                                         </a>
                                     </div>
@@ -247,7 +247,7 @@ $current_module_title = '';
                                                     <path d="M390.526 285.09m-40.03 0a40.03 40.03 0 1 0 80.06 0 40.03 40.03 0 1 0-80.06 0Z" fill="#7F184C" />
                                                     <path d="M796.612 282.314m-40.03 0a40.03 40.03 0 1 0 80.06 0 40.03 40.03 0 1 0-80.06 0Z" fill="#7F184C" />
                                                     <path d="M553.388 822.268a19.932 19.932 0 0 1-10.272-2.85c-9.482-5.684-12.558-17.976-6.874-27.458 27.59-46.018 76.732-74.606 128.244-74.606a146.14 146.14 0 0 1 45.684 7.282c10.504 3.448 16.22 14.758 12.77 25.262-3.45 10.498-14.76 16.222-25.262 12.766a106.238 106.238 0 0 0-33.192-5.282c-37.528 0-73.51 21.136-93.908 55.16a20.02 20.02 0 0 1-17.19 9.726z" fill="#7F184C" />
-                                                    <path d="M976.568 296.66a162.334 162.334 0 0 0-7.144-14.786c-0.916-1.814-1.79-3.65-2.724-5.452a19.944 19.944 0 0 0-3.282-4.576c-28.984-44.988-79.486-74.866-136.864-74.866-89.732 0-162.732 73-162.732 162.732 0 89.73 73 162.73 162.732 162.73 66.794 0 124.292-40.462 149.336-98.15 5.354 28.624 8.084 57.894 8.084 87.708 0 260.248-211.724 471.968-471.97 471.968S40.03 772.248 40.03 512 251.752 40.03 512 40.03c73.236 0 143.414 16.308 208.588 48.47 9.906 4.892 21.914 0.824 26.804-9.09 4.892-9.914 0.822-21.914-9.092-26.806C667.572 17.698 591.434 0 512 0 229.68 0 0 229.68 0 512c0 282.316 229.68 512 512 512s512-229.68 512-511.998c0-74.35-16.38-148.314-47.432-215.342z m-27.314 63.052c0 67.66-55.044 122.7-122.704 122.7s-122.704-55.044-122.704-122.7 55.044-122.704 122.704-122.704c46.26 0 86.612 25.742 107.516 63.646a477.884 477.884 0 0 1 5.604 11.532 121.936 121.936 0 0 1 9.584 47.526z" fill="" />
+                                                    <path d="M976.568 296.66a162.334 162.334 0 0 0-7.144-14.786c-0.916-1.814-1.79-3.65-2.724-5.452a19.944 19.944 0 0 0-3.282-4.576c-28.984-44.988-79.486-74.866-136.864-74.866-89.732 0-162.732 73-162.732 162.732 0 89.73 73 162.73 162.732 162.732 66.794 0 124.292-40.462 149.336-98.15 5.354 28.624 8.084 57.894 8.084 87.708 0 260.248-211.724 471.968-471.97 471.968S40.03 772.248 40.03 512 251.752 40.03 512 40.03c73.236 0 143.414 16.308 208.588 48.47 9.906 4.892 21.914 0.824 26.804-9.09 4.892-9.914 0.822-21.914-9.092-26.806C667.572 17.698 591.434 0 512 0 229.68 0 0 229.68 0 512c0 282.316 229.68 512 512 512s512-229.68 512-511.998c0-74.35-16.38-148.314-47.432-215.342z m-27.314 63.052c0 67.66-55.044 122.7-122.704 122.7s-122.704-55.044-122.704-122.7 55.044-122.704 122.704-122.704c46.26 0 86.612 25.742 107.516 63.646a477.884 477.884 0 0 1 5.604 11.532 121.936 121.936 0 0 1 9.584 47.526z" fill="" />
                                                     <path d="M426.326 196.98c-89.732 0-162.732 73-162.732 162.732 0 89.73 73 162.73 162.732 162.73s162.732-73 162.732-162.73c0.002-89.732-73.002-162.732-162.732-162.732z m0 285.432c-67.66 0-122.704-55.044-122.704-122.7s55.044-122.704 122.704-122.704 122.704 55.046 122.704 122.704-55.046 122.7-122.704 122.7zM543.116 819.42a20.008 20.008 0 0 0 27.458-6.878c20.398-34.026 56.38-55.16 93.908-55.16 11.358 0 22.524 1.778 33.19 5.282 10.502 3.456 21.814-2.266 25.264-12.764 3.45-10.502-2.262-21.814-12.764-25.264a145.99 145.99 0 0 0-45.69-7.282c-51.516 0-100.652 28.588-128.244 74.606-5.68 9.482-2.604 21.776 6.878 27.46z" fill="" />
                                                     <path d="M791.274 106.798m-20.014 0a20.014 20.014 0 1 0 40.028 0 20.014 20.014 0 1 0-40.028 0Z" fill="" />
                                                 </svg>
@@ -280,7 +280,7 @@ $current_module_title = '';
                                             <?php if ($x == 1) : ?>
                                                 <tr>
                                                     <td rowspan="<?php echo $rows; ?>">
-                                                      <span class="text-green text-18px font-600"><?php echo $current_module_title; ?></span>
+                                                      <span class="text-primary text-18px font-600"><?php echo $current_module_title; ?></span>
                                                     </td>
                                                     <td><?php echo $criteria_item; ?></td>
                                                     <td class="text-center">

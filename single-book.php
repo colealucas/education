@@ -19,7 +19,7 @@ $get_static_text = [
 ];
 ?>
 
-<div class="section py-40px md:py-48px bg-faded-gray rounded-48px mx-8px mt-16px manual-intro-section">
+<div class="section py-40px md:py-48px bg-primary-light rounded-48px mx-8px mt-16px manual-intro-section">
     <div class="container">
         <div class="row items-center">
             <div class="col-lg-6">

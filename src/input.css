@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --primary-color: #00665E;
+    --primary-color-medium: #C7E1D2;
+    --primary-color-light: #E6F2EB;
+}
+
+.book-2 {
+    --primary-color: #00A2C3;
+    --primary-color-medium: #E1F0F6;
+    --primary-color-light: #EEFAFF;
+}
+
+.book-3 {
+    --primary-color: #6969B3;
+    --primary-color-medium: #9b9bdf;
+    --primary-color-light: #b9b9ee;
+}

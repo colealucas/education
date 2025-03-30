@@ -419,3 +419,15 @@ function load_custom_mce_script($hook) {
     }
 }
 add_action('admin_enqueue_scripts', 'load_custom_mce_script');
+
+function isBook1() {
+    return false;
+}
+
+function isBook2() {
+    return true;
+}
+
+function isBook3() {
+    return false;
+}

@@ -1,14 +1,18 @@
 // vars 
+$primary-color: var(--primary-color);
+$primary-color-medium: var(--primary-color-medium);
+$primary-color-light: var(--primary-color-light);
+
 $gray-color: #808285;
 $border-gray-color: #F3F3F3;
 $light-gray-color: #F3F4F7;
 $faded-gray-color: #F5F5F5;
 $medium-gray-color: #D9D9D9;
 $dark-color: #171412;
-$green-color: #00665E;
+
 $blue-color: #02739F;
 $lime-green: #D7F8DD;
-$light-green-color: #E6F2EB;
+
 $white-color: #fff;
 $orange-color: #FFC36B;
 $red-color: #FF774D;
@@ -86,14 +90,14 @@ img {
 	font-weight: 600;
 	border-radius: 8px;
 	transition: all 0.2s ease-out;
-	background-color: $green-color;
-	border: 2px solid var(--Green, #00665E);
+	background-color: var(--primary-color);
+	border: 2px solid var(--Green, var(--primary-color));
 	box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
 
 	&:hover,
 	&:focus {
 		background-color: $white-color;
-		color: $green-color;
+		color: var(--primary-color);
 		text-decoration: none;
 	}
 
@@ -129,7 +133,7 @@ a {
 a:hover,
 a:focus,
 a:active {
-	color: $green-color;
+	color: var(--primary-color);
 }
 
 a:focus {
@@ -275,6 +279,12 @@ body.logged-in {
 	background-color: $white-color;
 }
 
+.footer-separator {
+	background-color: rgba(0, 0, 0, 0.15);
+	height: 1px;
+	margin: 20px 0 32px 0;
+}
+
 .footer-menu-wrap {
 	ul {
 		display: flex;
@@ -386,18 +396,18 @@ body.logged-in {
 			&:hover {
 				a:before {
 					width: calc(100% - 12px);
-					background-color: $green-color;
+					background-color: $primary-color;
 				}
 			}
 
 			&:hover > a {
-				color: $green-color;
+				color: $primary-color;
 			}
 
 			&.current-menu-item > a {
-				color: $green-color;
+				color: $primary-color;
 				font-weight: 700;
-				border-bottom-color: $green-color;
+				border-bottom-color: $primary-color;
 			}
 
 			li.lang-item {
@@ -409,7 +419,7 @@ body.logged-in {
 	
 			li.current-menu-item {
 				a {
-					color: $green-color;
+					color: $primary-color;
 					font-weight: 700;
 				}
 			}
@@ -495,12 +505,12 @@ body.logged-in {
 				color: $dark-color;
 
 				&:hover {
-					color: $green-color
+					color: $primary-color
 				}
 			}
 
 			&.current-menu-item a {
-				color: $green-color;
+				color: $primary-color;
 				font-weight: 700;
 			}
 		}
@@ -518,7 +528,7 @@ body.logged-in {
 
 	&:hover {
 		a {
-			color: $green-color;
+			color: $primary-color;
 		}
 
 		.home-book-link {
@@ -550,7 +560,7 @@ body.logged-in {
 
 		&.active {
 			font-weight: 700;
-			color: $green-color;
+			color: $primary-color;
 		}
 
 		&::before {
@@ -600,7 +610,7 @@ body.logged-in {
 		}
 
 		.notion-title {
-			color: $green-color;
+			color: $primary-color;
 			font-weight: 600;
 		}
 	}
@@ -608,7 +618,7 @@ body.logged-in {
 
 .content-links {
 	a {
-		color: $green-color;
+		color: $primary-color;
 		font-weight: 600;
 		text-decoration: underline;
 
@@ -665,7 +675,7 @@ body.logged-in {
     }
 
     a {
-        color: $green-color;
+        color: $primary-color;
         font-weight: 700;
         text-decoration: underline;
 
@@ -710,8 +720,30 @@ body.logged-in {
 	}
 }
 
+.step-box {
+	position: relative;
+
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 24px;
+	}
+
+	& > * {
+		position: relative;
+		z-index: 2;
+	}
+}
+
 .step-box:hover {
-	background-color: darken($light-green-color, 7);
+	&:before {
+		background-color: rgba(0,0,0, 0.03);
+	}
 
 	.step-icon {
 		background-color: $white-color;
@@ -806,11 +838,11 @@ body.logged-in {
 
 	a {
 		font-weight: 600;
-		color: $green-color;
+		color: $primary-color;
 		text-decoration: underline;
 
 		&:hover {
-			color: $green-color;
+			color: $primary-color;
 			text-decoration: none;
 		}
 	}
@@ -819,7 +851,7 @@ body.logged-in {
 		font-weight: 600;
 		line-height: 1.24;
 		margin-top: 30px;
-		color: $green-color;
+		color: $primary-color;
 	}
 
 	img {
@@ -898,7 +930,7 @@ body.logged-in {
 	}
 
 	blockquote {
-		background-color: $green-color;
+		background-color: $primary-color;
 		font-size: 20px;
 		font-weight: 500;
 		padding: 20px 24px;
@@ -1008,8 +1040,8 @@ body.logged-in {
 
 		&:hover,
 		&.active {
-			border-color: $green-color;
-			background-color: $green-color;
+			border-color: $primary-color;
+			background-color: $primary-color;
 			color: #fff;
 		}
 
@@ -1037,8 +1069,8 @@ body.logged-in {
 	}
 	
 	.placeholder.correct {
-		border-color: $green-color;
-		color: $green-color;
+		border-color: $primary-color;
+		color: $primary-color;
 		background-color: $lime-green;
 	}
 	
@@ -1103,7 +1135,7 @@ ol.found-words-list {
 }
 
 .letter.found {
-	background-color: $green-color;
+	background-color: $primary-color;
 	color: $white-color;
 }
 
@@ -1305,8 +1337,8 @@ ol.found-words-list {
 		}
 
 		&:hover {
-			background-color: $green-color;
-			border-color: $green-color;
+			background-color: $primary-color;
+			border-color: $primary-color;
 			color: $white-color;
 
 			&:before {
@@ -1319,7 +1351,7 @@ ol.found-words-list {
 			background-color: $light-gray-color;
 
 			&:before {
-				background-color: $green-color;
+				background-color: $primary-color;
 			}
 		}
 	}
@@ -1353,7 +1385,7 @@ ol.found-words-list {
 		}
 
 		&.success {
-			background-color: $green-color;
+			background-color: $primary-color;
 			color: $white-color;
 		}
 	}
@@ -1362,12 +1394,12 @@ ol.found-words-list {
 .spot-correct-wrap {
 	li.correct {
 		background-color: $lime-green;
-		color: $green-color;
-		border-color: $green-color;
+		color: $primary-color;
+		border-color: $primary-color;
 		font-weight: 600;
 
 		&:before {
-			background-color: $green-color;
+			background-color: $primary-color;
 		}
 	}
 
@@ -1536,8 +1568,8 @@ table {
 
 	.selected,
 	.selected:hover {
-		background-color: $light-green-color;
-		color: $green-color;
+		background-color: $primary-color-light;
+		color: $primary-color;
 	} 
 }
 
@@ -1548,14 +1580,14 @@ table {
 	}
 
 	&.open {
-		border-color: $green-color;
+		border-color: $primary-color;
 
 		.the-arrow {
 			transform: rotate(-180deg);
 		}
 
 		.book-sum-index {
-			background-color: $green-color;
+			background-color: $primary-color;
 			color: $white-color
 		}
 	}
@@ -1568,8 +1600,8 @@ table {
 	}
 
 	&.open {
-		color: $green-color;
-		border-color: $green-color;
+		color: $primary-color;
+		border-color: $primary-color;
 
 		.module-sum-arrow {
 			transform: rotate(-180deg);
@@ -1604,8 +1636,8 @@ table {
 
 	&.correct.selected {
 		background-color: $lime-green;
-		color: $green-color;
-		border-color: $green-color;
+		color: $primary-color;
+		border-color: $primary-color;
 	}
 
 	&.error {
@@ -1683,8 +1715,8 @@ table {
 
 .ra-wrap {
 	.success {
-		background-color: $light-green-color;
-		border-color: $green-color
+		background-color: $primary-color-light;
+		border-color: $primary-color
 	}
 }
 
@@ -1744,7 +1776,7 @@ table {
 
 		&.success {
 			background-color: $lime-green;
-			border-color: $green-color;
+			border-color: $primary-color;
 			color: $dark-color
 		}
 	}
@@ -1752,7 +1784,7 @@ table {
 
 .dit-target {
 	.success {
-		background-color: $light-green-color;
+		background-color: $primary-color-light;
 	}
 
 	.wrong {
@@ -1840,7 +1872,7 @@ table {
 
 .tf-wrap {
 	table td.success {
-		background-color: $light-green-color;
+		background-color: $primary-color-light;
 	}
 
 	table td.wrong {
@@ -1850,8 +1882,8 @@ table {
 	.tf-inline-btn {
 		&.true-btn {
 			&.correct {
-				border-color: $green-color;
-				background-color: $light-green-color;
+				border-color: $primary-color;
+				background-color: $primary-color-light;
 			}
 		}
 
@@ -1905,8 +1937,8 @@ table {
 	}
 
 	&.add-cards-btn-green {
-		background-color: $light-green-color;
-		border-color: $green-color;
+		background-color: $primary-color-light;
+		border-color: $primary-color;
 	}
 
 	&.add-cards-btn-yellow {
@@ -1925,7 +1957,7 @@ table {
 		}
 
 		&.add-cards-btn-green {
-			background-color: $green-color;
+			background-color: $primary-color;
 		}
 	
 		&.add-cards-btn-yellow {
@@ -1945,15 +1977,15 @@ table {
 		padding: 16px 20px;
 		border-radius: 16px;
 		line-height: 130%;
-		color: $green-color;
-		background-color: $light-green-color;
+		color: $primary-color;
+		background-color: $primary-color-light;
 	}
 }
 
 .style-content {
 	a {
 		font-weight: 500;
-		color: $green-color;
+		color: $primary-color;
 		text-decoration: underline;
 
 		&:hover {
@@ -2165,7 +2197,7 @@ table {
 		background-color: $orange-color;
 	}
 	& > div:nth-child(3) .bwt-col {
-		background-color: $light-green-color;
+		background-color: $primary-color-light;
 	}
 	& > div:nth-child(4) .bwt-col {
 		background-color: $medium-gray-color;
@@ -2190,8 +2222,8 @@ table {
 
 	&:hover,
 	&.active {
-		background-color: $light-green-color;
-		border-color: $green-color;
+		background-color: $primary-color-light;
+		border-color: $primary-color;
 		transform: scale(1.1);
 	}
 }
@@ -2220,13 +2252,13 @@ table {
 		display: inline-flex;
 		gap: 6px;
 		padding: 14px 30px;
-		color: $green-color;
+		color: $primary-color;
 		font-weight: 500;
 		border-radius: 8px;
-		border: 2px solid $green-color;
+		border: 2px solid $primary-color;
 
 		&:hover {
-			background-color: $green-color;
+			background-color: $primary-color;
 			color: $white-color;
 		}
 
@@ -2243,11 +2275,11 @@ table {
 		}
 
 		&.tp-button-right {
-			background-color: $green-color;
+			background-color: $primary-color;
 			color: $white-color;
 
 			&:hover {
-				background-color: $green-color;
+				background-color: $primary-color;
 				color: $white-color;
 
 				svg {
@@ -2290,7 +2322,7 @@ table {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: $green-color;
+	color: $primary-color;
 	width: 40px;
 	height: 40px;
 	font-size: 18px;
@@ -2323,8 +2355,8 @@ table {
 
 	&.active {
 		.option-item {
-			color: $green-color;
-			border-color: $green-color;
+			color: $primary-color;
+			border-color: $primary-color;
 		}
 
 		.option-item-feedback {
@@ -2426,9 +2458,9 @@ table {
 	transition: all 0.15s ease-out;
 
 	&.active {
-		background-color: $light-green-color;
-		color: $green-color;
-		border-color: $green-color;
+		background-color: $primary-color-light;
+		color: $primary-color;
+		border-color: $primary-color;
 	}
 
 	&:hover {
@@ -2442,9 +2474,9 @@ table {
 
 .content-function {
 	&.active[data-correct="true"] {
-		background-color: $light-green-color;
-		color: $green-color;
-		border-color: $green-color;
+		background-color: $primary-color-light;
+		color: $primary-color;
+		border-color: $primary-color;
 	}
 
 	&.active[data-correct="false"] {

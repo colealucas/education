@@ -8,11 +8,11 @@
  get_header(); 
  ?>
 
-<section class="team-section py-40px bg-light-green rounded-24px mx-8px mt-16px">
+<section class="team-section py-40px bg-primary-light rounded-24px mx-8px mt-16px">
     <div class="container">        
         <div class="row items-center">
             <div class="col-md-6">
-                <h1 class="text-36px md:text-50px lg:text-64px xl:text-[80px] font-700 leading-110 text-green"><?php echo get_field('page_title'); ?></h1>
+                <h1 class="text-36px md:text-50px lg:text-64px xl:text-[80px] font-700 leading-110 text-primary"><?php echo get_field('page_title'); ?></h1>
 
                 <div class="text-16px mt-16px mb-30px">
                     <?php echo get_field('page_description'); ?>
