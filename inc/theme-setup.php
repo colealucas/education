@@ -421,13 +421,62 @@ function load_custom_mce_script($hook) {
 add_action('admin_enqueue_scripts', 'load_custom_mce_script');
 
 function isBook1() {
+    // if is single theme
+    if (is_singular('book')) {
+        $book_target = get_field('choose_book_target'); // tragets: primar, gimnaziu, liceu
+
+        if ($book_target == 'primar') {
+            return true;
+        }
+    }
+    elseif (is_singular('theme') || is_singular('module')) {
+        $parent_book = get_field('parent_book');
+        $parent_book_id = (is_array( $parent_book ) && $parent_book[0] ? $parent_book[0]->ID : false);
+        $book_target = get_field('choose_book_target', $parent_book_id); // tragets: primar, gimnaziu, liceu
+
+        if ($book_target == 'primar') {
+            return true;
+        }
+    }
     return false;
 }
 
 function isBook2() {
-    return true;
+    if (is_singular('book')) {
+        $book_target = get_field('choose_book_target'); // tragets: primar, gimnaziu, liceu
+
+        if ($book_target == 'gimnaziu') {
+            return true;
+        }
+    }
+    elseif (is_singular('theme') || is_singular('module')) {
+        $parent_book = get_field('parent_book');
+        $parent_book_id = (is_array( $parent_book ) && $parent_book[0] ? $parent_book[0]->ID : false);
+        $book_target = get_field('choose_book_target', $parent_book_id); // tragets: primar, gimnaziu, liceu
+
+        if ($book_target == 'gimnaziu') {
+            return true;
+        }
+    }
+    return false;
 }
 
 function isBook3() {
+    if (is_singular('book')) {
+        $book_target = get_field('choose_book_target'); // tragets: primar, gimnaziu, liceu
+
+        if ($book_target == 'liceu') {
+            return true;
+        }
+    }
+    elseif (is_singular('theme') || is_singular('module')) {
+        $parent_book = get_field('parent_book');
+        $parent_book_id = (is_array( $parent_book ) && $parent_book[0] ? $parent_book[0]->ID : false);
+        $book_target = get_field('choose_book_target', $parent_book_id); // tragets: primar, gimnaziu, liceu
+
+        if ($book_target == 'liceu') {
+            return true;
+        }
+    }
     return false;
 }
