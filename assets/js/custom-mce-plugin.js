@@ -15,6 +15,21 @@
                     }
                 }
             });
+
+            editor.addButton('custom_background_button', {
+                text: '',
+                icon: 'mce-ico mce-i-format-painter',
+                tooltip: 'Wrap with custom background',
+                onclick: function() {
+                    let selectedContent = editor.selection.getContent({format: 'html'});
+
+                    if (selectedContent) {
+                        editor.insertContent('<div class="custom-background" style="background-color: #E9DD7F;">' + selectedContent + '</div>');
+                    } else {
+                        alert('Please select some content first.');
+                    }
+                }
+            });
         });
     }
 })();

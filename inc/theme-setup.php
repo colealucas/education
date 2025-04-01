@@ -402,6 +402,7 @@ add_filter('tiny_mce_before_init', 'custom_tinymce_settings');
 // Custom TinyMCE buttons
 function custom_mce_buttons($buttons) {
     array_push($buttons, 'custom_class_button'); // Add custom button
+    array_push($buttons, 'custom_background_button');
     return $buttons;
 }
 add_filter('mce_buttons', 'custom_mce_buttons');
