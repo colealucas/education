@@ -24,7 +24,7 @@
                     let selectedContent = editor.selection.getContent({format: 'html'});
 
                     if (selectedContent) {
-                        editor.insertContent('<div class="custom-background" style="background-color: #E9DD7F;">' + selectedContent + '</div>');
+                        editor.insertContent('<div class="custom-background" style="background-color: rgba(251,186,100, 0.5);">' + selectedContent + '</div>');
                     } else {
                         alert('Please select some content first.');
                     }
