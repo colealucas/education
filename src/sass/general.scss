@@ -751,6 +751,16 @@ body.logged-in {
 	}
 }
 
+.phase-bar {
+	background-color: $primary-color-light;
+}
+
+.book-2 {
+	.phase-bar {
+		background-color: $primary-color-medium;
+	}
+}
+
 .fancybox__backdrop {
 	background-color: rgba(0,0,0, 0.3);
 }
@@ -2197,7 +2207,7 @@ table {
 		background-color: $orange-color;
 	}
 	& > div:nth-child(3) .bwt-col {
-		background-color: $primary-color-light;
+		background-color: $primary-color-medium;
 	}
 	& > div:nth-child(4) .bwt-col {
 		background-color: $medium-gray-color;

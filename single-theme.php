@@ -153,7 +153,7 @@ $hide_step_6 = false;
 <?php if ( isset($_GET['print']) && intval($_GET['step']) == 1 ) : ?>
 
     <div class="max-w-[833px] mx-auto">
-        <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-primary-light p-16px py-20px rounded-16px text-primary text-24px font-500 leading-120">
+        <div class="phase-bar flex items-center justify-between gap-12px mt-30px p-16px py-20px rounded-16px text-primary text-24px font-500 leading-120">
             <div>
                 <?php echo get_theme_translated_text('step1'); ?>
             </div>
@@ -188,7 +188,7 @@ $hide_step_6 = false;
 <?php elseif ( isset($_GET['print']) && intval($_GET['step']) == 2 ) : ?>
 
     <div class="max-w-[833px] mx-auto">
-        <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-primary-light p-16px py-20px rounded-16px text-primary text-24px font-500 leading-120">
+        <div class="phase-bar flex items-center justify-between gap-12px mt-30px p-16px py-20px rounded-16px text-primary text-24px font-500 leading-120">
             <div>
                 <?php echo get_theme_translated_text('step2'); ?>
             </div>
@@ -223,7 +223,7 @@ $hide_step_6 = false;
 <?php elseif ( isset($_GET['print']) && intval($_GET['step']) == 3 ) : ?>
 
     <div class="max-w-[833px] mx-auto">
-        <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-primary-light p-16px py-20px rounded-16px text-primary text-24px font-500 leading-120">
+        <div class="phase-bar flex items-center justify-between gap-12px mt-30px p-16px py-20px rounded-16px text-primary text-24px font-500 leading-120">
             <div>
                 <?php echo get_theme_translated_text('step3'); ?>
             </div>
@@ -258,7 +258,7 @@ $hide_step_6 = false;
 <?php elseif ( isset($_GET['print']) && intval($_GET['step']) == 4 ) : ?>
 
     <div class="max-w-[833px] mx-auto">
-        <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-primary-light p-16px py-20px rounded-16px text-primary text-24px font-500 leading-120">
+        <div class="phase-bar flex items-center justify-between gap-12px mt-30px p-16px py-20px rounded-16px text-primary text-24px font-500 leading-120">
             <div>
                 <?php echo get_theme_translated_text('step4'); ?>
             </div>
@@ -293,7 +293,7 @@ $hide_step_6 = false;
 <?php elseif ( isset($_GET['print']) && intval($_GET['step']) == 5 ) : ?>
 
     <div class="max-w-[833px] mx-auto">
-        <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-primary-light p-16px py-20px rounded-16px text-primary text-24px font-500 leading-120">
+        <div class="phase-bar flex items-center justify-between gap-12px mt-30px p-16px py-20px rounded-16px text-primary text-24px font-500 leading-120">
             <div>
                 <?php echo get_theme_translated_text('step5'); ?>
             </div>
@@ -328,7 +328,7 @@ $hide_step_6 = false;
 <?php elseif ( isset($_GET['print']) && intval($_GET['step']) == 6 ) : ?>
 
     <div class="max-w-[833px] mx-auto">
-        <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-primary-light p-16px py-20px rounded-16px text-primary text-24px font-500 leading-120">
+        <div class="phase-bar flex items-center justify-between gap-12px mt-30px p-16px py-20px rounded-16px text-primary text-24px font-500 leading-120">
             <div>
                 <?php echo get_theme_translated_text('step6'); ?>
             </div>
@@ -400,7 +400,7 @@ $hide_step_6 = false;
 
 <!-- Modal 1 -->
 <div style="display: none;" id="modal-1" class="w-[833px] p-24px rounded-24px">
-    <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-primary-light p-16px py-20px rounded-16px text-primary text-24px font-500 leading-120">
+    <div class="phase-bar flex items-center justify-between gap-12px mt-30px p-16px py-20px rounded-16px text-primary text-24px font-500 leading-120">
         <div class="flex gap-16px items-center" data-target="<?php echo $book_target; ?>">
             <?php if ($book_target == 'gimnaziu') : ?>
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gimnaziu/evocare.svg" width="40" height="40" alt="">
@@ -461,7 +461,7 @@ $hide_step_6 = false;
 
 <!-- Modal 2 -->
 <div style="display: none;" id="modal-2" class="w-[833px] p-24px rounded-24px">
-    <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-primary-light p-16px py-20px rounded-16px text-primary text-24px font-500 leading-120">
+    <div class="phase-bar flex items-center justify-between gap-12px mt-30px p-16px py-20px rounded-16px text-primary text-24px font-500 leading-120">
         <div class="flex gap-16px items-center">
             <?php if ($book_target == 'gimnaziu') : ?>
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gimnaziu/realizarea_sensului.svg" width="40" height="40" alt="">
@@ -522,7 +522,7 @@ $hide_step_6 = false;
 
 <!-- Modal 3 -->
 <div style="display: none;" id="modal-3" class="w-[833px] p-24px rounded-24px">
-    <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-primary-light p-16px py-20px rounded-16px text-primary text-24px font-500 leading-120">
+    <div class="phase-bar flex items-center justify-between gap-12px mt-30px p-16px py-20px rounded-16px text-primary text-24px font-500 leading-120">
         <div class="flex gap-16px items-center">
             <?php if ($book_target == 'gimnaziu') : ?>
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gimnaziu/reflectie.svg" width="40" height="40" alt="">
@@ -583,7 +583,7 @@ $hide_step_6 = false;
 
 <!-- Modal 4 -->
 <div style="display: none;" id="modal-4" class="w-[833px] p-24px rounded-24px">
-    <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-primary-light p-16px py-20px rounded-16px text-primary text-24px font-500 leading-120">
+    <div class="phase-bar flex items-center justify-between gap-12px mt-30px p-16px py-20px rounded-16px text-primary text-24px font-500 leading-120">
         <div class="flex gap-16px items-center">
             <?php if ($book_target == 'gimnaziu') : ?>
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gimnaziu/reflectie.svg" width="40" height="40" alt="">
@@ -644,7 +644,7 @@ $hide_step_6 = false;
 
 <!-- Modal 5 -->
 <div style="display: none;" id="modal-5" class="w-[833px] p-24px rounded-24px">
-    <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-primary-light p-16px py-20px rounded-16px text-primary text-24px font-500 leading-120">
+    <div class="phase-bar flex items-center justify-between gap-12px mt-30px p-16px py-20px rounded-16px text-primary text-24px font-500 leading-120">
         <div class="flex gap-16px items-center">
             <?php if ($book_target == 'gimnaziu') : ?>
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gimnaziu/extindere.svg" width="40" height="40" alt="">
@@ -705,7 +705,7 @@ $hide_step_6 = false;
 
 <!-- Modal 6 -->
 <div style="display: none;" id="modal-6" class="w-[833px] p-24px rounded-24px">
-    <div class="phase-bar flex items-center justify-between gap-12px mt-30px bg-primary-light p-16px py-20px rounded-16px text-primary text-24px font-500 leading-120">
+    <div class="phase-bar flex items-center justify-between gap-12px mt-30px p-16px py-20px rounded-16px text-primary text-24px font-500 leading-120">
         <div class="flex gap-16px items-center">
             <?php if ($book_target == 'gimnaziu') : ?>
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gimnaziu/stiai_ca.svg" width="40" height="40" alt="">
