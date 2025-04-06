@@ -1038,16 +1038,14 @@ body.logged-in {
 	}
 }
 
-.table-border {
-	table {
-		border: 1px solid $medium-gray-color;
-		border-collapse: collapse;
+table.table-border {
+	border: 1px solid $medium-gray-color;
+	border-collapse: collapse;
 
 		td, th {
-			border: 1px solid $medium-gray-color;
-			vertical-align: middle;
-			text-align: center;
-		}
+		border: 1px solid $medium-gray-color;
+		vertical-align: middle;
+		text-align: center;
 	}
 }
 
