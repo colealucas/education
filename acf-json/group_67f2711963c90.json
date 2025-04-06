@@ -38,7 +38,7 @@
             "min": 0,
             "max": 0,
             "collapsed": "",
-            "button_label": "Adauga Ghid",
+            "button_label": "Add Curriculum",
             "rows_per_page": 20,
             "sub_fields": [
                 {
@@ -160,5 +160,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1743942800
+    "modified": 1743942844
 }

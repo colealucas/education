@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_66fc372826148",
-            "label": "Pagina Ghid",
+            "label": "Guide Page",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -21,7 +21,7 @@
         },
         {
             "key": "field_67f24e2b1db9b",
-            "label": "Adauga Ghid",
+            "label": "Add Guide",
             "name": "guides",
             "aria-label": "",
             "type": "repeater",
@@ -38,7 +38,7 @@
             "min": 0,
             "max": 0,
             "collapsed": "",
-            "button_label": "Adauga Ghid",
+            "button_label": "Add Guide",
             "rows_per_page": 20,
             "sub_fields": [
                 {
@@ -64,7 +64,7 @@
                 },
                 {
                     "key": "field_67f24e931db9d",
-                    "label": "Manual",
+                    "label": "Book",
                     "name": "book",
                     "aria-label": "",
                     "type": "button_group",
@@ -89,7 +89,7 @@
                 },
                 {
                     "key": "field_67f24f251aa70",
-                    "label": "Selecteaza Ghid",
+                    "label": "Choose Page",
                     "name": "guide_page_link",
                     "aria-label": "",
                     "type": "page_link",
@@ -160,5 +160,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1743942226
+    "modified": 1743942901
 }
