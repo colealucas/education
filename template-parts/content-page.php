@@ -11,7 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="page-entry-header">
-		<h1 class="text-32px font-900"><?php the_title(); ?></h1>
+		<h1 class="text-32px font-700"><?php the_title(); ?></h1>
 	</header>
 
 	<div class="page-entry-content page-content min-h-[35vh]">
