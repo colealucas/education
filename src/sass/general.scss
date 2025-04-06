@@ -848,7 +848,7 @@ body.logged-in {
 }
 
 .entry-content {
-	p {
+	p:not(.has-text-align-center):not(.has-text-align-right):not(.has-text-align-left) {
 		text-align: justify;
 	}
 
