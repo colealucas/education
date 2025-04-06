@@ -47,7 +47,7 @@
                     "name": "assign_letter",
                     "aria-label": "",
                     "type": "select",
-                    "instructions": "",
+                    "instructions": "Litera",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -133,7 +133,7 @@
                     "name": "notion",
                     "aria-label": "",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "Notiune",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -190,5 +190,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1743958142
+    "modified": 1743958267
 }
