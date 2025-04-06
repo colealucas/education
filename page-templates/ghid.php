@@ -11,72 +11,26 @@
 <section class="ghid-section py-40px">
     <div class="container">        
         <div class="relative">
-            <div class="mb-40px">
+            <div class="mb-30px">
                 <h1 class="text-48px font-700 leading-130 text-center"><?php the_title();  ?></h1>
             </div>
 
-            <div class="book-selector">
-                <div class="flex gap-30px flex-wrap md:flex-nowrap">
-                    <div class="primary-book-guide w-full md:flex-1 bg-light-gray py-40px px-20px rounded-20px">
-                        <div class="primary-book-guide__title mb-20px">
-                            <h2 class="text-36px font-600 leading-130 text-center">
-                                <a href="<?php the_field('guide1_link'); ?>">
-                                    <?php the_field('book1_guide_title'); ?>
-                                </a>
-                            </h2>
-                        </div>
-
-                        <div class="primary-book-guide__image text-center">
-                            <?php if ( get_field('book1_cover_image') ): ?>
-                                <div class="inline-block">
-                                    <a href="<?php the_field('guide1_link'); ?>">
-                                        <img class="h-[350px] object-cover" src="<?php the_field('book1_cover_image'); ?>" alt="">
-                                    </a>
+            <div class="book-selector max-w-[1000px] mx-auto">
+                <?php if (have_rows('guides')): ?>
+                    <div class="flex gap-30px flex-wrap md:flex-nowrap">
+                        <?php while (have_rows('guides')): the_row(); ?>
+                            <div class="book-selector-item flex-1 text-center bg-light-gray p-20px rounded-20px">
+                                <div class="text-center mb-20px">
+                                    <h2 class="text-24px font-600 leading-130"><?php the_sub_field('title'); ?></h2>
                                 </div>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                    
-                    <div class="primary-book-guide § bg-light-gray py-40px px-20px rounded-20px">
-                        <div class="primary-book-guide__title mb-20px">
-                            <h2 class="text-36px font-600 leading-130 text-center">
-                                <a href="<?php the_field('guide2_link'); ?>">
-                                    <?php the_field('book2_guide'); ?>
+
+                                <a href="<?php the_sub_field('guide_page_link'); ?>">
+                                    <img class="max-h-[350px] object-cover rounded-20px inline-block" src="<?php the_sub_field('cover_image'); ?>" alt="">
                                 </a>
-                            </h2>
-                        </div>
-
-                        <div class="primary-book-guide__image text-center">
-                            <?php if ( get_field('book2_cover_image') ): ?>
-                                <div class="inline-block">
-                                    <a href="<?php the_field('guide2_link'); ?>">
-                                        <img class="h-[350px] object-cover" src="<?php the_field('book2_cover_image'); ?>" alt="">
-                                    </a>
-                                </div>
-                            <?php endif; ?>
-                        </div>
+                            </div>
+                        <?php endwhile; ?>
                     </div>
-
-                    <div class="primary-book-guide w-full md:flex-1 bg-light-gray py-40px px-20px rounded-20px">
-                        <div class="primary-book-guide__title mb-20px">
-                            <h2 class="text-36px font-600 leading-130 text-center">
-                                <a href="<?php the_field('guide3_link'); ?>">
-                                    <?php the_field('book3_guide_title'); ?>
-                                </a>
-                            </h2>
-                        </div>
-
-                        <div class="primary-book-guide__image text-center">
-                            <?php if ( get_field('book3_cover_image') ): ?>
-                                <div class="inline-block">
-                                    <a href="<?php the_field('guide3_link'); ?>">
-                                        <img class="h-[350px] object-cover" src="<?php the_field('book3_cover_image'); ?>" alt="">
-                                    </a>
-                                </div>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                </div>
+                <?php endif; ?>
             </div>
 
             <div class="ghid-content special-headings max-w-[930px] mx-auto mt-20px">
