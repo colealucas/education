@@ -17,13 +17,13 @@ get_header();
 
 <section class="py-40px md:py-50px">
 	<div class="container">
-	<?php
-		while ( have_posts() ) :
-			the_post();
+		<?php
+			while ( have_posts() ) :
+				the_post();
 
-			get_template_part( 'template-parts/content', 'page' );
+				get_template_part( 'template-parts/content', 'page' );
 
-		endwhile;
+			endwhile;
 		?>
 	</div>
 </section>
