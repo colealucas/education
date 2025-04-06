@@ -51,7 +51,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "50",
+                        "width": "15",
                         "class": "",
                         "id": ""
                     },
@@ -137,7 +137,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "50",
+                        "width": "35",
                         "class": "",
                         "id": ""
                     },
@@ -154,11 +154,11 @@
                     "name": "description",
                     "aria-label": "",
                     "type": "textarea",
-                    "instructions": "Add description",
+                    "instructions": "Tags: &lt;strong&gt;strong&lt;\/strong&gt; | &lt;i&gt;italic&lt;\/i&gt; | &lt;a href=&quot;#&quot;&gt;link&lt;\/a&gt;",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
@@ -190,5 +190,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1743957695
+    "modified": 1743958142
 }
