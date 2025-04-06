@@ -15,7 +15,7 @@
 get_header();
 ?>
 
-<section class="py-40px">
+<section class="py-40px md:py-60px">
 	<div class="container">
 	<?php
 		while ( have_posts() ) :
