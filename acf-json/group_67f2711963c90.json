@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_67f271190fde7",
-            "label": "CURRICULUM",
+            "label": "Curriculum",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -21,7 +21,7 @@
         },
         {
             "key": "field_67f27235757da",
-            "label": "Add CURRICULUM",
+            "label": "Add Curriculum",
             "name": "guides",
             "aria-label": "",
             "type": "repeater",
@@ -145,9 +145,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "post_template",
                 "operator": "==",
-                "value": "post"
+                "value": "page-templates\/curriculum.php"
             }
         ]
     ],
@@ -160,5 +160,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1743942300
+    "modified": 1743942800
 }
