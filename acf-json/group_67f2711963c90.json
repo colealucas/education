@@ -1,6 +1,6 @@
 {
     "key": "group_67f2711963c90",
-    "title": "CURRICULUM Page",
+    "title": "Curriculum Page",
     "fields": [
         {
             "key": "field_67f271190fde7",
@@ -127,8 +127,8 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "",
-                    "library": "",
+                    "return_format": "url",
+                    "library": "all",
                     "min_width": "",
                     "min_height": "",
                     "min_size": "",
@@ -160,5 +160,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1743942844
+    "modified": 1743943080
 }
