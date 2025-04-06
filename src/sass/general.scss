@@ -1045,6 +1045,8 @@ body.logged-in {
 
 		td, th {
 			border: 1px solid $medium-gray-color;
+			vertical-align: middle;
+			text-align: center;
 		}
 	}
 }
