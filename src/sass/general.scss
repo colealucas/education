@@ -364,8 +364,9 @@ body.logged-in {
 					top: 100%;
 					left: 50%;
 					margin-left: -100px;
-					width: 100%;
+					width: max-content;
 					min-width: 190px;
+					max-width: 250px;
 					background-color: $white-color;
 					border-radius: 12px;
 					padding: 20px 12px;
