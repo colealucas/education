@@ -1044,7 +1044,7 @@ table.table-border {
 
 	td, th {
 		border: 1px solid #000;
-		vertical-align: middle;
+		vertical-align: middle !important;
 		text-align: center;
 		word-break: break-word;
 	}
