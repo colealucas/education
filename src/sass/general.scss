@@ -998,6 +998,17 @@ body.logged-in {
 	}
 }
 
+.green-headings {
+	h2 {
+		color: $primary-color;
+		background-color: $primary-color-light;
+		padding: 16px 20px;
+		border-radius: 16px;
+		line-height: 130%;
+		text-align: center;
+	}
+}
+
 .video-container {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
@@ -2497,17 +2508,6 @@ table {
 .custom-background {
 	padding: 12px;
 	border-radius: 8px;
-}
-
-.green-headings {
-	h2 {
-		color: $primary-color;
-		background-color: $primary-color-light;
-		padding: 16px 20px;
-		border-radius: 16px;
-		line-height: 130%;
-		text-align: center;
-	}
 }
 
 // zdx
