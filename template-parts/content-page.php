@@ -10,7 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="page-entry-header">
+	<header class="page-entry-header mb-30px">
 		<h1 class="text-44px font-700 leading-130 max-w-[1000px] mx-auto text-center"><?php the_title(); ?></h1>
 	</header>
 
