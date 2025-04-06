@@ -21,7 +21,9 @@
                         <?php while (have_rows('guides')): the_row(); ?>
                             <div class="book-selector-item flex-1 bg-light-gray p-20px rounded-20px">
                                 <div class="mb-20px">
-                                    <h2 class="text-24px font-600 leading-130"><?php the_sub_field('title'); ?></h2>
+                                    <a href="<?php the_sub_field('guide_page_link'); ?>">
+                                        <h2 class="text-24px font-600 leading-130"><?php the_sub_field('title'); ?></h2>
+                                    </a>
                                 </div>
 
                                 <div class="text-center">
