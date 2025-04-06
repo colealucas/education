@@ -1031,8 +1031,10 @@ body.logged-in {
 }
 
 .wp-block-table {
-	td, th {
-		vertical-align: middle;
+	table {
+		td, th {
+			vertical-align: middle;
+		}
 	}
 }
 
