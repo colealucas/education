@@ -1,10 +1,10 @@
 {
-    "key": "group_66fc3695f3839",
-    "title": "Ghid Page",
+    "key": "group_67f2711963c90",
+    "title": "CURRICULUM Page",
     "fields": [
         {
-            "key": "field_66fc372826148",
-            "label": "Pagina Ghid",
+            "key": "field_67f271190fde7",
+            "label": "CURRICULUM",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -20,8 +20,8 @@
             "endpoint": 0
         },
         {
-            "key": "field_67f24e2b1db9b",
-            "label": "Adauga Ghid",
+            "key": "field_67f27235757da",
+            "label": "Add CURRICULUM",
             "name": "guides",
             "aria-label": "",
             "type": "repeater",
@@ -42,7 +42,7 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_67f24e5c1db9c",
+                    "key": "field_67f27235757de",
                     "label": "Title",
                     "name": "title",
                     "aria-label": "",
@@ -60,11 +60,11 @@
                     "placeholder": "Add title",
                     "prepend": "",
                     "append": "",
-                    "parent_repeater": "field_67f24e2b1db9b"
+                    "parent_repeater": "field_67f27235757da"
                 },
                 {
-                    "key": "field_67f24e931db9d",
-                    "label": "Manual",
+                    "key": "field_67f27235757df",
+                    "label": "Book",
                     "name": "book",
                     "aria-label": "",
                     "type": "button_group",
@@ -85,11 +85,11 @@
                     "return_format": "value",
                     "allow_null": 0,
                     "layout": "horizontal",
-                    "parent_repeater": "field_67f24e2b1db9b"
+                    "parent_repeater": "field_67f27235757da"
                 },
                 {
-                    "key": "field_67f24f251aa70",
-                    "label": "Selecteaza Ghid",
+                    "key": "field_67f27235757e0",
+                    "label": "Choose Page",
                     "name": "guide_page_link",
                     "aria-label": "",
                     "type": "page_link",
@@ -111,10 +111,10 @@
                     "allow_archives": 0,
                     "multiple": 0,
                     "allow_null": 0,
-                    "parent_repeater": "field_67f24e2b1db9b"
+                    "parent_repeater": "field_67f27235757da"
                 },
                 {
-                    "key": "field_67f24ee21db9e",
+                    "key": "field_67f27235757e1",
                     "label": "Cover Image",
                     "name": "cover_image",
                     "aria-label": "",
@@ -127,8 +127,8 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "url",
-                    "library": "all",
+                    "return_format": "",
+                    "library": "",
                     "min_width": "",
                     "min_height": "",
                     "min_size": "",
@@ -137,7 +137,7 @@
                     "max_size": "",
                     "mime_types": "",
                     "preview_size": "large",
-                    "parent_repeater": "field_67f24e2b1db9b"
+                    "parent_repeater": "field_67f27235757da"
                 }
             ]
         }
@@ -145,9 +145,9 @@
     "location": [
         [
             {
-                "param": "post_template",
+                "param": "post_type",
                 "operator": "==",
-                "value": "page-templates\/ghid.php"
+                "value": "post"
             }
         ]
     ],
@@ -160,5 +160,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1743942226
+    "modified": 1743942300
 }
