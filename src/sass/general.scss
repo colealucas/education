@@ -998,6 +998,16 @@ body.logged-in {
 	}
 }
 
+.page-entry-content {
+	p,ol,ul,table,iframe,blockquote,video,h1,h2,h3,h4,h5,h6 {
+		margin-bottom: 20px;
+	}
+
+	:last-child {
+		margin-bottom: 0 !important;
+	}
+}
+
 .green-headings {
 	h2 {
 		color: $primary-color;
