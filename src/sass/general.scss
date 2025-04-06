@@ -1033,7 +1033,7 @@ body.logged-in {
 .wp-block-table {
 	table {
 		td, th {
-			vertical-align: middle;
+			vertical-align: middle !important;
 		}
 	}
 }
