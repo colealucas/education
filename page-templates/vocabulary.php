@@ -9,8 +9,12 @@
 
 <section class="team-section py-40px md:py-50px">
     <div class="container">
-        <div class="mb-30px">
+        <div class="mb-40px">
             <h1 class="text-48px font-700 leading-130 text-center"><?php the_title();  ?></h1>
+
+            <div class="text-16px text-gray text-center leading-150 mt-12px">
+                Selectează un manual pentru a începe
+            </div>
         </div>
 
         <div class="book-selector max-w-[1150px] mx-auto">
