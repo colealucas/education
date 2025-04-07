@@ -14,7 +14,7 @@
 		<h1 class="text-44px font-700 leading-130 max-w-[1000px] mx-auto text-center"><?php the_title(); ?></h1>
 	</header>
 
-	<div class="entry-content page-entry-content page-content min-h-[35vh] max-w-[1000px] mx-auto green-headings">
+	<div class="entry-content page-entry-content page-content min-h-[35vh] max-w-[1150px] mx-auto green-headings">
 		<?php the_content(); ?>
 	</div>
 </article>
