@@ -28,7 +28,7 @@
 
                                 <div class="text-center">
                                     <a href="<?php the_sub_field('guide_page_link'); ?>">
-                                        <img class="max-h-[350px] object-cover rounded-20px inline-block" src="<?php the_sub_field('cover_image'); ?>" alt="">
+                                        <img class="max-h-[450px] object-cover rounded-20px inline-block" src="<?php the_sub_field('cover_image'); ?>" alt="">
                                     </a>
                                 </div>
                             </div>
