@@ -23,7 +23,7 @@ add_action('init', 'populate_notions_repeater');
 
 function populate_notions_repeater() {
     // Use the known page ID directly
-    $post_id = 1715; // Replace 123 with the actual page ID
+    $post_id = 1717; // Replace 123 with the actual page ID
 
     // Avoid re-inserting if data already exists
     if (have_rows('notions', $post_id)) return;
