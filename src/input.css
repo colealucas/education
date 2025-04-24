@@ -15,7 +15,10 @@
 }
 
 .book-3 {
-    --primary-color: #6969B3;
+    --primary-color: #00629A;
     --primary-color-medium: #b5b5e9;
-    --primary-color-light: #e7e7ff;
+    --primary-color-light: #73C7E3;
+    --secondary-color: #29B473;
+    --secondary-color-medium: #C7E1D2;
+    --secondary-color-light: #E6F2EB;
 }

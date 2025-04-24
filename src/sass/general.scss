@@ -2551,6 +2551,48 @@ table {
 	border-radius: 8px;
 }
 
+.book-3 {
+	.subject-num {
+		color: var(--secondary-color);
+		background-color: var(--secondary-color-light);
+	}
+
+	.book-themes .btn {
+		background-color: var(--secondary-color);
+		border-color: var(--secondary-color);
+
+		&:hover {
+			color: var(--secondary-color);
+			background-color: $white-color;
+			border-color: var(--secondary-color);
+		}
+	}
+
+	.footer-separator {
+		background-color: #0091AE;
+	}
+
+	.step-box {
+		background-color: var(--secondary-color-light);
+
+		&:hover::before {
+			background-color: var(--secondary-color-medium);
+		}
+
+		h3 {
+			color: var(--secondary-color);
+		}
+
+		.step-icon {
+			background-color: var(--secondary-color-medium);
+		}
+
+		&:hover .step-icon {
+			background-color: $white-color;
+		}
+	}
+}
+
 // zdx
 
 .content-function {
