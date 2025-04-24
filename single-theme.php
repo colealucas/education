@@ -378,7 +378,13 @@ $hide_step_6 = false;
         <div class="flex items-center gap-16px">
             <div>
                 <div class="size-48px rounded-50 bg-white flex items-center justify-center">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/images/cuvinte_cheie.svg'; ?>" width="30" height="30" alt="">
+                    <?php if ($book_target == 'liceu') : ?>
+                        <img src="<?php echo get_template_directory_uri() . '/assets/images/liceu/cuvinte_cheie.svg'; ?>" width="30" height="30" alt="">
+                    <?php elseif ($book_target == 'gimnaziu') : ?>
+                        <img src="<?php echo get_template_directory_uri() . '/assets/images/gimnaziu/cuvinte_cheie.svg'; ?>" width="30" height="30" alt="">
+                    <?php else : ?>
+                        <img src="<?php echo get_template_directory_uri() . '/assets/images/cuvinte_cheie.svg'; ?>" width="30" height="30" alt="">
+                    <?php endif; ?>
                 </div>
             </div>
             <div>
