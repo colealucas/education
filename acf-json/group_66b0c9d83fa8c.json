@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_66c71e5feac62",
-            "label": "Theme Settings",
+            "label": "Theme Settings (Setari)",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -109,11 +109,11 @@
         },
         {
             "key": "field_6730845248983",
-            "label": "Theme Number",
+            "label": "Display Number (Numar de afisat)",
             "name": "theme_number",
             "aria-label": "",
             "type": "text",
-            "instructions": "Add theme number",
+            "instructions": "Add theme number. Numarul temei care va fi afisat in pagina, exemple 1-2",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -129,7 +129,7 @@
         },
         {
             "key": "field_66c71e80eac63",
-            "label": "Key Concepts",
+            "label": "Concepts (Concepte Cheie)",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -146,7 +146,7 @@
         },
         {
             "key": "field_66c71ead49c95",
-            "label": "Add key concepts",
+            "label": "Key concepts (Adauga cuvinte cheie)",
             "name": "key_concepts",
             "aria-label": "",
             "type": "repeater",
@@ -191,7 +191,7 @@
         },
         {
             "key": "field_66c9c9944f2d0",
-            "label": "Add theme content",
+            "label": "Add Content (Adauga content)",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -208,11 +208,11 @@
         },
         {
             "key": "field_66c9f360bf5fb",
-            "label": "Add theme steps",
+            "label": "Theme steps (Adauga etapele temei)",
             "name": "theme_steps",
             "aria-label": "",
             "type": "repeater",
-            "instructions": "Click \"Add New\" to add theme steps.",
+            "instructions": "Click \"Add New\" to add theme steps. Adauga etapele temei.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -5097,5 +5097,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1743274659
+    "modified": 1745502674
 }
