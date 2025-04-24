@@ -11,10 +11,6 @@
     <div class="container">
         <div class="mb-40px">
             <h1 class="text-48px font-700 leading-130 text-center"><?php the_title();  ?></h1>
-
-            <div class="text-16px text-gray text-center leading-150 mt-12px">
-                Selectează un manual pentru a începe
-            </div>
         </div>
 
         <div class="book-selector max-w-[1150px] mx-auto">
@@ -22,11 +18,13 @@
                 <div class="flex gap-30px flex-wrap md:flex-nowrap">
                     <?php while (have_rows('guides')): the_row(); ?>
                         <div class="book-selector-item flex-1 bg-light-gray p-20px rounded-20px">
-                            <div class="mb-20px">
-                                <a href="<?php the_sub_field('guide_page_link'); ?>">
-                                    <h2 class="text-24px font-600 leading-130 text-center"><?php the_sub_field('title'); ?></h2>
-                                </a>
-                            </div>
+                            <?php if ( get_sub_field('title') ) : ?>
+                                <div class="mb-20px">
+                                    <a href="<?php the_sub_field('guide_page_link'); ?>">
+                                        <h2 class="text-24px font-600 leading-130 text-center"><?php the_sub_field('title'); ?></h2>
+                                    </a>
+                                </div>
+                            <?php endif; ?>
 
                             <div class="text-center">
                                 <a href="<?php the_sub_field('guide_page_link'); ?>">
