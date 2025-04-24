@@ -23,7 +23,7 @@ add_action('init', 'populate_notions_repeater');
 
 function populate_notions_repeater() {
     // Use the known page ID directly
-    $post_id = 830; // Replace 123 with the actual page ID
+    $post_id = 1713; // Replace 123 with the actual page ID
 
     // Avoid re-inserting if data already exists
     if (have_rows('notions', $post_id)) return;
@@ -32,10 +32,14 @@ function populate_notions_repeater() {
     $vocabulary_data = [
         [
             'assign_letter' => 'a',
-            'notion' => 'Actor/actriță',
-            'description' => 'persoană care joacă un rol într-un film, pe scenă sau într-o producție televizată.',
+            'notion' => 'Адрес электронной почты',
+            'description' => 'адрес, используемый для передачи сообщений в интернете, состоящий из имени пользователя (логина) и имени сайта (домена), на котором создаётся электронный почтовый ящик.',
         ],
-        
+        [
+            'assign_letter' => 'a',
+            'notion' => 'Актёр',
+            'description' => 'человек, который играет роль в фильме, на сцене или в телевизионной передаче.',
+        ],
     ];
 
     // Prepare rows in ACF field key format
