@@ -724,7 +724,7 @@ $hide_step_6 = false;
             <?php if ($book_target == 'gimnaziu') : ?>
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gimnaziu/stiai_ca.svg" width="40" height="40" alt="">
             <?php elseif ($book_target == 'liceu') : ?>
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gimnaziu/stiai_ca.svg" width="40" height="40" alt="">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/liceu/stiai_ca.svg" width="40" height="40" alt="">
             <?php else : ?>
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/curiozitati.svg" width="40" height="40" alt="">
             <?php endif; ?>
