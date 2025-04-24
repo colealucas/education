@@ -111,13 +111,6 @@
                     </span>
 
                     <h3 class="text-28px font-500 text-primary leading-120"><?php echo get_theme_translated_text('step4'); ?></h3>
-                    <span class="decor">
-                        <svg width="92" height="36" viewBox="0 0 92 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="82" cy="25.922" r="10" fill="#fff"/>
-                            <path d="M20 24.922C6.5 33.922 6.66677 26.7554 7.5001 24.922C18.0001 5.92204 46.1998 -18.678 82.9998 26.922C84.3329 28.422 84.5 35.422 72.9993 28.922M35.5 17.922C39.8333 15.422 45.5 12.422 55.5 18.422" stroke="var(--primary-color)" stroke-dasharray="3 3"/>
-                            <circle cx="10" cy="24.4221" r="10" fill="#fff"/>
-                        </svg>
-                    </span>
                 </a>
             </div>
             <?php endif; ?>
