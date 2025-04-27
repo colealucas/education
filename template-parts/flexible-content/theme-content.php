@@ -1809,9 +1809,13 @@ $display_feedback = get_sub_field('');
 
 <?php elseif( get_row_layout() == 'boxes_with_text_game' ) : 
     $cols = get_sub_field('columns');
-    $columns_per_row = (get_sub_field('cols') ? get_sub_field('cols') : 'col-md-12');
+    $columns_per_row = (get_sub_field('cols') ? get_sub_field('cols') : 'auto');
     $placeholder_text = get_sub_field('placeholder_text');
     $print = get_sub_field('print');
+
+    if ($columns_per_row == 'auto') {
+        $columns_per_row = 'flex-1';
+    }
 ?>
 
 <div class="flexible-content-section boxes-with-text my-20px">
@@ -1832,13 +1836,13 @@ $display_feedback = get_sub_field('');
         <div class="comp-wrap">
             <div class="boxes-with-text-wrap">
                 <?php if ( have_rows('columns') ) : $i=0; ?>
-                    <div class="bwt-wrap row">
+                    <div class="bwt-wrap <?php  if ($columns_per_row == 'auto') { echo 'flex flex-wrap gap-20px'; } else { echo 'row'; } ?>">
 
                         <?php while ( have_rows('columns') ) : the_row(); $i++;
                             $text_content = get_sub_field('text_content');
                         ?>
 
-                        <div class="<?php echo $columns_per_row; ?>">
+                        <div class="<?php echo $columns_per_row; ?>" style="<?php if ($columns_per_row == 'auto') { echo 'miin-width: 250px'; } ?>;">
                             <div class="bwt-col p-12px rounded-8px mb-20px">
                                 <div class="relative tcs-content phase-content entry-content content-spacing text-17px responsive-video">
                                     <?php echo $text_content; ?>

@@ -4424,7 +4424,8 @@
                                     "choices": {
                                         "col-md-12": "1 Column",
                                         "col-md-6": "2 Columns",
-                                        "col-md-4": "3 Columns"
+                                        "col-md-4": "3 Columns",
+                                        "auto": "Auto"
                                     },
                                     "default_value": "col-md-6",
                                     "return_format": "value",
@@ -5097,5 +5098,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1745502674
+    "modified": 1745782890
 }
