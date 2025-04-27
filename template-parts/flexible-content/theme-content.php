@@ -138,7 +138,7 @@
         <?php endif; ?>
 
         <?php if ( strlen(trim($section_content)) ) : ?>
-            <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video <?php echo $addition_classes; ?> <?php if (strlen($background_color) && strtolower($background_color) != 'rgb(255,255,255)') :  ?> p-20px rounded-16px <?php endif; ?>" <?php if (strlen($background_color) && strtolower($background_color) != 'rgb(255,255,255)') :  ?>style="background-color: <?php echo $background_color; ?>"<?php endif; ?> data-dropdown-words="<?php echo $dropdown_words_json; ?>">
+            <div class="tcs-content phase-content entry-content content-spacing text-17px responsive-video <?php echo $addition_classes; ?> <?php if (strlen($background_color) && strtolower($background_color) != 'rgb(255,255,255)' && strtolower($background_color) != '#ffffff') :  ?> p-20px rounded-16px <?php endif; ?>" <?php if (strlen($background_color) && strtolower($background_color) != 'rgb(255,255,255)') :  ?>style="background-color: <?php echo $background_color; ?>"<?php endif; ?> data-dropdown-words="<?php echo $dropdown_words_json; ?>">
                 <?php echo ($enable_words_hunt ? replaceBracketsWithSpans($section_content) : $section_content); ?>
             </div>
 
