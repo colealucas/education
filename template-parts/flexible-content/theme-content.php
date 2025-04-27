@@ -1810,11 +1810,12 @@ $display_feedback = get_sub_field('');
 <?php elseif( get_row_layout() == 'boxes_with_text_game' ) : 
     $cols = get_sub_field('columns');
     $columns_per_row = (get_sub_field('cols') ? get_sub_field('cols') : 'auto');
+    $cols_layout = columns_per_row;
     $placeholder_text = get_sub_field('placeholder_text');
     $print = get_sub_field('print');
 
     if ($columns_per_row == 'auto') {
-        $columns_per_row = 'flex-1';
+        $cols_layout = 'flex-1';
     }
 ?>
 
@@ -1842,7 +1843,7 @@ $display_feedback = get_sub_field('');
                             $text_content = get_sub_field('text_content');
                         ?>
 
-                        <div class="<?php echo $columns_per_row; ?>" style="<?php if ($columns_per_row == 'auto') { echo 'miin-width: 250px'; } ?>;">
+                        <div class="<?php echo $cols_layout; ?>" style="<?php if ($columns_per_row == 'auto') { echo 'miin-width: 250px'; } ?>">
                             <div class="bwt-col p-12px rounded-8px mb-20px">
                                 <div class="relative tcs-content phase-content entry-content content-spacing text-17px responsive-video">
                                     <?php echo $text_content; ?>
