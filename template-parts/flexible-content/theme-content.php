@@ -1810,12 +1810,12 @@ $display_feedback = get_sub_field('');
 <?php elseif( get_row_layout() == 'boxes_with_text_game' ) : 
     $cols = get_sub_field('columns');
     $columns_per_row = (get_sub_field('cols') ? get_sub_field('cols') : 'auto');
-    $cols_layout = get_sub_field('cols');
+    $cols_layout = $columns_per_row;
     $placeholder_text = get_sub_field('placeholder_text');
     $print = get_sub_field('print');
 
     if ($columns_per_row == 'auto') {
-        $columns_per_row = 'flex-1';
+        $cols_layout = 'flex-1';
     }
 ?>
 
