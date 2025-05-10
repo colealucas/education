@@ -405,6 +405,8 @@ document.addEventListener("DOMContentLoaded", function() {
                                             </span>`;
                                         } else if ( sign === 'minus' ) {
                                             checkboxes.innerHTML += `<span class="${sign}">-</span>`;
+                                        } else if ( sign === 'plus' ) {
+                                            checkboxes.innerHTML += `<span class="${sign}">+</span>`;
                                         } else if ( sign === 'question' ) {
                                             checkboxes.innerHTML += `<span class="${sign}">?</span>`;
                                         } else if ( sign === 'exclamation' ) {
