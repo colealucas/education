@@ -5130,6 +5130,153 @@
                             ],
                             "min": "",
                             "max": ""
+                        },
+                        "layout_681f4082040ee": {
+                            "key": "layout_681f4082040ee",
+                            "name": "choose_profile",
+                            "label": "Choose Profile (Alege profilul)",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_681f40f9040f2",
+                                    "label": "Add profile",
+                                    "name": "add_profile",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "row",
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add Row",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_681f409d040f0",
+                                            "label": "Profile image",
+                                            "name": "profile_image",
+                                            "aria-label": "",
+                                            "type": "image",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "return_format": "url",
+                                            "library": "all",
+                                            "min_width": "",
+                                            "min_height": "",
+                                            "min_size": "",
+                                            "max_width": "",
+                                            "max_height": "",
+                                            "max_size": "",
+                                            "mime_types": "",
+                                            "preview_size": "full",
+                                            "parent_repeater": "field_681f40f9040f2"
+                                        },
+                                        {
+                                            "key": "field_681f40b0040f1",
+                                            "label": "Image height",
+                                            "name": "image_height",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "Image height in pixels",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": 150,
+                                            "maxlength": "",
+                                            "placeholder": "height",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_681f40f9040f2"
+                                        },
+                                        {
+                                            "key": "field_681f4287c079e",
+                                            "label": "Max items allowed (nr de itemi acceptati)",
+                                            "name": "max_items_allowed",
+                                            "aria-label": "",
+                                            "type": "number",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": 3,
+                                            "min": 1,
+                                            "max": 100,
+                                            "placeholder": 3,
+                                            "step": 1,
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_681f40f9040f2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "key": "field_681f533892409",
+                                    "label": "Items",
+                                    "name": "target_items",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "row",
+                                    "min": 1,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add New Item",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_681f539d77ccd",
+                                            "label": "Item text",
+                                            "name": "item_text",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "placeholder": "item text",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_681f533892409"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
                     },
                     "min": "",
@@ -5158,5 +5305,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1746872393
+    "modified": 1746883526
 }

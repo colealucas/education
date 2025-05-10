@@ -2608,6 +2608,13 @@ table {
 	}
 }
 
+.choose-profile-item {
+	&.active {
+		border-color: $orange-color !important;
+		background-color: #FFF5ED !important;
+	}
+}
+
 // zdx
 
 .content-function {

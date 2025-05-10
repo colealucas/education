@@ -1930,6 +1930,56 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     handleDITGame();
 
+    function handleChooseProfileGame() {
+        const wrappers = document.querySelectorAll('.choose-profile-wrap');
+
+        if (wrappers.length) {
+            wrappers.forEach(function(wrapper) {
+                const placeholders = wrapper.querySelectorAll('.choose-profile-item-target');
+                const mixedItems = wrapper.querySelector('.cp-elements');
+                const items = wrapper.querySelectorAll('.choose-profile-item');
+
+                if (items.length) {
+                    items.forEach(function(item) {
+                        item.addEventListener('click', function() {
+                            items.forEach(i => i.classList.remove('active'));
+                            item.classList.add('active');
+                        });
+                    });
+                }
+
+                if (Sortable && mixedItems) {
+                    Sortable.create(mixedItems, {
+                        group: 'shared',
+                        animation: 0,
+                        sort: false,
+                    });
+                }
+
+                if (placeholders.length) {
+                    placeholders.forEach(function(placeholder) {
+                        const maxItems = parseInt(placeholder.getAttribute('data-max-items'));
+
+                        Sortable.create(placeholder, {
+                            group: 'shared',
+                            animation: 0,
+                            onAdd: function(evt) {
+                                const items = placeholder.querySelectorAll('[data-cp-element]');
+                                if (items.length > maxItems) {
+                                    evt.from.appendChild(evt.item);
+                                    return;
+                                }
+                                placeholder.classList.add('filled');
+                            }
+                        });
+                    });
+                }
+            });
+        }
+    }
+    handleChooseProfileGame();
+    
+
     function handleTrueFalseGame() {
         const items = document.querySelectorAll('.tf-inline-btn');
 

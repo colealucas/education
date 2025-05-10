@@ -1566,7 +1566,6 @@ $placeholder_text = get_sub_field('placeholder_text');
                         <?php endwhile; ?>
                     </div>
 
-
                     <?php while ( have_rows('target_items') ) : the_row(); $y++;
                         $elements = get_sub_field('elements');
                     ?>
@@ -2168,6 +2167,47 @@ $display_feedback = get_sub_field('');
                     <div class="flex-1 bg-white p-20px rounded-8px">
                         <div class="fill-the-bawl-placeholder flex flex-col justify-center items-center gap-4px p-20px" data-max-words="<?php echo $max_words; ?>"></div>
                     </div>
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
+
+
+<?php elseif( get_row_layout() == 'choose_profile' ) : // choose_profile
+    $profiles_repeater = get_sub_field('add_profile');
+?>
+
+    <div class="flexible-content-section choose-profile my-20px">
+        <div class="choose-profile-wrap my-20px">
+            <?php if ( have_rows('add_profile') ) : ?>
+                <div class="choose-profile-wrap-inner flex gap-20px">
+                    <?php while ( have_rows('add_profile') ) : the_row();
+                        $profile_image = get_sub_field('profile_image');
+                        $image_height = (get_sub_field('image_height') ? get_sub_field('image_height') : '150');
+                        $max_items_allowed = get_sub_field('max_items_allowed');
+                    ?>
+                        <div class="choose-profile-item flex-1 p-20px bg-light-gray rounded-8px border-2px border-solid border-light-gray hover:border-medium-gray cursor-pointer">
+                            <div class="choose-profile-item-image text-center">
+                                <img class="inline-block" src="<?php echo $profile_image; ?>" alt="" style="height: <?php echo $image_height; ?>px;">
+                            </div>
+
+                            <div class="choose-profile-item-target flex flex-col gap-4px p-4px mt-12px rounded-8px min-h-50px border-2px border-dashed border-medium-gray bg-white" data-cp-target data-max-items="<?php echo $max_items_allowed; ?>"></div>
+                        </div>
+                    <?php endwhile; ?>
+                </div>
+            <?php endif; ?>
+
+            <?php if ( have_rows('target_items') ) : ?>
+                <div class="cp-elements flex flex-wrap justify-center gap-20px mt-20px p-20px rounded-8px">
+                    <?php while ( have_rows('target_items') ) : the_row();
+                        $item_text = get_sub_field('item_text');
+                    ?>
+                        
+                        <div class="dit-element cursor-move leading-100 flex items-center justify-center select-none p-8px bg-white text-15px font-500 border-1px border-solid border-medium-gray rounded-8px" data-cp-element>
+                            <?php echo $item_text; ?>
+                        </div>
+
+                    <?php endwhile; ?>
                 </div>
             <?php endif; ?>
         </div>
