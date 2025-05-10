@@ -1740,6 +1740,10 @@ table {
 		border-right: 8px solid transparent;
 		border-top: 8px solid $gray-color;
 	}
+
+	p:not(:last-child) {
+		margin-bottom: 12px;
+	}
 }
 
 .curiosity-image {
