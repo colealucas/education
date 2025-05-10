@@ -377,6 +377,64 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    function handleAddSigns() {
+        const sections = document.querySelectorAll('.add-signs');
+
+        if ( sections.length ) {
+            sections.forEach(function(textSection) {
+                if ( textSection ) {
+                    const paragraphs = textSection.querySelectorAll('p:not(.ignore)');
+                    const customSigns = textSection.getAttribute('data-custom-signs');
+                    const customSignsArray = JSON.parse(customSigns);
+
+                    if ( paragraphs.length ) {
+                        paragraphs.forEach(function(p) {
+                            const excludedParents = ['blockquote', 'li'];
+                            
+                            if ( p.textContent.trim().length && !excludedParents.some(parent => p.closest(parent)) ) {
+                                const checkboxes = document.createElement('span');
+                                checkboxes.classList.add('paragraph-check-options');
+
+                                if ( customSignsArray.length ) {
+                                    customSignsArray.forEach(function(sign) {
+                                        if ( sign === 'checkmark' ) {
+                                            checkboxes.innerHTML += `<span class="new">
+                                                <svg width="18px" height="18px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M4 12.6111L8.92308 17.5L20 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </span>`;
+                                        } else if ( sign === 'minus' ) {
+                                            checkboxes.innerHTML += `<span class="${sign}">-</span>`;
+                                        } else if ( sign === 'question' ) {
+                                            checkboxes.innerHTML += `<span class="${sign}">?</span>`;
+                                        } else if ( sign === 'exclamation' ) {
+                                            checkboxes.innerHTML += `<span class="${sign}">!</span>`;
+                                        }
+                                    });
+                                }
+
+                                // Insert the <span> before the text content of the <p>
+                                p.prepend(checkboxes);
+
+                                const addSignsBtns = p.querySelectorAll('.add-signs .paragraph-check-options span');
+
+                                if (addSignsBtns.length) {
+                                    addSignsBtns.forEach(function(signBtn) {
+                                        signBtn.addEventListener('click', function() {
+                                            signBtn.classList.toggle('active');
+                                        });
+                                    });
+                                }
+
+                            }
+                        });
+                    }
+                }
+            });
+        }
+    }
+    handleAddSigns();
+
     function handleCheckParagraphs() {
         const sections = document.querySelectorAll('.check-paragraphs');
 

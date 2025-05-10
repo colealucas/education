@@ -626,6 +626,66 @@
                                     "ui": 1
                                 },
                                 {
+                                    "key": "field_681f253e9747e",
+                                    "label": "Add custom signs",
+                                    "name": "add_custom_signs",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Adauga semne la alegere",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
+                                    "key": "field_681f255a9747f",
+                                    "label": "Choose signs",
+                                    "name": "custom_signs",
+                                    "aria-label": "",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_681f253e9747e",
+                                                "operator": "==",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "checkmark": "(v) Checkmark",
+                                        "plus": "(+) Plus",
+                                        "minus": "(-) Minus",
+                                        "question": "(?) Question",
+                                        "exclamation": "(!) Exclamation"
+                                    },
+                                    "default_value": [
+                                        "checkmark",
+                                        "plus"
+                                    ],
+                                    "return_format": "value",
+                                    "multiple": 1,
+                                    "allow_null": 0,
+                                    "ui": 0,
+                                    "ajax": 0,
+                                    "placeholder": ""
+                                },
+                                {
                                     "key": "field_66cb7bd4b6bbc",
                                     "label": "Check paragraphs (bifeaza paragrafele)",
                                     "name": "check_paragraphs",
@@ -5098,5 +5158,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1745782890
+    "modified": 1746872393
 }

@@ -1093,22 +1093,22 @@ table.table-border {
 
 .paragraph-check-options {
 	display: inline-flex;
-	gap: 8px;
-	margin-right: 8px;
+	gap: 7px;
+	margin-right: 7px;
 	vertical-align: middle;
 
 	& > span {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		width: 24px;
-		height: 24px;
+		width: 22px;
+		height: 20px;
 		border: 1px solid $medium-gray-color;
 		border-radius: 4px;
 		user-select: none;
 		cursor: pointer;
-		font-size: 20px;
-		font-weight: 500;
+		font-size: 17px;
+		font-weight: 600;
 		color: $gray-color;
 		transition: all 0.2s ease-out;
 
