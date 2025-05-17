@@ -2228,6 +2228,7 @@ $display_feedback = get_sub_field('');
                     ?>
                         
                         <div class="dialog-item rounded-20px" style="background-color: <?php echo $dialog_box_background_color; ?>; color: <?php echo $text_color; ?>;">
+                            <span class="dialog-item-arrow" style="border-color: <?php echo $dialog_box_background_color; ?> transparent transparent transparent;"></span>
                             <textarea name="dialog_textarea[]" class="w-full bg-transparent border-none focus:outline-none rounded-8px p-20px" style="height: <?php echo $textarea_height; ?>px;"></textarea>
                         </div>
 
