@@ -2625,7 +2625,7 @@ table {
 		height: 0;
 		border-style: solid;
 		border-width: 0 20px 20px 20px;
-		border-color: transparent transparent currentColor transparent;
+		border-color: transparent transparent $primary-color transparent;
 		top: calc(100% + 10px);
 		left: 40px;
 	}
