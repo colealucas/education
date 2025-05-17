@@ -2215,13 +2215,13 @@ $display_feedback = get_sub_field('');
 
 
 <?php elseif( get_row_layout() == 'dialog' ) : // dialog
-    $textarea_height = get_sub_field('textarea_height');
+    $textarea_height = (get_sub_field('textarea_height') ? get_sub_field('textarea_height') : '200');
 ?>
 
     <div class="flexible-content-section dialog my-20px">
         <div class="dialog-wrap my-20px">
             <?php if ( have_rows('items') ) : ?>
-                <div class="dialog-wrap-inner flex gap-20px">
+                <div class="dialog-wrap-inner flex flex-col gap-20px">
                     <?php while ( have_rows('items') ) : the_row();
                         $dialog_box_background_color = get_sub_field('dialog_box_background_color');
                         $text_color = get_sub_field('text_color');
