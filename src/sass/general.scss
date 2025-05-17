@@ -2624,9 +2624,10 @@ table {
 		width: 0;
 		height: 0;
 		border-style: solid;
-		border-width: 20px 20px 0 20px;
+		border-width: 16px 16px 0 16px;
 		top: 100%;
-		left: 40px;
+		left: 30px;
+		transform: rotate(45deg);
 	}
 }
 
