@@ -5294,7 +5294,7 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "",
+                                        "width": "50",
                                         "class": "",
                                         "id": ""
                                     },
@@ -5303,6 +5303,26 @@
                                     "max": "",
                                     "placeholder": 300,
                                     "step": 1,
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_6828a7e1e030f",
+                                    "label": "Placeholder (text sugestie)",
+                                    "name": "placeholder",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "Add placeholder text (adauga text sugestie)",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "Scrie aici...",
+                                    "maxlength": "",
+                                    "placeholder": "Placeholder",
                                     "prepend": "",
                                     "append": ""
                                 },
@@ -5398,5 +5418,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1747493022
+    "modified": 1747494970
 }

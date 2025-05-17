@@ -2617,6 +2617,7 @@ table {
 
 .dialog-item {
 	position: relative;
+	width: 90%;
 
 	.dialog-item-arrow {
 		content: '';
@@ -2624,9 +2625,35 @@ table {
 		width: 0;
 		height: 0;
 		border-style: solid;
-		border-width: 20px 20px 0 20px;
-		top: 100%;
-		left: 40px;
+		border-width: 16px 16px 0 16px;
+	}
+
+	&.even {
+		.dialog-item-arrow {
+			top: 100%;
+			left: 40px;
+		}
+	}
+
+	&.odd {
+		margin-left: auto;
+		
+		.dialog-item-arrow {
+			top: 100%;
+			right: 40px;
+		}
+	}
+}
+
+.dialog-item-dots {
+	&.even {
+		justify-content: flex-start;
+		margin-left: 36px;
+	}
+
+	&.odd {
+		justify-content: flex-end;
+		margin-right: 36px;;
 	}
 }
 

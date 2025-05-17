@@ -2216,21 +2216,42 @@ $display_feedback = get_sub_field('');
 
 <?php elseif( get_row_layout() == 'dialog' ) : // dialog
     $textarea_height = (get_sub_field('textarea_height') ? get_sub_field('textarea_height') : '150');
+    $placeholder = get_sub_field('placeholder');
 ?>
 
     <div class="flexible-content-section dialog my-20px">
         <div class="dialog-wrap my-20px">
-            <?php if ( have_rows('items') ) : ?>
+            <?php if ( have_rows('items') ) : $item_count = 0; ?>
                 <div class="dialog-wrap-inner flex flex-col gap-20px">
-                    <?php while ( have_rows('items') ) : the_row();
+                    <?php while ( have_rows('items') ) : the_row(); 
+                        $item_count++;
                         $dialog_box_background_color = get_sub_field('dialog_box_background_color');
                         $text_color = get_sub_field('text_color');
                     ?>
-                        
-                        <div class="dialog-item rounded-20px" style="background-color: <?php echo $dialog_box_background_color; ?>; color: <?php echo $text_color; ?>;">
-                            <span class="dialog-item-arrow" style="border-color: <?php echo $dialog_box_background_color; ?> transparent transparent transparent;"></span>
-                            <textarea name="dialog_textarea[]" class="w-full bg-transparent border-none focus:outline-none rounded-8px p-20px" style="height: <?php echo $textarea_height; ?>px;"></textarea>
-                        </div>
+                        <?php if ($item_count % 2 == 0) : ?>
+                            <div class="dialog-item odd rounded-20px" style="background-color: <?php echo $dialog_box_background_color; ?>; color: <?php echo $text_color; ?>;">
+                                <span class="dialog-item-arrow" style="border-color: <?php echo $dialog_box_background_color; ?> transparent transparent transparent;"></span>
+                                <textarea name="dialog_textarea[]" class="w-full bg-transparent border-none focus:outline-none rounded-8px p-20px" style="height: <?php echo $textarea_height; ?>px;" placeholder="<?php echo $placeholder; ?>"></textarea>
+                            </div>
+                            
+                            <div class="dialog-item-dots odd flex gap-4px items-center mt-8px">
+                                <div class="dialog-item-dot bg-medium-gray rounded-50 w-10px h-10px"></div>
+                                <div class="dialog-item-dot bg-medium-gray rounded-50 w-10px h-10px"></div>
+                                <div class="dialog-item-dot bg-medium-gray rounded-50 w-10px h-10px"></div>
+                            </div>
+                        <?php else : ?>
+                            <div class="dialog-item even rounded-20px" style="background-color: <?php echo $dialog_box_background_color; ?>; color: <?php echo $text_color; ?>;">
+                                <span class="dialog-item-arrow" style="border-color: <?php echo $dialog_box_background_color; ?> transparent transparent transparent;"></span>
+                                <textarea name="dialog_textarea[]" class="w-full bg-transparent border-none focus:outline-none rounded-8px p-20px" style="height: <?php echo $textarea_height; ?>px;" placeholder="<?php echo $placeholder; ?>"></textarea>
+                            </div>
+                            
+                            <div class="dialog-item-dots even flex gap-4px items-center mt-8px">
+                                <div class="dialog-item-dot bg-medium-gray rounded-50 w-10px h-10px"></div>
+                                <div class="dialog-item-dot bg-medium-gray rounded-50 w-10px h-10px"></div>
+                                <div class="dialog-item-dot bg-medium-gray rounded-50 w-10px h-10px"></div>
+                            </div>
+                            
+                        <?php endif; ?>
 
                     <?php endwhile; ?>
                 </div>
