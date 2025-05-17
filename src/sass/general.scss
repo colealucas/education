@@ -2626,8 +2626,8 @@ table {
 		border-style: solid;
 		border-width: 0 20px 20px 20px;
 		border-color: transparent transparent currentColor transparent;
-		top: -20px;
-		left: 30px;
+		top: calc(100% + 10px);
+		left: 40px;
 	}
 }
 
