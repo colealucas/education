@@ -2615,6 +2615,22 @@ table {
 	}
 }
 
+.dialog-item {
+	position: relative;
+
+	&:before {
+		content: '';
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 20px 20px 20px;
+		border-color: transparent transparent currentColor transparent;
+		top: -20px;
+		left: 30px;
+	}
+}
+
 // zdx
 
 .content-function {

@@ -5285,6 +5285,28 @@
                             "display": "block",
                             "sub_fields": [
                                 {
+                                    "key": "field_68289e6804f67",
+                                    "label": "Textarea height (pixels)",
+                                    "name": "textarea_height",
+                                    "aria-label": "",
+                                    "type": "number",
+                                    "instructions": "Textarea height in pixels",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": 150,
+                                    "min": "",
+                                    "max": "",
+                                    "placeholder": 300,
+                                    "step": 1,
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
                                     "key": "field_68289ce0a5a88",
                                     "label": "items",
                                     "name": "items",
@@ -5342,29 +5364,6 @@
                                             "enable_opacity": 0,
                                             "return_format": "string",
                                             "parent_repeater": "field_68289ce0a5a88"
-                                        },
-                                        {
-                                            "key": "field_68289e6804f67",
-                                            "label": "Textarea height (pixels)",
-                                            "name": "textarea_height",
-                                            "aria-label": "",
-                                            "type": "number",
-                                            "instructions": "Textarea height in pixels",
-                                            "required": 0,
-                                            "conditional_logic": 0,
-                                            "wrapper": {
-                                                "width": "",
-                                                "class": "",
-                                                "id": ""
-                                            },
-                                            "default_value": 300,
-                                            "min": "",
-                                            "max": "",
-                                            "placeholder": 300,
-                                            "step": 1,
-                                            "prepend": "",
-                                            "append": "",
-                                            "parent_repeater": "field_68289ce0a5a88"
                                         }
                                     ]
                                 }
@@ -5399,5 +5398,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1747492500
+    "modified": 1747493022
 }

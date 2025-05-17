@@ -2215,7 +2215,7 @@ $display_feedback = get_sub_field('');
 
 
 <?php elseif( get_row_layout() == 'dialog' ) : // dialog
-    $textarea_height = (get_sub_field('textarea_height') ? get_sub_field('textarea_height') : '200');
+    $textarea_height = (get_sub_field('textarea_height') ? get_sub_field('textarea_height') : '150');
 ?>
 
     <div class="flexible-content-section dialog my-20px">
