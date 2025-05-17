@@ -2213,5 +2213,29 @@ $display_feedback = get_sub_field('');
         </div>
     </div>
 
+
+<?php elseif( get_row_layout() == 'dialog' ) : // dialog
+    $textarea_height = get_sub_field('textarea_height');
+?>
+
+    <div class="flexible-content-section dialog my-20px">
+        <div class="dialog-wrap my-20px">
+            <?php if ( have_rows('items') ) : ?>
+                <div class="dialog-wrap-inner flex gap-20px">
+                    <?php while ( have_rows('items') ) : the_row();
+                        $dialog_box_background_color = get_sub_field('dialog_box_background_color');
+                        $text_color = get_sub_field('text_color');
+                    ?>
+                        
+                        <div class="dialog-item" style="background-color: <?php echo $dialog_box_background_color; ?>; color: <?php echo $text_color; ?>;">
+                            <textarea name="dialog_textarea[]" class="w-full" style="height: <?php echo $textarea_height; ?>px;"></textarea>
+                        </div>
+
+                    <?php endwhile; ?>
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
+
 <?php 
 endif;
