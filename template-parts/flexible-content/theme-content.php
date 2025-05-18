@@ -2259,5 +2259,33 @@ $display_feedback = get_sub_field('');
         </div>
     </div>
 
+
+<?php elseif( get_row_layout() == 'vote' ) : // vote
+    $range_start = (get_sub_field('range_start') ? get_sub_field('range_start') : '1');
+    $range_end = (get_sub_field('range_end') ? get_sub_field('range_end') : '5');
+?>
+
+    <div class="flexible-content-section vote my-20px">
+        <div class="vote-wrap my-20px flex items-center gap-12px justify-center p-20px rounded-8px bg-light-gray">
+            <div class="text-center scores flex gap-4px">
+                <span class="score-item score-item-1"><img width="36px" height="36px" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/scores/score1.svg" alt=""></span>
+                <span class="score-item score-item-2"><img width="36px" height="36px" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/scores/score2.svg" alt=""></span>
+                <span class="score-item score-item-3"><img width="36px" height="36px" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/scores/score3.svg" alt=""></span>
+                <span class="score-item score-item-4"><img width="36px" height="36px" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/scores/score4.svg" alt=""></span>
+                <span class="score-item score-item-5"><img width="36px" height="36px" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/scores/score5.svg" alt=""></span>
+                <span class="score-item score-item-6"><img width="36px" height="36px" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/scores/score6.svg" alt=""></span>
+                <span class="score-item score-item-7"><img width="36px" height="36px" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/scores/score7.svg" alt=""></span>
+                <span class="score-item score-item-8"><img width="36px" height="36px" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/scores/score8.svg" alt=""></span>
+                <span class="score-item score-item-9"><img width="36px" height="36px" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/scores/score9.svg" alt=""></span>
+                <span class="score-item score-item-10"><img width="36px" height="36px" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/scores/score10.svg" alt=""></span>
+            </div>
+            <?php for ($i = $range_start; $i <= $range_end; $i++) : ?>
+                <div class="vote-item flex items-center justify-center flex-1 p-10px bg-white hover:text-white border-1px border-solid border-medium-gray rounded-8px cursor-pointer hover:bg-primary hover:border-primary">
+                    <div class="vote-item-number text-center text-15px font-600"><?php echo $i; ?></div>
+                </div>
+            <?php endfor; ?>
+        </div>
+    </div>
+
 <?php 
 endif;

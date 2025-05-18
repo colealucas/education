@@ -5390,6 +5390,60 @@
                             ],
                             "min": "",
                             "max": ""
+                        },
+                        "layout_6829c0d6ef435": {
+                            "key": "layout_6829c0d6ef435",
+                            "name": "vote",
+                            "label": "Vote (Voteaza)",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_6829c109ef437",
+                                    "label": "Range start",
+                                    "name": "range_start",
+                                    "aria-label": "",
+                                    "type": "number",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": 1,
+                                    "min": "",
+                                    "max": "",
+                                    "placeholder": 1,
+                                    "step": 1,
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_6829c130ef438",
+                                    "label": "Range end",
+                                    "name": "range_end",
+                                    "aria-label": "",
+                                    "type": "number",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": 10,
+                                    "min": "",
+                                    "max": "",
+                                    "placeholder": 1,
+                                    "step": 1,
+                                    "prepend": "",
+                                    "append": ""
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
                     },
                     "min": "",
@@ -5418,5 +5472,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1747494970
+    "modified": 1747566943
 }

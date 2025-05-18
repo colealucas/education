@@ -1979,6 +1979,41 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     handleChooseProfileGame();
     
+    function handleVoteGame() {
+        const wrappers = document.querySelectorAll('.vote-wrap');
+
+        if (wrappers.length) {
+            wrappers.forEach(function(wrapper) {
+                const items = wrapper.querySelectorAll('.vote-item');
+
+                if (items) {
+                    items.forEach(function(item) {
+                        item.addEventListener('click', function() {
+                            const selectedValue = parseInt(item.querySelector('.vote-item-number').textContent);
+                            
+                            items.forEach(i => {
+                                const value = parseInt(i.querySelector('.vote-item-number').textContent);
+                                if (value <= selectedValue) {
+                                    i.classList.add('active');
+                                } else {
+                                    i.classList.remove('active');
+                                }
+                            });
+
+                            const scoreItems = wrapper.querySelectorAll('.score-item');
+                            scoreItems.forEach(function(scoreItem) {
+                                scoreItem.classList.remove('active');
+                            });
+
+                            const scoreItem = wrapper.querySelector(`.score-item-${selectedValue}`);
+                            scoreItem.classList.add('active');
+                        });
+                    });
+                }
+            });
+        }
+    }
+    handleVoteGame();
 
     function handleTrueFalseGame() {
         const items = document.querySelectorAll('.tf-inline-btn');
