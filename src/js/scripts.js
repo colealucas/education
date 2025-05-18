@@ -2382,17 +2382,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 const character = wrapper.querySelector('.robi-character');
                 const upBtn = wrapper.querySelector('.robi-up-btn');
                 const downBtn = wrapper.querySelector('.robi-down-btn');
+                const moveSound = new Audio('/wp-content/themes/education/assets/sounds/move.mp3');
 
                 if (steps.length) {
-                    steps.forEach(function(step) {
-                        step.addEventListener('click', function() {
-                            const stepNumber = step.getAttribute('data-step');
-                            const stepPosition = step.getAttribute('data-position');
-
-                            console.log(stepNumber, stepPosition);
-                        });
-                    });
-
                     // Buttons
                     upBtn.addEventListener('click', () => {
                         const currentStep = parseInt(character.getAttribute('data-current-step'));
@@ -2417,8 +2409,14 @@ document.addEventListener("DOMContentLoaded", function() {
                                 currentActiveDescription.classList.remove('active');
                             }
                             const stepDescription = wrapper.querySelector(`.robi-game-step-description[data-step="${nextStep}"]`);
-                            stepDescription.classList.add('active');
+                            if (stepDescription) {
+                                stepDescription.classList.add('active');
+                            }
                         }
+
+                        // Play move sound
+                        moveSound.currentTime = 0;
+                        moveSound.play();
                     });
                       
                       downBtn.addEventListener('click', () => {
@@ -2440,8 +2438,14 @@ document.addEventListener("DOMContentLoaded", function() {
                                 currentActiveDescription.classList.remove('active');
                             }
                             const stepDescription = wrapper.querySelector(`.robi-game-step-description[data-step="${nextStep}"]`);
-                            stepDescription.classList.add('active');
+                            if (stepDescription) {
+                                stepDescription.classList.add('active');
+                            }
                         }
+
+                        // Play move sound
+                        moveSound.currentTime = 0;
+                        moveSound.play();
                       });
                 }
             });
