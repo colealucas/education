@@ -5444,6 +5444,96 @@
                             ],
                             "min": "",
                             "max": ""
+                        },
+                        "layout_6829e17d478aa": {
+                            "key": "layout_6829e17d478aa",
+                            "name": "robi_game",
+                            "label": "Robi (Robotul urca scarile)",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_6829e1b3478ac",
+                                    "label": "Steps description",
+                                    "name": "steps_description",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "row",
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add Step Description",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_6829e2b841ae0",
+                                            "label": "Step",
+                                            "name": "step_number",
+                                            "aria-label": "",
+                                            "type": "button_group",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "choices": {
+                                                "1": "1",
+                                                "2": "2",
+                                                "3": "3",
+                                                "4": "4",
+                                                "5: 5": "5: 5",
+                                                "6": "6",
+                                                "7": "7",
+                                                "8": "8",
+                                                "9": "9",
+                                                "10": "10",
+                                                "11: 11": "11: 11",
+                                                "12": "12",
+                                                "13": "13",
+                                                "14": "14"
+                                            },
+                                            "default_value": 1,
+                                            "return_format": "value",
+                                            "allow_null": 0,
+                                            "layout": "horizontal",
+                                            "parent_repeater": "field_6829e1b3478ac"
+                                        },
+                                        {
+                                            "key": "field_6829e1d5478ad",
+                                            "label": "Description",
+                                            "name": "description",
+                                            "aria-label": "",
+                                            "type": "textarea",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "rows": 2,
+                                            "placeholder": "Add description",
+                                            "new_lines": "br",
+                                            "parent_repeater": "field_6829e1b3478ac"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
                     },
                     "min": "",
@@ -5472,5 +5562,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1747566943
+    "modified": 1747575567
 }

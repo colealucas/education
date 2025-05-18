@@ -2693,6 +2693,103 @@ table {
 	}
 }
 
+.robi-game-wrap {
+	width: 785px;
+	height: 440px;
+	background-color: #001E36;
+	border-radius: 20px;
+	overflow: hidden;
+
+	.robi-game-bg-image {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+.robi-character {
+	transform: translateX(50%);
+	transition: all 0.45s ease-out;
+
+	&:before {
+		content: '';
+		position: absolute;
+		z-index: 1;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		background-color: #fff;
+		filter: blur(25px);
+	}
+}
+
+.robi-game-steps-description {
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	right: 0;
+	padding: 20px;
+	font-size: 13px;
+	font-weight: 500;
+	color: $dark-color;
+	max-width: 60%;
+
+	.robi-game-step-description {
+		padding: 12px;
+		background-color: rgba(255,255,255,0.95);
+		border-radius: 12px;
+		border: 2px solid #FFDE1C;
+		display: none;
+
+		&.active {
+			display: block;
+		}
+	}
+}
+
+.step-dot {
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	color: $white-color;
+	font-size: 13px;
+	font-weight: 700;
+	border: 2px solid red;
+	line-height: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transform: translateX(50%);
+	background-color: rgba(255, 255, 255, 0.25);
+}
+
+.robi-game-buttons {
+	button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 8px 30px;
+		border-radius: 8px;
+		background-color: transparent;
+		border: 0;
+		font-size: 14px;
+		line-height: 1;
+		font-weight: 500;
+		color: $primary-color;
+		transition: all 0.15s ease-out;
+		cursor: pointer;
+		user-select: none;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+}
+
 // zdx
 
 .content-function {

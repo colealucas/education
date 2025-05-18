@@ -2373,15 +2373,80 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     handleSplitVariants();
    
-    // function handleNumbersGame() {
-    //     const wrappers = document.querySelectorAll('.numbers-wrap');
+    function handleRobiGame() {
+        const wrappers = document.querySelectorAll('.robi-game-wrap');
 
-    //     if (wrappers.length) {
-    //         wrappers.forEach(function(wrapper) {
+        if (wrappers.length) {
+            wrappers.forEach(function(wrapper) {
+                const steps = wrapper.querySelectorAll('.step-dot');
+                const character = wrapper.querySelector('.robi-character');
+                const upBtn = wrapper.querySelector('.robi-up-btn');
+                const downBtn = wrapper.querySelector('.robi-down-btn');
 
-    //         });
-    //     }
-    // }
-    // handleNumbersGame();
+                if (steps.length) {
+                    steps.forEach(function(step) {
+                        step.addEventListener('click', function() {
+                            const stepNumber = step.getAttribute('data-step');
+                            const stepPosition = step.getAttribute('data-position');
+
+                            console.log(stepNumber, stepPosition);
+                        });
+                    });
+
+                    // Buttons
+                    upBtn.addEventListener('click', () => {
+                        const currentStep = parseInt(character.getAttribute('data-current-step'));
+                        const nextStep = currentStep + 1;
+                        const targetStep = steps[nextStep - 1];
+
+                        if (targetStep) {
+                            const bottomPosition = targetStep.getAttribute('data-bottom');
+                            const rightPosition = targetStep.getAttribute('data-right');
+                            
+                            // Update character position
+                            character.style.right = rightPosition + 'px';
+                            character.style.bottom = bottomPosition + 'px';
+                            character.setAttribute('data-current-step', nextStep);
+
+                            if (nextStep === 14) {
+                                character.style.transform = 'translateX(50%) scale(0.9)';
+                            }
+
+                            const currentActiveDescription = wrapper.querySelector('.robi-game-step-description.active');
+                            if (currentActiveDescription) {
+                                currentActiveDescription.classList.remove('active');
+                            }
+                            const stepDescription = wrapper.querySelector(`.robi-game-step-description[data-step="${nextStep}"]`);
+                            stepDescription.classList.add('active');
+                        }
+                    });
+                      
+                      downBtn.addEventListener('click', () => {
+                        const currentStep = parseInt(character.getAttribute('data-current-step'));
+                        const nextStep = currentStep - 1;
+                        const targetStep = steps[nextStep - 1];
+
+                        if (targetStep) {
+                            const bottomPosition = targetStep.getAttribute('data-bottom');
+                            const rightPosition = targetStep.getAttribute('data-right');
+                            
+                            // Update character position
+                            character.style.right = rightPosition + 'px';
+                            character.style.bottom = bottomPosition + 'px';
+                            character.setAttribute('data-current-step', nextStep);
+
+                            const currentActiveDescription = wrapper.querySelector('.robi-game-step-description.active');
+                            if (currentActiveDescription) {
+                                currentActiveDescription.classList.remove('active');
+                            }
+                            const stepDescription = wrapper.querySelector(`.robi-game-step-description[data-step="${nextStep}"]`);
+                            stepDescription.classList.add('active');
+                        }
+                      });
+                }
+            });
+        }
+    }
+    handleRobiGame();
 
 });

@@ -2287,5 +2287,56 @@ $display_feedback = get_sub_field('');
         </div>
     </div>
 
+
+<?php elseif( get_row_layout() == 'robi_game' ) : // robi_game
+    $steps_description = get_sub_field('steps_description');
+?>
+
+    <div class="flexible-content-section robi-game my-20px">
+        <div class="robi-game-wrap relative">
+            <div class="robi-game-bg rounded-20px">
+                <img class="w-full rounded-20px select-none robi-game-bg-image" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/robi/stairs-bg.webp" alt="">
+            </div>
+
+            <div class="robi-game-steps-description flex flex-col gap-12px">
+                <?php foreach ($steps_description as $key => $step) : ?>
+                    <div class="robi-game-step-description" data-step="<?php echo $key + 1; ?>">
+                        <?php echo $step['description']; ?>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+
+            <div class="robi-game-steps">
+                <span class="step-dot step-dot-1 absolute bottom-[72px] right-[234px]" data-bottom="72" data-right="234" data-step="1">1</span>
+                <span class="step-dot step-dot-1 absolute bottom-[102px] right-[274px]" data-bottom="102" data-right="274" data-step="2">2</span>
+                <span class="step-dot step-dot-1 absolute bottom-[129px] right-[315px]" data-bottom="129" data-right="315" data-step="3">3</span>
+                <span class="step-dot step-dot-1 absolute bottom-[156px] right-[356px]" data-bottom="156" data-right="356" data-step="4">4</span>
+                <span class="step-dot step-dot-1 absolute bottom-[182px] right-[380px]" data-bottom="182" data-right="380" data-step="5">5</span>
+                <span class="step-dot step-dot-1 absolute bottom-[206px] right-[404px]" data-bottom="206" data-right="404" data-step="6">6</span>
+                <span class="step-dot step-dot-1 absolute bottom-[228px] right-[430px]" data-bottom="228" data-right="430" data-step="7">7</span>
+                <span class="step-dot step-dot-1 absolute bottom-[250px] right-[460px]" data-bottom="250" data-right="460" data-step="8">8</span>
+                <span class="step-dot step-dot-1 absolute bottom-[270px] right-[486px]" data-bottom="270" data-right="486" data-step="9">9</span>
+                <span class="step-dot step-dot-1 absolute bottom-[289px] right-[510px]" data-bottom="289" data-right="510" data-step="10">10</span>
+                <span class="step-dot step-dot-1 absolute bottom-[308px] right-[534px]" data-bottom="308" data-right="534" data-step="11">11</span>
+                <span class="step-dot step-dot-1 absolute bottom-[327px] right-[561px]" data-bottom="327" data-right="561" data-step="12">12</span>
+                <span class="step-dot step-dot-1 absolute bottom-[346px] right-[590px]" data-bottom="346" data-right="590" data-step="13">13</span>
+                <span class="step-dot step-dot-1 absolute bottom-[364px] right-[620px]" data-bottom="364" data-right="620" data-step="14">14</span>
+            </div>
+
+            <div class="robi-character absolute w-[50px] bottom-[40px] right-[154px]" data-current-step="0">
+                <img class="w-full h-auto relative z-2" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/robi/robi-idle.png" alt="">
+            </div>
+
+            <div class="robi-game-buttons flex flex-col gap-0 absolute bottom-[20px] left-0">
+                <button class="robi-up-btn">
+                    <svg viewBox="0 0 64 64" width="40" height="40" he xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--emojione-monotone" preserveAspectRatio="xMidYMid meet" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M32 2C15.432 2 2 15.432 2 32s13.432 30 30 30s30-13.432 30-30S48.568 2 32 2zm5.143 28.305V49H26.857V30.305H16L32 15l16 15.305H37.143z" fill="#fff"></path></g></svg>
+                </button>
+                <button class="robi-down-btn">
+                    <svg width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--emojione-monotone" preserveAspectRatio="xMidYMid meet" fill="#000000" transform="matrix(1, 0, 0, -1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M32 2C15.432 2 2 15.432 2 32s13.432 30 30 30s30-13.432 30-30S48.568 2 32 2zm5.143 28.305V49H26.857V30.305H16L32 15l16 15.305H37.143z" fill="#ffffff"></path></g></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
 <?php 
 endif;
