@@ -794,7 +794,7 @@ document.addEventListener("DOMContentLoaded", function() {
         new Fancybox(
             [
                 {
-                src: `<div class="py-40px px-24px rounded-24px min-w-[450px] flex flex-col gap-12px text-center">
+                src: `<div class="py-40px px-24px rounded-24px min-w-[370px] max-w-[500px] flex flex-col gap-12px text-center">
                         <div>
                             <svg width="80px" height="80px" class="inline-block" viewBox="0 0 64 64" data-name="Layer 1" id="Layer_1" xmlns="http://www.w3.org/2000/svg">
                                 <defs><style>.cls-1{fill:var(--primary-color);}.cls-2{fill:#ffb300;}</style></defs><title/>
