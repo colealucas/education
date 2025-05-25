@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_66c71e5feac62",
-            "label": "Theme Settings (Setari)",
+            "label": "Theme Settings2 (Setari)",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -2292,6 +2292,7 @@
                                             "collapsed": "",
                                             "button_label": "Add Item",
                                             "rows_per_page": 20,
+                                            "parent_repeater": "field_66d836fcbbedd",
                                             "sub_fields": [
                                                 {
                                                     "key": "field_66d8370ebbede",
@@ -2335,8 +2336,7 @@
                                                     "ui": 1,
                                                     "parent_repeater": "field_66d8389292610"
                                                 }
-                                            ],
-                                            "parent_repeater": "field_66d836fcbbedd"
+                                            ]
                                         }
                                     ]
                                 }
@@ -3132,6 +3132,7 @@
                                             "collapsed": "",
                                             "button_label": "Add New Item",
                                             "rows_per_page": 20,
+                                            "parent_repeater": "field_66eeddb431aff",
                                             "sub_fields": [
                                                 {
                                                     "key": "field_66eee0204bb03",
@@ -3154,8 +3155,7 @@
                                                     "new_lines": "",
                                                     "parent_repeater": "field_66eee0124bb02"
                                                 }
-                                            ],
-                                            "parent_repeater": "field_66eeddb431aff"
+                                            ]
                                         }
                                     ]
                                 }
@@ -3930,6 +3930,7 @@
                                             "collapsed": "",
                                             "button_label": "Add Variant",
                                             "rows_per_page": 20,
+                                            "parent_repeater": "field_66f97efb5639a",
                                             "sub_fields": [
                                                 {
                                                     "key": "field_66f97f2d5639d",
@@ -3973,8 +3974,7 @@
                                                     "ui": 1,
                                                     "parent_repeater": "field_66f97f155639c"
                                                 }
-                                            ],
-                                            "parent_repeater": "field_66f97efb5639a"
+                                            ]
                                         }
                                     ]
                                 }
@@ -4121,6 +4121,7 @@
                                             "collapsed": "",
                                             "button_label": "Add Element",
                                             "rows_per_page": 20,
+                                            "parent_repeater": "field_66f98a42688f9",
                                             "sub_fields": [
                                                 {
                                                     "key": "field_66f98b0d688fd",
@@ -4185,8 +4186,7 @@
                                                     "preview_size": "full",
                                                     "parent_repeater": "field_66f98a94688fa"
                                                 }
-                                            ],
-                                            "parent_repeater": "field_66f98a42688f9"
+                                            ]
                                         }
                                     ]
                                 }
@@ -4672,6 +4672,7 @@
                                             "collapsed": "",
                                             "button_label": "Add New Function",
                                             "rows_per_page": 20,
+                                            "parent_repeater": "field_674214dfde465",
                                             "sub_fields": [
                                                 {
                                                     "key": "field_67421613551fc",
@@ -4694,8 +4695,7 @@
                                                     "new_lines": "br",
                                                     "parent_repeater": "field_6742150ede467"
                                                 }
-                                            ],
-                                            "parent_repeater": "field_674214dfde465"
+                                            ]
                                         }
                                     ]
                                 }
@@ -5662,5 +5662,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1748172069
+    "modified": 1748180079
 }
