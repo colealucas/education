@@ -75,6 +75,26 @@
             "bidirectional_target": []
         },
         {
+            "key": "field_68331880cee5a",
+            "label": "Evaluation (Evaluare)",
+            "name": "evaluation_module",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Evaluation module ? (Modul evaluare?)",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
             "key": "field_66f5613e76008",
             "label": "Autoevaluation",
             "name": "",
@@ -155,5 +175,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738622184
+    "modified": 1748179178
 }
