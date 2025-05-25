@@ -2349,8 +2349,9 @@ $display_feedback = get_sub_field('');
                     <?php while ( have_rows('text_content_items') ) : the_row();
                         $text_content = get_sub_field('text_content');
                         $feedback_message = get_sub_field('feedback_message');
+                        $feedback_type = get_sub_field('feedback_type');
                     ?>
-                        <div class="text-content-option p-20px rounded-8px bg-white border-1px border-solid border-medium-gray cursor-pointer" data-feedback-message="<?php echo esc_attr($feedback_message); ?>">
+                        <div class="text-content-option p-20px rounded-8px bg-white border-1px border-solid border-medium-gray cursor-pointer" data-feedback-type="<?php echo esc_attr($feedback_type); ?>" data-feedback-message="<?php echo esc_attr($feedback_message); ?>">
                             <div class="text-content-option-text">
                                 <?php echo $text_content; ?>
                             </div>

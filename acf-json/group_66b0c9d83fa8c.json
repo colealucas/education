@@ -5603,6 +5603,31 @@
                                             "placeholder": "Feedback message",
                                             "new_lines": "",
                                             "parent_repeater": "field_6832ebf8cce22"
+                                        },
+                                        {
+                                            "key": "field_6832fc58e276a",
+                                            "label": "Feedback Type",
+                                            "name": "feedback_type",
+                                            "aria-label": "",
+                                            "type": "button_group",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "choices": {
+                                                "warning": "Avertizare",
+                                                "danger": "Pericol",
+                                                "success": "Succes"
+                                            },
+                                            "default_value": "success",
+                                            "return_format": "value",
+                                            "allow_null": 0,
+                                            "layout": "horizontal",
+                                            "parent_repeater": "field_6832ebf8cce22"
                                         }
                                     ]
                                 }
@@ -5637,5 +5662,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1748168095
+    "modified": 1748172069
 }

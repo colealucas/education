@@ -784,22 +784,31 @@ document.addEventListener("DOMContentLoaded", function() {
      * 
      * @param {*} message 
      */
-    function showSuccessPopup(message) {
+    function showSuccessPopup(message, iconType = 'default') {
         if ( !message ) {
             message = getText('bravo') + '!';
         }
 
         const continueText = getText('continue');
+        let icon = `<svg width="70px" height="70px" class="inline-block" viewBox="0 0 64 64" data-name="Layer 1" id="Layer_1" xmlns="http://www.w3.org/2000/svg">
+                        <defs><style>.cls-1{fill:var(--primary-color);}.cls-2{fill:#ffb300;}</style></defs><title/>
+                        <path class="cls-1" d="M41.78,57.13a7.12,7.12,0,0,1-4.2-1.39l-4.32-3.16a3.12,3.12,0,0,0-3.7,0l-4.32,3.16a7.14,7.14,0,0,1-11.31-6.53l.58-5.32a3.11,3.11,0,0,0-1.85-3.2L7.77,38.53a7.13,7.13,0,0,1,0-13.06l4.89-2.16a3.11,3.11,0,0,0,1.85-3.2l-.58-5.32A7.14,7.14,0,0,1,25.24,8.26l4.32,3.16a3.12,3.12,0,0,0,3.7,0l4.32-3.16A7,7,0,0,1,43,7a7.25,7.25,0,0,1,4.75,3.13,2,2,0,1,1-3.34,2.2,3.23,3.23,0,0,0-2.12-1.39,3,3,0,0,0-2.37.57l-4.32,3.16a7.13,7.13,0,0,1-8.43,0l-4.31-3.16a3.13,3.13,0,0,0-5,2.87l.58,5.31A7.11,7.11,0,0,1,14.28,27l-4.9,2.16a3.14,3.14,0,0,0,0,5.74L14.28,37a7.11,7.11,0,0,1,4.21,7.3l-.58,5.31a3.13,3.13,0,0,0,5,2.87l4.31-3.16a7.13,7.13,0,0,1,8.43,0l4.32,3.16a3.13,3.13,0,0,0,5-2.87l-.58-5.31A7.1,7.1,0,0,1,48.54,37l4.9-2.16a3.14,3.14,0,0,0,0-5.74L50.78,28a2,2,0,1,1,1.61-3.66l2.66,1.17a7.13,7.13,0,0,1,0,13.06l-4.89,2.16a3.13,3.13,0,0,0-1.86,3.2l.58,5.32a7,7,0,0,1-3.52,6.95A7.17,7.17,0,0,1,41.78,57.13Z"/><path class="cls-2" d="M31.64,39a2,2,0,0,1-1.42-.59l-8.61-8.61A2,2,0,1,1,24.44,27l7.2,7.2L57.08,8.72a2,2,0,0,1,2.82,2.83L33.05,38.4A2,2,0,0,1,31.64,39Z"/>
+                    </svg>`;
+
+        if ( iconType === 'danger' ) {
+           icon = `<svg viewBox="0 0 24 24" width="70px" height="70px" class="inline-block" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 7.75V13" stroke="#D3501F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M21.08 8.58003V15.42C21.08 16.54 20.48 17.58 19.51 18.15L13.57 21.58C12.6 22.14 11.4 22.14 10.42 21.58L4.47998 18.15C3.50998 17.59 2.90997 16.55 2.90997 15.42V8.58003C2.90997 7.46003 3.50998 6.41999 4.47998 5.84999L10.42 2.42C11.39 1.86 12.59 1.86 13.57 2.42L19.51 5.84999C20.48 6.41999 21.08 7.45003 21.08 8.58003Z" stroke="#D3501F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 16.2V16.2999" stroke="#D3501F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>`;
+        } else if ( iconType === 'warning' ) {
+            icon = `<svg viewBox="0 0 1024 1024" width="60px" height="60px" class="inline-block" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M512.002 512.002m-491.988 0a491.988 491.988 0 1 0 983.976 0 491.988 491.988 0 1 0-983.976 0Z" fill="#FDDF6D"></path><path d="M617.43 931.356c-271.716 0-491.986-220.268-491.986-491.986 0-145.168 62.886-275.632 162.888-365.684C129.054 155.124 20.014 320.828 20.014 512c0 271.716 220.268 491.986 491.986 491.986 126.548 0 241.924-47.796 329.098-126.298-67.106 34.31-143.124 53.668-223.668 53.668z" fill="#FCC56B"></path><path d="M426.314 359.704m-142.718 0a142.718 142.718 0 1 0 285.436 0 142.718 142.718 0 1 0-285.436 0Z" fill="#FFFFFF"></path><path d="M826.554 359.704m-142.718 0a142.718 142.718 0 1 0 285.436 0 142.718 142.718 0 1 0-285.436 0Z" fill="#FFFFFF"></path><path d="M300.576 556.564c-36.536 0-66.156 29.62-66.156 66.156h132.314c-0.004-36.538-29.622-66.156-66.158-66.156zM877.628 556.564c-36.536 0-66.156 29.62-66.156 66.156h132.314c0-36.538-29.622-66.156-66.158-66.156z" fill="#F9A880"></path><path d="M717.692 710.348H504.616c-11.054 0-20.014-8.958-20.014-20.014s8.962-20.014 20.014-20.014h213.076c11.054 0 20.014 8.958 20.014 20.014 0.002 11.056-8.96 20.014-20.014 20.014z" fill=""></path><path d="M450.33 359.704m-40.03 0a40.03 40.03 0 1 0 80.06 0 40.03 40.03 0 1 0-80.06 0Z" fill="#7F184C"></path><path d="M856.468 359.704m-40.03 0a40.03 40.03 0 1 0 80.06 0 40.03 40.03 0 1 0-80.06 0Z" fill="#7F184C"></path><path d="M976.296 296.028c-24.834-58.17-82.6-99.052-149.742-99.052-89.732 0-162.732 73-162.732 162.732s73 162.732 162.732 162.732c66.774 0 124.256-40.44 149.316-98.102a475.43 475.43 0 0 1 8.104 87.656c0 260.248-211.724 471.968-471.97 471.968S40.03 772.248 40.03 512 251.752 40.03 512 40.03c85.956 0 170.084 23.324 243.29 67.452 9.468 5.71 21.768 2.658 27.474-6.808 5.706-9.468 2.658-21.768-6.808-27.474C696.514 25.312 605.24 0 512 0 229.68 0 0 229.68 0 512c0 282.316 229.68 512 512 512s512-229.68 512-511.998c0-75.548-16.076-148.154-47.704-215.974z m-27.042 63.684c0 67.66-55.044 122.704-122.704 122.704s-122.704-55.046-122.704-122.704 55.044-122.704 122.704-122.704c48.02 0 89.66 27.744 109.804 68.028 0.136 0.322 0.256 0.648 0.41 0.966 1.016 2.092 1.972 4.206 2.956 6.308a121.964 121.964 0 0 1 9.534 47.402z" fill=""></path><path d="M426.326 196.98c-89.732 0-162.732 73-162.732 162.732s73 162.732 162.732 162.732 162.732-73 162.732-162.732-73.002-162.732-162.732-162.732z m0 285.436c-67.66 0-122.704-55.046-122.704-122.704s55.044-122.704 122.704-122.704 122.704 55.046 122.704 122.704-55.046 122.704-122.704 122.704zM484.602 690.33c0 11.056 8.962 20.014 20.014 20.014h213.076c11.054 0 20.014-8.958 20.014-20.014s-8.962-20.014-20.014-20.014H504.616c-11.054 0-20.014 8.958-20.014 20.014z" fill=""></path><path d="M826.554 132.542m-20.014 0a20.014 20.014 0 1 0 40.028 0 20.014 20.014 0 1 0-40.028 0Z" fill=""></path></g></svg>`;
+        } else if ( iconType === 'success' ) {
+            icon = `<svg fill="var(--primary-color)" viewBox="0 0 24 24" width="60px" height="60px" class="inline-block" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <defs> <style> .cls-1 { fill-rule: evenodd; } </style> </defs> <path id="checkmark" class="cls-1" d="M1224,312a12,12,0,1,1,3.32-23.526l-1.08,1.788A10,10,0,1,0,1234,300a9.818,9.818,0,0,0-.59-3.353l1.27-2.108A11.992,11.992,0,0,1,1224,312Zm0.92-8.631a0.925,0.925,0,0,1-.22.355,0.889,0.889,0,0,1-.72.259,0.913,0.913,0,0,1-.94-0.655l-3.82-3.818a0.9,0.9,0,0,1,1.27-1.271l3.25,3.251,7.39-10.974a1,1,0,0,1,1.38-.385,1.051,1.051,0,0,1,.36,1.417Z" transform="translate(-1212 -288)"></path> </g></svg>`;
+        }
 
         new Fancybox(
             [
                 {
                 src: `<div class="py-40px px-24px rounded-24px min-w-[370px] max-w-[500px] flex flex-col gap-12px text-center">
                         <div>
-                            <svg width="80px" height="80px" class="inline-block" viewBox="0 0 64 64" data-name="Layer 1" id="Layer_1" xmlns="http://www.w3.org/2000/svg">
-                                <defs><style>.cls-1{fill:var(--primary-color);}.cls-2{fill:#ffb300;}</style></defs><title/>
-                                <path class="cls-1" d="M41.78,57.13a7.12,7.12,0,0,1-4.2-1.39l-4.32-3.16a3.12,3.12,0,0,0-3.7,0l-4.32,3.16a7.14,7.14,0,0,1-11.31-6.53l.58-5.32a3.11,3.11,0,0,0-1.85-3.2L7.77,38.53a7.13,7.13,0,0,1,0-13.06l4.89-2.16a3.11,3.11,0,0,0,1.85-3.2l-.58-5.32A7.14,7.14,0,0,1,25.24,8.26l4.32,3.16a3.12,3.12,0,0,0,3.7,0l4.32-3.16A7,7,0,0,1,43,7a7.25,7.25,0,0,1,4.75,3.13,2,2,0,1,1-3.34,2.2,3.23,3.23,0,0,0-2.12-1.39,3,3,0,0,0-2.37.57l-4.32,3.16a7.13,7.13,0,0,1-8.43,0l-4.31-3.16a3.13,3.13,0,0,0-5,2.87l.58,5.31A7.11,7.11,0,0,1,14.28,27l-4.9,2.16a3.14,3.14,0,0,0,0,5.74L14.28,37a7.11,7.11,0,0,1,4.21,7.3l-.58,5.31a3.13,3.13,0,0,0,5,2.87l4.31-3.16a7.13,7.13,0,0,1,8.43,0l4.32,3.16a3.13,3.13,0,0,0,5-2.87l-.58-5.31A7.1,7.1,0,0,1,48.54,37l4.9-2.16a3.14,3.14,0,0,0,0-5.74L50.78,28a2,2,0,1,1,1.61-3.66l2.66,1.17a7.13,7.13,0,0,1,0,13.06l-4.89,2.16a3.13,3.13,0,0,0-1.86,3.2l.58,5.32a7,7,0,0,1-3.52,6.95A7.17,7.17,0,0,1,41.78,57.13Z"/><path class="cls-2" d="M31.64,39a2,2,0,0,1-1.42-.59l-8.61-8.61A2,2,0,1,1,24.44,27l7.2,7.2L57.08,8.72a2,2,0,0,1,2.82,2.83L33.05,38.4A2,2,0,0,1,31.64,39Z"/>
-                            </svg>
+                            ${icon}
                         </div>
                         <div class="text-24px font-600 my-8px leading-130">${message}</div>
                         <div class="mt-16px"><a href="#" class="btn min-w-[200px]" data-fancybox-close>${continueText}</a></div>
@@ -2460,7 +2469,23 @@ document.addEventListener("DOMContentLoaded", function() {
             options.forEach(function(option) {
                 option.addEventListener('click', function() {
                     const feedbackMessage = option.getAttribute('data-feedback-message');
-                    showSuccessPopup( feedbackMessage );
+                    const feedbackType = option.getAttribute('data-feedback-type');
+
+                    switch (feedbackType) {
+                        case 'success':
+                            showSuccessPopup( feedbackMessage, 'success' ); // 'danger' | 'warning' | 'default' | 'success'
+                            break;
+                        case 'danger':
+                            showSuccessPopup( feedbackMessage, 'danger' );
+                            break;
+                        case 'warning':
+                            showSuccessPopup( feedbackMessage, 'warning' );
+                            break;
+                        case 'default':
+                            showSuccessPopup( feedbackMessage, 'default' );
+                            break;
+                    }
+
 
                     options.forEach(function(option) {
                         option.classList.remove('selected');
