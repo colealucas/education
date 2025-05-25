@@ -5534,6 +5534,81 @@
                             ],
                             "min": "",
                             "max": ""
+                        },
+                        "layout_6832e696cce1f": {
+                            "key": "layout_6832e696cce1f",
+                            "name": "text_content_options",
+                            "label": "Text options click + feedback",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_6832ebf8cce22",
+                                    "label": "Text content items",
+                                    "name": "text_content_items",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "block",
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add Row",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_6832ec09cce23",
+                                            "label": "Text content",
+                                            "name": "text_content",
+                                            "aria-label": "",
+                                            "type": "textarea",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "50",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "rows": 4,
+                                            "placeholder": "Add text content",
+                                            "new_lines": "br",
+                                            "parent_repeater": "field_6832ebf8cce22"
+                                        },
+                                        {
+                                            "key": "field_6832ec88cce25",
+                                            "label": "Feedback message",
+                                            "name": "feedback_message",
+                                            "aria-label": "",
+                                            "type": "textarea",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "50",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "rows": 4,
+                                            "placeholder": "Feedback message",
+                                            "new_lines": "",
+                                            "parent_repeater": "field_6832ebf8cce22"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
                     },
                     "min": "",
@@ -5562,5 +5637,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1747575567
+    "modified": 1748168095
 }

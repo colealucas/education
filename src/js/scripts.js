@@ -2453,4 +2453,24 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     handleRobiGame();
 
+    function handleTextContentOptions() {
+        const options = document.querySelectorAll('.text-content-option');
+
+        if (options.length) {
+            options.forEach(function(option) {
+                option.addEventListener('click', function() {
+                    const feedbackMessage = option.getAttribute('data-feedback-message');
+                    showSuccessPopup( feedbackMessage );
+
+                    options.forEach(function(option) {
+                        option.classList.remove('selected');
+                    });
+
+                    option.classList.add('selected');
+                });
+            });
+        }
+    }
+    handleTextContentOptions();
+
 });

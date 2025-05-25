@@ -2338,5 +2338,28 @@ $display_feedback = get_sub_field('');
         </div>
     </div>
 
+
+<?php elseif( get_row_layout() == 'text_content_options' ) : // text_content_options
+?>
+
+    <div class="flexible-content-section text-content-options my-20px">
+        <div class="text-content-options-wrap my-20px">
+            <?php if ( have_rows('text_content_items') ) : ?>
+                <div class="text-content-options-wrap-inner flex flex-col gap-20px bg-light-gray rounded-8px p-20px">
+                    <?php while ( have_rows('text_content_items') ) : the_row();
+                        $text_content = get_sub_field('text_content');
+                        $feedback_message = get_sub_field('feedback_message');
+                    ?>
+                        <div class="text-content-option p-20px rounded-8px bg-white border-1px border-solid border-medium-gray cursor-pointer" data-feedback-message="<?php echo esc_attr($feedback_message); ?>">
+                            <div class="text-content-option-text">
+                                <?php echo $text_content; ?>
+                            </div>
+                        </div>
+                    <?php endwhile; ?>
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
+
 <?php 
 endif;

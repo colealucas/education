@@ -2790,6 +2790,15 @@ table {
 	}
 }
 
+.text-content-options {
+	.text-content-option {
+		&.selected {
+			background-color: $primary-color-light;
+			border-color: $primary-color;
+		}
+	}
+}
+
 // zdx
 
 .content-function {
