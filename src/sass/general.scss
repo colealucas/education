@@ -2800,9 +2800,9 @@ table {
 
 	.text-content-option-text {
 		img {
-			width: 30px;
-			height: 30px;
+			display: inline-block;
 			margin: 0 5px 5px 0;
+			vertical-align: middle;
 		}
 	}
 }
