@@ -30,19 +30,11 @@
             </div>
 
             <div class="relative">
-                <?php if( have_rows('theme_steps') ): ?>
-                    <?php while( have_rows('theme_steps') ): the_row(); ?>
-                        <?php if ( get_sub_field('step') == 'one' ) : ?>
-                            
-                            <?php if( have_rows('theme_content_sections') ): ?>
-                                <?php while ( have_rows('theme_content_sections') ) : the_row(); ?>
+                <?php if( have_rows('evaluation_content') ): ?>
+                    <?php while ( have_rows('evaluation_content') ) : the_row(); ?>
 
-                                    <?php get_template_part('template-parts/flexible-content/theme' , 'content'); // get flexible content sections ?>
-                                
-                                <?php endwhile; ?>
-                            <?php endif; ?>
-
-                        <?php endif; ?>
+                        <?php get_template_part('template-parts/flexible-content/evaluation' , 'content'); // get flexible content sections ?>
+                    
                     <?php endwhile; ?>
                 <?php endif; ?>
             </div>
