@@ -798,16 +798,18 @@ $hide_step_6 = false;
                         </div> 
                     </div>
                     <div class="col-lg-3">
-                        <div class="keey-concepts">
-                            <div class="flex justify-end">
-                                <a data-fancybox data-src="#key-concepts" href="javascript:;" class="inline-flex items-center gap-8px text-primary text-14px rounded-24px bg-primary-light hover:bg-white px-10px py-6px leading-1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                        <path d="M10 13.3333V10M10 6.66667H10.0084M18.3334 10C18.3334 14.6024 14.6024 18.3333 10 18.3333C5.39765 18.3333 1.66669 14.6024 1.66669 10C1.66669 5.39763 5.39765 1.66667 10 1.66667C14.6024 1.66667 18.3334 5.39763 18.3334 10Z" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                    <?php echo $get_static_text[get_lang()]['concepts']; ?>
-                                </a>
+                        <?php if ( !get_field('is_evaluation') ) : ?>
+                            <div class="keey-concepts">
+                                <div class="flex justify-end">
+                                    <a data-fancybox data-src="#key-concepts" href="javascript:;" class="inline-flex items-center gap-8px text-primary text-14px rounded-24px bg-primary-light hover:bg-white px-10px py-6px leading-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                            <path d="M10 13.3333V10M10 6.66667H10.0084M18.3334 10C18.3334 14.6024 14.6024 18.3333 10 18.3333C5.39765 18.3333 1.66669 14.6024 1.66669 10C1.66669 5.39763 5.39765 1.66667 10 1.66667C14.6024 1.66667 18.3334 5.39763 18.3334 10Z" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <?php echo $get_static_text[get_lang()]['concepts']; ?>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
+                        <?php endif; ?>
                     </div>
                 </div>
 
@@ -817,18 +819,31 @@ $hide_step_6 = false;
     </div>
 </div>
 
+<!-- evaluation content start -->
+<?php if ( get_field('is_evaluation') ) : ?>
 
-<!-- Theme steps -->
-<?php if ($book_target == 'primar') : ?>
-    <?php include(get_template_directory() . '/template-parts/book-primar.php'); ?>
-<?php endif; ?>
+    <?php include(get_template_directory() . '/template-parts/evaluation-content.php'); ?>
 
-<?php if ($book_target == 'gimnaziu') : ?>
-    <?php include(get_template_directory() . '/template-parts/book-gimnaziu.php'); ?>
-<?php endif; ?>
+    <!-- evaluation content end -->
+<?php else : ?>
 
-<?php if ($book_target == 'liceu') : ?>
-    <?php include(get_template_directory() . '/template-parts/book-liceu.php'); ?>
+    <!-- normal content start -->
+
+    <!-- Theme steps -->
+    <?php if ($book_target == 'primar') : ?>
+        <?php include(get_template_directory() . '/template-parts/book-primar.php'); ?>
+    <?php endif; ?>
+
+    <?php if ($book_target == 'gimnaziu') : ?>
+        <?php include(get_template_directory() . '/template-parts/book-gimnaziu.php'); ?>
+    <?php endif; ?>
+
+    <?php if ($book_target == 'liceu') : ?>
+        <?php include(get_template_directory() . '/template-parts/book-liceu.php'); ?>
+    <?php endif; ?>
+
+    <!-- normal content end -->
+
 <?php endif; ?>
 
 

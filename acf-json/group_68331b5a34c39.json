@@ -17,7 +17,8 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_67a146caffa13",
@@ -142,7 +143,8 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_66c71ead49c95",
@@ -204,7 +206,8 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_66c9f360bf5fb",
@@ -321,7 +324,8 @@
                                         "id": ""
                                     },
                                     "placement": "top",
-                                    "endpoint": 0
+                                    "endpoint": 0,
+                                    "selected": 0
                                 },
                                 {
                                     "key": "field_66c9f4851ac7f",
@@ -493,6 +497,8 @@
                                             "ui": 0,
                                             "ajax": 0,
                                             "placeholder": "",
+                                            "create_options": 0,
+                                            "save_options": 0,
                                             "parent_repeater": "field_67e82b6eaa5a5"
                                         }
                                     ]
@@ -585,7 +591,8 @@
                                         "id": ""
                                     },
                                     "placement": "top",
-                                    "endpoint": 0
+                                    "endpoint": 0,
+                                    "selected": 0
                                 },
                                 {
                                     "key": "field_678d2a548fcd8",
@@ -683,7 +690,9 @@
                                     "allow_null": 0,
                                     "ui": 0,
                                     "ajax": 0,
-                                    "placeholder": ""
+                                    "placeholder": "",
+                                    "create_options": 0,
+                                    "save_options": 0
                                 },
                                 {
                                     "key": "field_66cb7bd4b6bbc",
@@ -1661,6 +1670,8 @@
                                             "ui": 0,
                                             "ajax": 0,
                                             "placeholder": "",
+                                            "create_options": 0,
+                                            "save_options": 0,
                                             "parent_repeater": "field_66d0be5e1f97f"
                                         },
                                         {
@@ -2292,6 +2303,7 @@
                                             "collapsed": "",
                                             "button_label": "Add Item",
                                             "rows_per_page": 20,
+                                            "parent_repeater": "field_66d836fcbbedd",
                                             "sub_fields": [
                                                 {
                                                     "key": "field_66d8370ebbede",
@@ -2335,8 +2347,7 @@
                                                     "ui": 1,
                                                     "parent_repeater": "field_66d8389292610"
                                                 }
-                                            ],
-                                            "parent_repeater": "field_66d836fcbbedd"
+                                            ]
                                         }
                                     ]
                                 }
@@ -3132,6 +3143,7 @@
                                             "collapsed": "",
                                             "button_label": "Add New Item",
                                             "rows_per_page": 20,
+                                            "parent_repeater": "field_66eeddb431aff",
                                             "sub_fields": [
                                                 {
                                                     "key": "field_66eee0204bb03",
@@ -3154,8 +3166,7 @@
                                                     "new_lines": "",
                                                     "parent_repeater": "field_66eee0124bb02"
                                                 }
-                                            ],
-                                            "parent_repeater": "field_66eeddb431aff"
+                                            ]
                                         }
                                     ]
                                 }
@@ -3930,6 +3941,7 @@
                                             "collapsed": "",
                                             "button_label": "Add Variant",
                                             "rows_per_page": 20,
+                                            "parent_repeater": "field_66f97efb5639a",
                                             "sub_fields": [
                                                 {
                                                     "key": "field_66f97f2d5639d",
@@ -3973,8 +3985,7 @@
                                                     "ui": 1,
                                                     "parent_repeater": "field_66f97f155639c"
                                                 }
-                                            ],
-                                            "parent_repeater": "field_66f97efb5639a"
+                                            ]
                                         }
                                     ]
                                 }
@@ -4121,6 +4132,7 @@
                                             "collapsed": "",
                                             "button_label": "Add Element",
                                             "rows_per_page": 20,
+                                            "parent_repeater": "field_66f98a42688f9",
                                             "sub_fields": [
                                                 {
                                                     "key": "field_66f98b0d688fd",
@@ -4185,8 +4197,7 @@
                                                     "preview_size": "full",
                                                     "parent_repeater": "field_66f98a94688fa"
                                                 }
-                                            ],
-                                            "parent_repeater": "field_66f98a42688f9"
+                                            ]
                                         }
                                     ]
                                 }
@@ -4672,6 +4683,7 @@
                                             "collapsed": "",
                                             "button_label": "Add New Function",
                                             "rows_per_page": 20,
+                                            "parent_repeater": "field_674214dfde465",
                                             "sub_fields": [
                                                 {
                                                     "key": "field_67421613551fc",
@@ -4694,8 +4706,7 @@
                                                     "new_lines": "br",
                                                     "parent_repeater": "field_6742150ede467"
                                                 }
-                                            ],
-                                            "parent_repeater": "field_674214dfde465"
+                                            ]
                                         }
                                     ]
                                 }
@@ -5634,6 +5645,657 @@
                             ],
                             "min": "",
                             "max": ""
+                        },
+                        "layout_68359e7f25ddf": {
+                            "key": "layout_68359e7f25ddf",
+                            "name": "text_content_copy",
+                            "label": "Text content (very old)",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_68359e8025de0",
+                                    "label": "Content",
+                                    "name": "",
+                                    "aria-label": "",
+                                    "type": "tab",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "placement": "top",
+                                    "endpoint": 0,
+                                    "selected": 0
+                                },
+                                {
+                                    "key": "field_68359e8025de1",
+                                    "label": "Title",
+                                    "name": "title",
+                                    "aria-label": "",
+                                    "type": "textarea",
+                                    "instructions": "Feel free to format the text (Poti trece textul in linie noua)",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "rows": 3,
+                                    "placeholder": "Add title (adauga titlu)",
+                                    "new_lines": "br"
+                                },
+                                {
+                                    "key": "field_68359e8025de2",
+                                    "label": "Content",
+                                    "name": "content",
+                                    "aria-label": "",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "tabs": "all",
+                                    "toolbar": "full",
+                                    "media_upload": 1,
+                                    "delay": 0
+                                },
+                                {
+                                    "key": "field_68359e8025de3",
+                                    "label": "Cuvinte cheie dropdown",
+                                    "name": "dropdown_words",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_68359e8025df9",
+                                                "operator": "=="
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "row",
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add Word",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_68359e8025de4",
+                                            "label": "Word (cuvant)",
+                                            "name": "word",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "placeholder": "Add word (adauga cuvant)",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_68359e8025de3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "key": "field_68359e8025de5",
+                                    "label": "Reactions (Reactii)",
+                                    "name": "reactions",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_68359e8025dfb",
+                                                "operator": "=="
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "block",
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add reaction",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_68359e8025de6",
+                                            "label": "Titlu",
+                                            "name": "reaction_title",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "50",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "placeholder": "Add title",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_68359e8025de5"
+                                        },
+                                        {
+                                            "key": "field_68359e8025de7",
+                                            "label": "Reaction type",
+                                            "name": "reaction_type",
+                                            "aria-label": "",
+                                            "type": "select",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "50",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "choices": {
+                                                "sad": "Sad (trist)",
+                                                "admiration": "Admiration (admiratie)",
+                                                "confuzion": "Confuzion (confuzie)",
+                                                "joy": "Joy (bucurie)",
+                                                "other": "Other (altele)"
+                                            },
+                                            "default_value": "smile",
+                                            "return_format": "value",
+                                            "multiple": 0,
+                                            "allow_null": 0,
+                                            "ui": 0,
+                                            "ajax": 0,
+                                            "placeholder": "",
+                                            "create_options": 0,
+                                            "save_options": 0,
+                                            "parent_repeater": "field_68359e8025de5"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "key": "field_68359e8025de8",
+                                    "label": "Functions",
+                                    "name": "content_functions",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "Identify function",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_68359e8025dfc",
+                                                "operator": "=="
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "table",
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add Function",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_68359e8025de9",
+                                            "label": "Function nme",
+                                            "name": "function_nme",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "placeholder": "Function name",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_68359e8025de8"
+                                        },
+                                        {
+                                            "key": "field_68359e8025dea",
+                                            "label": "Correct?",
+                                            "name": "correct",
+                                            "aria-label": "",
+                                            "type": "true_false",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "message": "",
+                                            "default_value": 0,
+                                            "ui_on_text": "",
+                                            "ui_off_text": "",
+                                            "ui": 1,
+                                            "parent_repeater": "field_68359e8025de8"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "key": "field_68359e8025deb",
+                                    "label": "Settings",
+                                    "name": "",
+                                    "aria-label": "",
+                                    "type": "tab",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "placement": "top",
+                                    "endpoint": 0,
+                                    "selected": 0
+                                },
+                                {
+                                    "key": "field_68359e8025dec",
+                                    "label": "Background color (culoare de fundal)",
+                                    "name": "background_color",
+                                    "aria-label": "",
+                                    "type": "color_picker",
+                                    "instructions": "Add background color. Green: #EDF6E9 | #E6F2EA | Orange: #E9DD7F | #FAAF3F",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "#ffffff",
+                                    "enable_opacity": 1,
+                                    "return_format": "string"
+                                },
+                                {
+                                    "key": "field_68359e8025ded",
+                                    "label": "Full with images (imagini intinse)",
+                                    "name": "full_with_images",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Full with images ?",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
+                                    "key": "field_68359e8025dee",
+                                    "label": "Add custom signs",
+                                    "name": "add_custom_signs",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Adauga semne la alegere",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
+                                    "key": "field_68359e8025def",
+                                    "label": "Choose signs",
+                                    "name": "custom_signs",
+                                    "aria-label": "",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_68359e8025dee",
+                                                "operator": "=="
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "checkmark": "(v) Checkmark",
+                                        "plus": "(+) Plus",
+                                        "minus": "(-) Minus",
+                                        "question": "(?) Question",
+                                        "exclamation": "(!) Exclamation"
+                                    },
+                                    "default_value": [
+                                        "checkmark",
+                                        "plus"
+                                    ],
+                                    "return_format": "value",
+                                    "multiple": 1,
+                                    "allow_null": 0,
+                                    "ui": 0,
+                                    "ajax": 0,
+                                    "placeholder": "",
+                                    "create_options": 0,
+                                    "save_options": 0
+                                },
+                                {
+                                    "key": "field_68359e8025df0",
+                                    "label": "Check paragraphs (bifeaza paragrafele)",
+                                    "name": "check_paragraphs",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "Add div before paragraphs",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Check the paragraphs?",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
+                                    "key": "field_68359e8025df1",
+                                    "label": "Words hunt (vanatoarea de cuvinte)",
+                                    "name": "enable_words_hunt",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "Add div before paragraphs",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Enable words hunt ?",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
+                                    "key": "field_68359e8025df2",
+                                    "label": "Add plus (+) before paragraphs (adauga + in fata paragrafelor)",
+                                    "name": "add_plus",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Add (+) before paragraphs ?",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
+                                    "key": "field_68359e8025df3",
+                                    "label": "Split variants A\/B (selecteaza variant A sau B)",
+                                    "name": "split_variants",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "Each variant should follow this format [V1\/V2], example: [variant1\/<strong>variant2<\/strong>]",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Split variants ?",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
+                                    "key": "field_68359e8025df4",
+                                    "label": "Add cards (adauga carduri)",
+                                    "name": "add_cards",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "Add green\/yellow\/red cards before paragraphs",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Add cards ?",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
+                                    "key": "field_68359e8025df5",
+                                    "label": "Add Exclamation (!) - (adauga ! in fata paragrafelor)",
+                                    "name": "add_exclamation",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Add exclamation (!) ?",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
+                                    "key": "field_68359e8025df6",
+                                    "label": "Add (!) (?) signs - (adauga (!) (?) in fata paragrafelor)",
+                                    "name": "add_exclamation_interogation",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Add (!) (?) signs ?",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
+                                    "key": "field_68359e8025df7",
+                                    "label": "Add 4 options before paragraphs (adauga 4 optiuni) [v + - ?]",
+                                    "name": "add_four_options",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Add four options?",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
+                                    "key": "field_68359e8025df8",
+                                    "label": "Click words (click pe cuvinte)",
+                                    "name": "click_words",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Click words to focus?",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
+                                    "key": "field_68359e8025df9",
+                                    "label": "Add dropdown game (adauga dropdown cu cuvinte)",
+                                    "name": "add_dropdown_game",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "Adauga lista derulanta cu variante pentru cuvinte cheie. Marcheaza {cuvantele} cheie.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Adauga dropdwn cu cuivinte",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
+                                    "key": "field_68359e8025dfa",
+                                    "label": "Add table boders (adauga chenar la tabele)",
+                                    "name": "add_table_boders",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Add table boders ?",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
+                                    "key": "field_68359e8025dfb",
+                                    "label": "Add Reactions (Adauga reactii)",
+                                    "name": "add_reactions",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Add reactions? (Adaugi reactii?)",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
+                                    "key": "field_68359e8025dfc",
+                                    "label": "Identify function (identifica functia)",
+                                    "name": "identify_function",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Use Identify function? (Utilizeaza identifica functia)",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
                     },
                     "min": "",
@@ -5658,7 +6320,28 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_683594c35b3ba",
+            "label": "is Evaluation",
+            "name": "is_evaluation",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Aceasta tema este evaluare?",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
         },
         {
             "key": "field_68333a1bfd57b",
@@ -5674,21 +6357,21 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "table",
+            "layout": "block",
             "pagination": 0,
             "min": 0,
             "max": 0,
             "collapsed": "",
-            "button_label": "Add Row",
+            "button_label": "Add New Step",
             "rows_per_page": 20,
             "sub_fields": [
                 {
                     "key": "field_68333a2dfd57c",
-                    "label": "Step number",
+                    "label": "Add step",
                     "name": "step_number",
                     "aria-label": "",
                     "type": "button_group",
-                    "instructions": "",
+                    "instructions": "Add evaluation step",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -5697,12 +6380,200 @@
                         "id": ""
                     },
                     "choices": {
-                        "one": "One"
+                        "one": "Step 1",
+                        "two": "Step 2",
+                        "three": "Step 3",
+                        "four": "Step 4",
+                        "five": "Step 5",
+                        "six": "Step 6"
                     },
-                    "default_value": "",
+                    "default_value": "one",
                     "return_format": "value",
                     "allow_null": 0,
                     "layout": "horizontal",
+                    "parent_repeater": "field_68333a1bfd57b"
+                },
+                {
+                    "key": "field_68359a771d501",
+                    "label": "Step title",
+                    "name": "step_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "Add step title",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_68333a1bfd57b"
+                },
+                {
+                    "key": "field_683593cae35cd",
+                    "label": "Add content",
+                    "name": "evaluation_content",
+                    "aria-label": "",
+                    "type": "flexible_content",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layouts": {
+                        "layout_683593cec6eca": {
+                            "key": "layout_683593cec6eca",
+                            "name": "text_content",
+                            "label": "text content",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_683593e2e35ce",
+                                    "label": "Title",
+                                    "name": "title",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "Add title",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_6835b59da0362",
+                                    "label": "Content",
+                                    "name": "content",
+                                    "aria-label": "",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "allow_in_bindings": 0,
+                                    "tabs": "all",
+                                    "toolbar": "full",
+                                    "media_upload": 1,
+                                    "delay": 1
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        },
+                        "layout_6835b7ed72439": {
+                            "key": "layout_6835b7ed72439",
+                            "name": "text_section_with_background",
+                            "label": "Text section + color backround",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_6835b8317243b",
+                                    "label": "Title",
+                                    "name": "section_title",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "allow_in_bindings": 0,
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_6835b84e7243c",
+                                    "label": "Text content",
+                                    "name": "text_content",
+                                    "aria-label": "",
+                                    "type": "textarea",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "allow_in_bindings": 0,
+                                    "rows": 4,
+                                    "placeholder": "Add text content",
+                                    "new_lines": "br"
+                                },
+                                {
+                                    "key": "field_6835b8b37243d",
+                                    "label": "text_color",
+                                    "name": "text_color",
+                                    "aria-label": "",
+                                    "type": "color_picker",
+                                    "instructions": "Set text color. (Seteaza culoarea textului)",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "#ffffff",
+                                    "enable_opacity": 0,
+                                    "return_format": "string",
+                                    "allow_in_bindings": 0
+                                },
+                                {
+                                    "key": "field_6835b8dd7243e",
+                                    "label": "Background color",
+                                    "name": "background_color",
+                                    "aria-label": "",
+                                    "type": "color_picker",
+                                    "instructions": "Set background color. (Seteaza culoarea de fundal)",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "#F78D1E",
+                                    "enable_opacity": 0,
+                                    "return_format": "string",
+                                    "allow_in_bindings": 1
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        }
+                    },
+                    "min": "",
+                    "max": "",
+                    "button_label": "Add Item",
                     "parent_repeater": "field_68333a1bfd57b"
                 }
             ]
@@ -5726,5 +6597,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1748187723
+    "modified": 1748351479
 }
