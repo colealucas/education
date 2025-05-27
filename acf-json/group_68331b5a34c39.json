@@ -6569,6 +6569,36 @@
                             ],
                             "min": "",
                             "max": ""
+                        },
+                        "layout_6835be1453e96": {
+                            "key": "layout_6835be1453e96",
+                            "name": "test_layout",
+                            "label": "Test layout",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_6835be1a53e98",
+                                    "label": "Test field",
+                                    "name": "test_field",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": ""
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
                     },
                     "min": "",
@@ -6597,5 +6627,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1748351479
+    "modified": 1748352549
 }
