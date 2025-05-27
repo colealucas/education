@@ -22,6 +22,7 @@ if ( ! class_exists( 'acf_options_page' ) ) :
 		 * @param   n/a
 		 * @return  n/a
 		 */
+
 		function __construct() {
 
 			/* do nothing */
@@ -121,6 +122,7 @@ if ( ! class_exists( 'acf_options_page' ) ) :
 		 * @param   $page (array)
 		 * @return  n/a
 		 */
+
 		function add_page( $page ) {
 
 			// validate
@@ -150,6 +152,7 @@ if ( ! class_exists( 'acf_options_page' ) ) :
 		 * @param   $post_id (int)
 		 * @return  $post_id (int)
 		 */
+
 		function add_sub_page( $page ) {
 
 			// validate
@@ -181,6 +184,7 @@ if ( ! class_exists( 'acf_options_page' ) ) :
 		 * @param   $data (array)
 		 * @return  (array)
 		 */
+
 		function update_page( $slug = '', $data = array() ) {
 
 			// vars
@@ -212,6 +216,7 @@ if ( ! class_exists( 'acf_options_page' ) ) :
 		 * @param   $slug (string)
 		 * @return  (mixed)
 		 */
+
 		function get_page( $slug ) {
 
 			return isset( $this->pages[ $slug ] ) ? $this->pages[ $slug ] : null;
@@ -228,6 +233,7 @@ if ( ! class_exists( 'acf_options_page' ) ) :
 		 * @param   $slug (string)
 		 * @return  (mixed)
 		 */
+
 		function get_pages() {
 
 			return $this->pages;
@@ -282,6 +288,7 @@ endif; // class_exists check
 if ( ! function_exists( 'acf_add_options_page' ) ) :
 
 	function acf_add_options_page( $page = '' ) {
+
 		return acf_options_page()->add_page( $page );
 	}
 

@@ -8,37 +8,29 @@ if ( ! class_exists( 'acf_form_front' ) ) :
 	#[AllowDynamicProperties]
 	class acf_form_front {
 
-		/**
-		 * An array of registered form settings.
-		 * @var array
-		 */
+		/** @var array An array of registered form settings */
 		private $forms = array();
 
-		/**
-		 * An array of default fields.
-		 * @var array
-		 */
+		/** @var array An array of default fields */
 		public $fields = array();
 
-		/**
-		 * Constructs the class.
-		 *
-		 * @since 5.0.0
-		 */
-		public function __construct() {
-			add_action( 'acf/validate_save_post', array( $this, 'validate_save_post' ), 1 );
-			add_filter( 'acf/pre_save_post', array( $this, 'pre_save_post' ), 5, 2 );
-		}
 
 		/**
-		 * Returns fields used by frontend forms.
+		 * This function will setup the class functionality
 		 *
-		 * @since 6.4
+		 * @type    function
+		 * @date    5/03/2014
+		 * @since   5.0.0
 		 *
-		 * @return array
+		 * @param   n/a
+		 * @return  n/a
 		 */
-		public function get_default_fields(): array {
+
+		function __construct() {
+
+			// vars
 			$this->fields = array(
+
 				'_post_title'     => array(
 					'prefix'   => 'acf',
 					'name'     => '_post_title',
@@ -65,10 +57,16 @@ if ( ! class_exists( 'acf_form_front' ) ) :
 					'value'   => '',
 					'wrapper' => array( 'style' => 'display:none !important;' ),
 				),
+
 			);
 
-			return $this->fields;
+			// actions
+			add_action( 'acf/validate_save_post', array( $this, 'validate_save_post' ), 1 );
+
+			// filters
+			add_filter( 'acf/pre_save_post', array( $this, 'pre_save_post' ), 5, 2 );
 		}
+
 
 		/**
 		 * description
@@ -80,6 +78,7 @@ if ( ! class_exists( 'acf_form_front' ) ) :
 		 * @param   $post_id (int)
 		 * @return  $post_id (int)
 		 */
+
 		function validate_form( $args ) {
 
 			// defaults
@@ -155,6 +154,7 @@ if ( ! class_exists( 'acf_form_front' ) ) :
 		 * @param   $post_id (int)
 		 * @return  $post_id (int)
 		 */
+
 		function add_form( $args = array() ) {
 
 			// validate
@@ -175,6 +175,7 @@ if ( ! class_exists( 'acf_form_front' ) ) :
 		 * @param   $post_id (int)
 		 * @return  $post_id (int)
 		 */
+
 		function get_form( $id = '' ) {
 
 			// bail early if not set
@@ -186,9 +187,6 @@ if ( ! class_exists( 'acf_form_front' ) ) :
 			return $this->forms[ $id ];
 		}
 
-		function get_forms() {
-			return $this->forms;
-		}
 
 		/**
 		 * This function will validate fields from the above array
@@ -200,10 +198,11 @@ if ( ! class_exists( 'acf_form_front' ) ) :
 		 * @param   $post_id (int)
 		 * @return  $post_id (int)
 		 */
+
 		function validate_save_post() {
 
 			// register field if isset in $_POST
-			foreach ( $this->get_default_fields() as $k => $field ) {
+			foreach ( $this->fields as $k => $field ) {
 
 				// bail early if no in $_POST
 				if ( ! isset( $_POST['acf'][ $k ] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing -- Verified elsewhere.
@@ -232,6 +231,7 @@ if ( ! class_exists( 'acf_form_front' ) ) :
 		 * @param   $post_id (int)
 		 * @return  $post_id (int)
 		 */
+
 		function pre_save_post( $post_id, $form ) {
 
 			// vars
@@ -298,6 +298,7 @@ if ( ! class_exists( 'acf_form_front' ) ) :
 		 * @param   $post_id (int)
 		 * @return  $post_id (int)
 		 */
+
 		function enqueue_form() {
 
 			// check
@@ -318,6 +319,7 @@ if ( ! class_exists( 'acf_form_front' ) ) :
 		 * @param   n/a
 		 * @return  n/a
 		 */
+
 		function check_submit_form() {
 
 			// Verify nonce.
@@ -365,6 +367,7 @@ if ( ! class_exists( 'acf_form_front' ) ) :
 		 * @param   n/a
 		 * @return  n/a
 		 */
+
 		function submit_form( $form ) {
 
 			// filter
@@ -415,6 +418,7 @@ if ( ! class_exists( 'acf_form_front' ) ) :
 		 * @param   $post_id (int)
 		 * @return  $post_id (int)
 		 */
+
 		function render_form( $args = array() ) {
 
 			// Vars.
@@ -447,7 +451,7 @@ if ( ! class_exists( 'acf_form_front' ) ) :
 			acf_update_setting( 'uploader', $args['uploader'] );
 
 			// Register local fields.
-			foreach ( $this->get_default_fields() as $k => $field ) {
+			foreach ( $this->fields as $k => $field ) {
 				acf_add_local_field( $field );
 			}
 
@@ -516,9 +520,9 @@ if ( ! class_exists( 'acf_form_front' ) ) :
 
 			// display form
 			if ( $args['form'] ) : ?>
-				<form <?php echo acf_esc_attrs( $args['form_attributes'] ); ?>>
+		<form <?php echo acf_esc_attrs( $args['form_attributes'] ); ?>>
 				<?php
-			endif;
+		endif;
 
 			// Render hidde form data.
 			acf_form_data(
@@ -536,12 +540,12 @@ if ( ! class_exists( 'acf_form_front' ) ) :
 				<?php echo $args['html_after_fields']; ?><?php //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- designed to contain potentially unsafe HTML, set by developers. ?>
 			</div>
 			<?php if ( $args['form'] ) : ?>
-				<div class="acf-form-submit">
-					<?php printf( $args['html_submit_button'], $args['submit_value'] ); ?><?php //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- designed to contain potentially unsafe HTML, set by developers. ?>
-					<?php echo $args['html_submit_spinner']; ?><?php //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- designed to contain potentially unsafe HTML, set by developers. ?>
-				</div>
-				</form>
-			<?php endif;
+			<div class="acf-form-submit">
+				<?php printf( $args['html_submit_button'], $args['submit_value'] ); ?><?php //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- designed to contain potentially unsafe HTML, set by developers. ?>
+				<?php echo $args['html_submit_spinner']; ?><?php //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- designed to contain potentially unsafe HTML, set by developers. ?>
+			</div>
+		</form>
+		<?php endif;
 		}
 	}
 
@@ -575,10 +579,6 @@ function acf_form( $args = array() ) {
 function acf_get_form( $id = '' ) {
 
 	return acf()->form_front->get_form( $id );
-}
-
-function acf_get_forms() {
-	return acf()->form_front->get_forms();
 }
 
 function acf_register_form( $args ) {

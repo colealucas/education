@@ -19,6 +19,7 @@ if ( ! class_exists( 'acf_validation' ) ) :
 		 * @param   n/a
 		 * @return  n/a
 		 */
+
 		function __construct() {
 
 			// vars
@@ -42,6 +43,7 @@ if ( ! class_exists( 'acf_validation' ) ) :
 		 * @param   $message (string) error message
 		 * @return  $post_id (int)
 		 */
+
 		function add_error( $input, $message ) {
 
 			// add to array
@@ -62,6 +64,7 @@ if ( ! class_exists( 'acf_validation' ) ) :
 		 * @param   $input (string) name attribute of DOM elmenet
 		 * @return  (mixed)
 		 */
+
 		function get_error( $input ) {
 
 			// bail early if no errors
@@ -91,6 +94,7 @@ if ( ! class_exists( 'acf_validation' ) ) :
 		 * @param   n/a
 		 * @return  (array|boolean)
 		 */
+
 		function get_errors() {
 
 			// bail early if no errors
@@ -113,55 +117,47 @@ if ( ! class_exists( 'acf_validation' ) ) :
 		 * @param   n/a
 		 * @return  n/a
 		 */
+
 		function reset_errors() {
 
 			$this->errors = array();
 		}
 
+
 		/**
-		 * Validates $_POST data via AJAX prior to save.
+		 * This function will validate the $_POST data via AJAX
 		 *
+		 * @type    function
+		 * @date    27/10/2014
 		 * @since   5.0.9
 		 *
-		 * @return void
+		 * @param   n/a
+		 * @return  n/a
 		 */
-		public function ajax_validate_save_post() {
-			if ( ! acf_verify_ajax() ) {
-				if ( empty( $_REQUEST['nonce'] ) ) {
-					$nonce_error = __( 'ACF was unable to perform validation because no nonce was received by the server.', 'acf' );
-				} else {
-					$nonce_error = __( 'ACF was unable to perform validation because the provided nonce failed verification.', 'acf' );
-				}
 
-				wp_send_json_success(
-					array(
-						'valid'  => 0,
-						'errors' => array(
-							array(
-								'input'   => false,
-								'message' => $nonce_error,
-								'action'  => array(
-									'label' => __( 'Learn more', 'acf' ),
-									'url'   => acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/validation-nonce-errors/', 'docs', 'validation-nonce' ),
-								),
-							),
-						),
-					)
-				);
+		function ajax_validate_save_post() {
+
+			// validate
+			if ( ! acf_verify_ajax() ) {
+				die();
 			}
 
+			// vars
 			$json = array(
 				'valid'  => 1,
 				'errors' => 0,
 			);
 
+			// success
 			if ( acf_validate_save_post() ) {
 				wp_send_json_success( $json );
 			}
 
+			// update vars
 			$json['valid']  = 0;
 			$json['errors'] = acf_get_validation_errors();
 
+			// return
 			wp_send_json_success( $json );
 		}
 

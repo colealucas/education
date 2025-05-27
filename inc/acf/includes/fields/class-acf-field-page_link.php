@@ -15,6 +15,7 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 		 * @param   n/a
 		 * @return  n/a
 		 */
+
 		function initialize() {
 
 			// vars
@@ -35,53 +36,24 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 			// extra
 			add_action( 'wp_ajax_acf/fields/page_link/query', array( $this, 'ajax_query' ) );
 			add_action( 'wp_ajax_nopriv_acf/fields/page_link/query', array( $this, 'ajax_query' ) );
-			add_filter( 'acf/conditional_logic/choices', array( $this, 'render_field_page_link_conditional_choices' ), 10, 3 );
 		}
 
-		/**
-		 * Filters choices in page link conditions.
-		 *
-		 * @since 6.3
-		 *
-		 * @param array  $choices           The selected choice.
-		 * @param array  $conditional_field The conditional field settings object.
-		 * @param string $rule_value        The rule value.
-		 * @return array
-		 */
-		public function render_field_page_link_conditional_choices( $choices, $conditional_field, $rule_value ) {
-			if ( ! is_array( $conditional_field ) || $conditional_field['type'] !== 'page_link' ) {
-				return $choices;
-			}
-			if ( ! empty( $rule_value ) ) {
-				$post_title = get_the_title( $rule_value );
-				$choices    = array( $rule_value => $post_title );
-			}
-			return $choices;
-		}
 
 		/**
-		 * Returns AJAX results for the Page Link field.
+		 * description
 		 *
-		 * @since 5.0.0
+		 * @type    function
+		 * @date    24/10/13
+		 * @since   5.0.0
 		 *
-		 * @return void
+		 * @param   $post_id (int)
+		 * @return  $post_id (int)
 		 */
-		public function ajax_query() {
-			$nonce             = acf_request_arg( 'nonce', '' );
-			$key               = acf_request_arg( 'field_key', '' );
-			$conditional_logic = (bool) acf_request_arg( 'conditional_logic', false );
 
-			if ( $conditional_logic ) {
-				if ( ! acf_current_user_can_admin() ) {
-					die();
-				}
+		function ajax_query() {
 
-				// Use the standard ACF admin nonce.
-				$nonce = '';
-				$key   = '';
-			}
-
-			if ( ! acf_verify_ajax( $nonce, $key, ! $conditional_logic ) ) {
+			// validate
+			if ( ! acf_verify_ajax() ) {
 				die();
 			}
 
@@ -93,7 +65,6 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 					's'         => '',
 					'field_key' => '',
 					'paged'     => 1,
-					'include'   => '',
 				)
 			);
 
@@ -157,10 +128,6 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 				}
 			}
 
-			if ( ! empty( $options['include'] ) ) {
-				$args['include'] = $options['include'];
-			}
-
 			// filters
 			$args = apply_filters( 'acf/fields/page_link/query', $args, $field, $options['post_id'] );
 			$args = apply_filters( 'acf/fields/page_link/query/name=' . $field['name'], $args, $field, $options['post_id'] );
@@ -197,11 +164,6 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 						'children' => $children,
 					);
 				}
-			}
-
-			// If there is an include set, we will unset search to avoid attempting to further filter by the search term.
-			if ( isset( $args['include'] ) ) {
-				unset( $args['s'] );
 			}
 
 			// get posts grouped by post type
@@ -261,6 +223,7 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 		 * @param   $text (string)
 		 * @return  (array)
 		 */
+
 		function get_post_result( $id, $text ) {
 
 			// vars
@@ -295,6 +258,7 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 		 * @param   $post_id (int) the post_id to which this value is saved to
 		 * @return  (string)
 		 */
+
 		function get_post_title( $post, $field, $post_id = 0, $is_search = 0 ) {
 
 			// get post_id
@@ -325,6 +289,7 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 		 * @param   $value (array)
 		 * @return  $value
 		 */
+
 		function get_posts( $value, $field ) {
 
 			// force value to array
@@ -379,20 +344,22 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 
 
 		/**
-		 * Renders the Page Link field.
+		 * Create the HTML interface for your field
 		 *
-		 * @since 3.6
+		 * @param   $field - an array holding all the field's data
 		 *
-		 * @param array $field The field settings array.
-		 * @return void
+		 * @type    action
+		 * @since   3.6
+		 * @date    23/01/13
 		 */
-		public function render_field( $field ) {
+
+		function render_field( $field ) {
+
 			// Change Field into a select
 			$field['type']    = 'select';
 			$field['ui']      = 1;
 			$field['ajax']    = 1;
 			$field['choices'] = array();
-			$field['nonce']   = wp_create_nonce( 'acf_field_' . $this->name . '_' . $field['key'] );
 
 			// populate choices if value exists
 			if ( ! empty( $field['value'] ) ) {
@@ -538,6 +505,7 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 		 *
 		 * @return  $value (mixed) the modified value
 		 */
+
 		function format_value( $value, $post_id, $field ) {
 
 			// ACF4 null
@@ -591,6 +559,7 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 		 *
 		 * @return  $value - the modified value
 		 */
+
 		function update_value( $value, $post_id, $field ) {
 
 			// Bail early if no value.

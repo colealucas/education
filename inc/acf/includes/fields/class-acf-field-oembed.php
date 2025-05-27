@@ -15,6 +15,7 @@ if ( ! class_exists( 'acf_field_oembed' ) ) :
 		 * @param   n/a
 		 * @return  n/a
 		 */
+
 		function initialize() {
 
 			// vars
@@ -50,6 +51,7 @@ if ( ! class_exists( 'acf_field_oembed' ) ) :
 		 * @param   $field (array)
 		 * @return  (int)
 		 */
+
 		function prepare_field( $field ) {
 
 			// defaults
@@ -96,26 +98,30 @@ if ( ! class_exists( 'acf_field_oembed' ) ) :
 		}
 
 		/**
-		 * Returns AJAX results for the oEmbed field.
+		 * description
 		 *
-		 * @since 5.0.0
+		 * @type    function
+		 * @date    24/10/13
+		 * @since   5.0.0
 		 *
-		 * @return void
+		 * @param   $post_id (int)
+		 * @return  $post_id (int)
 		 */
-		public function ajax_query() {
-			$args = acf_request_args(
-				array(
-					'nonce'     => '',
-					'field_key' => '',
-				)
-			);
 
-			if ( ! acf_verify_ajax( $args['nonce'], $args['field_key'], true ) ) {
+		function ajax_query() {
+
+			// validate
+			if ( ! acf_verify_ajax() ) {
 				die();
 			}
 
-			wp_send_json( $this->get_ajax_query( $_POST ) );
+			// get choices
+			$response = $this->get_ajax_query( $_POST );
+
+			// return
+			wp_send_json( $response );
 		}
+
 
 		/**
 		 * This function will return an array of data formatted for use in a select2 AJAX response
@@ -127,6 +133,7 @@ if ( ! class_exists( 'acf_field_oembed' ) ) :
 		 * @param   $options (array)
 		 * @return  (array)
 		 */
+
 		function get_ajax_query( $args = array() ) {
 
 			// defaults
@@ -159,19 +166,26 @@ if ( ! class_exists( 'acf_field_oembed' ) ) :
 
 
 		/**
-		 * Renders the oEmbed field.
+		 * render_field()
 		 *
-		 * @since 3.6
+		 * Create the HTML interface for your field
 		 *
-		 * @param array $field The field settings array.
-		 * @return void
+		 * @param   $field - an array holding all the field's data
+		 *
+		 * @type    action
+		 * @since   3.6
+		 * @date    23/01/13
 		 */
-		public function render_field( $field ) {
+
+		function render_field( $field ) {
+
+			// atts
 			$atts = array(
-				'class'      => 'acf-oembed',
-				'data-nonce' => wp_create_nonce( 'acf_field_' . $this->name . '_' . $field['key'] ),
+				'class' => 'acf-oembed',
 			);
 
+			// <strong><?php _e("Error.", 'acf'); </strong> _e("No embed found for the given URL.", 'acf');
+			// value
 			if ( $field['value'] ) {
 				$atts['class'] .= ' has-value';
 			}

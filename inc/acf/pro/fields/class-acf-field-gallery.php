@@ -15,6 +15,7 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 		 * @param   n/a
 		 * @return  n/a
 		 */
+
 		function initialize() {
 
 			// vars
@@ -26,7 +27,6 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 			$this->doc_url       = acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/gallery/', 'docs', 'field-type-selection' );
 			$this->tutorial_url  = acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/how-to-use-the-gallery-field/', 'docs', 'field-type-selection' );
 			$this->pro           = true;
-			$this->supports      = array( 'bindings' => false );
 			$this->defaults      = array(
 				'return_format' => 'array',
 				'preview_size'  => 'medium',
@@ -64,6 +64,7 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 		 * @param   $post_id (int)
 		 * @return  $post_id (int)
 		 */
+
 		function input_admin_enqueue_scripts() {
 
 			// localize
@@ -75,27 +76,32 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 			);
 		}
 
+
 		/**
-		 * AJAX handler for retrieving and rendering an attachment.
+		 * description
 		 *
-		 * @since 5.0.0
+		 * @type    function
+		 * @date    13/12/2013
+		 * @since   5.0.0
 		 *
-		 * @return void
+		 * @param   $post_id (int)
+		 * @return  $post_id (int)
 		 */
-		public function ajax_get_attachment() {
+
+		function ajax_get_attachment() {
+
+			// Validate requrest.
+			if ( ! acf_verify_ajax() ) {
+				die();
+			}
+
 			// Get args.
 			$args = acf_request_args(
 				array(
 					'id'        => 0,
 					'field_key' => '',
-					'nonce'     => '',
 				)
 			);
-
-			// Validate request.
-			if ( ! acf_verify_ajax( $args['nonce'], $args['field_key'], true ) ) {
-				die();
-			}
 
 			// Cast args.
 			$args['id'] = (int) $args['id'];
@@ -116,22 +122,26 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 			die;
 		}
 
+
 		/**
-		 * AJAX handler for updating an attachment.
+		 * description
 		 *
+		 * @type    function
+		 * @date    13/12/2013
 		 * @since   5.0.0
 		 *
-		 * @return void
+		 * @param   $post_id (int)
+		 * @return  $post_id (int)
 		 */
-		public function ajax_update_attachment() {
-			$args = acf_request_args(
-				array(
-					'nonce'     => '',
-					'field_key' => '',
-				)
-			);
 
-			if ( ! acf_verify_ajax( $args['nonce'], $args['field_key'], true ) ) {
+		function ajax_update_attachment() {
+
+			if ( ! isset( $_POST['nonce'] ) ) {
+				wp_send_json_error();
+			}
+
+			// validate nonce
+			if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['nonce'] ) ), 'acf_nonce' ) ) {
 				wp_send_json_error();
 			}
 
@@ -190,14 +200,22 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 			wp_send_json_success();
 		}
 
+
 		/**
-		 * AJAX handler for getting the attachment sort order.
+		 * description
 		 *
-		 * @since 5.0.0
+		 * @type    function
+		 * @date    13/12/2013
+		 * @since   5.0.0
 		 *
-		 * @return void
+		 * @param   $post_id (int)
+		 * @return  $post_id (int)
 		 */
-		public function ajax_get_sort_order() {
+
+		function ajax_get_sort_order() {
+
+			// vars
+			$r     = array();
 			$order = 'DESC';
 			$args  = acf_parse_args(
 				$_POST, // phpcs:ignore WordPress.Security.NonceVerification.Missing -- Verified below.
@@ -209,22 +227,23 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 				)
 			);
 
-			if ( ! acf_verify_ajax( $args['nonce'], $args['field_key'], true ) ) {
+			// validate
+			if ( ! wp_verify_nonce( $args['nonce'], 'acf_nonce' ) ) {
 				wp_send_json_error();
 			}
 
-			// Reverse order.
-			if ( $args['sort'] === 'reverse' ) {
+			// reverse
+			if ( $args['sort'] == 'reverse' ) {
 				$ids = array_reverse( $args['ids'] );
+
 				wp_send_json_success( $ids );
 			}
 
-			// Ascending order.
-			if ( $args['sort'] === 'title' ) {
+			if ( $args['sort'] == 'title' ) {
 				$order = 'ASC';
 			}
 
-			// Find attachments (DISTINCT POSTS).
+			// find attachments (DISTINCT POSTS)
 			$ids = get_posts(
 				array(
 					'post_type'   => 'attachment',
@@ -237,10 +256,12 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 				)
 			);
 
+			// success
 			if ( ! empty( $ids ) ) {
 				wp_send_json_success( $ids );
 			}
 
+			// failure
 			wp_send_json_error();
 		}
 
@@ -371,6 +392,7 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 		 * @since   3.6
 		 * @date    23/01/13
 		 */
+
 		function render_field( $field ) {
 
 			// Enqueue uploader assets.
@@ -387,7 +409,6 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 				'data-mime_types'   => $field['mime_types'],
 				'data-insert'       => $field['insert'],
 				'data-columns'      => 4,
-				'data-nonce'        => wp_create_nonce( 'acf_field_' . $this->name . '_' . $field['key'] ),
 			);
 
 			// Set gallery height with deafult of 400px and minimum of 200px.
@@ -501,6 +522,7 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 		 *
 		 * @param   $field  - an array holding all the field's data
 		 */
+
 		function render_field_settings( $field ) {
 			acf_render_field_setting(
 				$field,
@@ -712,6 +734,7 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 		 *
 		 * @return  $value (mixed) the modified value
 		 */
+
 		function format_value( $value, $post_id, $field ) {
 
 			// Bail early if no value.
@@ -777,6 +800,7 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 		 * @param   $post_id (int)
 		 * @return  $post_id (int)
 		 */
+
 		function validate_value( $valid, $value, $field, $input ) {
 
 			if ( empty( $value ) || ! is_array( $value ) ) {
@@ -805,6 +829,7 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 		 *
 		 * @return  $value - the modified value
 		 */
+
 		function update_value( $value, $post_id, $field ) {
 
 			// Bail early if no value.

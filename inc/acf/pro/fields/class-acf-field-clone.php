@@ -15,6 +15,7 @@ if ( ! class_exists( 'acf_field_clone' ) ) :
 		 * @param   n/a
 		 * @return  n/a
 		 */
+
 		function initialize() {
 
 			// vars
@@ -26,7 +27,6 @@ if ( ! class_exists( 'acf_field_clone' ) ) :
 			$this->doc_url       = acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/clone/', 'docs', 'field-type-selection' );
 			$this->tutorial_url  = acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/how-to-use-the-clone-field/', 'docs', 'field-type-selection' );
 			$this->pro           = true;
-			$this->supports      = array( 'bindings' => false );
 			$this->defaults      = array(
 				'clone'        => '',
 				'prefix_label' => 0,
@@ -60,6 +60,7 @@ if ( ! class_exists( 'acf_field_clone' ) ) :
 		 * @param   n/a
 		 * @return  n/a
 		 */
+
 		function is_enabled() {
 
 			return acf_is_filter_enabled( 'clone' );
@@ -77,6 +78,7 @@ if ( ! class_exists( 'acf_field_clone' ) ) :
 		 *
 		 * @return  $field - the field array holding all the field options
 		 */
+
 		function load_field( $field ) {
 
 			// bail early if not enabled
@@ -104,6 +106,7 @@ if ( ! class_exists( 'acf_field_clone' ) ) :
 		 * @param   $parent (array)
 		 * @return  $fields
 		 */
+
 		function acf_get_fields( $fields, $parent ) {
 
 			// bail early if empty
@@ -164,6 +167,7 @@ if ( ! class_exists( 'acf_field_clone' ) ) :
 		 * @param   $parent (array)
 		 * @return  (array)
 		 */
+
 		function get_cloned_fields( $field ) {
 
 			// vars
@@ -239,6 +243,7 @@ if ( ! class_exists( 'acf_field_clone' ) ) :
 		 * @param   $clone_field (array)
 		 * @return  $field
 		 */
+
 		function acf_clone_field( $field, $clone_field ) {
 
 			// bail early if this field is being cloned by some other kind of field (future proof)
@@ -318,6 +323,7 @@ if ( ! class_exists( 'acf_field_clone' ) ) :
 		 * @param   $clone_field (array)
 		 * @return  $field
 		 */
+
 		function acf_clone_clone_field( $field, $clone_field ) {
 
 			// modify the $clone_field name
@@ -357,6 +363,7 @@ if ( ! class_exists( 'acf_field_clone' ) ) :
 		 * @param   $post_id (int)
 		 * @return  $post_id (int)
 		 */
+
 		function prepare_field_for_db( $field ) {
 
 			// bail early if no sub fields
@@ -407,6 +414,7 @@ if ( ! class_exists( 'acf_field_clone' ) ) :
 		 * @param   $field (array) the field array holding all the field options
 		 * @return  $value
 		 */
+
 		function load_value( $value, $post_id, $field ) {
 
 			// bail early if no sub fields
@@ -516,6 +524,7 @@ if ( ! class_exists( 'acf_field_clone' ) ) :
 		 *
 		 * @return  $value - the modified value
 		 */
+
 		function update_value( $value, $post_id, $field ) {
 
 			// bail early if no value
@@ -573,6 +582,7 @@ if ( ! class_exists( 'acf_field_clone' ) ) :
 		 * @since   3.6
 		 * @date    23/01/13
 		 */
+
 		function render_field( $field ) {
 
 			// bail early if no sub fields
@@ -625,6 +635,7 @@ if ( ! class_exists( 'acf_field_clone' ) ) :
 		 * @param   $post_id (int)
 		 * @return  $post_id (int)
 		 */
+
 		function render_field_block( $field ) {
 
 			// vars
@@ -651,6 +662,7 @@ if ( ! class_exists( 'acf_field_clone' ) ) :
 		 * @param   $post_id (int)
 		 * @return  $post_id (int)
 		 */
+
 		function render_field_table( $field ) {
 
 			?>
@@ -712,6 +724,7 @@ if ( ! class_exists( 'acf_field_clone' ) ) :
 		 * @since   3.6
 		 * @date    23/01/13
 		 */
+
 		function render_field_settings( $field ) {
 
 			// temp enable 'local' to allow .json fields to be displayed
@@ -732,7 +745,6 @@ if ( ! class_exists( 'acf_field_clone' ) ) :
 					'ajax'         => 1,
 					'ajax_action'  => 'acf/fields/clone/query',
 					'placeholder'  => '',
-					'nonce'        => wp_create_nonce( 'acf/fields/clone/query' ),
 				)
 			);
 
@@ -813,6 +825,7 @@ if ( ! class_exists( 'acf_field_clone' ) ) :
 		 * @param   $value (mixed)
 		 * @return  (array)
 		 */
+
 		function get_clone_setting_choices( $value ) {
 
 			// vars
@@ -846,6 +859,7 @@ if ( ! class_exists( 'acf_field_clone' ) ) :
 		 * @param   $selector (mixed)
 		 * @return  (string)
 		 */
+
 		function get_clone_setting_choice( $selector = '' ) {
 
 			// bail early no selector
@@ -885,6 +899,7 @@ if ( ! class_exists( 'acf_field_clone' ) ) :
 		 * @param   $field (array)
 		 * @return  (string)
 		 */
+
 		function get_clone_setting_field_choice( $field ) {
 
 			// bail early if no field
@@ -918,6 +933,7 @@ if ( ! class_exists( 'acf_field_clone' ) ) :
 		 * @param   $field_group (array)
 		 * @return  (string)
 		 */
+
 		function get_clone_setting_group_choice( $field_group ) {
 
 			// bail early if no field group
@@ -931,16 +947,20 @@ if ( ! class_exists( 'acf_field_clone' ) ) :
 
 
 		/**
-		 * AJAX handler for getting potential fields to clone.
+		 * description
 		 *
-		 * @since 5.3.8
+		 * @type    function
+		 * @date    17/06/2016
+		 * @since   5.3.8
 		 *
-		 * @return void
+		 * @param   $post_id (int)
+		 * @return  $post_id (int)
 		 */
-		public function ajax_query() {
-			$nonce = acf_request_arg( 'nonce', '' );
 
-			if ( ! acf_verify_ajax( $nonce, 'acf/fields/clone/query' ) ) {
+		function ajax_query() {
+
+			// validate
+			if ( ! acf_verify_ajax() ) {
 				die();
 			}
 
@@ -1124,6 +1144,7 @@ if ( ! class_exists( 'acf_field_clone' ) ) :
 		 * @param   $field (array)
 		 * @return  $field
 		 */
+
 		function acf_prepare_field( $field ) {
 
 			// bail early if not cloned
@@ -1151,6 +1172,7 @@ if ( ! class_exists( 'acf_field_clone' ) ) :
 		 * @param   $post_id (int)
 		 * @return  $post_id (int)
 		 */
+
 		function validate_value( $valid, $value, $field, $input ) {
 
 			// bail early if no $value

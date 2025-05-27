@@ -111,36 +111,6 @@ if ( ! class_exists( 'acf_admin_field_group' ) ) :
 					'Value is less than'                => esc_html__( 'Value is less than', 'acf' ),
 					'Selection is greater than'         => esc_html__( 'Selection is greater than', 'acf' ),
 					'Selection is less than'            => esc_html__( 'Selection is less than', 'acf' ),
-					'Relationship is equal to'          => esc_html__( 'Relationship is equal to', 'acf' ),
-					'Relationship is not equal to'      => esc_html__( 'Relationship is not equal to', 'acf' ),
-					'Relationships contain'             => esc_html__( 'Relationships contain', 'acf' ),
-					'Relationships do not contain'      => esc_html__( 'Relationships do not contain', 'acf' ),
-					'Post is equal to'                  => esc_html__( 'Post is equal to', 'acf' ),
-					'Post is not equal to'              => esc_html__( 'Post is not equal to', 'acf' ),
-					'Posts contain'                     => esc_html__( 'Posts contain', 'acf' ),
-					'Posts do not contain'              => esc_html__( 'Posts do not contain', 'acf' ),
-					'Has any post selected'             => esc_html__( 'Has any post selected', 'acf' ),
-					'Has no post selected'              => esc_html__( 'Has no post selected', 'acf' ),
-					'Has any relationship selected'     => esc_html__( 'Has any relationship selected', 'acf' ),
-					'Has no relationship selected'      => esc_html__( 'Has no relationship selected', 'acf' ),
-					'Page is equal to'                  => esc_html__( 'Page is equal to', 'acf' ),
-					'Page is not equal to'              => esc_html__( 'Page is not equal to', 'acf' ),
-					'Pages contain'                     => esc_html__( 'Pages contain', 'acf' ),
-					'Pages do not contain'              => esc_html__( 'Pages do not contain', 'acf' ),
-					'Has any page selected'             => esc_html__( 'Has any page selected', 'acf' ),
-					'Has no page selected'              => esc_html__( 'Has no page selected', 'acf' ),
-					'User is equal to'                  => esc_html__( 'User is equal to', 'acf' ),
-					'User is not equal to'              => esc_html__( 'User is not equal to', 'acf' ),
-					'Users contain'                     => esc_html__( 'Users contain', 'acf' ),
-					'Users do not contain'              => esc_html__( 'Users do not contain', 'acf' ),
-					'Has any user selected'             => esc_html__( 'Has any user selected', 'acf' ),
-					'Has no user selected'              => esc_html__( 'Has no user selected', 'acf' ),
-					'Term is equal to'                  => esc_html__( 'Term is equal to', 'acf' ),
-					'Term is not equal to'              => esc_html__( 'Term is not equal to', 'acf' ),
-					'Terms contain'                     => esc_html__( 'Terms contain', 'acf' ),
-					'Terms do not contain'              => esc_html__( 'Terms do not contain', 'acf' ),
-					'Has any term selected'             => esc_html__( 'Has any term selected', 'acf' ),
-					'Has no term selected'              => esc_html__( 'Has no term selected', 'acf' ),
 
 					// Custom Select2 templates.
 					'Type to search...'                 => esc_html__( 'Type to search...', 'acf' ),
@@ -383,12 +353,11 @@ if ( ! class_exists( 'acf_admin_field_group' ) ) :
 			}
 
 			$_POST['acf_field_group']['ID'] = $post_id;
-			// phpcs:disable WordPress.Security.ValidatedSanitizedInput
-			$_POST['acf_field_group']['title'] = isset( $_POST['post_title'] ) ? $_POST['post_title'] : ''; // Post title is stored unsafe like WordPress, escaped on output.
+			// phpcs:disable WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Sanitized when saved.
+			$_POST['acf_field_group']['title'] = acf_maybe_get_POST( 'post_title', '' );
 
 			// save field group.
-			acf_update_field_group( $_POST['acf_field_group'] );
-			// phpcs:enable WordPress.Security.ValidatedSanitizedInput
+			acf_update_field_group( $_POST['acf_field_group'] ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput
 			// phpcs:enable WordPress.Security.NonceVerification.Missing
 
 			return $post_id;
@@ -509,14 +478,12 @@ if ( ! class_exists( 'acf_admin_field_group' ) ) :
 		}
 
 		/**
-		 * Moves fields between field groups via AJAX.
+		 * Move field AJAX function
 		 *
 		 * @since 5.0.0
-		 *
-		 * @return void
 		 */
 		public function ajax_move_field() {
-			// Disable filters to ensure ACF loads raw data from DB.
+			// disable filters to ensure ACF loads raw data from DB.
 			acf_disable_filters();
 
 			// phpcs:disable WordPress.Security.NonceVerification.Missing
@@ -531,35 +498,34 @@ if ( ! class_exists( 'acf_admin_field_group' ) ) :
 			);
 			// phpcs:enable WordPress.Security.NonceVerification.Missing
 
-			// Verify nonce.
+			// verify nonce.
 			if ( ! wp_verify_nonce( $args['nonce'], 'acf_nonce' ) ) {
 				die();
 			}
 
-			// Verify user capability.
+			// verify user capability.
 			if ( ! acf_current_user_can_admin() ) {
 				die();
 			}
 
-			// Move the field if the user has confirmed.
+			// confirm?
 			if ( $args['field_id'] && $args['field_group_id'] ) {
-				$field           = acf_get_field( $args['field_id'] );
-				$old_field_group = acf_get_field_group( $args['post_id'] );
-				$new_field_group = acf_get_field_group( $args['field_group_id'] );
 
-				// Update the field parent and remove conditional logic.
-				$field['parent']            = $new_field_group['ID'];
+				// vars.
+				$field       = acf_get_field( $args['field_id'] );
+				$field_group = acf_get_field_group( $args['field_group_id'] );
+
+				// update parent.
+				$field['parent'] = $field_group['ID'];
+
+				// remove conditional logic.
 				$field['conditional_logic'] = 0;
 
-				// Update the field in the database.
+				// update field.
 				acf_update_field( $field );
 
-				// Fire `acf/update_field_group` action hook so JSON can sync if necessary.
-				do_action( 'acf/update_field_group', $old_field_group );
-				do_action( 'acf/update_field_group', $new_field_group );
-
 				// Output HTML.
-				$link = '<a href="' . admin_url( 'post.php?post=' . $new_field_group['ID'] . '&action=edit' ) . '" target="_blank">' . esc_html( $new_field_group['title'] ) . '</a>';
+				$link = '<a href="' . admin_url( 'post.php?post=' . $field_group['ID'] . '&action=edit' ) . '" target="_blank">' . esc_html( $field_group['title'] ) . '</a>';
 
 				echo '' .
 					'<p><strong>' . esc_html__( 'Move Complete.', 'acf' ) . '</strong></p>' .
@@ -573,18 +539,22 @@ if ( ! class_exists( 'acf_admin_field_group' ) ) :
 				die();
 			}
 
-			// Get all field groups.
+			// get all field groups.
 			$field_groups = acf_get_field_groups();
 			$choices      = array();
 
+			// check.
 			if ( ! empty( $field_groups ) ) {
+
+				// loop.
 				foreach ( $field_groups as $field_group ) {
-					// Bail early if no ID.
+
+					// bail early if no ID.
 					if ( ! $field_group['ID'] ) {
 						continue;
 					}
 
-					// Bail early if is current.
+					// bail early if is current.
 					if ( $field_group['ID'] == $args['post_id'] ) {
 						continue;
 					}
@@ -593,7 +563,7 @@ if ( ! class_exists( 'acf_admin_field_group' ) ) :
 				}
 			}
 
-			// Render options.
+			// render options.
 			$field = acf_get_valid_field(
 				array(
 					'type'       => 'select',
@@ -604,9 +574,14 @@ if ( ! class_exists( 'acf_admin_field_group' ) ) :
 			);
 
 			echo '<p>' . esc_html__( 'Please select the destination for this field', 'acf' ) . '</p>';
+
 			echo '<form id="acf-move-field-form">';
+
+				// render.
 				acf_render_field_wrap( $field );
+
 				echo '<button type="submit" class="acf-btn">' . esc_html__( 'Move Field', 'acf' ) . '</button>';
+
 			echo '</form>';
 
 			die();
