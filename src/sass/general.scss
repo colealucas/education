@@ -1230,11 +1230,11 @@ ol.found-words-list {
 		gap: 12px;
 
 		&.left {
-			width: 26%;
+			width: 22%;
 		}
 
 		&.right {
-			width: 50%;
+			width: 61%;
 		}
 	}
 	
@@ -1242,8 +1242,8 @@ ol.found-words-list {
 		padding: 16px 20px;
 		background-color: $light-gray-color;
 		cursor: pointer;
-		font-size: 15px;
-		font-weight: 600;
+		font-size: 13px;
+		font-weight: 500;
 		border-radius: 8px;
 		user-select: none;
 
