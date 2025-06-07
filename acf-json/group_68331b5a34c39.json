@@ -4533,7 +4533,7 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "",
+                                        "width": "50",
                                         "class": "",
                                         "id": ""
                                     },
@@ -4542,6 +4542,28 @@
                                     "ui_on_text": "",
                                     "ui_off_text": "",
                                     "ui": 1
+                                },
+                                {
+                                    "key": "field_68444b4549e8f",
+                                    "label": "Rows height (Inaltime)",
+                                    "name": "rows",
+                                    "aria-label": "",
+                                    "type": "number",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": 6,
+                                    "min": 1,
+                                    "max": 50,
+                                    "placeholder": 6,
+                                    "step": 1,
+                                    "prepend": "",
+                                    "append": ""
                                 },
                                 {
                                     "key": "field_673a02e37821d",
@@ -6487,5 +6509,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1749304694
+    "modified": 1749306327
 }
