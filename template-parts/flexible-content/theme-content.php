@@ -1815,7 +1815,7 @@ $display_feedback = get_sub_field('');
 
 <?php elseif( get_row_layout() == 'boxes_with_text_game' ) : 
     $cols = get_sub_field('columns');
-    $textarea_rows = (get_sub_field('textarea_rows') ? get_sub_field('textarea_rows') : 6);
+    $textarea_rows = (get_sub_field('rows') ? get_sub_field('rows') : 6);
     $columns_per_row = (get_sub_field('cols') ? get_sub_field('cols') : 'auto');
     $cols_layout = $columns_per_row;
     $placeholder_text = get_sub_field('placeholder_text');
