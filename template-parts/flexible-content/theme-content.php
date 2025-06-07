@@ -2215,12 +2215,26 @@ $display_feedback = get_sub_field('');
 
 
 <?php elseif( get_row_layout() == 'dialog' ) : // dialog
+    $print = get_sub_field('print');
     $textarea_height = (get_sub_field('textarea_height') ? get_sub_field('textarea_height') : '150');
     $placeholder = get_sub_field('placeholder');
 ?>
 
     <div class="flexible-content-section dialog my-20px">
-        <div class="dialog-wrap my-20px">
+        <div class="dialog-wrap my-20px print-div">
+            <?php if ($print) : ?>
+                <div class="print-trigger-wrap flex justify-end mb-8px">
+                    <a href="#" class="inline-flex leading-1 bg-light-gray py-4px px-20px rounded-8px text-15px font-600 items-center gap-4px print-trigger" data-print-trigger>
+                        <span>
+                            <svg fill="#000000" width="30px" height="30px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.656 6.938l-0.344 2.688h11.781l-0.344-2.688c0-0.813-0.656-1.438-1.469-1.438h-8.188c-0.813 0-1.438 0.625-1.438 1.438zM1.438 11.094h19.531c0.813 0 1.438 0.625 1.438 1.438v8.563c0 0.813-0.625 1.438-1.438 1.438h-2.656v3.969h-14.219v-3.969h-2.656c-0.813 0-1.438-0.625-1.438-1.438v-8.563c0-0.813 0.625-1.438 1.438-1.438zM16.875 25.063v-9.281h-11.344v9.281h11.344zM15.188 18.469h-8.125c-0.188 0-0.344-0.188-0.344-0.375v-0.438c0-0.188 0.156-0.344 0.344-0.344h8.125c0.188 0 0.375 0.156 0.375 0.344v0.438c0 0.188-0.188 0.375-0.375 0.375zM15.188 21.063h-8.125c-0.188 0-0.344-0.188-0.344-0.375v-0.438c0-0.188 0.156-0.344 0.344-0.344h8.125c0.188 0 0.375 0.156 0.375 0.344v0.438c0 0.188-0.188 0.375-0.375 0.375zM15.188 23.656h-8.125c-0.188 0-0.344-0.188-0.344-0.375v-0.438c0-0.188 0.156-0.344 0.344-0.344h8.125c0.188 0 0.375 0.156 0.375 0.344v0.438c0 0.188-0.188 0.375-0.375 0.375z"></path>
+                            </svg>
+                        </span>
+                        <?php echo $get_static_text[get_lang()]['print']; ?>
+                    </a>
+                </div>
+            <?php endif; ?>
+
             <?php if ( have_rows('items') ) : $item_count = 0; ?>
                 <div class="dialog-wrap-inner flex flex-col gap-20px">
                     <?php while ( have_rows('items') ) : the_row(); 

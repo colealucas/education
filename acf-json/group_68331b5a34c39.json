@@ -5296,6 +5296,26 @@
                             "display": "block",
                             "sub_fields": [
                                 {
+                                    "key": "field_684444cdcc5b5",
+                                    "label": "Print (Printeaza)",
+                                    "name": "print",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Adauga Printare",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
+                                },
+                                {
                                     "key": "field_68289e6804f67",
                                     "label": "Textarea height (pixels)",
                                     "name": "textarea_height",
@@ -6467,5 +6487,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1748358370
+    "modified": 1749304694
 }
