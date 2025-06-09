@@ -1733,6 +1733,10 @@ table {
 .curiosity-content {
 	position: relative;
 
+	img {
+		border-radius: 8px;
+	}
+
 	&:before {
 		display: none;
 		position: absolute;
