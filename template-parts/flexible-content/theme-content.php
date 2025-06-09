@@ -1361,7 +1361,7 @@ $placeholder_text = get_sub_field('placeholder_text');
 <div class="flexible-content-section acrostih-game my-20px">
     <div class="relative">
         <?php if ($key_word) : 
-            $letters = str_split($key_word);
+            $letters = mb_str_split($key_word, 1, 'UTF-8');
         ?>
 
         <?php if (count($letters) ) : ?>
