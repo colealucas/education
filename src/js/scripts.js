@@ -639,6 +639,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                             if (contentFunction.getAttribute('data-correct') === 'true') {
                                 correctAnswers++;
+                                contentFunction.classList.add('no-click');
 
                                 if (correctAnswers >= totalCorrectItems.length) {
                                     showSuccessPopup( getText('bravo') );
@@ -646,6 +647,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             } else {
                                 setTimeout(() => {
                                     contentFunction.classList.remove('active');
+                                    contentFunction.classList.remove('no-click');
                                 }, 500);
                             }
                         });
