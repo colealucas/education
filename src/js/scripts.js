@@ -2025,29 +2025,53 @@ document.addEventListener("DOMContentLoaded", function() {
     handleVoteGame();
 
     function handleTrueFalseGame() {
-        const items = document.querySelectorAll('.tf-inline-btn');
+        const wrappers = document.querySelectorAll('.tf-game');
 
-        if (items) {
-            items.forEach(function(item) {
-                item.addEventListener('click', function() {
-                    if (item.hasAttribute('data-correct')) {
-                        item.classList.remove('wrong');
-                        item.classList.add('correct');
+        if (wrappers.length) {
+            wrappers.forEach(function(wrapper) {
+                const items = wrapper.querySelectorAll('.tf-inline-btn');
 
-                        item.closest('td').classList.remove('wrong');
-                        item.closest('td').classList.add('success');
-                    } else {
-                        item.classList.remove('correct');
-                        item.classList.add('wrong');
+                if (items.length) {
+                    const totalCorrectItems = wrapper.querySelectorAll('.tf-inline-btn[data-correct]');
+                    let correctAnswers = 0;
 
-                        item.closest('td').classList.remove('success');
-                        item.closest('td').classList.add('wrong');
+                    items.forEach(function(item) {
+                        item.addEventListener('click', function() {
+                            if (item.hasAttribute('data-correct')) {
+                                // Only increment if this item wasn't already correct
+                                if (!item.classList.contains('correct')) {
+                                    correctAnswers++;
+                                }
 
-                        setTimeout(function() {
-                            item.closest('td').classList.remove('wrong');
-                        }, 400);
-                    }
-                });
+                                item.classList.remove('wrong');
+                                item.classList.add('correct');
+
+                                item.closest('td').classList.remove('wrong');
+                                item.closest('td').classList.add('success');
+
+                                // Check if all questions are answered correctly
+                                if (correctAnswers >= totalCorrectItems.length) {
+                                    showSuccessPopup( getText('bravo') );
+                                }
+                            } else {
+                                // If this item was previously correct, decrement the counter
+                                if (item.classList.contains('correct')) {
+                                    correctAnswers--;
+                                }
+
+                                item.classList.remove('correct');
+                                item.classList.add('wrong');
+
+                                item.closest('td').classList.remove('success');
+                                item.closest('td').classList.add('wrong');
+
+                                setTimeout(function() {
+                                    item.closest('td').classList.remove('wrong');
+                                }, 400);
+                            }
+                        });
+                    });
+                }
             });
         }
     }
