@@ -1373,7 +1373,7 @@ $placeholder_text = get_sub_field('placeholder_text');
                             <?php echo $letter; ?>
                         </div>
                         <div class="w-[calc(100%-36px)]">
-                            <input type="text" class="h-30px px-8px font-700 text-15px border-2px w-full border-solid border-light-gray focus:outline-none focus:border-orange" type="text" name="letter[]" placeholder="<?php echo $placeholder_text; ?>" />
+                            <input type="text" class="h-30px px-8px text-15px border-2px w-full border-solid border-light-gray focus:outline-none focus:border-orange" type="text" name="letter[]" placeholder="<?php echo $placeholder_text; ?>" />
                         </div>
                     </div>
                     
