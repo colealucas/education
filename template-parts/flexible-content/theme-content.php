@@ -187,7 +187,7 @@
                             $correct = $function['correct'];
 
                             if ($function_name) : ?>
-                                <div class="content-function flex-1 text-center py-10px px-12px font-500 leading-130 rounded-20px bg-light-gray text-15px cursor-pointer border-2px border-solid border-medium-gray" data-correct="<?php echo ($correct ? 'true' : 'false'); ?>">
+                                <div class="content-function min-w-[300px] text-center py-10px px-12px font-500 leading-130 rounded-20px bg-light-gray text-15px cursor-pointer border-2px border-solid border-medium-gray" data-correct="<?php echo ($correct ? 'true' : 'false'); ?>">
                                     <?php echo esc_html($function_name); ?>
                                 </div>
                             <?php endif;
