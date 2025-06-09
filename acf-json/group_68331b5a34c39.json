@@ -3708,7 +3708,7 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "",
+                                        "width": "50",
                                         "class": "",
                                         "id": ""
                                     },
@@ -3717,6 +3717,26 @@
                                     "placeholder": "Placeholder text",
                                     "prepend": "",
                                     "append": ""
+                                },
+                                {
+                                    "key": "field_6846adb39b008",
+                                    "label": "Print (Printeaza)",
+                                    "name": "print",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Print this game?",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
                                 }
                             ],
                             "min": "",
@@ -6509,5 +6529,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1749306327
+    "modified": 1749462673
 }
