@@ -2047,7 +2047,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 item.classList.add('correct');
 
                                 item.closest('td').classList.remove('wrong');
-                                item.closest('td').classList.add('success');
+                                item.closest('td').classList.add('success', 'no-click');
 
                                 // Check if all questions are answered correctly
                                 if (correctAnswers >= totalCorrectItems.length) {
@@ -2062,8 +2062,8 @@ document.addEventListener("DOMContentLoaded", function() {
                                 item.classList.remove('correct');
                                 item.classList.add('wrong');
 
-                                item.closest('td').classList.remove('success');
-                                item.closest('td').classList.add('wrong');
+                                item.closest('td').classList.remove('success', 'no-click');
+                                item.closest('td').classList.add('wrong', 'no-click');
 
                                 setTimeout(function() {
                                     item.closest('td').classList.remove('wrong');
