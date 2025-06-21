@@ -63,7 +63,7 @@
     </div>
 </div>
 
-<div id="partners" class="section pb-40px md:pb-72px bg-white">
+<div id="partners" class="section pb-40px md:pb-72px bg-white mt-40px">
     <div class="container">
         <div class="mb-32px text-center">
             <h2 class="text-32px md:text-52px font-700"><?php echo $get_static_text[get_lang()]['partners_title']; ?></h2>
