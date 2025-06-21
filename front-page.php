@@ -86,10 +86,10 @@ abilitarea tinerilor din Moldova de a naviga în siguranță în mediul complex 
                         $link = get_sub_field('link');
                     ?>
                         <?php if ($logo) : ?>
-                            <div class="partner-logo-item flex items-center justify-center border-light-gray rounded-16px p-16px border-1px border-solid h-[100px]">
+                            <div class="partner-logo-item flex items-center justify-center border-light-gray rounded-16px p-16px border-1px border-solid h-[80px]">
                                 <?php if ($link) : ?>
                                     <a href="<?php echo esc_url($link); ?>" target="_blank" rel="noopener noreferrer" class="block">
-                                        <img src="<?php echo esc_url($logo); ?>" alt="Partner Logo" class="h-auto w-auto max-h-[60px]">
+                                        <img src="<?php echo esc_url($logo); ?>" alt="Partner Logo" class="h-auto w-auto max-h-[50px]">
                                     </a>
                                 <?php else : ?>
                                     <img src="<?php echo esc_url($logo); ?>" alt="Partner Logo" class="h-auto w-auto">
