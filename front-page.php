@@ -8,9 +8,18 @@
  $get_static_text = [
     'ro' => [
         'partners_title' => 'Partenerii Noștri',
+        'disclaimer' => 'Această platformă digitală este parte a proiectului „Avansarea educației mediatice și sprijinirea
+mass-media din Republica Moldova”, susținut de Suedia și implementat de Internews. Programul își
+propune să contribuie la creșterea unui sector media divers, independent și viabil financiar, și la
+abilitarea tinerilor din Moldova de a naviga în siguranță în mediul complex de informare.',
     ],
     'ru' => [
         'partners_title' => 'Наши Партнеры',
+        'disclaimer' => 'Платформа реализованна в рамках проекта “Развитие медиаобразования и поддержка СМИ в
+Республике Молдова” реализуемого Интерньюс при финансовой поддержке Швеции. Проект
+направлен на содействие развитию разнообразного, независимого и финансово устойчивого
+медийного сектора, а также на предоставление молодым гражданам Молдовы возможности
+безопасно ориентироваться в сложной информационной среде.'
     ]
 ];
 ?>
@@ -90,6 +99,12 @@
                     <?php endwhile; ?>
                 </div>
             <?php endif; ?>
+        </div>
+
+        <div class="max-w-[1000px] mx-auto mt-60px">
+            <div class="text-12px text-gray">
+                <?php echo $get_static_text[get_lang()]['disclaimer']; ?>
+            </div>
         </div>
     </div>
 </div>
