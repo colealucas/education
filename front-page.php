@@ -69,15 +69,15 @@
             <h2 class="text-32px md:text-52px font-700"><?php echo $get_static_text[get_lang()]['partners_title']; ?></h2>
         </div>
 
-        <div class="text-center">
+        <div class="text-center max-w-[1000px] mx-auto">
             <?php if (have_rows('partner_logos')) : ?>
-                <div class="flex flex-wrap items-center justify-center gap-24px md:gap-40px">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-24px md:gap-32px items-center justify-items-center">
                     <?php while (have_rows('partner_logos')) : the_row(); 
                         $logo = get_sub_field('logo');
                         $link = get_sub_field('link');
                     ?>
                         <?php if ($logo) : ?>
-                            <div class="partner-logo-item">
+                            <div class="partner-logo-item flex items-center justify-center">
                                 <?php if ($link) : ?>
                                     <a href="<?php echo esc_url($link); ?>" target="_blank" rel="noopener noreferrer" class="block">
                                         <img src="<?php echo esc_url($logo); ?>" alt="Partner Logo" class="max-h-[80px] md:max-h-[100px] w-auto opacity-60 hover:opacity-100 transition-opacity duration-300">
