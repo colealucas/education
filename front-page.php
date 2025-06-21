@@ -4,6 +4,15 @@
  */
 
  get_header();
+
+ $get_static_text = [
+    'ro' => [
+        'partners_title' => 'Partenerii Noștri',
+    ],
+    'ru' => [
+        'partners_title' => 'Наши Партнеры',
+    ]
+];
 ?>
 
 <div class="section py-64px pb-35px">
@@ -51,6 +60,22 @@
 
         <?php wp_reset_postdata(); ?>
         <?php endif; ?>
+    </div>
+</div>
+
+<div id="partners" class="section pb-40px md:pb-72px bg-white">
+    <div class="container">
+        <div class="mb-32px text-center">
+            <h2 class="text-32px md:text-52px font-700"><?php echo $get_static_text[get_lang()]['partners_title']; ?></h2>
+        </div>
+
+        <div class="text-center hidden md:block">
+            <img class="inline-block" src="<?php echo get_template_directory_uri() . '/assets/images/logos.svg'; ?>" alt="">
+        </div>
+
+        <div class="logo-container block md:hidden">
+            <div class="logo-strip"></div>
+        </div>
     </div>
 </div>
 
