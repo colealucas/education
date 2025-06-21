@@ -80,10 +80,10 @@
                             <div class="partner-logo-item flex items-center justify-center">
                                 <?php if ($link) : ?>
                                     <a href="<?php echo esc_url($link); ?>" target="_blank" rel="noopener noreferrer" class="block">
-                                        <img src="<?php echo esc_url($logo); ?>" alt="Partner Logo" class="max-h-[80px] md:max-h-[100px] w-auto opacity-60 hover:opacity-100 transition-opacity duration-300">
+                                        <img src="<?php echo esc_url($logo); ?>" alt="Partner Logo" class="max-h-[80px] md:max-h-[100px] w-auto">
                                     </a>
                                 <?php else : ?>
-                                    <img src="<?php echo esc_url($logo); ?>" alt="Partner Logo" class="max-h-[80px] md:max-h-[100px] w-auto opacity-60">
+                                    <img src="<?php echo esc_url($logo); ?>" alt="Partner Logo" class="max-h-[80px] md:max-h-[100px] w-auto">
                                 <?php endif; ?>
                             </div>
                         <?php endif; ?>
