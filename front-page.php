@@ -69,12 +69,27 @@
             <h2 class="text-32px md:text-52px font-700"><?php echo $get_static_text[get_lang()]['partners_title']; ?></h2>
         </div>
 
-        <div class="text-center hidden md:block">
-            <img class="inline-block" src="<?php echo get_template_directory_uri() . '/assets/images/logos.svg'; ?>" alt="">
-        </div>
-
-        <div class="logo-container block md:hidden">
-            <div class="logo-strip"></div>
+        <div class="text-center">
+            <?php if (have_rows('partner_logos')) : ?>
+                <div class="flex flex-wrap items-center justify-center gap-24px md:gap-40px">
+                    <?php while (have_rows('partner_logos')) : the_row(); 
+                        $logo = get_sub_field('logo');
+                        $link = get_sub_field('link');
+                    ?>
+                        <?php if ($logo) : ?>
+                            <div class="partner-logo-item">
+                                <?php if ($link) : ?>
+                                    <a href="<?php echo esc_url($link); ?>" target="_blank" rel="noopener noreferrer" class="block">
+                                        <img src="<?php echo esc_url($logo); ?>" alt="Partner Logo" class="max-h-[80px] md:max-h-[100px] w-auto opacity-60 hover:opacity-100 transition-opacity duration-300">
+                                    </a>
+                                <?php else : ?>
+                                    <img src="<?php echo esc_url($logo); ?>" alt="Partner Logo" class="max-h-[80px] md:max-h-[100px] w-auto opacity-60">
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
+                    <?php endwhile; ?>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 </div>
