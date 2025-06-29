@@ -14,7 +14,7 @@
             <div class="col-md-6">
                 <h1 class="text-36px md:text-50px lg:text-64px xl:text-[80px] font-700 leading-110 text-primary"><?php echo get_field('page_title'); ?></h1>
 
-                <div class="text-16px mt-16px mb-30px">
+                <div class="text-16px mt-16px mb-30px text-content-spacing">
                     <?php echo get_field('page_description'); ?>
                 </div>
             </div>
