@@ -8,7 +8,7 @@
 
 <div class="section py-64px pb-35px">
     <div class="container">
-        <div class="text-center mx-auto max-w-[870px]">
+        <div class="text-center mx-auto max-w-[952px]">
             <h1 class="text-28px md:text-48px font-900 uppercase">
                 <?php _e('Bun venit la Centrul de Educație pentru Media', 'education'); ?>
             </h1>
