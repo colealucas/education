@@ -101,7 +101,7 @@ abilitarea tinerilor din Moldova de a naviga în siguranță în mediul complex 
             <?php endif; ?>
         </div>
 
-        <div class="max-w-[1000px] mx-auto mt-60px">
+        <div class="max-w-[1000px] mx-auto mt-40px">
             <div class="text-12px text-gray">
                 <?php echo $get_static_text[get_lang()]['disclaimer']; ?>
             </div>
