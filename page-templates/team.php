@@ -53,7 +53,7 @@
             <?php endwhile; ?>
         <?php endif; ?>
 
-        <div class="page-content text-content-spacing">
+        <div class="page-content entry-content text-content-spacing">
             <?php the_content(); ?>
         </div>
         
