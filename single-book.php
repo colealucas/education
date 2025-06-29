@@ -13,7 +13,7 @@ $get_static_text = [
     ],
     'ru' => [
         'modules' => 'Модули',
-        'explore_modules' => 'Исследуйте Модули',
+        'explore_modules' => 'Перейти к модулям',
         'partners_title' => 'Наши Партнеры',
     ]
 ];
