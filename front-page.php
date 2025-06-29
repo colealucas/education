@@ -80,7 +80,7 @@ abilitarea tinerilor din Moldova de a naviga în siguranță în mediul complex 
 
         <div class="text-center max-w-[1000px] mx-auto">
             <?php if (have_rows('partner_logos')) : ?>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-20px md:gap-24px items-center justify-center">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-20px md:gap-24px items-center justify-center">
                     <?php while (have_rows('partner_logos')) : the_row(); 
                         $logo = get_sub_field('logo');
                         $link = get_sub_field('link');
