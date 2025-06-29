@@ -46,7 +46,7 @@ abilitarea tinerilor din Moldova de a naviga în siguranță în mediul complex 
 
                         <div class="col-md-6 col-lg-4">
                             <div class="book-wrap rounded-56px p-36px pb-0 bg-light-gray mx-auto mb-36px lg:mb-0 max-w-[415px] md:max-w-auto overflow-hidden">
-                                <h2 class="text-28px md:text-36px font-600 min-h-[110px]">
+                                <h2 class="text-28px md:text-30px font-600 min-h-[78px]">
                                     <a href="<?php the_permalink(); ?>" class="text-inherit hover:text-primary block"><?php the_title(); ?></a>
                                 </h2>
 
