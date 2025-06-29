@@ -7,14 +7,14 @@
 
  $get_static_text = [
     'ro' => [
-        'partners_title' => 'Partenerii Noștri',
+        'partners_title' => 'Partenerii noștri',
         'disclaimer' => 'Această platformă digitală este parte a proiectului „Avansarea educației mediatice și sprijinirea
 mass-media din Republica Moldova”, susținut de Suedia și implementat de Internews. Programul își
 propune să contribuie la creșterea unui sector media divers, independent și viabil financiar, și la
 abilitarea tinerilor din Moldova de a naviga în siguranță în mediul complex de informare.',
     ],
     'ru' => [
-        'partners_title' => 'Наши Партнеры',
+        'partners_title' => 'Наши партнеры',
         'disclaimer' => 'Платформа реализованна в рамках проекта “Развитие медиаобразования и поддержка СМИ в
 Республике Молдова” реализуемого Интерньюс при финансовой поддержке Швеции. Проект
 направлен на содействие развитию разнообразного, независимого и финансово устойчивого
