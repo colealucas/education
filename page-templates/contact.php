@@ -8,16 +8,14 @@ get_header();
 
 $get_static_text = [
     'ro' => [
-        'our_address' => 'Adresa Noastră',
+        'our_address' => 'Adresa noastră',
         'phone' => 'Telefon',
-        'fax' => 'Fax',
-        'email' => 'Emaiil',
+        'email' => 'Email',
         'static_address' => 'Strada Șciusev, 53, 2012 Chișinău, Republica Moldova',
     ],
     'ru' => [
-        'our_address' => 'Наш Адрес',
+        'our_address' => 'Наш адрес',
         'phone' => 'Телефон',
-        'fax' => 'Факс',
         'email' => 'Эл. почта',
         'static_address' => 'Улица Щусева, 53, 2012 Кишинев, Республика Молдова',
     ]
@@ -77,18 +75,6 @@ $get_static_text = [
                                     <div class="w-[calc(100%-62px)]">
                                         <div class="text-18px font-700 leading-120"><?php echo $get_static_text[get_lang()]['phone']; ?></div>
                                         <div class="text-14px leading-150 mt-4px"><?php the_field('phone_numbers'); ?></div>
-                                    </div>
-                                </div>
-
-                                <div class="contact-box flex gap-20px p-20px rounded-20px bg-white">
-                                    <div class="w-[42px]">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
-                                            <path d="M10.8045 15.1053V3.43859H30.8045V15.1053M10.8045 30.1053H7.47115C6.5871 30.1053 5.73925 29.7541 5.11413 29.1289C4.48901 28.5038 4.13782 27.656 4.13782 26.7719V18.4386C4.13782 17.5545 4.48901 16.7067 5.11413 16.0816C5.73925 15.4564 6.5871 15.1053 7.47115 15.1053H34.1378C35.0219 15.1053 35.8697 15.4564 36.4948 16.0816C37.12 16.7067 37.4712 17.5545 37.4712 18.4386V26.7719C37.4712 27.656 37.12 28.5038 36.4948 29.1289C35.8697 29.7541 35.0219 30.1053 34.1378 30.1053H30.8045M10.8045 23.4386H30.8045V36.7719H10.8045V23.4386Z" stroke="var(--primary-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                    <div class="w-[calc(100%-62px)]">
-                                        <div class="text-18px font-700 leading-120"><?php echo $get_static_text[get_lang()]['fax']; ?></div>
-                                        <div class="text-14px leading-150 mt-4px"><?php the_field('fax'); ?></div>
                                     </div>
                                 </div>
 
