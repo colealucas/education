@@ -90,7 +90,7 @@ $current_module_title = '';
                             <?php echo $themes_count . " " . $get_static_text[get_lang()]['subjects']; ?>
                         </div>
 
-                        <div class="mt-30px">
+                        <div class="mt-30px mb-30px md:mb-0">
                             <a href="#modules" class="btn"><?php echo $get_static_text[get_lang()]['explore_subjects']; ?></a>
                         </div>
                     </div> 
