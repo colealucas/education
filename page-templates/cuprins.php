@@ -78,7 +78,7 @@
                                                            <div class="module-sum-item">
                                                                 <div class="sum-module-header cursor-pointer bg-light-gray flex items-center gap-16px rounded-24px border-1px border-solid border-medium-gray justify-between py-16px px-20px">
                                                                     <div>
-                                                                        <div class="text-24px font-500 leading-160 select-none cursor-pointer">
+                                                                        <div class="text-24px font-500 leading-140 select-none cursor-pointer">
                                                                             <?php echo $k . ". " .  get_the_title(); ?>
                                                                         </div>
                                                                     </div>
@@ -112,7 +112,7 @@
                                                                         <ol class="list-none list-inside text-dark mt-20px pl-24px">
                                                                             <?php while ($themes->have_posts()) : $themes->the_post(); $j++; ?>
 
-                                                                            <li><a href="<?php the_permalink(); ?>" class="text-22px font-500 leading-160 block py-2px"><?php echo $j . ". " . get_the_title(); ?></a></li>
+                                                                            <li><a href="<?php the_permalink(); ?>" class="text-22px font-500 leading-160 block py-5px"><?php echo $j . ". " . get_the_title(); ?></a></li>
 
                                                                             <?php
                                                                             endwhile;
