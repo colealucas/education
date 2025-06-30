@@ -24,10 +24,10 @@ abilitarea tinerilor din Moldova de a naviga în siguranță în mediul complex 
 ];
 ?>
 
-<div class="section py-64px pb-35px">
+<div class="section py-60px pb-35px">
     <div class="container">
         <div class="text-center mx-auto max-w-[952px]">
-            <h1 class="text-28px md:text-48px font-900 uppercase">
+            <h1 class="text-32px md:text-48px font-900 uppercase">
                 <?php echo get_field('intro_title'); ?>
             </h1>
         </div>
