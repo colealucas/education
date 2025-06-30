@@ -201,7 +201,7 @@ $current_module_title = '';
                             </div>
 
                             <div class="sum-module-body hide">
-                                <div class="py-20px text-dark text-16px">
+                                <div class="py-20px text-dark text-16px overflow-x-auto">
                                     <table class="text-left cells-border table-spacing border-0">
                                         <tr>
                                             <th style="border:0"></th>
