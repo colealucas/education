@@ -80,13 +80,13 @@ abilitarea tinerilor din Moldova de a naviga în siguranță în mediul complex 
 
         <div class="text-center max-w-[1000px] mx-auto">
             <?php if (have_rows('partner_logos')) : ?>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-20px md:gap-24px items-center justify-center">
+                <div class="flex flex-wrap md:flex-nowrap items-center justify-center">
                     <?php while (have_rows('partner_logos')) : the_row(); 
                         $logo = get_sub_field('logo');
                         $link = get_sub_field('link');
                     ?>
                         <?php if ($logo) : ?>
-                            <div class="partner-logo-item flex items-center justify-center border-light-gray rounded-16px p-10px border-1px border-solid h-[80px]">
+                            <div class="partner-logo-item w-25% md:flex-1 flex items-center justify-center rounded-16px p-10px h-[80px]">
                                 <?php if ($link) : ?>
                                     <a href="<?php echo esc_url($link); ?>" target="_blank" rel="noopener noreferrer" class="block">
                                         <img src="<?php echo esc_url($logo); ?>" alt="Partner Logo" class="h-auto w-auto max-h-[50px]">
