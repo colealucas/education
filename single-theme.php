@@ -772,7 +772,7 @@ $hide_step_6 = false;
 
 <div class="section mt-34px theme-intro-section">
     <div class="container">
-        <div class="section-inner p-40px bg-primary text-white rounded-24px">
+        <div class="section-inner p-24px md:p-40px bg-primary text-white rounded-24px">
             <?php if ( have_posts() ) : ?>
                 <?php while ( have_posts() ) : the_post(); ?>
                         
@@ -788,7 +788,7 @@ $hide_step_6 = false;
                                 </a>
                             </div>
 
-                            <h1 class="text-36px md:text-48px font-500 leading-120 mt-8px text-white">
+                            <h1 class="text-30px md:text-48px font-500 leading-120 mt-12px text-white">
                                 <?php the_title(); ?>
                             </h1>
 
@@ -800,7 +800,7 @@ $hide_step_6 = false;
                     <div class="col-lg-3">
                         <?php if ( !get_field('is_evaluation') ) : ?>
                             <div class="keey-concepts">
-                                <div class="flex justify-end">
+                                <div class="flex md:justify-end">
                                     <a data-fancybox data-src="#key-concepts" href="javascript:;" class="inline-flex items-center gap-8px text-primary text-14px rounded-24px bg-primary-light hover:bg-white px-10px py-6px leading-1">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                             <path d="M10 13.3333V10M10 6.66667H10.0084M18.3334 10C18.3334 14.6024 14.6024 18.3333 10 18.3333C5.39765 18.3333 1.66669 14.6024 1.66669 10C1.66669 5.39763 5.39765 1.66667 10 1.66667C14.6024 1.66667 18.3334 5.39763 18.3334 10Z" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
