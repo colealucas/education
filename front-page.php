@@ -74,7 +74,7 @@ abilitarea tinerilor din Moldova de a naviga în siguranță în mediul complex 
 
 <div id="partners" class="section pb-40px md:pb-72px bg-white mt-40px md:mt-60px">
     <div class="container">
-        <div class="mb-32px text-center">
+        <div class="mb-20px md:mb-32px text-center">
             <h2 class="text-32px md:text-52px font-700"><?php echo $get_static_text[get_lang()]['partners_title']; ?></h2>
         </div>
 
@@ -86,7 +86,7 @@ abilitarea tinerilor din Moldova de a naviga în siguranță în mediul complex 
                         $link = get_sub_field('link');
                     ?>
                         <?php if ($logo) : ?>
-                            <div class="partner-logo-item w-25% md:flex-1 flex items-center justify-center rounded-16px p-10px h-[80px]">
+                            <div class="partner-logo-item w-25% md:flex-1 flex items-center justify-center rounded-16px p-12px h-[80px]">
                                 <?php if ($link) : ?>
                                     <a href="<?php echo esc_url($link); ?>" target="_blank" rel="noopener noreferrer" class="block">
                                         <img src="<?php echo esc_url($logo); ?>" alt="Partner Logo" class="h-auto w-auto max-h-[50px]">
