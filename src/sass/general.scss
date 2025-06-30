@@ -518,6 +518,22 @@ body.logged-in {
 				color: $primary-color;
 				font-weight: 700;
 			}
+
+			&.pll-parent-menu-item {
+				& > a {
+					display: flex;
+					align-items: center;
+				}
+
+				.sub-menu {
+					& > li {
+						& > a {
+							display: flex;
+							align-items: center;
+						}
+					}
+				}
+			}
 		}
 	}
 }
