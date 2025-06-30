@@ -19,7 +19,7 @@
                 <?php if (have_rows('guides')): ?>
                     <div class="flex gap-30px flex-wrap md:flex-nowrap">
                         <?php while (have_rows('guides')): the_row(); ?>
-                            <div class="book-selector-item w-full md:w-auto flex-1 bg-light-gray p-20px rounded-20px">
+                            <div class="book-selector-item w-full md:flex-1 bg-light-gray p-20px rounded-20px">
                                 <?php if ( get_sub_field('title') ) : ?>
                                     <div class="mb-20px">
                                         <a href="<?php the_sub_field('guide_page_link'); ?>">
