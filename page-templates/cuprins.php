@@ -112,7 +112,7 @@
                                                                         <ol class="list-none list-inside text-dark mt-20px pl-24px">
                                                                             <?php while ($themes->have_posts()) : $themes->the_post(); $j++; ?>
 
-                                                                            <li><a href="<?php the_permalink(); ?>" class="text-22px font-500 leading-160 block py-5px"><?php echo $j . ". " . get_the_title(); ?></a></li>
+                                                                            <li><a href="<?php the_permalink(); ?>" class="text-16px md:text-22px font-500 leading-160 block py-5px"><?php echo $j . ". " . get_the_title(); ?></a></li>
 
                                                                             <?php
                                                                             endwhile;
