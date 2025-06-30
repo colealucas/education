@@ -91,7 +91,7 @@ $get_static_text = [
                                 </div>
                             </div>
 
-                            <div class="mt-40px flex flex-wrap gap-10px items-center lg:justify-between">
+                            <div class="mt-40px flex flex-wrap gap-10px items-center">
                                 <?php if ( get_field('facebook_link') ) : ?>
                                 <div>
                                     <a href="<?php the_field('facebook_link'); ?>" class="size-80px rounded-50 bg-white flex items-center justify-center" target="_blank">
