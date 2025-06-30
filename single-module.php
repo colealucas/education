@@ -116,7 +116,7 @@ $current_module_title = '';
 <div id="modules" class="section py-40px md:py-72px bg-white">
     <div class="container">
         <div class="mb-32px">
-            <h2 class="text-32px font-700"><?php echo $get_static_text[get_lang()]['subjects']; ?></h2>
+            <h2 class="text-28px md:text-32px font-700"><?php echo $get_static_text[get_lang()]['subjects']; ?></h2>
         </div>
 
         <?php while (have_posts()) : the_post(); ?>
@@ -143,23 +143,23 @@ $current_module_title = '';
                 <?php if ( $themes->have_posts() ) : $i=0; ?>
                     <?php while ($themes->have_posts()) : $themes->the_post(); $i++; ?>
 
-                        <div class="p-24px bg-faded-white border-1px border-solid border-border-gray mb-16px flex flex-nowrap items-center justify-between rounded-24px">
+                        <div class="p-24px bg-faded-white border-1px border-solid border-border-gray mb-16px flex flex-wrap md:flex-nowrap items-center justify-between rounded-24px">
                             <div>
                                 <div class="flex flex-nowrap items-center">
                                     <div>
-                                        <div class="subject-num flex items-center justify-center leading-1 size-78px bg-primary-light text-primary text-32px rounded-16px">
+                                        <div class="subject-num flex items-center justify-center leading-1 size-50px md:size-78px bg-primary-light text-primary text-22px md:text-32px rounded-16px">
                                             <?php echo (get_field('theme_number') ? get_field('theme_number') : $i); ?>
                                         </div>
                                     </div>
                                     <div>
                                         <a href="<?php the_permalink(); ?>" class="block hover:text-primary font-500">
-                                            <h3 class="text-30px leading-130 pl-16px pr-30px max-w-[850px]"><?php the_title(); ?></h3>
+                                            <h3 class="text-20px md:text-30px leading-130 pl-16px pr-30px max-w-[850px]"><?php the_title(); ?></h3>
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                            <div>
-                                <a href="<?php the_permalink(); ?>" class="btn min-w-[200px]">
+                            <div class="w-full md:w-auto mt-16px md:mt-0">
+                                <a href="<?php the_permalink(); ?>" class="btn min-w-[200px] w-full md:w-auto">
                                     <?php echo $get_static_text[get_lang()]['access_theme']; ?>
                                     <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M1.5 11L6.5 6L1.5 1" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
