@@ -11,14 +11,14 @@
 <section class="team-section py-40px bg-primary-light rounded-24px mx-8px mt-16px">
     <div class="container">        
         <div class="row items-center">
-            <div class="col-md-6">
-                <h1 class="text-36px md:text-50px lg:text-64px xl:text-[80px] font-700 leading-110 text-primary"><?php echo get_field('page_title'); ?></h1>
+            <div class="col-lg-6">
+                <h1 class="text-28px md:text-50px lg:text-56px font-700 leading-110 text-primary"><?php echo get_field('page_title'); ?></h1>
 
                 <div class="text-16px mt-16px mb-30px text-content-spacing">
                     <?php echo get_field('page_description'); ?>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-lg-6">
                 <?php if ( get_field('featured_image') ) : ?>
                     <div>
                         <img class="rounded-32px" src="<?php echo get_field('featured_image'); ?>" alt="">
