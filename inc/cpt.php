@@ -59,7 +59,8 @@ function create_theme_cpt() {
         'public' => true,
         'has_archive' => true,
         'rewrite' => array('slug' => 'themes'),
-        'menu_icon' => 'dashicons-welcome-write-blog'
+        'menu_icon' => 'dashicons-welcome-write-blog',
+        'show_in_rest' => true,
     );
     register_post_type('theme', $args);
 }
