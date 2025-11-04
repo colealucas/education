@@ -86,7 +86,7 @@ $current_module_title = '';
                             <?php the_content(); ?>
                         </div>
 
-                        <div class="module-subjects-count mt-16px text-primary">
+                        <div class="module-subjects-count mt-16px text-primary hide">
                             <?php echo $themes_count . " " . $get_static_text[get_lang()]['subjects']; ?>
                         </div>
 
