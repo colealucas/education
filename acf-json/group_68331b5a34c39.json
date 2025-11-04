@@ -2798,7 +2798,7 @@
                         "layout_66edcc2bee75e": {
                             "key": "layout_66edcc2bee75e",
                             "name": "text_area",
-                            "label": "Text area (zona de etxt)",
+                            "label": "Text area (zona de text)",
                             "display": "block",
                             "sub_fields": [
                                 {
@@ -2811,7 +2811,7 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "",
+                                        "width": "50",
                                         "class": "",
                                         "id": ""
                                     },
@@ -2820,6 +2820,26 @@
                                     "placeholder": "Add placeholder text (text sugestie)",
                                     "prepend": "",
                                     "append": ""
+                                },
+                                {
+                                    "key": "field_690a27da0c5fa",
+                                    "label": "Print (Printeaza)",
+                                    "name": "print",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Add Print ?",
+                                    "default_value": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "ui": 1
                                 },
                                 {
                                     "key": "field_675493d0bf4e8",
@@ -6529,5 +6549,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1749465802
+    "modified": 1762273297
 }
