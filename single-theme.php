@@ -49,7 +49,7 @@ $get_static_text = [
         ],
     ],
     'ru' => [
-        'subjects' => 'Предметы',
+        'subjects' => 'Темы',
         'go_back' => 'Назад к Темам',
         'pagination_back' => 'Назад',
         'pagination_next' => 'Вперед',
@@ -58,12 +58,12 @@ $get_static_text = [
         'step2' => 'Мне интересно узнать больше!',
         'step3' => 'Я потребляю и создаю медиа-продукты ответственно!',
         'step4' => 'Мое медийное приключение продолжается!',
-        'step5' => 'Я говорю на культурном языке!',
+        'step5' => 'Я говорю культурно!',
         'step6' => 'Знаете ли вы, что...',
 
         // gimnaziu
         'gimnaziu' => [
-            'subjects' => 'Предметы',
+            'subjects' => 'Темы',
             'go_back' => 'Назад к Темам',
             'pagination_back' => 'Назад',
             'pagination_next' => 'Вперед',
@@ -78,7 +78,7 @@ $get_static_text = [
 
         // liceu
         'liceu' => [
-            'subjects' => 'Предметы',
+            'subjects' => 'Темы',
             'go_back' => 'Назад к Темам',
             'pagination_back' => 'Назад',
             'pagination_next' => 'Вперед',

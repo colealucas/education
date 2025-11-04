@@ -20,7 +20,7 @@ $get_static_text = [
         'explore_subjects' => 'Explorează Subiectele',
     ],
     'ru' => [
-        'subjects' => 'Предметы',
+        'subjects' => 'Темы',
         'go_back' => 'Назад к модулям',
         'access_theme' => 'Открыть Тему',
         'autoevaluation' => 'Автооценка',
