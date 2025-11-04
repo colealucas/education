@@ -839,7 +839,7 @@
                             <div class="curiosity-item relative flex flex-col gap-30px items-center" data-curiosity-item="<?php echo $counter; ?>">
                                 <?php if ( $image ) : ?>
                                     <div class="curiosity-image bg-white p-16px rounded-8px">
-                                        <img class="max-h-[150px] cursor-pointer select-none curiosity-img rounded-8px" src="<?php echo $image; ?>" alt="">
+                                        <img class="max-h-[200px] cursor-pointer select-none curiosity-img rounded-8px" src="<?php echo $image; ?>" alt="">
                                     </div>
                                 <?php endif; ?>
                             </div>
