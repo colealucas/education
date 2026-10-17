@@ -65,8 +65,9 @@
                                                             'compare' => 'LIKE'
                                                         ),
                                                     ),
-                                                    'orderby' => 'id',
-                                                    'order' => 'ASC'
+                                                    'meta_key'       => 'order_number',
+                                                    'orderby'        => 'meta_value_num',
+                                                    'order'          => 'ASC',
                                                 ));
                                             ?>
 
@@ -103,8 +104,9 @@
                                                                                     'compare' => 'LIKE'
                                                                                 ),
                                                                             ),
-                                                                            'orderby' => 'id',
-                                                                            'order' => 'ASC'
+                                                                            'meta_key'       => 'theme_order_number',
+                                                                            'orderby'        => 'meta_value_num',
+                                                                            'order'          => 'ASC',
                                                                         ));
                                                                     ?>
 
